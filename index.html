@@ -1,2 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angel's Fashion World</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-hola mundo
+<body>
+
+    <header>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#moda">Moda</a>
+            <a href="#belleza">Belleza</a>
+            <a href="#accesorios">Accesorios</a>
+        </nav>
+
+        <div class="hero" id="inicio">
+            <h1>¡Angel's!</h1>
+            <p>Explora un mundo de moda y belleza </p>
+            <button onclick="mostrarMensaje()">Descubrir ahora</button>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="moda">
+            <h2> Moda</h2>
+            <p>Descubre prendas y estilos para expresar tu personalidad.</p>
+            <button onclick="verProducto('Moda')">Ver productos</button>
+        </section>
+
+        <section id="belleza">
+            <h2>Belleza</h2>
+            <p>Encuentra productos para complementar tu rutina de belleza.</p>
+            <button onclick="verProducto('Belleza')">Ver productos</button>
+        </section>
+
+        <section id="accesorios">
+            <h2>👜 Accesorios</h2>
+            <p>Detalles que complementan tu estilo y hacen la diferencia.</p>
+            <button onclick="verProducto('Accesorios')">Ver productos</button>
+        </section>
+
+    </main>
+
+    <section class="about">
+        <h2>Sobre Angel's</h2>
+        <p>
+            En Angel's Fashion World queremos crear un espacio donde
+            puedas descubrir moda, belleza y accesorios de una manera
+            divertida, sencilla y especial.
+        </p>
+    </section>
+
+    <footer>
+        <p>© 2026 Angel's Fashion World </p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
