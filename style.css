@@ -1,3 +1,5 @@
+/* CONFIGURACIÓN GENERAL */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -17,7 +19,7 @@ nav {
 nav a {
   color: #d85b91;
   text-decoration: none;
-  margin: 0 12px;
+  margin: 0 10px;
   font-weight: bold;
 }
 
@@ -41,7 +43,7 @@ header p {
   font-size: 22px;
 }
 
-/* SECCIONES */
+/* CATEGORÍAS */
 
 main {
   display: flex;
@@ -101,6 +103,39 @@ button:hover {
   line-height: 1.7;
 }
 
+/* CONTACTO */
+
+.contact {
+  background-color: white;
+  margin: 50px auto;
+  padding: 40px;
+  max-width: 750px;
+  border-radius: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* WHATSAPP */
+
+.whatsapp {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  text-decoration: none;
+  padding: 13px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.whatsapp:hover {
+  opacity: 0.85;
+}
+
 /* PIE DE PÁGINA */
 
 footer {
@@ -112,4 +147,27 @@ footer {
 
 footer p {
   margin: 8px;
+}
+
+/* ADAPTACIÓN PARA CELULAR */
+
+@media (max-width: 600px) {
+
+  nav a {
+    display: inline-block;
+    margin: 7px;
+  }
+
+  h1 {
+    font-size: 45px;
+  }
+
+  header p {
+    font-size: 19px;
+  }
+
+  main section {
+    width: 80%;
+  }
+
 }
