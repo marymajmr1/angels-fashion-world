@@ -1,9 +1,36 @@
 // ========================================
-// ANGEL'S FASHION WORLD 🪽
+// ANGEL'S FASHION WORLD
 // ========================================
 
-document.addEventListener("DOMContentLoaded", function () {
+// Desplazamiento suave dentro de la página
 
-    console.log("🪽 Angel's Fashion World está funcionando.");
+document.querySelectorAll('a[href^="#"]').forEach(function (enlace) {
+
+    enlace.addEventListener("click", function (evento) {
+
+        const destino = this.getAttribute("href");
+
+        if (destino !== "#") {
+
+            const elemento = document.querySelector(destino);
+
+            if (elemento) {
+
+                evento.preventDefault();
+
+                elemento.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+
+        }
+
+    });
 
 });
+
+
+// Mensaje en la consola
+
+console.log("🪽 Bienvenidos a Angel's Fashion World ✨");
