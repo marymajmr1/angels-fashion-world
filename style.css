@@ -1,158 +1,296 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Angel's Fashion World</title>
+/* =====================================
+   ANGEL'S FASHION WORLD 🪽
+   ESTILOS PRINCIPALES
+===================================== */
 
-    <link rel="stylesheet" href="style.css">
-</head>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-<body>
+html {
+    scroll-behavior: smooth;
+}
 
-    <!-- MENÚ -->
-    <nav class="menu">
-        <a href="index.html">Inicio</a>
-        <a href="moda.html">Moda</a>
-        <a href="belleza.html">Belleza</a>
-        <a href="skincare.html">Skin care</a>
-        <a href="accesorios.html">Accesorios</a>
-        <a href="#sobre-nosotros">Sobre nosotros</a>
-        <a href="#contactanos">Contáctanos</a>
-    </nav>
+body {
+    font-family: Arial, sans-serif;
+    color: #6b4055;
+    background: #fff0f6;
+}
 
 
-    <!-- PORTADA -->
-    <header class="portada">
+/* =====================================
+   MENÚ SUPERIOR
+===================================== */
 
-        <div class="contenido-portada">
+.menu {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
 
-            <h1>¡Angel's!</h1>
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 
-            <p>
-                Explora un mundo de moda y belleza. 🪽
-            </p>
+    gap: 8px;
+    padding: 18px 20px;
 
-        </div>
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
-    </header>
+    box-shadow: 0 3px 15px rgba(180, 80, 130, 0.15);
+}
 
+.menu a {
+    color: #c65387;
+    text-decoration: none;
 
-    <!-- CATEGORÍAS -->
-    <main>
+    font-size: 17px;
+    font-weight: bold;
 
-        <section class="categorias">
+    padding: 12px 18px;
+    border-radius: 30px;
 
-            <!-- MODA -->
-            <div class="tarjeta">
-                <div class="icono">👗</div>
+    transition: 0.3s;
+}
 
-                <h2>Moda</h2>
-
-                <p>
-                    Descubre estilos, tendencias y looks increíbles. 🪽
-                </p>
-
-                <a href="moda.html" class="boton">
-                    Explorar moda
-                </a>
-            </div>
-
-
-            <!-- BELLEZA -->
-            <div class="tarjeta">
-                <div class="icono">💄</div>
-
-                <h2>Belleza</h2>
-
-                <p>
-                    Encuentra productos 
-                    para resaltar tu belleza. ✨
-                </p>
-
-                <a href="belleza.html" class="boton">
-                    Explorar belleza
-                </a>
-            </div>
+.menu a:hover {
+    background: #e9a4c4;
+    color: white;
+}
 
 
-            <!-- Skin care -->
-            <div class="tarjeta">
-                <div class="icono">🧴</div>
+/* =====================================
+   PORTADA
+===================================== */
 
-                <h2>Skin care</h2>
+.portada {
+    min-height: 520px;
 
-                <p>
-                    Cuida tu piel y descubre productos 
-                    para tu cuidado personal. 🪽
-                </p>
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-                <a href="skincare.html" class="boton">
-                    Explorar Skin care
-                </a>
-            </div>
+    text-align: center;
 
+    position: relative;
 
-            <!-- ACCESORIOS -->
-            <div class="tarjeta">
-                <div class="icono">👜</div>
+    background-image:
+        linear-gradient(
+            rgba(255, 205, 225, 0.68),
+            rgba(255, 225, 238, 0.72)
+        ),
+        url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1800&q=80");
 
-                <h2>Accesorios</h2>
+    background-size: cover;
+    background-position: center;
+}
 
-                <p>
-                    Detalles que complementan tu estilo
-                    y hacen único cada look. ✨
-                </p>
+.contenido-portada {
+    padding: 40px 20px;
+}
 
-                <a href="accesorios.html" class="boton">
-                    Ver accesorios
-                </a>
-            </div>
+.contenido-portada h1 {
+    font-size: 80px;
+    color: #c94d86;
 
-        </section>
+    margin-bottom: 15px;
 
+    text-shadow:
+        2px 2px 10px rgba(255, 255, 255, 0.9);
+}
 
-        <!-- SOBRE NOSOTROS -->
-        <section id="sobre-nosotros" class="informacion">
-
-            <h2>Sobre nosotros 🪽</h2>
-
-            <p>
-                Bienvenidos a Angel's Fashion World, un espacio creado
-                para descubrir moda, belleza, cuidado de la piel y
-                accesorios en un solo lugar.
-            </p>
-
-        </section>
+.contenido-portada p {
+    font-size: 25px;
+    color: #70405a;
+}
 
 
-        <!-- CONTACTO -->
-        <section id="contactanos" class="informacion">
+/* =====================================
+   CATEGORÍAS 2 x 2
+===================================== */
 
-            <h2>Contáctanos 💌</h2>
+.categorias {
+    max-width: 950px;
 
-            <p>
-                ¿Tienes alguna pregunta? ¡Estamos aquí para ayudarte!
-            </p>
+    margin: 0 auto;
 
-            <a href="#" class="boton">
-                Contáctanos
-            </a>
+    padding: 70px 25px;
 
-        </section>
+    display: grid;
 
-    </main>
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+}
 
 
-    <!-- PIE DE PÁGINA -->
-    <footer>
+/* =====================================
+   TARJETAS
+===================================== */
 
-        <p>
-            © 2026 Angel's Fashion World 🪽
-        </p>
+.tarjeta {
+    background: rgba(255, 255, 255, 0.90);
 
-    </footer>
+    border: 2px solid rgba(220, 120, 165, 0.35);
 
-</body>
-</html>
+    border-radius: 25px;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 25px rgba(190, 80, 130, 0.15);
+
+    transition: 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 12px 30px rgba(190, 80, 130, 0.22);
+}
+
+
+/* =====================================
+   ICONOS
+===================================== */
+
+.icono {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+
+/* =====================================
+   TÍTULOS
+===================================== */
+
+.tarjeta h2 {
+    color: #c65387;
+
+    font-size: 30px;
+
+    margin-bottom: 12px;
+}
+
+.tarjeta p {
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+
+/* =====================================
+   BOTONES
+===================================== */
+
+.boton {
+    display: inline-block;
+
+    background: #d85b91;
+
+    color: white !important;
+
+    text-decoration: none;
+
+    padding: 12px 24px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background: #b94376;
+
+    transform: scale(1.05);
+}
+
+
+/* =====================================
+   INFORMACIÓN
+===================================== */
+
+.informacion {
+    max-width: 850px;
+
+    margin: 30px auto;
+
+    padding: 55px 25px;
+
+    text-align: center;
+}
+
+.informacion h2 {
+    color: #c65387;
+
+    font-size: 32px;
+
+    margin-bottom: 15px;
+}
+
+.informacion p {
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================
+   PIE DE PÁGINA
+===================================== */
+
+footer {
+    background: white;
+
+    text-align: center;
+
+    padding: 25px;
+
+    color: #6b4055;
+}
+
+
+/* =====================================
+   CELULARES
+===================================== */
+
+@media (max-width: 700px) {
+
+    .menu {
+        gap: 3px;
+        padding: 12px;
+    }
+
+    .menu a {
+        font-size: 14px;
+        padding: 9px 11px;
+    }
+
+    .contenido-portada h1 {
+        font-size: 55px;
+    }
+
+    .contenido-portada p {
+        font-size: 19px;
+    }
+
+    .categorias {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+    }
+
+    .tarjeta {
+        width: 100%;
+    }
+}
