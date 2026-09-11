@@ -16,7 +16,7 @@
         <a href="index.html">Inicio</a>
         <a href="moda.html">Moda</a>
         <a href="belleza.html">Belleza</a>
-        <a href="skincare.html">SKIN CARE</a>
+        <a href="skincare.html">Skin care</a>
         <a href="accesorios.html">Accesorios</a>
         <a href="#sobre-nosotros">Sobre nosotros</a>
         <a href="#contactanos">Contáctanos</a>
@@ -67,7 +67,8 @@
                 <h2>Belleza</h2>
 
                 <p>
-                    Encuentra productos para resaltar tu belleza. ✨
+                    Encuentra productos 
+                    para resaltar tu belleza. ✨
                 </p>
 
                 <a href="belleza.html" class="boton">
@@ -76,18 +77,19 @@
             </div>
 
 
-            <!-- SKIN CARE -->
+            <!-- Skin care -->
             <div class="tarjeta">
                 <div class="icono">🧴</div>
 
-                <h2>SKIN CARE</h2>
+                <h2>Skin care</h2>
 
                 <p>
-                    Cuida tu piel y descubre productos para tu cuidado personal. 🪽
+                    Cuida tu piel y descubre productos 
+                    para tu cuidado personal. 🪽
                 </p>
 
                 <a href="skincare.html" class="boton">
-                    Explorar SKIN CARE
+                    Explorar Skin care
                 </a>
             </div>
 
@@ -99,7 +101,8 @@
                 <h2>Accesorios</h2>
 
                 <p>
-                    Detalles que complementan tu estilo y hacen único cada look. ✨
+                    Detalles que complementan tu estilo
+                    y hacen único cada look. ✨
                 </p>
 
                 <a href="accesorios.html" class="boton">
