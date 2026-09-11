@@ -1,6 +1,6 @@
 /* ========================================
-   CONFIGURACIÓN GENERAL
    ANGEL'S FASHION WORLD 🪽
+   CONFIGURACIÓN GENERAL
 ======================================== */
 
 * {
@@ -17,20 +17,9 @@ body {
     font-family: Arial, sans-serif;
     min-height: 100vh;
 
-    /* FONDO DE MODA */
-    background-image:
-        linear-gradient(
-            rgba(40, 65, 90, 0.35),
-            rgba(40, 65, 90, 0.35)
-        ),
-        url("fondo-moda.jpg");
+    background: #fff0f6;
 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-
-    color: white;
+    color: #6b4055;
 }
 
 
@@ -40,30 +29,35 @@ body {
 
 .menu {
     width: 100%;
-    padding: 18px 20px;
+
+    padding: 17px 15px;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 25px;
+    flex-wrap: wrap;
 
-    background: rgba(255, 255, 255, 0.88);
-    backdrop-filter: blur(8px);
+    gap: 12px;
+
+    background: rgba(255, 255, 255, 0.94);
 
     position: sticky;
     top: 0;
+
     z-index: 1000;
 
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.12);
 }
 
 .menu a {
     color: #6b4055;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
 
-    padding: 8px 12px;
+    text-decoration: none;
+
+    font-weight: bold;
+
+    padding: 9px 14px;
+
     border-radius: 20px;
 
     transition: 0.3s;
@@ -71,69 +65,80 @@ body {
 
 .menu a:hover {
     background: #f5d8e5;
+
     color: #b63f72;
+
     transform: translateY(-2px);
 }
 
 
 /* ========================================
-   ENCABEZADO
+   INICIO
 ======================================== */
 
-header {
+.inicio-header {
     text-align: center;
-    padding: 80px 20px 50px;
 
-    background: rgba(255, 255, 255, 0.12);
+    padding: 75px 20px 55px;
+
+    background: linear-gradient(
+        135deg,
+        #ffe4ef,
+        #fff0f6
+    );
 }
 
-header h1 {
-    font-size: 55px;
-    margin-bottom: 15px;
+.inicio-header h1 {
+    font-size: 52px;
 
-    color: white;
+    color: #d85b91;
 
-    text-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.35),
-        0 0 15px rgba(255, 255, 255, 0.8);
+    margin-bottom: 12px;
 }
 
-header p {
-    font-size: 20px;
-    font-weight: bold;
+.inicio-header p {
+    font-size: 19px;
 
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    color: #6b4055;
 }
 
 
 /* ========================================
-   TÍTULOS
+   TÍTULO CON ALAS
 ======================================== */
 
-h2 {
-    text-align: center;
-    font-size: 35px;
-    margin: 35px 0 30px;
+.angel-titulo {
+    display: flex;
 
-    color: white;
+    justify-content: center;
 
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+    align-items: center;
+
+    gap: 15px;
+}
+
+.angel-titulo h1 {
+    margin: 0;
 }
 
 
 /* ========================================
-   CONTENEDOR DE CATEGORÍAS
+   CATEGORÍAS DE INICIO
 ======================================== */
 
-.categorias {
+.categorias-inicio {
+
     width: 90%;
+
     max-width: 1100px;
 
-    margin: 0 auto 60px;
+    margin: 50px auto;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
 }
 
 
@@ -142,40 +147,54 @@ h2 {
 ======================================== */
 
 .card {
-    background: rgba(255, 255, 255, 0.90);
 
-    padding: 28px 20px;
+    background: rgba(255, 255, 255, 0.94);
+
+    padding: 30px 25px;
 
     border-radius: 25px;
 
     text-align: center;
 
     box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.20);
+        0 7px 22px rgba(0, 0, 0, 0.12);
 
     transition: 0.3s;
-
-    color: #6b4055;
 }
 
 .card:hover {
-    transform: translateY(-8px);
+
+    transform: translateY(-7px);
 
     box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.28);
+        0 12px 28px rgba(0, 0, 0, 0.18);
 }
 
-.card h3 {
-    font-size: 23px;
-    margin-bottom: 12px;
+.card h2 {
 
-    color: #c45180;
+    color: #d85b91;
+
+    margin: 10px 0;
+
 }
 
 .card p {
-    font-size: 15px;
-    margin-bottom: 18px;
-    color: #6b4055;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+
+/* ========================================
+   ICONOS
+======================================== */
+
+.icono {
+
+    font-size: 40px;
+
+    margin-bottom: 10px;
 }
 
 
@@ -184,6 +203,7 @@ h2 {
 ======================================== */
 
 .boton {
+
     display: inline-block;
 
     padding: 11px 22px;
@@ -191,13 +211,393 @@ h2 {
     border-radius: 25px;
 
     background: #d85b91;
+
     color: white;
 
     text-decoration: none;
 
     font-weight: bold;
 
+    border: none;
+
     transition: 0.3s;
 }
 
-.b
+.boton:hover {
+
+    background: #b63f72;
+
+    transform: scale(1.05);
+}
+
+
+/* ========================================
+   CONTACTO
+======================================== */
+
+.contacto {
+
+    width: 90%;
+
+    max-width: 800px;
+
+    margin: 60px auto;
+
+    padding: 40px 25px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border-radius: 25px;
+
+    box-shadow: 0 7px 22px rgba(0, 0, 0, 0.12);
+}
+
+.contacto h2 {
+
+    color: #d85b91;
+
+    margin-bottom: 15px;
+}
+
+.contacto p {
+
+    margin-bottom: 20px;
+
+    line-height: 1.6;
+}
+
+.whatsapp {
+
+    background: #d85b91;
+}
+
+
+/* ========================================
+   PÁGINA MODA 🪽
+======================================== */
+
+.pagina-moda {
+
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(
+            rgba(40, 65, 90, 0.28),
+            rgba(40, 65, 90, 0.28)
+        ),
+        url("fondo-moda.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+    background-repeat: no-repeat;
+
+    color: white;
+}
+
+
+/* ========================================
+   ENCABEZADO MODA
+======================================== */
+
+.moda-header {
+
+    text-align: center;
+
+    padding: 80px 20px 55px;
+
+    background: rgba(20, 40, 60, 0.18);
+}
+
+.moda-header h1 {
+
+    font-size: 55px;
+
+    color: white;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.45);
+
+}
+
+.moda-header p {
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: white;
+
+    text-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.45);
+}
+
+
+/* ========================================
+   TÍTULO MODA
+======================================== */
+
+.titulo-seccion {
+
+    text-align: center;
+
+    font-size: 32px;
+
+    margin: 40px 20px;
+
+    color: white;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ========================================
+   CATEGORÍAS MODA
+======================================== */
+
+.categorias-moda {
+
+    width: 90%;
+
+    max-width: 1150px;
+
+    margin: 0 auto 60px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* ========================================
+   TARJETAS MODA
+======================================== */
+
+.card-moda {
+
+    background: rgba(255, 255, 255, 0.92);
+
+    padding: 28px 20px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    color: #6b4055;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.20);
+
+    transition: 0.3s;
+}
+
+.card-moda:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.28);
+}
+
+.card-moda h3 {
+
+    font-size: 22px;
+
+    color: #c45180;
+
+    margin-bottom: 12px;
+}
+
+.card-moda p {
+
+    line-height: 1.5;
+
+    margin-bottom: 18px;
+}
+
+
+/* ========================================
+   SOBRE NOSOTROS
+======================================== */
+
+.sobre-nosotros {
+
+    min-height: 80vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 60px 20px;
+}
+
+.sobre-card {
+
+    width: 90%;
+
+    max-width: 850px;
+
+    padding: 45px 35px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.14);
+}
+
+.sobre-card h1 {
+
+    color: #d85b91;
+
+    margin-bottom: 25px;
+}
+
+.sobre-card p {
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+.angel-grande {
+
+    font-size: 40px;
+
+    margin-bottom: 20px;
+}
+
+.frase-angel {
+
+    margin-top: 30px;
+
+    padding: 18px;
+
+    border-radius: 20px;
+
+    background: #ffe4ef;
+
+    color: #b63f72;
+
+    font-weight: bold;
+
+    font-size: 18px;
+}
+
+
+/* ========================================
+   PIE DE PÁGINA
+======================================== */
+
+footer {
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    color: #6b4055;
+
+    margin-top: 40px;
+}
+
+footer p {
+
+    margin: 6px;
+}
+
+
+/* ========================================
+   CELULARES 📱
+======================================== */
+
+@media (max-width: 768px) {
+
+    .menu {
+
+        gap: 5px;
+
+        padding: 12px 8px;
+    }
+
+    .menu a {
+
+        font-size: 13px;
+
+        padding: 7px 9px;
+    }
+
+    .inicio-header {
+
+        padding: 55px 15px 40px;
+    }
+
+    .inicio-header h1 {
+
+        font-size: 40px;
+    }
+
+    .angel-titulo {
+
+        gap: 8px;
+    }
+
+    .categorias-inicio {
+
+        grid-template-columns: 1fr;
+    }
+
+    .categorias-moda {
+
+        grid-template-columns: 1fr;
+
+        width: 88%;
+    }
+
+    .moda-header h1 {
+
+        font-size: 42px;
+    }
+
+    .moda-header p {
+
+        font-size: 17px;
+    }
+
+    .titulo-seccion {
+
+        font-size: 26px;
+    }
+
+    .sobre-card {
+
+        padding: 35px 20px;
+    }
+}
+
+
+/* ========================================
+   TABLETS
+======================================== */
+
+@media (min-width: 769px) and (max-width: 1000px) {
+
+    .categorias-moda {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
