@@ -1,7 +1,9 @@
-function mostrarMensaje() {
-    alert("¡Bienvenida/o a Angel's Fashion World!");
-}
+// ========================================
+// ANGEL'S FASHION WORLD 🪽
+// ========================================
 
-function verProducto(categoria) {
-    alert("Próximamente encontrarás nuestros productos de " + categoria + " 🛍️");
-}
+document.addEventListener("DOMContentLoaded", function () {
+
+    console.log("🪽 Angel's Fashion World está funcionando.");
+
+});
