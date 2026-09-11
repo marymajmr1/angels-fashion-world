@@ -1,87 +1,311 @@
-
 /* ========================================
-   PÁGINA MODA 🪽
+   CONFIGURACIÓN GENERAL
+   ANGEL'S FASHION WORLD 🪽
 ======================================== */
 
-.pagina-moda {
-    min-height: 100vh;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
 
     background: #fff0f6;
 
     color: #6b4055;
+
+    line-height: 1.6;
 }
 
 
 /* ========================================
-   MENÚ DE MODA
+   MENÚ
 ======================================== */
 
-.pagina-moda .menu {
-    background: rgba(255, 255, 255, 0.95);
-}
+.menu {
+    width: 100%;
 
-.pagina-moda .menu a {
-    color: #6b4055;
-}
-
-.pagina-moda .menu a:hover,
-.pagina-moda .menu .activo {
-    background: #f5d8e5;
-    color: #d85b91;
-}
-
-
-/* ========================================
-   ENCABEZADO DE MODA
-======================================== */
-
-.moda-header {
-    text-align: center;
-
-    padding: 70px 20px 50px;
-
-    background: linear-gradient(
-        135deg,
-        #ffe4ef,
-        #fff0f6
-    );
-}
-
-.moda-header .angel-titulo {
     display: flex;
 
     justify-content: center;
     align-items: center;
 
-    gap: 15px;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    padding: 16px 20px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    box-shadow:
+        0 3px 15px rgba(180, 80, 120, 0.10);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
 }
 
-.moda-header .angel-titulo span {
-    font-size: 35px;
+.menu a {
+    text-decoration: none;
+
+    color: #6b4055;
+
+    font-weight: bold;
+
+    padding: 10px 17px;
+
+    border-radius: 25px;
+
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background: #f9d9e7;
+
+    color: #d85b91;
+}
+
+.menu a.activo {
+    background: #f9d9e7;
+
+    color: #d85b91;
+}
+
+
+/* ========================================
+   INICIO
+======================================== */
+
+.inicio {
+    text-align: center;
+
+    padding: 75px 20px 55px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe5ef,
+            #fff0f6,
+            #ffe1ed
+        );
+}
+
+.alas {
+    font-size: 32px;
+
+    margin-bottom: 12px;
+}
+
+.inicio h1 {
+    font-family: Georgia, serif;
+
+    font-size: 58px;
+
+    color: #d85b91;
+
+    margin-bottom: 10px;
+}
+
+.inicio p {
+    font-size: 21px;
+
+    color: #6b4055;
+}
+
+.inicio .bienvenida {
+    max-width: 650px;
+
+    margin: 15px auto 0;
+
+    font-size: 16px;
+
+    color: #956078;
+}
+
+
+/* ========================================
+   SECCIONES PRINCIPALES
+======================================== */
+
+.seccion {
+    width: 90%;
+
+    max-width: 1000px;
+
+    margin: 35px auto;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 7px 25px rgba(190, 80, 125, 0.10);
+
+    transition: 0.3s;
+}
+
+.seccion:hover {
+    transform: translateY(-3px);
+}
+
+.icono-seccion {
+    font-size: 40px;
+
+    margin-bottom: 10px;
+}
+
+.seccion h2 {
+    font-family: Georgia, serif;
+
+    font-size: 32px;
+
+    color: #d85b91;
+
+    margin-bottom: 10px;
+}
+
+.seccion p {
+    color: #805267;
+
+    margin-bottom: 15px;
+}
+
+
+/* ========================================
+   BOTONES
+======================================== */
+
+.boton {
+    display: inline-block;
+
+    text-decoration: none;
+
+    background: #d85b91;
+
+    color: white;
+
+    padding: 11px 24px;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+    border: none;
+}
+
+.boton:hover {
+    background: #b83f72;
+
+    transform: scale(1.03);
+}
+
+
+/* ========================================
+   SECCIÓN ESPECIAL
+======================================== */
+
+.especial {
+    background:
+        linear-gradient(
+            135deg,
+            #fff8fb,
+            #ffe8f1
+        );
+}
+
+
+/* ========================================
+   CONTACTO
+======================================== */
+
+.contacto {
+    width: 90%;
+
+    max-width: 1000px;
+
+    margin: 45px auto;
+
+    padding: 50px 30px;
+
+    text-align: center;
+
+    background: #fbdce9;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 7px 25px rgba(190, 80, 125, 0.12);
+}
+
+.contacto h2 {
+    font-family: Georgia, serif;
+
+    color: #c9477d;
+
+    font-size: 34px;
+
+    margin-bottom: 12px;
+}
+
+.contacto p {
+    margin-bottom: 12px;
+
+    color: #754b5e;
+}
+
+
+/* ========================================
+   PÁGINA MODA
+======================================== */
+
+.moda-header {
+    text-align: center;
+
+    padding: 65px 20px 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe4ef,
+            #fff0f6,
+            #ffe2ed
+        );
 }
 
 .moda-header h1 {
     font-family: Georgia, serif;
 
-    font-size: 55px;
+    font-size: 58px;
 
     color: #d85b91;
 
-    margin: 0;
+    margin-bottom: 10px;
 }
 
 .moda-header p {
-    margin-top: 15px;
-
     font-size: 20px;
 
     color: #6b4055;
 }
 
-
-/* ========================================
-   TÍTULO DE CATEGORÍAS
-======================================== */
+.contenido-moda {
+    padding: 20px 0 40px;
+}
 
 .titulo-seccion {
     text-align: center;
@@ -92,12 +316,12 @@
 
     color: #914064;
 
-    margin: 40px 20px 30px;
+    margin: 35px 20px;
 }
 
 
 /* ========================================
-   CATEGORÍAS
+   CATEGORÍAS DE MODA
 ======================================== */
 
 .categorias-moda {
@@ -105,7 +329,7 @@
 
     max-width: 1150px;
 
-    margin: 0 auto 60px;
+    margin: 0 auto;
 
     display: grid;
 
@@ -116,102 +340,165 @@
 
 
 /* ========================================
-   TARJETAS
+   TARJETAS DE MODA
 ======================================== */
 
 .card-moda {
-    display: flex;
+    text-align: center;
 
-    align-items: center;
+    padding: 30px 20px;
 
-    gap: 20px;
+    background: white;
 
-    min-height: 170px;
-
-    padding: 20px;
-
-    background: rgba(255, 255, 255, 0.95);
-
-    border-radius: 22px;
+    border-radius: 23px;
 
     box-shadow:
-        0 7px 22px rgba(190, 80, 125, 0.12);
+        0 7px 22px rgba(190, 80, 125, 0.11);
 
     transition: 0.3s;
 }
 
 .card-moda:hover {
-    transform: translateY(-6px);
+    transform: translateY(-7px);
 
     box-shadow:
-        0 10px 25px rgba(190, 80, 125, 0.18);
+        0 12px 28px rgba(190, 80, 125, 0.17);
 }
 
-
-/* ========================================
-   ICONOS
-======================================== */
-
 .icono-moda {
-    min-width: 72px;
+    width: 75px;
 
-    width: 72px;
-    height: 72px;
+    height: 75px;
+
+    margin: 0 auto 15px;
 
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     border-radius: 50%;
 
     background: #fbd8e7;
 
-    font-size: 35px;
+    font-size: 37px;
 }
-
-
-/* ========================================
-   TEXTO DE LAS TARJETAS
-======================================== */
 
 .card-moda h3 {
     font-family: Georgia, serif;
 
-    font-size: 21px;
-
     color: #d63f7c;
+
+    font-size: 22px;
 
     margin-bottom: 8px;
 }
 
 .card-moda p {
-    color: #9a5271;
+    color: #8d5970;
 
     font-size: 14px;
 
-    line-height: 1.5;
+    min-height: 65px;
 
-    margin-bottom: 14px;
+    margin-bottom: 15px;
 }
 
 
 /* ========================================
-   BOTONES
+   SOBRE NOSOTROS
 ======================================== */
 
-.card-moda .boton {
-    background: #d85b91;
+.sobre-nosotros {
+    padding: 60px 20px;
 
-    padding: 9px 20px;
-
-    font-size: 14px;
-
-    border-radius: 25px;
+    background:
+        linear-gradient(
+            135deg,
+            #ffe7f0,
+            #fff0f6,
+            #ffe3ed
+        );
 }
 
-.card-moda .boton:hover {
-    background: #b63f72;
+.sobre-card {
+    max-width: 950px;
+
+    margin: auto;
+
+    padding: 55px 60px;
+
+    background: white;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 8px 30px rgba(190, 80, 125, 0.12);
+}
+
+.sobre-card .alas {
+    text-align: center;
+}
+
+.sobre-card h1 {
+    text-align: center;
+
+    font-family: Georgia, serif;
+
+    font-size: 45px;
+
+    color: #d85b91;
+
+    margin-bottom: 30px;
+}
+
+.sobre-card h2 {
+    font-family: Georgia, serif;
+
+    color: #d85b91;
+
+    font-size: 28px;
+
+    margin-top: 35px;
+
+    margin-bottom: 12px;
+}
+
+.sobre-card p {
+    color: #704b5c;
+
+    font-size: 17px;
+
+    margin-bottom: 18px;
+
+    line-height: 1.8;
+}
+
+.frase-angel {
+    text-align: center;
+
+    margin: 40px 0;
+
+    padding: 22px;
+
+    border-radius: 20px;
+
+    background: #ffe4ef;
+
+    color: #c9477d;
+
+    font-family: Georgia, serif;
+
+    font-size: 23px;
+
+    font-weight: bold;
+}
+
+.despedida {
+    text-align: center;
+
+    font-size: 18px !important;
 }
 
 
@@ -219,28 +506,64 @@
    FOOTER
 ======================================== */
 
-.pagina-moda footer {
-    background: #ffe0ec;
+footer {
+    text-align: center;
+
+    padding: 35px 20px;
+
+    margin-top: 50px;
+
+    background: #fbdce9;
 
     color: #6b4055;
-
-    margin-top: 20px;
 }
 
-.pagina-moda footer p:first-child {
+footer p {
+    margin: 5px;
+}
+
+footer p:first-child {
     font-family: Georgia, serif;
 
-    font-size: 20px;
+    font-size: 21px;
 
     font-weight: bold;
+
+    color: #c9477d;
 }
 
 
 /* ========================================
-   CELULAR 📱
+   CELULAR
 ======================================== */
 
 @media (max-width: 768px) {
+
+    .menu {
+        gap: 3px;
+
+        padding: 10px;
+    }
+
+    .menu a {
+        font-size: 13px;
+
+        padding: 8px 10px;
+    }
+
+    .inicio h1 {
+        font-size: 45px;
+    }
+
+    .inicio p {
+        font-size: 18px;
+    }
+
+    .seccion {
+        width: 90%;
+
+        padding: 35px 20px;
+    }
 
     .categorias-moda {
         grid-template-columns: 1fr;
@@ -248,21 +571,26 @@
         width: 88%;
     }
 
-    .card-moda {
-        min-height: 150px;
-    }
-
     .moda-header h1 {
-        font-size: 44px;
-    }
-
-    .moda-header .angel-titulo span {
-        font-size: 28px;
+        font-size: 45px;
     }
 
     .titulo-seccion {
         font-size: 27px;
     }
+
+    .sobre-card {
+        padding: 35px 22px;
+    }
+
+    .sobre-card h1 {
+        font-size: 34px;
+    }
+
+    .sobre-card p {
+        font-size: 16px;
+    }
+
 }
 
 
@@ -275,4 +603,5 @@
     .categorias-moda {
         grid-template-columns: repeat(2, 1fr);
     }
+
 }
