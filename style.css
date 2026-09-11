@@ -1,7 +1,7 @@
-/* ========================================
+/* ==================================================
    CONFIGURACIÓN GENERAL
    ANGEL'S FASHION WORLD 🪽
-======================================== */
+================================================== */
 
 * {
     margin: 0;
@@ -15,593 +15,242 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-
-    background: #fff0f6;
-
-    color: #6b4055;
-
-    line-height: 1.6;
+    background: #fff5fa;
+    color: #68465a;
+    line-height: 1.7;
 }
 
 
-/* ========================================
+/* ==================================================
    MENÚ
-======================================== */
+================================================== */
 
 .menu {
     width: 100%;
-
+    background: #ffffff;
     display: flex;
-
     justify-content: center;
     align-items: center;
-
-    flex-wrap: wrap;
-
-    gap: 8px;
-
-    padding: 16px 20px;
-
-    background: rgba(255, 255, 255, 0.96);
-
-    box-shadow:
-        0 3px 15px rgba(180, 80, 120, 0.10);
-
+    gap: 35px;
+    padding: 20px;
+    box-shadow: 0 3px 15px rgba(180, 120, 150, 0.15);
     position: sticky;
-
     top: 0;
-
     z-index: 1000;
 }
 
 .menu a {
+    color: #70465c;
     text-decoration: none;
-
-    color: #6b4055;
-
     font-weight: bold;
-
-    padding: 10px 17px;
-
-    border-radius: 25px;
-
+    font-size: 16px;
     transition: 0.3s;
 }
 
 .menu a:hover {
-    background: #f9d9e7;
-
-    color: #d85b91;
-}
-
-.menu a.activo {
-    background: #f9d9e7;
-
     color: #d85b91;
 }
 
 
-/* ========================================
-   INICIO
-======================================== */
+/* ==================================================
+   PRESENTACIÓN
+================================================== */
 
-.inicio {
+.presentacion {
     text-align: center;
-
-    padding: 75px 20px 55px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffe5ef,
-            #fff0f6,
-            #ffe1ed
-        );
+    padding: 80px 20px 60px;
+    background: linear-gradient(
+        135deg,
+        #fff5fa,
+        #ffe6f1,
+        #fffafd
+    );
 }
 
 .alas {
     font-size: 32px;
-
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
-.inicio h1 {
+.presentacion h1 {
     font-family: Georgia, serif;
-
     font-size: 58px;
-
     color: #d85b91;
-
-    margin-bottom: 10px;
-}
-
-.inicio p {
-    font-size: 21px;
-
-    color: #6b4055;
-}
-
-.inicio .bienvenida {
-    max-width: 650px;
-
-    margin: 15px auto 0;
-
-    font-size: 16px;
-
-    color: #956078;
-}
-
-
-/* ========================================
-   SECCIONES PRINCIPALES
-======================================== */
-
-.seccion {
-    width: 90%;
-
-    max-width: 1000px;
-
-    margin: 35px auto;
-
-    padding: 45px 30px;
-
-    text-align: center;
-
-    background: rgba(255, 255, 255, 0.94);
-
-    border-radius: 25px;
-
-    box-shadow:
-        0 7px 25px rgba(190, 80, 125, 0.10);
-
-    transition: 0.3s;
-}
-
-.seccion:hover {
-    transform: translateY(-3px);
-}
-
-.icono-seccion {
-    font-size: 40px;
-
-    margin-bottom: 10px;
-}
-
-.seccion h2 {
-    font-family: Georgia, serif;
-
-    font-size: 32px;
-
-    color: #d85b91;
-
-    margin-bottom: 10px;
-}
-
-.seccion p {
-    color: #805267;
-
     margin-bottom: 15px;
 }
 
+.presentacion p {
+    font-size: 19px;
+    color: #765568;
+    max-width: 700px;
+    margin: 8px auto;
+}
 
-/* ========================================
+.presentacion .frase {
+    font-size: 23px;
+    font-weight: bold;
+    color: #b94f7e;
+}
+
+
+/* ==================================================
+   CATEGORÍAS
+================================================== */
+
+.categorias {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 25px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.categoria {
+    background: #ffffff;
+    border-radius: 25px;
+    padding: 40px 30px;
+    text-align: center;
+
+    box-shadow: 0 8px 25px rgba(190, 110, 150, 0.15);
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.categoria:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(190, 110, 150, 0.22);
+}
+
+.emoji {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.categoria h2 {
+    font-family: Georgia, serif;
+    color: #d85b91;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.categoria p {
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+
+/* ==================================================
    BOTONES
-======================================== */
+================================================== */
 
 .boton {
     display: inline-block;
 
-    text-decoration: none;
-
     background: #d85b91;
-
     color: white;
 
-    padding: 11px 24px;
+    padding: 12px 25px;
+    border-radius: 30px;
 
-    border-radius: 25px;
-
+    text-decoration: none;
     font-weight: bold;
 
     transition: 0.3s;
-
-    border: none;
 }
 
 .boton:hover {
-    background: #b83f72;
-
-    transform: scale(1.03);
+    background: #b94778;
+    transform: scale(1.04);
 }
 
 
-/* ========================================
-   SECCIÓN ESPECIAL
-======================================== */
+/* ==================================================
+   SOBRE NOSOTROS EN INICIO
+================================================== */
 
-.especial {
-    background:
-        linear-gradient(
-            135deg,
-            #fff8fb,
-            #ffe8f1
-        );
+.sobre-inicio {
+    text-align: center;
+    padding: 80px 25px;
+
+    background: #ffeaf3;
+}
+
+.sobre-inicio h2 {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    color: #d85b91;
+    margin-bottom: 20px;
+}
+
+.sobre-inicio p {
+    max-width: 850px;
+    margin: 0 auto 30px;
+    font-size: 18px;
 }
 
 
-/* ========================================
+/* ==================================================
    CONTACTO
-======================================== */
+================================================== */
 
 .contacto {
-    width: 90%;
-
-    max-width: 1000px;
-
-    margin: 45px auto;
-
-    padding: 50px 30px;
-
     text-align: center;
-
-    background: #fbdce9;
-
-    border-radius: 28px;
-
-    box-shadow:
-        0 7px 25px rgba(190, 80, 125, 0.12);
+    padding: 70px 20px;
+    background: #fffafd;
 }
 
 .contacto h2 {
     font-family: Georgia, serif;
-
-    color: #c9477d;
-
-    font-size: 34px;
-
-    margin-bottom: 12px;
-}
-
-.contacto p {
-    margin-bottom: 12px;
-
-    color: #754b5e;
-}
-
-
-/* ========================================
-   PÁGINA MODA
-======================================== */
-
-.moda-header {
-    text-align: center;
-
-    padding: 65px 20px 50px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffe4ef,
-            #fff0f6,
-            #ffe2ed
-        );
-}
-
-.moda-header h1 {
-    font-family: Georgia, serif;
-
-    font-size: 58px;
-
+    font-size: 36px;
     color: #d85b91;
-
-    margin-bottom: 10px;
-}
-
-.moda-header p {
-    font-size: 20px;
-
-    color: #6b4055;
-}
-
-.contenido-moda {
-    padding: 20px 0 40px;
-}
-
-.titulo-seccion {
-    text-align: center;
-
-    font-family: Georgia, serif;
-
-    font-size: 34px;
-
-    color: #914064;
-
-    margin: 35px 20px;
-}
-
-
-/* ========================================
-   CATEGORÍAS DE MODA
-======================================== */
-
-.categorias-moda {
-    width: 90%;
-
-    max-width: 1150px;
-
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-
-/* ========================================
-   TARJETAS DE MODA
-======================================== */
-
-.card-moda {
-    text-align: center;
-
-    padding: 30px 20px;
-
-    background: white;
-
-    border-radius: 23px;
-
-    box-shadow:
-        0 7px 22px rgba(190, 80, 125, 0.11);
-
-    transition: 0.3s;
-}
-
-.card-moda:hover {
-    transform: translateY(-7px);
-
-    box-shadow:
-        0 12px 28px rgba(190, 80, 125, 0.17);
-}
-
-.icono-moda {
-    width: 75px;
-
-    height: 75px;
-
-    margin: 0 auto 15px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    border-radius: 50%;
-
-    background: #fbd8e7;
-
-    font-size: 37px;
-}
-
-.card-moda h3 {
-    font-family: Georgia, serif;
-
-    color: #d63f7c;
-
-    font-size: 22px;
-
-    margin-bottom: 8px;
-}
-
-.card-moda p {
-    color: #8d5970;
-
-    font-size: 14px;
-
-    min-height: 65px;
-
     margin-bottom: 15px;
 }
 
-
-/* ========================================
-   SOBRE NOSOTROS
-======================================== */
-
-.sobre-nosotros {
-    padding: 60px 20px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffe7f0,
-            #fff0f6,
-            #ffe3ed
-        );
-}
-
-.sobre-card {
-    max-width: 950px;
-
-    margin: auto;
-
-    padding: 55px 60px;
-
-    background: white;
-
-    border-radius: 30px;
-
-    box-shadow:
-        0 8px 30px rgba(190, 80, 125, 0.12);
-}
-
-.sobre-card .alas {
-    text-align: center;
-}
-
-.sobre-card h1 {
-    text-align: center;
-
-    font-family: Georgia, serif;
-
-    font-size: 45px;
-
-    color: #d85b91;
-
-    margin-bottom: 30px;
-}
-
-.sobre-card h2 {
-    font-family: Georgia, serif;
-
-    color: #d85b91;
-
-    font-size: 28px;
-
-    margin-top: 35px;
-
-    margin-bottom: 12px;
-}
-
-.sobre-card p {
-    color: #704b5c;
-
-    font-size: 17px;
-
-    margin-bottom: 18px;
-
-    line-height: 1.8;
-}
-
-.frase-angel {
-    text-align: center;
-
-    margin: 40px 0;
-
-    padding: 22px;
-
-    border-radius: 20px;
-
-    background: #ffe4ef;
-
-    color: #c9477d;
-
-    font-family: Georgia, serif;
-
-    font-size: 23px;
-
-    font-weight: bold;
-}
-
-.despedida {
-    text-align: center;
-
-    font-size: 18px !important;
+.contacto p {
+    font-size: 18px;
+    margin-bottom: 25px;
 }
 
 
-/* ========================================
-   FOOTER
-======================================== */
+/* ==================================================
+   PIE DE PÁGINA
+================================================== */
 
 footer {
     text-align: center;
-
-    padding: 35px 20px;
-
-    margin-top: 50px;
-
-    background: #fbdce9;
-
-    color: #6b4055;
+    background: #70465c;
+    color: white;
+    padding: 30px 20px;
 }
 
 footer p {
     margin: 5px;
 }
 
-footer p:first-child {
-    font-family: Georgia, serif;
 
-    font-size: 21px;
+/* ==================================================
+   DISEÑO PARA CELULARES
+================================================== */
 
-    font-weight: bold;
-
-    color: #c9477d;
-}
-
-
-/* ========================================
-   CELULAR
-======================================== */
-
-@media (max-width: 768px) {
+@media (max-width: 800px) {
 
     .menu {
-        gap: 3px;
-
-        padding: 10px;
+        gap: 12px;
+        flex-wrap: wrap;
+        padding: 15px 10px;
     }
 
     .menu a {
-        font-size: 13px;
-
-        padding: 8px 10px;
+        font-size: 14px;
     }
 
-    .inicio h1 {
+    .presentacion h1 {
         font-size: 45px;
     }
 
-    .inicio p {
-        font-size: 18px;
-    }
-
-    .seccion {
-        width: 90%;
-
-        padding: 35px 20px;
-    }
-
-    .categorias-moda {
+    .categorias {
         grid-template-columns: 1fr;
-
-        width: 88%;
     }
-
-    .moda-header h1 {
-        font-size: 45px;
-    }
-
-    .titulo-seccion {
-        font-size: 27px;
-    }
-
-    .sobre-card {
-        padding: 35px 22px;
-    }
-
-    .sobre-card h1 {
-        font-size: 34px;
-    }
-
-    .sobre-card p {
-        font-size: 16px;
-    }
-
-}
-
-
-/* ========================================
-   TABLET
-======================================== */
-
-@media (min-width: 769px) and (max-width: 1000px) {
-
-    .categorias-moda {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
 }
