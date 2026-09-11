@@ -3,50 +3,39 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" 
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Angel's Fashion World</title>
 
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="./style.css?v=3">
 </head>
 
 <body>
 
     <!-- MENÚ -->
     <nav class="menu">
-
-        <a href="index.html" class="activo">Inicio</a>
-
+        <a href="index.html">Inicio</a>
         <a href="moda.html">Moda</a>
-
-        <a href="#belleza">Belleza</a>
-
-        <a href="#skincare">SKIN CARE</a>
-
-        <a href="#accesorios">Accesorios</a>
-
+        <a href="#">Belleza</a>
+        <a href="#">SKIN CARE</a>
+        <a href="#">Accesorios</a>
         <a href="sobre-nosotros.html">Sobre nosotros</a>
-
         <a href="#contactanos">Contáctanos</a>
-
     </nav>
 
 
     <!-- PRESENTACIÓN -->
-    <header class="inicio">
+    <header class="presentacion">
 
-        <div class="alas">
-            🪽 ✨ 🪽
-        </div>
+        <div class="alas">🪽</div>
 
         <h1>¡Angel's!</h1>
 
-        <p>
+        <p class="frase">
             Explora un mundo de moda y belleza. ✨
         </p>
 
-        <p class="bienvenida">
+        <p>
             Un pequeño espacio creado para descubrir,
             inspirarte y encontrar tu propio estilo. 💕
         </p>
@@ -54,105 +43,97 @@
     </header>
 
 
-    <!-- MODA -->
-    <section id="moda" class="seccion">
+    <!-- CATEGORÍAS -->
+    <main class="categorias">
 
-        <div class="icono-seccion">
-            👗
-        </div>
+        <!-- MODA -->
+        <section class="categoria">
+            <div class="emoji">👗</div>
 
-        <h2>Moda</h2>
+            <h2>Moda</h2>
 
-        <p>
-            Descubre prendas llenas de estilo y personalidad.
-        </p>
+            <p>
+                Descubre prendas llenas de estilo y personalidad.
+            </p>
 
-        <a href="moda.html" class="boton">
-            Explorar moda
-        </a>
-
-    </section>
-
-
-    <!-- BELLEZA -->
-    <section id="belleza" class="seccion">
-
-        <div class="icono-seccion">
-            💄
-        </div>
-
-        <h2>Belleza</h2>
-
-        <p>
-            Encuentra productos de maquillaje para complementar
-            tu estilo.
-        </p>
-
-        <a href="#" class="boton">
-            Explorar belleza
-        </a>
-
-    </section>
+            <a class="boton" href="moda.html">
+                Explorar moda
+            </a>
+        </section>
 
 
-    <!-- SKIN CARE -->
-    <section id="skincare" class="seccion">
+        <!-- BELLEZA -->
+        <section class="categoria">
 
-        <div class="icono-seccion">
-            🧴
-        </div>
+            <div class="emoji">💄</div>
 
-        <h2>SKIN CARE</h2>
+            <h2>Belleza</h2>
 
-        <p>
-            Productos para el cuidado de la piel,
-            el cabello y el cuidado personal.
-        </p>
+            <p>
+                Encuentra productos de maquillaje para complementar tu estilo.
+            </p>
 
-        <a href="#" class="boton">
-            Explorar SKIN CARE
-        </a>
+            <a class="boton" href="#">
+                Explorar belleza
+            </a>
 
-    </section>
+        </section>
 
 
-    <!-- ACCESORIOS -->
-    <section id="accesorios" class="seccion">
+        <!-- SKIN CARE -->
+        <section class="categoria">
 
-        <div class="icono-seccion">
-            👜
-        </div>
+            <div class="emoji">🧴</div>
 
-        <h2>Accesorios</h2>
+            <h2>SKIN CARE</h2>
 
-        <p>
-            Completa tus outfits con accesorios llenos
-            de personalidad.
-        </p>
+            <p>
+                Productos para el cuidado de la piel,
+                el cabello y el cuidado personal.
+            </p>
 
-        <a href="#" class="boton">
-            Explorar accesorios
-        </a>
+            <a class="boton" href="#">
+                Explorar SKIN CARE
+            </a>
 
-    </section>
+        </section>
+
+
+        <!-- ACCESORIOS -->
+        <section class="categoria">
+
+            <div class="emoji">👜</div>
+
+            <h2>Accesorios</h2>
+
+            <p>
+                Dale un toque especial a tus looks con nuestros accesorios.
+            </p>
+
+            <a class="boton" href="#">
+                Explorar accesorios
+            </a>
+
+        </section>
+
+    </main>
 
 
     <!-- SOBRE NOSOTROS -->
-    <section class="seccion especial">
+    <section class="sobre-inicio">
 
-        <div class="icono-seccion">
-            🪽
-        </div>
+        <div class="alas">🪽</div>
 
         <h2>Sobre nosotros</h2>
 
         <p>
-            Conoce la historia y el propósito de
-            Angel's Fashion World.
+            En Angel's Fashion World queremos crear un espacio
+            donde puedas descubrir moda, belleza y cuidado personal
+            de una manera sencilla, agradable y especial.
         </p>
 
-        <a href="sobre-nosotros.html" class="boton">
-            Conócenos
+        <a class="boton" href="sobre-nosotros.html">
+            Conoce más sobre nosotros
         </a>
 
     </section>
@@ -161,23 +142,14 @@
     <!-- CONTACTO -->
     <section id="contactanos" class="contacto">
 
-        <div class="icono-seccion">
-            💌
-        </div>
-
-        <h2>Contáctanos</h2>
+        <h2>Contáctanos 💌</h2>
 
         <p>
-            ¿Tienes alguna pregunta? Nos encantará saber de ti.
+            ¿Tienes alguna pregunta? Estamos aquí para escucharte.
         </p>
 
-        <p>
-            Puedes comunicarte con nosotros y estaremos felices
-            de atenderte. 🩷
-        </p>
-
-        <a href="mailto:angelssfashionworld@gmail.com" class="boton">
-            Enviar mensaje
+        <a class="boton" href="https://wa.me/" target="_blank">
+            💬 Contáctanos por WhatsApp
         </a>
 
     </section>
@@ -185,24 +157,12 @@
 
     <!-- PIE DE PÁGINA -->
     <footer>
-
-        <p>
-            🪽 Angel's Fashion World 🪽
-        </p>
-
-        <p>
-            Moda • Belleza • SKIN CARE • Accesorios
-        </p>
-
-        <p>
-            Hecho con cariño ✨
-        </p>
-
+        <p>🪽 Angel's Fashion World 🪽</p>
+        <p>Moda • Belleza • Cuidado personal</p>
     </footer>
 
 
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 
 </body>
-
 </html>
