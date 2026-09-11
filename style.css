@@ -1,13 +1,12 @@
-
-/* =====================================
+/* ========================================
+   CONFIGURACIÓN GENERAL
    ANGEL'S FASHION WORLD 🪽
-   ESTILOS PRINCIPALES
-===================================== */
+======================================== */
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -16,281 +15,189 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    color: #6b4055;
-    background: #fff0f6;
+    min-height: 100vh;
+
+    /* FONDO DE MODA */
+    background-image:
+        linear-gradient(
+            rgba(40, 65, 90, 0.35),
+            rgba(40, 65, 90, 0.35)
+        ),
+        url("fondo-moda.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    color: white;
 }
 
 
-/* =====================================
-   MENÚ SUPERIOR
-===================================== */
+/* ========================================
+   MENÚ
+======================================== */
 
 .menu {
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    padding: 18px 20px;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    gap: 25px;
 
-    gap: 8px;
-    padding: 18px 20px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
 
     position: sticky;
     top: 0;
     z-index: 1000;
 
-    box-shadow: 0 3px 15px rgba(180, 80, 130, 0.15);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
 }
 
 .menu a {
-    color: #c65387;
+    color: #6b4055;
     text-decoration: none;
-
-    font-size: 17px;
     font-weight: bold;
+    font-size: 16px;
 
-    padding: 12px 18px;
-    border-radius: 30px;
+    padding: 8px 12px;
+    border-radius: 20px;
 
     transition: 0.3s;
 }
 
 .menu a:hover {
-    background: #e9a4c4;
-    color: white;
+    background: #f5d8e5;
+    color: #b63f72;
+    transform: translateY(-2px);
 }
 
 
-/* =====================================
-   PORTADA
-===================================== */
+/* ========================================
+   ENCABEZADO
+======================================== */
 
-.portada {
-    min-height: 520px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+header {
     text-align: center;
+    padding: 80px 20px 50px;
 
-    position: relative;
-
-    background-image:
-        linear-gradient(
-            rgba(255, 205, 225, 0.68),
-            rgba(255, 225, 238, 0.72)
-        ),
-        url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1800&q=80");
-
-    background-size: cover;
-    background-position: center;
+    background: rgba(255, 255, 255, 0.12);
 }
 
-.contenido-portada {
-    padding: 40px 20px;
-}
-
-.contenido-portada h1 {
-    font-size: 80px;
-    color: #c94d86;
-
+header h1 {
+    font-size: 55px;
     margin-bottom: 15px;
 
+    color: white;
+
     text-shadow:
-        2px 2px 10px rgba(255, 255, 255, 0.9);
+        0 2px 8px rgba(0, 0, 0, 0.35),
+        0 0 15px rgba(255, 255, 255, 0.8);
 }
 
-.contenido-portada p {
-    font-size: 25px;
-    color: #70405a;
+header p {
+    font-size: 20px;
+    font-weight: bold;
+
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 
-/* =====================================
-   CATEGORÍAS 2 x 2
-===================================== */
+/* ========================================
+   TÍTULOS
+======================================== */
+
+h2 {
+    text-align: center;
+    font-size: 35px;
+    margin: 35px 0 30px;
+
+    color: white;
+
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+
+/* ========================================
+   CONTENEDOR DE CATEGORÍAS
+======================================== */
 
 .categorias {
-    max-width: 950px;
+    width: 90%;
+    max-width: 1100px;
 
-    margin: 0 auto;
-
-    padding: 70px 25px;
+    margin: 0 auto 60px;
 
     display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 
 
-/* =====================================
+/* ========================================
    TARJETAS
-===================================== */
+======================================== */
 
-.tarjeta {
+.card {
     background: rgba(255, 255, 255, 0.90);
 
-    border: 2px solid rgba(220, 120, 165, 0.35);
+    padding: 28px 20px;
 
     border-radius: 25px;
 
-    padding: 35px 25px;
-
     text-align: center;
 
     box-shadow:
-        0 8px 25px rgba(190, 80, 130, 0.15);
+        0 8px 25px rgba(0, 0, 0, 0.20);
 
     transition: 0.3s;
+
+    color: #6b4055;
 }
 
-.tarjeta:hover {
-    transform: translateY(-7px);
+.card:hover {
+    transform: translateY(-8px);
 
     box-shadow:
-        0 12px 30px rgba(190, 80, 130, 0.22);
+        0 12px 30px rgba(0, 0, 0, 0.28);
 }
 
-
-/* =====================================
-   ICONOS
-===================================== */
-
-.icono {
-    font-size: 55px;
-    margin-bottom: 10px;
-}
-
-
-/* =====================================
-   TÍTULOS
-===================================== */
-
-.tarjeta h2 {
-    color: #c65387;
-
-    font-size: 30px;
-
+.card h3 {
+    font-size: 23px;
     margin-bottom: 12px;
+
+    color: #c45180;
 }
 
-.tarjeta p {
-    font-size: 17px;
-
-    line-height: 1.6;
-
-    margin-bottom: 20px;
+.card p {
+    font-size: 15px;
+    margin-bottom: 18px;
+    color: #6b4055;
 }
 
 
-/* =====================================
+/* ========================================
    BOTONES
-===================================== */
+======================================== */
 
 .boton {
     display: inline-block;
 
-    background: #d85b91;
+    padding: 11px 22px;
 
-    color: white !important;
+    border-radius: 25px;
+
+    background: #d85b91;
+    color: white;
 
     text-decoration: none;
-
-    padding: 12px 24px;
-
-    border-radius: 30px;
 
     font-weight: bold;
 
     transition: 0.3s;
 }
 
-.boton:hover {
-    background: #b94376;
-
-    transform: scale(1.05);
-}
-
-
-/* =====================================
-   INFORMACIÓN
-===================================== */
-
-.informacion {
-    max-width: 850px;
-
-    margin: 30px auto;
-
-    padding: 55px 25px;
-
-    text-align: center;
-}
-
-.informacion h2 {
-    color: #c65387;
-
-    font-size: 32px;
-
-    margin-bottom: 15px;
-}
-
-.informacion p {
-    font-size: 18px;
-
-    line-height: 1.7;
-}
-
-
-/* =====================================
-   PIE DE PÁGINA
-===================================== */
-
-footer {
-    background: white;
-
-    text-align: center;
-
-    padding: 25px;
-
-    color: #6b4055;
-}
-
-
-/* =====================================
-   CELULARES
-===================================== */
-
-@media (max-width: 700px) {
-
-    .menu {
-        gap: 3px;
-        padding: 12px;
-    }
-
-    .menu a {
-        font-size: 14px;
-        padding: 9px 11px;
-    }
-
-    .contenido-portada h1 {
-        font-size: 55px;
-    }
-
-    .contenido-portada p {
-        font-size: 19px;
-    }
-
-    .categorias {
-        grid-template-columns: 1fr;
-        padding: 40px 20px;
-    }
-
-    .tarjeta {
-        width: 100%;
-    }
-}
+.b
