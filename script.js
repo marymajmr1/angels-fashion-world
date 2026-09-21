@@ -41,7 +41,7 @@ localStorage.getItem("carritoAngels")
 ) || [];
 
 // ========================================
-// ACTUALIZAR CONTADOR
+// ACTUALIZAR CARRITO
 // ========================================
 
 function actualizarCarrito() {
@@ -68,7 +68,7 @@ mostrarCarrito();
 }
 
 // ========================================
-// AGREGAR PRODUCTO
+// AGREGAR AL CARRITO
 // ========================================
 
 function agregarAlCarrito(nombre, precio, imagen) {
@@ -160,23 +160,28 @@ carrito.forEach(function (producto, indice) {
         document.createElement("div");
 
 
-    elemento.style.marginBottom = "15px";
-    elemento.style.padding = "12px";
-    elemento.style.borderRadius = "15px";
-    elemento.style.background = "#fff0f6";
+    elemento.className = "producto-carrito";
 
 
     elemento.innerHTML = `
 
-        <strong>${producto.nombre}</strong>
+        <img
+            src="${producto.imagen}"
+            alt="${producto.nombre}">
 
         <br>
 
+        <strong>${producto.nombre}</strong>
+
+        <br><br>
+
+        Precio:
         $${producto.precio.toLocaleString("es-CO")}
 
         <br>
 
-        Cantidad: ${producto.cantidad}
+        Cantidad:
+        ${producto.cantidad}
 
         <br><br>
 
@@ -265,6 +270,9 @@ actualizarCarrito();
 
 function comprarProducto(nombre, precio) {
 
+const numeroWhatsApp = "TU_NUMERO_AQUI";
+
+
 const mensaje =
     "Hola 🪽💕 Quiero comprar: " +
     nombre +
@@ -275,9 +283,6 @@ const mensaje =
 
 const mensajeCodificado =
     encodeURIComponent(mensaje);
-
-
-const numeroWhatsApp = "TU_NUMERO_AQUI";
 
 
 window.open(
@@ -303,6 +308,9 @@ if (carrito.length === 0) {
     return;
 
 }
+
+
+const numeroWhatsApp = "TU_NUMERO_AQUI";
 
 
 let mensaje =
@@ -336,9 +344,6 @@ carrito.forEach(function (producto) {
 mensaje +=
     "%0A💰 Total: $" +
     total.toLocaleString("es-CO");
-
-
-const numeroWhatsApp = "3170948192";
 
 
 window.open(
