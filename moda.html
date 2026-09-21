@@ -72,6 +72,7 @@
         margin-bottom: 8px !important;
     }
 
+
     /* ==============================
        BOTÓN VER
     ============================== */
@@ -105,14 +106,6 @@
         transform: scale(1.02);
     }
 
-    /* ==============================
-       CARRITO DEL MENÚ
-    ============================== */
-
-    .boton-carrito {
-        font-weight: bold;
-        white-space: nowrap;
-    }
 
     /* ==============================
        VENTANA DEL PRODUCTO
@@ -206,8 +199,9 @@
         margin-top: 15px;
     }
 
+
     /* ==============================
-       BOTONES COMPRAR Y CARRITO
+       BOTONES
     ============================== */
 
     .boton-carrito-producto,
@@ -234,8 +228,8 @@
     }
 
     .boton-carrito-producto:hover {
-        transform: scale(1.03);
         background: #edb1cc;
+        transform: scale(1.03);
     }
 
     .boton-comprar {
@@ -244,9 +238,75 @@
     }
 
     .boton-comprar:hover {
+        background: #b94778;
         transform: scale(1.03);
+    }
+
+
+    /* ==============================
+       CARRITO FLOTANTE 🛍️
+    ============================== */
+
+    .carrito-flotante {
+        position: fixed;
+
+        right: 20px;
+        bottom: 20px;
+
+        width: 62px;
+        height: 62px;
+
+        background: #d85b91;
+        color: white;
+
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 28px;
+
+        text-decoration: none;
+
+        box-shadow: 0 6px 20px rgba(190, 110, 150, 0.35);
+
+        z-index: 3000;
+
+        transition: 0.3s;
+    }
+
+    .carrito-flotante:hover {
+        transform: scale(1.08);
         background: #b94778;
     }
+
+    #contador-carrito {
+        position: absolute;
+
+        top: -5px;
+        right: -5px;
+
+        min-width: 22px;
+        height: 22px;
+
+        padding: 2px 5px;
+
+        background: white;
+        color: #b94f7e;
+
+        border-radius: 50%;
+
+        font-size: 12px;
+        font-weight: bold;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
 
     /* ==============================
        BOTÓN CERRAR
@@ -270,6 +330,35 @@
     .cerrar:hover {
         color: #d85b91;
     }
+
+
+    /* ==============================
+       CONTENIDO DEL CARRITO
+    ============================== */
+
+    .producto-carrito {
+        margin-bottom: 15px;
+
+        padding: 15px;
+
+        border-radius: 15px;
+
+        background: #fff0f6;
+
+        color: #68465a;
+    }
+
+    .producto-carrito img {
+        width: 80px;
+        height: 80px;
+
+        object-fit: cover;
+
+        border-radius: 12px;
+
+        margin-bottom: 8px;
+    }
+
 
     /* ==============================
        CELULAR
@@ -319,6 +408,16 @@
             margin: 5px auto;
         }
 
+        .carrito-flotante {
+            right: 15px;
+            bottom: 15px;
+
+            width: 58px;
+            height: 58px;
+
+            font-size: 25px;
+        }
+
     }
 
 </style>
@@ -342,10 +441,6 @@
     <a href="sobre-nosotros.html">Sobre nosotros</a>
 
     <a href="index.html#contactanos">Contáctanos</a>
-
-    <a href="#carrito" class="boton-carrito">
-        🛍️ Carrito (<span id="contador-carrito">0</span>)
-    </a>
 
 </nav>
 
@@ -568,25 +663,19 @@
 
 
 <!-- ==============================
-     DETALLE BLUSA 1
+     DETALLES
 ============================== -->
 
 <div id="blusa1" class="detalle">
-
     <div class="detalle-contenido">
 
         <a href="#" class="cerrar">×</a>
 
-        <img src="imagenes/blusas/Screenshot_2026-08-29-16-13-34-137_com.pinterest-edit.jpg"
-            alt="Linda camisa con escote">
+        <img src="imagenes/blusas/Screenshot_2026-08-29-16-13-34-137_com.pinterest-edit.jpg">
 
         <h2>Linda camisa con escote</h2>
 
-        <p>
-            Una blusa hermosa y femenina,
-            perfecta para darle un toque
-            especial a tu outfit.
-        </p>
+        <p>Una blusa hermosa y femenina, perfecta para darle un toque especial a tu outfit.</p>
 
         <p class="precio-detalle">$37.000</p>
 
@@ -601,27 +690,19 @@
         </button>
 
     </div>
-
 </div>
 
 
-<!-- DETALLE BLUSA 2 -->
-
 <div id="blusa2" class="detalle">
-
     <div class="detalle-contenido">
 
         <a href="#" class="cerrar">×</a>
 
-        <img src="imagenes/blusas/Screenshot_2026-08-29-16-15-01-447_com.pinterest-edit.jpg"
-            alt="Hermosa camisa con un escote al lado">
+        <img src="imagenes/blusas/Screenshot_2026-08-29-16-15-01-447_com.pinterest-edit.jpg">
 
         <h2>Hermosa camisa con un escote al lado</h2>
 
-        <p>
-            Un diseño moderno y delicado
-            para lucir increíble.
-        </p>
+        <p>Un diseño moderno y delicado para lucir increíble.</p>
 
         <p class="precio-detalle">$35.000</p>
 
@@ -636,27 +717,19 @@
         </button>
 
     </div>
-
 </div>
 
 
-<!-- DETALLE BLUSA 3 -->
-
 <div id="blusa3" class="detalle">
-
     <div class="detalle-contenido">
 
         <a href="#" class="cerrar">×</a>
 
-        <img src="imagenes/blusas/Screenshot_2026-08-29-16-24-45-663_com.pinterest-edit.jpg"
-            alt="Linda camisa rosada con un diseño hermoso">
+        <img src="imagenes/blusas/Screenshot_2026-08-29-16-24-45-663_com.pinterest-edit.jpg">
 
         <h2>Linda camisa rosada con un diseño hermoso</h2>
 
-        <p>
-            Un hermoso diseño rosado que
-            combina elegancia y dulzura.
-        </p>
+        <p>Un hermoso diseño rosado que combina elegancia y dulzura.</p>
 
         <p class="precio-detalle">$40.000</p>
 
@@ -671,27 +744,19 @@
         </button>
 
     </div>
-
 </div>
 
 
-<!-- DETALLE BLUSA 4 -->
-
 <div id="blusa4" class="detalle">
-
     <div class="detalle-contenido">
 
         <a href="#" class="cerrar">×</a>
 
-        <img src="imagenes/blusas/Screenshot_2026-08-29-16-26-20-243_com.pinterest-edit.jpg"
-            alt="Increíble camisa rosada con escote">
+        <img src="imagenes/blusas/Screenshot_2026-08-29-16-26-20-243_com.pinterest-edit.jpg">
 
         <h2>Increíble camisa rosada con escote</h2>
 
-        <p>
-            Una blusa delicada y moderna
-            para crear looks hermosos.
-        </p>
+        <p>Una blusa delicada y moderna para crear looks hermosos.</p>
 
         <p class="precio-detalle">$41.000</p>
 
@@ -706,27 +771,19 @@
         </button>
 
     </div>
-
 </div>
 
 
-<!-- DETALLE BLUSA 5 -->
-
 <div id="blusa5" class="detalle">
-
     <div class="detalle-contenido">
 
         <a href="#" class="cerrar">×</a>
 
-        <img src="imagenes/blusas/Screenshot_2026-08-29-16-27-15-807_com.pinterest-edit.jpg"
-            alt="Hermosa camisa de jean">
+        <img src="imagenes/blusas/Screenshot_2026-08-29-16-27-15-807_com.pinterest-edit.jpg">
 
         <h2>Hermosa camisa de jean</h2>
 
-        <p>
-            Una opción versátil y moderna
-            para combinar con tus outfits.
-        </p>
+        <p>Una opción versátil y moderna para combinar con tus outfits.</p>
 
         <p class="precio-detalle">$42.000</p>
 
@@ -741,27 +798,19 @@
         </button>
 
     </div>
-
 </div>
 
 
-<!-- DETALLE BLUSA 6 -->
-
 <div id="blusa6" class="detalle">
-
     <div class="detalle-contenido">
 
         <a href="#" class="cerrar">×</a>
 
-        <img src="imagenes/blusas/Screenshot_2026-08-29-16-28-54-074_com.pinterest-edit.jpg"
-            alt="Hermosa camisa elegante">
+        <img src="imagenes/blusas/Screenshot_2026-08-29-16-28-54-074_com.pinterest-edit.jpg">
 
         <h2>Hermosa camisa elegante</h2>
 
-        <p>
-            Un diseño elegante y femenino
-            para ocasiones especiales.
-        </p>
+        <p>Un diseño elegante y femenino para ocasiones especiales.</p>
 
         <p class="precio-detalle">$44.000</p>
 
@@ -776,27 +825,19 @@
         </button>
 
     </div>
-
 </div>
 
 
-<!-- DETALLE BLUSA 7 -->
-
 <div id="blusa7" class="detalle">
-
     <div class="detalle-contenido">
 
         <a href="#" class="cerrar">×</a>
 
-        <img src="imagenes/blusas/Screenshot_2026-08-29-16-31-17-936_com.pinterest-edit.jpg"
-            alt="Linda camisa con estampado azul">
+        <img src="imagenes/blusas/Screenshot_2026-08-29-16-31-17-936_com.pinterest-edit.jpg">
 
         <h2>Linda camisa con estampado azul</h2>
 
-        <p>
-            Una blusa con un estampado
-            hermoso y lleno de personalidad.
-        </p>
+        <p>Una blusa con un estampado hermoso y lleno de personalidad.</p>
 
         <p class="precio-detalle">$32.000</p>
 
@@ -811,27 +852,19 @@
         </button>
 
     </div>
-
 </div>
 
 
-<!-- DETALLE BLUSA 8 -->
-
 <div id="blusa8" class="detalle">
-
     <div class="detalle-contenido">
 
         <a href="#" class="cerrar">×</a>
 
-        <img src="imagenes/blusas/Screenshot_2026-08-29-16-33-53-613_com.pinterest-edit.jpg"
-            alt="Hermosa camisa negra para ti">
+        <img src="imagenes/blusas/Screenshot_2026-08-29-16-33-53-613_com.pinterest-edit.jpg">
 
         <h2>Hermosa camisa negra para ti</h2>
 
-        <p>
-            Una blusa negra elegante
-            y fácil de combinar.
-        </p>
+        <p>Una blusa negra elegante y fácil de combinar.</p>
 
         <p class="precio-detalle">$29.999</p>
 
@@ -846,27 +879,19 @@
         </button>
 
     </div>
-
 </div>
 
 
-<!-- DETALLE BLUSA 9 -->
-
 <div id="blusa9" class="detalle">
-
     <div class="detalle-contenido">
 
         <a href="#" class="cerrar">×</a>
 
-        <img src="imagenes/blusas/Screenshot_2026-08-29-16-35-02-866_com.pinterest-edit.jpg"
-            alt="Divina camisa elegante">
+        <img src="imagenes/blusas/Screenshot_2026-08-29-16-35-02-866_com.pinterest-edit.jpg">
 
         <h2>Divina camisa elegante</h2>
 
-        <p>
-            Un diseño hermoso y sofisticado
-            para completar tu outfit.
-        </p>
+        <p>Un diseño hermoso y sofisticado para completar tu outfit.</p>
 
         <p class="precio-detalle">$45.000</p>
 
@@ -881,7 +906,6 @@
         </button>
 
     </div>
-
 </div>
 
 
@@ -904,33 +928,4 @@
         </p>
 
         <button class="boton-comprar" onclick="comprarCarrito()">
-            💕 Comprar carrito
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- ==============================
-     PIE DE PÁGINA
-============================== -->
-
-<footer>
-
-    <p>🪽 Angel's Fashion World 🪽</p>
-
-    <p>
-        Moda, belleza y estilo hechos para ti. 💕
-    </p>
-
-</footer>
-
-
-<!-- ==============================
-     JAVASCRIPT
-============================== -->
-
-<script src="./script.js?v=5"></script>
-
-</body></html>
+            💕 Comprar carr
