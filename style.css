@@ -1,369 +1,220 @@
-/* ==================================================
-   CONFIGURACIÓN GENERAL
-   ANGEL'S FASHION WORLD 🪽
-================================================== */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: #fff5fa;
-    color: #68465a;
-    line-height: 1.7;
-}
-
-
-/* ==================================================
-   MENÚ
-================================================== */
-
-.menu {
-    width: 100%;
-    background: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 35px;
-    padding: 20px;
-    box-shadow: 0 3px 15px rgba(180, 120, 150, 0.15);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.menu a {
-    color: #70465c;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    transition: 0.3s;
-}
-
-.menu a:hover {
-    color: #d85b91;
-}
-
-
-/* ==================================================
-   PRESENTACIÓN
-================================================== */
-
-.presentacion {
-    text-align: center;
-    padding: 80px 20px 60px;
-    background: linear-gradient(
-        135deg,
-        #fff5fa,
-        #ffe6f1,
-        #fffafd
-    );
-}
-
-.alas {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.presentacion h1 {
-    font-family: Georgia, serif;
-    font-size: 58px;
-    color: #d85b91;
-    margin-bottom: 15px;
-}
-
-.presentacion p {
-    font-size: 19px;
-    color: #765568;
-    max-width: 700px;
-    margin: 8px auto;
-}
-
-.presentacion .frase {
-    font-size: 23px;
-    font-weight: bold;
-    color: #b94f7e;
-}
-
-
-/* ==================================================
-   CATEGORÍAS
-================================================== */
-
-.categorias {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 25px;
+<!DOCTYPE html>
+<html lang="es">
 
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.categoria {
-    background: #ffffff;
-    border-radius: 25px;
-    padding: 40px 30px;
-    text-align: center;
+    <title>Blusas | Angel's Fashion World</title>
 
-    box-shadow: 0 8px 25px rgba(190, 110, 150, 0.15);
+    <link rel="stylesheet" href="./style.css?v=4">
 
-    transition: transform 0.3s, box-shadow 0.3s;
-}
+    <!-- ESTILO EXCLUSIVO DE BLUSAS -->
+    <style>
 
-.categoria:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 30px rgba(190, 110, 150, 0.22);
-}
+        .productos {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 15px 60px;
 
-.emoji {
-    font-size: 42px;
-    margin-bottom: 10px;
-}
-
-.categoria h2 {
-    font-family: Georgia, serif;
-    color: #d85b91;
-    font-size: 32px;
-    margin-bottom: 12px;
-}
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
 
-.categoria p {
-    font-size: 17px;
-    margin-bottom: 25px;
-}
-
+        .producto {
+            background: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
 
-/* ==================================================
-   BOTONES
-================================================== */
+            box-shadow: 0 5px 18px rgba(190, 110, 150, 0.15);
 
-.boton {
-    display: inline-block;
-
-    background: #d85b91;
-    color: white;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-    padding: 12px 25px;
-    border-radius: 30px;
-
-    text-decoration: none;
-    font-weight: bold;
-
-    transition: 0.3s;
-}
-
-.boton:hover {
-    background: #b94778;
-    transform: scale(1.04);
-}
-
-
-/* ==================================================
-   PRODUCTOS — CATÁLOGO
-================================================== */
-
-.productos {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 40px 20px 60px;
-
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-}
-
-.producto {
-    background: #ffffff;
-    border-radius: 15px;
-    overflow: hidden;
-    text-align: left;
-
-    box-shadow: 0 5px 18px rgba(190, 110, 150, 0.14);
-
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.producto:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(190, 110, 150, 0.20);
-}
-
-
-/* IMÁGENES PEQUEÑAS */
-
-.producto img {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
-    display: block;
-}
-
-
-/* INFORMACIÓN DEL PRODUCTO */
-
-.producto h2 {
-    font-family: Georgia, serif;
-    color: #d85b91;
-    font-size: 18px;
-    line-height: 1.3;
-    padding: 13px 14px 5px;
-}
-
-.producto p {
-    font-size: 13px;
-    line-height: 1.5;
-    padding: 0 14px;
-    color: #765568;
-}
-
-.producto .precio {
-    font-size: 17px;
-    font-weight: bold;
-    color: #b94f7e;
-    padding: 10px 14px 15px;
-}
-
-
-/* ==================================================
-   SOBRE NOSOTROS EN INICIO
-================================================== */
-
-.sobre-inicio {
-    text-align: center;
-    padding: 80px 25px;
-
-    background: #ffeaf3;
-}
-
-.sobre-inicio h2 {
-    font-family: Georgia, serif;
-    font-size: 38px;
-    color: #d85b91;
-    margin-bottom: 20px;
-}
-
-.sobre-inicio p {
-    max-width: 850px;
-    margin: 0 auto 30px;
-    font-size: 18px;
-}
-
-
-/* ==================================================
-   CONTACTO
-================================================== */
-
-.contacto {
-    text-align: center;
-    padding: 70px 20px;
-    background: #fffafd;
-}
-
-.contacto h2 {
-    font-family: Georgia, serif;
-    font-size: 36px;
-    color: #d85b91;
-    margin-bottom: 15px;
-}
-
-.contacto p {
-    font-size: 18px;
-    margin-bottom: 25px;
-}
-
-
-/* ==================================================
-   PIE DE PÁGINA
-================================================== */
-
-footer {
-    text-align: center;
-    background: #70465c;
-    color: white;
-    padding: 30px 20px;
-}
-
-footer p {
-    margin: 5px;
-}
-
-
-/* ==================================================
-   TABLETS Y CELULARES
-================================================== */
-
-@media (max-width: 900px) {
-
-    .menu {
-        gap: 12px;
-        flex-wrap: wrap;
-        padding: 15px 10px;
-    }
-
-    .menu a {
-        font-size: 14px;
-    }
-
-    .presentacion h1 {
-        font-size: 45px;
-    }
-
-    .categorias {
-        grid-template-columns: 1fr;
-    }
-
-    .productos {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        padding: 35px 15px 50px;
-    }
-
-    .producto img {
-        height: 210px;
-    }
-}
-
-
-/* ==================================================
-   CELULARES PEQUEÑOS
-================================================== */
-
-@media (max-width: 500px) {
-
-    .productos {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        padding: 25px 10px 40px;
-    }
-
-    .producto {
-        border-radius: 12px;
-    }
-
-    .producto img {
-        height: 190px;
-    }
-
-    .producto h2 {
-        font-size: 16px;
-        padding: 10px 10px 4px;
-    }
-
-    .producto p {
-        font-size: 12px;
-        padding: 0 10px;
-    }
-
-    .producto .precio {
-        font-size: 16px;
-        padding: 8px 10px 12px;
-    }
-}
+        .producto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(190, 110, 150, 0.22);
+        }
+
+        .producto img {
+            width: 100%;
+            height: 220px;
+
+            object-fit: cover;
+            display: block;
+        }
+
+        .producto h2 {
+            font-family: Georgia, serif;
+            color: #d85b91;
+
+            font-size: 18px;
+
+            padding: 12px 12px 5px;
+            margin: 0;
+        }
+
+        .producto p {
+            color: #68465a;
+
+            font-size: 13px;
+            line-height: 1.4;
+
+            padding: 0 12px;
+            margin: 5px 0 10px;
+        }
+
+        .producto .precio {
+            color: #b94f7e;
+
+            font-size: 17px;
+            font-weight: bold;
+
+            padding: 5px 12px 15px;
+            margin: 0;
+        }
+
+        /* CELULARES */
+
+        @media (max-width: 700px) {
+
+            .productos {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+
+                padding: 25px 10px 50px;
+            }
+
+            .producto img {
+                height: 180px;
+            }
+
+            .producto h2 {
+                font-size: 16px;
+            }
+
+            .producto p {
+                font-size: 12px;
+            }
+
+            .producto .precio {
+                font-size: 15px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- MENÚ -->
+    <nav class="menu">
+
+        <a href="index.html">Inicio</a>
+
+        <a href="moda.html">Moda</a>
+
+        <a href="belleza.html">Belleza</a>
+
+        <a href="skincare.html">SKIN CARE</a>
+
+        <a href="accesorios.html">Accesorios</a>
+
+        <a href="sobre-nosotros.html">Sobre nosotros</a>
+
+        <a href="index.html#contactanos">Contáctanos</a>
+
+    </nav>
+
+
+    <!-- PRESENTACIÓN -->
+    <header class="presentacion">
+
+        <div class="alas">🪽</div>
+
+        <h1>Blusas</h1>
+
+        <p>
+            Descubre nuestras blusas y encuentra ese estilo
+            especial que te representa. 💕
+        </p>
+
+    </header>
+
+
+    <!-- PRODUCTOS -->
+    <section class="productos">
+
+
+        <!-- BLUSA 1 -->
+        <article class="producto">
+
+            <img
+                src="imagenes/blusas/Screenshot_2026-08-29-16-13-34-137_com.pinterest-edit.jpg"
+                alt="Linda camisa con escote">
+
+            <h2>Linda camisa con escote</h2>
+
+            <p>
+                Una blusa hermosa y femenina, perfecta para
+                darle un toque especial a tu outfit.
+            </p>
+
+            <p class="precio">$37.000</p>
+
+        </article>
+
+
+        <!-- BLUSA 2 -->
+        <article class="producto">
+
+            <img
+                src="imagenes/blusas/Screenshot_2026-08-29-16-15-01-447_com.pinterest-edit.jpg"
+                alt="Hermosa camisa con un escote al lado">
+
+            <h2>Hermosa camisa con un escote al lado</h2>
+
+            <p>
+                Un diseño moderno y delicado para lucir
+                increíble en cualquier ocasión.
+            </p>
+
+            <p class="precio">$35.000</p>
+
+        </article>
+
+
+        <!-- BLUSA 3 -->
+        <article class="producto">
+
+            <img
+                src="imagenes/blusas/Screenshot_2026-08-29-16-24-45-663_com.pinteresr-edit.jpg"
+                alt="Linda camisa rosada con un diseño hermoso">
+
+            <h2>Linda camisa rosada con un diseño hermoso</h2>
+
+            <p>
+                Un hermoso diseño rosado que combina
+                elegancia y un estilo dulce.
+            </p>
+
+            <p class="precio">$40.000</p>
+
+        </article>
+
+
+        <!-- BLUSA 4 -->
+        <article class="producto">
+
+            <img
+                src="imagenes/blusas/Screenshot_2026-08-29-16-26-20-243_com.pinterest-edit.jpg"
+                alt="Increíble camisa rosada con escote">
+
+            <h2>Increíble camisa rosada con escote</h2>
+
+            <p>
+                Una blusa delicada y moderna, ideal para
+                crear looks llenos
