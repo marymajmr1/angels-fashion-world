@@ -167,6 +167,72 @@ body {
 
 
 /* ==================================================
+   PRODUCTOS — CATÁLOGO
+================================================== */
+
+.productos {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.producto {
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: left;
+
+    box-shadow: 0 5px 18px rgba(190, 110, 150, 0.14);
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.producto:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(190, 110, 150, 0.20);
+}
+
+
+/* IMÁGENES PEQUEÑAS */
+
+.producto img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* INFORMACIÓN DEL PRODUCTO */
+
+.producto h2 {
+    font-family: Georgia, serif;
+    color: #d85b91;
+    font-size: 18px;
+    line-height: 1.3;
+    padding: 13px 14px 5px;
+}
+
+.producto p {
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 0 14px;
+    color: #765568;
+}
+
+.producto .precio {
+    font-size: 17px;
+    font-weight: bold;
+    color: #b94f7e;
+    padding: 10px 14px 15px;
+}
+
+
+/* ==================================================
    SOBRE NOSOTROS EN INICIO
 ================================================== */
 
@@ -231,10 +297,10 @@ footer p {
 
 
 /* ==================================================
-   DISEÑO PARA CELULARES
+   TABLETS Y CELULARES
 ================================================== */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
     .menu {
         gap: 12px;
@@ -252,5 +318,52 @@ footer p {
 
     .categorias {
         grid-template-columns: 1fr;
+    }
+
+    .productos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 35px 15px 50px;
+    }
+
+    .producto img {
+        height: 210px;
+    }
+}
+
+
+/* ==================================================
+   CELULARES PEQUEÑOS
+================================================== */
+
+@media (max-width: 500px) {
+
+    .productos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 25px 10px 40px;
+    }
+
+    .producto {
+        border-radius: 12px;
+    }
+
+    .producto img {
+        height: 190px;
+    }
+
+    .producto h2 {
+        font-size: 16px;
+        padding: 10px 10px 4px;
+    }
+
+    .producto p {
+        font-size: 12px;
+        padding: 0 10px;
+    }
+
+    .producto .precio {
+        font-size: 16px;
+        padding: 8px 10px 12px;
     }
 }
