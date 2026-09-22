@@ -1,5 +1,4 @@
 /* ==================================================
-   CONFIGURACIÓN GENERAL
    ANGEL'S FASHION WORLD 🪽
 ================================================== */
 
@@ -17,7 +16,7 @@ body {
     font-family: Arial, sans-serif;
     background: #fff5fa;
     color: #68465a;
-    line-height: 1.7;
+    line-height: 1.6;
 }
 
 
@@ -31,19 +30,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 35px;
-    padding: 20px;
+    gap: 30px;
+    padding: 18px 15px;
     box-shadow: 0 3px 15px rgba(180, 120, 150, 0.15);
     position: sticky;
     top: 0;
     z-index: 1000;
+    flex-wrap: wrap;
 }
 
 .menu a {
     color: #70465c;
     text-decoration: none;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 15px;
     transition: 0.3s;
 }
 
@@ -58,7 +58,7 @@ body {
 
 .presentacion {
     text-align: center;
-    padding: 80px 20px 60px;
+    padding: 65px 20px 50px;
     background: linear-gradient(
         135deg,
         #fff5fa,
@@ -68,28 +68,45 @@ body {
 }
 
 .alas {
-    font-size: 32px;
-    margin-bottom: 10px;
+    font-size: 34px;
+    margin-bottom: 8px;
 }
 
 .presentacion h1 {
     font-family: Georgia, serif;
     font-size: 58px;
     color: #d85b91;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .presentacion p {
     font-size: 19px;
     color: #765568;
     max-width: 700px;
-    margin: 8px auto;
+    margin: auto;
 }
 
-.presentacion .frase {
-    font-size: 23px;
+
+/* ==================================================
+   BOTÓN ROSA
+================================================== */
+
+.boton {
+    display: inline-block;
+    background: #d85b91;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
     font-weight: bold;
-    color: #b94f7e;
+    margin-top: 20px;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(216, 91, 145, 0.25);
+}
+
+.boton:hover {
+    background: #b94778;
+    transform: scale(1.04);
 }
 
 
@@ -98,20 +115,22 @@ body {
 ================================================== */
 
 .categorias {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 60px 25px;
+    padding: 50px 25px;
 
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 
 .categoria {
     background: #ffffff;
     border-radius: 25px;
-    padding: 40px 30px;
+    padding: 30px 22px;
     text-align: center;
+    text-decoration: none;
+    color: #68465a;
 
     box-shadow: 0 8px 25px rgba(190, 110, 150, 0.15);
 
@@ -123,123 +142,234 @@ body {
     box-shadow: 0 12px 30px rgba(190, 110, 150, 0.22);
 }
 
-.emoji {
+.categoria span {
+    display: block;
     font-size: 42px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .categoria h2 {
     font-family: Georgia, serif;
     color: #d85b91;
-    font-size: 32px;
-    margin-bottom: 12px;
+    font-size: 27px;
+    margin-bottom: 8px;
 }
 
 .categoria p {
-    font-size: 17px;
-    margin-bottom: 25px;
+    font-size: 15px;
+    color: #765568;
 }
 
 
 /* ==================================================
-   BOTONES
-================================================== */
-
-.boton {
-    display: inline-block;
-
-    background: #d85b91;
-    color: white;
-
-    padding: 12px 25px;
-    border-radius: 30px;
-
-    text-decoration: none;
-    font-weight: bold;
-
-    transition: 0.3s;
-}
-
-.boton:hover {
-    background: #b94778;
-    transform: scale(1.04);
-}
-
-
-/* ==================================================
-   PRODUCTOS — CATÁLOGO
+   PRODUCTOS
 ================================================== */
 
 .productos {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px 60px;
-
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
+    padding: 40px 20px 70px;
 }
+
+.productos > h2 {
+    text-align: center;
+    font-family: Georgia, serif;
+    color: #d85b91;
+    font-size: 38px;
+    margin-bottom: 30px;
+}
+
+
+/* ==================================================
+   CUADRÍCULA DE PRODUCTOS
+================================================== */
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* ==================================================
+   TARJETA
+================================================== */
 
 .producto {
     background: #ffffff;
-    border-radius: 15px;
+    border-radius: 18px;
     overflow: hidden;
     text-align: left;
 
     box-shadow: 0 5px 18px rgba(190, 110, 150, 0.14);
 
     transition: transform 0.3s, box-shadow 0.3s;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .producto:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(190, 110, 150, 0.20);
 }
 
 
-/* IMÁGENES PEQUEÑAS */
+/* ==================================================
+   IMÁGENES
+================================================== */
 
 .producto img {
     width: 100%;
-    height: 230px;
+    height: 300px;
     object-fit: cover;
     display: block;
 }
 
 
-/* INFORMACIÓN DEL PRODUCTO */
+/* ==================================================
+   INFORMACIÓN
+================================================== */
 
-.producto h2 {
+.producto h3 {
     font-family: Georgia, serif;
     color: #d85b91;
-    font-size: 18px;
+    font-size: 19px;
     line-height: 1.3;
-    padding: 13px 14px 5px;
+    padding: 15px 16px 5px;
 }
 
 .producto p {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.5;
-    padding: 0 14px;
+    padding: 0 16px;
     color: #765568;
+    flex-grow: 1;
 }
 
-.producto .precio {
-    font-size: 17px;
-    font-weight: bold;
+.producto strong {
+    display: block;
+    font-size: 18px;
     color: #b94f7e;
-    padding: 10px 14px 15px;
+    padding: 12px 16px;
 }
 
 
 /* ==================================================
-   SOBRE NOSOTROS EN INICIO
+   BOTONES DE PRODUCTO
+================================================== */
+
+.producto button {
+    border: none;
+    margin: 5px 14px;
+    padding: 11px;
+    border-radius: 25px;
+    background: #d85b91;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.producto button:hover {
+    background: #b94778;
+    transform: scale(1.02);
+}
+
+.producto button:last-child {
+    margin-bottom: 18px;
+}
+
+
+/* ==================================================
+   CATEGORÍAS SIN PRODUCTOS
+================================================== */
+
+.categoria-vacia {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 45px 25px;
+
+    background: white;
+    border-radius: 25px;
+    text-align: center;
+
+    box-shadow: 0 6px 20px rgba(190, 110, 150, 0.12);
+}
+
+.categoria-vacia h2 {
+    font-family: Georgia, serif;
+    color: #d85b91;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.categoria-vacia p {
+    color: #765568;
+}
+
+
+/* ==================================================
+   CARRITO FLOTANTE
+================================================== */
+
+.carrito-flotante {
+    position: fixed;
+    right: 18px;
+    bottom: 20px;
+    z-index: 2000;
+}
+
+.boton-ver-carrito {
+    border: none;
+    background: #d85b91;
+    color: white;
+
+    padding: 14px 20px;
+    border-radius: 35px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 6px 20px rgba(190, 80, 130, 0.30);
+
+    transition: 0.3s;
+}
+
+.boton-ver-carrito:hover {
+    background: #b94778;
+    transform: translateY(-3px);
+}
+
+#contador-carrito {
+    background: white;
+    color: #d85b91;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 24px;
+    height: 24px;
+
+    padding: 2px 7px;
+    margin-left: 5px;
+
+    border-radius: 50%;
+    font-size: 13px;
+}
+
+
+/* ==================================================
+   SOBRE NOSOTROS
 ================================================== */
 
 .sobre-inicio {
     text-align: center;
     padding: 80px 25px;
-
     background: #ffeaf3;
 }
 
@@ -297,14 +427,13 @@ footer p {
 
 
 /* ==================================================
-   TABLETS Y CELULARES
+   TABLETS
 ================================================== */
 
 @media (max-width: 900px) {
 
     .menu {
         gap: 12px;
-        flex-wrap: wrap;
         padding: 15px 10px;
     }
 
@@ -317,44 +446,66 @@ footer p {
     }
 
     .categorias {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .productos {
+    .productos-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        padding: 35px 15px 50px;
     }
 
     .producto img {
-        height: 210px;
+        height: 260px;
     }
 }
 
 
 /* ==================================================
-   CELULARES PEQUEÑOS
+   CELULARES
 ================================================== */
 
 @media (max-width: 500px) {
 
-    .productos {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        padding: 25px 10px 40px;
+    .menu {
+        gap: 8px;
     }
 
-    .producto {
-        border-radius: 12px;
+    .menu a {
+        font-size: 12px;
+    }
+
+    .presentacion {
+        padding: 45px 15px;
+    }
+
+    .presentacion h1 {
+        font-size: 40px;
+    }
+
+    .presentacion p {
+        font-size: 16px;
+    }
+
+    .categorias {
+        grid-template-columns: 1fr;
+        padding: 35px 15px;
+    }
+
+    .productos {
+        padding: 30px 10px 60px;
+    }
+
+    .productos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
     }
 
     .producto img {
-        height: 190px;
+        height: 210px;
     }
 
-    .producto h2 {
+    .producto h3 {
         font-size: 16px;
-        padding: 10px 10px 4px;
+        padding: 12px 10px 5px;
     }
 
     .producto p {
@@ -362,8 +513,19 @@ footer p {
         padding: 0 10px;
     }
 
-    .producto .precio {
+    .producto strong {
         font-size: 16px;
-        padding: 8px 10px 12px;
+        padding: 10px;
+    }
+
+    .producto button {
+        margin: 4px 8px;
+        font-size: 12px;
+        padding: 9px 5px;
+    }
+
+    .carrito-flotante {
+        right: 12px;
+        bottom: 15px;
     }
 }
