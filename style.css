@@ -33,10 +33,13 @@ body {
     align-items: center;
     gap: 30px;
     padding: 18px 15px;
+
     box-shadow: 0 3px 15px rgba(201, 162, 78, 0.15);
+
     position: sticky;
     top: 0;
     z-index: 1000;
+
     flex-wrap: wrap;
 }
 
@@ -88,6 +91,10 @@ body {
     margin: auto;
 }
 
+.frase {
+    margin-top: 5px;
+}
+
 
 /* ==================================================
    BOTÓN DORADO
@@ -95,14 +102,20 @@ body {
 
 .boton {
     display: inline-block;
+
     background: #c9a24e;
     color: white;
+
     padding: 12px 28px;
     border-radius: 30px;
+
     text-decoration: none;
     font-weight: bold;
+
     margin-top: 20px;
+
     transition: 0.3s;
+
     box-shadow: 0 5px 15px rgba(201, 162, 78, 0.25);
 }
 
@@ -113,7 +126,7 @@ body {
 
 
 /* ==================================================
-   CATEGORÍAS
+   CATEGORÍAS DEL INICIO
 ================================================== */
 
 .categorias {
@@ -128,10 +141,15 @@ body {
 
 .categoria {
     background: #ffffff;
+
+    border: 1px solid rgba(201, 162, 78, 0.35);
     border-radius: 25px;
+
     padding: 30px 22px;
+
     text-align: center;
     text-decoration: none;
+
     color: #4a4035;
 
     box-shadow: 0 8px 25px rgba(201, 162, 78, 0.13);
@@ -141,10 +159,13 @@ body {
 
 .categoria:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 30px rgba(201, 162, 78, 0.22);
+
+    box-shadow:
+        0 12px 30px rgba(201, 162, 78, 0.22);
 }
 
-.categoria span {
+.categoria span,
+.categoria .emoji {
     display: block;
     font-size: 42px;
     margin-bottom: 8px;
@@ -152,7 +173,9 @@ body {
 
 .categoria h2 {
     font-family: Georgia, serif;
+
     color: #c9a24e;
+
     font-size: 27px;
     margin-bottom: 8px;
 }
@@ -160,6 +183,128 @@ body {
 .categoria p {
     font-size: 15px;
     color: #665b4d;
+}
+
+
+/* ==================================================
+   CATEGORÍAS DE MODA 👗
+================================================== */
+
+.categorias-moda {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    padding: 55px 25px 75px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* TARJETA DE CATEGORÍA */
+
+.boton-categoria {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 190px;
+
+    padding: 28px 20px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(201, 162, 78, 0.45);
+
+    border-radius: 25px;
+
+    text-decoration: none;
+
+    color: #4a4035;
+
+    box-shadow:
+        0 8px 25px rgba(201, 162, 78, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* DETALLE DORADO */
+
+.boton-categoria::before {
+    content: "";
+
+    position: absolute;
+
+    top: 12px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 45px;
+    height: 2px;
+
+    background: #c9a24e;
+
+    border-radius: 10px;
+}
+
+
+/* EMOJI */
+
+.boton-categoria span {
+    font-size: 45px;
+    margin-bottom: 10px;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* NOMBRE */
+
+.boton-categoria strong {
+    font-family: Georgia, serif;
+
+    font-size: 24px;
+
+    color: #c9a24e;
+
+    margin-bottom: 6px;
+}
+
+
+/* DESCRIPCIÓN */
+
+.boton-categoria small {
+    font-size: 14px;
+
+    color: #665b4d;
+
+    text-align: center;
+}
+
+
+/* HOVER */
+
+.boton-categoria:hover {
+    transform: translateY(-7px);
+
+    border-color: #c9a24e;
+
+    box-shadow:
+        0 14px 32px rgba(201, 162, 78, 0.22);
+}
+
+.boton-categoria:hover span {
+    transform: scale(1.08);
 }
 
 
@@ -175,9 +320,13 @@ body {
 
 .productos > h2 {
     text-align: center;
+
     font-family: Georgia, serif;
+
     color: #c9a24e;
+
     font-size: 38px;
+
     margin-bottom: 30px;
 }
 
@@ -188,24 +337,34 @@ body {
 
 .productos-grid {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 25px;
 }
 
 
 /* ==================================================
-   TARJETA
+   TARJETA DE PRODUCTO
 ================================================== */
 
 .producto {
     background: #ffffff;
+
+    border: 1px solid rgba(201, 162, 78, 0.25);
+
     border-radius: 18px;
+
     overflow: hidden;
+
     text-align: left;
 
-    box-shadow: 0 5px 18px rgba(201, 162, 78, 0.14);
+    box-shadow:
+        0 5px 18px rgba(201, 162, 78, 0.14);
 
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
 
     display: flex;
     flex-direction: column;
@@ -213,7 +372,9 @@ body {
 
 .producto:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(201, 162, 78, 0.20);
+
+    box-shadow:
+        0 10px 25px rgba(201, 162, 78, 0.20);
 }
 
 
@@ -224,7 +385,9 @@ body {
 .producto img {
     width: 100%;
     height: 300px;
+
     object-fit: cover;
+
     display: block;
 }
 
@@ -235,24 +398,35 @@ body {
 
 .producto h3 {
     font-family: Georgia, serif;
+
     color: #a98232;
+
     font-size: 19px;
+
     line-height: 1.3;
+
     padding: 15px 16px 5px;
 }
 
 .producto p {
     font-size: 14px;
+
     line-height: 1.5;
+
     padding: 0 16px;
+
     color: #665b4d;
+
     flex-grow: 1;
 }
 
 .producto strong {
     display: block;
+
     font-size: 18px;
+
     color: #a98232;
+
     padding: 12px 16px;
 }
 
@@ -263,19 +437,29 @@ body {
 
 .producto button {
     border: none;
+
     margin: 5px 14px;
+
     padding: 11px;
+
     border-radius: 25px;
+
     background: #c9a24e;
+
     color: white;
+
     font-weight: bold;
+
     font-size: 14px;
+
     cursor: pointer;
+
     transition: 0.3s;
 }
 
 .producto button:hover {
     background: #a98232;
+
     transform: scale(1.02);
 }
 
@@ -290,20 +474,30 @@ body {
 
 .categoria-vacia {
     max-width: 900px;
+
     margin: 30px auto;
+
     padding: 45px 25px;
 
     background: white;
+
+    border: 1px solid rgba(201, 162, 78, 0.3);
+
     border-radius: 25px;
+
     text-align: center;
 
-    box-shadow: 0 6px 20px rgba(201, 162, 78, 0.12);
+    box-shadow:
+        0 6px 20px rgba(201, 162, 78, 0.12);
 }
 
 .categoria-vacia h2 {
     font-family: Georgia, serif;
+
     color: #c9a24e;
+
     font-size: 30px;
+
     margin-bottom: 10px;
 }
 
@@ -313,44 +507,54 @@ body {
 
 
 /* ==================================================
-   CARRITO FLOTANTE
+   CARRITO FLOTANTE 🛒
 ================================================== */
 
 .carrito-flotante {
     position: fixed;
+
     right: 18px;
     bottom: 20px;
+
     z-index: 2000;
 }
 
 .boton-ver-carrito {
     border: none;
+
     background: #c9a24e;
+
     color: white;
 
     padding: 14px 20px;
+
     border-radius: 35px;
 
     font-size: 15px;
+
     font-weight: bold;
 
     cursor: pointer;
 
-    box-shadow: 0 6px 20px rgba(201, 162, 78, 0.30);
+    box-shadow:
+        0 6px 20px rgba(201, 162, 78, 0.30);
 
     transition: 0.3s;
 }
 
 .boton-ver-carrito:hover {
     background: #a98232;
+
     transform: translateY(-3px);
 }
 
 #contador-carrito {
     background: white;
+
     color: #c9a24e;
 
     display: inline-flex;
+
     justify-content: center;
     align-items: center;
 
@@ -358,9 +562,11 @@ body {
     height: 24px;
 
     padding: 2px 7px;
+
     margin-left: 5px;
 
     border-radius: 50%;
+
     font-size: 13px;
 }
 
@@ -371,20 +577,29 @@ body {
 
 .sobre-inicio {
     text-align: center;
+
     padding: 80px 25px;
+
     background: #fdf8ed;
+
+    border-top: 1px solid rgba(201, 162, 78, 0.2);
 }
 
 .sobre-inicio h2 {
     font-family: Georgia, serif;
+
     font-size: 38px;
+
     color: #c9a24e;
+
     margin-bottom: 20px;
 }
 
 .sobre-inicio p {
     max-width: 850px;
+
     margin: 0 auto 30px;
+
     font-size: 18px;
 }
 
@@ -395,19 +610,25 @@ body {
 
 .contacto {
     text-align: center;
+
     padding: 70px 20px;
+
     background: #ffffff;
 }
 
 .contacto h2 {
     font-family: Georgia, serif;
+
     font-size: 36px;
+
     color: #c9a24e;
+
     margin-bottom: 15px;
 }
 
 .contacto p {
     font-size: 18px;
+
     margin-bottom: 25px;
 }
 
@@ -418,8 +639,11 @@ body {
 
 footer {
     text-align: center;
+
     background: #4a4035;
+
     color: white;
+
     padding: 30px 20px;
 }
 
@@ -436,6 +660,7 @@ footer p {
 
     .menu {
         gap: 12px;
+
         padding: 15px 10px;
     }
 
@@ -448,6 +673,10 @@ footer p {
     }
 
     .categorias {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .categorias-moda {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -489,7 +718,26 @@ footer p {
 
     .categorias {
         grid-template-columns: 1fr;
+
         padding: 35px 15px;
+    }
+
+    .categorias-moda {
+        grid-template-columns: 1fr;
+
+        padding: 35px 15px 60px;
+
+        gap: 18px;
+    }
+
+    .boton-categoria {
+        min-height: 170px;
+
+        padding: 25px 15px;
+    }
+
+    .boton-categoria strong {
+        font-size: 22px;
     }
 
     .productos {
@@ -498,6 +746,7 @@ footer p {
 
     .productos-grid {
         grid-template-columns: repeat(2, 1fr);
+
         gap: 12px;
     }
 
@@ -507,27 +756,33 @@ footer p {
 
     .producto h3 {
         font-size: 16px;
+
         padding: 12px 10px 5px;
     }
 
     .producto p {
         font-size: 12px;
+
         padding: 0 10px;
     }
 
     .producto strong {
         font-size: 16px;
+
         padding: 10px;
     }
 
     .producto button {
         margin: 4px 8px;
+
         font-size: 12px;
+
         padding: 9px 5px;
     }
 
     .carrito-flotante {
         right: 12px;
+
         bottom: 15px;
     }
 }
