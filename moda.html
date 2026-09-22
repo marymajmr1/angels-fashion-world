@@ -7,126 +7,189 @@
 
     <title>Moda | Angel's Fashion World</title>
 
-    <link rel="stylesheet" href="./style.css?v=12">
+    <link rel="stylesheet" href="./style.css?v=14">
 </head>
 
 <body>
 
-    <!-- MENÚ -->
-    <nav class="menu">
-        <a href="index.html">Inicio</a>
-        <a href="moda.html">Moda</a>
-        <a href="belleza.html">Belleza</a>
-        <a href="skincare.html">Skin care</a>
-        <a href="accesorios.html">Accesorios</a>
-        <a href="sobre-nosotros.html">Sobre nosotros</a>
-        <a href="index.html#contactanos">Contáctanos</a>
-    </nav>
+<!-- ========================================
+     MENÚ
+======================================== -->
+
+<nav class="menu">
+
+    <a href="index.html">Inicio</a>
+
+    <a href="moda.html">Moda</a>
+
+    <a href="belleza.html">Belleza</a>
+
+    <a href="skincare.html">Skin care</a>
+
+    <a href="accesorios.html">Accesorios</a>
+
+    <a href="sobre-nosotros.html">Sobre nosotros</a>
+
+    <a href="index.html#contactanos">Contáctanos</a>
+
+</nav>
 
 
-    <!-- PRESENTACIÓN -->
-    <header class="presentacion">
+<!-- ========================================
+     ENCABEZADO
+======================================== -->
 
-        <div class="alas">🪽</div>
+<header class="presentacion">
 
-        <h1>Moda</h1>
+    <div class="alas">🪽</div>
 
-        <p>
-            Descubre tu estilo en Angel's Fashion World ✨
-        </p>
+    <h1>Moda</h1>
 
-        <p class="frase">
-            Elige una categoría y descubre nuestros productos 🤍
-        </p>
+    <p class="frase">
+        Descubre tu estilo en Angel's Fashion World ✨
+    </p>
 
-    </header>
+    <p>
+        Explora nuestras categorías y encuentra prendas
+        para cada ocasión. 🤍
+    </p>
 
-
-    <!-- CATEGORÍAS -->
-    <main>
-
-        <section class="categorias-moda">
-
-            <a href="blusas.html" class="boton-categoria">
-                <span>👚</span>
-                <strong>Blusas</strong>
-                <small>Descubre nuestras blusas ✨</small>
-            </a>
+</header>
 
 
-            <a href="pantalones.html" class="boton-categoria">
-                <span>👖</span>
-                <strong>Pantalones</strong>
-                <small>Encuentra tu estilo ✨</small>
-            </a>
+<!-- ========================================
+     CATEGORÍAS DE MODA
+======================================== -->
+
+<main class="categorias-moda">
 
 
-            <a href="vestidos-cortos.html" class="boton-categoria">
-                <span>👗</span>
-                <strong>Vestidos cortos</strong>
-                <small>Looks lindos y especiales ✨</small>
-            </a>
+    <!-- BLUSAS -->
+
+    <a class="boton-categoria" href="blusas.html">
+
+        <div class="emoji">👚</div>
+
+        <h2>Blusas</h2>
+
+    </a>
 
 
-            <a href="vestidos-largos.html" class="boton-categoria">
-                <span>👗</span>
-                <strong>Vestidos largos</strong>
-                <small>Elegancia en cada detalle ✨</small>
-            </a>
+    <!-- PANTALONES -->
+
+    <a class="boton-categoria" href="pantalones.html">
+
+        <div class="emoji">👖</div>
+
+        <h2>Pantalones</h2>
+
+    </a>
 
 
-            <a href="conjuntos.html" class="boton-categoria">
-                <span>🎀</span>
-                <strong>Conjuntos</strong>
-                <small>Looks completos para ti ✨</small>
-            </a>
+    <!-- VESTIDOS CORTOS -->
+
+    <a class="boton-categoria" href="vestidos-cortos.html">
+
+        <div class="emoji">👗</div>
+
+        <h2>Vestidos cortos</h2>
+
+    </a>
 
 
-            <a href="faldas-cortas.html" class="boton-categoria">
-                <span>👗</span>
-                <strong>Faldas cortas</strong>
-                <small>Diseños lindos y únicos ✨</small>
-            </a>
+    <!-- VESTIDOS LARGOS -->
+
+    <a class="boton-categoria" href="vestidos-largos.html">
+
+        <div class="emoji">👗</div>
+
+        <h2>Vestidos largos</h2>
+
+    </a>
 
 
-            <a href="shorts.html" class="boton-categoria">
-                <span>🩳</span>
-                <strong>Shorts</strong>
-                <small>Estilos frescos y cómodos ✨</small>
-            </a>
+    <!-- CONJUNTOS -->
+
+    <a class="boton-categoria" href="conjuntos.html">
+
+        <div class="emoji">👚</div>
+
+        <h2>Conjuntos</h2>
+
+    </a>
 
 
-            <a href="abrigo.html" class="boton-categoria">
-                <span>🧥</span>
-                <strong>Abrigo</strong>
-                <small>Completa tu outfit ✨</small>
-            </a>
+    <!-- FALDAS CORTAS -->
+
+    <a class="boton-categoria" href="faldas-cortas.html">
+
+        <div class="emoji">👗</div>
+
+        <h2>Faldas cortas</h2>
+
+    </a>
 
 
-            <a href="calzados.html" class="boton-categoria">
-                <span>👠</span>
-                <strong>Calzados</strong>
-                <small>Tacones, botas y sandalias ✨</small>
-            </a>
+    <!-- SHORTS -->
 
-        </section>
+    <a class="boton-categoria" href="shorts.html">
 
-    </main>
+        <div class="emoji">🩳</div>
 
+        <h2>Shorts</h2>
 
-    <!-- CARRITO FLOTANTE -->
-    <div class="carrito-flotante">
-
-        <button onclick="irAlCarrito()" class="boton-ver-carrito">
-            🛒 Ver carrito
-            <span id="contador-carrito">0</span>
-        </button>
-
-    </div>
+    </a>
 
 
-    <script src="./script.js?v=12"></script>
+    <!-- ABRIGOS -->
 
-</body>
+    <a class="boton-categoria" href="abrigo.html">
 
-</html>
+        <div class="emoji">🧥</div>
+
+        <h2>Abrigos</h2>
+
+    </a>
+
+
+    <!-- CALZADOS -->
+
+    <a class="boton-categoria" href="calzados.html">
+
+        <div class="emoji">👠</div>
+
+        <h2>Calzados</h2>
+
+    </a>
+
+</main>
+
+
+<!-- ========================================
+     FRASE FINAL
+======================================== -->
+
+<section class="sobre-inicio">
+
+    <div class="alas">🪽</div>
+
+    <h2>Tu estilo comienza aquí. ✨</h2>
+
+    <p>
+        Elige una categoría y descubre las prendas
+        que tenemos preparadas para ti.
+    </p>
+
+</section>
+
+
+<!-- ========================================
+     CARRITO FLOTANTE
+======================================== -->
+
+<a
+    href="carrito.html"
+    class="carrito-flotante"
+>
+    🛒 Ver carrito
+    <
