@@ -1,12 +1,17 @@
-/* ==================================================
-   ANGEL'S FASHION WORLD 🪽
-   BLANCO + DORADO ✨
-================================================== */
+/* ========================================
+   ANGEL'S FASHION WORLD
+   BEIGE + BLANCO + DORADO CHAMPAGNE
+======================================== */
+
+
+/* ================================
+   GENERAL
+================================ */
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
@@ -14,775 +19,150 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #fffdf8;
-    color: #4a4035;
+    font-family: "Georgia", "Times New Roman", serif;
+    background: #f5efe6;
+    color: #5c5145;
     line-height: 1.6;
 }
 
 
-/* ==================================================
+/* ================================
    MENÚ
-================================================== */
+================================ */
 
 .menu {
     width: 100%;
     background: #ffffff;
+    padding: 18px 25px;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-    padding: 18px 15px;
+    flex-wrap: wrap;
+    gap: 25px;
 
-    box-shadow: 0 3px 15px rgba(201, 162, 78, 0.15);
+    border-bottom: 1px solid #e1d4bf;
+    box-shadow: 0 3px 15px rgba(92, 81, 69, 0.08);
 
     position: sticky;
     top: 0;
     z-index: 1000;
-
-    flex-wrap: wrap;
 }
 
 .menu a {
-    color: #4a4035;
+    color: #5c5145;
     text-decoration: none;
-    font-weight: bold;
     font-size: 15px;
-    transition: 0.3s;
+    font-weight: bold;
+
+    padding: 7px 4px;
+
+    transition: 0.3s ease;
 }
 
 .menu a:hover {
-    color: #c9a24e;
+    color: #b69b61;
 }
 
 
-/* ==================================================
-   PRESENTACIÓN
-================================================== */
+/* ================================
+   ENCABEZADO / PRESENTACIÓN
+================================ */
 
 .presentacion {
     text-align: center;
-    padding: 65px 20px 50px;
+
+    padding: 75px 20px 65px;
 
     background: linear-gradient(
         135deg,
-        #ffffff,
-        #fffdf8,
-        #fdf8ed
+        #ffffff 0%,
+        #f8f2e9 50%,
+        #eee3d3 100%
     );
+
+    border-bottom: 1px solid #dfd0b9;
 }
 
 .alas {
-    font-size: 34px;
-    margin-bottom: 8px;
+    font-size: 42px;
+    margin-bottom: 10px;
 }
 
 .presentacion h1 {
-    font-family: Georgia, serif;
-    font-size: 58px;
-    color: #c9a24e;
+    font-size: 52px;
+    color: #b69b61;
+    margin-bottom: 12px;
+
+    letter-spacing: 1px;
+}
+
+.presentacion .frase {
+    font-size: 22px;
+    color: #6b5d4e;
     margin-bottom: 12px;
 }
 
 .presentacion p {
-    font-size: 19px;
-    color: #665b4d;
     max-width: 700px;
     margin: auto;
+    font-size: 17px;
+    color: #76695b;
 }
 
-.frase {
-    margin-top: 5px;
-}
 
-
-/* ==================================================
-   BOTÓN DORADO
-================================================== */
+/* ================================
+   BOTONES
+================================ */
 
 .boton {
     display: inline-block;
 
-    background: #c9a24e;
-    color: white;
-
-    padding: 12px 28px;
-    border-radius: 30px;
+    background: #c8b27a;
+    color: #ffffff;
 
     text-decoration: none;
     font-weight: bold;
 
-    margin-top: 20px;
+    padding: 11px 22px;
+    border-radius: 25px;
 
-    transition: 0.3s;
+    border: 1px solid #b69b61;
 
-    box-shadow: 0 5px 15px rgba(201, 162, 78, 0.25);
+    transition: 0.3s ease;
+
+    box-shadow: 0 4px 10px rgba(182, 155, 97, 0.18);
 }
 
 .boton:hover {
-    background: #a98232;
-    transform: scale(1.04);
+    background: #b69b61;
+    transform: translateY(-2px);
 }
 
 
-/* ==================================================
-   CATEGORÍAS DEL INICIO
-================================================== */
+/* ================================
+   CATEGORÍAS GENERALES
+================================ */
 
 .categorias {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 50px 25px;
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 55px auto;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 28px;
 }
 
 .categoria {
     background: #ffffff;
 
-    border: 1px solid rgba(201, 162, 78, 0.35);
-    border-radius: 25px;
+    border: 1px solid #dfd0b9;
+    border-radius: 20px;
 
-    padding: 30px 22px;
-
-    text-align: center;
-    text-decoration: none;
-
-    color: #4a4035;
-
-    box-shadow: 0 8px 25px rgba(201, 162, 78, 0.13);
-
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.categoria:hover {
-    transform: translateY(-6px);
-
-    box-shadow:
-        0 12px 30px rgba(201, 162, 78, 0.22);
-}
-
-.categoria span,
-.categoria .emoji {
-    display: block;
-    font-size: 42px;
-    margin-bottom: 8px;
-}
-
-.categoria h2 {
-    font-family: Georgia, serif;
-
-    color: #c9a24e;
-
-    font-size: 27px;
-    margin-bottom: 8px;
-}
-
-.categoria p {
-    font-size: 15px;
-    color: #665b4d;
-}
-
-
-/* ==================================================
-   CATEGORÍAS DE MODA 👗
-================================================== */
-
-.categorias-moda {
-    max-width: 1100px;
-    margin: 0 auto;
-
-    padding: 55px 25px 75px;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-
-/* TARJETA DE CATEGORÍA */
-
-.boton-categoria {
-    position: relative;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    min-height: 190px;
-
-    padding: 28px 20px;
-
-    background: #ffffff;
-
-    border: 1px solid rgba(201, 162, 78, 0.45);
-
-    border-radius: 25px;
-
-    text-decoration: none;
-
-    color: #4a4035;
-
-    box-shadow:
-        0 8px 25px rgba(201, 162, 78, 0.12);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
-}
-
-
-/* DETALLE DORADO */
-
-.boton-categoria::before {
-    content: "";
-
-    position: absolute;
-
-    top: 12px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 45px;
-    height: 2px;
-
-    background: #c9a24e;
-
-    border-radius: 10px;
-}
-
-
-/* EMOJI */
-
-.boton-categoria span {
-    font-size: 45px;
-    margin-bottom: 10px;
-
-    transition: transform 0.3s ease;
-}
-
-
-/* NOMBRE */
-
-.boton-categoria strong {
-    font-family: Georgia, serif;
-
-    font-size: 24px;
-
-    color: #c9a24e;
-
-    margin-bottom: 6px;
-}
-
-
-/* DESCRIPCIÓN */
-
-.boton-categoria small {
-    font-size: 14px;
-
-    color: #665b4d;
+    padding: 35px 25px;
 
     text-align: center;
-}
 
-
-/* HOVER */
-
-.boton-categoria:hover {
-    transform: translateY(-7px);
-
-    border-color: #c9a24e;
-
-    box-shadow:
-        0 14px 32px rgba(201, 162, 78, 0.22);
-}
-
-.boton-categoria:hover span {
-    transform: scale(1.08);
-}
-
-
-/* ==================================================
-   PRODUCTOS
-================================================== */
-
-.productos {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px 70px;
-}
-
-.productos > h2 {
-    text-align: center;
-
-    font-family: Georgia, serif;
-
-    color: #c9a24e;
-
-    font-size: 38px;
-
-    margin-bottom: 30px;
-}
-
-
-/* ==================================================
-   CUADRÍCULA DE PRODUCTOS
-================================================== */
-
-.productos-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-
-/* ==================================================
-   TARJETA DE PRODUCTO
-================================================== */
-
-.producto {
-    background: #ffffff;
-
-    border: 1px solid rgba(201, 162, 78, 0.25);
-
-    border-radius: 18px;
-
-    overflow: hidden;
-
-    text-align: left;
-
-    box-shadow:
-        0 5px 18px rgba(201, 162, 78, 0.14);
-
-    transition:
-        transform 0.3s,
-        box-shadow 0.3s;
-
-    display: flex;
-    flex-direction: column;
-}
-
-.producto:hover {
-    transform: translateY(-5px);
-
-    box-shadow:
-        0 10px 25px rgba(201, 162, 78, 0.20);
-}
-
-
-/* ==================================================
-   IMÁGENES
-================================================== */
-
-.producto img {
-    width: 100%;
-    height: 300px;
-
-    object-fit: cover;
-
-    display: block;
-}
-
-
-/* ==================================================
-   INFORMACIÓN
-================================================== */
-
-.producto h3 {
-    font-family: Georgia, serif;
-
-    color: #a98232;
-
-    font-size: 19px;
-
-    line-height: 1.3;
-
-    padding: 15px 16px 5px;
-}
-
-.producto p {
-    font-size: 14px;
-
-    line-height: 1.5;
-
-    padding: 0 16px;
-
-    color: #665b4d;
-
-    flex-grow: 1;
-}
-
-.producto strong {
-    display: block;
-
-    font-size: 18px;
-
-    color: #a98232;
-
-    padding: 12px 16px;
-}
-
-
-/* ==================================================
-   BOTONES DE PRODUCTO
-================================================== */
-
-.producto button {
-    border: none;
-
-    margin: 5px 14px;
-
-    padding: 11px;
-
-    border-radius: 25px;
-
-    background: #c9a24e;
-
-    color: white;
-
-    font-weight: bold;
-
-    font-size: 14px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.producto button:hover {
-    background: #a98232;
-
-    transform: scale(1.02);
-}
-
-.producto button:last-child {
-    margin-bottom: 18px;
-}
-
-
-/* ==================================================
-   CATEGORÍAS SIN PRODUCTOS
-================================================== */
-
-.categoria-vacia {
-    max-width: 900px;
-
-    margin: 30px auto;
-
-    padding: 45px 25px;
-
-    background: white;
-
-    border: 1px solid rgba(201, 162, 78, 0.3);
-
-    border-radius: 25px;
-
-    text-align: center;
-
-    box-shadow:
-        0 6px 20px rgba(201, 162, 78, 0.12);
-}
-
-.categoria-vacia h2 {
-    font-family: Georgia, serif;
-
-    color: #c9a24e;
-
-    font-size: 30px;
-
-    margin-bottom: 10px;
-}
-
-.categoria-vacia p {
-    color: #665b4d;
-}
-
-
-/* ==================================================
-   CARRITO FLOTANTE 🛒
-================================================== */
-
-.carrito-flotante {
-    position: fixed;
-
-    right: 18px;
-    bottom: 20px;
-
-    z-index: 2000;
-}
-
-.boton-ver-carrito {
-    border: none;
-
-    background: #c9a24e;
-
-    color: white;
-
-    padding: 14px 20px;
-
-    border-radius: 35px;
-
-    font-size: 15px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 6px 20px rgba(201, 162, 78, 0.30);
-
-    transition: 0.3s;
-}
-
-.boton-ver-carrito:hover {
-    background: #a98232;
-
-    transform: translateY(-3px);
-}
-
-#contador-carrito {
-    background: white;
-
-    color: #c9a24e;
-
-    display: inline-flex;
-
-    justify-content: center;
-    align-items: center;
-
-    min-width: 24px;
-    height: 24px;
-
-    padding: 2px 7px;
-
-    margin-left: 5px;
-
-    border-radius: 50%;
-
-    font-size: 13px;
-}
-
-
-/* ==================================================
-   SOBRE NOSOTROS
-================================================== */
-
-.sobre-inicio {
-    text-align: center;
-
-    padding: 80px 25px;
-
-    background: #fdf8ed;
-
-    border-top: 1px solid rgba(201, 162, 78, 0.2);
-}
-
-.sobre-inicio h2 {
-    font-family: Georgia, serif;
-
-    font-size: 38px;
-
-    color: #c9a24e;
-
-    margin-bottom: 20px;
-}
-
-.sobre-inicio p {
-    max-width: 850px;
-
-    margin: 0 auto 30px;
-
-    font-size: 18px;
-}
-
-
-/* ==================================================
-   CONTACTO
-================================================== */
-
-.contacto {
-    text-align: center;
-
-    padding: 70px 20px;
-
-    background: #ffffff;
-}
-
-.contacto h2 {
-    font-family: Georgia, serif;
-
-    font-size: 36px;
-
-    color: #c9a24e;
-
-    margin-bottom: 15px;
-}
-
-.contacto p {
-    font-size: 18px;
-
-    margin-bottom: 25px;
-}
-
-
-/* ==================================================
-   PIE DE PÁGINA
-================================================== */
-
-footer {
-    text-align: center;
-
-    background: #4a4035;
-
-    color: white;
-
-    padding: 30px 20px;
-}
-
-footer p {
-    margin: 5px;
-}
-
-
-/* ==================================================
-   TABLETS
-================================================== */
-
-@media (max-width: 900px) {
-
-    .menu {
-        gap: 12px;
-
-        padding: 15px 10px;
-    }
-
-    .menu a {
-        font-size: 14px;
-    }
-
-    .presentacion h1 {
-        font-size: 45px;
-    }
-
-    .categorias {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .categorias-moda {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .productos-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .producto img {
-        height: 260px;
-    }
-}
-
-
-/* ==================================================
-   CELULARES
-================================================== */
-
-@media (max-width: 500px) {
-
-    .menu {
-        gap: 8px;
-    }
-
-    .menu a {
-        font-size: 12px;
-    }
-
-    .presentacion {
-        padding: 45px 15px;
-    }
-
-    .presentacion h1 {
-        font-size: 40px;
-    }
-
-    .presentacion p {
-        font-size: 16px;
-    }
-
-    .categorias {
-        grid-template-columns: 1fr;
-
-        padding: 35px 15px;
-    }
-
-    .categorias-moda {
-        grid-template-columns: 1fr;
-
-        padding: 35px 15px 60px;
-
-        gap: 18px;
-    }
-
-    .boton-categoria {
-        min-height: 170px;
-
-        padding: 25px 15px;
-    }
-
-    .boton-categoria strong {
-        font-size: 22px;
-    }
-
-    .productos {
-        padding: 30px 10px 60px;
-    }
-
-    .productos-grid {
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 12px;
-    }
-
-    .producto img {
-        height: 210px;
-    }
-
-    .producto h3 {
-        font-size: 16px;
-
-        padding: 12px 10px 5px;
-    }
-
-    .producto p {
-        font-size: 12px;
-
-        padding: 0 10px;
-    }
-
-    .producto strong {
-        font-size: 16px;
-
-        padding: 10px;
-    }
-
-    .producto button {
-        margin: 4px 8px;
-
-        font-size: 12px;
-
-        padding: 9px 5px;
-    }
-
-    .carrito-flotante {
-        right: 12px;
-
-        bottom: 15px;
-    }
-}
+    box-shadow: 0 7px 20px
