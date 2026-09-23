@@ -1,91 +1,100 @@
 // ========================================
-// ANGEL'S FASHION WORLD 🪽✦
+// ANGEL'S FASHION WORLD
+// SCRIPT.JS
 // ========================================
 
-document.addEventListener("DOMContentLoaded", function () {
 
-    // ========================================
-    // ESTRELLAS ✦ ✧
-    // ========================================
+// ========================================
+// DESPLAZAMIENTO SUAVE
+// ========================================
 
-    const decoraciones =
-        document.querySelectorAll(".decoracion");
+document.querySelectorAll('a[href^="#"]').forEach(enlace => {
 
-    decoraciones.forEach(function (estrella, indice) {
+    enlace.addEventListener("click", function (e) {
 
-        estrella.style.animationDelay =
-            (indice * 0.35) + "s";
+        const destino = document.querySelector(this.getAttribute("href"));
 
-    });
+        if (destino) {
 
+            e.preventDefault();
 
-    // ========================================
-    // ESTRELLITAS
-    // ========================================
+            destino.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
 
-    const estrellitas =
-        document.querySelectorAll(".estrellitas");
-
-    estrellitas.forEach(function (estrella, indice) {
-
-        estrella.style.animationDelay =
-            (indice * 0.4) + "s";
+        }
 
     });
 
-
-    // ========================================
-    // ALAS 🪽
-    // ========================================
-
-    const alas =
-        document.querySelectorAll(".alas");
-
-    alas.forEach(function (ala) {
-
-        ala.addEventListener("mouseenter", function () {
-
-            ala.style.animationDuration = "0.8s";
-
-        });
-
-        ala.addEventListener("mouseleave", function () {
-
-            ala.style.animationDuration = "2s";
-
-        });
-
-    });
+});
 
 
-    // ========================================
-    // DESPLAZAMIENTO SUAVE
-    // ========================================
+// ========================================
+// ANIMACIÓN SUAVE DE LAS ESTRELLAS
+// ========================================
 
-    const enlaces =
-        document.querySelectorAll('a[href^="#"]');
+const estrellas = document.querySelectorAll(".estrella");
 
-    enlaces.forEach(function (enlace) {
+estrellas.forEach((estrella, indice) => {
 
-        enlace.addEventListener("click", function (evento) {
+    estrella.style.animationDelay = `${indice * 0.35}s`;
 
-            const destino =
-                document.querySelector(
-                    enlace.getAttribute("href")
-                );
+});
 
-            if (destino) {
 
-                evento.preventDefault();
+// ========================================
+// ANIMACIÓN DE LAS ALAS
+// ========================================
 
-                destino.scrollIntoView({
-                    behavior: "smooth"
-                });
+const alas = document.querySelectorAll(
+    ".alas-inicio, .alas-explorar, .contacto-alas, .footer-alas, .logo-alas"
+);
+
+alas.forEach((ala, indice) => {
+
+    ala.style.animationDelay = `${indice * 0.4}s`;
+
+});
+
+
+// ========================================
+// EFECTO SUAVE AL APARECER
+// ========================================
+
+const elementos = document.querySelectorAll(
+    ".categoria, .titulo-explorar, .frase-explorar"
+);
+
+const observador = new IntersectionObserver(
+    (entradas) => {
+
+        entradas.forEach(entrada => {
+
+            if (entrada.isIntersecting) {
+
+                entrada.target.classList.add("aparecer");
 
             }
 
         });
 
-    });
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+
+elementos.forEach(elemento => {
+
+    observador.observe(elemento);
 
 });
+
+
+// ========================================
+// MENSAJE DE CONSOLA
+// ========================================
+
+console.log("🪽 Angel's Fashion World está funcionando ✦");
