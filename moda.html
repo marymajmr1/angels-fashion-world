@@ -7,143 +7,126 @@
 
     <title>Moda | Angel's Fashion World</title>
 
-    <link rel="stylesheet" href="./style.css?v=7">
+    <link rel="stylesheet" href="./style.css?v=12">
 </head>
 
 <body>
 
-    <!-- ========================================
-         MENÚ
-    ========================================= -->
-
+    <!-- MENÚ -->
     <nav class="menu">
-
         <a href="index.html">Inicio</a>
-
         <a href="moda.html">Moda</a>
-
         <a href="belleza.html">Belleza</a>
-
         <a href="skincare.html">Skin care</a>
-
         <a href="accesorios.html">Accesorios</a>
-
         <a href="sobre-nosotros.html">Sobre nosotros</a>
-
         <a href="index.html#contactanos">Contáctanos</a>
-
     </nav>
 
 
-    <!-- ========================================
-         PRESENTACIÓN
-    ========================================= -->
-
+    <!-- PRESENTACIÓN -->
     <header class="presentacion">
 
-        <span class="decoracion">✦</span>
-
-        <span class="decoracion">✧</span>
-
         <div class="alas">🪽</div>
-
-        <span class="decoracion">✧</span>
-
-        <span class="decoracion">✦</span>
 
         <h1>Moda</h1>
 
         <p>
-            Descubre tu estilo en Angel's Fashion World 💕
+            Descubre tu estilo en Angel's Fashion World ✨
+        </p>
+
+        <p class="frase">
+            Elige una categoría y descubre nuestros productos 🤍
         </p>
 
     </header>
 
 
-    <!-- ========================================
-         EXPLORAR
-    ========================================= -->
+    <!-- CATEGORÍAS -->
+    <main>
 
-    <section class="explorar">
+        <section class="categorias-moda">
 
-        <h2>Explora Moda</h2>
-
-        <div class="explorar-estrellas">
-
-            <span class="decoracion">✦</span>
-
-            <span class="decoracion">✧</span>
-
-            <span class="decoracion">✦</span>
-
-            <span class="decoracion">✧</span>
-
-            <span class="decoracion">✦</span>
-
-        </div>
-
-    </section>
+            <a href="blusas.html" class="boton-categoria">
+                <span>👚</span>
+                <strong>Blusas</strong>
+                <small>Descubre nuestras blusas ✨</small>
+            </a>
 
 
-    <!-- ========================================
-         CATEGORÍAS DE MODA
-    ========================================= -->
-
-    <section class="categorias">
-
-
-        <!-- BLUSAS -->
-
-        <a href="#" class="categoria">
-
-            <span class="decoracion">✦</span>
-
-            <h2>Blusas</h2>
-
-            <p>
-                Descubre blusas lindas y
-                especiales para cada ocasión.
-            </p>
-
-            <br>
-
-            <span class="boton">
-                Explorar
-            </span>
-
-        </a>
+            <a href="pantalones.html" class="boton-categoria">
+                <span>👖</span>
+                <strong>Pantalones</strong>
+                <small>Encuentra tu estilo ✨</small>
+            </a>
 
 
-        <!-- PANTALONES -->
-
-        <a href="#" class="categoria">
-
-            <span class="decoracion">✧</span>
-
-            <h2>Pantalones</h2>
-
-            <p>
-                Encuentra diferentes estilos
-                para complementar tus looks.
-            </p>
-
-            <br>
-
-            <span class="boton">
-                Explorar
-            </span>
-
-        </a>
+            <a href="vestidos-cortos.html" class="boton-categoria">
+                <span>👗</span>
+                <strong>Vestidos cortos</strong>
+                <small>Looks lindos y especiales ✨</small>
+            </a>
 
 
-        <!-- VESTIDOS CORTOS -->
+            <a href="vestidos-largos.html" class="boton-categoria">
+                <span>👗</span>
+                <strong>Vestidos largos</strong>
+                <small>Elegancia en cada detalle ✨</small>
+            </a>
 
-        <a href="#" class="categoria">
 
-            <span class="decoracion">✦</span>
+            <a href="conjuntos.html" class="boton-categoria">
+                <span>🎀</span>
+                <strong>Conjuntos</strong>
+                <small>Looks completos para ti ✨</small>
+            </a>
 
-            <h2>Vestidos cortos</h2>
 
-            <p>
-                Diseños frescos y bonitos
-                para lucir tu estilo.
+            <a href="faldas-cortas.html" class="boton-categoria">
+                <span>👗</span>
+                <strong>Faldas cortas</strong>
+                <small>Diseños lindos y únicos ✨</small>
+            </a>
+
+
+            <a href="shorts.html" class="boton-categoria">
+                <span>🩳</span>
+                <strong>Shorts</strong>
+                <small>Estilos frescos y cómodos ✨</small>
+            </a>
+
+
+            <a href="abrigo.html" class="boton-categoria">
+                <span>🧥</span>
+                <strong>Abrigo</strong>
+                <small>Completa tu outfit ✨</small>
+            </a>
+
+
+            <a href="calzados.html" class="boton-categoria">
+                <span>👠</span>
+                <strong>Calzados</strong>
+                <small>Tacones, botas y sandalias ✨</small>
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- CARRITO FLOTANTE -->
+    <div class="carrito-flotante">
+
+        <button onclick="irAlCarrito()" class="boton-ver-carrito">
+            🛒 Ver carrito
+            <span id="contador-carrito">0</span>
+        </button>
+
+    </div>
+
+
+    <script src="./script.js?v=12"></script>
+
+</body>
+
+</html>
