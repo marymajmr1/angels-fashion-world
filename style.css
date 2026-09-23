@@ -1,12 +1,12 @@
-/* ========================================
-   🪽 ANGEL'S FASHION WORLD 🪽
-   ROSA • BLANCO • ELEGANTE • FEMENINO
-======================================== */
+/* =========================================
+   ANGEL'S FASHION WORLD
+   ROSA + BLANCO + TOQUE DORADO
+========================================= */
 
 
-/* ========================================
-   CONFIGURACIÓN GENERAL
-======================================== */
+/* =========================================
+   GENERAL
+========================================= */
 
 * {
     box-sizing: border-box;
@@ -19,542 +19,551 @@ html {
 }
 
 body {
-    font-family: "Georgia", "Times New Roman", serif;
-
+    font-family: Arial, sans-serif;
     background:
-        radial-gradient(circle at top left, #fff8fc 0%, transparent 35%),
-        radial-gradient(circle at bottom right, #ffe5f1 0%, transparent 35%),
+        radial-gradient(circle at top left, #ffffff 0%, transparent 35%),
+        radial-gradient(circle at bottom right, #ffddea 0%, transparent 35%),
         #fff1f7;
 
     color: #68495a;
-
     line-height: 1.6;
 }
 
 
-/* ========================================
+/* =========================================
    MENÚ
-======================================== */
+========================================= */
 
 .menu {
     width: 100%;
-
-    background: rgba(255, 255, 255, 0.96);
-
-    padding: 17px 25px;
 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 
-    gap: 24px;
+    gap: 8px;
+
+    padding: 18px 20px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-bottom: 1px solid #f3c7d9;
+
+    box-shadow: 0 4px 15px rgba(216, 91, 145, 0.08);
 
     position: sticky;
     top: 0;
     z-index: 1000;
-
-    border-bottom: 1px solid #f3c6d9;
-
-    box-shadow:
-        0 4px 18px rgba(210, 91, 145, 0.10);
 }
 
 .menu a {
-    position: relative;
+    text-decoration: none;
 
     color: #68495a;
 
-    text-decoration: none;
-
-    font-size: 15px;
     font-weight: bold;
 
-    padding: 6px 3px;
+    padding: 9px 14px;
 
-    transition: 0.3s ease;
-}
+    border-radius: 20px;
 
-.menu a::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    bottom: 0;
-
-    width: 0;
-    height: 2px;
-
-    background: #d85b91;
-
-    transform: translateX(-50%);
-
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
 .menu a:hover {
+    background: #fff0f6;
     color: #d85b91;
 }
 
-.menu a:hover::after {
-    width: 100%;
-}
 
-
-/* ========================================
+/* =========================================
    PRESENTACIÓN
-======================================== */
+========================================= */
 
 .presentacion {
     position: relative;
 
+    max-width: 1050px;
+
+    margin: 45px auto 30px;
+
+    padding: 60px 30px;
+
     text-align: center;
-
-    padding: 75px 20px 70px;
-
-    overflow: hidden;
 
     background:
         linear-gradient(
             135deg,
-            #ffffff 0%,
-            #fff5fa 45%,
-            #ffe6f1 100%
+            #ffffff,
+            #fff4f8,
+            #ffe5f0
         );
 
-    border-bottom: 1px solid #f3c6d9;
+    border-radius: 35px;
+
+    border: 1px solid #f2c1d5;
+
+    box-shadow:
+        0 15px 40px rgba(216, 91, 145, 0.13);
+
+    overflow: hidden;
 }
-
-
-/* círculos decorativos */
 
 .presentacion::before {
     content: "✦";
-
     position: absolute;
 
-    top: 30px;
-    left: 10%;
+    top: 25px;
+    left: 35px;
 
-    color: #e8a4c2;
-
+    color: #c8a96b;
     font-size: 25px;
-
-    animation: brillo 2.5s infinite;
 }
 
 .presentacion::after {
     content: "✧";
-
     position: absolute;
 
-    right: 12%;
-    bottom: 35px;
+    bottom: 25px;
+    right: 35px;
 
-    color: #d85b91;
-
-    font-size: 28px;
-
-    animation: brillo 2.5s infinite 0.8s;
+    color: #c8a96b;
+    font-size: 25px;
 }
-
-
-/* alas */
 
 .alas {
-    font-size: 46px;
-
-    margin-bottom: 8px;
-
-    filter: drop-shadow(0 3px 4px rgba(216, 91, 145, 0.18));
-
-    animation: alasSuaves 3s ease-in-out infinite;
+    font-size: 48px;
+    margin-bottom: 5px;
 }
-
-
-/* título */
 
 .presentacion h1 {
-    font-size: 55px;
-
     color: #d85b91;
 
-    margin-bottom: 10px;
+    font-family: Georgia, serif;
 
-    letter-spacing: 1px;
+    font-size: clamp(42px, 7vw, 70px);
 
-    text-shadow:
-        0 2px 0 #ffffff,
-        0 5px 15px rgba(216, 91, 145, 0.12);
+    margin: 5px 0 10px;
 }
 
-.presentacion .frase {
+.frase {
+    color: #d85b91;
+
+    font-family: Georgia, serif;
+
     font-size: 22px;
 
-    color: #9b5877;
+    font-weight: bold;
 
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
-.presentacion p {
-    max-width: 720px;
+.presentacion p:not(.frase) {
+    max-width: 700px;
 
     margin: auto;
 
-    color: #806174;
+    color: #765568;
 
     font-size: 17px;
 }
 
+.decoracion {
+    color: #c8a96b;
 
-/* ========================================
-   BOTONES
-======================================== */
+    font-size: 25px;
 
-.boton {
+    margin: 10px;
+}
+
+
+/* =========================================
+   INICIO - CATEGORÍAS 2 x 2
+========================================= */
+
+.categorias-inicio {
+    width: min(1000px, 90%);
+
+    margin: 45px auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 28px;
+}
+
+
+/* =========================================
+   TARJETAS DEL INICIO
+========================================= */
+
+.categoria-inicio {
+    position: relative;
+
+    display: block;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: #68495a;
+
+    background: #ffffff;
+
+    padding: 38px 28px;
+
+    min-height: 260px;
+
+    border-radius: 28px;
+
+    border: 2px solid #f3c1d6;
+
+    box-shadow:
+        0 10px 30px rgba(216, 91, 145, 0.12);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* Decoración superior */
+
+.categoria-inicio::before {
+    content: "✦";
+
+    position: absolute;
+
+    top: 12px;
+    left: 20px;
+
+    color: #c8a96b;
+
+    font-size: 18px;
+}
+
+.categoria-inicio::after {
+    content: "✧";
+
+    position: absolute;
+
+    bottom: 12px;
+    right: 20px;
+
+    color: #c8a96b;
+
+    font-size: 18px;
+}
+
+
+/* Hover */
+
+.categoria-inicio:hover {
+    transform: translateY(-8px);
+
+    border-color: #d85b91;
+
+    box-shadow:
+        0 18px 35px rgba(216, 91, 145, 0.20);
+}
+
+
+/* Emoji */
+
+.categoria-inicio .emoji {
+    font-size: 55px;
+
+    margin-bottom: 8px;
+}
+
+
+/* Título */
+
+.categoria-inicio h2 {
+    color: #d85b91;
+
+    font-family: Georgia, serif;
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+
+/* Descripción */
+
+.categoria-inicio p {
+    color: #765568;
+
+    max-width: 330px;
+
+    margin: 0 auto 20px;
+}
+
+
+/* Botón */
+
+.explorar {
     display: inline-block;
 
     background: linear-gradient(
         135deg,
-        #e06a9d,
-        #d34f89
+        #d85b91,
+        #ef8eb5
     );
 
-    color: #ffffff;
+    color: white;
 
-    text-decoration: none;
-
-    font-weight: bold;
-
-    padding: 11px 23px;
+    padding: 10px 22px;
 
     border-radius: 30px;
 
-    border: 1px solid #cf4d86;
+    font-weight: bold;
 
     box-shadow:
-        0 5px 13px rgba(216, 91, 145, 0.20);
+        0 6px 15px rgba(216, 91, 145, 0.20);
 
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
-.boton:hover {
-    transform: translateY(-3px) scale(1.02);
-
+.categoria-inicio:hover .explorar {
     background: linear-gradient(
         135deg,
-        #d85b91,
-        #c9427c
+        #c94b82,
+        #e978a6
     );
 
-    box-shadow:
-        0 8px 18px rgba(216, 91, 145, 0.28);
+    transform: scale(1.04);
 }
 
 
-/* ========================================
-   CATEGORÍAS
-======================================== */
+/* =========================================
+   CATEGORÍAS DE MODA / BELLEZA /
+   SKIN CARE / ACCESORIOS
+========================================= */
 
-.categorias {
-    width: 90%;
-    max-width: 1200px;
+.categorias,
+.categorias-moda {
+    width: min(1100px, 90%);
 
-    margin: 60px auto;
+    margin: 45px auto;
 
     display: grid;
 
     grid-template-columns: repeat(3, 1fr);
 
-    gap: 30px;
+    gap: 25px;
 }
 
 
-/* tarjetas */
+/* Tarjeta */
 
 .categoria {
-    position: relative;
-
-    background: rgba(255, 255, 255, 0.96);
-
-    border: 1px solid #f1c6d8;
-
-    border-radius: 24px;
-
-    padding: 38px 25px;
+    background: #ffffff;
 
     text-align: center;
 
-    overflow: hidden;
+    padding: 35px 25px;
+
+    border-radius: 28px;
+
+    border: 2px solid #f3c1d6;
 
     box-shadow:
-        0 8px 25px rgba(183, 91, 132, 0.10);
+        0 10px 28px rgba(216, 91, 145, 0.10);
 
-    transition: 0.35s ease;
-}
-
-
-/* decoración superior */
-
-.categoria::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 5px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #f3b7cf,
-            #d85b91,
-            #f3b7cf
-        );
-}
-
-
-/* pequeño brillo */
-
-.categoria::after {
-    content: "✦";
-
-    position: absolute;
-
-    top: 14px;
-    right: 18px;
-
-    color: #efb4ca;
-
-    font-size: 15px;
+    transition: 0.3s;
 }
 
 .categoria:hover {
-    transform: translateY(-8px);
-
-    border-color: #e59abb;
+    transform: translateY(-6px);
 
     box-shadow:
-        0 15px 30px rgba(216, 91, 145, 0.16);
+        0 16px 35px rgba(216, 91, 145, 0.18);
 }
 
+.categoria .emoji {
+    font-size: 48px;
 
-/* emoji */
-
-.emoji {
-    font-size: 47px;
-
-    margin-bottom: 12px;
-
-    filter: drop-shadow(
-        0 3px 4px rgba(216, 91, 145, 0.10)
-    );
+    margin-bottom: 10px;
 }
-
-
-/* títulos */
 
 .categoria h2 {
     color: #d85b91;
 
-    font-size: 26px;
+    font-family: Georgia, serif;
+
+    font-size: 25px;
 
     margin-bottom: 10px;
 }
 
 .categoria p {
-    color: #7d6170;
+    color: #765568;
 
-    font-size: 15px;
-
-    margin-bottom: 22px;
+    margin-bottom: 20px;
 }
 
 
-/* ========================================
-   CATEGORÍAS DE MODA
-======================================== */
+/* =========================================
+   BOTONES
+========================================= */
 
-.categorias-moda {
-    width: 90%;
-    max-width: 1200px;
-
-    margin: 60px auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 26px;
-}
-
-.boton-categoria {
-    position: relative;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    min-height: 155px;
-
-    padding: 25px 15px;
-
-    background: #ffffff;
-
-    border: 1px solid #f1c6d8;
-
-    border-radius: 22px;
+.boton {
+    display: inline-block;
 
     text-decoration: none;
 
-    overflow: hidden;
+    color: white;
 
-    box-shadow:
-        0 7px 20px rgba(183, 91, 132, 0.09);
+    background: linear-gradient(
+        135deg,
+        #d85b91,
+        #ef8eb5
+    );
 
-    transition: 0.35s ease;
-}
+    padding: 11px 20px;
 
-
-/* línea decorativa */
-
-.boton-categoria::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 5px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #f3b7cf,
-            #d85b91,
-            #f3b7cf
-        );
-}
-
-.boton-categoria:hover {
-    transform: translateY(-7px);
-
-    background: #fffafd;
-
-    border-color: #e59abb;
-
-    box-shadow:
-        0 13px 27px rgba(216, 91, 145, 0.15);
-}
-
-.boton-categoria .emoji {
-    font-size: 39px;
-
-    margin-bottom: 7px;
-}
-
-.boton-categoria h2 {
-    color: #d85b91;
-
-    font-size: 21px;
-}
-
-
-/* ========================================
-   PRODUCTOS
-======================================== */
-
-.productos {
-    width: 92%;
-    max-width: 1300px;
-
-    margin: 55px auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 25px;
-}
-
-.producto {
-    background: #ffffff;
-
-    border: 1px solid #f1c6d8;
-
-    border-radius: 20px;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 7px 20px rgba(183, 91, 132, 0.09);
-
-    transition: 0.3s ease;
-}
-
-.producto:hover {
-    transform: translateY(-6px);
-
-    box-shadow:
-        0 13px 28px rgba(216, 91, 145, 0.15);
-}
-
-.producto img {
-    width: 100%;
-
-    height: 280px;
-
-    object-fit: cover;
-
-    display: block;
-}
-
-.producto-contenido {
-    padding: 20px;
-
-    text-align: center;
-}
-
-.producto h2 {
-    color: #68495a;
-
-    font-size: 19px;
-
-    margin-bottom: 8px;
-}
-
-.producto p {
-    color: #806174;
-
-    font-size: 14px;
-
-    margin-bottom: 12px;
-}
-
-.precio {
-    color: #d85b91;
-
-    font-size: 20px;
+    border-radius: 30px;
 
     font-weight: bold;
 
-    margin-bottom: 15px;
+    box-shadow:
+        0 6px 15px rgba(216, 91, 145, 0.18);
+
+    transition: 0.3s;
+}
+
+.boton:hover {
+    transform: translateY(-2px);
+
+    background: linear-gradient(
+        135deg,
+        #c94b82,
+        #e978a6
+    );
 }
 
 
-/* ========================================
+/* =========================================
+   SECCIÓN SOBRE / MENSAJES
+========================================= */
+
+.sobre-inicio {
+    width: min(900px, 90%);
+
+    margin: 55px auto;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fff0f6
+        );
+
+    border-radius: 30px;
+
+    border: 2px solid #f3c1d6;
+
+    box-shadow:
+        0 10px 30px rgba(216, 91, 145, 0.10);
+}
+
+.sobre-inicio .alas {
+    font-size: 40px;
+}
+
+.sobre-inicio h2 {
+    color: #d85b91;
+
+    font-family: Georgia, serif;
+
+    font-size: 30px;
+
+    margin: 10px 0;
+}
+
+.sobre-inicio p {
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #765568;
+}
+
+
+/* =========================================
+   CONTACTO
+========================================= */
+
+.contacto {
+    width: min(850px, 90%);
+
+    margin: 50px auto;
+
+    padding: 45px 25px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border-radius: 30px;
+
+    border: 2px solid #f3c1d6;
+
+    box-shadow:
+        0 10px 30px rgba(216, 91, 145, 0.10);
+}
+
+.contacto h2 {
+    color: #d85b91;
+
+    font-family: Georgia, serif;
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+.contacto p {
+    margin-bottom: 20px;
+}
+
+.whatsapp {
+    display: inline-block;
+
+    text-decoration: none;
+
+    background: #d85b91;
+
+    color: white;
+
+    padding: 12px 24px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.whatsapp:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
    CARRITO FLOTANTE
-======================================== */
+========================================= */
 
 .carrito-flotante {
     position: fixed;
@@ -564,74 +573,96 @@ body {
 
     z-index: 2000;
 
-    background:
-        linear-gradient(
-            135deg,
-            #e06a9d,
-            #d34f89
-        );
+    display: flex;
 
-    color: #ffffff;
+    align-items: center;
 
-    padding: 13px 20px;
-
-    border-radius: 30px;
+    gap: 8px;
 
     text-decoration: none;
 
+    background: linear-gradient(
+        135deg,
+        #d85b91,
+        #ef8eb5
+    );
+
+    color: white;
+
+    padding: 13px 18px;
+
+    border-radius: 35px;
+
     font-weight: bold;
 
-    border: 2px solid #ffffff;
-
     box-shadow:
-        0 7px 20px rgba(216, 91, 145, 0.28);
+        0 8px 25px rgba(216, 91, 145, 0.30);
 
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
 .carrito-flotante:hover {
     transform: translateY(-4px);
-
-    box-shadow:
-        0 10px 25px rgba(216, 91, 145, 0.35);
 }
 
 .contador-carrito {
-    background: #ffffff;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 25px;
+    height: 25px;
+
+    padding: 3px 7px;
+
+    background: white;
 
     color: #d85b91;
 
     border-radius: 50%;
 
-    min-width: 23px;
-    height: 23px;
-
-    display: inline-flex;
-
-    justify-content: center;
-    align-items: center;
-
-    margin-left: 6px;
-
     font-size: 13px;
-
-    font-weight: bold;
 }
 
 
-/* ========================================
-   SOBRE ANGEL'S
-======================================== */
+/* =========================================
+   FOOTER
+========================================= */
 
-.sobre-inicio {
+footer {
+    margin-top: 70px;
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    background: #d85b91;
+
+    color: white;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+
+/* =========================================
+   SOBRE NOSOTROS
+========================================= */
+
+.sobre-nosotros-contenido {
+    width: min(1000px, 90%);
+
+    margin: 40px auto;
+}
+
+.tarjeta-sobre {
     position: relative;
 
-    width: 90%;
-    max-width: 900px;
+    margin-bottom: 30px;
 
-    margin: 75px auto;
-
-    padding: 55px 30px;
+    padding: 45px 35px;
 
     text-align: center;
 
@@ -639,299 +670,247 @@ body {
         linear-gradient(
             135deg,
             #ffffff,
-            #fff1f7
+            #fff0f6
         );
 
-    border: 1px solid #f1c6d8;
+    border: 2px solid #f3c1d6;
 
-    border-radius: 25px;
+    border-radius: 30px;
 
     box-shadow:
-        0 9px 25px rgba(183, 91, 132, 0.09);
-
-    overflow: hidden;
+        0 10px 30px rgba(216, 91, 145, 0.12);
 }
 
-.sobre-inicio::before {
-    content: "✧";
+.icono-sobre {
+    font-size: 45px;
 
-    position: absolute;
-
-    left: 25px;
-    top: 20px;
-
-    color: #e8a4c2;
-
-    font-size: 24px;
+    margin-bottom: 5px;
 }
 
-.sobre-inicio::after {
-    content: "✦";
+.estrellitas {
+    display: block;
 
-    position: absolute;
+    color: #c8a96b;
 
-    right: 25px;
-    bottom: 20px;
+    letter-spacing: 8px;
 
-    color: #e8a4c2;
-
-    font-size: 24px;
+    margin-bottom: 8px;
 }
 
-.sobre-inicio .alas {
-    font-size: 38px;
-}
-
-.sobre-inicio h2 {
+.tarjeta-sobre h2 {
     color: #d85b91;
+
+    font-family: Georgia, serif;
 
     font-size: 30px;
 
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-.sobre-inicio p {
-    color: #806174;
+.tarjeta-sobre p {
+    max-width: 750px;
+
+    margin: 0 auto 15px;
+
+    color: #765568;
 }
 
+.tarjeta-sobre.especial {
+    background:
+        linear-gradient(
+            135deg,
+            #ffe8f2,
+            #ffffff,
+            #fff2f7
+        );
+}
 
-/* ========================================
-   CONTACTANOS
-======================================== */
+.mini-categorias {
+    display: grid;
 
-.contacto {
-    width: 90%;
-    max-width: 900px;
+    grid-template-columns: repeat(4, 1fr);
 
-    margin: 65px auto;
+    gap: 15px;
 
-    padding: 48px 25px;
+    max-width: 700px;
+
+    margin: 25px auto 0;
+}
+
+.mini-categorias div {
+    padding: 18px 10px;
+
+    background: white;
+
+    border: 1px solid #f3c1d6;
+
+    border-radius: 20px;
+
+    color: #d85b91;
+
+    font-size: 28px;
+}
+
+.mini-categorias span {
+    display: block;
+
+    font-size: 14px;
+
+    color: #68495a;
+
+    font-weight: bold;
+}
+
+.mensaje-final {
+    width: min(850px, 90%);
+
+    margin: 50px auto;
+
+    padding: 50px 30px;
 
     text-align: center;
 
     background:
         linear-gradient(
             135deg,
-            #ffe8f2,
-            #fff7fb
+            #d85b91,
+            #ef9abb,
+            #f5bdd2
         );
 
-    border: 1px solid #efbfd4;
+    color: white;
 
-    border-radius: 24px;
-
-    box-shadow:
-        0 8px 23px rgba(183, 91, 132, 0.08);
-}
-
-.contacto h2 {
-    color: #d85b91;
-
-    margin-bottom: 14px;
-}
-
-.contacto p {
-    color: #806174;
-
-    margin-bottom: 20px;
-}
-
-
-/* ========================================
-   WHATSAPP
-======================================== */
-
-.whatsapp {
-    display: inline-block;
-
-    background: #d85b91;
-
-    color: #ffffff;
-
-    text-decoration: none;
-
-    padding: 12px 25px;
-
-    border-radius: 30px;
-
-    font-weight: bold;
-
-    transition: 0.3s ease;
-}
-
-.whatsapp:hover {
-    background: #c9437d;
-
-    transform: translateY(-3px);
-}
-
-
-/* ========================================
-   FOOTER
-======================================== */
-
-footer {
-    margin-top: 75px;
-
-    background: #ffffff;
-
-    border-top: 1px solid #f1c6d8;
-
-    text-align: center;
-
-    padding: 32px 20px;
-
-    color: #806174;
+    border-radius: 35px;
 
     box-shadow:
-        0 -4px 18px rgba(183, 91, 132, 0.06);
+        0 15px 35px rgba(216, 91, 145, 0.25);
 }
 
-footer p:first-child {
-    color: #d85b91;
-
-    font-weight: bold;
-
-    font-size: 19px;
-
-    margin-bottom: 6px;
+.mensaje-final .alas {
+    font-size: 45px;
 }
 
+.mensaje-final h2 {
+    font-family: Georgia, serif;
 
-/* ========================================
-   ANIMACIONES
-======================================== */
+    font-size: 32px;
 
-@keyframes brillo {
-
-    0%,
-    100% {
-        opacity: 0.45;
-
-        transform: scale(1);
-    }
-
-    50% {
-        opacity: 1;
-
-        transform: scale(1.2);
-    }
+    margin-bottom: 12px;
 }
 
+.mensaje-final p {
+    max-width: 650px;
 
-@keyframes alasSuaves {
+    margin: 8px auto;
+}
 
-    0%,
-    100% {
-        transform: translateY(0);
-    }
+.mensaje-final .frase {
+    color: white;
 
-    50% {
-        transform: translateY(-4px);
-    }
+    margin-top: 15px;
+}
+
+.decoracion-final {
+    margin-top: 20px;
+
+    color: #fff4cf;
+
+    font-size: 25px;
+
+    letter-spacing: 8px;
 }
 
 
-/* ========================================
-   TABLET
-======================================== */
+/* =========================================
+   RESPONSIVE
+========================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 850px) {
 
-    .categorias {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
+    .categorias,
     .categorias-moda {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .productos {
+    .mini-categorias {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .menu {
-        gap: 15px;
-    }
 }
 
 
-/* ========================================
-   CELULAR
-======================================== */
-
-@media (max-width: 600px) {
+@media (max-width: 650px) {
 
     .menu {
-        padding: 15px 12px;
-
-        gap: 9px 14px;
+        padding: 12px 8px;
     }
 
     .menu a {
         font-size: 13px;
+
+        padding: 7px 9px;
     }
 
     .presentacion {
-        padding: 55px 18px 48px;
+        width: 92%;
+
+        padding: 45px 20px;
+
+        margin-top: 30px;
     }
 
     .presentacion h1 {
-        font-size: 42px;
+        font-size: 43px;
     }
 
-    .presentacion .frase {
-        font-size: 18px;
-    }
-
-    .presentacion p {
+    .presentacion p:not(.frase) {
         font-size: 15px;
     }
 
-    .alas {
-        font-size: 40px;
-    }
+    /* Inicio */
 
-    .categorias {
-        width: 92%;
-
+    .categorias-inicio {
         grid-template-columns: 1fr;
 
-        gap: 20px;
+        width: 90%;
     }
 
+    .categoria-inicio {
+        min-height: auto;
+
+        padding: 30px 20px;
+    }
+
+    /* Categorías */
+
+    .categorias,
     .categorias-moda {
-        width: 92%;
-
         grid-template-columns: 1fr;
 
-        gap: 20px;
+        width: 90%;
     }
 
-    .productos {
-        width: 92%;
-
-        grid-template-columns: 1fr;
+    .categoria {
+        padding: 30px 20px;
     }
 
-    .producto img {
-        height: 320px;
+    /* Sobre nosotros */
+
+    .tarjeta-sobre {
+        padding: 35px 20px;
     }
 
-    .sobre-inicio {
-        width: 92%;
-
-        padding: 42px 20px;
+    .mini-categorias {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .contacto {
-        width: 92%;
-    }
+    /* Carrito */
 
     .carrito-flotante {
-        right: 15px;
-        bottom: 15px;
+        right: 12px;
+        bottom: 12px;
 
-        padding: 11px 16px;
+        padding: 11px 15px;
     }
+
 }
