@@ -2,41 +2,712 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Blusas | Angel's Fashion World</title>
 
-    <link rel="stylesheet" href="./style.css?v=19">
+    <style>
+
+        /* =========================================
+           ANGEL'S FASHION WORLD 🪽✨
+           PÁGINA DE BLUSAS
+        ========================================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at top left,
+                    #ffffff 0%,
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at bottom right,
+                    #ffddea 0%,
+                    transparent 35%
+                ),
+                #fff1f7;
+
+            color: #68495a;
+            line-height: 1.6;
+        }
+
+
+        /* =========================================
+           MENÚ
+        ========================================= */
+
+        .menu {
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            flex-wrap: wrap;
+            gap: 8px;
+
+            padding: 18px 20px;
+
+            background: rgba(255, 255, 255, 0.97);
+
+            border-bottom: 1px solid #f3c7d9;
+
+            box-shadow:
+                0 4px 15px rgba(216, 91, 145, 0.10);
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+        }
+
+        .menu a {
+            text-decoration: none;
+
+            color: #68495a;
+
+            font-weight: bold;
+
+            padding: 9px 14px;
+
+            border-radius: 20px;
+
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            background: #fff0f6;
+            color: #d85b91;
+        }
+
+
+        /* =========================================
+           PRESENTACIÓN
+        ========================================= */
+
+        .presentacion {
+            position: relative;
+
+            width: min(1050px, 92%);
+
+            margin: 45px auto 35px;
+
+            padding: 55px 25px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #fff4f8,
+                    #ffe5f0
+                );
+
+            border-radius: 35px;
+
+            border: 1px solid #f2c1d5;
+
+            box-shadow:
+                0 15px 40px rgba(216, 91, 145, 0.13);
+
+            overflow: hidden;
+        }
+
+        .presentacion::before {
+            content: "✦";
+
+            position: absolute;
+
+            top: 20px;
+            left: 30px;
+
+            color: #c8a96b;
+
+            font-size: 27px;
+
+            animation: estrella 2s infinite;
+        }
+
+        .presentacion::after {
+            content: "✧";
+
+            position: absolute;
+
+            bottom: 20px;
+            right: 30px;
+
+            color: #c8a96b;
+
+            font-size: 27px;
+
+            animation: estrella 2.5s infinite;
+        }
+
+        .alas-estrellas {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            animation: flotar 2.5s ease-in-out infinite;
+        }
+
+        .alas {
+            font-size: 50px;
+        }
+
+        .estrella-alas {
+            color: #c8a96b;
+
+            font-size: 27px;
+
+            animation: estrella 2s infinite;
+        }
+
+        .presentacion h1 {
+            color: #d85b91;
+
+            font-family: Georgia, serif;
+
+            font-size: clamp(45px, 7vw, 70px);
+
+            margin: 5px 0 10px;
+        }
+
+        .frase {
+            color: #d85b91;
+
+            font-family: Georgia, serif;
+
+            font-size: 21px;
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+        }
+
+        .presentacion p:last-child {
+            color: #765568;
+
+            font-size: 16px;
+        }
+
+
+        /* =========================================
+           PRODUCTOS
+        ========================================= */
+
+        .productos {
+            width: min(1200px, 92%);
+
+            margin: 50px auto 80px;
+
+            text-align: center;
+        }
+
+        .productos-titulo {
+            color: #d85b91;
+
+            font-family: Georgia, serif;
+
+            font-size: 34px;
+
+            margin-bottom: 35px;
+        }
+
+        .productos-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 28px;
+
+            align-items: stretch;
+        }
+
+
+        /* =========================================
+           TARJETA
+        ========================================= */
+
+        .producto {
+            position: relative;
+
+            background: white;
+
+            border: 2px solid #f3c1d6;
+
+            border-radius: 28px;
+
+            padding: 15px;
+
+            box-shadow:
+                0 10px 28px rgba(216, 91, 145, 0.12);
+
+            overflow: hidden;
+
+            display: flex;
+
+            flex-direction: column;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .producto:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 18px 38px rgba(216, 91, 145, 0.20);
+        }
+
+        .producto::before {
+            content: "✦";
+
+            position: absolute;
+
+            top: 9px;
+            left: 13px;
+
+            color: #c8a96b;
+
+            font-size: 18px;
+
+            z-index: 3;
+
+            animation: estrella 2.2s infinite;
+        }
+
+        .producto::after {
+            content: "✧";
+
+            position: absolute;
+
+            bottom: 10px;
+            right: 13px;
+
+            color: #c8a96b;
+
+            font-size: 18px;
+
+            z-index: 3;
+
+            animation: estrella 2.7s infinite;
+        }
+
+
+        /* =========================================
+           IMÁGENES
+        ========================================= */
+
+        .producto img {
+            width: 100%;
+
+            height: 280px;
+
+            object-fit: cover;
+
+            display: block;
+
+            border-radius: 21px;
+
+            margin-bottom: 17px;
+
+            background: #fff0f6;
+        }
+
+
+        /* =========================================
+           NOMBRE
+        ========================================= */
+
+        .producto h3 {
+            color: #d85b91;
+
+            font-family: Georgia, serif;
+
+            font-size: 20px;
+
+            line-height: 1.3;
+
+            margin-bottom: 9px;
+        }
+
+
+        /* =========================================
+           DESCRIPCIÓN
+        ========================================= */
+
+        .producto p {
+            color: #765568;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+
+            margin-bottom: 12px;
+
+            min-height: 63px;
+        }
+
+
+        /* =========================================
+           PRECIO
+        ========================================= */
+
+        .precio {
+            color: #68495a;
+
+            font-size: 21px;
+
+            font-weight: bold;
+
+            margin-top: auto;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================================
+           BOTÓN CARRITO
+        ========================================= */
+
+        .boton-carrito {
+            width: 100%;
+
+            border: none;
+
+            cursor: pointer;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d85b91,
+                    #ef8eb5
+                );
+
+            padding: 12px 15px;
+
+            border-radius: 30px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 6px 15px rgba(216, 91, 145, 0.20);
+
+            transition: 0.3s;
+        }
+
+        .boton-carrito:hover {
+            transform: scale(1.03);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #c94b82,
+                    #e978a6
+                );
+        }
+
+        .boton-carrito.agregado {
+            background: #c8a96b;
+        }
+
+
+        /* =========================================
+           CARRITO FLOTANTE
+        ========================================= */
+
+        .carrito-flotante {
+            position: fixed;
+
+            right: 20px;
+            bottom: 20px;
+
+            z-index: 2000;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            text-decoration: none;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d85b91,
+                    #ef8eb5
+                );
+
+            color: white;
+
+            padding: 13px 18px;
+
+            border-radius: 35px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 8px 25px rgba(216, 91, 145, 0.30);
+
+            transition: 0.3s;
+        }
+
+        .carrito-flotante:hover {
+            transform: translateY(-4px);
+        }
+
+        .contador {
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            min-width: 26px;
+            height: 26px;
+
+            padding: 3px 7px;
+
+            background: white;
+
+            color: #d85b91;
+
+            border-radius: 50%;
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================================
+           MENSAJE
+        ========================================= */
+
+        .mensaje {
+            position: fixed;
+
+            left: 50%;
+
+            bottom: 90px;
+
+            transform: translateX(-50%);
+
+            background: white;
+
+            color: #68495a;
+
+            padding: 13px 22px;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 8px 25px rgba(216, 91, 145, 0.20);
+
+            border: 1px solid #f3c1d6;
+
+            font-weight: bold;
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            transition: 0.3s;
+
+            z-index: 3000;
+        }
+
+        .mensaje.mostrar {
+            opacity: 1;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+            margin-top: 70px;
+
+            padding: 35px 20px;
+
+            text-align: center;
+
+            background: #d85b91;
+
+            color: white;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+
+        /* =========================================
+           ANIMACIONES
+        ========================================= */
+
+        @keyframes flotar {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-9px);
+            }
+        }
+
+        @keyframes estrella {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    scale(1)
+                    rotate(0deg);
+
+                opacity: 0.6;
+            }
+
+            50% {
+                transform:
+                    translateY(-7px)
+                    scale(1.25)
+                    rotate(15deg);
+
+                opacity: 1;
+            }
+        }
+
+
+        /* =========================================
+           CELULAR
+        ========================================= */
+
+        @media (max-width: 900px) {
+
+            .productos-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .menu {
+                padding: 12px 7px;
+            }
+
+            .menu a {
+                font-size: 13px;
+
+                padding: 7px 9px;
+            }
+
+            .presentacion {
+                margin-top: 30px;
+
+                padding: 45px 18px;
+            }
+
+            .productos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .producto img {
+                height: 330px;
+            }
+
+            .carrito-flotante {
+                right: 12px;
+                bottom: 12px;
+
+                padding: 11px 15px;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-    <!-- MENÚ -->
+
+    <!-- ======================================
+         MENÚ
+    ======================================= -->
+
     <nav class="menu">
 
         <a href="index.html">Inicio</a>
+
         <a href="moda.html">Moda</a>
+
         <a href="belleza.html">Belleza</a>
+
         <a href="skincare.html">Skin care</a>
+
         <a href="accesorios.html">Accesorios</a>
+
         <a href="sobre-nosotros.html">Sobre nosotros</a>
-        <a href="index.html#contactanos">Contáctanos</a>
+
+        <a href="index.html#contactanos">
+            Contáctanos
+        </a>
 
     </nav>
 
 
-    <!-- PRESENTACIÓN -->
+    <!-- ======================================
+         PRESENTACIÓN
+    ======================================= -->
+
     <header class="presentacion">
 
-        <div class="alas-con-estrella">
+        <div class="alas-estrellas">
 
             <span class="alas">🪽</span>
-            <span class="estrella-alas">✦</span>
+
+            <span class="estrella-alas">
+                ✦
+            </span>
 
         </div>
 
-        <h1>Blusas</h1>
+        <h1>
+            Blusas
+        </h1>
 
         <p class="frase">
             Descubre nuestras blusas en Angel's Fashion World 💕
@@ -49,262 +720,256 @@
     </header>
 
 
-    <!-- PRODUCTOS -->
+    <!-- ======================================
+         PRODUCTOS
+    ======================================= -->
+
     <main class="productos">
 
-        <h2>✨ Nuestras blusas ✨</h2>
+        <h2 class="productos-titulo">
+            ✨ Nuestras blusas ✨
+        </h2>
+
 
         <div class="productos-grid">
 
 
-            <!-- BLUSA 1 -->
+            <!-- 1 -->
+
             <article class="producto">
 
                 <img
                     src="imagenes/blusas/Screenshot_2026-08-29-16-13-34-137_com.pinterest-edit.jpg"
                     alt="Linda camisa con escote">
 
-                <h3>Linda camisa con escote</h3>
+                <h3>
+                    Linda camisa con escote
+                </h3>
 
                 <p>
                     Una hermosa camisa con escote,
-                    perfecta para darle un toque especial a tu look.
+                    perfecta para darle un toque
+                    especial a tu look.
                 </p>
 
-                <strong>$37.000</strong>
+                <div class="precio">
+                    $37.000
+                </div>
 
-                <button type="button"
-                    onclick="agregarAlCarrito('Linda camisa con escote', 37000)">
+                <button
+                    class="boton-carrito"
+                    onclick="agregarAlCarrito(
+                        'Linda camisa con escote',
+                        37000,
+                        this
+                    )">
+
                     🛒 Agregar al carrito
+
                 </button>
 
             </article>
 
 
-            <!-- BLUSA 2 -->
+            <!-- 2 -->
+
             <article class="producto">
 
                 <img
                     src="imagenes/blusas/Screenshot_2026-08-29-16-15-01-447_com.pinterest-edit.jpg"
                     alt="Hermosa camisa con un escote al lado">
 
-                <h3>Hermosa camisa con un escote al lado</h3>
+                <h3>
+                    Hermosa camisa con un escote al lado
+                </h3>
 
                 <p>
                     Un diseño moderno y femenino
                     para lucir increíble.
                 </p>
 
-                <strong>$35.000</strong>
+                <div class="precio">
+                    $35.000
+                </div>
 
-                <button type="button"
-                    onclick="agregarAlCarrito('Hermosa camisa con un escote al lado', 35000)">
+                <button
+                    class="boton-carrito"
+                    onclick="agregarAlCarrito(
+                        'Hermosa camisa con un escote al lado',
+                        35000,
+                        this
+                    )">
+
                     🛒 Agregar al carrito
+
                 </button>
 
             </article>
 
 
-            <!-- BLUSA 3 -->
+            <!-- 3 -->
+
             <article class="producto">
 
                 <img
                     src="imagenes/blusas/Screenshot_2026-08-29-16-24-45-663_com.pinterest-edit.jpg"
                     alt="Linda camisa rosada con un diseño hermoso">
 
-                <h3>Linda camisa rosada con un diseño hermoso</h3>
+                <h3>
+                    Linda camisa rosada con un diseño hermoso
+                </h3>
 
                 <p>
                     Una camisa rosada y delicada
                     para completar tu outfit.
                 </p>
 
-                <strong>$40.000</strong>
+                <div class="precio">
+                    $40.000
+                </div>
 
-                <button type="button"
-                    onclick="agregarAlCarrito('Linda camisa rosada con un diseño hermoso', 40000)">
+                <button
+                    class="boton-carrito"
+                    onclick="agregarAlCarrito(
+                        'Linda camisa rosada con un diseño hermoso',
+                        40000,
+                        this
+                    )">
+
                     🛒 Agregar al carrito
+
                 </button>
 
             </article>
 
 
-            <!-- BLUSA 4 -->
+            <!-- 4 -->
+
             <article class="producto">
 
                 <img
                     src="imagenes/blusas/Screenshot_2026-08-29-16-26-20-243_com.pinterest-edit.jpg"
                     alt="Increíble camisa rosada con escote">
 
-                <h3>Increíble camisa rosada con escote</h3>
+                <h3>
+                    Increíble camisa rosada con escote
+                </h3>
 
                 <p>
                     Un estilo femenino y moderno
                     para destacar tu look.
                 </p>
 
-                <strong>$41.000</strong>
+                <div class="precio">
+                    $41.000
+                </div>
 
-                <button type="button"
-                    onclick="agregarAlCarrito('Increíble camisa rosada con escote', 41000)">
+                <button
+                    class="boton-carrito"
+                    onclick="agregarAlCarrito(
+                        'Increíble camisa rosada con escote',
+                        41000,
+                        this
+                    )">
+
                     🛒 Agregar al carrito
+
                 </button>
 
             </article>
 
 
-            <!-- BLUSA 5 -->
+            <!-- 5 -->
+
             <article class="producto">
 
                 <img
                     src="imagenes/blusas/Screenshot_2026-08-29-16-27-15-807_com.pinterest-edit.jpg"
                     alt="Hermosa camisa de jean">
 
-                <h3>Hermosa camisa de jean</h3>
+                <h3>
+                    Hermosa camisa de jean
+                </h3>
 
                 <p>
                     Una camisa de jean versátil
                     y perfecta para diferentes estilos.
                 </p>
 
-                <strong>$42.000</strong>
+                <div class="precio">
+                    $42.000
+                </div>
 
-                <button type="button"
-                    onclick="agregarAlCarrito('Hermosa camisa de jean', 42000)">
+                <button
+                    class="boton-carrito"
+                    onclick="agregarAlCarrito(
+                        'Hermosa camisa de jean',
+                        42000,
+                        this
+                    )">
+
                     🛒 Agregar al carrito
+
                 </button>
 
             </article>
 
 
-            <!-- BLUSA 6 -->
+            <!-- 6 -->
+
             <article class="producto">
 
                 <img
                     src="imagenes/blusas/Screenshot_2026-08-29-16-28-54-074_com.pinterest-edit.jpg"
                     alt="Hermosa camisa elegante">
 
-                <h3>Hermosa camisa elegante</h3>
+                <h3>
+                    Hermosa camisa elegante
+                </h3>
 
                 <p>
                     Una opción elegante y femenina
                     para ocasiones especiales.
                 </p>
 
-                <strong>$44.000</strong>
+                <div class="precio">
+                    $44.000
+                </div>
 
-                <button type="button"
-                    onclick="agregarAlCarrito('Hermosa camisa elegante', 44000)">
+                <button
+                    class="boton-carrito"
+                    onclick="agregarAlCarrito(
+                        'Hermosa camisa elegante',
+                        44000,
+                        this
+                    )">
+
                     🛒 Agregar al carrito
+
                 </button>
 
             </article>
 
 
-            <!-- BLUSA 7 -->
+            <!-- 7 -->
+
             <article class="producto">
 
                 <img
                     src="imagenes/blusas/Screenshot_2026-08-29-16-31-17-936_com.pinterest-edit.jpg"
                     alt="Linda camisa con estampado azúl">
 
-                <h3>Linda camisa con estampado azúl</h3>
+                <h3>
+                    Linda camisa con estampado azúl
+                </h3>
 
                 <p>
                     Un diseño llamativo y bonito
                     para darle personalidad a tu outfit.
                 </p>
 
-                <strong>$32.000</strong>
+                <div class="precio">
+                    $32.000
+                </div>
 
-                <button type="button"
-                    onclick="agregarAlCarrito('Linda camisa con estampado azúl', 32000)">
-                    🛒 Agregar al carrito
-                </button>
-
-            </article>
-
-
-            <!-- BLUSA 8 -->
-            <article class="producto">
-
-                <img
-                    src="imagenes/blusas/Screenshot_2026-08-29-16-33-53-613_com.pinterest-edit.jpg"
-                    alt="Hermosa camisa negra para ti">
-
-                <h3>Hermosa camisa negra para ti</h3>
-
-                <p>
-                    Una camisa negra sencilla,
-                    bonita y fácil de combinar.
-                </p>
-
-                <strong>$29.999</strong>
-
-                <button type="button"
-                    onclick="agregarAlCarrito('Hermosa camisa negra para ti', 29999)">
-                    🛒 Agregar al carrito
-                </button>
-
-            </article>
-
-
-            <!-- BLUSA 9 -->
-            <article class="producto">
-
-                <img
-                    src="imagenes/blusas/Screenshot_2026-08-29-16-35-02-866_com.pinterest-edit.jpg"
-                    alt="Divina camisa elegante">
-
-                <h3>Divina camisa elegante</h3>
-
-                <p>
-                    Una hermosa camisa elegante
-                    para completar tus looks favoritos.
-                </p>
-
-                <strong>$45.000</strong>
-
-                <button type="button"
-                    onclick="agregarAlCarrito('Divina camisa elegante', 45000)">
-                    🛒 Agregar al carrito
-                </button>
-
-            </article>
-
-        </div>
-
-    </main>
-
-
-    <!-- CARRITO FLOTANTE -->
-    <a href="carrito.html" class="carrito-flotante">
-
-        🛒 Ver carrito
-
-        <span class="contador-carrito" id="contador-carrito">
-            0
-        </span>
-
-    </a>
-
-
-    <!-- PIE DE PÁGINA -->
-    <footer>
-
-        <p>
-            🪽 Angel's Fashion World 🪽
-        </p>
-
-        <p>
-            Moda • Belleza • Skin Care • Accesorios
-        </p>
-
-    </footer>
-
-
-    <script src="./script.js?v=19"></script>
-
-</body>
-
-</html>
+                <button
