@@ -82,7 +82,7 @@ body {
     left: 35px;
     color: #c8a96b;
     font-size: 25px;
-    animation: brillarEstrella 1.8s ease-in-out infinite;
+    animation: brillarEstrella 2.2s ease-in-out infinite;
 }
 
 .presentacion::after {
@@ -92,7 +92,7 @@ body {
     right: 35px;
     color: #c8a96b;
     font-size: 25px;
-    animation: brillarEstrella 2s ease-in-out infinite;
+    animation: brillarEstrella 2.7s ease-in-out infinite;
 }
 
 .alas {
@@ -129,7 +129,7 @@ body {
     font-size: 25px;
     margin: 10px;
     display: inline-block;
-    animation: brillarEstrella 1.8s ease-in-out infinite;
+    animation: brillarEstrella 2s ease-in-out infinite;
 }
 
 /* =========================================
@@ -170,7 +170,7 @@ body {
     left: 20px;
     color: #c8a96b;
     font-size: 18px;
-    animation: brillarEstrella 1.8s ease-in-out infinite;
+    animation: brillarEstrella 2.4s ease-in-out infinite;
 }
 
 .categoria-inicio::after {
@@ -180,7 +180,7 @@ body {
     right: 20px;
     color: #c8a96b;
     font-size: 18px;
-    animation: brillarEstrella 2s ease-in-out infinite;
+    animation: brillarEstrella 2.8s ease-in-out infinite;
 }
 
 .categoria-inicio:hover {
@@ -530,24 +530,46 @@ footer p {
 ========================================= */
 
 @keyframes flotarAlas {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0) rotate(0deg);
     }
 
+    25% {
+        transform: translateY(-5px) rotate(-3deg);
+    }
+
     50% {
-        transform: translateY(-8px) rotate(2deg);
+        transform: translateY(-10px) rotate(3deg);
+    }
+
+    75% {
+        transform: translateY(-5px) rotate(-2deg);
     }
 }
 
 @keyframes brillarEstrella {
-    0%, 100% {
-        transform: scale(1) rotate(0deg);
-        opacity: 0.7;
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1) rotate(0deg);
+        opacity: 0.65;
+    }
+
+    25% {
+        transform: translateY(-5px) scale(1.1) rotate(8deg);
+        opacity: 0.9;
     }
 
     50% {
-        transform: scale(1.25) rotate(15deg);
+        transform: translateY(-9px) scale(1.25) rotate(15deg);
         opacity: 1;
+    }
+
+    75% {
+        transform: translateY(-4px) scale(1.1) rotate(8deg);
+        opacity: 0.85;
     }
 }
 
