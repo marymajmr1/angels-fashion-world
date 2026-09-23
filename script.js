@@ -1,69 +1,71 @@
-// ========================================
+// =========================================
 // ANGEL'S FASHION WORLD 🪽
-// JAVASCRIPT
-// ========================================
+// =========================================
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // ========================================
-    // ESTRELLAS ✨
-    // ========================================
+    // Las estrellas NO se crean ni se borran.
+    // Las que estén escritas en el HTML se conservan.
 
-    const contenedoresEstrellas =
-        document.querySelectorAll(".estrellas");
+    const decoraciones =
+        document.querySelectorAll(".decoracion");
 
-    contenedoresEstrellas.forEach(function (contenedor) {
+    decoraciones.forEach(function (estrella, indice) {
 
-        // Si el HTML ya tiene estrellas, no crea otras
-        if (contenedor.children.length > 0) {
-            return;
-        }
+        estrella.style.animationDelay =
+            (indice * 0.35) + "s";
 
-        for (let i = 0; i < 4; i++) {
-
-            const estrella = document.createElement("span");
-
-            estrella.textContent = "✨";
-
-            contenedor.appendChild(estrella);
-        }
     });
 
 
-    // ========================================
-    // ANIMACIÓN DE LAS ALAS 🪽
-    // ========================================
+    // Estrellitas de Sobre Nosotros
 
-    const alas = document.querySelectorAll(".alas");
+    const estrellitas =
+        document.querySelectorAll(".estrellitas");
+
+    estrellitas.forEach(function (estrella, indice) {
+
+        estrella.style.animationDelay =
+            (indice * 0.4) + "s";
+
+    });
+
+
+    // Alas 🪽
+
+    const alas =
+        document.querySelectorAll(".alas");
 
     alas.forEach(function (ala) {
 
         ala.addEventListener("mouseenter", function () {
+
             ala.style.animationDuration = "0.8s";
+
         });
 
         ala.addEventListener("mouseleave", function () {
+
             ala.style.animationDuration = "2s";
+
         });
 
     });
 
 
-    // ========================================
-    // DESPLAZAMIENTO SUAVE
-    // ========================================
+    // Desplazamiento suave
 
-    const enlaces = document.querySelectorAll(
-        'a[href^="#"]'
-    );
+    const enlaces =
+        document.querySelectorAll('a[href^="#"]');
 
     enlaces.forEach(function (enlace) {
 
         enlace.addEventListener("click", function (evento) {
 
-            const destino = document.querySelector(
-                this.getAttribute("href")
-            );
+            const destino =
+                document.querySelector(
+                    enlace.getAttribute("href")
+                );
 
             if (destino) {
 
@@ -78,14 +80,5 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     });
-
-
-    // ========================================
-    // MENSAJE DE BIENVENIDA
-    // ========================================
-
-    console.log(
-        "🪽✨ Bienvenida a Angel's Fashion World ✨🪽"
-    );
 
 });
