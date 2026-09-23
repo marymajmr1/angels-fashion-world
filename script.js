@@ -12,7 +12,9 @@ document.querySelectorAll('a[href^="#"]').forEach(enlace => {
 
     enlace.addEventListener("click", function (e) {
 
-        const destino = document.querySelector(this.getAttribute("href"));
+        const destino = document.querySelector(
+            this.getAttribute("href")
+        );
 
         if (destino) {
 
@@ -38,7 +40,8 @@ const estrellas = document.querySelectorAll(".estrella");
 
 estrellas.forEach((estrella, indice) => {
 
-    estrella.style.animationDelay = `${indice * 0.35}s`;
+    estrella.style.animationDelay =
+        `${indice * 0.35}s`;
 
 });
 
@@ -53,7 +56,8 @@ const alas = document.querySelectorAll(
 
 alas.forEach((ala, indice) => {
 
-    ala.style.animationDelay = `${indice * 0.4}s`;
+    ala.style.animationDelay =
+        `${indice * 0.4}s`;
 
 });
 
@@ -85,7 +89,6 @@ const observador = new IntersectionObserver(
     }
 );
 
-
 elementos.forEach(elemento => {
 
     observador.observe(elemento);
@@ -97,4 +100,6 @@ elementos.forEach(elemento => {
 // MENSAJE DE CONSOLA
 // ========================================
 
-console.log("🪽 Angel's Fashion World está funcionando ✦");
+console.log(
+    "🪽 Angel's Fashion World está funcionando ✦"
+);
