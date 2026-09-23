@@ -8,56 +8,69 @@
     <title>Blusas | Angel's Fashion World</title>
 
     <style>
+        /* =========================================
+           ANGEL'S FASHION WORLD
+           BLUSAS 🪽💕
+        ========================================= */
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background:
                 radial-gradient(circle at top left, #ffffff 0%, transparent 35%),
-                radial-gradient(circle at bottom right, #ffe1ee 0%, transparent 35%),
+                radial-gradient(circle at bottom right, #ffe1ef 0%, transparent 40%),
                 #fff0f6;
-            color: #68495a;
+            color: #6b4055;
             min-height: 100vh;
         }
 
-        /* =========================
-           DECORACIÓN
-        ========================= */
 
-        .estrella {
+        /* =========================================
+           ESTRELLAS DECORATIVAS
+        ========================================= */
+
+        .estrella1,
+        .estrella2,
+        .estrella3,
+        .estrella4 {
             position: fixed;
-            font-size: 25px;
+            font-size: 28px;
             color: #d85b91;
-            animation: flotar 3s ease-in-out infinite;
-            z-index: 1;
+            z-index: 0;
             pointer-events: none;
+            animation: flotar 3s ease-in-out infinite;
         }
 
         .estrella1 {
-            top: 130px;
-            left: 7%;
+            top: 120px;
+            left: 4%;
         }
 
         .estrella2 {
-            top: 250px;
-            right: 8%;
+            top: 280px;
+            right: 5%;
             animation-delay: .7s;
         }
 
         .estrella3 {
-            top: 500px;
-            left: 5%;
-            animation-delay: 1.2s;
+            bottom: 180px;
+            left: 6%;
+            animation-delay: 1.3s;
         }
 
         .estrella4 {
-            top: 700px;
-            right: 6%;
-            animation-delay: 1.8s;
+            bottom: 80px;
+            right: 7%;
+            animation-delay: 2s;
         }
 
         @keyframes flotar {
@@ -66,149 +79,215 @@
             }
 
             50% {
-                transform: translateY(-15px) rotate(15deg);
+                transform: translateY(-12px) rotate(12deg);
             }
         }
 
-        /* =========================
-           CUADRO DE BLUSAS
-        ========================= */
 
-        .presentacion {
+        /* =========================================
+           MENÚ
+        ========================================= */
+
+        .menu {
             width: 92%;
-            max-width: 1100px;
-            margin: 35px auto 30px;
-            padding: 35px 25px 30px;
-            text-align: center;
-            background: rgba(255, 255, 255, .88);
-            border: 2px solid #f3c4d8;
-            border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(150, 80, 110, .13);
+            max-width: 1200px;
+            margin: 25px auto 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            background: rgba(255, 255, 255, 0.92);
+            padding: 14px 18px;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 8px 25px rgba(216, 91, 145, 0.15);
+
+            border: 1px solid #f5d3e2;
+
             position: relative;
-            overflow: hidden;
+            z-index: 10;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #6b4055;
+            font-weight: bold;
+
+            padding: 10px 16px;
+            border-radius: 20px;
+
+            transition: .3s ease;
+        }
+
+        .menu a:hover {
+            background: #ffe0ed;
+            color: #d85b91;
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           CUADRO BONITO DE BLUSAS
+        ========================================= */
+
+        header {
+            width: 92%;
+            max-width: 1000px;
+
+            margin: 35px auto 45px;
+
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.94);
+
+            padding: 35px 25px;
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 12px 35px rgba(216, 91, 145, 0.18);
+
+            border: 1px solid #f5d3e2;
+
+            position: relative;
             z-index: 2;
         }
 
-        .presentacion::before {
-            content: "✦";
-            position: absolute;
-            top: 18px;
-            left: 30px;
-            font-size: 28px;
-            color: #d85b91;
-            animation: brillo 2s ease-in-out infinite;
-        }
+        .alas-con-estrella {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
 
-        .presentacion::after {
-            content: "✧";
-            position: absolute;
-            top: 20px;
-            right: 32px;
-            font-size: 27px;
-            color: #d85b91;
-            animation: brillo 2s ease-in-out infinite;
-            animation-delay: .8s;
-        }
-
-        @keyframes brillo {
-            0%, 100% {
-                transform: scale(1);
-                opacity: .7;
-            }
-
-            50% {
-                transform: scale(1.3);
-                opacity: 1;
-            }
+            margin-bottom: 5px;
         }
 
         .alas {
-            font-size: 42px;
+            font-size: 48px;
             display: inline-block;
-            animation: moverAlas 2s ease-in-out infinite;
+            animation: alasMovimiento 3s ease-in-out infinite;
         }
 
-        @keyframes moverAlas {
+        .estrella-alas {
+            font-size: 25px;
+            color: #d85b91;
+            animation: estrellaMovimiento 2s ease-in-out infinite;
+        }
+
+        @keyframes alasMovimiento {
             0%, 100% {
                 transform: translateY(0) rotate(0deg);
             }
 
             50% {
-                transform: translateY(-7px) rotate(3deg);
+                transform: translateY(-7px) rotate(-4deg);
             }
         }
 
-        .presentacion h1 {
+        @keyframes estrellaMovimiento {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+            }
+
+            50% {
+                transform: scale(1.25) rotate(15deg);
+            }
+        }
+
+        header h1 {
             color: #d85b91;
             font-size: 42px;
-            margin: 8px 0;
+            margin: 5px 0 10px;
         }
 
-        .presentacion p {
+        header p {
             font-size: 18px;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
-
-        /* =========================
-           BOTÓN VOLVER
-        ========================= */
 
         .volver {
             display: inline-block;
-            padding: 11px 22px;
-            background: #fff0f6;
-            color: #d85b91;
+
             text-decoration: none;
-            border: 1px solid #f1c1d6;
+
+            background: #d85b91;
+            color: white;
+
+            padding: 12px 24px;
+
             border-radius: 25px;
+
             font-weight: bold;
-            box-shadow: 0 5px 15px rgba(150, 80, 110, .10);
-            transition: .3s;
+
+            transition: .3s ease;
         }
 
         .volver:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 18px rgba(150, 80, 110, .15);
+            box-shadow: 0 7px 18px rgba(216, 91, 145, .25);
         }
 
-        /* =========================
+
+        /* =========================================
            PRODUCTOS
-        ========================= */
+        ========================================= */
 
         .productos {
             width: 92%;
             max-width: 1200px;
+
             margin: auto;
+
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            padding-bottom: 100px;
-        }
 
-        .producto {
-            background: white;
-            border-radius: 22px;
-            padding: 15px;
-            box-shadow: 0 8px 25px rgba(150, 80, 110, .12);
-            transition: transform .3s, box-shadow .3s;
+            gap: 28px;
+
             position: relative;
             z-index: 2;
         }
 
-        .producto:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 30px rgba(150, 80, 110, .18);
+        .producto {
+            background: white;
+
+            border-radius: 25px;
+
+            padding: 18px;
+
+            text-align: center;
+
+            box-shadow:
+                0 10px 25px rgba(107, 64, 85, 0.12);
+
+            border: 1px solid #f5d3e2;
+
+            transition: .3s ease;
         }
 
-        /* FOTO NORMAL */
+        .producto:hover {
+            transform: translateY(-7px);
+            box-shadow:
+                0 15px 30px rgba(216, 91, 145, 0.18);
+        }
+
         .producto img {
             width: 100%;
             height: 330px;
+
             object-fit: cover;
-            border-radius: 17px;
+
+            border-radius: 20px;
+
+            cursor: pointer;
+
             display: block;
-            cursor: zoom-in;
-            transition: transform .25s;
+
+            transition: .3s ease;
         }
 
         .producto img:hover {
@@ -217,84 +296,130 @@
 
         .producto h2 {
             color: #d85b91;
-            font-size: 19px;
-            margin: 15px 5px 7px;
+
+            font-size: 21px;
+
+            margin: 18px 5px 8px;
         }
 
-        .descripcion {
-            font-size: 14px;
-            line-height: 1.4;
-            margin: 0 5px 10px;
+        .producto p {
+            font-size: 15px;
+
+            line-height: 1.5;
+
+            margin: 0 5px 12px;
         }
 
         .precio {
+            color: #6b4055;
+
             font-size: 20px;
+
             font-weight: bold;
-            color: #68495a;
-            margin: 8px 5px 13px;
+
+            margin-bottom: 15px;
         }
 
-        .btn-carrito {
-            width: 100%;
+        .boton-carrito {
+            display: inline-block;
+
             border: none;
-            padding: 12px;
-            border-radius: 25px;
+
             background: #d85b91;
             color: white;
-            font-size: 15px;
+
+            padding: 11px 18px;
+
+            border-radius: 22px;
+
             font-weight: bold;
+
             cursor: pointer;
-            transition: .3s;
+
+            transition: .3s ease;
         }
 
-        .btn-carrito:hover {
-            transform: scale(1.03);
-            background: #c74c82;
+        .boton-carrito:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(216, 91, 145, .25);
         }
 
-        /* =========================
+
+        /* =========================================
            CARRITO FLOTANTE
-        ========================= */
+        ========================================= */
 
         .carrito-flotante {
             position: fixed;
-            right: 18px;
+
+            right: 20px;
             bottom: 20px;
+
+            z-index: 100;
+
+            text-decoration: none;
+
             background: white;
             color: #d85b91;
-            text-decoration: none;
-            padding: 13px 20px;
+
+            padding: 14px 20px;
+
             border-radius: 30px;
+
             font-weight: bold;
-            box-shadow: 0 8px 25px rgba(100, 50, 80, .2);
-            z-index: 1000;
-            transition: .3s;
+
+            box-shadow:
+                0 8px 25px rgba(107, 64, 85, 0.2);
+
+            border: 1px solid #f5d3e2;
+
+            transition: .3s ease;
         }
 
         .carrito-flotante:hover {
             transform: translateY(-4px);
         }
 
-        #cantidadCarrito {
+        .contador-carrito {
+            display: inline-flex;
+
+            justify-content: center;
+            align-items: center;
+
+            min-width: 24px;
+            height: 24px;
+
+            margin-left: 5px;
+
+            padding: 0 6px;
+
+            border-radius: 50%;
+
             background: #d85b91;
             color: white;
-            border-radius: 50%;
-            padding: 3px 8px;
-            margin-left: 5px;
+
+            font-size: 13px;
         }
 
-        /* =========================
-           MODAL FOTO GRANDE
-        ========================= */
+
+        /* =========================================
+           MODAL PARA AGRANDAR FOTO
+        ========================================= */
 
         .modal {
             display: none;
+
             position: fixed;
+
             inset: 0;
-            background: rgba(60, 30, 45, .72);
-            z-index: 2000;
-            align-items: center;
+
+            z-index: 200;
+
+            background: rgba(60, 30, 45, .75);
+
             justify-content: center;
+            align-items: center;
+
             padding: 20px;
         }
 
@@ -303,71 +428,92 @@
         }
 
         .modal-contenido {
-            background: white;
             width: min(900px, 95%);
-            max-height: 92vh;
+
+            max-height: 95vh;
+
             overflow-y: auto;
+
+            background: white;
+
             border-radius: 25px;
+
             padding: 20px;
-            position: relative;
+
             text-align: center;
-            animation: aparecer .25s ease;
+
+            position: relative;
         }
 
-        @keyframes aparecer {
-            from {
-                transform: scale(.85);
-                opacity: 0;
-            }
-
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        .modal-imagen {
-            width: 100%;
+        .modal-contenido img {
+            max-width: 100%;
             max-height: 65vh;
+
             object-fit: contain;
+
             border-radius: 18px;
         }
 
         .cerrar {
             position: absolute;
+
+            top: 10px;
             right: 15px;
-            top: 12px;
+
             width: 40px;
             height: 40px;
+
             border: none;
+
             border-radius: 50%;
-            background: white;
-            color: #d85b91;
-            font-size: 25px;
-            font-weight: bold;
+
+            background: #d85b91;
+            color: white;
+
+            font-size: 24px;
+
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,.15);
+
             z-index: 5;
         }
 
         .modal h2 {
             color: #d85b91;
-            margin: 15px 0 7px;
+            margin: 15px 0 8px;
         }
 
         .modal p {
             margin-bottom: 10px;
         }
 
-        .modal .precio {
-            margin-bottom: 15px;
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+            text-align: center;
+
+            margin-top: 70px;
+
+            padding: 30px 20px;
+
+            background: white;
+
+            border-top: 1px solid #f5d3e2;
+
+            color: #6b4055;
+
+            line-height: 1.8;
         }
 
-        /* =========================
+
+        /* =========================================
            RESPONSIVE
-        ========================= */
+        ========================================= */
 
         @media (max-width: 850px) {
+
             .productos {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -377,64 +523,95 @@
             }
         }
 
-        @media (max-width: 560px) {
+        @media (max-width: 600px) {
 
-            .presentacion {
-                width: 90%;
-                padding: 30px 18px 25px;
-                margin-top: 20px;
+            .menu {
+                width: 94%;
+                gap: 5px;
+                padding: 12px 8px;
             }
 
-            .presentacion h1 {
-                font-size: 34px;
+            .menu a {
+                padding: 8px 10px;
+                font-size: 14px;
             }
 
-            .presentacion p {
-                font-size: 16px;
+            header {
+                margin-top: 25px;
+                padding: 28px 18px;
             }
 
-            .presentacion::before {
-                left: 15px;
-                top: 15px;
-            }
-
-            .presentacion::after {
-                right: 15px;
-                top: 15px;
+            header h1 {
+                font-size: 35px;
             }
 
             .productos {
                 grid-template-columns: 1fr;
-                width: 90%;
             }
 
             .producto img {
-                height: 390px;
+                height: auto;
+                max-height: 500px;
             }
 
-            .estrella {
-                font-size: 20px;
+            .carrito-flotante {
+                right: 12px;
+                bottom: 12px;
+                padding: 12px 15px;
             }
         }
     </style>
 </head>
 
+
 <body>
 
-    <!-- ESTRELLAS DECORATIVAS -->
-    <div class="estrella estrella1">✦</div>
-    <div class="estrella estrella2">✧</div>
-    <div class="estrella estrella3">✦</div>
-    <div class="estrella estrella4">✧</div>
+    <!-- =========================================
+         ESTRELLAS
+    ========================================= -->
+
+    <div class="estrella1">✦</div>
+    <div class="estrella2">✧</div>
+    <div class="estrella3">✦</div>
+    <div class="estrella4">✧</div>
 
 
-    <!-- =========================
-         CUADRO DE BLUSAS
-    ========================= -->
+    <!-- =========================================
+         MENÚ
+    ========================================= -->
 
-    <header class="presentacion">
+    <nav class="menu">
 
-        <div class="alas">🪽</div>
+        <a href="index.html">Inicio</a>
+
+        <a href="moda.html">Moda</a>
+
+        <a href="belleza.html">Belleza</a>
+
+        <a href="skincare.html">Skin care</a>
+
+        <a href="accesorios.html">Accesorios</a>
+
+        <a href="sobre-nosotros.html">Sobre nosotros</a>
+
+        <a href="index.html#contactanos">Contáctanos</a>
+
+    </nav>
+
+
+    <!-- =========================================
+         PRESENTACIÓN DE BLUSAS
+    ========================================= -->
+
+    <header>
+
+        <div class="alas-con-estrella">
+
+            <span class="alas">🪽</span>
+
+            <span class="estrella-alas">✦</span>
+
+        </div>
 
         <h1>Blusas</h1>
 
@@ -449,13 +626,14 @@
     </header>
 
 
-    <!-- =========================
+    <!-- =========================================
          PRODUCTOS
-    ========================= -->
+    ========================================= -->
 
     <main class="productos">
 
-        <!-- BLUSA 1 -->
+
+        <!-- 1 -->
         <article class="producto">
 
             <img
@@ -464,17 +642,22 @@
                 onclick="abrirFoto(this)"
             >
 
-            <h2>Linda camisa con escote</h2>
+            <h2>
+                Linda camisa con escote
+            </h2>
 
-            <p class="descripcion">
-                Una hermosa camisa con un diseño delicado y elegante.
+            <p>
+                Una blusa linda y delicada para complementar
+                tus looks favoritos.
             </p>
 
-            <p class="precio">$37.000</p>
+            <div class="precio">
+                $37.000
+            </div>
 
             <button
-                class="btn-carrito"
-                onclick="agregarAlCarrito(event, 'Linda camisa con escote', 37000, this.parentElement.querySelector('img').src)"
+                class="boton-carrito"
+                onclick="agregarAlCarrito('Linda camisa con escote', 37000)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -482,7 +665,7 @@
         </article>
 
 
-        <!-- BLUSA 2 -->
+        <!-- 2 -->
         <article class="producto">
 
             <img
@@ -491,17 +674,22 @@
                 onclick="abrirFoto(this)"
             >
 
-            <h2>Hermosa camisa con un escote al lado</h2>
+            <h2>
+                Hermosa camisa con un escote al lado
+            </h2>
 
-            <p class="descripcion">
-                Un diseño moderno y especial para lucir increíble.
+            <p>
+                Un diseño especial con un detalle diferente
+                para darle personalidad a tu outfit.
             </p>
 
-            <p class="precio">$35.000</p>
+            <div class="precio">
+                $35.000
+            </div>
 
             <button
-                class="btn-carrito"
-                onclick="agregarAlCarrito(event, 'Hermosa camisa con un escote al lado', 35000, this.parentElement.querySelector('img').src)"
+                class="boton-carrito"
+                onclick="agregarAlCarrito('Hermosa camisa con un escote al lado', 35000)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -509,7 +697,7 @@
         </article>
 
 
-        <!-- BLUSA 3 -->
+        <!-- 3 -->
         <article class="producto">
 
             <img
@@ -518,17 +706,22 @@
                 onclick="abrirFoto(this)"
             >
 
-            <h2>Linda camisa rosada con un diseño hermoso</h2>
+            <h2>
+                Linda camisa rosada con un diseño hermoso
+            </h2>
 
-            <p class="descripcion">
-                Una camisa rosada preciosa con un diseño encantador.
+            <p>
+                Un hermoso diseño rosado para crear
+                combinaciones lindas y femeninas.
             </p>
 
-            <p class="precio">$40.000</p>
+            <div class="precio">
+                $40.000
+            </div>
 
             <button
-                class="btn-carrito"
-                onclick="agregarAlCarrito(event, 'Linda camisa rosada con un diseño hermoso', 40000, this.parentElement.querySelector('img').src)"
+                class="boton-carrito"
+                onclick="agregarAlCarrito('Linda camisa rosada con un diseño hermoso', 40000)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -536,7 +729,7 @@
         </article>
 
 
-        <!-- BLUSA 4 -->
+        <!-- 4 -->
         <article class="producto">
 
             <img
@@ -545,17 +738,22 @@
                 onclick="abrirFoto(this)"
             >
 
-            <h2>Increíble camisa rosada con escote</h2>
+            <h2>
+                Increíble camisa rosada con escote
+            </h2>
 
-            <p class="descripcion">
-                Una camisa rosada con un escote hermoso y femenino.
+            <p>
+                Una opción rosada y encantadora para
+                darle un toque especial a tu look.
             </p>
 
-            <p class="precio">$41.000</p>
+            <div class="precio">
+                $41.000
+            </div>
 
             <button
-                class="btn-carrito"
-                onclick="agregarAlCarrito(event, 'Increíble camisa rosada con escote', 41000, this.parentElement.querySelector('img').src)"
+                class="boton-carrito"
+                onclick="agregarAlCarrito('Increíble camisa rosada con escote', 41000)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -563,7 +761,7 @@
         </article>
 
 
-        <!-- BLUSA 5 -->
+        <!-- 5 -->
         <article class="producto">
 
             <img
@@ -572,17 +770,22 @@
                 onclick="abrirFoto(this)"
             >
 
-            <h2>Hermosa camisa de jean</h2>
+            <h2>
+                Hermosa camisa de jean
+            </h2>
 
-            <p class="descripcion">
-                Una camisa de jean versátil y perfecta para diferentes estilos.
+            <p>
+                Un estilo versátil que puedes combinar
+                de muchas maneras.
             </p>
 
-            <p class="precio">$42.000</p>
+            <div class="precio">
+                $42.000
+            </div>
 
             <button
-                class="btn-carrito"
-                onclick="agregarAlCarrito(event, 'Hermosa camisa de jean', 42000, this.parentElement.querySelector('img').src)"
+                class="boton-carrito"
+                onclick="agregarAlCarrito('Hermosa camisa de jean', 42000)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -590,7 +793,7 @@
         </article>
 
 
-        <!-- BLUSA 6 -->
+        <!-- 6 -->
         <article class="producto">
 
             <img
@@ -599,17 +802,22 @@
                 onclick="abrirFoto(this)"
             >
 
-            <h2>Hermosa camisa elegante</h2>
+            <h2>
+                Hermosa camisa elegante
+            </h2>
 
-            <p class="descripcion">
-                Una opción elegante y delicada para cualquier ocasión.
+            <p>
+                Una blusa elegante para esos momentos
+                en los que quieres lucir especial.
             </p>
 
-            <p class="precio">$44.000</p>
+            <div class="precio">
+                $44.000
+            </div>
 
             <button
-                class="btn-carrito"
-                onclick="agregarAlCarrito(event, 'Hermosa camisa elegante', 44000, this.parentElement.querySelector('img').src)"
+                class="boton-carrito"
+                onclick="agregarAlCarrito('Hermosa camisa elegante', 44000)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -617,7 +825,7 @@
         </article>
 
 
-        <!-- BLUSA 7 -->
+        <!-- 7 -->
         <article class="producto">
 
             <img
@@ -626,17 +834,22 @@
                 onclick="abrirFoto(this)"
             >
 
-            <h2>Linda camisa con estampado azúl</h2>
+            <h2>
+                Linda camisa con estampado azúl
+            </h2>
 
-            <p class="descripcion">
-                Una camisa con estampado llamativo y un estilo precioso.
+            <p>
+                Un estampado bonito para darle vida
+                y personalidad a tu estilo.
             </p>
 
-            <p class="precio">$32.000</p>
+            <div class="precio">
+                $32.000
+            </div>
 
             <button
-                class="btn-carrito"
-                onclick="agregarAlCarrito(event, 'Linda camisa con estampado azúl', 32000, this.parentElement.querySelector('img').src)"
+                class="boton-carrito"
+                onclick="agregarAlCarrito('Linda camisa con estampado azúl', 32000)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -644,7 +857,7 @@
         </article>
 
 
-        <!-- BLUSA 8 -->
+        <!-- 8 -->
         <article class="producto">
 
             <img
@@ -653,17 +866,22 @@
                 onclick="abrirFoto(this)"
             >
 
-            <h2>Hermosa camisa negra para ti</h2>
+            <h2>
+                Hermosa camisa negra para ti
+            </h2>
 
-            <p class="descripcion">
-                Una camisa negra elegante y fácil de combinar.
+            <p>
+                Un clásico que puedes combinar con
+                diferentes estilos y accesorios.
             </p>
 
-            <p class="precio">$29.999</p>
+            <div class="precio">
+                $29.999
+            </div>
 
             <button
-                class="btn-carrito"
-                onclick="agregarAlCarrito(event, 'Hermosa camisa negra para ti', 29999, this.parentElement.querySelector('img').src)"
+                class="boton-carrito"
+                onclick="agregarAlCarrito('Hermosa camisa negra para ti', 29999)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -671,7 +889,7 @@
         </article>
 
 
-        <!-- BLUSA 9 -->
+        <!-- 9 -->
         <article class="producto">
 
             <img
@@ -680,17 +898,22 @@
                 onclick="abrirFoto(this)"
             >
 
-            <h2>Divina camisa elegante</h2>
+            <h2>
+                Divina camisa elegante
+            </h2>
 
-            <p class="descripcion">
-                Una hermosa camisa elegante para completar tu estilo.
+            <p>
+                Una opción hermosa y elegante para
+                completar tus outfits.
             </p>
 
-            <p class="precio">$45.000</p>
+            <div class="precio">
+                $45.000
+            </div>
 
             <button
-                class="btn-carrito"
-                onclick="agregarAlCarrito(event, 'Divina camisa elegante', 45000, this.parentElement.querySelector('img').src)"
+                class="boton-carrito"
+                onclick="agregarAlCarrito('Divina camisa elegante', 45000)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -700,26 +923,38 @@
     </main>
 
 
-    <!-- =========================
+    <!-- =========================================
          CARRITO FLOTANTE
-    ========================= -->
+    ========================================= -->
 
     <a href="carrito.html" class="carrito-flotante">
 
         🛒 Ver carrito
 
-        <span id="cantidadCarrito">0</span>
+        <span
+            class="contador-carrito"
+            id="contador-carrito"
+        >
+            0
+        </span>
 
     </a>
 
 
-    <!-- =========================
-         MODAL FOTO GRANDE
-    ========================= -->
+    <!-- =========================================
+         MODAL DE IMAGEN
+    ========================================= -->
 
-    <div class="modal" id="modal">
+    <div
+        class="modal"
+        id="modal"
+        onclick="cerrarFoto(event)"
+    >
 
-        <div class="modal-contenido">
+        <div
+            class="modal-contenido"
+            onclick="event.stopPropagation()"
+        >
 
             <button
                 class="cerrar"
@@ -729,24 +964,23 @@
             </button>
 
             <img
-                id="modalImagen"
-                class="modal-imagen"
+                id="imagenModal"
                 src=""
                 alt=""
             >
 
-            <h2 id="modalNombre"></h2>
+            <h2 id="nombreModal"></h2>
 
-            <p id="modalDescripcion"></p>
+            <p id="descripcionModal"></p>
 
-            <p
+            <div
                 class="precio"
-                id="modalPrecio"
-            ></p>
+                id="precioModal"
+            ></div>
 
             <button
-                class="btn-carrito"
-                id="modalCarrito"
+                class="boton-carrito"
+                id="botonModal"
             >
                 🛒 Agregar al carrito
             </button>
@@ -756,56 +990,214 @@
     </div>
 
 
+    <!-- =========================================
+         PIE DE PÁGINA
+    ========================================= -->
+
+    <footer>
+
+        <p>
+            🪽 Angel's Fashion World 🪽
+        </p>
+
+        <p>
+            Moda • Belleza • Skin Care • Accesorios
+        </p>
+
+    </footer>
+
+
     <script>
 
-        /* =========================
+        /* =========================================
            CARRITO
-        ========================= */
+        ========================================= */
 
-        let carrito =
-            JSON.parse(
-                localStorage.getItem("carritoAngel")
-            ) || [];
+        let carrito = JSON.parse(
+            localStorage.getItem("carritoAngel")
+        ) || [];
 
 
-        function actualizarCantidad() {
+        function guardarCarrito() {
 
-            const cantidad =
-                carrito.reduce(
-                    (total, producto) =>
-                        total + producto.cantidad,
-                    0
-                );
+            localStorage.setItem(
+                "carritoAngel",
+                JSON.stringify(carrito)
+            );
 
-            document.getElementById(
-                "cantidadCarrito"
-            ).textContent = cantidad;
+            actualizarContador();
         }
 
 
-        function agregarAlCarrito(
-            event,
-            nombre,
-            precio,
-            imagen
-        ) {
+        function actualizarContador() {
 
-            event.stopPropagation();
+            const contador =
+                document.getElementById("contador-carrito");
+
+            if (contador) {
+
+                let cantidad = carrito.reduce(
+                    (total, producto) =>
+                        total + (producto.cantidad || 1),
+                    0
+                );
+
+                contador.textContent = cantidad;
+            }
+        }
+
+
+        function agregarAlCarrito(nombre, precio) {
 
             const productoExistente =
                 carrito.find(
-                    producto =>
-                        producto.nombre === nombre
+                    producto => producto.nombre === nombre
                 );
-
 
             if (productoExistente) {
 
-                productoExistente.cantidad++;
+                productoExistente.cantidad =
+                    (productoExistente.cantidad || 1) + 1;
 
             } else {
 
                 carrito.push({
-
                     nombre: nombre,
                     precio: precio,
+                    cantidad: 1
+                });
+
+            }
+
+            guardarCarrito();
+
+            alert("🛍️ ¡Producto agregado al carrito!");
+        }
+
+
+        /* =========================================
+           MODAL
+        ========================================= */
+
+        function abrirFoto(imagen) {
+
+            const modal =
+                document.getElementById("modal");
+
+            const imagenModal =
+                document.getElementById("imagenModal");
+
+            const nombreModal =
+                document.getElementById("nombreModal");
+
+            const descripcionModal =
+                document.getElementById("descripcionModal");
+
+            const precioModal =
+                document.getElementById("precioModal");
+
+            const botonModal =
+                document.getElementById("botonModal");
+
+
+            imagenModal.src = imagen.src;
+
+            imagenModal.alt = imagen.alt;
+
+            const producto =
+                imagen.closest(".producto");
+
+
+            const nombre =
+                producto.querySelector("h2").textContent.trim();
+
+            const descripcion =
+                producto.querySelector("p").textContent.trim();
+
+            const precioTexto =
+                producto.querySelector(".precio").textContent.trim();
+
+
+            nombreModal.textContent = nombre;
+
+            descripcionModal.textContent = descripcion;
+
+            precioModal.textContent = precioTexto;
+
+
+            const precioNumerico =
+                parseInt(
+                    precioTexto
+                        .replace(/\./g, "")
+                        .replace("$", "")
+                        .trim()
+                );
+
+
+            botonModal.onclick = function () {
+
+                agregarAlCarrito(
+                    nombre,
+                    precioNumerico
+                );
+
+            };
+
+
+            modal.classList.add("activo");
+
+            document.body.style.overflow = "hidden";
+        }
+
+
+        function cerrarFoto(event) {
+
+            if (
+                event &&
+                event.target !==
+                document.getElementById("modal")
+            ) {
+                return;
+            }
+
+
+            const modal =
+                document.getElementById("modal");
+
+            modal.classList.remove("activo");
+
+            document.body.style.overflow = "";
+        }
+
+
+        /* =========================================
+           CERRAR CON ESC
+        ========================================= */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Escape") {
+
+                    cerrarFoto({
+                        target: document.getElementById("modal")
+                    });
+
+                }
+
+            }
+        );
+
+
+        /* =========================================
+           INICIAR CONTADOR
+        ========================================= */
+
+        actualizarContador();
+
+    </script>
+
+</body>
+
+</html>
