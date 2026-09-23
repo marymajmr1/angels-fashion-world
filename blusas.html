@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -8,13 +7,14 @@
 
     <title>Blusas | Angel's Fashion World</title>
 
-    <link rel="stylesheet" href="./style.css?v=5">
+    <link rel="stylesheet" href="./style.css?v=18">
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
+    <!-- MENÚ -->
+    <nav class="menu">
+
         <a href="index.html">Inicio</a>
         <a href="moda.html">Moda</a>
         <a href="belleza.html">Belleza</a>
@@ -22,182 +22,246 @@
         <a href="accesorios.html">Accesorios</a>
         <a href="sobre-nosotros.html">Sobre nosotros</a>
         <a href="index.html#contactanos">Contáctanos</a>
+
     </nav>
+
 
     <!-- PRESENTACIÓN -->
     <header class="presentacion">
-        <div class="alas">🪽</div>
+
+        <div class="alas-con-estrella">
+
+            <span class="alas">🪽</span>
+
+            <span class="estrella-alas">✦</span>
+
+        </div>
 
         <h1>Blusas</h1>
 
-        <p>Descubre nuestras blusas favoritas en Angel's Fashion World 💕</p>
+        <p class="frase">
+            Descubre nuestras blusas en Angel's Fashion World 💕
+        </p>
 
-        <div class="estrellas">
-            ✦
-            <span>☆</span>
-            ✧
-            <span>✦</span>
-            ☆
-        </div>
+        <p>
+            Encuentra tu favorita y crea un look increíble. ✨
+        </p>
+
     </header>
+
 
     <!-- PRODUCTOS -->
     <main class="productos">
 
-        <h2>✨ Explora nuestras blusas ✨</h2>
+        <h2>✨ Nuestras blusas ✨</h2>
 
         <div class="productos-grid">
 
+
             <!-- BLUSA 1 -->
             <article class="producto">
+
                 <img src="imagenes/blusas/blusa1.jpg"
                      alt="Linda camisa con escote">
 
                 <h3>Linda camisa con escote</h3>
 
-                <p>Una hermosa camisa con escote, perfecta para darle un toque especial a tu look.</p>
+                <p>
+                    Una hermosa camisa con escote,
+                    perfecta para darle un toque especial a tu look.
+                </p>
 
                 <strong>$37.000</strong>
 
-                <button onclick="agregarAlCarrito('Linda camisa con escote', 37000)">
+                <button type="button"
+                        onclick="agregarAlCarrito('Linda camisa con escote', 37000)">
                     🛒 Agregar al carrito
                 </button>
+
             </article>
 
 
             <!-- BLUSA 2 -->
             <article class="producto">
+
                 <img src="imagenes/blusas/blusa2.jpg"
                      alt="Hermosa camisa con un escote al lado">
 
                 <h3>Hermosa camisa con un escote al lado</h3>
 
-                <p>Un diseño moderno y femenino para lucir increíble en cualquier ocasión.</p>
+                <p>
+                    Un diseño moderno y femenino
+                    para lucir increíble.
+                </p>
 
                 <strong>$35.000</strong>
 
-                <button onclick="agregarAlCarrito('Hermosa camisa con un escote al lado', 35000)">
+                <button type="button"
+                        onclick="agregarAlCarrito('Hermosa camisa con un escote al lado', 35000)">
                     🛒 Agregar al carrito
                 </button>
+
             </article>
 
 
             <!-- BLUSA 3 -->
             <article class="producto">
+
                 <img src="imagenes/blusas/blusa3.jpg"
                      alt="Linda camisa rosada con un diseño hermoso">
 
                 <h3>Linda camisa rosada con un diseño hermoso</h3>
 
-                <p>Una camisa rosada y delicada con un diseño hermoso para completar tu outfit.</p>
+                <p>
+                    Una camisa rosada y delicada
+                    para completar tu outfit.
+                </p>
 
                 <strong>$40.000</strong>
 
-                <button onclick="agregarAlCarrito('Linda camisa rosada con un diseño hermoso', 40000)">
+                <button type="button"
+                        onclick="agregarAlCarrito('Linda camisa rosada con un diseño hermoso', 40000)">
                     🛒 Agregar al carrito
                 </button>
+
             </article>
 
 
             <!-- BLUSA 4 -->
             <article class="producto">
+
                 <img src="imagenes/blusas/blusa4.jpg"
                      alt="Increíble camisa rosada con escote">
 
                 <h3>Increíble camisa rosada con escote</h3>
 
-                <p>Un estilo femenino y moderno que hará destacar tu look.</p>
+                <p>
+                    Un estilo femenino y moderno
+                    para destacar tu look.
+                </p>
 
                 <strong>$41.000</strong>
 
-                <button onclick="agregarAlCarrito('Increíble camisa rosada con escote', 41000)">
+                <button type="button"
+                        onclick="agregarAlCarrito('Increíble camisa rosada con escote', 41000)">
                     🛒 Agregar al carrito
                 </button>
+
             </article>
 
 
             <!-- BLUSA 5 -->
             <article class="producto">
+
                 <img src="imagenes/blusas/blusa5.jpg"
                      alt="Hermosa camisa de jean">
 
                 <h3>Hermosa camisa de jean</h3>
 
-                <p>Una camisa de jean versátil y perfecta para crear diferentes estilos.</p>
+                <p>
+                    Una camisa de jean versátil
+                    y perfecta para diferentes estilos.
+                </p>
 
                 <strong>$42.000</strong>
 
-                <button onclick="agregarAlCarrito('Hermosa camisa de jean', 42000)">
+                <button type="button"
+                        onclick="agregarAlCarrito('Hermosa camisa de jean', 42000)">
                     🛒 Agregar al carrito
                 </button>
+
             </article>
 
 
             <!-- BLUSA 6 -->
             <article class="producto">
+
                 <img src="imagenes/blusas/blusa6.jpg"
                      alt="Hermosa camisa elegante">
 
                 <h3>Hermosa camisa elegante</h3>
 
-                <p>Una opción elegante y femenina para ocasiones especiales.</p>
+                <p>
+                    Una opción elegante y femenina
+                    para ocasiones especiales.
+                </p>
 
                 <strong>$44.000</strong>
 
-                <button onclick="agregarAlCarrito('Hermosa camisa elegante', 44000)">
+                <button type="button"
+                        onclick="agregarAlCarrito('Hermosa camisa elegante', 44000)">
                     🛒 Agregar al carrito
                 </button>
+
             </article>
 
 
             <!-- BLUSA 7 -->
             <article class="producto">
+
                 <img src="imagenes/blusas/blusa7.jpg"
                      alt="Linda camisa con estampado azúl">
 
                 <h3>Linda camisa con estampado azúl</h3>
 
-                <p>Un diseño llamativo y bonito para darle personalidad a tu outfit.</p>
+                <p>
+                    Un diseño llamativo y bonito
+                    para darle personalidad a tu outfit.
+                </p>
 
                 <strong>$32.000</strong>
 
-                <button onclick="agregarAlCarrito('Linda camisa con estampado azúl', 32000)">
+                <button type="button"
+                        onclick="agregarAlCarrito('Linda camisa con estampado azúl', 32000)">
                     🛒 Agregar al carrito
                 </button>
+
             </article>
 
 
             <!-- BLUSA 8 -->
             <article class="producto">
+
                 <img src="imagenes/blusas/blusa8.jpg"
                      alt="Hermosa camisa negra para ti">
 
                 <h3>Hermosa camisa negra para ti</h3>
 
-                <p>Una camisa negra sencilla, bonita y fácil de combinar.</p>
+                <p>
+                    Una camisa negra sencilla,
+                    bonita y fácil de combinar.
+                </p>
 
                 <strong>$29.999</strong>
 
-                <button onclick="agregarAlCarrito('Hermosa camisa negra para ti', 29999)">
+                <button type="button"
+                        onclick="agregarAlCarrito('Hermosa camisa negra para ti', 29999)">
                     🛒 Agregar al carrito
                 </button>
+
             </article>
 
 
             <!-- BLUSA 9 -->
             <article class="producto">
+
                 <img src="imagenes/blusas/blusa9.jpg"
                      alt="Divina camisa elegante">
 
                 <h3>Divina camisa elegante</h3>
 
-                <p>Una hermosa camisa elegante para completar tus looks favoritos.</p>
+                <p>
+                    Una hermosa camisa elegante
+                    para completar tus looks favoritos.
+                </p>
 
                 <strong>$45.000</strong>
 
-                <button onclick="agregarAlCarrito('Divina camisa elegante', 45000)">
+                <button type="button"
+                        onclick="agregarAlCarrito('Divina camisa elegante', 45000)">
                     🛒 Agregar al carrito
                 </button>
+
             </article>
 
         </div>
@@ -207,14 +271,32 @@
 
     <!-- CARRITO FLOTANTE -->
     <a href="carrito.html" class="carrito-flotante">
-        🛒
-        <span id="contador-carrito">0</span>
+
+        🛒 Ver carrito
+
+        <span class="contador-carrito" id="contador-carrito">
+            0
+        </span>
+
     </a>
 
 
-    <!-- SCRIPT -->
-    <script src="./script.js?v=5"></script>
+    <!-- PIE -->
+    <footer>
+
+        <p>
+            🪽 Angel's Fashion World 🪽
+        </p>
+
+        <p>
+            Moda • Belleza • Skin Care • Accesorios
+        </p>
+
+    </footer>
+
+
+    <script src="./script.js?v=18"></script>
 
 </body>
+
 </html>
-```
