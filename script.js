@@ -1,367 +1,91 @@
 // ========================================
 // ANGEL'S FASHION WORLD 🪽
+// JAVASCRIPT
 // ========================================
 
-// ========================================
-// DESPLAZAMIENTO SUAVE
-// ========================================
+document.addEventListener("DOMContentLoaded", function () {
 
-document.querySelectorAll('a[href^="#"]').forEach(function (enlace) {
+    // ========================================
+    // ESTRELLAS ✨
+    // ========================================
 
-enlace.addEventListener("click", function (evento) {
+    const contenedoresEstrellas =
+        document.querySelectorAll(".estrellas");
 
-    const destino = this.getAttribute("href");
+    contenedoresEstrellas.forEach(function (contenedor) {
 
-    if (destino !== "#") {
-
-        const elemento = document.querySelector(destino);
-
-        if (elemento) {
-
-            evento.preventDefault();
-
-            elemento.scrollIntoView({
-                behavior: "smooth"
-            });
-
+        // Si el HTML ya tiene estrellas, no crea otras
+        if (contenedor.children.length > 0) {
+            return;
         }
 
-    }
+        for (let i = 0; i < 4; i++) {
 
-});
+            const estrella = document.createElement("span");
 
-});
+            estrella.textContent = "✨";
 
-// ========================================
-// CARRITO 🛍️
-// ========================================
-
-let carrito = JSON.parse(
-localStorage.getItem("carritoAngels")
-) || [];
-
-// ========================================
-// ACTUALIZAR CARRITO
-// ========================================
-
-function actualizarCarrito() {
-
-const contador =
-    document.getElementById("contador-carrito");
-
-if (contador) {
-
-    let cantidadTotal = 0;
-
-    carrito.forEach(function (producto) {
-
-        cantidadTotal += producto.cantidad;
-
+            contenedor.appendChild(estrella);
+        }
     });
 
-    contador.textContent = cantidadTotal;
 
-}
+    // ========================================
+    // ANIMACIÓN DE LAS ALAS 🪽
+    // ========================================
 
-mostrarCarrito();
+    const alas = document.querySelectorAll(".alas");
 
-}
+    alas.forEach(function (ala) {
 
-// ========================================
-// AGREGAR AL CARRITO
-// ========================================
+        ala.addEventListener("mouseenter", function () {
+            ala.style.animationDuration = "0.8s";
+        });
 
-function agregarAlCarrito(nombre, precio, imagen) {
-
-const productoExistente =
-    carrito.find(function (producto) {
-
-        return producto.nombre === nombre;
+        ala.addEventListener("mouseleave", function () {
+            ala.style.animationDuration = "2s";
+        });
 
     });
 
 
-if (productoExistente) {
+    // ========================================
+    // DESPLAZAMIENTO SUAVE
+    // ========================================
 
-    productoExistente.cantidad++;
+    const enlaces = document.querySelectorAll(
+        'a[href^="#"]'
+    );
 
-} else {
+    enlaces.forEach(function (enlace) {
 
-    carrito.push({
+        enlace.addEventListener("click", function (evento) {
 
-        nombre: nombre,
-        precio: precio,
-        imagen: imagen,
-        cantidad: 1
+            const destino = document.querySelector(
+                this.getAttribute("href")
+            );
+
+            if (destino) {
+
+                evento.preventDefault();
+
+                destino.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+
+        });
 
     });
 
-}
 
+    // ========================================
+    // MENSAJE DE BIENVENIDA
+    // ========================================
 
-localStorage.setItem(
-    "carritoAngels",
-    JSON.stringify(carrito)
-);
-
-
-actualizarCarrito();
-
-
-alert("🛍️ ¡Producto añadido al carrito! 💕");
-
-}
-
-// ========================================
-// MOSTRAR CARRITO
-// ========================================
-
-function mostrarCarrito() {
-
-const lista =
-    document.getElementById("lista-carrito");
-
-const total =
-    document.getElementById("total-carrito");
-
-
-if (!lista) {
-    return;
-}
-
-
-lista.innerHTML = "";
-
-
-if (carrito.length === 0) {
-
-    lista.innerHTML =
-        "<p>Tu carrito está vacío 🥺💕</p>";
-
-    if (total) {
-        total.textContent = "Total: $0";
-    }
-
-    return;
-
-}
-
-
-let totalCompra = 0;
-
-
-carrito.forEach(function (producto, indice) {
-
-    totalCompra +=
-        producto.precio * producto.cantidad;
-
-
-    const elemento =
-        document.createElement("div");
-
-
-    elemento.className = "producto-carrito";
-
-
-    elemento.innerHTML = `
-
-        <img
-            src="${producto.imagen}"
-            alt="${producto.nombre}">
-
-        <br>
-
-        <strong>${producto.nombre}</strong>
-
-        <br><br>
-
-        Precio:
-        $${producto.precio.toLocaleString("es-CO")}
-
-        <br>
-
-        Cantidad:
-        ${producto.cantidad}
-
-        <br><br>
-
-        <button
-            onclick="quitarDelCarrito(${indice})"
-            class="boton-carrito-producto">
-
-            ➖ Quitar uno
-
-        </button>
-
-        <button
-            onclick="eliminarDelCarrito(${indice})"
-            class="boton-comprar">
-
-            🗑️ Eliminar
-
-        </button>
-
-    `;
-
-
-    lista.appendChild(elemento);
+    console.log(
+        "🪽✨ Bienvenida a Angel's Fashion World ✨🪽"
+    );
 
 });
-
-
-if (total) {
-
-    total.textContent =
-        "Total: $" +
-        totalCompra.toLocaleString("es-CO");
-
-}
-
-}
-
-// ========================================
-// QUITAR UNA UNIDAD
-// ========================================
-
-function quitarDelCarrito(indice) {
-
-carrito[indice].cantidad--;
-
-
-if (carrito[indice].cantidad <= 0) {
-
-    carrito.splice(indice, 1);
-
-}
-
-
-localStorage.setItem(
-    "carritoAngels",
-    JSON.stringify(carrito)
-);
-
-
-actualizarCarrito();
-
-}
-
-// ========================================
-// ELIMINAR PRODUCTO
-// ========================================
-
-function eliminarDelCarrito(indice) {
-
-carrito.splice(indice, 1);
-
-
-localStorage.setItem(
-    "carritoAngels",
-    JSON.stringify(carrito)
-);
-
-
-actualizarCarrito();
-
-}
-
-// ========================================
-// COMPRAR PRODUCTO
-// ========================================
-
-function comprarProducto(nombre, precio) {
-
-const numeroWhatsApp = "TU_NUMERO_AQUI";
-
-
-const mensaje =
-    "Hola 🪽💕 Quiero comprar: " +
-    nombre +
-    " por $" +
-    precio.toLocaleString("es-CO") +
-    ".";
-
-
-const mensajeCodificado =
-    encodeURIComponent(mensaje);
-
-
-window.open(
-    "https://wa.me/" +
-    numeroWhatsApp +
-    "?text=" +
-    mensajeCodificado,
-    "_blank"
-);
-
-}
-
-// ========================================
-// COMPRAR CARRITO
-// ========================================
-
-function comprarCarrito() {
-
-if (carrito.length === 0) {
-
-    alert("🛍️ Tu carrito está vacío.");
-
-    return;
-
-}
-
-
-const numeroWhatsApp = "TU_NUMERO_AQUI";
-
-
-let mensaje =
-    "Hola 🪽💕 Quiero realizar esta compra:%0A%0A";
-
-
-let total = 0;
-
-
-carrito.forEach(function (producto) {
-
-    const subtotal =
-        producto.precio * producto.cantidad;
-
-
-    total += subtotal;
-
-
-    mensaje +=
-        "👚 " +
-        producto.nombre +
-        " x" +
-        producto.cantidad +
-        " - $" +
-        subtotal.toLocaleString("es-CO") +
-        "%0A";
-
-});
-
-
-mensaje +=
-    "%0A💰 Total: $" +
-    total.toLocaleString("es-CO");
-
-
-window.open(
-    "https://wa.me/" +
-    numeroWhatsApp +
-    "?text=" +
-    mensaje,
-    "_blank"
-);
-
-}
-
-// ========================================
-// INICIAR
-// ========================================
-
-actualizarCarrito();
-
-console.log(
-"🪽 Angel's Fashion World: carrito activado"
-);
