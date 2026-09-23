@@ -1097,3 +1097,143 @@ footer p {
 ```
 
 Este queda como tu **CSS completo base** y no elimina las animaciones de 🪽 ni de ✦.
+
+/* =========================================
+   PRODUCTOS - BLUSAS 🪽💕
+   ========================================= */
+
+.productos {
+    width: min(1200px, 92%);
+    margin: 50px auto;
+    text-align: center;
+}
+
+.productos > h2 {
+    color: #d85b91;
+    font-family: Georgia, serif;
+    font-size: 34px;
+    margin-bottom: 35px;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.producto {
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+    border: 2px solid #f3c1d6;
+    border-radius: 28px;
+    padding: 18px;
+    box-shadow: 0 10px 28px rgba(216, 91, 145, 0.12);
+    transition: 0.3s ease;
+}
+
+.producto::before {
+    content: "✦";
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    color: #c8a96b;
+    font-size: 18px;
+    animation: estrellaEsquina1 2.4s ease-in-out infinite;
+}
+
+.producto::after {
+    content: "✧";
+    position: absolute;
+    bottom: 12px;
+    right: 15px;
+    color: #c8a96b;
+    font-size: 18px;
+    animation: estrellaEsquina2 2.8s ease-in-out infinite;
+}
+
+.producto:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 35px rgba(216, 91, 145, 0.20);
+}
+
+.producto img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+    margin-bottom: 18px;
+}
+
+.producto h3 {
+    color: #d85b91;
+    font-family: Georgia, serif;
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.producto p {
+    color: #765568;
+    font-size: 15px;
+    min-height: 70px;
+    margin-bottom: 12px;
+}
+
+.producto strong {
+    display: block;
+    color: #68495a;
+    font-size: 21px;
+    margin: 12px 0 16px;
+}
+
+.producto button {
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #d85b91, #ef8eb5);
+    color: white;
+    padding: 11px 18px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 6px 15px rgba(216, 91, 145, 0.20);
+    transition: 0.3s;
+}
+
+.producto button:hover {
+    transform: translateY(-2px) scale(1.03);
+    background: linear-gradient(135deg, #c94b82, #e978a6);
+}
+
+
+/* =========================================
+   PRODUCTOS EN CELULAR 📱
+   ========================================= */
+
+@media (max-width: 850px) {
+
+    .productos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .producto img {
+        height: 280px;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .productos {
+        width: 92%;
+    }
+
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .producto img {
+        height: 330px;
+    }
+
+}
