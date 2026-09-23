@@ -1,6 +1,12 @@
-/* =========================================
-   ANGEL'S FASHION WORLD 🪽
-========================================= */
+/* ========================================
+   ANGEL'S FASHION WORLD
+   STYLE.CSS
+   ======================================== */
+
+
+/* ========================================
+   CONFIGURACIÓN GENERAL
+   ======================================== */
 
 * {
     margin: 0;
@@ -13,236 +19,544 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
     background: #fff0f6;
     color: #6b4055;
+    font-family: Georgia, "Times New Roman", serif;
     overflow-x: hidden;
 }
 
-/* =========================================
-   MENÚ
-========================================= */
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-.menu {
+
+/* ========================================
+   ENCABEZADO
+   ======================================== */
+
+.encabezado {
     width: 100%;
-    background: white;
+    min-height: 75px;
+    background: rgba(255, 255, 255, 0.96);
 
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    justify-content: space-between;
 
-    gap: 8px;
-    padding: 14px 10px;
-
-    box-shadow: 0 3px 12px rgba(107, 64, 85, 0.12);
-
+    padding: 15px 5%;
     position: relative;
-    z-index: 50;
+    z-index: 100;
+    box-shadow: 0 3px 18px rgba(107, 64, 85, 0.08);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 25px;
+    font-weight: bold;
+    color: #6b4055;
+}
+
+.logo-alas {
+    display: inline-block;
+    animation: movimientoAlas 3s ease-in-out infinite;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    flex-wrap: wrap;
 }
 
 .menu a {
-    text-decoration: none;
     color: #6b4055;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
 
-    font-weight: bold;
+.menu a:hover,
+.menu a.activo {
+    color: #d85b91;
+}
 
-    padding: 9px 13px;
 
-    border-radius: 20px;
+/* ========================================
+   ANIMACIÓN DE LAS ALAS
+   ======================================== */
+
+@keyframes movimientoAlas {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-7px) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    75% {
+        transform: translateY(-7px) rotate(3deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+}
+
+
+/* ========================================
+   PRESENTACIÓN PRINCIPAL
+   ======================================== */
+
+.presentacion-inicio {
+    min-height: 650px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 50% 40%,
+        #ffffff 0%,
+        #fff0f6 55%,
+        #ffe3ef 100%);
+}
+
+.contenido-inicio {
+    position: relative;
+    z-index: 5;
+
+    padding: 40px 20px;
+}
+
+.pequeno {
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: #a8758d;
+    margin-bottom: 15px;
+}
+
+.contenido-inicio h1 {
+    font-size: clamp(65px, 12vw, 125px);
+    color: #d85b91;
+    line-height: 1;
+    margin-bottom: 20px;
+
+    text-shadow: 0 4px 12px rgba(216, 91, 145, 0.15);
+}
+
+.subtitulo {
+    font-size: 21px;
+    color: #6b4055;
+    margin-bottom: 35px;
+}
+
+.boton-explorar {
+    display: inline-block;
+
+    background: #d85b91;
+    color: white;
+
+    padding: 14px 30px;
+
+    border-radius: 30px;
+
+    font-size: 16px;
+
+    box-shadow: 0 8px 20px rgba(216, 91, 145, 0.2);
 
     transition: 0.3s ease;
 }
 
-.menu a:hover {
-    background: #ffe0ed;
-    color: #d85b91;
-
-    transform: translateY(-2px);
+.boton-explorar:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(216, 91, 145, 0.3);
 }
 
-/* =========================================
-   PRESENTACIÓN
-========================================= */
 
-.presentacion {
-    position: relative;
+/* ========================================
+   ALAS DEL INICIO
+   ======================================== */
 
-    text-align: center;
+.alas-inicio {
+    position: absolute;
 
-    padding: 55px 20px 45px;
+    font-size: 75px;
 
-    min-height: 270px;
+    z-index: 3;
 
-    overflow: hidden;
+    animation: movimientoAlas 3.5s ease-in-out infinite;
 }
 
-.presentacion h1 {
-    position: relative;
-    z-index: 5;
-
-    color: #d85b91;
-
-    font-size: 42px;
-
-    margin: 10px 0;
+.alas-izquierda {
+    left: 10%;
+    top: 35%;
 }
 
-.presentacion p {
-    position: relative;
-    z-index: 5;
+.alas-derecha {
+    right: 10%;
+    top: 55%;
 
-    font-size: 18px;
+    animation-delay: 0.8s;
 }
 
-/* =========================================
-   ANIMACIONES ANGEL'S 🪽✦✧
-========================================= */
 
-@keyframes alasAngel {
-
-    0% {
-        transform:
-            translateY(0)
-            rotate(-5deg)
-            scale(1);
-    }
-
-    50% {
-        transform:
-            translateY(-12px)
-            rotate(5deg)
-            scale(1.08);
-    }
-
-    100% {
-        transform:
-            translateY(0)
-            rotate(-5deg)
-            scale(1);
-    }
-}
-
-@keyframes estrellaAngel {
-
-    0% {
-        transform:
-            scale(1)
-            rotate(0deg);
-
-        opacity: 0.35;
-
-        filter: blur(1px);
-    }
-
-    50% {
-        transform:
-            scale(1.35)
-            rotate(180deg);
-
-        opacity: 1;
-
-        filter: blur(0);
-    }
-
-    100% {
-        transform:
-            scale(1)
-            rotate(360deg);
-
-        opacity: 0.35;
-
-        filter: blur(1px);
-    }
-}
-
-/* =========================================
-   ALAS 🪽
-========================================= */
-
-.alas {
-    display: inline-block !important;
-
-    animation:
-        alasAngel 2s ease-in-out infinite !important;
-
-    transform-origin: center;
-
-    position: relative;
-
-    z-index: 6;
-
-    font-size: 48px;
-}
-
-/* =========================================
-   ESTRELLAS DEL HTML ✦ ✧
-========================================= */
-
-.decoracion {
-    display: inline-block !important;
-
-    animation:
-        estrellaAngel 2s ease-in-out infinite !important;
-}
-
-/* =========================================
-   ESTRELLAS DE LAS TARJETAS
-========================================= */
-
-.categoria-inicio::before,
-.categoria-inicio::after {
-
-    animation:
-        estrellaAngel 2s ease-in-out infinite !important;
-}
-
-/* =========================================
-   ESTRELLAS DEL ENCABEZADO
-========================================= */
-
-.presentacion::before,
-.presentacion::after {
-
-    animation:
-        estrellaAngel 2s ease-in-out infinite !important;
-}
-
-/* =========================================
-   ESTRELLITAS SOBRE NOSOTROS
-========================================= */
-
-.estrellitas {
-
-    display: inline-block;
-
-    animation:
-        estrellaAngel 2s ease-in-out infinite !important;
-}
-
-/* =========================================
-   EXPLORAR ✦ ✧
-========================================= */
+/* ========================================
+   EXPLORAR
+   ======================================== */
 
 .explorar {
-
-    text-align: center;
-
-    margin: 35px auto 30px;
-
     position: relative;
+
+    min-height: 1100px;
+
+    padding: 110px 6% 100px;
+
+    overflow: hidden;
+
+    background: #fff0f6;
 }
 
-.explorar h2 {
+
+/* ========================================
+   ESTRELLAS
+   ======================================== */
+
+/*
+   IMPORTANTE:
+   Las estrellas son pequeñas.
+   Están MUY separadas.
+   Cada una tiene una posición independiente.
+*/
+
+.estrella {
+    position: absolute;
 
     color: #d85b91;
 
-    font-size: 32px;
+    font-size: 16px;
+
+    line-height: 1;
+
+    z-index: 1;
+
+    animation: flotarEstrella 4s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+/* ESTRELLA 1 */
+
+.estrella-1 {
+    top: 8%;
+    left: 14%;
+    animation-delay: 0s;
+}
+
+
+/* ESTRELLA 2 */
+
+.estrella-2 {
+    top: 17%;
+    right: 13%;
+    animation-delay: 1s;
+}
+
+
+/* ESTRELLA 3 */
+
+.estrella-3 {
+    top: 38%;
+    left: 6%;
+    animation-delay: 2s;
+}
+
+
+/* ESTRELLA 4 */
+
+.estrella-4 {
+    top: 45%;
+    right: 8%;
+    animation-delay: 0.5s;
+}
+
+
+/* ESTRELLA 5 */
+
+.estrella-5 {
+    top: 63%;
+    left: 15%;
+    animation-delay: 1.5s;
+}
+
+
+/* ESTRELLA 6 */
+
+.estrella-6 {
+    top: 72%;
+    right: 16%;
+    animation-delay: 2.5s;
+}
+
+
+/* ESTRELLA 7 */
+
+.estrella-7 {
+    top: 84%;
+    left: 8%;
+    animation-delay: 3s;
+}
+
+
+/* ESTRELLA 8 */
+
+.estrella-8 {
+    top: 91%;
+    right: 9%;
+    animation-delay: 1.8s;
+}
+
+
+/* MOVIMIENTO DE LAS ESTRELLAS */
+
+@keyframes flotarEstrella {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.65;
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(8deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.65;
+    }
+
+}
+
+
+/* ========================================
+   ALAS DE EXPLORAR
+   ======================================== */
+
+.alas-explorar {
+    position: absolute;
+
+    top: 12%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 60px;
+
+    z-index: 2;
+
+    animation: movimientoAlas 3.5s ease-in-out infinite;
+}
+
+
+/* ========================================
+   TÍTULO EXPLORAR
+   ======================================== */
+
+.titulo-explorar {
+    position: relative;
+
+    z-index: 5;
+
+    text-align: center;
+
+    margin-bottom: 70px;
+}
+
+.titulo-explorar p {
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    color: #a8758d;
+
+    margin-bottom: 8px;
+}
+
+.titulo-explorar h2 {
+    font-size: clamp(45px, 7vw, 75px);
+
+    color: #d85b91;
+
+    margin-bottom: 10px;
+}
+
+.titulo-explorar span {
+    font-size: 18px;
+
+    color: #d85b91;
+}
+
+
+/* ========================================
+   CATEGORÍAS
+   ======================================== */
+
+.categorias {
+    position: relative;
+
+    z-index: 5;
+
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 45px;
+}
+
+
+/* ========================================
+   TARJETAS
+   ======================================== */
+
+.categoria {
+    min-height: 300px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    background: white;
+
+    border-radius: 35px;
+
+    padding: 45px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(216, 91, 145, 0.12);
+
+    box-shadow:
+        0 15px 35px rgba(107, 64, 85, 0.08);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.categoria:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 25px 45px rgba(107, 64, 85, 0.13);
+}
+
+
+/* ========================================
+   DECORACIÓN DE LAS TARJETAS
+   ======================================== */
+
+.categoria-decoracion {
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+
+    color: #e7a2bd;
+
+    font-size: 15px;
+}
+
+
+/* ========================================
+   CONTENIDO DE CATEGORÍAS
+   ======================================== */
+
+.categoria-contenido {
+    position: relative;
+
+    z-index: 2;
+}
+
+.numero {
+    display: block;
+
+    font-size: 13px;
+
+    color: #c792a8;
+
+    letter-spacing: 3px;
 
     margin-bottom: 15px;
 }
 
-.explorar-estrellas {
+.categoria h3 {
+    font-size: 42px;
+
+    color: #d85b91;
+
+    margin-bottom: 15px;
+}
+
+.categoria p {
+    max-width: 330px;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: #7b5868;
+
+    margin-bottom: 25px;
+}
+
+.ver-mas {
+    font-size: 14px;
+
+    color: #d85b91;
+
+    font-weight: bold;
+
+    transition: 0.3s ease;
+}
+
+.categoria:hover .ver-mas {
+    letter-spacing: 1px;
+}
+
+
+/* ========================================
+   FRASE FINAL
+   ======================================== */
+
+.frase-explorar {
+    position: relative;
+
+    z-index: 5;
+
+    margin-top: 90px;
 
     display: flex;
 
@@ -250,425 +564,254 @@ body {
 
     align-items: center;
 
-    gap: 18px;
+    gap: 25px;
 
-    min-height: 45px;
+    color: #a8758d;
 }
 
-.explorar-estrellas .decoracion {
-
-    display: inline-block !important;
-
+.frase-explorar span {
     color: #d85b91;
 
-    font-size: 32px;
-
-    line-height: 1;
-
-    animation:
-        estrellaAngel 2s ease-in-out infinite !important;
+    font-size: 15px;
 }
 
-.explorar-estrellas
-.decoracion:nth-child(2) {
+.frase-explorar p {
+    font-size: 16px;
 
-    animation-delay:
-        0.4s !important;
+    letter-spacing: 1px;
 }
 
-.explorar-estrellas
-.decoracion:nth-child(3) {
 
-    animation-delay:
-        0.8s !important;
-}
+/* ========================================
+   CONTACTANOS
+   ======================================== */
 
-.explorar-estrellas
-.decoracion:nth-child(4) {
-
-    animation-delay:
-        1.2s !important;
-}
-
-.explorar-estrellas
-.decoracion:nth-child(5) {
-
-    animation-delay:
-        1.6s !important;
-}
-
-/* =========================================
-   CATEGORÍAS DEL INICIO
-========================================= */
-
-.categorias-inicio {
-
-    width: 94%;
-
-    max-width: 1250px;
-
-    margin: 35px auto 55px;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 30px;
-}
-
-.categoria-inicio {
+.contactanos {
+    min-height: 500px;
 
     position: relative;
 
     overflow: hidden;
 
-    background: white;
+    display: flex;
 
-    color: #6b4055;
+    flex-direction: column;
 
-    text-decoration: none;
+    align-items: center;
+
+    justify-content: center;
 
     text-align: center;
 
-    padding: 45px 30px;
+    padding: 80px 20px;
 
-    min-height: 250px;
+    background: white;
+}
+
+.contactanos h2 {
+    color: #d85b91;
+
+    font-size: clamp(45px, 7vw, 70px);
+
+    margin-bottom: 20px;
+}
+
+.contactanos > p:not(.pequeno) {
+    max-width: 550px;
+
+    line-height: 1.7;
+
+    font-size: 17px;
+
+    margin-bottom: 30px;
+}
+
+.contacto-alas {
+    font-size: 55px;
+
+    margin-bottom: 20px;
+
+    animation: movimientoAlas 3.5s ease-in-out infinite;
+}
+
+.boton-whatsapp {
+    display: inline-block;
+
+    padding: 14px 28px;
 
     border-radius: 30px;
-
-    box-shadow:
-        0 5px 18px
-        rgba(107, 64, 85, 0.12);
-
-    transition: 0.3s ease;
-}
-
-.categoria-inicio:hover {
-
-    transform:
-        translateY(-7px);
-
-    box-shadow:
-        0 10px 25px
-        rgba(216, 91, 145, 0.22);
-}
-
-.categoria-inicio h3 {
-
-    color: #d85b91;
-
-    font-size: 25px;
-
-    margin-bottom: 12px;
-}
-
-.categoria-inicio p {
-
-    line-height: 1.6;
-
-    font-size: 16px;
-}
-
-.categoria-inicio .boton {
-
-    margin-top: 10px;
-}
-
-/* =========================================
-   CATEGORÍAS INTERNAS
-========================================= */
-
-.categorias {
-
-    width: 92%;
-
-    max-width: 1100px;
-
-    margin: 30px auto 50px;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 25px;
-}
-
-.categoria {
-
-    background: white;
-
-    color: #6b4055;
-
-    text-decoration: none;
-
-    text-align: center;
-
-    padding: 35px 25px;
-
-    min-height: 220px;
-
-    border-radius: 28px;
-
-    box-shadow:
-        0 5px 18px
-        rgba(107, 64, 85, 0.12);
-
-    transition: 0.3s ease;
-}
-
-.categoria:hover {
-
-    transform:
-        translateY(-7px);
-
-    box-shadow:
-        0 10px 25px
-        rgba(216, 91, 145, 0.22);
-}
-
-.categoria h2 {
-
-    color: #d85b91;
-
-    margin-bottom: 12px;
-}
-
-/* =========================================
-   BOTONES
-========================================= */
-
-.boton {
-
-    display: inline-block;
 
     background: #d85b91;
 
     color: white;
 
-    text-decoration: none;
-
-    padding: 12px 23px;
-
-    border-radius: 25px;
-
-    font-weight: bold;
-
-    border: none;
-
-    cursor: pointer;
-
     transition: 0.3s ease;
 }
 
-.boton:hover {
-
-    background: #b94778;
-
-    transform: scale(1.05);
+.boton-whatsapp:hover {
+    transform: translateY(-4px);
 }
 
-/* =========================================
-   PRODUCTOS
-========================================= */
 
-.productos {
-
-    width: 92%;
-
-    max-width: 1200px;
-
-    margin: 30px auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(230px, 1fr));
-
-    gap: 25px;
-}
-
-.producto {
-
-    background: white;
-
-    border-radius: 25px;
-
-    padding: 15px;
-
-    text-align: center;
-
-    box-shadow:
-        0 5px 18px
-        rgba(107, 64, 85, 0.12);
-}
-
-.producto img {
-
-    width: 100%;
-
-    height: 280px;
-
-    object-fit: cover;
-
-    border-radius: 20px;
-}
-
-.producto h3 {
-
-    color: #d85b91;
-
-    margin: 15px 0 8px;
-}
-
-.producto p {
-
-    line-height: 1.5;
-}
-
-.precio {
-
-    color: #d85b91;
-
-    font-size: 20px;
-
-    font-weight: bold;
-
-    margin: 10px 0;
-}
-
-/* =========================================
-   SOBRE NOSOTROS
-========================================= */
-
-.sobre {
-
-    width: 90%;
-
-    max-width: 900px;
-
-    margin: 35px auto;
-
-    background: white;
-
-    padding: 35px;
-
-    border-radius: 25px;
-
-    line-height: 1.8;
-
-    box-shadow:
-        0 5px 18px
-        rgba(107, 64, 85, 0.12);
-
-    text-align: center;
-}
-
-.sobre h2 {
-
-    color: #d85b91;
-
-    margin-bottom: 18px;
-}
-
-/* =========================================
-   CONTACTO
-========================================= */
-
-.contacto {
-
-    width: 90%;
-
-    max-width: 800px;
-
-    margin: 40px auto;
-
-    background: white;
-
-    padding: 35px 25px;
-
-    border-radius: 25px;
-
-    text-align: center;
-
-    box-shadow:
-        0 5px 18px
-        rgba(107, 64, 85, 0.12);
-}
-
-.contacto h2 {
-
-    color: #d85b91;
-
-    margin-bottom: 15px;
-}
-
-/* =========================================
+/* ========================================
    FOOTER
-========================================= */
+   ======================================== */
 
 footer {
+    min-height: 180px;
 
-    margin-top: 50px;
+    background: #6b4055;
 
-    background: white;
+    color: white;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
 
     text-align: center;
-
-    padding: 25px 15px;
-
-    line-height: 1.8;
 }
 
-/* =========================================
-   MÓVIL 📱
-========================================= */
+.footer-alas {
+    font-size: 35px;
 
-@media (max-width: 600px) {
+    animation: movimientoAlas 3.5s ease-in-out infinite;
+}
+
+footer p {
+    font-size: 13px;
+
+    opacity: 0.9;
+}
+
+
+/* ========================================
+   RESPONSIVE — CELULAR
+   ======================================== */
+
+@media (max-width: 850px) {
+
+    .encabezado {
+        flex-direction: column;
+
+        gap: 18px;
+
+        padding: 18px 15px;
+    }
 
     .menu {
-        gap: 4px;
+        gap: 12px 16px;
     }
 
     .menu a {
-
         font-size: 13px;
-
-        padding: 8px 10px;
     }
 
-    .presentacion h1 {
-
-        font-size: 35px;
+    .presentacion-inicio {
+        min-height: 580px;
     }
 
-    .presentacion p {
-
-        font-size: 16px;
+    .alas-inicio {
+        font-size: 50px;
     }
 
-    .alas {
-
-        font-size: 40px;
+    .alas-izquierda {
+        left: 3%;
     }
 
-    .categorias-inicio,
+    .alas-derecha {
+        right: 3%;
+    }
+
+    .explorar {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
     .categorias {
-
         grid-template-columns: 1fr;
 
+        gap: 25px;
     }
 
-    .categoria-inicio {
-
-        min-height: 220px;
-
-        padding: 35px 20px;
+    .categoria {
+        min-height: 280px;
     }
 
-    .sobre {
+}
 
-        padding: 25px 20px;
+
+@media (max-width: 500px) {
+
+    .logo {
+        font-size: 22px;
     }
+
+    .menu {
+        gap: 10px 13px;
+    }
+
+    .menu a {
+        font-size: 12px;
+    }
+
+    .contenido-inicio h1 {
+        font-size: 65px;
+    }
+
+    .subtitulo {
+        font-size: 17px;
+    }
+
+    .alas-inicio {
+        font-size: 38px;
+        opacity: 0.7;
+    }
+
+    .alas-izquierda {
+        left: -2%;
+    }
+
+    .alas-derecha {
+        right: -2%;
+    }
+
+    .explorar {
+        min-height: 1000px;
+        padding-top: 90px;
+    }
+
+    .alas-explorar {
+        font-size: 45px;
+    }
+
+    .estrella {
+        font-size: 13px;
+    }
+
+    .categoria {
+        padding: 32px 25px;
+
+        min-height: 250px;
+
+        border-radius: 28px;
+    }
+
+    .categoria h3 {
+        font-size: 34px;
+    }
+
+    .categoria p {
+        font-size: 14px;
+    }
+
+    .frase-explorar {
+        gap: 12px;
+    }
+
 }
