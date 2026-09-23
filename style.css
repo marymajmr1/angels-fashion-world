@@ -1,6 +1,6 @@
-/* ==========================================
+/* =========================================
    ANGEL'S FASHION WORLD 🪽
-========================================== */
+========================================= */
 
 * {
     margin: 0;
@@ -19,13 +19,13 @@ body {
     overflow-x: hidden;
 }
 
-/* ==========================================
+/* =========================================
    MENÚ
-========================================== */
+========================================= */
 
 .menu {
     width: 100%;
-    background: #ffffff;
+    background: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,7 +34,7 @@ body {
     padding: 14px 10px;
     box-shadow: 0 3px 12px rgba(107, 64, 85, 0.12);
     position: relative;
-    z-index: 100;
+    z-index: 50;
 }
 
 .menu a {
@@ -52,21 +52,21 @@ body {
     transform: translateY(-2px);
 }
 
-/* ==========================================
+/* =========================================
    PRESENTACIÓN
-========================================== */
+========================================= */
 
 .presentacion {
     position: relative;
     text-align: center;
     padding: 55px 20px 45px;
+    min-height: 270px;
     overflow: hidden;
-    min-height: 260px;
 }
 
 .presentacion h1 {
     position: relative;
-    z-index: 3;
+    z-index: 5;
     color: #d85b91;
     font-size: 42px;
     margin: 10px 0;
@@ -74,209 +74,226 @@ body {
 
 .presentacion p {
     position: relative;
-    z-index: 3;
+    z-index: 5;
     font-size: 18px;
 }
 
-/* ==========================================
-   ALAS 🪽
-========================================== */
+/* =========================================
+   ANIMACIONES VISIBLES ANGEL'S 🪽✦
+========================================= */
 
+@keyframes alasAngel {
+    0% {
+        transform: translateY(0) rotate(-5deg) scale(1);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(5deg) scale(1.08);
+    }
+
+    100% {
+        transform: translateY(0) rotate(-5deg) scale(1);
+    }
+}
+
+@keyframes estrellaAngel {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.35;
+        filter: blur(1px);
+    }
+
+    50% {
+        transform: scale(1.35) rotate(180deg);
+        opacity: 1;
+        filter: blur(0);
+    }
+
+    100% {
+        transform: scale(1) rotate(360deg);
+        opacity: 0.35;
+        filter: blur(1px);
+    }
+}
+
+/* 🪽 ALAS */
 .alas {
+    display: inline-block !important;
+    animation: alasAngel 2s ease-in-out infinite !important;
+    transform-origin: center;
     position: relative;
-    z-index: 4;
-    display: inline-block;
+    z-index: 6;
     font-size: 48px;
-    animation: alasMovimiento 2s ease-in-out infinite;
 }
 
-@keyframes alasMovimiento {
-
-    0% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    25% {
-        transform: translateY(-7px) rotate(-5deg);
-    }
-
-    50% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    75% {
-        transform: translateY(-7px) rotate(5deg);
-    }
-
-    100% {
-        transform: translateY(0) rotate(0deg);
-    }
+/* ✦ ESTRELLAS ESCRITAS EN HTML */
+.decoracion {
+    display: inline-block !important;
+    animation: estrellaAngel 2s ease-in-out infinite !important;
 }
 
-/* ==========================================
-   ESTRELLAS DECORATIVAS ☆
-========================================== */
-
-.estrellas {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 1;
+/* ✦ ESTRELLAS DE LAS TARJETAS */
+.categoria-inicio::before,
+.categoria-inicio::after {
+    animation: estrellaAngel 2s ease-in-out infinite !important;
 }
 
-.estrellas span {
-    position: absolute;
-    display: block;
-    color: #d85b91;
-    font-size: 25px;
-    font-weight: bold;
-    animation: estrellasMovimiento 3s ease-in-out infinite;
+/* ✦ ESTRELLAS DEL ENCABEZADO */
+.presentacion::before,
+.presentacion::after {
+    animation: estrellaAngel 2s ease-in-out infinite !important;
 }
 
-/* Posiciones */
-
-.estrellas span:nth-child(1) {
-    top: 12%;
-    left: 8%;
-    animation-delay: 0s;
-}
-
-.estrellas span:nth-child(2) {
-    top: 28%;
-    left: 22%;
-    animation-delay: 0.5s;
-}
-
-.estrellas span:nth-child(3) {
-    top: 18%;
-    right: 9%;
-    animation-delay: 1s;
-}
-
-.estrellas span:nth-child(4) {
-    top: 35%;
-    right: 23%;
-    animation-delay: 1.5s;
-}
-
-.estrellas span:nth-child(5) {
-    bottom: 17%;
-    left: 13%;
-    animation-delay: 2s;
-}
-
-.estrellas span:nth-child(6) {
-    bottom: 12%;
-    right: 12%;
-    animation-delay: 2.5s;
-}
-
-@keyframes estrellasMovimiento {
-
-    0% {
-        transform: translateY(0) rotate(0deg) scale(1);
-        opacity: 0.55;
-    }
-
-    50% {
-        transform: translateY(-13px) rotate(15deg) scale(1.25);
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateY(0) rotate(0deg) scale(1);
-        opacity: 0.55;
-    }
-}
-
-/* ==========================================
-   ESTRELLAS DE EXPLORAR ☆
-========================================== */
-
-.explorar-estrellas {
-    text-align: center;
-    margin: 8px 0 20px;
-}
-
-.explorar-estrellas span {
+/* ✦ ESTRELLITAS DE SOBRE NOSOTROS */
+.estrellitas {
     display: inline-block;
-    color: #d85b91;
-    font-size: 24px;
-    margin: 0 5px;
-    animation: explorarEstrella 2.5s ease-in-out infinite;
+    animation: estrellaAngel 2s ease-in-out infinite !important;
 }
 
-.explorar-estrellas span:nth-child(2) {
-    animation-delay: 0.4s;
-}
+/* =========================================
+   EXPLORAR
+========================================= */
 
-.explorar-estrellas span:nth-child(3) {
-    animation-delay: 0.8s;
-}
-
-.explorar-estrellas span:nth-child(4) {
-    animation-delay: 1.2s;
-}
-
-.explorar-estrellas span:nth-child(5) {
-    animation-delay: 1.6s;
-}
-
-@keyframes explorarEstrella {
-
-    0%,
-    100% {
-        transform: translateY(0) scale(1);
-        opacity: 0.7;
-    }
-
-    50% {
-        transform: translateY(-8px) scale(1.2);
-        opacity: 1;
-    }
-}
-
-/* ==========================================
-   TÍTULOS
-========================================== */
-
-.titulo-seccion {
+.explorar {
     text-align: center;
+    margin: 25px auto;
+}
+
+.explorar h2 {
     color: #d85b91;
     font-size: 30px;
-    margin: 30px 0 10px;
+    margin-bottom: 10px;
 }
 
-/* ==========================================
-   CATEGORÍAS / BOTONES
-========================================== */
+.explorar-estrellas {
+    margin-bottom: 20px;
+}
+
+.explorar-estrellas .decoracion {
+    margin: 0 6px;
+    font-size: 25px;
+}
+
+/* =========================================
+   CATEGORÍAS DEL INICIO
+========================================= */
+
+.categorias-inicio {
+    width: 92%;
+    max-width: 1100px;
+    margin: 25px auto 45px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.categoria-inicio {
+    position: relative;
+    overflow: hidden;
+
+    background: white;
+    color: #6b4055;
+    text-decoration: none;
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 5px 18px rgba(107, 64, 85, 0.12);
+
+    transition: 0.3s ease;
+}
+
+.categoria-inicio:hover {
+    transform: translateY(-7px);
+    box-shadow:
+        0 10px 25px rgba(216, 91, 145, 0.22);
+}
+
+.categoria-inicio h3 {
+    color: #d85b91;
+    margin-bottom: 10px;
+    font-size: 23px;
+}
+
+.categoria-inicio p {
+    line-height: 1.5;
+}
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.boton {
+    display: inline-block;
+
+    background: #d85b91;
+    color: white;
+
+    text-decoration: none;
+
+    padding: 12px 23px;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    border: none;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.boton:hover {
+    background: #b94778;
+    transform: scale(1.05);
+}
+
+/* =========================================
+   CATEGORÍAS INTERNAS
+========================================= */
 
 .categorias {
     width: 92%;
     max-width: 1100px;
-    margin: 25px auto;
+
+    margin: 25px auto 45px;
+
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+
+    gap: 22px;
 }
 
 .categoria {
-    background: #ffffff;
+    background: white;
+
     color: #6b4055;
+
     text-decoration: none;
+
     text-align: center;
-    padding: 28px 20px;
+
+    padding: 30px 20px;
+
     border-radius: 25px;
-    box-shadow: 0 5px 18px rgba(107, 64, 85, 0.12);
+
+    box-shadow:
+        0 5px 18px rgba(107, 64, 85, 0.12);
+
     transition: 0.3s ease;
 }
 
 .categoria:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(216, 91, 145, 0.22);
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 10px 25px rgba(216, 91, 145, 0.22);
 }
 
 .categoria h2 {
@@ -288,51 +305,47 @@ body {
     line-height: 1.5;
 }
 
-/* ==========================================
-   BOTÓN
-========================================== */
-
-.boton {
-    display: inline-block;
-    background: #d85b91;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 12px 22px;
-    border-radius: 25px;
-    font-weight: bold;
-    transition: 0.3s ease;
-}
-
-.boton:hover {
-    background: #b94778;
-    transform: scale(1.05);
-}
-
-/* ==========================================
+/* =========================================
    PRODUCTOS
-========================================== */
+========================================= */
 
 .productos {
     width: 92%;
     max-width: 1200px;
+
     margin: 30px auto;
+
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+
     gap: 25px;
 }
 
 .producto {
-    background: #ffffff;
+    background: white;
+
     border-radius: 25px;
+
     padding: 15px;
+
     text-align: center;
-    box-shadow: 0 5px 18px rgba(107, 64, 85, 0.12);
+
+    box-shadow:
+        0 5px 18px rgba(107, 64, 85, 0.12);
+
+    transition: 0.3s ease;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
 }
 
 .producto img {
     width: 100%;
     height: 280px;
+
     object-fit: cover;
+
     border-radius: 20px;
 }
 
@@ -347,45 +360,63 @@ body {
 
 .precio {
     color: #d85b91;
+
     font-size: 20px;
+
     font-weight: bold;
+
     margin: 10px 0;
 }
 
-/* ==========================================
+/* =========================================
    SOBRE NOSOTROS
-========================================== */
+========================================= */
 
 .sobre {
     width: 90%;
     max-width: 900px;
+
     margin: 35px auto;
-    background: #ffffff;
+
+    background: white;
+
     padding: 35px;
+
     border-radius: 25px;
+
     line-height: 1.8;
-    box-shadow: 0 5px 18px rgba(107, 64, 85, 0.12);
+
+    box-shadow:
+        0 5px 18px rgba(107, 64, 85, 0.12);
+
+    text-align: center;
 }
 
 .sobre h2 {
-    text-align: center;
     color: #d85b91;
     margin-bottom: 18px;
 }
 
-/* ==========================================
-   CONTACTO
-========================================== */
+/* =========================================
+   CONTACTANOS
+========================================= */
 
 .contacto {
     width: 90%;
     max-width: 800px;
+
     margin: 40px auto;
-    background: #ffffff;
+
+    background: white;
+
     padding: 35px 25px;
+
     border-radius: 25px;
+
     text-align: center;
-    box-shadow: 0 5px 18px rgba(107, 64, 85, 0.12);
+
+    box-shadow:
+        0 5px 18px rgba(107, 64, 85, 0.12);
 }
 
 .contacto h2 {
@@ -393,21 +424,25 @@ body {
     margin-bottom: 15px;
 }
 
-/* ==========================================
+/* =========================================
    PIE DE PÁGINA
-========================================== */
+========================================= */
 
 footer {
     margin-top: 50px;
-    background: #ffffff;
+
+    background: white;
+
     text-align: center;
+
     padding: 25px 15px;
+
     line-height: 1.8;
 }
 
-/* ==========================================
-   MÓVIL 📱
-========================================== */
+/* =========================================
+   MÓVIL
+========================================= */
 
 @media (max-width: 600px) {
 
@@ -432,6 +467,7 @@ footer {
         font-size: 40px;
     }
 
+    .categorias-inicio,
     .categorias {
         grid-template-columns: 1fr;
     }
@@ -439,5 +475,4 @@ footer {
     .sobre {
         padding: 25px 20px;
     }
-
 }
