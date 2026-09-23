@@ -1,11 +1,12 @@
-// =========================================
-// ANGEL'S FASHION WORLD 🪽
-// =========================================
+// ========================================
+// ANGEL'S FASHION WORLD 🪽✦
+// ========================================
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Las estrellas NO se crean ni se borran.
-    // Las que estén escritas en el HTML se conservan.
+    // ========================================
+    // ESTRELLAS ✦ ✧
+    // ========================================
 
     const decoraciones =
         document.querySelectorAll(".decoracion");
@@ -18,7 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // Estrellitas de Sobre Nosotros
+    // ========================================
+    // ESTRELLITAS
+    // ========================================
 
     const estrellitas =
         document.querySelectorAll(".estrellitas");
@@ -31,7 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // Alas 🪽
+    // ========================================
+    // ALAS 🪽
+    // ========================================
 
     const alas =
         document.querySelectorAll(".alas");
@@ -53,7 +58,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // Desplazamiento suave
+    // ========================================
+    // DESPLAZAMIENTO SUAVE
+    // ========================================
 
     const enlaces =
         document.querySelectorAll('a[href^="#"]');
