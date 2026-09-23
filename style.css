@@ -95,6 +95,29 @@ body {
     animation: brillarEstrella 2.7s ease-in-out infinite;
 }
 
+/* =========================================
+   ALAS + ESTRELLA 🪽✦
+========================================= */
+
+.alas-con-estrella {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    animation: moverAlasEstrella 2.5s ease-in-out infinite;
+}
+
+.alas-con-estrella .alas {
+    animation: none;
+    margin: 0;
+}
+
+.estrella-alas {
+    color: #c8a96b !important;
+    font-size: 25px;
+    display: inline-block;
+}
+
 .alas {
     font-size: 48px;
     margin-bottom: 5px;
@@ -224,7 +247,8 @@ body {
 }
 
 /* =========================================
-   CATEGORÍAS
+   CATEGORÍAS DE MODA / BELLEZA / SKIN CARE
+   / ACCESORIOS
 ========================================= */
 
 .categorias,
@@ -236,7 +260,11 @@ body {
     gap: 25px;
 }
 
+/* TARJETA CON ESTRELLAS EN LAS ESQUINAS */
+
 .categoria {
+    position: relative;
+    overflow: hidden;
     background: #ffffff;
     text-align: center;
     padding: 35px 25px;
@@ -244,6 +272,30 @@ body {
     border: 2px solid #f3c1d6;
     box-shadow: 0 10px 28px rgba(216, 91, 145, 0.10);
     transition: 0.3s;
+}
+
+/* ESTRELLA SUPERIOR IZQUIERDA */
+
+.categoria::before {
+    content: "✦";
+    position: absolute;
+    top: 12px;
+    left: 18px;
+    color: #c8a96b;
+    font-size: 17px;
+    animation: estrellaEsquina1 2.4s ease-in-out infinite;
+}
+
+/* ESTRELLA INFERIOR DERECHA */
+
+.categoria::after {
+    content: "✧";
+    position: absolute;
+    bottom: 12px;
+    right: 18px;
+    color: #c8a96b;
+    font-size: 17px;
+    animation: estrellaEsquina2 2.8s ease-in-out infinite;
 }
 
 .categoria:hover {
@@ -529,6 +581,18 @@ footer p {
    ANIMACIONES 🪽✨
 ========================================= */
 
+@keyframes moverAlasEstrella {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-9px) rotate(2deg);
+    }
+}
+
 @keyframes flotarAlas {
 
     0%,
@@ -570,6 +634,36 @@ footer p {
     75% {
         transform: translateY(-4px) scale(1.1) rotate(8deg);
         opacity: 0.85;
+    }
+}
+
+/* ESTRELLAS DE LAS TARJETAS */
+
+@keyframes estrellaEsquina1 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translate(4px, -6px) scale(1.25) rotate(15deg);
+        opacity: 1;
+    }
+}
+
+@keyframes estrellaEsquina2 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translate(-4px, 6px) scale(1.25) rotate(-15deg);
+        opacity: 1;
     }
 }
 
