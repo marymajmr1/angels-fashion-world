@@ -348,3 +348,68 @@ body {
     text-decoration: none;
     background: #d85b91;
     color:
+
+       /* =========================================
+   ANIMACIONES VISIBLES ANGEL'S 🪽✨
+========================================= */
+
+@keyframes alasAngel {
+    0% {
+        transform: translateY(0) rotate(-5deg) scale(1);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(5deg) scale(1.08);
+    }
+
+    100% {
+        transform: translateY(0) rotate(-5deg) scale(1);
+    }
+}
+
+@keyframes estrellaAngel {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.5) rotate(180deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1) rotate(360deg);
+        opacity: 0.5;
+    }
+}
+
+/* 🪽 ALAS */
+.alas {
+    display: inline-block !important;
+    animation: alasAngel 2s ease-in-out infinite !important;
+    transform-origin: center;
+}
+
+/* ✦ ESTRELLAS QUE ESTÁN ESCRITAS EN HTML */
+.decoracion {
+    display: inline-block !important;
+    animation: estrellaAngel 2s ease-in-out infinite !important;
+}
+
+/* ✦ ESTRELLAS DE LAS TARJETAS */
+.categoria-inicio::before,
+.categoria-inicio::after {
+    animation: estrellaAngel 2s ease-in-out infinite !important;
+}
+
+/* ✦ ESTRELLAS DEL ENCABEZADO */
+.presentacion::before,
+.presentacion::after {
+    animation: estrellaAngel 2s ease-in-out infinite !important;
+}
+
+/* ✦ ESTRELLITAS DE SOBRE NOSOTROS */
+.estrellitas {
+    animation: estrellaAngel 2s ease-in-out infinite !important;
+}
