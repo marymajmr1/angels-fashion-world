@@ -15,10 +15,12 @@ html {
 
 body {
     font-family: Arial, sans-serif;
+
     background:
         radial-gradient(circle at top left, #ffffff 0%, transparent 35%),
         radial-gradient(circle at bottom right, #ffddea 0%, transparent 35%),
         #fff1f7;
+
     color: #68495a;
     line-height: 1.6;
 }
@@ -35,9 +37,14 @@ body {
     flex-wrap: wrap;
     gap: 8px;
     padding: 18px 20px;
+
     background: rgba(255, 255, 255, 0.96);
+
     border-bottom: 1px solid #f3c7d9;
-    box-shadow: 0 4px 15px rgba(216, 91, 145, 0.08);
+
+    box-shadow:
+        0 4px 15px rgba(216, 91, 145, 0.08);
+
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -47,8 +54,10 @@ body {
     text-decoration: none;
     color: #68495a;
     font-weight: bold;
+
     padding: 9px 14px;
     border-radius: 20px;
+
     transition: 0.3s;
 }
 
@@ -63,36 +72,57 @@ body {
 
 .presentacion {
     position: relative;
+
     max-width: 1050px;
     margin: 45px auto 30px;
+
     padding: 60px 30px;
+
     text-align: center;
+
     background:
-        linear-gradient(135deg, #ffffff, #fff4f8, #ffe5f0);
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fff4f8,
+            #ffe5f0
+        );
+
     border-radius: 35px;
     border: 1px solid #f2c1d5;
-    box-shadow: 0 15px 40px rgba(216, 91, 145, 0.13);
+
+    box-shadow:
+        0 15px 40px rgba(216, 91, 145, 0.13);
+
     overflow: hidden;
 }
 
 .presentacion::before {
     content: "✦";
+
     position: absolute;
     top: 25px;
     left: 35px;
+
     color: #c8a96b;
     font-size: 25px;
-    animation: brillarEstrella 2.2s ease-in-out infinite;
+
+    animation:
+        brillarEstrella 2.2s ease-in-out infinite;
 }
 
 .presentacion::after {
     content: "✧";
+
     position: absolute;
     bottom: 25px;
     right: 35px;
+
     color: #c8a96b;
     font-size: 25px;
-    animation: brillarEstrella 2.7s ease-in-out infinite;
+
+    animation:
+        brillarEstrella 2.7s ease-in-out infinite;
 }
 
 /* =========================================
@@ -101,10 +131,14 @@ body {
 
 .alas-con-estrella {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
+
     gap: 8px;
-    animation: moverAlasEstrella 2.5s ease-in-out infinite;
+
+    animation:
+        moverAlasEstrella 2.5s ease-in-out infinite;
 }
 
 .alas-con-estrella .alas {
@@ -121,38 +155,55 @@ body {
 .alas {
     font-size: 48px;
     margin-bottom: 5px;
+
     display: inline-block;
-    animation: flotarAlas 2.5s ease-in-out infinite;
+
+    animation:
+        flotarAlas 2.5s ease-in-out infinite;
 }
 
 .presentacion h1 {
     color: #d85b91;
+
     font-family: Georgia, serif;
+
     font-size: clamp(42px, 7vw, 70px);
+
     margin: 5px 0 10px;
 }
 
 .frase {
     color: #d85b91;
+
     font-family: Georgia, serif;
+
     font-size: 22px;
     font-weight: bold;
+
     margin-bottom: 10px;
 }
 
 .presentacion p:not(.frase) {
     max-width: 700px;
+
     margin: auto;
+
     color: #765568;
+
     font-size: 17px;
 }
 
 .decoracion {
     color: #c8a96b;
+
     font-size: 25px;
+
     margin: 10px;
+
     display: inline-block;
-    animation: brillarEstrella 2s ease-in-out infinite;
+
+    animation:
+        brillarEstrella 2s ease-in-out infinite;
 }
 
 /* =========================================
@@ -161,25 +212,43 @@ body {
 
 .categorias-inicio {
     width: min(1000px, 90%);
+
     margin: 45px auto;
+
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
     gap: 28px;
 }
 
 .categoria-inicio {
     position: relative;
+
     display: block;
+
     text-align: center;
+
     text-decoration: none;
+
     color: #68495a;
+
     background: #ffffff;
+
     padding: 38px 28px;
+
     min-height: 260px;
+
     border-radius: 28px;
+
     border: 2px solid #f3c1d6;
-    box-shadow: 0 10px 30px rgba(216, 91, 145, 0.12);
+
+    box-shadow:
+        0 10px 30px rgba(216, 91, 145, 0.12);
+
     overflow: hidden;
+
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease,
@@ -188,28 +257,43 @@ body {
 
 .categoria-inicio::before {
     content: "✦";
+
     position: absolute;
+
     top: 12px;
     left: 20px;
+
     color: #c8a96b;
+
     font-size: 18px;
-    animation: brillarEstrella 2.4s ease-in-out infinite;
+
+    animation:
+        brillarEstrella 2.4s ease-in-out infinite;
 }
 
 .categoria-inicio::after {
     content: "✧";
+
     position: absolute;
+
     bottom: 12px;
     right: 20px;
+
     color: #c8a96b;
+
     font-size: 18px;
-    animation: brillarEstrella 2.8s ease-in-out infinite;
+
+    animation:
+        brillarEstrella 2.8s ease-in-out infinite;
 }
 
 .categoria-inicio:hover {
     transform: translateY(-8px);
+
     border-color: #d85b91;
-    box-shadow: 0 18px 35px rgba(216, 91, 145, 0.20);
+
+    box-shadow:
+        0 18px 35px rgba(216, 91, 145, 0.20);
 }
 
 .categoria-inicio .emoji {
@@ -219,58 +303,98 @@ body {
 
 .categoria-inicio h2 {
     color: #d85b91;
+
     font-family: Georgia, serif;
+
     font-size: 30px;
+
     margin-bottom: 8px;
 }
 
 .categoria-inicio p {
     color: #765568;
+
     max-width: 330px;
+
     margin: 0 auto 20px;
 }
 
 .explorar {
     display: inline-block;
-    background: linear-gradient(135deg, #d85b91, #ef8eb5);
+
+    background:
+        linear-gradient(
+            135deg,
+            #d85b91,
+            #ef8eb5
+        );
+
     color: white;
+
     padding: 10px 22px;
+
     border-radius: 30px;
+
     font-weight: bold;
-    box-shadow: 0 6px 15px rgba(216, 91, 145, 0.20);
+
+    box-shadow:
+        0 6px 15px rgba(216, 91, 145, 0.20);
+
     transition: 0.3s;
 }
 
 .categoria-inicio:hover .explorar {
-    background: linear-gradient(135deg, #c94b82, #e978a6);
+    background:
+        linear-gradient(
+            135deg,
+            #c94b82,
+            #e978a6
+        );
+
     transform: scale(1.04);
 }
 
 /* =========================================
-   CATEGORÍAS DE MODA / BELLEZA / SKIN CARE
-   / ACCESORIOS
+   CATEGORÍAS DE MODA / BELLEZA /
+   SKIN CARE / ACCESORIOS
 ========================================= */
 
 .categorias,
 .categorias-moda {
     width: min(1100px, 90%);
+
     margin: 45px auto;
+
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
     gap: 25px;
 }
 
-/* TARJETA CON ESTRELLAS EN LAS ESQUINAS */
+/* =========================================
+   TARJETA CON ESTRELLAS
+========================================= */
 
 .categoria {
     position: relative;
+
     overflow: hidden;
+
     background: #ffffff;
+
     text-align: center;
+
     padding: 35px 25px;
+
     border-radius: 28px;
+
     border: 2px solid #f3c1d6;
-    box-shadow: 0 10px 28px rgba(216, 91, 145, 0.10);
+
+    box-shadow:
+        0 10px 28px rgba(216, 91, 145, 0.10);
+
     transition: 0.3s;
 }
 
@@ -278,29 +402,43 @@ body {
 
 .categoria::before {
     content: "✦";
+
     position: absolute;
+
     top: 12px;
     left: 18px;
+
     color: #c8a96b;
+
     font-size: 17px;
-    animation: estrellaEsquina1 2.4s ease-in-out infinite;
+
+    animation:
+        estrellaEsquina1 2.4s ease-in-out infinite;
 }
 
 /* ESTRELLA INFERIOR DERECHA */
 
 .categoria::after {
     content: "✧";
+
     position: absolute;
+
     bottom: 12px;
     right: 18px;
+
     color: #c8a96b;
+
     font-size: 17px;
-    animation: estrellaEsquina2 2.8s ease-in-out infinite;
+
+    animation:
+        estrellaEsquina2 2.8s ease-in-out infinite;
 }
 
 .categoria:hover {
     transform: translateY(-6px);
-    box-shadow: 0 16px 35px rgba(216, 91, 145, 0.18);
+
+    box-shadow:
+        0 16px 35px rgba(216, 91, 145, 0.18);
 }
 
 .categoria .emoji {
@@ -310,31 +448,55 @@ body {
 
 .categoria h2 {
     color: #d85b91;
+
     font-family: Georgia, serif;
+
     font-size: 25px;
+
     margin-bottom: 10px;
 }
 
 .categoria p {
     color: #765568;
+
     margin-bottom: 20px;
 }
 
 .boton {
     display: inline-block;
+
     text-decoration: none;
+
     color: white;
-    background: linear-gradient(135deg, #d85b91, #ef8eb5);
+
+    background:
+        linear-gradient(
+            135deg,
+            #d85b91,
+            #ef8eb5
+        );
+
     padding: 11px 20px;
+
     border-radius: 30px;
+
     font-weight: bold;
-    box-shadow: 0 6px 15px rgba(216, 91, 145, 0.18);
+
+    box-shadow:
+        0 6px 15px rgba(216, 91, 145, 0.18);
+
     transition: 0.3s;
 }
 
 .boton:hover {
     transform: translateY(-2px);
-    background: linear-gradient(135deg, #c94b82, #e978a6);
+
+    background:
+        linear-gradient(
+            135deg,
+            #c94b82,
+            #e978a6
+        );
 }
 
 /* =========================================
@@ -343,13 +505,26 @@ body {
 
 .sobre-inicio {
     width: min(900px, 90%);
+
     margin: 55px auto;
+
     padding: 45px 30px;
+
     text-align: center;
-    background: linear-gradient(135deg, #ffffff, #fff0f6);
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fff0f6
+        );
+
     border-radius: 30px;
+
     border: 2px solid #f3c1d6;
-    box-shadow: 0 10px 30px rgba(216, 91, 145, 0.10);
+
+    box-shadow:
+        0 10px 30px rgba(216, 91, 145, 0.10);
 }
 
 .sobre-inicio .alas {
@@ -358,14 +533,19 @@ body {
 
 .sobre-inicio h2 {
     color: #d85b91;
+
     font-family: Georgia, serif;
+
     font-size: 30px;
+
     margin: 10px 0;
 }
 
 .sobre-inicio p {
     max-width: 700px;
+
     margin: auto;
+
     color: #765568;
 }
 
@@ -375,19 +555,30 @@ body {
 
 .contacto {
     width: min(850px, 90%);
+
     margin: 50px auto;
+
     padding: 45px 25px;
+
     text-align: center;
+
     background: #ffffff;
+
     border-radius: 30px;
+
     border: 2px solid #f3c1d6;
-    box-shadow: 0 10px 30px rgba(216, 91, 145, 0.10);
+
+    box-shadow:
+        0 10px 30px rgba(216, 91, 145, 0.10);
 }
 
 .contacto h2 {
     color: #d85b91;
+
     font-family: Georgia, serif;
+
     font-size: 30px;
+
     margin-bottom: 10px;
 }
 
@@ -397,12 +588,19 @@ body {
 
 .whatsapp {
     display: inline-block;
+
     text-decoration: none;
+
     background: #d85b91;
+
     color: white;
+
     padding: 12px 24px;
+
     border-radius: 30px;
+
     font-weight: bold;
+
     transition: 0.3s;
 }
 
@@ -416,19 +614,38 @@ body {
 
 .carrito-flotante {
     position: fixed;
+
     right: 20px;
     bottom: 20px;
+
     z-index: 2000;
+
     display: flex;
+
     align-items: center;
+
     gap: 8px;
+
     text-decoration: none;
-    background: linear-gradient(135deg, #d85b91, #ef8eb5);
+
+    background:
+        linear-gradient(
+            135deg,
+            #d85b91,
+            #ef8eb5
+        );
+
     color: white;
+
     padding: 13px 18px;
+
     border-radius: 35px;
+
     font-weight: bold;
-    box-shadow: 0 8px 25px rgba(216, 91, 145, 0.30);
+
+    box-shadow:
+        0 8px 25px rgba(216, 91, 145, 0.30);
+
     transition: 0.3s;
 }
 
@@ -438,14 +655,23 @@ body {
 
 .contador-carrito {
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     min-width: 25px;
+
     height: 25px;
+
     padding: 3px 7px;
+
     background: white;
+
     color: #d85b91;
+
     border-radius: 50%;
+
     font-size: 13px;
 }
 
@@ -455,9 +681,13 @@ body {
 
 footer {
     margin-top: 70px;
+
     padding: 35px 20px;
+
     text-align: center;
+
     background: #d85b91;
+
     color: white;
 }
 
@@ -471,83 +701,141 @@ footer p {
 
 .sobre-nosotros-contenido {
     width: min(1000px, 90%);
+
     margin: 40px auto;
 }
 
 .tarjeta-sobre {
     position: relative;
+
     margin-bottom: 30px;
+
     padding: 45px 35px;
+
     text-align: center;
-    background: linear-gradient(135deg, #ffffff, #fff0f6);
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #fff0f6
+        );
+
     border: 2px solid #f3c1d6;
+
     border-radius: 30px;
-    box-shadow: 0 10px 30px rgba(216, 91, 145, 0.12);
+
+    box-shadow:
+        0 10px 30px rgba(216, 91, 145, 0.12);
 }
 
 .icono-sobre {
     font-size: 45px;
+
     margin-bottom: 5px;
 }
 
 .estrellitas {
     display: block;
+
     color: #c8a96b;
+
     letter-spacing: 8px;
+
     margin-bottom: 8px;
-    animation: brillarEstrella 2s ease-in-out infinite;
+
+    animation:
+        brillarEstrella 2s ease-in-out infinite;
 }
 
 .tarjeta-sobre h2 {
     color: #d85b91;
+
     font-family: Georgia, serif;
+
     font-size: 30px;
+
     margin-bottom: 15px;
 }
 
 .tarjeta-sobre p {
     max-width: 750px;
+
     margin: 0 auto 15px;
+
     color: #765568;
 }
 
 .tarjeta-sobre.especial {
-    background: linear-gradient(135deg, #ffe8f2, #ffffff, #fff2f7);
+    background:
+        linear-gradient(
+            135deg,
+            #ffe8f2,
+            #ffffff,
+            #fff2f7
+        );
 }
 
 .mini-categorias {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
     gap: 15px;
+
     max-width: 700px;
+
     margin: 25px auto 0;
 }
 
 .mini-categorias div {
     padding: 18px 10px;
+
     background: white;
+
     border: 1px solid #f3c1d6;
+
     border-radius: 20px;
+
     color: #d85b91;
+
     font-size: 28px;
 }
 
 .mini-categorias span {
     display: block;
+
     font-size: 14px;
+
     color: #68495a;
+
     font-weight: bold;
 }
 
 .mensaje-final {
     width: min(850px, 90%);
+
     margin: 50px auto;
+
     padding: 50px 30px;
+
     text-align: center;
-    background: linear-gradient(135deg, #d85b91, #ef9abb, #f5bdd2);
+
+    background:
+        linear-gradient(
+            135deg,
+            #d85b91,
+            #ef9abb,
+            #f5bdd2
+        );
+
     color: white;
+
     border-radius: 35px;
-    box-shadow: 0 15px 35px rgba(216, 91, 145, 0.25);
+
+    box-shadow:
+        0 15px 35px rgba(216, 91, 145, 0.25);
 }
 
 .mensaje-final .alas {
@@ -556,24 +844,31 @@ footer p {
 
 .mensaje-final h2 {
     font-family: Georgia, serif;
+
     font-size: 32px;
+
     margin-bottom: 12px;
 }
 
 .mensaje-final p {
     max-width: 650px;
+
     margin: 8px auto;
 }
 
 .mensaje-final .frase {
     color: white;
+
     margin-top: 15px;
 }
 
 .decoracion-final {
     margin-top: 20px;
+
     color: #fff4cf;
+
     font-size: 25px;
+
     letter-spacing: 8px;
 }
 
@@ -585,11 +880,15 @@ footer p {
 
     0%,
     100% {
-        transform: translateY(0) rotate(0deg);
+        transform:
+            translateY(0)
+            rotate(0deg);
     }
 
     50% {
-        transform: translateY(-9px) rotate(2deg);
+        transform:
+            translateY(-9px)
+            rotate(2deg);
     }
 }
 
@@ -597,19 +896,27 @@ footer p {
 
     0%,
     100% {
-        transform: translateY(0) rotate(0deg);
+        transform:
+            translateY(0)
+            rotate(0deg);
     }
 
     25% {
-        transform: translateY(-5px) rotate(-3deg);
+        transform:
+            translateY(-5px)
+            rotate(-3deg);
     }
 
     50% {
-        transform: translateY(-10px) rotate(3deg);
+        transform:
+            translateY(-10px)
+            rotate(3deg);
     }
 
     75% {
-        transform: translateY(-5px) rotate(-2deg);
+        transform:
+            translateY(-5px)
+            rotate(-2deg);
     }
 }
 
@@ -617,38 +924,64 @@ footer p {
 
     0%,
     100% {
-        transform: translateY(0) scale(1) rotate(0deg);
+        transform:
+            translateY(0)
+            scale(1)
+            rotate(0deg);
+
         opacity: 0.65;
     }
 
     25% {
-        transform: translateY(-5px) scale(1.1) rotate(8deg);
+        transform:
+            translateY(-5px)
+            scale(1.1)
+            rotate(8deg);
+
         opacity: 0.9;
     }
 
     50% {
-        transform: translateY(-9px) scale(1.25) rotate(15deg);
+        transform:
+            translateY(-9px)
+            scale(1.25)
+            rotate(15deg);
+
         opacity: 1;
     }
 
     75% {
-        transform: translateY(-4px) scale(1.1) rotate(8deg);
+        transform:
+            translateY(-4px)
+            scale(1.1)
+            rotate(8deg);
+
         opacity: 0.85;
     }
 }
 
-/* ESTRELLAS DE LAS TARJETAS */
+/* =========================================
+   ESTRELLAS DE LAS TARJETAS
+========================================= */
 
 @keyframes estrellaEsquina1 {
 
     0%,
     100% {
-        transform: translate(0, 0) scale(1) rotate(0deg);
+        transform:
+            translate(0, 0)
+            scale(1)
+            rotate(0deg);
+
         opacity: 0.6;
     }
 
     50% {
-        transform: translate(4px, -6px) scale(1.25) rotate(15deg);
+        transform:
+            translate(4px, -6px)
+            scale(1.25)
+            rotate(15deg);
+
         opacity: 1;
     }
 }
@@ -657,12 +990,20 @@ footer p {
 
     0%,
     100% {
-        transform: translate(0, 0) scale(1) rotate(0deg);
+        transform:
+            translate(0, 0)
+            scale(1)
+            rotate(0deg);
+
         opacity: 0.6;
     }
 
     50% {
-        transform: translate(-4px, 6px) scale(1.25) rotate(-15deg);
+        transform:
+            translate(-4px, 6px)
+            scale(1.25)
+            rotate(-15deg);
+
         opacity: 1;
     }
 }
@@ -675,11 +1016,13 @@ footer p {
 
     .categorias,
     .categorias-moda {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
     .mini-categorias {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 }
 
@@ -691,12 +1034,15 @@ footer p {
 
     .menu a {
         font-size: 13px;
+
         padding: 7px 9px;
     }
 
     .presentacion {
         width: 92%;
+
         padding: 45px 20px;
+
         margin-top: 30px;
     }
 
@@ -710,17 +1056,20 @@ footer p {
 
     .categorias-inicio {
         grid-template-columns: 1fr;
+
         width: 90%;
     }
 
     .categoria-inicio {
         min-height: auto;
+
         padding: 30px 20px;
     }
 
     .categorias,
     .categorias-moda {
         grid-template-columns: 1fr;
+
         width: 90%;
     }
 
@@ -733,12 +1082,18 @@ footer p {
     }
 
     .mini-categorias {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
     .carrito-flotante {
         right: 12px;
+
         bottom: 12px;
+
         padding: 11px 15px;
     }
 }
+```
+
+Este queda como tu **CSS completo base** y no elimina las animaciones de 🪽 ni de ✦.
