@@ -25,43 +25,7 @@
         }
 
         /* =========================
-           ENCABEZADO
-        ========================= */
-
-        header {
-            text-align: center;
-            padding: 35px 20px 25px;
-            position: relative;
-        }
-
-        .alas {
-            font-size: 38px;
-            animation: moverAlas 2s ease-in-out infinite;
-            display: inline-block;
-        }
-
-        @keyframes moverAlas {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(-7px) rotate(3deg);
-            }
-        }
-
-        h1 {
-            color: #d85b91;
-            font-size: 42px;
-            margin: 8px 0;
-        }
-
-        header p {
-            font-size: 18px;
-        }
-
-        /* =========================
-           ESTRELLAS
+           DECORACIÓN
         ========================= */
 
         .estrella {
@@ -107,24 +71,104 @@
         }
 
         /* =========================
+           CUADRO DE BLUSAS
+        ========================= */
+
+        .presentacion {
+            width: 92%;
+            max-width: 1100px;
+            margin: 35px auto 30px;
+            padding: 35px 25px 30px;
+            text-align: center;
+            background: rgba(255, 255, 255, .88);
+            border: 2px solid #f3c4d8;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(150, 80, 110, .13);
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .presentacion::before {
+            content: "✦";
+            position: absolute;
+            top: 18px;
+            left: 30px;
+            font-size: 28px;
+            color: #d85b91;
+            animation: brillo 2s ease-in-out infinite;
+        }
+
+        .presentacion::after {
+            content: "✧";
+            position: absolute;
+            top: 20px;
+            right: 32px;
+            font-size: 27px;
+            color: #d85b91;
+            animation: brillo 2s ease-in-out infinite;
+            animation-delay: .8s;
+        }
+
+        @keyframes brillo {
+            0%, 100% {
+                transform: scale(1);
+                opacity: .7;
+            }
+
+            50% {
+                transform: scale(1.3);
+                opacity: 1;
+            }
+        }
+
+        .alas {
+            font-size: 42px;
+            display: inline-block;
+            animation: moverAlas 2s ease-in-out infinite;
+        }
+
+        @keyframes moverAlas {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-7px) rotate(3deg);
+            }
+        }
+
+        .presentacion h1 {
+            color: #d85b91;
+            font-size: 42px;
+            margin: 8px 0;
+        }
+
+        .presentacion p {
+            font-size: 18px;
+            margin-bottom: 18px;
+        }
+
+        /* =========================
            BOTÓN VOLVER
         ========================= */
 
         .volver {
             display: inline-block;
-            margin: 5px 0 25px;
             padding: 11px 22px;
-            background: white;
+            background: #fff0f6;
             color: #d85b91;
             text-decoration: none;
+            border: 1px solid #f1c1d6;
             border-radius: 25px;
             font-weight: bold;
-            box-shadow: 0 5px 15px rgba(150, 80, 110, .12);
+            box-shadow: 0 5px 15px rgba(150, 80, 110, .10);
             transition: .3s;
         }
 
         .volver:hover {
             transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(150, 80, 110, .15);
         }
 
         /* =========================
@@ -156,7 +200,7 @@
             box-shadow: 0 12px 30px rgba(150, 80, 110, .18);
         }
 
-        /* LA FOTO SE MANTIENE NORMAL */
+        /* FOTO NORMAL */
         .producto img {
             width: 100%;
             height: 330px;
@@ -240,7 +284,7 @@
         }
 
         /* =========================
-           MODAL DE FOTO GRANDE
+           MODAL FOTO GRANDE
         ========================= */
 
         .modal {
@@ -334,8 +378,29 @@
         }
 
         @media (max-width: 560px) {
-            h1 {
+
+            .presentacion {
+                width: 90%;
+                padding: 30px 18px 25px;
+                margin-top: 20px;
+            }
+
+            .presentacion h1 {
                 font-size: 34px;
+            }
+
+            .presentacion p {
+                font-size: 16px;
+            }
+
+            .presentacion::before {
+                left: 15px;
+                top: 15px;
+            }
+
+            .presentacion::after {
+                right: 15px;
+                top: 15px;
             }
 
             .productos {
@@ -356,28 +421,43 @@
 
 <body>
 
-    <!-- ESTRELLAS -->
+    <!-- ESTRELLAS DECORATIVAS -->
     <div class="estrella estrella1">✦</div>
     <div class="estrella estrella2">✧</div>
     <div class="estrella estrella3">✦</div>
     <div class="estrella estrella4">✧</div>
 
-    <!-- ENCABEZADO -->
-    <header>
+
+    <!-- =========================
+         CUADRO DE BLUSAS
+    ========================= -->
+
+    <header class="presentacion">
+
         <div class="alas">🪽</div>
 
         <h1>Blusas</h1>
 
-        <p>Descubre blusas hermosas para ti 💕</p>
+        <p>
+            Descubre tu estilo en Angel's Fashion World 💕
+        </p>
 
-        <a href="moda.html" class="volver">← Volver a Moda</a>
+        <a href="moda.html" class="volver">
+            ← Volver a Moda
+        </a>
+
     </header>
 
-    <!-- PRODUCTOS -->
+
+    <!-- =========================
+         PRODUCTOS
+    ========================= -->
+
     <main class="productos">
 
         <!-- BLUSA 1 -->
         <article class="producto">
+
             <img
                 src="imagenes/blusas/Screenshot_2026-08-29-16-13-34-137_com.pinterest-edit.jpg"
                 alt="Linda camisa con escote"
@@ -392,15 +472,19 @@
 
             <p class="precio">$37.000</p>
 
-            <button class="btn-carrito"
-                onclick="agregarAlCarrito(event, 'Linda camisa con escote', 37000, this.parentElement.querySelector('img').src)">
+            <button
+                class="btn-carrito"
+                onclick="agregarAlCarrito(event, 'Linda camisa con escote', 37000, this.parentElement.querySelector('img').src)"
+            >
                 🛒 Agregar al carrito
             </button>
+
         </article>
 
 
         <!-- BLUSA 2 -->
         <article class="producto">
+
             <img
                 src="imagenes/blusas/Screenshot_2026-08-29-16-15-01-447_com.pinterest-edit.jpg"
                 alt="Hermosa camisa con un escote al lado"
@@ -415,15 +499,19 @@
 
             <p class="precio">$35.000</p>
 
-            <button class="btn-carrito"
-                onclick="agregarAlCarrito(event, 'Hermosa camisa con un escote al lado', 35000, this.parentElement.querySelector('img').src)">
+            <button
+                class="btn-carrito"
+                onclick="agregarAlCarrito(event, 'Hermosa camisa con un escote al lado', 35000, this.parentElement.querySelector('img').src)"
+            >
                 🛒 Agregar al carrito
             </button>
+
         </article>
 
 
         <!-- BLUSA 3 -->
         <article class="producto">
+
             <img
                 src="imagenes/blusas/Screenshot_2026-08-29-16-24-45-663_com.pinterest-edit.jpg"
                 alt="Linda camisa rosada con un diseño hermoso"
@@ -438,15 +526,19 @@
 
             <p class="precio">$40.000</p>
 
-            <button class="btn-carrito"
-                onclick="agregarAlCarrito(event, 'Linda camisa rosada con un diseño hermoso', 40000, this.parentElement.querySelector('img').src)">
+            <button
+                class="btn-carrito"
+                onclick="agregarAlCarrito(event, 'Linda camisa rosada con un diseño hermoso', 40000, this.parentElement.querySelector('img').src)"
+            >
                 🛒 Agregar al carrito
             </button>
+
         </article>
 
 
         <!-- BLUSA 4 -->
         <article class="producto">
+
             <img
                 src="imagenes/blusas/Screenshot_2026-08-29-16-26-20-243_com.pinterest-edit.jpg"
                 alt="Increíble camisa rosada con escote"
@@ -461,15 +553,19 @@
 
             <p class="precio">$41.000</p>
 
-            <button class="btn-carrito"
-                onclick="agregarAlCarrito(event, 'Increíble camisa rosada con escote', 41000, this.parentElement.querySelector('img').src)">
+            <button
+                class="btn-carrito"
+                onclick="agregarAlCarrito(event, 'Increíble camisa rosada con escote', 41000, this.parentElement.querySelector('img').src)"
+            >
                 🛒 Agregar al carrito
             </button>
+
         </article>
 
 
         <!-- BLUSA 5 -->
         <article class="producto">
+
             <img
                 src="imagenes/blusas/Screenshot_2026-08-29-16-27-15-807_com.pinterest-edit.jpg"
                 alt="Hermosa camisa de jean"
@@ -484,15 +580,19 @@
 
             <p class="precio">$42.000</p>
 
-            <button class="btn-carrito"
-                onclick="agregarAlCarrito(event, 'Hermosa camisa de jean', 42000, this.parentElement.querySelector('img').src)">
+            <button
+                class="btn-carrito"
+                onclick="agregarAlCarrito(event, 'Hermosa camisa de jean', 42000, this.parentElement.querySelector('img').src)"
+            >
                 🛒 Agregar al carrito
             </button>
+
         </article>
 
 
         <!-- BLUSA 6 -->
         <article class="producto">
+
             <img
                 src="imagenes/blusas/Screenshot_2026-08-29-16-28-54-074_com.pinterest-edit.jpg"
                 alt="Hermosa camisa elegante"
@@ -507,15 +607,19 @@
 
             <p class="precio">$44.000</p>
 
-            <button class="btn-carrito"
-                onclick="agregarAlCarrito(event, 'Hermosa camisa elegante', 44000, this.parentElement.querySelector('img').src)">
+            <button
+                class="btn-carrito"
+                onclick="agregarAlCarrito(event, 'Hermosa camisa elegante', 44000, this.parentElement.querySelector('img').src)"
+            >
                 🛒 Agregar al carrito
             </button>
+
         </article>
 
 
         <!-- BLUSA 7 -->
         <article class="producto">
+
             <img
                 src="imagenes/blusas/Screenshot_2026-08-29-16-31-17-936_com.pinterest-edit.jpg"
                 alt="Linda camisa con estampado azúl"
@@ -530,15 +634,19 @@
 
             <p class="precio">$32.000</p>
 
-            <button class="btn-carrito"
-                onclick="agregarAlCarrito(event, 'Linda camisa con estampado azúl', 32000, this.parentElement.querySelector('img').src)">
+            <button
+                class="btn-carrito"
+                onclick="agregarAlCarrito(event, 'Linda camisa con estampado azúl', 32000, this.parentElement.querySelector('img').src)"
+            >
                 🛒 Agregar al carrito
             </button>
+
         </article>
 
 
         <!-- BLUSA 8 -->
         <article class="producto">
+
             <img
                 src="imagenes/blusas/Screenshot_2026-08-29-16-33-53-613_com.pinterest-edit.jpg"
                 alt="Hermosa camisa negra para ti"
@@ -553,15 +661,19 @@
 
             <p class="precio">$29.999</p>
 
-            <button class="btn-carrito"
-                onclick="agregarAlCarrito(event, 'Hermosa camisa negra para ti', 29999, this.parentElement.querySelector('img').src)">
+            <button
+                class="btn-carrito"
+                onclick="agregarAlCarrito(event, 'Hermosa camisa negra para ti', 29999, this.parentElement.querySelector('img').src)"
+            >
                 🛒 Agregar al carrito
             </button>
+
         </article>
 
 
         <!-- BLUSA 9 -->
         <article class="producto">
+
             <img
                 src="imagenes/blusas/Screenshot_2026-08-29-16-35-02-866_com.pinterest-edit.jpg"
                 alt="Divina camisa elegante"
@@ -576,38 +688,66 @@
 
             <p class="precio">$45.000</p>
 
-            <button class="btn-carrito"
-                onclick="agregarAlCarrito(event, 'Divina camisa elegante', 45000, this.parentElement.querySelector('img').src)">
+            <button
+                class="btn-carrito"
+                onclick="agregarAlCarrito(event, 'Divina camisa elegante', 45000, this.parentElement.querySelector('img').src)"
+            >
                 🛒 Agregar al carrito
             </button>
+
         </article>
 
     </main>
 
 
-    <!-- CARRITO FLOTANTE -->
+    <!-- =========================
+         CARRITO FLOTANTE
+    ========================= -->
+
     <a href="carrito.html" class="carrito-flotante">
+
         🛒 Ver carrito
+
         <span id="cantidadCarrito">0</span>
+
     </a>
 
 
-    <!-- MODAL PARA VER LA FOTO GRANDE -->
+    <!-- =========================
+         MODAL FOTO GRANDE
+    ========================= -->
+
     <div class="modal" id="modal">
 
         <div class="modal-contenido">
 
-            <button class="cerrar" onclick="cerrarFoto()">×</button>
+            <button
+                class="cerrar"
+                onclick="cerrarFoto()"
+            >
+                ×
+            </button>
 
-            <img id="modalImagen" class="modal-imagen" src="" alt="">
+            <img
+                id="modalImagen"
+                class="modal-imagen"
+                src=""
+                alt=""
+            >
 
             <h2 id="modalNombre"></h2>
 
             <p id="modalDescripcion"></p>
 
-            <p class="precio" id="modalPrecio"></p>
+            <p
+                class="precio"
+                id="modalPrecio"
+            ></p>
 
-            <button class="btn-carrito" id="modalCarrito">
+            <button
+                class="btn-carrito"
+                id="modalCarrito"
+            >
                 🛒 Agregar al carrito
             </button>
 
@@ -622,142 +762,50 @@
            CARRITO
         ========================= */
 
-        let carrito = JSON.parse(localStorage.getItem("carritoAngel")) || [];
+        let carrito =
+            JSON.parse(
+                localStorage.getItem("carritoAngel")
+            ) || [];
+
 
         function actualizarCantidad() {
-            const cantidad = carrito.reduce(
-                (total, producto) => total + producto.cantidad,
-                0
-            );
 
-            document.getElementById("cantidadCarrito").textContent = cantidad;
+            const cantidad =
+                carrito.reduce(
+                    (total, producto) =>
+                        total + producto.cantidad,
+                    0
+                );
+
+            document.getElementById(
+                "cantidadCarrito"
+            ).textContent = cantidad;
         }
 
 
-        function agregarAlCarrito(event, nombre, precio, imagen) {
+        function agregarAlCarrito(
+            event,
+            nombre,
+            precio,
+            imagen
+        ) {
 
             event.stopPropagation();
 
-            const productoExistente = carrito.find(
-                producto => producto.nombre === nombre
-            );
+            const productoExistente =
+                carrito.find(
+                    producto =>
+                        producto.nombre === nombre
+                );
+
 
             if (productoExistente) {
+
                 productoExistente.cantidad++;
+
             } else {
+
                 carrito.push({
+
                     nombre: nombre,
                     precio: precio,
-                    imagen: imagen,
-                    cantidad: 1
-                });
-            }
-
-            localStorage.setItem(
-                "carritoAngel",
-                JSON.stringify(carrito)
-            );
-
-            actualizarCantidad();
-
-            alert("🩷 ¡Producto agregado al carrito!");
-        }
-
-
-        /* =========================
-           FOTO GRANDE
-        ========================= */
-
-        function abrirFoto(imagen) {
-
-            const producto = imagen.closest(".producto");
-
-            const nombre =
-                producto.querySelector("h2").textContent;
-
-            const descripcion =
-                producto.querySelector(".descripcion").textContent;
-
-            const precio =
-                producto.querySelector(".precio").textContent;
-
-            document.getElementById("modalImagen").src =
-                imagen.src;
-
-            document.getElementById("modalImagen").alt =
-                imagen.alt;
-
-            document.getElementById("modalNombre").textContent =
-                nombre;
-
-            document.getElementById("modalDescripcion").textContent =
-                descripcion;
-
-            document.getElementById("modalPrecio").textContent =
-                precio;
-
-            const precioNumero =
-                parseInt(precio.replace(/\D/g, ""));
-
-            document.getElementById("modalCarrito").onclick =
-                function(event) {
-
-                    agregarAlCarrito(
-                        event,
-                        nombre,
-                        precioNumero,
-                        imagen.src
-                    );
-
-                };
-
-            document.getElementById("modal").classList.add("activo");
-
-            document.body.style.overflow = "hidden";
-        }
-
-
-        function cerrarFoto() {
-
-            document.getElementById("modal").classList.remove("activo");
-
-            document.body.style.overflow = "";
-        }
-
-
-        /* CERRAR AL TOCAR FUERA */
-
-        document.getElementById("modal").addEventListener(
-            "click",
-            function(event) {
-
-                if (event.target === this) {
-                    cerrarFoto();
-                }
-
-            }
-        );
-
-
-        /* CERRAR CON ESC */
-
-        document.addEventListener(
-            "keydown",
-            function(event) {
-
-                if (event.key === "Escape") {
-                    cerrarFoto();
-                }
-
-            }
-        );
-
-
-        /* MOSTRAR CANTIDAD AL CARGAR */
-
-        actualizarCantidad();
-
-    </script>
-
-</body>
-</html>
