@@ -26,13 +26,17 @@ body {
 .menu {
     width: 100%;
     background: white;
+
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+
     gap: 8px;
     padding: 14px 10px;
+
     box-shadow: 0 3px 12px rgba(107, 64, 85, 0.12);
+
     position: relative;
     z-index: 50;
 }
@@ -40,15 +44,20 @@ body {
 .menu a {
     text-decoration: none;
     color: #6b4055;
+
     font-weight: bold;
+
     padding: 9px 13px;
+
     border-radius: 20px;
+
     transition: 0.3s ease;
 }
 
 .menu a:hover {
     background: #ffe0ed;
     color: #d85b91;
+
     transform: translateY(-2px);
 }
 
@@ -58,120 +67,234 @@ body {
 
 .presentacion {
     position: relative;
+
     text-align: center;
+
     padding: 55px 20px 45px;
+
     min-height: 270px;
+
     overflow: hidden;
 }
 
 .presentacion h1 {
     position: relative;
     z-index: 5;
+
     color: #d85b91;
+
     font-size: 42px;
+
     margin: 10px 0;
 }
 
 .presentacion p {
     position: relative;
     z-index: 5;
+
     font-size: 18px;
 }
 
 /* =========================================
-   ANIMACIONES VISIBLES ANGEL'S 🪽✦
+   ANIMACIONES ANGEL'S 🪽✦✧
 ========================================= */
 
 @keyframes alasAngel {
+
     0% {
-        transform: translateY(0) rotate(-5deg) scale(1);
+        transform:
+            translateY(0)
+            rotate(-5deg)
+            scale(1);
     }
 
     50% {
-        transform: translateY(-12px) rotate(5deg) scale(1.08);
+        transform:
+            translateY(-12px)
+            rotate(5deg)
+            scale(1.08);
     }
 
     100% {
-        transform: translateY(0) rotate(-5deg) scale(1);
+        transform:
+            translateY(0)
+            rotate(-5deg)
+            scale(1);
     }
 }
 
 @keyframes estrellaAngel {
+
     0% {
-        transform: scale(1) rotate(0deg);
+        transform:
+            scale(1)
+            rotate(0deg);
+
         opacity: 0.35;
+
         filter: blur(1px);
     }
 
     50% {
-        transform: scale(1.35) rotate(180deg);
+        transform:
+            scale(1.35)
+            rotate(180deg);
+
         opacity: 1;
+
         filter: blur(0);
     }
 
     100% {
-        transform: scale(1) rotate(360deg);
+        transform:
+            scale(1)
+            rotate(360deg);
+
         opacity: 0.35;
+
         filter: blur(1px);
     }
 }
 
-/* 🪽 ALAS */
+/* =========================================
+   ALAS 🪽
+========================================= */
+
 .alas {
     display: inline-block !important;
-    animation: alasAngel 2s ease-in-out infinite !important;
+
+    animation:
+        alasAngel 2s ease-in-out infinite !important;
+
     transform-origin: center;
+
     position: relative;
+
     z-index: 6;
+
     font-size: 48px;
 }
 
-/* ✦ ESTRELLAS ESCRITAS EN HTML */
+/* =========================================
+   ESTRELLAS DEL HTML ✦ ✧
+========================================= */
+
 .decoracion {
     display: inline-block !important;
-    animation: estrellaAngel 2s ease-in-out infinite !important;
-}
 
-/* ✦ ESTRELLAS DE LAS TARJETAS */
-.categoria-inicio::before,
-.categoria-inicio::after {
-    animation: estrellaAngel 2s ease-in-out infinite !important;
-}
-
-/* ✦ ESTRELLAS DEL ENCABEZADO */
-.presentacion::before,
-.presentacion::after {
-    animation: estrellaAngel 2s ease-in-out infinite !important;
-}
-
-/* ✦ ESTRELLITAS DE SOBRE NOSOTROS */
-.estrellitas {
-    display: inline-block;
-    animation: estrellaAngel 2s ease-in-out infinite !important;
+    animation:
+        estrellaAngel 2s ease-in-out infinite !important;
 }
 
 /* =========================================
-   EXPLORAR
+   ESTRELLAS DE LAS TARJETAS
+========================================= */
+
+.categoria-inicio::before,
+.categoria-inicio::after {
+
+    animation:
+        estrellaAngel 2s ease-in-out infinite !important;
+}
+
+/* =========================================
+   ESTRELLAS DEL ENCABEZADO
+========================================= */
+
+.presentacion::before,
+.presentacion::after {
+
+    animation:
+        estrellaAngel 2s ease-in-out infinite !important;
+}
+
+/* =========================================
+   ESTRELLITAS SOBRE NOSOTROS
+========================================= */
+
+.estrellitas {
+
+    display: inline-block;
+
+    animation:
+        estrellaAngel 2s ease-in-out infinite !important;
+}
+
+/* =========================================
+   EXPLORAR ✦ ✧
 ========================================= */
 
 .explorar {
+
     text-align: center;
-    margin: 25px auto;
+
+    margin: 35px auto 30px;
+
+    position: relative;
 }
 
 .explorar h2 {
+
     color: #d85b91;
-    font-size: 30px;
-    margin-bottom: 10px;
+
+    font-size: 32px;
+
+    margin-bottom: 15px;
 }
 
 .explorar-estrellas {
-    margin-bottom: 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 18px;
+
+    min-height: 45px;
 }
 
 .explorar-estrellas .decoracion {
-    margin: 0 6px;
-    font-size: 25px;
+
+    display: inline-block !important;
+
+    color: #d85b91;
+
+    font-size: 32px;
+
+    line-height: 1;
+
+    animation:
+        estrellaAngel 2s ease-in-out infinite !important;
+}
+
+.explorar-estrellas
+.decoracion:nth-child(2) {
+
+    animation-delay:
+        0.4s !important;
+}
+
+.explorar-estrellas
+.decoracion:nth-child(3) {
+
+    animation-delay:
+        0.8s !important;
+}
+
+.explorar-estrellas
+.decoracion:nth-child(4) {
+
+    animation-delay:
+        1.2s !important;
+}
+
+.explorar-estrellas
+.decoracion:nth-child(5) {
+
+    animation-delay:
+        1.6s !important;
 }
 
 /* =========================================
@@ -179,49 +302,137 @@ body {
 ========================================= */
 
 .categorias-inicio {
-    width: 92%;
-    max-width: 1100px;
-    margin: 25px auto 45px;
+
+    width: 94%;
+
+    max-width: 1250px;
+
+    margin: 35px auto 55px;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 22px;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
 }
 
 .categoria-inicio {
+
     position: relative;
+
     overflow: hidden;
 
     background: white;
+
     color: #6b4055;
+
     text-decoration: none;
 
     text-align: center;
 
-    padding: 30px 20px;
+    padding: 45px 30px;
 
-    border-radius: 25px;
+    min-height: 250px;
+
+    border-radius: 30px;
 
     box-shadow:
-        0 5px 18px rgba(107, 64, 85, 0.12);
+        0 5px 18px
+        rgba(107, 64, 85, 0.12);
 
     transition: 0.3s ease;
 }
 
 .categoria-inicio:hover {
-    transform: translateY(-7px);
+
+    transform:
+        translateY(-7px);
+
     box-shadow:
-        0 10px 25px rgba(216, 91, 145, 0.22);
+        0 10px 25px
+        rgba(216, 91, 145, 0.22);
 }
 
 .categoria-inicio h3 {
+
     color: #d85b91;
-    margin-bottom: 10px;
-    font-size: 23px;
+
+    font-size: 25px;
+
+    margin-bottom: 12px;
 }
 
 .categoria-inicio p {
-    line-height: 1.5;
+
+    line-height: 1.6;
+
+    font-size: 16px;
+}
+
+.categoria-inicio .boton {
+
+    margin-top: 10px;
+}
+
+/* =========================================
+   CATEGORÍAS INTERNAS
+========================================= */
+
+.categorias {
+
+    width: 92%;
+
+    max-width: 1100px;
+
+    margin: 30px auto 50px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.categoria {
+
+    background: white;
+
+    color: #6b4055;
+
+    text-decoration: none;
+
+    text-align: center;
+
+    padding: 35px 25px;
+
+    min-height: 220px;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 5px 18px
+        rgba(107, 64, 85, 0.12);
+
+    transition: 0.3s ease;
+}
+
+.categoria:hover {
+
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(216, 91, 145, 0.22);
+}
+
+.categoria h2 {
+
+    color: #d85b91;
+
+    margin-bottom: 12px;
 }
 
 /* =========================================
@@ -229,9 +440,11 @@ body {
 ========================================= */
 
 .boton {
+
     display: inline-block;
 
     background: #d85b91;
+
     color: white;
 
     text-decoration: none;
@@ -250,59 +463,10 @@ body {
 }
 
 .boton:hover {
+
     background: #b94778;
+
     transform: scale(1.05);
-}
-
-/* =========================================
-   CATEGORÍAS INTERNAS
-========================================= */
-
-.categorias {
-    width: 92%;
-    max-width: 1100px;
-
-    margin: 25px auto 45px;
-
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-
-    gap: 22px;
-}
-
-.categoria {
-    background: white;
-
-    color: #6b4055;
-
-    text-decoration: none;
-
-    text-align: center;
-
-    padding: 30px 20px;
-
-    border-radius: 25px;
-
-    box-shadow:
-        0 5px 18px rgba(107, 64, 85, 0.12);
-
-    transition: 0.3s ease;
-}
-
-.categoria:hover {
-    transform: translateY(-7px);
-
-    box-shadow:
-        0 10px 25px rgba(216, 91, 145, 0.22);
-}
-
-.categoria h2 {
-    color: #d85b91;
-    margin-bottom: 10px;
-}
-
-.categoria p {
-    line-height: 1.5;
 }
 
 /* =========================================
@@ -310,18 +474,23 @@ body {
 ========================================= */
 
 .productos {
+
     width: 92%;
+
     max-width: 1200px;
 
     margin: 30px auto;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(230px, 1fr));
 
     gap: 25px;
 }
 
 .producto {
+
     background: white;
 
     border-radius: 25px;
@@ -331,17 +500,14 @@ body {
     text-align: center;
 
     box-shadow:
-        0 5px 18px rgba(107, 64, 85, 0.12);
-
-    transition: 0.3s ease;
-}
-
-.producto:hover {
-    transform: translateY(-5px);
+        0 5px 18px
+        rgba(107, 64, 85, 0.12);
 }
 
 .producto img {
+
     width: 100%;
+
     height: 280px;
 
     object-fit: cover;
@@ -350,15 +516,19 @@ body {
 }
 
 .producto h3 {
+
     color: #d85b91;
+
     margin: 15px 0 8px;
 }
 
 .producto p {
+
     line-height: 1.5;
 }
 
 .precio {
+
     color: #d85b91;
 
     font-size: 20px;
@@ -373,7 +543,9 @@ body {
 ========================================= */
 
 .sobre {
+
     width: 90%;
+
     max-width: 900px;
 
     margin: 35px auto;
@@ -387,22 +559,27 @@ body {
     line-height: 1.8;
 
     box-shadow:
-        0 5px 18px rgba(107, 64, 85, 0.12);
+        0 5px 18px
+        rgba(107, 64, 85, 0.12);
 
     text-align: center;
 }
 
 .sobre h2 {
+
     color: #d85b91;
+
     margin-bottom: 18px;
 }
 
 /* =========================================
-   CONTACTANOS
+   CONTACTO
 ========================================= */
 
 .contacto {
+
     width: 90%;
+
     max-width: 800px;
 
     margin: 40px auto;
@@ -416,19 +593,23 @@ body {
     text-align: center;
 
     box-shadow:
-        0 5px 18px rgba(107, 64, 85, 0.12);
+        0 5px 18px
+        rgba(107, 64, 85, 0.12);
 }
 
 .contacto h2 {
+
     color: #d85b91;
+
     margin-bottom: 15px;
 }
 
 /* =========================================
-   PIE DE PÁGINA
+   FOOTER
 ========================================= */
 
 footer {
+
     margin-top: 50px;
 
     background: white;
@@ -441,7 +622,7 @@ footer {
 }
 
 /* =========================================
-   MÓVIL
+   MÓVIL 📱
 ========================================= */
 
 @media (max-width: 600px) {
@@ -451,28 +632,43 @@ footer {
     }
 
     .menu a {
+
         font-size: 13px;
+
         padding: 8px 10px;
     }
 
     .presentacion h1 {
+
         font-size: 35px;
     }
 
     .presentacion p {
+
         font-size: 16px;
     }
 
     .alas {
+
         font-size: 40px;
     }
 
     .categorias-inicio,
     .categorias {
+
         grid-template-columns: 1fr;
+
+    }
+
+    .categoria-inicio {
+
+        min-height: 220px;
+
+        padding: 35px 20px;
     }
 
     .sobre {
+
         padding: 25px 20px;
     }
 }
