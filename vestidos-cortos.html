@@ -304,6 +304,27 @@
             margin-bottom: 15px;
         }
 
+        /* TALLAS */
+
+        .talla {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: bold;
+            color: #6b4055;
+        }
+
+        .selector-talla {
+            margin-left: 6px;
+            padding: 7px 12px;
+            border-radius: 15px;
+            border: 1px solid #f0bfd5;
+            background: #fff7fb;
+            color: #6b4055;
+            font-weight: bold;
+            cursor: pointer;
+            outline: none;
+        }
+
         .boton-carrito {
             display: inline-block;
 
@@ -615,9 +636,19 @@
                 para crear un look especial. 
             </p>
 
+            <label class="talla">
+                Talla:
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </label>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Vestido corto de color vino', 70000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -648,9 +679,19 @@
                 darle un toque especial a tu outfit. 
             </p>
 
+            <label class="talla">
+                Talla:
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </label>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Vestido corto color rojo', 69999)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -681,9 +722,19 @@
                 lucir un estilo bonito y especial. 
             </p>
 
+            <label class="talla">
+                Talla:
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </label>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Vestido corto y elegante', 65000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -714,9 +765,19 @@
                 elegante y delicado. 
             </p>
 
+            <label class="talla">
+                Talla:
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </label>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Hermoso vestido corto y elegante', 62000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -747,9 +808,19 @@
                 diferentes combinaciones. 
             </p>
 
+            <label class="talla">
+                Talla:
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </label>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Hermoso vestido gris', 50000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -780,9 +851,19 @@
                 estilo delicado y especial. 
             </p>
 
+            <label class="talla">
+                Talla:
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </label>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Hermoso vestido de color blanco', 80000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -813,9 +894,19 @@
                 un look llamativo y especial. 
             </p>
 
+            <label class="talla">
+                Talla:
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </label>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Hermoso vestido corto negro y brillante', 68000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -846,9 +937,19 @@
                 darle un toque bonito a tu outfit. 
             </p>
 
+            <label class="talla">
+                Talla:
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </label>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Hermoso vestido corto floral', 55000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -879,9 +980,19 @@
                 de flor para un look especial. 
             </p>
 
+            <label class="talla">
+                Talla:
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </label>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Hermoso vestido corto con una flor al lado', 47000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -942,6 +1053,19 @@
                 id="precioModal"
             ></div>
 
+            <label class="talla">
+                Talla:
+                <select
+                    class="selector-talla"
+                    id="tallaModal"
+                >
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </label>
+
             <button
                 class="boton-carrito"
                 id="botonModal"
@@ -953,8 +1077,7 @@
 
     </div>
 
-
-    <!-- FOOTER -->
+<!-- FOOTER -->
 
     <footer>
 
@@ -963,8 +1086,7 @@
         </p>
 
         <p>
-
-Moda • Belleza • Skin Care • Accesorios
+            Moda • Belleza • Skin Care • Accesorios
         </p>
 
     </footer>
@@ -1008,11 +1130,51 @@ Moda • Belleza • Skin Care • Accesorios
         }
 
 
-        function agregarAlCarrito(nombre, precio) {
+        function agregarProducto(boton) {
+
+            const producto =
+                boton.closest(".producto");
+
+            const nombre =
+                producto
+                    .querySelector("h2")
+                    .textContent
+                    .trim();
+
+            const precioTexto =
+                producto
+                    .querySelector(".precio")
+                    .textContent
+                    .trim();
+
+            const precio =
+                parseInt(
+                    precioTexto
+                        .replace(/\./g, "")
+                        .replace("$", "")
+                        .trim()
+                );
+
+            const talla =
+                producto
+                    .querySelector(".selector-talla")
+                    .value;
+
+            agregarAlCarrito(
+                nombre,
+                precio,
+                talla
+            );
+        }
+
+
+        function agregarAlCarrito(nombre, precio, talla) {
 
             const productoExistente =
                 carrito.find(
-                    producto => producto.nombre === nombre
+                    producto =>
+                        producto.nombre === nombre &&
+                        producto.talla === talla
                 );
 
 
@@ -1026,6 +1188,7 @@ Moda • Belleza • Skin Care • Accesorios
                 carrito.push({
                     nombre: nombre,
                     precio: precio,
+                    talla: talla,
                     cantidad: 1
                 });
 
@@ -1034,7 +1197,10 @@ Moda • Belleza • Skin Care • Accesorios
 
             guardarCarrito();
 
-            alert("🛍️ ¡Producto agregado al carrito!");
+            alert(
+                "🛍️ ¡Producto agregado al carrito! 💕\n\n" +
+                "Talla: " + talla
+            );
         }
 
 
@@ -1057,6 +1223,9 @@ Moda • Belleza • Skin Care • Accesorios
 
             const botonModal =
                 document.getElementById("botonModal");
+
+            const tallaModal =
+                document.getElementById("tallaModal");
 
 
             imagenModal.src = imagen.src;
@@ -1089,11 +1258,18 @@ Moda • Belleza • Skin Care • Accesorios
                     .trim();
 
 
+            const selectorTalla =
+                producto
+                    .querySelector(".selector-talla");
+
+
             nombreModal.textContent = nombre;
 
             descripcionModal.textContent = descripcion;
 
             precioModal.textContent = precioTexto;
+
+            tallaModal.value = selectorTalla.value;
 
 
             const precioNumerico =
@@ -1109,7 +1285,8 @@ Moda • Belleza • Skin Care • Accesorios
 
                 agregarAlCarrito(
                     nombre,
-                    precioNumerico
+                    precioNumerico,
+                    tallaModal.value
                 );
 
             };
