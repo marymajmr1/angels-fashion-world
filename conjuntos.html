@@ -118,7 +118,8 @@
             color: #d85b91;
             transform: translateY(-2px);
         }
-/* PRESENTACIÓN */
+
+        /* PRESENTACIÓN */
 
         header {
             width: 92%;
@@ -286,6 +287,31 @@
             margin-bottom: 15px;
         }
 
+        /* TALLAS */
+
+        .talla {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: bold;
+            color: #6b4055;
+        }
+
+        .selector-talla {
+            margin-left: 6px;
+            padding: 7px 12px;
+            border-radius: 15px;
+            border: 1px solid #f0bfd5;
+            background: #fff7fb;
+            color: #6b4055;
+            font-weight: bold;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .selector-talla:focus {
+            border-color: #d85b91;
+        }
+
         .boton-carrito {
             display: inline-block;
             border: none;
@@ -364,7 +390,8 @@
 
             font-size: 13px;
         }
-/* MODAL */
+
+        /* MODAL */
 
         .modal {
             display: none;
@@ -520,7 +547,8 @@
 <body>
 
     <!-- ESTRELLAS -->
-<div class="estrella1">✦</div>
+
+    <div class="estrella1">✦</div>
     <div class="estrella2">✧</div>
     <div class="estrella3">✦</div>
     <div class="estrella4">✧</div>
@@ -594,9 +622,20 @@
                 con un estilo moderno y encantador.
             </p>
 
+            <div class="talla">
+                Talla:
+
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Hermoso conjunto negro', 49000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -627,9 +666,20 @@
                 delicado, moderno y especial.
             </p>
 
+            <div class="talla">
+                Talla:
+
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Hermoso conjunto gris', 51000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -660,9 +710,20 @@
                 un look cómodo y bonito.
             </p>
 
+            <div class="talla">
+                Talla:
+
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Hermoso conjunto', 55000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -693,15 +754,28 @@
                 femenino, cómodo y encantador.
             </p>
 
+            <div class="talla">
+                Talla:
+
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Lindo conjunto', 49000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
 
         </article>
-  <!-- 5 -->
+
+
+        <!-- 5 -->
 
         <article class="producto">
 
@@ -724,9 +798,20 @@
                 con un estilo hermoso y especial.
             </p>
 
+            <div class="talla">
+                Talla:
+
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Divino conjunto', 54000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -757,9 +842,20 @@
                 para un estilo encantador.
             </p>
 
+            <div class="talla">
+                Talla:
+
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Conjunto rosado', 79000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -790,9 +886,20 @@
                 hermosa y con mucho estilo.
             </p>
 
+            <div class="talla">
+                Talla:
+
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Precioso conjunto', 80000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -802,7 +909,7 @@
 
         <!-- 8 -->
 
-        <article class="producto">
+ <article class="producto">
 
             <img
                 src="imagenes/conjuntos/Screenshot_2026-09-01-11-55-39-357_com.pinterest~2.jpg"
@@ -823,9 +930,20 @@
                 un look sofisticado y especial.
             </p>
 
+            <div class="talla">
+                Talla:
+
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Conjunto elegante', 78000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -856,15 +974,27 @@
                 tu estilo de una manera especial.
             </p>
 
+            <div class="talla">
+                Talla:
+
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Lindo conjunto', 67000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
 
         </article>
-</main>
+
+    </main>
 
 
     <!-- CARRITO FLOTANTE -->
@@ -918,6 +1048,28 @@
                 id="precioModal"
             ></div>
 
+
+            <!-- TALLA EN EL MODAL -->
+
+            <div class="talla">
+
+                Talla:
+
+                <select
+                    class="selector-talla"
+                    id="tallaModal"
+                >
+
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+
+                </select>
+
+            </div>
+
+
             <button
                 class="boton-carrito"
                 id="botonModal"
@@ -943,83 +1095,197 @@
         </p>
 
     </footer>
-
-
-    <!-- JAVASCRIPT -->
+ <!-- JAVASCRIPT -->
 
     <script>
 
         function abrirFoto(imagen) {
 
-            const modal = document.getElementById("modal");
-            const imagenModal = document.getElementById("imagenModal");
+            const modal =
+                document.getElementById("modal");
 
-            const producto = imagen.closest(".producto");
+            const imagenModal =
+                document.getElementById("imagenModal");
 
-            const nombre = producto.querySelector("h2").textContent.trim();
-            const descripcion = producto.querySelector("p").textContent.trim();
-            const precio = producto.querySelector(".precio").textContent.trim();
+            const producto =
+                imagen.closest(".producto");
+
+            const nombre =
+                producto
+                    .querySelector("h2")
+                    .textContent
+                    .trim();
+
+            const descripcion =
+                producto
+                    .querySelector("p")
+                    .textContent
+                    .trim();
+
+            const precio =
+                producto
+                    .querySelector(".precio")
+                    .textContent
+                    .trim();
 
             imagenModal.src = imagen.src;
             imagenModal.alt = imagen.alt;
 
-            document.getElementById("nombreModal").textContent = nombre;
-            document.getElementById("descripcionModal").textContent = descripcion;
-            document.getElementById("precioModal").textContent = precio;
+            document.getElementById("nombreModal").textContent =
+                nombre;
 
-            document.getElementById("botonModal").onclick = function () {
+            document.getElementById("descripcionModal").textContent =
+                descripcion;
 
-                const precioNumero = parseInt(
-                    precio.replace(/\D/g, "")
-                );
+            document.getElementById("precioModal").textContent =
+                precio;
 
-                agregarAlCarrito(nombre, precioNumero);
 
-            };
+            /* Mantener la talla seleccionada
+               de la tarjeta */
+
+            const tallaSeleccionada =
+                producto
+                    .querySelector(".selector-talla")
+                    .value;
+
+            document.getElementById("tallaModal").value =
+                tallaSeleccionada;
+
+
+            document.getElementById("botonModal").onclick =
+                function () {
+
+                    const precioNumero =
+                        parseInt(
+                            precio.replace(/\D/g, ""),
+                            10
+                        );
+
+                    const talla =
+                        document
+                            .getElementById("tallaModal")
+                            .value;
+
+                    agregarAlCarrito(
+                        nombre,
+                        precioNumero,
+                        talla
+                    );
+
+                };
+
 
             modal.classList.add("activo");
+
         }
 
 
         function cerrarFoto(event) {
 
-            if (!event || event.target === document.getElementById("modal")) {
+            if (
+                !event ||
+                event.target === document.getElementById("modal") ||
+                event.target.classList.contains("cerrar")
+            ) {
 
-                document.getElementById("modal").classList.remove("activo");
+                document
+                    .getElementById("modal")
+                    .classList.remove("activo");
 
             }
 
         }
 
 
-        function agregarAlCarrito(nombre, precio) {
+        function agregarProducto(boton) {
 
-            let carrito = JSON.parse(
-                localStorage.getItem("carrito")
-            ) || [];
+            const producto =
+                boton.closest(".producto");
+
+            const nombre =
+                producto
+                    .querySelector("h2")
+                    .textContent
+                    .trim();
+
+            const precioTexto =
+                producto
+                    .querySelector(".precio")
+                    .textContent
+                    .trim();
+
+            const precio =
+                parseInt(
+                    precioTexto.replace(/\D/g, ""),
+                    10
+                );
+
+            const talla =
+                producto
+                    .querySelector(".selector-talla")
+                    .value;
+
+            agregarAlCarrito(
+                nombre,
+                precio,
+                talla
+            );
+
+        }
+
+
+        function agregarAlCarrito(
+            nombre,
+            precio,
+            talla
+        ) {
+
+            let carrito =
+                JSON.parse(
+                    localStorage.getItem("carrito")
+                ) || [];
+
 
             carrito.push({
+
                 nombre: nombre,
-                precio: precio
+
+                precio: precio,
+
+                talla: talla
+
             });
+
 
             localStorage.setItem(
                 "carrito",
                 JSON.stringify(carrito)
             );
 
+
             actualizarContador();
+
+
+            alert(
+                "🪽 ¡Producto agregado al carrito! 💕\n\n" +
+                "Talla: " + talla
+            );
 
         }
 
 
         function actualizarContador() {
 
-            const carrito = JSON.parse(
-                localStorage.getItem("carrito")
-            ) || [];
+            const carrito =
+                JSON.parse(
+                    localStorage.getItem("carrito")
+                ) || [];
 
-            document.getElementById("contador-carrito").textContent =
+
+            document.getElementById(
+                "contador-carrito"
+            ).textContent =
                 carrito.length;
 
         }
