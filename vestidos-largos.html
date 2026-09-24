@@ -213,7 +213,8 @@
         }
 
         /* PRODUCTOS */
-.productos {
+
+        .productos {
             width: 92%;
             max-width: 1200px;
             margin: auto;
@@ -284,6 +285,27 @@
             font-size: 20px;
             font-weight: bold;
             margin-bottom: 15px;
+        }
+
+        /* TALLAS */
+
+        .talla {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: bold;
+            color: #6b4055;
+        }
+
+        .selector-talla {
+            margin-left: 6px;
+            padding: 7px 12px;
+            border-radius: 15px;
+            border: 1px solid #f0bfd5;
+            background: #fff7fb;
+            color: #6b4055;
+            font-weight: bold;
+            cursor: pointer;
+            outline: none;
         }
 
         .boton-carrito {
@@ -519,6 +541,7 @@
 </head>
 
 <body>
+
     <!-- ESTRELLAS -->
 
     <div class="estrella1">✦</div>
@@ -595,9 +618,19 @@
                 para crear un look sofisticado.
             </p>
 
+            <label class="talla">
+                Talla:
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </label>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Hermoso vestido negro y elegante', 550000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -628,15 +661,24 @@
                 para un estilo delicado y encantador.
             </p>
 
+            <label class="talla">
+                Talla:
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </label>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Hermoso vestido largo y color cielo', 555000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
 
         </article>
-
 
 
         <!-- 3 -->
@@ -662,9 +704,19 @@
                 crear un look femenino y especial.
             </p>
 
+            <label class="talla">
+                Talla:
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </label>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Hermoso vestido largo', 580000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -695,9 +747,19 @@
                 para darle un toque especial a tu estilo.
             </p>
 
+            <label class="talla">
+                Talla:
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </label>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Hermoso vestido largo para ti', 590000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -728,15 +790,27 @@
                 para un look hermoso.
             </p>
 
+            <label class="talla">
+                Talla:
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </label>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Divino vestido largo', 610000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
 
         </article>
-     <!-- 6 -->
+
+
+        <!-- 6 -->
 
         <article class="producto">
 
@@ -759,9 +833,19 @@
                 estilo femenino y encantador.
             </p>
 
+            <label class="talla">
+                Talla:
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </label>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Hermoso vestido largo femenino', 575000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -792,9 +876,19 @@
                 destacar con un estilo elegante.
             </p>
 
+            <label class="talla">
+                Talla:
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </label>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Hermoso vestido largo elegante', 620000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -825,9 +919,19 @@
                 completar tu look con elegancia.
             </p>
 
+            <label class="talla">
+                Talla:
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </label>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Divino vestido largo', 350000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -889,6 +993,19 @@
                 id="precioModal"
             ></div>
 
+            <label class="talla">
+                Talla:
+                <select
+                    class="selector-talla"
+                    id="tallaModal"
+                >
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </label>
+
             <button
                 class="boton-carrito"
                 id="botonModal"
@@ -928,6 +1045,7 @@
             const descripcionModal = document.getElementById("descripcionModal");
             const precioModal = document.getElementById("precioModal");
             const botonModal = document.getElementById("botonModal");
+            const tallaModal = document.getElementById("tallaModal");
 
             const producto = imagen.closest(".producto");
 
@@ -940,6 +1058,9 @@
             const precioTexto =
                 producto.querySelector(".precio").textContent.trim();
 
+            const selectorTalla =
+                producto.querySelector(".selector-talla");
+
             imagenModal.src = imagen.src;
             imagenModal.alt = imagen.alt;
 
@@ -947,13 +1068,21 @@
             descripcionModal.textContent = descripcion;
             precioModal.textContent = precioTexto;
 
+            tallaModal.value = selectorTalla.value;
+
             const precioNumero = parseInt(
                 precioTexto.replace(/\D/g, ""),
                 10
             );
 
             botonModal.onclick = function () {
-                agregarAlCarrito(nombre, precioNumero);
+
+                agregarAlCarrito(
+                    nombre,
+                    precioNumero,
+                    tallaModal.value
+                );
+
             };
 
             modal.classList.add("activo");
@@ -975,42 +1104,40 @@
         }
 
 
-        function agregarAlCarrito(nombre, precio) {
+        function agregarProducto(boton) {
+
+            const producto =
+                boton.closest(".producto");
+
+            const nombre =
+                producto.querySelector("h2").textContent.trim();
+
+            const precioTexto =
+                producto.querySelector(".precio").textContent.trim();
+
+            const precio =
+                parseInt(
+                    precioTexto.replace(/\D/g, ""),
+                    10
+                );
+
+            const talla =
+                producto.querySelector(".selector-talla").value;
+
+            agregarAlCarrito(
+                nombre,
+                precio,
+                talla
+            );
+        }
+
+
+        function agregarAlCarrito(nombre, precio, talla) {
 
             let carrito =
                 JSON.parse(localStorage.getItem("carrito")) || [];
 
             carrito.push({
                 nombre: nombre,
-                precio: precio
-            });
-
-            localStorage.setItem(
-                "carrito",
-                JSON.stringify(carrito)
-            );
-
-            actualizarContador();
-
-            alert("🪽 ¡Producto agregado al carrito! 💕");
-        }
-
-
-        function actualizarContador() {
-let carrito =
-                JSON.parse(localStorage.getItem("carrito")) || [];
-
-            const contador =
-                document.getElementById("contador-carrito");
-
-            contador.textContent = carrito.length;
-        }
-
-
-        actualizarContador();
-
-    </script>
-
-</body>
-
-</html>
+                precio: precio,
+                talla: talla
