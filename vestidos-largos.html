@@ -7,214 +7,325 @@
 
     <title>Vestidos largos | Angel's Fashion World</title>
 
-    <link rel="stylesheet" href="./style.css?v=4">
+    <link rel="stylesheet" href="./style.css?v=15">
 </head>
 
 <body>
 
+    <!-- MENÚ -->
+    <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="moda.html">Moda</a>
+        <a href="belleza.html">Belleza</a>
+        <a href="skincare.html">Skin care</a>
+        <a href="accesorios.html">Accesorios</a>
+        <a href="sobre-nosotros.html">Sobre nosotros</a>
+        <a href="index.html#contactanos">Contáctanos</a>
+    </nav>
+
+    <!-- PRESENTACIÓN -->
     <header class="presentacion">
         <div class="alas">🪽</div>
+        <span class="decoracion">✦</span>
 
         <h1>Vestidos largos</h1>
 
-        <p>Descubre tu estilo en Angel's Fashion World 💕</p>
+        <p class="frase">
+            Descubre tu estilo en Angel's Fashion World 💕
+        </p>
 
-        <a href="moda.html" class="volver">← Volver a Moda</a>
+        <p>
+            Encuentra vestidos largos elegantes y hermosos para cada ocasión. ✨
+        </p>
+
+        <span class="decoracion">✧</span>
     </header>
 
 
+    <!-- PRODUCTOS -->
     <main class="productos">
 
-        <!-- VESTIDO 1 -->
-        <article class="producto">
-            <img
-                src="imagines/vestidos-largos/Screenshot_2026-09-01-09-28-25-468_com.pinterest-edit.jpg"
-                alt="Hermoso vestido largo, vino y elegante"
-                onclick="abrirfoto(this)"
-            >
+        <h2>Vestidos largos ✨</h2>
 
-            <h2>Hermoso vestido largo, vino y elegante</h2>
+        <div class="productos-grid">
 
-            <p class="precio">$500.000</p>
+            <!-- VESTIDO 1 -->
+            <article class="producto">
 
-            <button onclick="agregarCarrito('Hermoso vestido largo, vino y elegante', 500000)">
-                Agregar al carrito
-            </button>
-        </article>
+                <img
+                    src="imagines/vestidoslargos/Screenshot_2026-09-01-09-28-25-468_com.pinterest-edit.jpg"
+                    alt="Hermoso vestido largo, vino y elegante"
+                    onclick="abrirfoto(this)"
+                >
 
+                <h3>Hermoso vestido largo, vino y elegante</h3>
 
-        <!-- VESTIDO 2 -->
-        <article class="producto">
-            <img
-                src="imagines/vestidos-largos/Screenshot_2026-09-01-09-29-23-817_com.pinterest-edit.jpg"
-                alt="Hermoso vestido negro y elegante"
-                onclick="abrirfoto(this)"
-            >
+                <p>
+                    Un vestido largo, elegante y perfecto para lucir increíble.
+                </p>
 
-            <h2>Hermoso vestido negro y elegante</h2>
+                <strong>$500.000</strong>
 
-            <p class="precio">$550.000</p>
+                <button onclick="agregarAlCarrito('Hermoso vestido largo, vino y elegante', 500000)">
+                    Agregar al carrito
+                </button>
 
-            <button onclick="agregarCarrito('Hermoso vestido negro y elegante', 550000)">
-                Agregar al carrito
-            </button>
-        </article>
+            </article>
 
 
-        <!-- VESTIDO 3 -->
-        <article class="producto">
-            <img
-                src="imagines/vestidos-largos/Screenshot_2026-09-01-09-32-14-027_com.pinterest-edit.jpg"
-                alt="Hermoso vestido largo y color cielo"
-                onclick="abrirfoto(this)"
-            >
+            <!-- VESTIDO 2 -->
+            <article class="producto">
 
-            <h2>Hermoso vestido largo y color cielo</h2>
+                <img
+                    src="imagines/vestidoslargos/Screenshot_2026-09-01-09-29-23-817_com.pinterest-edit.jpg"
+                    alt="Hermoso vestido negro y elegante"
+                    onclick="abrirfoto(this)"
+                >
 
-            <p class="precio">$555.000</p>
+                <h3>Hermoso vestido negro y elegante</h3>
 
-            <button onclick="agregarCarrito('Hermoso vestido largo y color cielo', 555000)">
-                Agregar al carrito
-            </button>
-        </article>
+                <p>
+                    Un vestido negro elegante para destacar tu estilo.
+                </p>
 
+                <strong>$550.000</strong>
 
-        <!-- VESTIDO 4 -->
-        <article class="producto">
-            <img
-                src="imagines/vestidos-largos/Screenshot_2026-09-01-09-34-35-xxx_com.pinterest-edit.jpg"
-                alt="Hermoso vestido largo y elegante"
-                onclick="abrirfoto(this)"
-            >
+                <button onclick="agregarAlCarrito('Hermoso vestido negro y elegante', 550000)">
+                    Agregar al carrito
+                </button>
 
-            <h2>Hermoso vestido largo y elegante</h2>
-
-            <p class="precio">$570.000</p>
-
-            <button onclick="agregarCarrito('Hermoso vestido largo y elegante', 570000)">
-                Agregar al carrito
-            </button>
-        </article>
+            </article>
 
 
-        <!-- VESTIDO 5 -->
-        <article class="producto">
-            <img
-                src="imagines/vestidos-largos/Screenshot_2026-09-01-09-36-xx_com.pinterest-edit.jpg"
-                alt="Divino vestido largo para ti"
-                onclick="abrirfoto(this)"
-            >
+            <!-- VESTIDO 3 -->
+            <article class="producto">
 
-            <h2>Divino vestido largo para ti</h2>
+                <img
+                    src="imagines/vestidoslargos/Screenshot_2026-09-01-09-32-14-027_com.pinterest-edit.jpg"
+                    alt="Hermoso vestido largo y color cielo"
+                    onclick="abrirfoto(this)"
+                >
 
-            <p class="precio">$580.000</p>
+                <h3>Hermoso vestido largo y color cielo</h3>
 
-            <button onclick="agregarCarrito('Divino vestido largo para ti', 580000)">
-                Agregar al carrito
-            </button>
-        </article>
+                <p>
+                    Un hermoso vestido largo en un delicado color cielo.
+                </p>
 
+                <strong>$555.000</strong>
 
-        <!-- VESTIDO 6 -->
-        <article class="producto">
-            <img
-                src="imagines/vestidos-largos/Screenshot_2026-09-01-09-38-xx_com.pinterest-edit.jpg"
-                alt="Hermoso vestido largo y sofisticado"
-                onclick="abrirfoto(this)"
-            >
+                <button onclick="agregarAlCarrito('Hermoso vestido largo y color cielo', 555000)">
+                    Agregar al carrito
+                </button>
 
-            <h2>Hermoso vestido largo y sofisticado</h2>
-
-            <p class="precio">$590.000</p>
-
-            <button onclick="agregarCarrito('Hermoso vestido largo y sofisticado', 590000)">
-                Agregar al carrito
-            </button>
-        </article>
+            </article>
 
 
-        <!-- VESTIDO 7 -->
-        <article class="producto">
-            <img
-                src="imagines/vestidos-largos/Screenshot_2026-09-01-09-40-xx_com.pinterest-edit.jpg"
-                alt="Elegante vestido largo para una ocasión especial"
-                onclick="abrirfoto(this)"
-            >
+            <!-- VESTIDO 4 -->
+            <article class="producto">
 
-            <h2>Elegante vestido largo para una ocasión especial</h2>
+                <img
+                    src="imagines/vestidoslargos/ARCHIVO-4.jpg"
+                    alt="Hermoso vestido largo"
+                    onclick="abrirfoto(this)"
+                >
 
-            <p class="precio">$600.000</p>
+                <h3>Hermoso vestido largo</h3>
 
-            <button onclick="agregarCarrito('Elegante vestido largo para una ocasión especial', 600000)">
-                Agregar al carrito
-            </button>
-        </article>
+                <p>
+                    Un diseño hermoso y elegante para completar tu look.
+                </p>
 
+                <strong>$560.000</strong>
 
-        <!-- VESTIDO 8 -->
-        <article class="producto">
-            <img
-                src="imagines/vestidos-largos/Screenshot_2026-09-01-09-42-xx_com.pinterest-edit.jpg"
-                alt="Divino vestido largo elegante"
-                onclick="abrirfoto(this)"
-            >
+                <button onclick="agregarAlCarrito('Hermoso vestido largo', 560000)">
+                    Agregar al carrito
+                </button>
 
-            <h2>Divino vestido largo elegante</h2>
-
-            <p class="precio">$610.000</p>
-
-            <button onclick="agregarCarrito('Divino vestido largo elegante', 610000)">
-                Agregar al carrito
-            </button>
-        </article>
+            </article>
 
 
-        <!-- VESTIDO 9 -->
-        <article class="producto">
-            <img
-                src="imagines/vestidos-largos/Screenshot_2026-09-01-09-44-xx_com.pinterest-edit.jpg"
-                alt="Hermoso vestido largo y moderno"
-                onclick="abrirfoto(this)"
-            >
+            <!-- VESTIDO 5 -->
+            <article class="producto">
 
-            <h2>Hermoso vestido largo y moderno</h2>
+                <img
+                    src="imagines/vestidoslargos/ARCHIVO-5.jpg"
+                    alt="Hermoso vestido negro y elegante"
+                    onclick="abrirfoto(this)"
+                >
 
-            <p class="precio">$620.000</p>
+                <h3>Hermoso vestido negro y elegante</h3>
 
-            <button onclick="agregarCarrito('Hermoso vestido largo y moderno', 620000)">
-                Agregar al carrito
-            </button>
-        </article>
+                <p>
+                    Un diseño elegante para ocasiones especiales.
+                </p>
+
+                <strong>$600.000</strong>
+
+                <button onclick="agregarAlCarrito('Hermoso vestido negro y elegante', 600000)">
+                    Agregar al carrito
+                </button>
+
+            </article>
 
 
-        <!-- VESTIDO 10 -->
-        <article class="producto">
-            <img
-                src="imagines/vestidos-largos/Screenshot_2026-09-01-09-46-xx_com.pinterest-edit.jpg"
-                alt="Hermoso vestido largo y elegante"
-                onclick="abrirfoto(this)"
-            >
+            <!-- VESTIDO 6 -->
+            <article class="producto">
 
-            <h2>Hermoso vestido largo y elegante</h2>
+                <img
+                    src="imagines/vestidoslargos/ARCHIVO-6.jpg"
+                    alt="Hermoso vestido negro"
+                    onclick="abrirfoto(this)"
+                >
 
-            <p class="precio">$600.000</p>
+                <h3>Hermoso vestido negro</h3>
 
-            <button onclick="agregarCarrito('Hermoso vestido largo y elegante', 600000)">
-                Agregar al carrito
-            </button>
-        </article>
+                <p>
+                    Un vestido negro hermoso para lucir con elegancia.
+                </p>
+
+                <strong>$599.000</strong>
+
+                <button onclick="agregarAlCarrito('Hermoso vestido negro', 599000)">
+                    Agregar al carrito
+                </button>
+
+            </article>
+
+
+            <!-- VESTIDO 7 -->
+            <article class="producto">
+
+                <img
+                    src="imagines/vestidoslargos/ARCHIVO-7.jpg"
+                    alt="Hermoso vestido azul y elegante"
+                    onclick="abrirfoto(this)"
+                >
+
+                <h3>Hermoso vestido azul y elegante</h3>
+
+                <p>
+                    Un vestido azul elegante y lleno de estilo.
+                </p>
+
+                <strong>$600.000</strong>
+
+                <button onclick="agregarAlCarrito('Hermoso vestido azul y elegante', 600000)">
+                    Agregar al carrito
+                </button>
+
+            </article>
+
+
+            <!-- VESTIDO 8 -->
+            <article class="producto">
+
+                <img
+                    src="imagines/vestidoslargos/ARCHIVO-8.jpg"
+                    alt="Divino vestido"
+                    onclick="abrirfoto(this)"
+                >
+
+                <h3>Divino vestido</h3>
+
+                <p>
+                    Un diseño divino para darle un toque especial a tu estilo.
+                </p>
+
+                <strong>$777.000</strong>
+
+                <button onclick="agregarAlCarrito('Divino vestido', 777000)">
+                    Agregar al carrito
+                </button>
+
+            </article>
+
+
+            <!-- VESTIDO 9 -->
+            <article class="producto">
+
+                <img
+                    src="imagines/vestidoslargos/ARCHIVO-9.jpg"
+                    alt="Hermoso vestido verde con dorado"
+                    onclick="abrirfoto(this)"
+                >
+
+                <h3>Hermoso vestido verde con dorado</h3>
+
+                <p>
+                    Un vestido elegante con un hermoso detalle en dorado.
+                </p>
+
+                <strong>$888.000</strong>
+
+                <button onclick="agregarAlCarrito('Hermoso vestido verde con dorado', 888000)">
+                    Agregar al carrito
+                </button>
+
+            </article>
+
+
+            <!-- VESTIDO 10 -->
+            <article class="producto">
+
+                <img
+                    src="imagines/vestidoslargos/ARCHIVO-10.jpg"
+                    alt="Lindo vestido"
+                    onclick="abrirfoto(this)"
+                >
+
+                <h3>Lindo vestido</h3>
+
+                <p>
+                    Un lindo vestido para complementar tu estilo.
+                </p>
+
+                <strong>$300.000</strong>
+
+                <button onclick="agregarAlCarrito('Lindo vestido', 300000)">
+                    Agregar al carrito
+                </button>
+
+            </article>
+
+        </div>
 
     </main>
 
 
-    <!-- VENTANA PARA VER LA FOTO -->
-    <div id="visor" class="visor" onclick="cerrirfoto()">
-        <span>×</span>
-        <img id="fotoGrande" src="" alt="">
-    </div>
+    <!-- MENSAJE FINAL -->
+    <section class="sobre-inicio">
+
+        <div class="alas">🪽</div>
+        <span class="decoracion">✦</span>
+
+        <h2>Tu estilo, tu esencia ✨</h2>
+
+        <p>
+            Encuentra el vestido que haga brillar tu estilo. 🤍
+        </p>
+
+        <span class="decoracion">✧</span>
+
+    </section>
 
 
-    <script src="./script.js"></script>
+    <!-- CARRITO -->
+    <a href="carrito.html" class="carrito-flotante">
+        🛒 Ver carrito
+        <span class="contador-carrito" id="contador-carrito">0</span>
+    </a>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>🪽 Angel's Fashion World 🪽</p>
+        <p>Moda • Belleza • Skin Care • Accesorios</p>
+    </footer>
+
+
+    <script src="./script.js?v=15"></script>
 
 </body>
+
 </html>
