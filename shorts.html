@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -212,7 +211,8 @@
             transform: translateY(-3px);
             box-shadow: 0 7px 18px rgba(216, 91, 145, .25);
         }
-/* PRODUCTOS */
+
+        /* PRODUCTOS */
 
         .productos {
             width: 92%;
@@ -285,6 +285,26 @@
             font-size: 20px;
             font-weight: bold;
             margin-bottom: 15px;
+        }
+
+        /* TALLAS */
+
+        .talla {
+            font-size: 15px;
+            font-weight: bold;
+            margin: 8px 5px 15px;
+            color: #6b4055;
+        }
+
+        .selector-talla {
+            padding: 8px 12px;
+            border-radius: 18px;
+            border: 1px solid #f5d3e2;
+            color: #6b4055;
+            background: white;
+            font-weight: bold;
+            margin-left: 5px;
+            cursor: pointer;
         }
 
         .boton-carrito {
@@ -365,7 +385,8 @@
 
             font-size: 13px;
         }
-/* MODAL */
+
+        /* MODAL */
 
         .modal {
             display: none;
@@ -519,7 +540,8 @@
 </head>
 
 <body>
-<!-- ESTRELLAS -->
+
+    <!-- ESTRELLAS -->
 
     <div class="estrella1">✦</div>
     <div class="estrella2">✧</div>
@@ -571,7 +593,8 @@
 
     <main class="productos">
 
-  <!-- 1 -->
+
+        <!-- 1 -->
 
         <article class="producto">
 
@@ -594,9 +617,19 @@
                 tu estilo de una manera especial.
             </p>
 
+            <div class="talla">
+                Talla:
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Short lindo', 36000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -627,9 +660,19 @@
                 un estilo moderno y bonito.
             </p>
 
+            <div class="talla">
+                Talla:
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Lindo short de jean', 35000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -660,9 +703,19 @@
                 cómodo, femenino y encantador.
             </p>
 
+            <div class="talla">
+                Talla:
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Lindo short', 37000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -693,9 +746,19 @@
                 delicado, femenino y especial.
             </p>
 
+            <div class="talla">
+                Talla:
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Lindo short con lazos', 40000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -726,18 +789,29 @@
                 tu look con mucho estilo.
             </p>
 
+            <div class="talla">
+                Talla:
+                <select class="selector-talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Hermoso short', 30000)"
+                onclick="agregarProducto(this)"
             >
                 🛒 Agregar al carrito
             </button>
 
-       
         </article>
 
     </main>
- <!-- CARRITO FLOTANTE -->
+
+
+    <!-- CARRITO FLOTANTE -->
 
     <a href="carrito.html" class="carrito-flotante">
 
@@ -788,6 +862,22 @@
                 id="precioModal"
             ></div>
 
+            <div class="talla">
+
+                Talla:
+
+                <select
+                    class="selector-talla"
+                    id="tallaModal"
+                >
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+
+            </div>
+
             <button
                 class="boton-carrito"
                 id="botonModal"
@@ -821,29 +911,57 @@
 
         function abrirFoto(imagen) {
 
-            const modal = document.getElementById("modal");
-            const imagenModal = document.getElementById("imagenModal");
+            const modal =
+                document.getElementById("modal");
 
-            const producto = imagen.closest(".producto");
+            const imagenModal =
+                document.getElementById("imagenModal");
 
-            const nombre = producto.querySelector("h2").textContent.trim();
-            const descripcion = producto.querySelector("p").textContent.trim();
-            const precio = producto.querySelector(".precio").textContent.trim();
+            const producto =
+                imagen.closest(".producto");
+
+            const nombre =
+                producto.querySelector("h2").textContent.trim();
+
+            const descripcion =
+                producto.querySelector("p").textContent.trim();
+
+            const precio =
+                producto.querySelector(".precio").textContent.trim();
+
+            const talla =
+                producto.querySelector(".selector-talla").value;
 
             imagenModal.src = imagen.src;
             imagenModal.alt = imagen.alt;
 
-            document.getElementById("nombreModal").textContent = nombre;
-            document.getElementById("descripcionModal").textContent = descripcion;
-            document.getElementById("precioModal").textContent = precio;
+            document.getElementById("nombreModal").textContent =
+                nombre;
+
+            document.getElementById("descripcionModal").textContent =
+                descripcion;
+
+            document.getElementById("precioModal").textContent =
+                precio;
+
+            document.getElementById("tallaModal").value =
+                talla;
 
             document.getElementById("botonModal").onclick = function () {
 
-                const precioNumero = parseInt(
-                    precio.replace(/\D/g, "")
-                );
+                const precioNumero =
+                    parseInt(
+                        precio.replace(/\D/g, "")
+                    );
 
-                agregarAlCarrito(nombre, precioNumero);
+                const tallaSeleccionada =
+                    document.getElementById("tallaModal").value;
+
+                agregarAlCarrito(
+                    nombre,
+                    precioNumero,
+                    tallaSeleccionada
+                );
 
             };
 
@@ -853,24 +971,67 @@
 
         function cerrarFoto(event) {
 
-            if (!event || event.target === document.getElementById("modal")) {
+            if (
+                !event ||
+                event.target === document.getElementById("modal")
+            ) {
 
-                document.getElementById("modal").classList.remove("activo");
+                document
+                    .getElementById("modal")
+                    .classList.remove("activo");
 
             }
 
         }
 
 
-        function agregarAlCarrito(nombre, precio) {
+        function agregarProducto(boton) {
 
-            let carrito = JSON.parse(
-                localStorage.getItem("carrito")
-            ) || [];
+            const producto =
+                boton.closest(".producto");
+
+            const nombre =
+                producto.querySelector("h2").textContent.trim();
+
+            const precioTexto =
+                producto.querySelector(".precio").textContent.trim();
+
+            const precio =
+                parseInt(
+                    precioTexto.replace(/\D/g, "")
+                );
+
+            const talla =
+                producto.querySelector(".selector-talla").value;
+
+            agregarAlCarrito(
+                nombre,
+                precio,
+                talla
+            );
+
+        }
+
+
+        function agregarAlCarrito(
+            nombre,
+            precio,
+            talla
+        ) {
+
+            let carrito =
+                JSON.parse(
+                    localStorage.getItem("carrito")
+                ) || [];
 
             carrito.push({
+
                 nombre: nombre,
-                precio: precio
+
+                precio: precio,
+
+                talla: talla
+
             });
 
             localStorage.setItem(
@@ -880,16 +1041,27 @@
 
             actualizarContador();
 
+            alert(
+                "💕 " +
+                nombre +
+                " | Talla " +
+                talla +
+                " fue agregado al carrito."
+            );
+
         }
 
 
         function actualizarContador() {
 
-            const carrito = JSON.parse(
-                localStorage.getItem("carrito")
-            ) || [];
+            const carrito =
+                JSON.parse(
+                    localStorage.getItem("carrito")
+                ) || [];
 
-            document.getElementById("contador-carrito").textContent =
+            document.getElementById(
+                "contador-carrito"
+            ).textContent =
                 carrito.length;
 
         }
