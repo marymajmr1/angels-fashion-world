@@ -28,8 +28,6 @@
             min-height: 100vh;
         }
 
-        /* ESTRELLAS */
-
         .estrella1,
         .estrella2,
         .estrella3,
@@ -93,8 +91,7 @@
 
             border-radius: 25px;
 
-            box-shadow:
-                0 8px 25px rgba(216, 91, 145, 0.15);
+            box-shadow: 0 8px 25px rgba(216, 91, 145, 0.15);
 
             border: 1px solid #f5d3e2;
 
@@ -119,7 +116,7 @@
             transform: translateY(-2px);
         }
 
-        /* PRESENTACIÓN */
+        /* ENCABEZADO */
 
         header {
             width: 92%;
@@ -135,8 +132,7 @@
 
             border-radius: 30px;
 
-            box-shadow:
-                0 12px 35px rgba(216, 91, 145, 0.18);
+            box-shadow: 0 12px 35px rgba(216, 91, 145, 0.18);
 
             border: 1px solid #f5d3e2;
 
@@ -149,7 +145,6 @@
             justify-content: center;
             align-items: center;
             gap: 5px;
-
             margin-bottom: 5px;
         }
 
@@ -234,18 +229,17 @@
             padding: 18px;
             text-align: center;
 
-            box-shadow:
-                0 10px 25px rgba(107, 64, 85, 0.12);
+            box-shadow: 0 10px 25px rgba(107, 64, 85, 0.12);
 
             border: 1px solid #f5d3e2;
 
             transition: .3s ease;
         }
-.producto:hover {
+
+        .producto:hover {
             transform: translateY(-7px);
 
-            box-shadow:
-                0 15px 30px rgba(216, 91, 145, 0.18);
+            box-shadow: 0 15px 30px rgba(216, 91, 145, 0.18);
         }
 
         .producto img {
@@ -307,8 +301,7 @@
         .boton-carrito:hover {
             transform: translateY(-2px);
 
-            box-shadow:
-                0 6px 15px rgba(216, 91, 145, .25);
+            box-shadow: 0 6px 15px rgba(216, 91, 145, .25);
         }
 
         /* CARRITO */
@@ -332,8 +325,7 @@
 
             font-weight: bold;
 
-            box-shadow:
-                0 8px 25px rgba(107, 64, 85, 0.2);
+            box-shadow: 0 8px 25px rgba(107, 64, 85, 0.2);
 
             border: 1px solid #f5d3e2;
 
@@ -519,7 +511,8 @@
 </head>
 
 <body>
-  <!-- ESTRELLAS -->
+
+    <!-- ESTRELLAS -->
 
     <div class="estrella1">✦</div>
     <div class="estrella2">✧</div>
@@ -542,14 +535,13 @@
     </nav>
 
 
-    <!-- PRESENTACIÓN -->
+    <!-- ENCABEZADO -->
 
     <header>
 
         <div class="alas-con-estrella">
 
             <span class="alas">🪽</span>
-
             <span class="estrella-alas">✦</span>
 
         </div>
@@ -572,32 +564,28 @@
     <main class="productos">
 
 
-        <!-- FALDA 1 -->
+        <!-- 1 -->
 
         <article class="producto">
 
             <img
                 src="Imagenes/Faldas-cortas/Screenshot_2026-08-29-17-46-47-035_com.pinterest~jpg"
-                alt="Falda corta"
+                alt="Linda falda corta"
                 onclick="abrirFoto(this)"
             >
 
-            <h2>
-                Falda corta
-            </h2>
+            <h2>Linda falda corta</h2>
 
-            <div class="precio">
-                $35.000
-            </div>
+            <div class="precio">$35.000</div>
 
             <p>
-                Una linda falda corta para crear
-                un look moderno y bonito.
+                Linda falda corta para complementar
+                tus looks favoritos.
             </p>
 
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Falda corta', 35000)"
+                onclick="agregarAlCarrito('Linda falda corta', 35000)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -605,32 +593,28 @@
         </article>
 
 
-        <!-- FALDA 2 -->
+        <!-- 2 -->
 
         <article class="producto">
 
             <img
                 src="Imagenes/Faldas-cortas/Screenshot_2026-08-29-17-46-58-418_com.pinterest~jpg"
-                alt="Falda corta"
+                alt="Linda falda de jean"
                 onclick="abrirFoto(this)"
             >
 
-            <h2>
-                Falda corta
-            </h2>
+            <h2>Linda falda de jean</h2>
 
-            <div class="precio">
-                $40.000
-            </div>
+            <div class="precio">$40.000</div>
 
             <p>
-                Una falda corta versátil y perfecta
-                para diferentes ocasiones.
+                Linda falda de jean, perfecta para
+                crear diferentes outfits.
             </p>
 
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Falda corta', 40000)"
+                onclick="agregarAlCarrito('Linda falda de jean', 40000)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -638,32 +622,28 @@
         </article>
 
 
-        <!-- FALDA 3 -->
+        <!-- 3 -->
 
         <article class="producto">
 
             <img
                 src="Imagenes/Faldas-cortas/Screenshot_2026-08-29-17-48-01-550_com.pinterest~2.jpg"
-                alt="Falda corta"
+                alt="Linda falda de jean oscuro"
                 onclick="abrirFoto(this)"
             >
 
-            <h2>
-                Falda corta
-            </h2>
+            <h2>Linda falda de jean oscuro</h2>
 
-            <div class="precio">
-                $40.000
-            </div>
+            <div class="precio">$40.000</div>
 
             <p>
-                Una falda corta con un estilo
-                moderno y fácil de combinar.
+                Linda falda de jean oscuro con
+                un estilo moderno y bonito.
             </p>
 
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Falda corta', 40000)"
+                onclick="agregarAlCarrito('Linda falda de jean oscuro', 40000)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -671,32 +651,28 @@
         </article>
 
 
-        <!-- FALDA 4 -->
+        <!-- 4 -->
 
         <article class="producto">
 
             <img
                 src="Imagenes/Faldas-cortas/Screenshot_2026-08-29-17-48-25-074_com.pinterest~2.jpg"
-                alt="Falda corta"
+                alt="Linda falda corta"
                 onclick="abrirFoto(this)"
             >
 
-            <h2>
-                Falda corta
-            </h2>
+            <h2>Linda falda corta</h2>
 
-            <div class="precio">
-                $55.000
-            </div>
+            <div class="precio">$55.000</div>
 
             <p>
-                Una linda falda corta para darle
+                Linda falda corta para darle
                 un toque especial a tu outfit.
             </p>
 
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Falda corta', 55000)"
+                onclick="agregarAlCarrito('Linda falda corta', 55000)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -704,32 +680,28 @@
         </article>
 
 
-        <!-- FALDA 5 -->
+        <!-- 5 -->
 
         <article class="producto">
 
             <img
                 src="Imagenes/Faldas-cortas/Screenshot_2026-08-29-17-52-12-644_com.pinterest~2.jpg"
-                alt="Falda corta"
+                alt="Linda falda con estrellas"
                 onclick="abrirFoto(this)"
             >
 
-            <h2>
-                Falda corta
-            </h2>
+            <h2>Linda falda con estrellas</h2>
 
-            <div class="precio">
-                $59.999
-            </div>
+            <div class="precio">$59.999</div>
 
             <p>
-                Una falda corta bonita para un look
-                lindo y diferente.
+                Linda falda con estrellas para
+                un look lindo y diferente.
             </p>
 
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Falda corta', 59999)"
+                onclick="agregarAlCarrito('Linda falda con estrellas', 59999)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -737,32 +709,28 @@
         </article>
 
 
-        <!-- FALDA 6 -->
+        <!-- 6 -->
 
         <article class="producto">
 
             <img
                 src="Imagenes/Faldas-cortas/Screenshot_2026-08-29-17-53-27-783_com.pinterest~2.jpg"
-                alt="Falda corta"
+                alt="Linda falda de cuero"
                 onclick="abrirFoto(this)"
             >
 
-            <h2>
-                Falda corta
-            </h2>
+            <h2>Linda falda de cuero</h2>
 
-            <div class="precio">
-                $60.000
-            </div>
+            <div class="precio">$60.000</div>
 
             <p>
-                Una linda falda corta con un estilo
+                Linda falda de cuero con un estilo
                 elegante y moderno.
             </p>
 
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Falda corta', 60000)"
+                onclick="agregarAlCarrito('Linda falda de cuero', 60000)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -770,32 +738,28 @@
         </article>
 
 
-        <!-- FALDA 7 -->
+        <!-- 7 -->
 
         <article class="producto">
 
             <img
                 src="Imagenes/Faldas-cortas/Screenshot_2026-08-29-17-56-41-528_com.pinterest~2.jpg"
-                alt="Falda corta"
+                alt="Linda falda de jean"
                 onclick="abrirFoto(this)"
             >
 
-            <h2>
-                Falda corta
-            </h2>
+            <h2>Linda falda de jean</h2>
 
-            <div class="precio">
-                $65.000
-            </div>
+            <div class="precio">$65.000</div>
 
             <p>
-                Una falda corta linda y cómoda
-                para completar tu outfit.
+                Linda falda de jean para completar
+                tus outfits favoritos.
             </p>
 
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Falda corta', 65000)"
+                onclick="agregarAlCarrito('Linda falda de jean', 65000)"
             >
                 🛒 Agregar al carrito
             </button>
@@ -803,7 +767,9 @@
         </article>
 
     </main>
-<!-- CARRITO FLOTANTE -->
+
+
+    <!-- CARRITO -->
 
     <a href="carrito.html" class="carrito-flotante">
 
@@ -870,9 +836,7 @@
 
     <footer>
 
-        <p>
-            🪽 Angel's Fashion World 🪽
-        </p>
+        <p>🪽 Angel's Fashion World 🪽</p>
 
         <p>
             Moda • Belleza • Skin Care • Accesorios
@@ -881,8 +845,6 @@
     </footer>
 
 
-    <!-- JAVASCRIPT -->
-
     <script>
 
         function abrirFoto(imagen) {
@@ -890,32 +852,29 @@
             const modal =
                 document.getElementById("modal");
 
-            const imagenModal =
-                document.getElementById("imagenModal");
-
             const producto =
                 imagen.closest(".producto");
 
             const nombre =
-                producto
-                    .querySelector("h2")
-                    .textContent
-                    .trim();
+                producto.querySelector("h2")
+                .textContent
+                .trim();
 
             const descripcion =
-                producto
-                    .querySelector("p")
-                    .textContent
-                    .trim();
+                producto.querySelector("p")
+                .textContent
+                .trim();
 
             const precio =
-                producto
-                    .querySelector(".precio")
-                    .textContent
-                    .trim();
+                producto.querySelector(".precio")
+                .textContent
+                .trim();
 
-            imagenModal.src = imagen.src;
-            imagenModal.alt = imagen.alt;
+            document.getElementById("imagenModal").src =
+                imagen.src;
+
+            document.getElementById("imagenModal").alt =
+                imagen.alt;
 
             document.getElementById("nombreModal")
                 .textContent = nombre;
@@ -934,7 +893,6 @@
                             precio
                                 .replace("$", "")
                                 .replace(/\./g, "")
-                                .trim()
                         );
 
                     agregarAlCarrito(
@@ -987,9 +945,7 @@
                 " fue agregado al carrito 💕"
             );
         }
-
-
-        function actualizarContador() {
+function actualizarContador() {
 
             const carrito =
                 JSON.parse(
