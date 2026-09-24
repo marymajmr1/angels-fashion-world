@@ -1,1156 +1,1098 @@
-<!DOCTYPE html><html lang="es"><head>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Vestidos largos | Angel's Fashion World</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
+    <title>Vestidos largos | Angel's Fashion World</title>
 
-    /* ==========================================
-       ANGEL'S FASHION WORLD
-       VESTIDOS LARGOS 🪽✨
-    ========================================== */
+    <style>
+        /* ==========================================
+           ANGEL'S FASHION WORLD
+           VESTIDOS LARGOS 🪽✨
+        ========================================== */
 
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
-
-    body {
-        font-family: Arial, sans-serif;
-
-        background:
-            radial-gradient(circle at top left, #ffffff 0%, transparent 35%),
-            radial-gradient(circle at bottom right, #ffe1ef 0%, transparent 40%),
-            #fff0f6;
-
-        color: #6b4055;
-        min-height: 100vh;
-    }
-
-
-    /* ==========================================
-       ESTRELLAS
-    ========================================== */
-
-    .estrella1,
-    .estrella2,
-    .estrella3,
-    .estrella4 {
-        position: fixed;
-        font-size: 28px;
-        color: #d85b91;
-        z-index: 0;
-        pointer-events: none;
-
-        animation:
-            flotar 3s ease-in-out infinite;
-    }
-
-    .estrella1 {
-        top: 120px;
-        left: 4%;
-    }
-
-    .estrella2 {
-        top: 280px;
-        right: 5%;
-        animation-delay: .7s;
-    }
-
-    .estrella3 {
-        bottom: 180px;
-        left: 6%;
-        animation-delay: 1.3s;
-    }
-
-    .estrella4 {
-        bottom: 80px;
-        right: 7%;
-        animation-delay: 2s;
-    }
-
-    @keyframes flotar {
-
-        0%,
-        100% {
-            transform:
-                translateY(0)
-                rotate(0deg);
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-        50% {
-            transform:
-                translateY(-12px)
-                rotate(12deg);
-        }
-    }
-
-
-    /* ==========================================
-       MENÚ
-    ========================================== */
-
-    .menu {
-        width: 92%;
-        max-width: 1200px;
-
-        margin: 25px auto 0;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-
-        gap: 10px;
-
-        background:
-            rgba(255, 255, 255, 0.92);
-
-        padding: 14px 18px;
-
-        border-radius: 25px;
-
-        box-shadow:
-            0 8px 25px
-            rgba(216, 91, 145, 0.15);
-
-        border:
-            1px solid #f5d3e2;
-
-        position: relative;
-        z-index: 10;
-    }
-
-    .menu a {
-        text-decoration: none;
-
-        color: #6b4055;
-
-        font-weight: bold;
-
-        padding: 10px 16px;
-
-        border-radius: 20px;
-
-        transition: .3s ease;
-    }
-
-    .menu a:hover {
-        background: #ffe0ed;
-
-        color: #d85b91;
-
-        transform:
-            translateY(-2px);
-    }
-
-
-    /* ==========================================
-       PRESENTACIÓN
-    ========================================== */
-
-    header {
-        width: 92%;
-        max-width: 1000px;
-
-        margin: 35px auto 45px;
-
-        text-align: center;
-
-        background:
-            rgba(255, 255, 255, 0.94);
-
-        padding: 35px 25px;
-
-        border-radius: 30px;
-
-        box-shadow:
-            0 12px 35px
-            rgba(216, 91, 145, 0.18);
-
-        border:
-            1px solid #f5d3e2;
-
-        position: relative;
-        z-index: 2;
-    }
-
-    .alas-con-estrella {
-        display: flex;
-
-        justify-content: center;
-        align-items: center;
-
-        gap: 5px;
-
-        margin-bottom: 5px;
-    }
-
-    .alas {
-        font-size: 48px;
-
-        display: inline-block;
-
-        animation:
-            alasMovimiento 3s ease-in-out infinite;
-    }
-
-    .estrella-alas {
-        font-size: 25px;
-
-        color: #d85b91;
-
-        animation:
-            estrellaMovimiento 2s ease-in-out infinite;
-    }
-
-    @keyframes alasMovimiento {
-
-        0%,
-        100% {
-            transform:
-                translateY(0)
-                rotate(0deg);
+        html {
+            scroll-behavior: smooth;
         }
 
-        50% {
-            transform:
-                translateY(-7px)
-                rotate(-4deg);
-        }
-    }
+        body {
+            font-family: Arial, sans-serif;
 
-    @keyframes estrellaMovimiento {
+            background:
+                radial-gradient(circle at top left, #ffffff 0%, transparent 35%),
+                radial-gradient(circle at bottom right, #ffe1ef 0%, transparent 40%),
+                #fff0f6;
 
-        0%,
-        100% {
-            transform:
-                scale(1)
-                rotate(0deg);
+            color: #6b4055;
+            min-height: 100vh;
         }
 
-        50% {
-            transform:
-                scale(1.25)
-                rotate(15deg);
-        }
-    }
 
-    header h1 {
-        color: #d85b91;
-
-        font-size: 42px;
-
-        margin:
-            5px 0 10px;
-    }
-
-    header p {
-        font-size: 18px;
-
-        margin-bottom: 20px;
-    }
-
-    .subtitulo {
-        max-width: 700px;
-
-        margin:
-            0 auto 20px;
-
-        line-height: 1.6;
-    }
-
-    .volver {
-        display: inline-block;
-
-        text-decoration: none;
-
-        background: #d85b91;
-
-        color: white;
-
-        padding:
-            12px 24px;
-
-        border-radius: 25px;
-
-        font-weight: bold;
-
-        transition: .3s ease;
-    }
-
-    .volver:hover {
-        transform:
-            translateY(-3px);
-
-        box-shadow:
-            0 7px 18px
-            rgba(216, 91, 145, .25);
-    }
-
-
-    /* ==========================================
-       PRODUCTOS
-    ========================================== */
-
-    .productos {
-        width: 92%;
-        max-width: 1200px;
-
-        margin: auto;
-
-        display: grid;
-
-        grid-template-columns:
-            repeat(3, 1fr);
-
-        gap: 28px;
-
-        position: relative;
-        z-index: 2;
-    }
-
-    .producto {
-        background: white;
-
-        border-radius: 25px;
-
-        padding: 18px;
-
-        text-align: center;
-
-        box-shadow:
-            0 10px 25px
-            rgba(107, 64, 85, 0.12);
-
-        border:
-            1px solid #f5d3e2;
-
-        transition: .3s ease;
-
-        overflow: hidden;
-    }
-
-    .producto:hover {
-        transform:
-            translateY(-7px);
-
-        box-shadow:
-            0 15px 30px
-            rgba(216, 91, 145, 0.18);
-    }
-
-    .producto img {
-        width: 100%;
-
-        height: 390px;
-
-        object-fit: cover;
-
-        border-radius: 20px;
-
-        cursor: pointer;
-
-        display: block;
-
-        transition: .3s ease;
-    }
-
-    .producto img:hover {
-        transform:
-            scale(1.02);
-    }
-
-    .producto h2 {
-        color: #d85b91;
-
-        font-size: 21px;
-
-        margin:
-            18px 5px 8px;
-
-        line-height: 1.3;
-    }
-
-    .producto p {
-        font-size: 15px;
-
-        line-height: 1.5;
-
-        margin:
-            0 5px 12px;
-    }
-
-    .precio {
-        color: #6b4055;
-
-        font-size: 20px;
-
-        font-weight: bold;
-
-        margin-bottom: 15px;
-    }
-
-    .boton-carrito {
-        display: inline-block;
-
-        border: none;
-
-        background: #d85b91;
-
-        color: white;
-
-        padding:
-            11px 18px;
-
-        border-radius: 22px;
-
-        font-weight: bold;
-
-        cursor: pointer;
-
-        transition: .3s ease;
-    }
-
-    .boton-carrito:hover {
-        transform:
-            translateY(-2px);
-
-        box-shadow:
-            0 6px 15px
-            rgba(216, 91, 145, .25);
-    }
-
-
-    /* ==========================================
-       CARRITO
-    ========================================== */
-
-    .carrito-flotante {
-        position: fixed;
-
-        right: 20px;
-        bottom: 20px;
-
-        z-index: 100;
-
-        text-decoration: none;
-
-        background: white;
-
-        color: #d85b91;
-
-        padding:
-            14px 20px;
-
-        border-radius: 30px;
-
-        font-weight: bold;
-
-        box-shadow:
-            0 8px 25px
-            rgba(107, 64, 85, 0.2);
-
-        border:
-            1px solid #f5d3e2;
-
-        transition: .3s ease;
-    }
-
-    .carrito-flotante:hover {
-        transform:
-            translateY(-4px);
-    }
-
-    .contador-carrito {
-        display: inline-flex;
-
-        justify-content: center;
-        align-items: center;
-
-        min-width: 24px;
-        height: 24px;
-
-        margin-left: 5px;
-
-        padding:
-            0 6px;
-
-        border-radius: 50%;
-
-        background: #d85b91;
-
-        color: white;
-
-        font-size: 13px;
-    }
-
-
-    /* ==========================================
-       MODAL
-    ========================================== */
-
-    .modal {
-        display: none;
-
-        position: fixed;
-
-        inset: 0;
-
-        z-index: 200;
-
-        background:
-            rgba(60, 30, 45, .75);
-
-        justify-content: center;
-        align-items: center;
-
-        padding: 20px;
-    }
-
-    .modal.activo {
-        display: flex;
-    }
-
-    .modal-contenido {
-        width:
-            min(900px, 95%);
-
-        max-height: 95vh;
-
-        overflow-y: auto;
-
-        background: white;
-
-        border-radius: 25px;
-
-        padding: 20px;
-
-        text-align: center;
-
-        position: relative;
-    }
-
-    .modal-contenido img {
-        max-width: 100%;
-
-        max-height: 65vh;
-
-        object-fit: contain;
-
-        border-radius: 18px;
-    }
-
-    .cerrar {
-        position: absolute;
-
-        top: 10px;
-        right: 15px;
-
-        width: 40px;
-        height: 40px;
-
-        border: none;
-
-        border-radius: 50%;
-
-        background: #d85b91;
-
-        color: white;
-
-        font-size: 24px;
-
-        cursor: pointer;
-
-        z-index: 5;
-    }
-
-    .modal h2 {
-        color: #d85b91;
-
-        margin:
-            15px 0 8px;
-    }
-
-    .modal p {
-        margin-bottom: 10px;
-
-        line-height: 1.5;
-    }
-
-
-    /* ==========================================
-       FOOTER
-    ========================================== */
-
-    footer {
-        text-align: center;
-
-        margin-top: 70px;
-
-        padding:
-            30px 20px;
-
-        background: white;
-
-        border-top:
-            1px solid #f5d3e2;
-
-        color: #6b4055;
-
-        line-height: 1.8;
-    }
-
-    footer p:first-child {
-        color: #d85b91;
-
-        font-weight: bold;
-
-        font-size: 18px;
-    }
-
-
-    /* ==========================================
-       RESPONSIVE
-    ========================================== */
-
-    @media (max-width: 1000px) {
-
-        .productos {
-            grid-template-columns:
-                repeat(2, 1fr);
-        }
-
-        .producto img {
-            height: 350px;
-        }
-    }
-
-
-    @media (max-width: 850px) {
-
-        .productos {
-            grid-template-columns:
-                repeat(2, 1fr);
-        }
-
-        .producto img {
-            height: 330px;
-        }
-    }
-
-
-    @media (max-width: 600px) {
-
-        .menu {
-            width: 94%;
-
-            gap: 5px;
-
-            padding:
-                12px 8px;
-        }
-
-        .menu a {
-            padding:
-                8px 10px;
-
-            font-size: 14px;
-        }
-
-        header {
-            margin-top: 25px;
-
-            padding:
-                28px 18px;
-        }
-
-        header h1 {
-            font-size: 35px;
-        }
-
-        header p {
-            font-size: 16px;
-        }
-
-        .alas {
-            font-size: 42px;
-        }
-
-        .productos {
-            grid-template-columns: 1fr;
-
-            gap: 22px;
-        }
-
-        .producto img {
-            height: auto;
-
-            max-height: 550px;
-        }
-
-        .carrito-flotante {
-            right: 12px;
-
-            bottom: 12px;
-
-            padding:
-                12px 15px;
-        }
+        /* ==========================================
+           ESTRELLAS
+        ========================================== */
 
         .estrella1,
         .estrella2,
         .estrella3,
         .estrella4 {
-            font-size: 22px;
+            position: fixed;
+            font-size: 28px;
+            color: #d85b91;
+            z-index: 0;
+            pointer-events: none;
+
+            animation: flotar 3s ease-in-out infinite;
         }
-    }
 
-</style>
+        .estrella1 {
+            top: 120px;
+            left: 4%;
+        }
 
-</head><body><!-- ==========================================
-     ESTRELLAS
-========================================== -->
+        .estrella2 {
+            top: 280px;
+            right: 5%;
+            animation-delay: .7s;
+        }
 
-<div class="estrella1">✦</div>
+        .estrella3 {
+            bottom: 180px;
+            left: 6%;
+            animation-delay: 1.3s;
+        }
 
-<div class="estrella2">✧</div>
+        .estrella4 {
+            bottom: 80px;
+            right: 7%;
+            animation-delay: 2s;
+        }
 
-<div class="estrella3">✦</div>
+        @keyframes flotar {
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
 
-<div class="estrella4">✧</div>
-
-
-
-<!-- ==========================================
-     MENÚ
-========================================== -->
-
-<nav class="menu">
-
-    <a href="index.html">
-        Inicio
-    </a>
-
-    <a href="moda.html">
-        Moda
-    </a>
-
-    <a href="belleza.html">
-        Belleza
-    </a>
-
-    <a href="skincare.html">
-        Skin care
-    </a>
-
-    <a href="accesorios.html">
-        Accesorios
-    </a>
-
-    <a href="sobre-nosotros.html">
-        Sobre nosotros
-    </a>
-
-    <a href="index.html#contactanos">
-        Contáctanos
-    </a>
-
-</nav>
+            50% {
+                transform: translateY(-12px) rotate(12deg);
+            }
+        }
 
 
+        /* ==========================================
+           MENÚ
+        ========================================== */
 
-<!-- ==========================================
-     PRESENTACIÓN
-========================================== -->
+        .menu {
+            width: 92%;
+            max-width: 1200px;
 
-<header>
+            margin: 25px auto 0;
 
-    <div class="alas-con-estrella">
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
 
-        <span class="alas">
-            🪽
-        </span>
+            gap: 10px;
 
-        <span class="estrella-alas">
-            ✦
-        </span>
+            background: rgba(255, 255, 255, 0.92);
 
-    </div>
+            padding: 14px 18px;
 
+            border-radius: 25px;
 
-    <h1>
-        Vestidos largos
-    </h1>
+            box-shadow:
+                0 8px 25px rgba(216, 91, 145, 0.15);
 
+            border: 1px solid #f5d3e2;
 
-    <p>
-        Descubre tu estilo en Angel's Fashion World 💕
-    </p>
+            position: relative;
+            z-index: 10;
+        }
 
+        .menu a {
+            text-decoration: none;
 
-    <p class="subtitulo">
+            color: #6b4055;
 
-        Encuentra vestidos largos elegantes,
-        delicados y especiales para complementar
-        tu estilo en cada ocasión. ✨
+            font-weight: bold;
 
-    </p>
+            padding: 10px 16px;
 
+            border-radius: 20px;
 
-    <a
-        href="moda.html"
-        class="volver"
-    >
-        ← Volver a Moda
-    </a>
+            transition: .3s ease;
+        }
 
-</header>
+        .menu a:hover {
+            background: #ffe0ed;
 
+            color: #d85b91;
 
-
-<!-- ==========================================
-     PRODUCTOS
-========================================== -->
-
-<main class="productos">
+            transform: translateY(-2px);
+        }
 
 
-    <!-- PRODUCTO 1 -->
+        /* ==========================================
+           PRESENTACIÓN
+        ========================================== */
 
-    <article class="producto">
+        header {
+            width: 92%;
+            max-width: 1000px;
 
-        <img
-            src="imagenes/vestidos-largos/Screenshot_2026-09-01-09-28-25-468_com.pinterest-edit.jpg"
-            alt="Hermoso vestido largo, vino y elegante"
-            onclick="abrirFoto(this)"
-        >
+            margin: 35px auto 45px;
 
-        <h2>
-            Hermoso vestido largo,
-            vino y elegante
-        </h2>
+            text-align: center;
 
-        <div class="precio">
-            $500.000
+            background: rgba(255, 255, 255, 0.94);
+
+            padding: 35px 25px;
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 12px 35px rgba(216, 91, 145, 0.18);
+
+            border: 1px solid #f5d3e2;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .alas-con-estrella {
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            gap: 5px;
+
+            margin-bottom: 5px;
+        }
+
+        .alas {
+            font-size: 48px;
+
+            display: inline-block;
+
+            animation:
+                alasMovimiento 3s ease-in-out infinite;
+        }
+
+        .estrella-alas {
+            font-size: 25px;
+
+            color: #d85b91;
+
+            animation:
+                estrellaMovimiento 2s ease-in-out infinite;
+        }
+
+        @keyframes alasMovimiento {
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-7px) rotate(-4deg);
+            }
+        }
+
+        @keyframes estrellaMovimiento {
+            0%,
+            100% {
+                transform: scale(1) rotate(0deg);
+            }
+
+            50% {
+                transform: scale(1.25) rotate(15deg);
+            }
+        }
+
+        header h1 {
+            color: #d85b91;
+
+            font-size: 42px;
+
+            margin: 5px 0 10px;
+        }
+
+        header p {
+            font-size: 18px;
+
+            margin-bottom: 20px;
+        }
+
+        .subtitulo {
+            max-width: 700px;
+
+            margin: 0 auto 20px;
+
+            line-height: 1.6;
+        }
+
+        .volver {
+            display: inline-block;
+
+            text-decoration: none;
+
+            background: #d85b91;
+
+            color: white;
+
+            padding: 12px 24px;
+
+            border-radius: 25px;
+
+            font-weight: bold;
+
+            transition: .3s ease;
+        }
+
+        .volver:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 7px 18px rgba(216, 91, 145, .25);
+        }
+
+
+        /* ==========================================
+           PRODUCTOS
+        ========================================== */
+
+        .productos {
+            width: 92%;
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 28px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .producto {
+            background: white;
+
+            border-radius: 25px;
+
+            padding: 18px;
+
+            text-align: center;
+
+            box-shadow:
+                0 10px 25px rgba(107, 64, 85, 0.12);
+
+            border: 1px solid #f5d3e2;
+
+            transition: .3s ease;
+
+            overflow: hidden;
+        }
+
+        .producto:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 15px 30px rgba(216, 91, 145, 0.18);
+        }
+
+        .producto img {
+            width: 100%;
+
+            height: 390px;
+
+            object-fit: cover;
+
+            border-radius: 20px;
+
+            cursor: pointer;
+
+            display: block;
+
+            transition: .3s ease;
+        }
+
+        .producto img:hover {
+            transform: scale(1.02);
+        }
+
+        .producto h2 {
+            color: #d85b91;
+
+            font-size: 21px;
+
+            margin: 18px 5px 8px;
+
+            line-height: 1.3;
+        }
+
+        .producto p {
+            font-size: 15px;
+
+            line-height: 1.5;
+
+            margin: 0 5px 12px;
+        }
+
+        .precio {
+            color: #6b4055;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+        }
+
+        .boton-carrito {
+            display: inline-block;
+
+            border: none;
+
+            background: #d85b91;
+
+            color: white;
+
+            padding: 11px 18px;
+
+            border-radius: 22px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: .3s ease;
+        }
+
+        .boton-carrito:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 6px 15px rgba(216, 91, 145, .25);
+        }
+
+
+        /* ==========================================
+           CARRITO
+        ========================================== */
+
+        .carrito-flotante {
+            position: fixed;
+
+            right: 20px;
+            bottom: 20px;
+
+            z-index: 100;
+
+            text-decoration: none;
+
+            background: white;
+
+            color: #d85b91;
+
+            padding: 14px 20px;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 8px 25px rgba(107, 64, 85, 0.2);
+
+            border: 1px solid #f5d3e2;
+
+            transition: .3s ease;
+        }
+
+        .carrito-flotante:hover {
+            transform: translateY(-4px);
+        }
+
+        .contador-carrito {
+            display: inline-flex;
+
+            justify-content: center;
+            align-items: center;
+
+            min-width: 24px;
+            height: 24px;
+
+            margin-left: 5px;
+
+            padding: 0 6px;
+
+            border-radius: 50%;
+
+            background: #d85b91;
+
+            color: white;
+
+            font-size: 13px;
+        }
+
+
+        /* ==========================================
+           MODAL
+        ========================================== */
+
+        .modal {
+            display: none;
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 200;
+
+            background: rgba(60, 30, 45, .75);
+
+            justify-content: center;
+            align-items: center;
+
+            padding: 20px;
+        }
+
+        .modal.activo {
+            display: flex;
+        }
+
+        .modal-contenido {
+            width: min(900px, 95%);
+
+            max-height: 95vh;
+
+            overflow-y: auto;
+
+            background: white;
+
+            border-radius: 25px;
+
+            padding: 20px;
+
+            text-align: center;
+
+            position: relative;
+        }
+
+        .modal-contenido img {
+            max-width: 100%;
+
+            max-height: 65vh;
+
+            object-fit: contain;
+
+            border-radius: 18px;
+        }
+
+        .cerrar {
+            position: absolute;
+
+            top: 10px;
+            right: 15px;
+
+            width: 40px;
+            height: 40px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: #d85b91;
+
+            color: white;
+
+            font-size: 24px;
+
+            cursor: pointer;
+
+            z-index: 5;
+        }
+
+        .modal h2 {
+            color: #d85b91;
+
+            margin: 15px 0 8px;
+        }
+
+        .modal p {
+            margin-bottom: 10px;
+
+            line-height: 1.5;
+        }
+
+
+        /* ==========================================
+           FOOTER
+        ========================================== */
+
+        footer {
+            text-align: center;
+
+            margin-top: 70px;
+
+            padding: 30px 20px;
+
+            background: white;
+
+            border-top: 1px solid #f5d3e2;
+
+            color: #6b4055;
+
+            line-height: 1.8;
+        }
+
+        footer p:first-child {
+            color: #d85b91;
+
+            font-weight: bold;
+
+            font-size: 18px;
+        }
+
+
+        /* ==========================================
+           RESPONSIVE
+        ========================================== */
+
+        @media (max-width: 1000px) {
+
+            .productos {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .producto img {
+                height: 350px;
+            }
+        }
+
+
+        @media (max-width: 850px) {
+
+            .productos {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .producto img {
+                height: 330px;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .menu {
+                width: 94%;
+
+                gap: 5px;
+
+                padding: 12px 8px;
+            }
+
+            .menu a {
+                padding: 8px 10px;
+
+                font-size: 14px;
+            }
+
+            header {
+                margin-top: 25px;
+
+                padding: 28px 18px;
+            }
+
+            header h1 {
+                font-size: 35px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            .alas {
+                font-size: 42px;
+            }
+
+            .productos {
+                grid-template-columns: 1fr;
+
+                gap: 22px;
+            }
+
+            .producto img {
+                height: auto;
+
+                max-height: 550px;
+            }
+
+            .carrito-flotante {
+                right: 12px;
+
+                bottom: 12px;
+
+                padding: 12px 15px;
+            }
+
+            .estrella1,
+            .estrella2,
+            .estrella3,
+            .estrella4 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ==========================================
+         ESTRELLAS
+    ========================================== -->
+
+    <div class="estrella1">✦</div>
+    <div class="estrella2">✧</div>
+    <div class="estrella3">✦</div>
+    <div class="estrella4">✧</div>
+
+
+    <!-- ==========================================
+         MENÚ
+    ========================================== -->
+
+    <nav class="menu">
+
+        <a href="index.html">
+            Inicio
+        </a>
+
+        <a href="moda.html">
+            Moda
+        </a>
+
+        <a href="belleza.html">
+            Belleza
+        </a>
+
+        <a href="skincare.html">
+            Skin care
+        </a>
+
+        <a href="accesorios.html">
+            Accesorios
+        </a>
+
+        <a href="sobre-nosotros.html">
+            Sobre nosotros
+        </a>
+
+        <a href="index.html#contactanos">
+            Contáctanos
+        </a>
+
+    </nav>
+
+
+    <!-- ==========================================
+         PRESENTACIÓN
+    ========================================== -->
+
+    <header>
+
+        <div class="alas-con-estrella">
+
+            <span class="alas">
+                🪽
+            </span>
+
+            <span class="estrella-alas">
+                ✦
+            </span>
+
         </div>
 
+
+        <h1>
+            Vestidos largos
+        </h1>
+
+
         <p>
-            Un hermoso vestido largo en tono vino,
-            elegante y especial para lucir
-            un look increíble.
+            Descubre tu estilo en Angel's Fashion World 💕
         </p>
 
-        <button
-            class="boton-carrito"
-            onclick="agregarAlCarrito(
-                'Hermoso vestido largo, vino y elegante',
-                500000
-            )"
-        >
-            🛒 Agregar al carrito
-        </button>
 
-    </article>
+        <p class="subtitulo">
 
+            Encuentra vestidos largos elegantes,
+            delicados y especiales para complementar
+            tu estilo en cada ocasión. ✨
 
-
-    <!-- PRODUCTO 2 -->
-
-    <article class="producto">
-
-        <img
-            src="imagenes/vestidos-largos/Screenshot_2026-09-01-09-29-23-817_com.pinterest-edit.jpg"
-            alt="Hermoso vestido negro y elegante"
-            onclick="abrirFoto(this)"
-        >
-
-        <h2>
-            Hermoso vestido negro
-            y elegante
-        </h2>
-
-        <div class="precio">
-            $550.000
-        </div>
-
-        <p>
-            Un vestido negro largo y elegante,
-            perfecto para crear un look
-            sofisticado y especial.
         </p>
 
-        <button
-            class="boton-carrito"
-            onclick="agregarAlCarrito(
-                'Hermoso vestido negro y elegante',
-                550000
-            )"
+
+        <a
+            href="moda.html"
+            class="volver"
         >
-            🛒 Agregar al carrito
-        </button>
+            ← Volver a Moda
+        </a>
 
-    </article>
+    </header>
 
 
+    <!-- ==========================================
+         PRODUCTOS
+    ========================================== -->
 
-    <!-- PRODUCTO 3 -->
+    <main class="productos">
 
-    <article class="producto">
 
-        <img
-            src="imagenes/vestidos-largos/Screenshot_2026-09-01-09-32-14-027_com.pinterest-edit.jpg"
-            alt="Hermoso vestido largo y color cielo"
-            onclick="abrirFoto(this)"
-        >
+        <!-- 1 -->
 
-        <h2>
-            Hermoso vestido largo
-            y color cielo
-        </h2>
+        <article class="producto">
 
-        <div class="precio">
-            $555.000
-        </div>
+            <img
+                src="imagenes/vestidos-largos/Screenshot_2026-09-01-09-28-25-468_com.pinterest-edit.jpg"
+                alt="Hermoso vestido largo, vino y elegante"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>
+                Hermoso vestido largo,
+                vino y elegante
+            </h2>
 
-        <p>
-            Un hermoso vestido largo en color cielo
-            para un look delicado, bonito
-            y lleno de estilo.
-        </p>
+            <div class="precio">
+                $500.000
+            </div>
 
-        <button
-            class="boton-carrito"
-            onclick="agregarAlCarrito(
-                'Hermoso vestido largo y color cielo',
-                555000
-            )"
-        >
-            🛒 Agregar al carrito
-        </button>
+            <p>
+                Un hermoso vestido largo en tono vino,
+                elegante y especial para lucir
+                un look increíble.
+            </p>
 
-    </article>
+            <button
+                class="boton-carrito"
+                onclick="agregarAlCarrito(
+                    'Hermoso vestido largo, vino y elegante',
+                    500000
+                )"
+            >
+                🛒 Agregar al carrito
+            </button>
 
+        </article>
 
 
-    <!-- PRODUCTO 4 -->
+        <!-- 2 -->
 
-    <article class="producto">
+        <article class="producto">
 
-        <img
-            src="imagenes/vestidos-largos/Screenshot_2026-09-01-09-35-42-875_com.pinterest~2.jpg"
-            alt="Hermoso vestido largo"
-            onclick="abrirFoto(this)"
-        >
+            <img
+                src="imagenes/vestidos-largos/Screenshot_2026-09-01-09-29-23-817_com.pinterest-edit.jpg"
+                alt="Hermoso vestido negro y elegante"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>
+                Hermoso vestido negro
+                y elegante
+            </h2>
 
-        <h2>
-            Hermoso vestido largo
-        </h2>
+            <div class="precio">
+                $550.000
+            </div>
 
-        <div class="precio">
-            $560.000
-        </div>
+            <p>
+                Un vestido negro largo y elegante,
+                perfecto para crear un look
+                sofisticado y especial.
+            </p>
 
-        <p>
-            Un hermoso vestido largo para
-            complementar tu estilo y crear
-            un look especial.
-        </p>
+            <button
+                class="boton-carrito"
+                onclick="agregarAlCarrito(
+                    'Hermoso vestido negro y elegante',
+                    550000
+                )"
+            >
+                🛒 Agregar al carrito
+            </button>
 
-        <button
-            class="boton-carrito"
-            onclick="agregarAlCarrito(
-                'Hermoso vestido largo',
-                560000
-            )"
-        >
-            🛒 Agregar al carrito
-        </button>
+        </article>
 
-    </article>
 
+        <!-- 3 -->
 
+        <article class="producto">
 
-    <!-- PRODUCTO 5 -->
-
-    <article class="producto">
-
-        <img
-            src="imagenes/vestidos-largos/Screenshot_2026-09-01-09-36-48-779_com.pinterest~2.jpg"
-            alt="Hermoso vestido negro y elegante"
-            onclick="abrirFoto(this)"
-        >
-
-        <h2>
-            Hermoso vestido negro
-            y elegante
-        </h2>
-
-        <div class="precio">
-            $600.000
-        </div>
-
-        <p>
-            Un hermoso vestido negro largo
-            con un estilo elegante para
-            ocasiones especiales.
-        </p>
-
-        <button
-            class="boton-carrito"
-            onclick="agregarAlCarrito(
-                'Hermoso vestido negro y elegante',
-                600000
-            )"
-        >
-            🛒 Agregar al carrito
-        </button>
-
-    </article>
-
-
-
-    <!-- PRODUCTO 6 -->
-
-    <article class="producto">
-
-        <img
-            src="imagenes/vestidos-largos/Screenshot_2026-09-01-09-38-28-775_com.pinterest-edit.jpg"
-            alt="Hermoso vestido negro"
-            onclick="abrirFoto(this)"
-        >
-
-        <h2>
-            Hermoso vestido negro
-        </h2>
-
-        <div class="precio">
-            $599.000
-        </div>
-
-        <p>
-            Un hermoso vestido negro largo
-            para lucir un estilo elegante
-            y especial.
-        </p>
-
-        <button
-            class="boton-carrito"
-            onclick="agregarAlCarrito(
-                'Hermoso vestido negro',
-                599000
-            )"
-        >
-            🛒 Agregar al carrito
-        </button>
-
-    </article>
-
-
-
-    <!-- PRODUCTO 7 -->
-
-    <article class="producto">
-
-        <img
-            src="imagenes/vestidos-largos/Screenshot_2026-09-01-09-40-48-687_com.pinterest-edit.jpg"
-            alt="Hermoso vestido azul y elegante"
-            onclick="abrirFoto(this)"
-        >
-
-        <h2>
-            Hermoso vestido azul
-            y elegante
-        </h2>
-
-        <div class="precio">
-            $600.000
-        </div>
-
-        <p>
-            Un hermoso vestido azul y elegante
-            para crear un look delicado
-            y especial.
-        </p>
-
-        <button
-            class="boton-carrito"
-            onclick="agregarAlCarrito(
-                'Hermoso vestido azul y elegante',
-                600000
-            )"
-        >
-            🛒 Agregar al carrito
-        </button>
-
-    </article>
-
-
-
-    <!-- PRODUCTO 8 -->
-
-    <article class="producto">
-
-        <img
-            src="imagenes/vestidos-largos/Screenshot_2026-09-01-09-41-30-814_com.pinterest-edit.jpg"
-            alt="Divino vestido"
-            onclick="abrirFoto(this)"
-        >
-
-        <h2>
-            Divino vestido
-        </h2>
-
-        <div class="precio">
-            $777.000
-        </div>
-
-        <p>
-            Un divino vestido largo para
-            destacar tu estilo con un toque
-            elegante y especial.
-        </p>
-
-        <button
-            class="boton-carrito"
-            onclick="agregarAlCarrito(
-                'Divino vestido',
-                777000
-            )"
-        >
-            🛒 Agregar al carrito
-        </button>
-
-    </article>
-
-
-
-    <!-- PRODUCTO 9 -->
-
-    <article class="producto">
-
-        <img
-            src="imagenes/vestidos-largos/Screenshot_2026-09-01-09-42-20-639_com.pinterest-edit.jpg"
-            alt="Hermoso vestido verde con dorado"
-            onclick="abrirFoto(this)"
-        >
-
-        <h2>
-            Hermoso vestido verde
-            con dorado
-        </h2>
-
-        <div class="precio">
-            $888.000
-        </div>
-
-        <p>
-            Un hermoso vestido verde con dorado
-            para un look llamativo, elegante y lleno de estilo.
+            <img
+                src="imagenes/vestidos-largos/Screenshot_2026-09-01-09-32-14-027_com.pinterest-edit.jpg"
+                alt="Hermoso vestido largo y color cielo"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>
+                Hermoso vestido largo
+                y color cielo
+            </h2>
+
+            <div class="precio">
+                $555.000
+            </div>
+
+            <p>
+                Un hermoso vestido largo en color cielo
+                para un look delicado, bonito
+                y lleno de estilo.
+            </p>
+
+            <button
+                class="boton-carrito"
+                onclick="agregarAlCarrito(
+                    'Hermoso vestido largo y color cielo',
+                    555000
+                )"
+            >
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 4 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/vestidos-largos/Screenshot_2026-09-01-09-35-42-875_com.pinterest~2.jpg"
+                alt="Hermoso vestido largo"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>
+                Hermoso vestido largo
+            </h2>
+
+            <div class="precio">
+                $560.000
+            </div>
+
+            <p>
+                Un hermoso vestido largo para
+                complementar tu estilo y crear
+                un look especial.
+            </p>
+
+            <button
+                class="boton-carrito"
+                onclick="agregarAlCarrito(
+                    'Hermoso vestido largo',
+                    560000
+                )"
+            >
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 5 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/vestidos-largos/Screenshot_2026-09-01-09-36-48-779_com.pinterest~2.jpg"
+                alt="Hermoso vestido negro y elegante"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>
+                Hermoso vestido negro
+                y elegante
+            </h2>
+
+            <div class="precio">
+                $600.000
+            </div>
+
+            <p>
+                Un hermoso vestido negro largo
+                con un estilo elegante para
+                ocasiones especiales.
+            </p>
+
+            <button
+                class="boton-carrito"
+                onclick="agregarAlCarrito(
+                    'Hermoso vestido negro y elegante',
+                    600000
+                )"
+            >
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 6 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/vestidos-largos/Screenshot_2026-09-01-09-38-28-775_com.pinterest-edit.jpg"
+                alt="Hermoso vestido negro"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>
+                Hermoso vestido negro
+            </h2>
+
+            <div class="precio">
+                $599.000
+            </div>
+
+            <p>
+                Un hermoso vestido negro largo
+                para lucir un estilo elegante
+                y especial.
+            </p>
+
+            <button
+                class="boton-carrito"
+                onclick="agregarAlCarrito(
+                    'Hermoso vestido negro',
+                    599000
+                )"
+            >
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 7 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/vestidos-largos/Screenshot_2026-09-01-09-40-48-687_com.pinterest-edit.jpg"
+                alt="Hermoso vestido azul y elegante"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>
+                Hermoso vestido azul
+                y elegante
+            </h2>
+
+            <div class="precio">
+                $600.000
+            </div>
+
+            <p>
+                Un hermoso vestido azul y elegante
+                para crear un look delicado
+                y especial.
+            </p>
+
+            <button
+                class="boton-carrito"
+                onclick="agregarAlCarrito(
+                    'Hermoso vestido azul y elegante',
+                    600000
+                )"
+            >
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 8 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/vestidos-largos/Screenshot_2026-09-01-09-41-30-814_com.pinterest-edit.jpg"
+                alt="Divino vestido"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>
+                Divino vestido
+            </h2>
+
+            <div class="precio">
+                $777.000
+            </div>
+
+            <p>
+                Un divino vestido largo para
+                destacar tu estilo con un toque
+                elegante y especial.
+            </p>
+
+            <button
+                class="boton-carrito"
+                onclick="agregarAlCarrito(
+                    'Divino vestido',
+                    777000
+                )"
+            >
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 9 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/vestidos-largos/Screenshot_2026-09-01-09-42-20-639_com.pinterest-edit.jpg"
+                alt="Hermoso vestido verde con dorado"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>
+                Hermoso vestido verde
+                con dorado
+            </h2>
+
+            <div class="precio">
+                $888.000
+            </div>
+
+            <p>
+                Un hermoso vestido verde con dorado
+                para un look llamativo, elegante
+                y lleno de estilo.
             </p>
 
             <button
@@ -1166,8 +1108,7 @@
         </article>
 
 
-
-        <!-- PRODUCTO 10 -->
+        <!-- 10 -->
 
         <article class="producto">
 
@@ -1204,8 +1145,7 @@
         </article>
 
 
-
-        <!-- PRODUCTO 11 -->
+        <!-- 11 -->
 
         <article class="producto">
 
@@ -1241,9 +1181,7 @@
 
         </article>
 
-
     </main>
-
 
 
     <!-- ==========================================
@@ -1265,7 +1203,6 @@
         </span>
 
     </a>
-
 
 
     <!-- ==========================================
@@ -1298,14 +1235,10 @@
             >
 
 
-            <h2
-                id="nombreModal"
-            ></h2>
+            <h2 id="nombreModal"></h2>
 
 
-            <p
-                id="descripcionModal"
-            ></p>
+            <p id="descripcionModal"></p>
 
 
             <div
@@ -1326,7 +1259,6 @@
     </div>
 
 
-
     <!-- ==========================================
          FOOTER
     ========================================== -->
@@ -1342,7 +1274,6 @@
         </p>
 
     </footer>
-
 
 
     <!-- ==========================================
@@ -1457,7 +1388,6 @@
         }
 
 
-
         /* ==========================================
            CERRAR MODAL
         ========================================== */
@@ -1469,7 +1399,6 @@
                 event.target !==
                 document.getElementById("modal")
             ) {
-
                 return;
             }
 
@@ -1486,7 +1415,6 @@
             document.body.style.overflow =
                 "";
         }
-
 
 
         /* ==========================================
@@ -1516,7 +1444,6 @@
 
             }
         );
-
 
 
         /* ==========================================
@@ -1560,7 +1487,6 @@
         }
 
 
-
         /* ==========================================
            ACTUALIZAR CONTADOR
         ========================================== */
@@ -1587,7 +1513,6 @@
                     carrito.length;
             }
         }
-
 
 
         /* ==========================================
