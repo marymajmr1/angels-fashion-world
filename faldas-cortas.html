@@ -8,6 +8,7 @@
     <title>Faldas cortas | Angel's Fashion World</title>
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -20,13 +21,19 @@
 
         body {
             font-family: Arial, sans-serif;
+
             background:
                 radial-gradient(circle at top left, #ffffff 0%, transparent 35%),
                 radial-gradient(circle at bottom right, #ffe1ef 0%, transparent 40%),
                 #fff0f6;
+
             color: #6b4055;
             min-height: 100vh;
         }
+
+        /* =========================
+           ESTRELLAS
+        ========================= */
 
         .estrella1,
         .estrella2,
@@ -37,6 +44,7 @@
             color: #d85b91;
             z-index: 0;
             pointer-events: none;
+
             animation: flotar 3s ease-in-out infinite;
         }
 
@@ -64,7 +72,9 @@
         }
 
         @keyframes flotar {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0) rotate(0deg);
             }
 
@@ -73,25 +83,31 @@
             }
         }
 
-        /* MENÚ */
+        /* =========================
+           MENÚ
+        ========================= */
 
         .menu {
             width: 92%;
             max-width: 1200px;
+
             margin: 25px auto 0;
 
             display: flex;
             justify-content: center;
             align-items: center;
+
             flex-wrap: wrap;
             gap: 10px;
 
             background: rgba(255, 255, 255, 0.92);
+
             padding: 14px 18px;
 
             border-radius: 25px;
 
-            box-shadow: 0 8px 25px rgba(216, 91, 145, 0.15);
+            box-shadow:
+                0 8px 25px rgba(216, 91, 145, 0.15);
 
             border: 1px solid #f5d3e2;
 
@@ -101,10 +117,13 @@
 
         .menu a {
             text-decoration: none;
+
             color: #6b4055;
+
             font-weight: bold;
 
             padding: 10px 16px;
+
             border-radius: 20px;
 
             transition: .3s ease;
@@ -112,11 +131,15 @@
 
         .menu a:hover {
             background: #ffe0ed;
+
             color: #d85b91;
+
             transform: translateY(-2px);
         }
 
-        /* ENCABEZADO */
+        /* =========================
+           ENCABEZADO
+        ========================= */
 
         header {
             width: 92%;
@@ -132,7 +155,8 @@
 
             border-radius: 30px;
 
-            box-shadow: 0 12px 35px rgba(216, 91, 145, 0.18);
+            box-shadow:
+                0 12px 35px rgba(216, 91, 145, 0.18);
 
             border: 1px solid #f5d3e2;
 
@@ -142,26 +166,37 @@
 
         .alas-con-estrella {
             display: flex;
+
             justify-content: center;
             align-items: center;
+
             gap: 5px;
+
             margin-bottom: 5px;
         }
 
         .alas {
             font-size: 48px;
+
             display: inline-block;
-            animation: alasMovimiento 3s ease-in-out infinite;
+
+            animation:
+                alasMovimiento 3s ease-in-out infinite;
         }
 
         .estrella-alas {
             font-size: 25px;
+
             color: #d85b91;
-            animation: estrellaMovimiento 2s ease-in-out infinite;
+
+            animation:
+                estrellaMovimiento 2s ease-in-out infinite;
         }
 
         @keyframes alasMovimiento {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0) rotate(0deg);
             }
 
@@ -171,7 +206,9 @@
         }
 
         @keyframes estrellaMovimiento {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1) rotate(0deg);
             }
 
@@ -182,54 +219,76 @@
 
         header h1 {
             color: #d85b91;
+
             font-size: 42px;
+
             margin: 5px 0 10px;
         }
 
         header p {
             font-size: 18px;
+
             margin-bottom: 20px;
         }
 
         .volver {
             display: inline-block;
+
             text-decoration: none;
+
             background: #d85b91;
+
             color: white;
+
             padding: 12px 24px;
+
             border-radius: 25px;
+
             font-weight: bold;
+
             transition: .3s ease;
         }
 
         .volver:hover {
             transform: translateY(-3px);
-            box-shadow: 0 7px 18px rgba(216, 91, 145, .25);
+
+            box-shadow:
+                0 7px 18px rgba(216, 91, 145, .25);
         }
 
-        /* PRODUCTOS */
+        /* =========================
+           PRODUCTOS
+        ========================= */
 
         .productos {
             width: 92%;
             max-width: 1200px;
+
             margin: auto;
 
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns:
+                repeat(3, 1fr);
 
             gap: 28px;
 
             position: relative;
+
             z-index: 2;
         }
 
         .producto {
             background: white;
+
             border-radius: 25px;
+
             padding: 18px;
+
             text-align: center;
 
-            box-shadow: 0 10px 25px rgba(107, 64, 85, 0.12);
+            box-shadow:
+                0 10px 25px rgba(107, 64, 85, 0.12);
 
             border: 1px solid #f5d3e2;
 
@@ -239,11 +298,13 @@
         .producto:hover {
             transform: translateY(-7px);
 
-            box-shadow: 0 15px 30px rgba(216, 91, 145, 0.18);
+            box-shadow:
+                0 15px 30px rgba(216, 91, 145, 0.18);
         }
 
         .producto img {
             width: 100%;
+
             height: 330px;
 
             object-fit: cover;
@@ -263,28 +324,37 @@
 
         .producto h2 {
             color: #d85b91;
+
             font-size: 21px;
+
             margin: 18px 5px 8px;
         }
 
         .producto p {
             font-size: 15px;
+
             line-height: 1.5;
+
             margin: 0 5px 12px;
         }
 
         .precio {
             color: #6b4055;
+
             font-size: 20px;
+
             font-weight: bold;
+
             margin-bottom: 15px;
         }
 
         .boton-carrito {
             display: inline-block;
+
             border: none;
 
             background: #d85b91;
+
             color: white;
 
             padding: 11px 18px;
@@ -301,10 +371,13 @@
         .boton-carrito:hover {
             transform: translateY(-2px);
 
-            box-shadow: 0 6px 15px rgba(216, 91, 145, .25);
+            box-shadow:
+                0 6px 15px rgba(216, 91, 145, .25);
         }
 
-        /* CARRITO */
+        /* =========================
+           CARRITO FLOTANTE
+        ========================= */
 
         .carrito-flotante {
             position: fixed;
@@ -317,6 +390,7 @@
             text-decoration: none;
 
             background: white;
+
             color: #d85b91;
 
             padding: 14px 20px;
@@ -325,7 +399,8 @@
 
             font-weight: bold;
 
-            box-shadow: 0 8px 25px rgba(107, 64, 85, 0.2);
+            box-shadow:
+                0 8px 25px rgba(107, 64, 85, 0.2);
 
             border: 1px solid #f5d3e2;
 
@@ -352,12 +427,15 @@
             border-radius: 50%;
 
             background: #d85b91;
+
             color: white;
 
             font-size: 13px;
         }
 
-        /* MODAL */
+        /* =========================
+           MODAL
+        ========================= */
 
         .modal {
             display: none;
@@ -400,6 +478,7 @@
 
         .modal-contenido img {
             max-width: 100%;
+
             max-height: 65vh;
 
             object-fit: contain;
@@ -421,6 +500,7 @@
             border-radius: 50%;
 
             background: #d85b91;
+
             color: white;
 
             font-size: 24px;
@@ -432,6 +512,7 @@
 
         .modal h2 {
             color: #d85b91;
+
             margin: 15px 0 8px;
         }
 
@@ -439,7 +520,9 @@
             margin-bottom: 10px;
         }
 
-        /* FOOTER */
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             text-align: center;
@@ -457,12 +540,15 @@
             line-height: 1.8;
         }
 
-        /* RESPONSIVE */
+        /* =========================
+           RESPONSIVE
+        ========================= */
 
         @media (max-width: 850px) {
 
             .productos {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
 
             .producto img {
@@ -474,17 +560,21 @@
 
             .menu {
                 width: 94%;
+
                 gap: 5px;
+
                 padding: 12px 8px;
             }
 
             .menu a {
                 padding: 8px 10px;
+
                 font-size: 14px;
             }
 
             header {
                 margin-top: 25px;
+
                 padding: 28px 18px;
             }
 
@@ -498,15 +588,19 @@
 
             .producto img {
                 height: auto;
+
                 max-height: 500px;
             }
 
             .carrito-flotante {
                 right: 12px;
+
                 bottom: 12px;
+
                 padding: 12px 15px;
             }
         }
+
     </style>
 </head>
 
@@ -525,12 +619,22 @@
     <nav class="menu">
 
         <a href="index.html">Inicio</a>
+
         <a href="moda.html">Moda</a>
+
         <a href="belleza.html">Belleza</a>
+
         <a href="skincare.html">Skin care</a>
+
         <a href="accesorios.html">Accesorios</a>
-        <a href="sobre-nosotros.html">Sobre nosotros</a>
-        <a href="index.html#contactanos">Contáctanos</a>
+
+        <a href="sobre-nosotros.html">
+            Sobre nosotros
+        </a>
+
+        <a href="index.html#contactanos">
+            Contáctanos
+        </a>
 
     </nav>
 
@@ -542,6 +646,7 @@
         <div class="alas-con-estrella">
 
             <span class="alas">🪽</span>
+
             <span class="estrella-alas">✦</span>
 
         </div>
@@ -564,19 +669,23 @@
     <main class="productos">
 
 
-        <!-- 1 -->
+        <!-- FALDA 1 -->
 
         <article class="producto">
 
             <img
-                src="Imagenes/Faldas-cortas/Screenshot_2026-08-29-17-46-47-035_com.pinterest~jpg"
+                src="Imagenes/Faldas-cortas/Screenshot_2026-08-29-17-46-47-035_com.pinterest~2.jpg"
                 alt="Linda falda corta"
                 onclick="abrirFoto(this)"
             >
 
-            <h2>Linda falda corta</h2>
+            <h2>
+                Linda falda corta
+            </h2>
 
-            <div class="precio">$35.000</div>
+            <div class="precio">
+                $35.000
+            </div>
 
             <p>
                 Linda falda corta para complementar
@@ -585,7 +694,10 @@
 
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Linda falda corta', 35000)"
+                onclick="agregarAlCarrito(
+                    'Linda falda corta',
+                    35000
+                )"
             >
                 🛒 Agregar al carrito
             </button>
@@ -593,28 +705,35 @@
         </article>
 
 
-        <!-- 2 -->
+        <!-- FALDA 2 -->
 
         <article class="producto">
 
             <img
-                src="Imagenes/Faldas-cortas/Screenshot_2026-08-29-17-46-58-418_com.pinterest~jpg"
+                src="Imagenes/Faldas-cortas/Screenshot_2026-08-29-17-46-58-418_com.pinterest~2.jpg"
                 alt="Linda falda de jean"
                 onclick="abrirFoto(this)"
             >
 
-            <h2>Linda falda de jean</h2>
+            <h2>
+                Linda falda de jean
+            </h2>
 
-            <div class="precio">$40.000</div>
+            <div class="precio">
+                $40.000
+            </div>
 
             <p>
-                Linda falda de jean, perfecta para
-                crear diferentes outfits.
+                Linda falda de jean, perfecta
+                para crear diferentes outfits.
             </p>
 
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Linda falda de jean', 40000)"
+                onclick="agregarAlCarrito(
+                    'Linda falda de jean',
+                    40000
+                )"
             >
                 🛒 Agregar al carrito
             </button>
@@ -622,7 +741,7 @@
         </article>
 
 
-        <!-- 3 -->
+        <!-- FALDA 3 -->
 
         <article class="producto">
 
@@ -632,18 +751,25 @@
                 onclick="abrirFoto(this)"
             >
 
-            <h2>Linda falda de jean oscuro</h2>
+            <h2>
+                Linda falda de jean oscuro
+            </h2>
 
-            <div class="precio">$40.000</div>
+            <div class="precio">
+                $40.000
+            </div>
 
             <p>
-                Linda falda de jean oscuro con
-                un estilo moderno y bonito.
+                Linda falda de jean oscuro
+                con un estilo moderno.
             </p>
 
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Linda falda de jean oscuro', 40000)"
+                onclick="agregarAlCarrito(
+                    'Linda falda de jean oscuro',
+                    40000
+                )"
             >
                 🛒 Agregar al carrito
             </button>
@@ -651,7 +777,7 @@
         </article>
 
 
-        <!-- 4 -->
+        <!-- FALDA 4 -->
 
         <article class="producto">
 
@@ -661,9 +787,13 @@
                 onclick="abrirFoto(this)"
             >
 
-            <h2>Linda falda corta</h2>
+            <h2>
+                Linda falda corta
+            </h2>
 
-            <div class="precio">$55.000</div>
+            <div class="precio">
+                $55.000
+            </div>
 
             <p>
                 Linda falda corta para darle
@@ -672,7 +802,10 @@
 
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Linda falda corta', 55000)"
+                onclick="agregarAlCarrito(
+                    'Linda falda corta',
+                    55000
+                )"
             >
                 🛒 Agregar al carrito
             </button>
@@ -680,7 +813,7 @@
         </article>
 
 
-        <!-- 5 -->
+        <!-- FALDA 5 -->
 
         <article class="producto">
 
@@ -690,9 +823,13 @@
                 onclick="abrirFoto(this)"
             >
 
-            <h2>Linda falda con estrellas</h2>
+            <h2>
+                Linda falda con estrellas
+            </h2>
 
-            <div class="precio">$59.999</div>
+            <div class="precio">
+                $59.999
+            </div>
 
             <p>
                 Linda falda con estrellas para
@@ -701,7 +838,10 @@
 
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Linda falda con estrellas', 59999)"
+                onclick="agregarAlCarrito(
+                    'Linda falda con estrellas',
+                    59999
+                )"
             >
                 🛒 Agregar al carrito
             </button>
@@ -709,7 +849,7 @@
         </article>
 
 
-        <!-- 6 -->
+        <!-- FALDA 6 -->
 
         <article class="producto">
 
@@ -719,9 +859,13 @@
                 onclick="abrirFoto(this)"
             >
 
-            <h2>Linda falda de cuero</h2>
+            <h2>
+                Linda falda de cuero
+            </h2>
 
-            <div class="precio">$60.000</div>
+            <div class="precio">
+                $60.000
+            </div>
 
             <p>
                 Linda falda de cuero con un estilo
@@ -730,7 +874,10 @@
 
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Linda falda de cuero', 60000)"
+                onclick="agregarAlCarrito(
+                    'Linda falda de cuero',
+                    60000
+                )"
             >
                 🛒 Agregar al carrito
             </button>
@@ -738,7 +885,7 @@
         </article>
 
 
-        <!-- 7 -->
+        <!-- FALDA 7 -->
 
         <article class="producto">
 
@@ -748,9 +895,13 @@
                 onclick="abrirFoto(this)"
             >
 
-            <h2>Linda falda de jean</h2>
+            <h2>
+                Linda falda de jean
+            </h2>
 
-            <div class="precio">$65.000</div>
+            <div class="precio">
+                $65.000
+            </div>
 
             <p>
                 Linda falda de jean para completar
@@ -759,7 +910,10 @@
 
             <button
                 class="boton-carrito"
-                onclick="agregarAlCarrito('Linda falda de jean', 65000)"
+                onclick="agregarAlCarrito(
+                    'Linda falda de jean',
+                    65000
+                )"
             >
                 🛒 Agregar al carrito
             </button>
@@ -769,9 +923,12 @@
     </main>
 
 
-    <!-- CARRITO -->
+    <!-- CARRITO FLOTANTE -->
 
-    <a href="carrito.html" class="carrito-flotante">
+    <a
+        href="carrito.html"
+        class="carrito-flotante"
+    >
 
         🛒 Ver carrito
 
@@ -836,7 +993,9 @@
 
     <footer>
 
-        <p>🪽 Angel's Fashion World 🪽</p>
+        <p>
+            🪽 Angel's Fashion World 🪽
+        </p>
 
         <p>
             Moda • Belleza • Skin Care • Accesorios
@@ -844,6 +1003,8 @@
 
     </footer>
 
+
+    <!-- JAVASCRIPT -->
 
     <script>
 
@@ -856,50 +1017,59 @@
                 imagen.closest(".producto");
 
             const nombre =
-                producto.querySelector("h2")
-                .textContent
-                .trim();
+                producto
+                    .querySelector("h2")
+                    .textContent
+                    .trim();
 
             const descripcion =
-                producto.querySelector("p")
-                .textContent
-                .trim();
+                producto
+                    .querySelector("p")
+                    .textContent
+                    .trim();
 
             const precio =
-                producto.querySelector(".precio")
-                .textContent
-                .trim();
+                producto
+                    .querySelect (".precio")
+                    .textContent
+                    .trim();
 
-            document.getElementById("imagenModal").src =
-                imagen.src;
+            document.getElementById(
+                "imagenModal"
+            ).src = imagen.src;
 
-            document.getElementById("imagenModal").alt =
-                imagen.alt;
+            document.getElementById(
+                "imagenModal"
+            ).alt = imagen.alt;
 
-            document.getElementById("nombreModal")
-                .textContent = nombre;
+            document.getElementById(
+                "nombreModal"
+            ).textContent = nombre;
 
-            document.getElementById("descripcionModal")
-                .textContent = descripcion;
+            document.getElementById(
+                "descripcionModal"
+            ).textContent = descripcion;
 
-            document.getElementById("precioModal")
-                .textContent = precio;
+            document.getElementById(
+                "precioModal"
+            ).textContent = precio;
 
-            document.getElementById("botonModal")
-                .onclick = function () {
+            document.getElementById(
+                "botonModal"
+            ).onclick = function () {
 
-                    const precioNumero =
-                        parseInt(
-                            precio
-                                .replace("$", "")
-                                .replace(/\./g, "")
-                        );
-
-                    agregarAlCarrito(
-                        nombre,
-                        precioNumero
+                const precioNumero =
+                    parseInt(
+                        precio
+                            .replace("$", "")
+                            .replace(/\./g, "")
                     );
-                };
+
+                agregarAlCarrito(
+                    nombre,
+                    precioNumero
+                );
+            };
 
             modal.classList.add("activo");
         }
@@ -920,7 +1090,10 @@
         }
 
 
-        function agregarAlCarrito(nombre, precio) {
+        function agregarAlCarrito(
+            nombre,
+            precio
+        ) {
 
             let carrito =
                 JSON.parse(
@@ -945,7 +1118,9 @@
                 " fue agregado al carrito 💕"
             );
         }
-function actualizarContador() {
+
+
+        function actualizarContador() {
 
             const carrito =
                 JSON.parse(
@@ -954,7 +1129,8 @@ function actualizarContador() {
 
             document.getElementById(
                 "contador-carrito"
-            ).textContent = carrito.length;
+            ).textContent =
+                carrito.length;
         }
 
 
