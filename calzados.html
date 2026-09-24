@@ -1,0 +1,2110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calzados | Angel's Fashion World</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background:
+                radial-gradient(circle at top left, #ffffff 0%, transparent 35%),
+                radial-gradient(circle at bottom right, #ffe1ef 0%, transparent 40%),
+                #fff0f6;
+            color: #6b4055;
+            min-height: 100vh;
+        }
+
+        /* ESTRELLAS */
+
+        .estrella1,
+        .estrella2,
+        .estrella3,
+        .estrella4 {
+            position: fixed;
+            font-size: 28px;
+            color: #d85b91;
+            z-index: 0;
+            pointer-events: none;
+            animation: flotar 3s ease-in-out infinite;
+        }
+
+        .estrella1 {
+            top: 120px;
+            left: 4%;
+        }
+
+        .estrella2 {
+            top: 280px;
+            right: 5%;
+            animation-delay: .7s;
+        }
+
+        .estrella3 {
+            bottom: 180px;
+            left: 6%;
+            animation-delay: 1.3s;
+        }
+
+        .estrella4 {
+            bottom: 80px;
+            right: 7%;
+            animation-delay: 2s;
+        }
+
+        @keyframes flotar {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-12px) rotate(12deg);
+            }
+        }
+
+        /* MENÚ */
+
+        .menu {
+            width: 92%;
+            max-width: 1200px;
+            margin: 25px auto 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            background: rgba(255, 255, 255, 0.92);
+            padding: 14px 18px;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 8px 25px rgba(216, 91, 145, 0.15);
+
+            border: 1px solid #f5d3e2;
+
+            position: relative;
+            z-index: 10;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #6b4055;
+            font-weight: bold;
+
+            padding: 10px 16px;
+            border-radius: 20px;
+
+            transition: .3s ease;
+        }
+
+        .menu a:hover {
+            background: #ffe0ed;
+            color: #d85b91;
+            transform: translateY(-2px);
+        }
+
+        /* PRESENTACIÓN */
+
+        header {
+            width: 92%;
+            max-width: 1000px;
+
+            margin: 35px auto 45px;
+
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.94);
+
+            padding: 35px 25px;
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 12px 35px rgba(216, 91, 145, 0.18);
+
+            border: 1px solid #f5d3e2;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .alas-con-estrella {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+
+            margin-bottom: 5px;
+        }
+
+        .alas {
+            font-size: 48px;
+            display: inline-block;
+            animation: alasMovimiento 3s ease-in-out infinite;
+        }
+
+        .estrella-alas {
+            font-size: 25px;
+            color: #d85b91;
+            animation: estrellaMovimiento 2s ease-in-out infinite;
+        }
+
+        @keyframes alasMovimiento {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-7px) rotate(-4deg);
+            }
+        }
+
+        @keyframes estrellaMovimiento {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+            }
+
+            50% {
+                transform: scale(1.25) rotate(15deg);
+            }
+        }
+
+        header h1 {
+            color: #d85b91;
+            font-size: 42px;
+            margin: 5px 0 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .volver {
+            display: inline-block;
+            text-decoration: none;
+            background: #d85b91;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: .3s ease;
+        }
+
+        .volver:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 18px rgba(216, 91, 145, .25);
+        }
+/* PRODUCTOS */
+
+        .productos {
+            width: 92%;
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 28px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .producto {
+            background: white;
+            border-radius: 25px;
+            padding: 18px;
+            text-align: center;
+
+            box-shadow:
+                0 10px 25px rgba(107, 64, 85, 0.12);
+
+            border: 1px solid #f5d3e2;
+
+            transition: .3s ease;
+        }
+
+        .producto:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 15px 30px rgba(216, 91, 145, 0.18);
+        }
+
+        .producto img {
+            width: 100%;
+            height: 330px;
+
+            object-fit: cover;
+
+            border-radius: 20px;
+
+            cursor: pointer;
+
+            display: block;
+
+            transition: .3s ease;
+        }
+
+        .producto img:hover {
+            transform: scale(1.02);
+        }
+
+        .producto h2 {
+            color: #d85b91;
+            font-size: 21px;
+            margin: 18px 5px 8px;
+        }
+
+        .producto p {
+            font-size: 15px;
+            line-height: 1.5;
+            margin: 0 5px 12px;
+        }
+
+        .precio {
+            color: #6b4055;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* TALLAS */
+
+        .tallas {
+            margin: 5px 0 15px;
+        }
+
+        .tallas-titulo {
+            display: block;
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #6b4055;
+        }
+
+        .talla {
+            border: 1px solid #f5d3e2;
+            background: #fff0f6;
+            color: #6b4055;
+
+            padding: 7px 10px;
+            margin: 3px;
+
+            border-radius: 12px;
+
+            cursor: pointer;
+            font-weight: bold;
+
+            transition: .3s ease;
+        }
+
+        .talla:hover {
+            background: #ffe0ed;
+            color: #d85b91;
+        }
+
+        .talla.seleccionada {
+            background: #d85b91;
+            color: white;
+            border-color: #d85b91;
+        }
+
+        .boton-carrito {
+            display: inline-block;
+            border: none;
+
+            background: #d85b91;
+            color: white;
+
+            padding: 11px 18px;
+
+            border-radius: 22px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: .3s ease;
+        }
+
+        .boton-carrito:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 6px 15px rgba(216, 91, 145, .25);
+        }
+
+        /* CARRITO */
+
+        .carrito-flotante {
+            position: fixed;
+
+            right: 20px;
+            bottom: 20px;
+
+            z-index: 100;
+
+            text-decoration: none;
+
+            background: white;
+            color: #d85b91;
+
+            padding: 14px 20px;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 8px 25px rgba(107, 64, 85, 0.2);
+
+            border: 1px solid #f5d3e2;
+
+            transition: .3s ease;
+        }
+
+        .carrito-flotante:hover {
+            transform: translateY(-4px);
+        }
+
+        .contador-carrito {
+            display: inline-flex;
+
+            justify-content: center;
+            align-items: center;
+
+            min-width: 24px;
+            height: 24px;
+
+            margin-left: 5px;
+
+            padding: 0 6px;
+
+            border-radius: 50%;
+
+            background: #d85b91;
+            color: white;
+
+            font-size: 13px;
+        }
+
+        /* MODAL */
+
+        .modal {
+            display: none;
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 200;
+
+            background: rgba(60, 30, 45, .75);
+
+            justify-content: center;
+            align-items: center;
+
+            padding: 20px;
+        }
+
+        .modal.activo {
+            display: flex;
+        }
+
+        .modal-contenido {
+            width: min(900px, 95%);
+
+            max-height: 95vh;
+
+            overflow-y: auto;
+
+            background: white;
+
+            border-radius: 25px;
+
+            padding: 20px;
+
+            text-align: center;
+
+            position: relative;
+        }
+
+        .modal-contenido img {
+            max-width: 100%;
+            max-height: 65vh;
+
+            object-fit: contain;
+
+            border-radius: 18px;
+        }
+
+        .cerrar {
+            position: absolute;
+
+            top: 10px;
+            right: 15px;
+
+            width: 40px;
+            height: 40px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: #d85b91;
+            color: white;
+
+            font-size: 24px;
+
+            cursor: pointer;
+
+            z-index: 5;
+        }
+
+        .modal h2 {
+            color: #d85b91;
+            margin: 15px 0 8px;
+        }
+
+        .modal p {
+            margin-bottom: 10px;
+        }
+/* FOOTER */
+
+        footer {
+            text-align: center;
+
+            margin-top: 70px;
+
+            padding: 30px 20px;
+
+            background: white;
+
+            border-top: 1px solid #f5d3e2;
+
+            color: #6b4055;
+
+            line-height: 1.8;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 850px) {
+
+            .productos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .producto img {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .menu {
+                width: 94%;
+                gap: 5px;
+                padding: 12px 8px;
+            }
+
+            .menu a {
+                padding: 8px 10px;
+                font-size: 14px;
+            }
+
+            header {
+                margin-top: 25px;
+                padding: 28px 18px;
+            }
+
+            header h1 {
+                font-size: 35px;
+            }
+
+            .productos {
+                grid-template-columns: 1fr;
+            }
+
+            .producto img {
+                height: auto;
+                max-height: 500px;
+            }
+
+            .carrito-flotante {
+                right: 12px;
+                bottom: 12px;
+                padding: 12px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ESTRELLAS -->
+
+    <div class="estrella1">✦</div>
+    <div class="estrella2">✧</div>
+    <div class="estrella3">✦</div>
+    <div class="estrella4">✧</div>
+
+
+    <!-- MENÚ -->
+
+    <nav class="menu">
+
+        <a href="index.html">Inicio</a>
+        <a href="moda.html">Moda</a>
+        <a href="belleza.html">Belleza</a>
+        <a href="skincare.html">Skin care</a>
+        <a href="accesorios.html">Accesorios</a>
+        <a href="sobre-nosotros.html">Sobre nosotros</a>
+        <a href="index.html#contactanos">Contáctanos</a>
+
+    </nav>
+
+
+    <!-- PRESENTACIÓN -->
+
+    <header>
+
+        <div class="alas-con-estrella">
+
+            <span class="alas">🪽</span>
+
+            <span class="estrella-alas">✦</span>
+
+        </div>
+
+        <h1>Calzados</h1>
+
+        <p>
+            Descubre tu estilo en Angel's Fashion World 💕
+        </p>
+
+        <a href="moda.html" class="volver">
+            ← Volver a Moda
+        </a>
+
+    </header>
+
+
+    <!-- PRODUCTOS -->
+
+    <main class="productos">
+
+        <!-- 1 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-09-57-07-022_com.pinterest-edit.jpg"
+                alt="Tacones divinos"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Tacones divinos</h2>
+
+            <div class="precio">$140.000</div>
+
+            <p>
+                Unos tacones divinos para complementar
+                tu estilo con elegancia.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+<button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button
+                class="boton-carrito"
+                onclick="agregarProducto(this)"
+            >
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 2 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-09-57-30-770_com.pinterest-edit.jpg"
+                alt="Tacones bellos"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Tacones bellos</h2>
+
+            <div class="precio">$200.000</div>
+
+            <p>
+                Tacones bellos para darle un toque
+                elegante y especial a tu look.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 3 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-09-58-12-592_com.pinterest-edit.jpg"
+                alt="Tacones"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Tacones</h2>
+
+            <div class="precio">$200.000</div>
+
+            <p>
+                Unos tacones hermosos para complementar
+                tus looks favoritos.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 4 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-09-58-46-594_com.pinterest-edit.jpg"
+                alt="Botas bellas"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Botas bellas</h2>
+
+            <div class="precio">$140.000</div>
+
+            <p>
+                Botas bellas para completar tus outfits
+                con mucho estilo.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+ <!-- 5 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-09-59-31-152_com.pinterest-edit.jpg"
+                alt="Botas bellas"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Botas bellas</h2>
+
+            <div class="precio">$155.000</div>
+
+            <p>
+                Unas botas bellas para lucir un estilo
+                moderno y encantador.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 6 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-10-00-58-399_com.pinterest-edit.jpg"
+                alt="Encantadores tacones"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Encantadores tacones</h2>
+
+            <div class="precio">$179.000</div>
+
+            <p>
+                Tacones encantadores para darle elegancia
+                y personalidad a tu estilo.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 7 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-10-02-05-524_com.pinterest-edit.jpg"
+                alt="Hermosas botas negras"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Hermosas botas negras</h2>
+
+            <div class="precio">$350.000</div>
+
+            <p>
+                Hermosas botas negras para crear looks
+                elegantes y especiales.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 8 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-10-05-38-347_com.pinterest-edit.jpg"
+                alt="Hermosas botas"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Hermosas botas</h2>
+
+            <div class="precio">$300.000</div>
+
+            <p>
+                Hermosas botas para acompañarte con
+                estilo en cualquier ocasión.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 9 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-10-06-26-703_com.pinterest-edit.jpg"
+                alt="Divinas botas"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Divinas botas</h2>
+
+            <div class="precio">$398.000</div>
+
+            <p>
+                Divinas botas para un look elegante,
+                moderno y especial.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 10 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-12-02-19-487_com.pinterest~2.jpg"
+                alt="Sandalias blancas"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Sandalias blancas</h2>
+
+            <div class="precio">$78.000</div>
+
+            <p>
+                Sandalias blancas delicadas para completar
+                tus looks favoritos.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+ <!-- 11 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-12-03-32-357_com.pinterest~2.jpg"
+                alt="Hermosas sandalias"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Hermosas sandalias</h2>
+
+            <div class="precio">$75.000</div>
+
+            <p>
+                Hermosas sandalias para lucir un estilo
+                fresco y encantador.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 12 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-12-03-53-618_com.pinterest~2.jpg"
+                alt="Hermosas Cross"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Hermosas Cross</h2>
+
+            <div class="precio">$150.000</div>
+
+            <p>
+                Hermosas Cross para completar tus outfits
+                con comodidad y estilo.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 13 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-12-04-11-723_com.pinterest~2.jpg"
+                alt="Hermosas Cross"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Hermosas Cross</h2>
+
+            <div class="precio">$170.000</div>
+
+            <p>
+                Hermosas Cross para complementar tus
+                looks de una manera especial.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 14 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-12-05-42-536_com.pinterest~2.jpg"
+                alt="Lindas sandalias"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Lindas sandalias</h2>
+
+            <div class="precio">$59.000</div>
+
+            <p>
+                Lindas sandalias para disfrutar un estilo
+                fresco y femenino.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 15 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-12-06-40-778_com.pinterest~2.jpg"
+                alt="Bellas sandalias"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Bellas sandalias</h2>
+
+            <div class="precio">$49.000</div>
+
+            <p>
+                Bellas sandalias para completar tus
+                looks de una manera delicada.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+<!-- 16 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-12-07-16-285_com.pinterest~2.jpg"
+                alt="Tenis hermosos"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Tenis hermosos</h2>
+
+            <div class="precio">$79.000</div>
+
+            <p>
+                Tenis hermosos para combinar comodidad
+                y estilo en tus looks.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 17 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-12-08-37-920_com.pinterest~2.jpg"
+                alt="Divinos tenis"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Divinos tenis</h2>
+
+            <div class="precio">$70.000</div>
+
+            <p>
+                Divinos tenis para acompañar tus looks
+                con un estilo cómodo y bonito.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 18 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-12-09-25-545_com.pinterest~2.jpg"
+                alt="Hermosos tenis"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Hermosos tenis</h2>
+
+            <div class="precio">$75.000</div>
+
+            <p>
+                Hermosos tenis para complementar tus
+                outfits favoritos.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 19 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-12-10-35-256_com.pinterest~2.jpg"
+                alt="Bellos tenis"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Bellos tenis</h2>
+
+            <div class="precio">$76.000</div>
+
+            <p>
+                Bellos tenis para completar tus looks
+                con un toque moderno.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 20 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-12-11-32-577_com.pinterest~2.jpg"
+                alt="Tenis hermosos"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Tenis hermosos</h2>
+
+            <div class="precio">$80.000</div>
+
+            <p>
+                Tenis hermosos para lucir cómoda
+                y con mucho estilo.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+ <!-- 21 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-12-16-37-050_com.pinterest~2.jpg"
+                alt="Tenis lindos"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Tenis lindos</h2>
+
+            <div class="precio">$82.000</div>
+
+            <p>
+                Tenis lindos para acompañar tus días
+                con comodidad y estilo.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 22 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-12-16-37-050_com.pinterest~3.jpg"
+                alt="Bellos tenis"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Bellos tenis</h2>
+
+            <div class="precio">$60.000</div>
+
+            <p>
+                Bellos tenis para completar tus looks
+                de todos los días.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 23 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-12-16-37-050_com.pinterest~5.jpg"
+                alt="Bellas zapatillas"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Bellas zapatillas</h2>
+
+            <div class="precio">$70.000</div>
+
+            <p>
+                Bellas zapatillas para complementar
+                tus looks con comodidad.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 24 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-12-16-37-050_com.pinterest~4.jpg"
+                alt="Bellas zapatillas"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Bellas zapatillas</h2>
+
+            <div class="precio">$69.000</div>
+
+            <p>
+                Bellas zapatillas para un look cómodo
+                y bonito.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 25 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-12-24-46-507_com.pinterest~2.jpg"
+                alt="Bellas zapatillas"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Bellas zapatillas</h2>
+
+            <div class="precio">$68.000</div>
+
+            <p>
+                Bellas zapatillas para completar
+                tus outfits favoritos.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 26 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-12-25-03-070_com.pinterest~2.jpg"
+                alt="Bellas zapatillas"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Bellas zapatillas</h2>
+
+            <div class="precio">$79.000</div>
+
+            <p>
+                Bellas zapatillas para lucir un estilo
+                cómodo y encantador.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+ <!-- 27 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-12-25-14-698_com.pinterest~2.jpg"
+                alt="Bellas zapatillas"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Bellas zapatillas</h2>
+
+            <div class="precio">$68.000</div>
+
+            <p>
+                Bellas zapatillas para darle un toque
+                especial a tus looks.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 28 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-12-25-38-616_com.pinterest~2.jpg"
+                alt="Lindas zapatillas"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Lindas zapatillas</h2>
+
+            <div class="precio">$68.000</div>
+
+            <p>
+                Lindas zapatillas para acompañar
+                tus looks favoritos.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 29 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-12-26-16-641_com.pinterest~2.jpg"
+                alt="Zapatillas bonitas"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Zapatillas bonitas</h2>
+
+            <div class="precio">$59.000</div>
+
+            <p>
+                Zapatillas bonitas para complementar
+                tu estilo con comodidad.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 30 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-12-27-29-030_com.pinterest~2.jpg"
+                alt="Zapatillas bonitas"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Zapatillas bonitas</h2>
+
+            <div class="precio">$58.000</div>
+
+            <p>
+                Zapatillas bonitas para crear looks
+                cómodos y especiales.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 31 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-12-27-34-523_com.pinterest~2.jpg"
+                alt="Divinas zapatillas"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Divinas zapatillas</h2>
+
+            <div class="precio">$58.000</div>
+
+            <p>
+                Divinas zapatillas para completar
+                tus outfits con mucho estilo.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 32 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/calzados/Screenshot_2026-09-01-12-28-36-894_com.pinterest~2.jpg"
+                alt="Bellas zapatillas"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Bellas zapatillas</h2>
+
+            <div class="precio">$60.000</div>
+
+            <p>
+                Bellas zapatillas para lucir un estilo
+                cómodo, bonito y especial.
+            </p>
+
+            <div class="tallas">
+                <span class="tallas-titulo">Selecciona tu talla:</span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+    </main>
+
+
+    <!-- CARRITO FLOTANTE -->
+
+    <a href="carrito.html" class="carrito-flotante">
+
+        🛒 Ver carrito
+
+        <span
+            class="contador-carrito"
+            id="contador-carrito"
+        >
+            0
+        </span>
+
+    </a>
+
+
+    <!-- MODAL -->
+
+    <div
+        class="modal"
+        id="modal"
+        onclick="cerrarFoto(event)"
+    >
+
+        <div
+            class="modal-contenido"
+            onclick="event.stopPropagation()"
+        >
+
+            <button
+                class="cerrar"
+                onclick="cerrarFoto()"
+            >
+                ×
+            </button>
+
+            <img
+                id="imagenModal"
+                src=""
+                alt=""
+            >
+
+            <h2 id="nombreModal"></h2>
+
+            <p id="descripcionModal"></p>
+
+            <div
+                class="precio"
+                id="precioModal"
+            ></div>
+
+            <div class="tallas" id="tallasModal">
+
+                <span class="tallas-titulo">
+                    Selecciona tu talla:
+                </span>
+
+                <button class="talla" onclick="seleccionarTalla(this)">35</button>
+                <button class="talla" onclick="seleccionarTalla(this)">36</button>
+                <button class="talla" onclick="seleccionarTalla(this)">37</button>
+                <button class="talla" onclick="seleccionarTalla(this)">38</button>
+                <button class="talla" onclick="seleccionarTalla(this)">39</button>
+                <button class="talla" onclick="seleccionarTalla(this)">40</button>
+
+            </div>
+
+            <button
+                class="boton-carrito"
+                id="botonModal"
+            >
+                🛒 Agregar al carrito
+            </button>
+
+        </div>
+
+    </div>
+ <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            🪽 Angel's Fashion World 🪽
+        </p>
+
+        <p>
+            Moda • Belleza • Skin Care • Accesorios
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function seleccionarTalla(boton) {
+
+            const grupo = boton.parentElement;
+
+            const botones = grupo.querySelectorAll(".talla");
+
+            botones.forEach(function (item) {
+                item.classList.remove("seleccionada");
+            });
+
+            boton.classList.add("seleccionada");
+        }
+
+
+        function agregarProducto(boton) {
+
+            const producto = boton.closest(".producto");
+
+            const tallaSeleccionada =
+                producto.querySelector(".talla.seleccionada");
+
+            if (!tallaSeleccionada) {
+
+                alert("💕 Por favor selecciona una talla.");
+
+                return;
+            }
+
+            const nombre =
+                producto.querySelector("h2").textContent.trim();
+
+            const precioTexto =
+                producto.querySelector(".precio").textContent;
+
+            const precio =
+                parseInt(precioTexto.replace(/\D/g, ""));
+
+            agregarAlCarrito(
+                nombre,
+                precio,
+                tallaSeleccionada.textContent
+            );
+        }
+
+
+        function agregarAlCarrito(
+            nombre,
+            precio,
+            talla
+        ) {
+
+            let carrito = JSON.parse(
+                localStorage.getItem("carrito")
+            ) || [];
+
+            carrito.push({
+
+                nombre: nombre,
+
+                precio: precio,
+
+                talla: talla,
+
+                cantidad: 1
+
+            });
+
+            localStorage.setItem(
+                "carrito",
+                JSON.stringify(carrito)
+            );
+
+            actualizarContador();
+
+            alert(
+                "🛒 " +
+                nombre +
+                " - Talla " +
+                talla +
+                " agregado al carrito 💕"
+            );
+        }
+
+
+        function abrirFoto(imagen) {
+
+            const modal =
+                document.getElementById("modal");
+
+            const imagenModal =
+                document.getElementById("imagenModal");
+
+            const producto =
+                imagen.closest(".producto");
+
+            const nombre =
+                producto.querySelector("h2")
+                .textContent.trim();
+
+            const descripcion =
+                producto.querySelector("p")
+                .textContent.trim();
+
+            const precio =
+                producto.querySelector(".precio")
+                .textContent.trim();
+
+            imagenModal.src = imagen.src;
+            imagenModal.alt = imagen.alt;
+
+            document.getElementById(
+                "nombreModal"
+            ).textContent = nombre;
+
+            document.getElementById(
+                "descripcionModal"
+            ).textContent = descripcion;
+
+            document.getElementById(
+                "precioModal"
+            ).textContent = precio;
+
+            const tallasModal =
+                document.querySelectorAll(
+                    "#tallasModal .talla"
+                );
+
+            tallasModal.forEach(function (boton) {
+
+                boton.classList.remove(
+                    "seleccionada"
+                );
+
+                boton.onclick = function () {
+
+                    tallasModal.forEach(function (otro) {
+                        otro.classList.remove(
+                            "seleccionada"
+                        );
+                    });
+
+                    this.classList.add(
+                        "seleccionada"
+                    );
+                };
+
+            });
+
+
+            document.getElementById(
+                "botonModal"
+            ).onclick = function () {
+
+                const talla =
+                    document.querySelector(
+                        "#tallasModal .talla.seleccionada"
+                    );
+
+                if (!talla) {
+
+                    alert(
+                        "💕 Por favor selecciona una talla."
+                    );
+
+                    return;
+                }
+
+                const precioNumero =
+                    parseInt(
+                        precio.replace(/\D/g, "")
+                    );
+
+                agregarAlCarrito(
+                    nombre,
+                    precioNumero,
+                    talla.textContent
+                );
+
+                cerrarFoto();
+
+            };
+
+
+            modal.classList.add("activo");
+        }
+
+
+        function cerrarFoto(event) {
+
+            if (
+                !event ||
+                event.target ===
+                document.getElementById("modal")
+            ) {
+
+                document
+                    .getElementById("modal")
+                    .classList.remove("activo");
+
+            }
+        }
+
+
+        function actualizarContador() {
+
+            const carrito =
+                JSON.parse(
+                    localStorage.getItem("carrito")
+                ) || [];
+
+            document.getElementById(
+                "contador-carrito"
+            ).textContent = carrito.length;
+        }
+
+
+        actualizarContador();
+
+    </script>
+
+</body>
+
+</html>
