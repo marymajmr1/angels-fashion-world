@@ -1,9 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
 
-<!DOCTYPE html><html lang="es"><head>
+<head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Faldas cortas | Angel's Fashion World</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Faldas cortas | Angel's Fashion World</title>
 
 <style>
+
     * {
         box-sizing: border-box;
         margin: 0;
@@ -62,6 +68,7 @@
     }
 
     @keyframes flotar {
+
         0%, 100% {
             transform: translateY(0) rotate(0deg);
         }
@@ -69,6 +76,7 @@
         50% {
             transform: translateY(-12px) rotate(12deg);
         }
+
     }
 
     /* MENÚ */
@@ -161,6 +169,7 @@
     }
 
     @keyframes alasMovimiento {
+
         0%, 100% {
             transform: translateY(0) rotate(0deg);
         }
@@ -168,9 +177,11 @@
         50% {
             transform: translateY(-7px) rotate(-4deg);
         }
+
     }
 
     @keyframes estrellaMovimiento {
+
         0%, 100% {
             transform: scale(1) rotate(0deg);
         }
@@ -178,6 +189,7 @@
         50% {
             transform: scale(1.25) rotate(15deg);
         }
+
     }
 
     header h1 {
@@ -280,6 +292,31 @@
         font-size: 20px;
         font-weight: bold;
         margin-bottom: 15px;
+    }
+
+    /* TALLAS */
+
+    .talla {
+        display: block;
+        margin-bottom: 12px;
+        font-weight: bold;
+        color: #6b4055;
+    }
+
+    .selector-talla {
+        margin-left: 6px;
+        padding: 7px 12px;
+        border-radius: 15px;
+        border: 1px solid #f0bfd5;
+        background: #fff7fb;
+        color: #6b4055;
+        font-weight: bold;
+        cursor: pointer;
+        outline: none;
+    }
+
+    .selector-talla:focus {
+        border-color: #d85b91;
     }
 
     .boton-carrito {
@@ -472,6 +509,7 @@
         .producto img {
             height: 300px;
         }
+
     }
 
     @media (max-width: 600px) {
@@ -510,10 +548,16 @@
             bottom: 12px;
             padding: 12px 15px;
         }
+
     }
+
 </style>
 
-</head><body><!-- ESTRELLAS -->
+</head>
+
+<body>
+
+<!-- ESTRELLAS -->
 
 <div class="estrella1">✦</div>
 <div class="estrella2">✧</div>
@@ -587,14 +631,25 @@
             tu estilo.
         </p>
 
+        <div class="talla">
+            Talla:
+
+            <select class="selector-talla">
+
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+
+            </select>
+        </div>
+
         <button
             class="boton-carrito"
-            onclick="agregarAlCarrito('Linda falda corta', 35000)"
+            onclick="agregarProducto(this)"
         >
             🛒 Agregar al carrito
         </button>
-
-   
 
     </article>
 
@@ -620,9 +675,22 @@
             toque especial a tu look.
         </p>
 
+        <div class="talla">
+            Talla:
+
+            <select class="selector-talla">
+
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+
+            </select>
+        </div>
+
         <button
             class="boton-carrito"
-            onclick="agregarAlCarrito('Linda falda corta', 55000)"
+            onclick="agregarProducto(this)"
         >
             🛒 Agregar al carrito
         </button>
@@ -651,9 +719,22 @@
             un estilo único y encantador.
         </p>
 
+        <div class="talla">
+            Talla:
+
+            <select class="selector-talla">
+
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+
+            </select>
+        </div>
+
         <button
             class="boton-carrito"
-            onclick="agregarAlCarrito('Linda falda con estrellas', 59000)"
+            onclick="agregarProducto(this)"
         >
             🛒 Agregar al carrito
         </button>
@@ -682,9 +763,22 @@
             elegante y con mucho estilo.
         </p>
 
+        <div class="talla">
+            Talla:
+
+            <select class="selector-talla">
+
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+
+            </select>
+        </div>
+
         <button
             class="boton-carrito"
-            onclick="agregarAlCarrito('Linda falda de cuero', 60000)"
+            onclick="agregarProducto(this)"
         >
             🛒 Agregar al carrito
         </button>
@@ -713,9 +807,22 @@
             tu estilo de una manera especial.
         </p>
 
+        <div class="talla">
+            Talla:
+
+            <select class="selector-talla">
+
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+
+            </select>
+        </div>
+
         <button
             class="boton-carrito"
-            onclick="agregarAlCarrito('Linda falda de jean', 65000)"
+            onclick="agregarProducto(this)"
         >
             🛒 Agregar al carrito
         </button>
@@ -777,6 +884,28 @@
             id="precioModal"
         ></div>
 
+
+        <!-- TALLA DEL MODAL -->
+
+        <div class="talla">
+
+            Talla:
+
+            <select
+                class="selector-talla"
+                id="tallaModal"
+            >
+
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+
+            </select>
+
+        </div>
+
+
         <button
             class="boton-carrito"
             id="botonModal"
@@ -810,39 +939,79 @@
 
     function abrirFoto(imagen) {
 
-        const modal = document.getElementById("modal");
-        const imagenModal = document.getElementById("imagenModal");
+        const modal =
+            document.getElementById("modal");
 
-        const producto = imagen.closest(".producto");
+        const imagenModal =
+            document.getElementById("imagenModal");
+
+        const producto =
+            imagen.closest(".producto");
 
         const nombre =
-            producto.querySelector("h2").textContent.trim();
+            producto
+                .querySelector("h2")
+                .textContent
+                .trim();
 
         const descripcion =
-            producto.querySelector("p").textContent.trim();
+            producto
+                .querySelector("p")
+                .textContent
+                .trim();
 
         const precio =
-            producto.querySelector(".precio").textContent.trim();
+            producto
+                .querySelector(".precio")
+                .textContent
+                .trim();
 
         imagenModal.src = imagen.src;
         imagenModal.alt = imagen.alt;
 
-        document.getElementById("nombreModal").textContent = nombre;
-        document.getElementById("descripcionModal").textContent = descripcion;
-        document.getElementById("precioModal").textContent = precio;
+        document.getElementById("nombreModal").textContent =
+            nombre;
 
-        document.getElementById("botonModal").onclick = function () {
+        document.getElementById("descripcionModal").textContent =
+            descripcion;
 
-            const precioNumero = parseInt(
-                precio.replace(/\D/g, ""),
-                10
-            );
+        document.getElementById("precioModal").textContent =
+            precio;
 
-            agregarAlCarrito(nombre, precioNumero);
 
-        };
+        /* La talla comienza en la misma talla
+           que estaba seleccionada en la tarjeta */
+
+        const tallaSeleccionada =
+            producto.querySelector(".selector-talla").value;
+
+        document.getElementById("tallaModal").value =
+            tallaSeleccionada;
+
+
+        document.getElementById("botonModal").onclick =
+            function () {
+
+                const precioNumero =
+                    parseInt(
+                        precio.replace(/\D/g, ""),
+                        10
+                    );
+
+                const talla =
+                    document.getElementById("tallaModal").value;
+
+                agregarAlCarrito(
+                    nombre,
+                    precioNumero,
+                    talla
+                );
+
+            };
+
 
         modal.classList.add("activo");
+
     }
 
 
@@ -863,35 +1032,94 @@
     }
 
 
-    function agregarAlCarrito(nombre, precio) {
+    function agregarProducto(boton) {
 
-        let carrito = JSON.parse(
-            localStorage.getItem("carrito")
-        ) || [];
+        const producto =
+            boton.closest(".producto");
+
+        const nombre =
+            producto
+                .querySelector("h2")
+                .textContent
+                .trim();
+
+        const precioTexto =
+            producto
+                .querySelector(".precio")
+                .textContent
+                .trim();
+
+        const precio =
+            parseInt(
+                precioTexto.replace(/\D/g, ""),
+                10
+            );
+
+        const talla =
+            producto
+                .querySelector(".selector-talla")
+                .value;
+
+        agregarAlCarrito(
+            nombre,
+            precio,
+            talla
+        );
+
+    }
+
+
+    function agregarAlCarrito(
+        nombre,
+        precio,
+        talla
+    ) {
+
+        let carrito =
+            JSON.parse(
+                localStorage.getItem("carrito")
+            ) || [];
+
 
         carrito.push({
+
             nombre: nombre,
-            precio: precio
+
+            precio: precio,
+
+            talla: talla
+
         });
+
 
         localStorage.setItem(
             "carrito",
             JSON.stringify(carrito)
         );
 
+
         actualizarContador();
 
-        alert("🪽 ¡Producto agregado al carrito! 💕");
+
+        alert(
+            "🪽 ¡Producto agregado al carrito! 💕\n\n" +
+            "Talla: " + talla
+        );
+
     }
 
 
     function actualizarContador() {
 
-        const carrito = JSON.parse(
-            localStorage.getItem("carrito")
-        ) || [];
+        const carrito =
+            JSON.parse(
+                localStorage.getItem("carrito")
+            ) || [];
 
-        document.getElementById("contador-carrito").textContent =
+
+        document.getElementById(
+            "contador-carrito"
+        ).textContent =
             carrito.length;
 
     }
