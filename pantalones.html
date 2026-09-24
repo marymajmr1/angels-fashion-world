@@ -1,911 +1,1007 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
+<!DOCTYPE html><html lang="es"><head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Pantalones | Angel's Fashion World</title>
 
-    <title>Pantalones | Angel's Fashion World</title>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background:
+            radial-gradient(circle at top left, #ffffff 0%, transparent 35%),
+            radial-gradient(circle at bottom right, #ffe1ef 0%, transparent 40%),
+            #fff0f6;
+        color: #6b4055;
+        min-height: 100vh;
+    }
+
+    /* ESTRELLAS */
+
+    .estrella1,
+    .estrella2,
+    .estrella3,
+    .estrella4 {
+        position: fixed;
+        font-size: 28px;
+        color: #d85b91;
+        z-index: 0;
+        pointer-events: none;
+        animation: flotar 3s ease-in-out infinite;
+    }
+
+    .estrella1 {
+        top: 120px;
+        left: 4%;
+    }
+
+    .estrella2 {
+        top: 280px;
+        right: 5%;
+        animation-delay: .7s;
+    }
+
+    .estrella3 {
+        bottom: 180px;
+        left: 6%;
+        animation-delay: 1.3s;
+    }
+
+    .estrella4 {
+        bottom: 80px;
+        right: 7%;
+        animation-delay: 2s;
+    }
+
+    @keyframes flotar {
+        0%, 100% {
+            transform: translateY(0) rotate(0deg);
         }
 
-        html {
-            scroll-behavior: smooth;
+        50% {
+            transform: translateY(-12px) rotate(12deg);
+        }
+    }
+
+    /* MENÚ */
+
+    .menu {
+        width: 92%;
+        max-width: 1200px;
+        margin: 25px auto 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        background: rgba(255, 255, 255, 0.92);
+        padding: 14px 18px;
+
+        border-radius: 25px;
+
+        box-shadow:
+            0 8px 25px rgba(216, 91, 145, 0.15);
+
+        border: 1px solid #f5d3e2;
+
+        position: relative;
+        z-index: 10;
+    }
+
+    .menu a {
+        text-decoration: none;
+        color: #6b4055;
+        font-weight: bold;
+
+        padding: 10px 16px;
+        border-radius: 20px;
+
+        transition: .3s ease;
+    }
+
+    .menu a:hover {
+        background: #ffe0ed;
+        color: #d85b91;
+        transform: translateY(-2px);
+    }
+
+    /* PRESENTACIÓN */
+
+    header {
+        width: 92%;
+        max-width: 1000px;
+
+        margin: 35px auto 45px;
+
+        text-align: center;
+
+        background: rgba(255, 255, 255, 0.94);
+
+        padding: 35px 25px;
+
+        border-radius: 30px;
+
+        box-shadow:
+            0 12px 35px rgba(216, 91, 145, 0.18);
+
+        border: 1px solid #f5d3e2;
+
+        position: relative;
+        z-index: 2;
+    }
+
+    .alas-con-estrella {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+
+        margin-bottom: 5px;
+    }
+
+    .alas {
+        font-size: 48px;
+        display: inline-block;
+        animation: alasMovimiento 3s ease-in-out infinite;
+    }
+
+    .estrella-alas {
+        font-size: 25px;
+        color: #d85b91;
+        animation: estrellaMovimiento 2s ease-in-out infinite;
+    }
+
+    @keyframes alasMovimiento {
+        0%, 100% {
+            transform: translateY(0) rotate(0deg);
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            background:
-                radial-gradient(circle at top left, #ffffff 0%, transparent 35%),
-                radial-gradient(circle at bottom right, #ffe1ef 0%, transparent 40%),
-                #fff0f6;
-            color: #6b4055;
-            min-height: 100vh;
+        50% {
+            transform: translateY(-7px) rotate(-4deg);
+        }
+    }
+
+    @keyframes estrellaMovimiento {
+        0%, 100% {
+            transform: scale(1) rotate(0deg);
         }
 
-        /* ESTRELLAS */
-
-        .estrella1,
-        .estrella2,
-        .estrella3,
-        .estrella4 {
-            position: fixed;
-            font-size: 28px;
-            color: #d85b91;
-            z-index: 0;
-            pointer-events: none;
-            animation: flotar 3s ease-in-out infinite;
+        50% {
+            transform: scale(1.25) rotate(15deg);
         }
+    }
 
-        .estrella1 {
-            top: 120px;
-            left: 4%;
-        }
+    header h1 {
+        color: #d85b91;
+        font-size: 42px;
+        margin: 5px 0 10px;
+    }
 
-        .estrella2 {
-            top: 280px;
-            right: 5%;
-            animation-delay: .7s;
-        }
+    header p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
 
-        .estrella3 {
-            bottom: 180px;
-            left: 6%;
-            animation-delay: 1.3s;
-        }
+    .volver {
+        display: inline-block;
 
-        .estrella4 {
-            bottom: 80px;
-            right: 7%;
-            animation-delay: 2s;
-        }
+        text-decoration: none;
 
-        @keyframes flotar {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
+        background: #d85b91;
+        color: white;
 
-            50% {
-                transform: translateY(-12px) rotate(12deg);
-            }
-        }
+        padding: 12px 24px;
 
-        /* MENÚ */
+        border-radius: 25px;
 
-        .menu {
-            width: 92%;
-            max-width: 1200px;
-            margin: 25px auto 0;
+        font-weight: bold;
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
+        transition: .3s ease;
+    }
 
-            background: rgba(255, 255, 255, 0.92);
-            padding: 14px 18px;
+    .volver:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 7px 18px rgba(216, 91, 145, .25);
+    }
 
-            border-radius: 25px;
+    /* PRODUCTOS */
 
-            box-shadow:
-                0 8px 25px rgba(216, 91, 145, 0.15);
+    .productos {
+        width: 92%;
+        max-width: 1200px;
 
-            border: 1px solid #f5d3e2;
+        margin: auto;
 
-            position: relative;
-            z-index: 10;
-        }
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
 
-        .menu a {
-            text-decoration: none;
-            color: #6b4055;
-            font-weight: bold;
+        gap: 28px;
 
-            padding: 10px 16px;
-            border-radius: 20px;
+        position: relative;
+        z-index: 2;
+    }
 
-            transition: .3s ease;
-        }
+    .producto {
+        background: white;
 
-        .menu a:hover {
-            background: #ffe0ed;
-            color: #d85b91;
-            transform: translateY(-2px);
-        }
+        border-radius: 25px;
 
-        /* PRESENTACIÓN */
+        padding: 18px;
 
-        header {
-            width: 92%;
-            max-width: 1000px;
+        text-align: center;
 
-            margin: 35px auto 45px;
+        box-shadow:
+            0 10px 25px rgba(107, 64, 85, 0.12);
 
-            text-align: center;
+        border: 1px solid #f5d3e2;
 
-            background: rgba(255, 255, 255, 0.94);
+        transition: .3s ease;
+    }
 
-            padding: 35px 25px;
+    .producto:hover {
+        transform: translateY(-7px);
 
-            border-radius: 30px;
+        box-shadow:
+            0 15px 30px rgba(216, 91, 145, 0.18);
+    }
 
-            box-shadow:
-                0 12px 35px rgba(216, 91, 145, 0.18);
+    .producto img {
+        width: 100%;
+        height: 330px;
 
-            border: 1px solid #f5d3e2;
+        object-fit: cover;
 
-            position: relative;
-            z-index: 2;
-        }
+        border-radius: 20px;
 
-        .alas-con-estrella {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
+        cursor: pointer;
 
-            margin-bottom: 5px;
-        }
+        display: block;
 
-        .alas {
-            font-size: 48px;
-            display: inline-block;
-            animation: alasMovimiento 3s ease-in-out infinite;
-        }
+        transition: .3s ease;
+    }
 
-        .estrella-alas {
-            font-size: 25px;
-            color: #d85b91;
-            animation: estrellaMovimiento 2s ease-in-out infinite;
-        }
+    .producto img:hover {
+        transform: scale(1.02);
+    }
 
-        @keyframes alasMovimiento {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
+    .producto h2 {
+        color: #d85b91;
 
-            50% {
-                transform: translateY(-7px) rotate(-4deg);
-            }
-        }
+        font-size: 21px;
 
-        @keyframes estrellaMovimiento {
-            0%, 100% {
-                transform: scale(1) rotate(0deg);
-            }
+        margin: 18px 5px 8px;
+    }
 
-            50% {
-                transform: scale(1.25) rotate(15deg);
-            }
-        }
+    .producto p {
+        font-size: 15px;
 
-        header h1 {
-            color: #d85b91;
-            font-size: 42px;
-            margin: 5px 0 10px;
-        }
+        line-height: 1.5;
 
-        header p {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
+        margin: 0 5px 12px;
+    }
 
-        .volver {
-            display: inline-block;
+    .precio {
+        color: #6b4055;
 
-            text-decoration: none;
+        font-size: 20px;
 
-            background: #d85b91;
-            color: white;
+        font-weight: bold;
 
-            padding: 12px 24px;
+        margin-bottom: 15px;
+    }
 
-            border-radius: 25px;
+    /* TALLAS */
 
-            font-weight: bold;
+    .talla {
+        display: block;
+        margin-bottom: 12px;
+        font-weight: bold;
+        color: #6b4055;
+    }
 
-            transition: .3s ease;
-        }
+    .selector-talla {
+        margin-left: 6px;
+        padding: 7px 12px;
+        border-radius: 15px;
+        border: 1px solid #f0bfd5;
+        background: #fff7fb;
+        color: #6b4055;
+        font-weight: bold;
+        cursor: pointer;
+        outline: none;
+    }
 
-        .volver:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 7px 18px rgba(216, 91, 145, .25);
-        }
+    .boton-carrito {
+        display: inline-block;
 
-        /* PRODUCTOS */
+        border: none;
+
+        background: #d85b91;
+        color: white;
+
+        padding: 11px 18px;
+
+        border-radius: 22px;
+
+        font-weight: bold;
+
+        cursor: pointer;
+
+        transition: .3s ease;
+    }
+
+    .boton-carrito:hover {
+        transform: translateY(-2px);
+
+        box-shadow:
+            0 6px 15px rgba(216, 91, 145, .25);
+    }
+
+    /* CARRITO */
+
+    .carrito-flotante {
+        position: fixed;
+
+        right: 20px;
+        bottom: 20px;
+
+        z-index: 100;
+
+        text-decoration: none;
+
+        background: white;
+        color: #d85b91;
+
+        padding: 14px 20px;
+
+        border-radius: 30px;
+
+        font-weight: bold;
+
+        box-shadow:
+            0 8px 25px rgba(107, 64, 85, 0.2);
+
+        border: 1px solid #f5d3e2;
+
+        transition: .3s ease;
+    }
+
+    .carrito-flotante:hover {
+        transform: translateY(-4px);
+    }
+
+    .contador-carrito {
+        display: inline-flex;
+
+        justify-content: center;
+        align-items: center;
+
+        min-width: 24px;
+        height: 24px;
+
+        margin-left: 5px;
+
+        padding: 0 6px;
+
+        border-radius: 50%;
+
+        background: #d85b91;
+        color: white;
+
+        font-size: 13px;
+    }
+
+    /* MODAL */
+
+    .modal {
+        display: none;
+
+        position: fixed;
+
+        inset: 0;
+
+        z-index: 200;
+
+        background: rgba(60, 30, 45, .75);
+
+        justify-content: center;
+        align-items: center;
+
+        padding: 20px;
+    }
+
+    .modal.activo {
+        display: flex;
+    }
+
+    .modal-contenido {
+        width: min(900px, 95%);
+
+        max-height: 95vh;
+
+        overflow-y: auto;
+
+        background: white;
+
+        border-radius: 25px;
+
+        padding: 20px;
+
+        text-align: center;
+
+        position: relative;
+    }
+
+    .modal-contenido img {
+        max-width: 100%;
+        max-height: 65vh;
+
+        object-fit: contain;
+
+        border-radius: 18px;
+    }
+
+    .cerrar {
+        position: absolute;
+
+        top: 10px;
+        right: 15px;
+
+        width: 40px;
+        height: 40px;
+
+        border: none;
+
+        border-radius: 50%;
+
+        background: #d85b91;
+        color: white;
+
+        font-size: 24px;
+
+        cursor: pointer;
+
+        z-index: 5;
+    }
+
+    .modal h2 {
+        color: #d85b91;
+        margin: 15px 0 8px;
+    }
+
+    .modal p {
+        margin-bottom: 10px;
+    }
+
+    /* FOOTER */
+
+    footer {
+        text-align: center;
+
+        margin-top: 70px;
+
+        padding: 30px 20px;
+
+        background: white;
+
+        border-top: 1px solid #f5d3e2;
+
+        color: #6b4055;
+
+        line-height: 1.8;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 850px) {
 
         .productos {
-            width: 92%;
-            max-width: 1200px;
-
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 28px;
-
-            position: relative;
-            z-index: 2;
-        }
-
-        .producto {
-            background: white;
-
-            border-radius: 25px;
-
-            padding: 18px;
-
-            text-align: center;
-
-            box-shadow:
-                0 10px 25px rgba(107, 64, 85, 0.12);
-
-            border: 1px solid #f5d3e2;
-
-            transition: .3s ease;
-        }
-
-        .producto:hover {
-            transform: translateY(-7px);
-
-            box-shadow:
-                0 15px 30px rgba(216, 91, 145, 0.18);
+            grid-template-columns: repeat(2, 1fr);
         }
 
         .producto img {
-            width: 100%;
-            height: 330px;
+            height: 300px;
+        }
+    }
 
-            object-fit: cover;
+    @media (max-width: 600px) {
 
-            border-radius: 20px;
-
-            cursor: pointer;
-
-            display: block;
-
-            transition: .3s ease;
+        .menu {
+            width: 94%;
+            gap: 5px;
+            padding: 12px 8px;
         }
 
-        .producto img:hover {
-            transform: scale(1.02);
+        .menu a {
+            padding: 8px 10px;
+            font-size: 14px;
         }
 
-        .producto h2 {
-            color: #d85b91;
-
-            font-size: 21px;
-
-            margin: 18px 5px 8px;
+        header {
+            margin-top: 25px;
+            padding: 28px 18px;
         }
 
-        .producto p {
-            font-size: 15px;
-
-            line-height: 1.5;
-
-            margin: 0 5px 12px;
+        header h1 {
+            font-size: 35px;
         }
 
-        .precio {
-            color: #6b4055;
-
-            font-size: 20px;
-
-            font-weight: bold;
-
-            margin-bottom: 15px;
+        .productos {
+            grid-template-columns: 1fr;
         }
 
-        .boton-carrito {
-            display: inline-block;
-
-            border: none;
-
-            background: #d85b91;
-            color: white;
-
-            padding: 11px 18px;
-
-            border-radius: 22px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-            transition: .3s ease;
+        .producto img {
+            height: auto;
+            max-height: 500px;
         }
-
-        .boton-carrito:hover {
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 6px 15px rgba(216, 91, 145, .25);
-        }
-
-        /* CARRITO */
 
         .carrito-flotante {
-            position: fixed;
-
-            right: 20px;
-            bottom: 20px;
-
-            z-index: 100;
-
-            text-decoration: none;
-
-            background: white;
-            color: #d85b91;
-
-            padding: 14px 20px;
-
-            border-radius: 30px;
-
-            font-weight: bold;
-
-            box-shadow:
-                0 8px 25px rgba(107, 64, 85, 0.2);
-
-            border: 1px solid #f5d3e2;
-
-            transition: .3s ease;
+            right: 12px;
+            bottom: 12px;
+            padding: 12px 15px;
         }
+    }
+</style>
 
-        .carrito-flotante:hover {
-            transform: translateY(-4px);
-        }
+</head><body><!-- ESTRELLAS -->
 
-        .contador-carrito {
-            display: inline-flex;
+<div class="estrella1">✦</div>
+<div class="estrella2">✧</div>
+<div class="estrella3">✦</div>
+<div class="estrella4">✧</div>
 
-            justify-content: center;
-            align-items: center;
 
-            min-width: 24px;
-            height: 24px;
+<!-- MENÚ -->
 
-            margin-left: 5px;
+<nav class="menu">
 
-            padding: 0 6px;
+    <a href="index.html">Inicio</a>
+    <a href="moda.html">Moda</a>
+    <a href="belleza.html">Belleza</a>
+    <a href="skincare.html">Skin care</a>
+    <a href="accesorios.html">Accesorios</a>
+    <a href="sobre-nosotros.html">Sobre nosotros</a>
+    <a href="index.html#contactanos">Contáctanos</a>
 
-            border-radius: 50%;
+</nav>
 
-            background: #d85b91;
-            color: white;
 
-            font-size: 13px;
-        }
+<!-- PRESENTACIÓN -->
 
-        /* MODAL */
+<header>
 
-        .modal {
-            display: none;
+    <div class="alas-con-estrella">
 
-            position: fixed;
+        <span class="alas">🪽</span>
 
-            inset: 0;
-
-            z-index: 200;
-
-            background: rgba(60, 30, 45, .75);
-
-            justify-content: center;
-            align-items: center;
-
-            padding: 20px;
-        }
-
-        .modal.activo {
-            display: flex;
-        }
-
-        .modal-contenido {
-            width: min(900px, 95%);
-
-            max-height: 95vh;
-
-            overflow-y: auto;
-
-            background: white;
-
-            border-radius: 25px;
-
-            padding: 20px;
-
-            text-align: center;
-
-            position: relative;
-        }
-
-        .modal-contenido img {
-            max-width: 100%;
-            max-height: 65vh;
-
-            object-fit: contain;
-
-            border-radius: 18px;
-        }
-
-        .cerrar {
-            position: absolute;
-
-            top: 10px;
-            right: 15px;
-
-            width: 40px;
-            height: 40px;
-
-            border: none;
-
-            border-radius: 50%;
-
-            background: #d85b91;
-            color: white;
-
-            font-size: 24px;
-
-            cursor: pointer;
-
-            z-index: 5;
-        }
-
-        .modal h2 {
-            color: #d85b91;
-            margin: 15px 0 8px;
-        }
-
-        .modal p {
-            margin-bottom: 10px;
-        }
-
-        /* FOOTER */
-
-        footer {
-            text-align: center;
-
-            margin-top: 70px;
-
-            padding: 30px 20px;
-
-            background: white;
-
-            border-top: 1px solid #f5d3e2;
-
-            color: #6b4055;
-
-            line-height: 1.8;
-        }
-
-        /* RESPONSIVE */
-
-        @media (max-width: 850px) {
-
-            .productos {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .producto img {
-                height: 300px;
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            .menu {
-                width: 94%;
-                gap: 5px;
-                padding: 12px 8px;
-            }
-
-            .menu a {
-                padding: 8px 10px;
-                font-size: 14px;
-            }
-
-            header {
-                margin-top: 25px;
-                padding: 28px 18px;
-            }
-
-            header h1 {
-                font-size: 35px;
-            }
-
-            .productos {
-                grid-template-columns: 1fr;
-            }
-
-            .producto img {
-                height: auto;
-                max-height: 500px;
-            }
-
-            .carrito-flotante {
-                right: 12px;
-                bottom: 12px;
-                padding: 12px 15px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <!-- ESTRELLAS -->
-
-    <div class="estrella1">✦</div>
-    <div class="estrella2">✧</div>
-    <div class="estrella3">✦</div>
-    <div class="estrella4">✧</div>
-
-
-    <!-- MENÚ -->
-
-    <nav class="menu">
-
-        <a href="index.html">Inicio</a>
-        <a href="moda.html">Moda</a>
-        <a href="belleza.html">Belleza</a>
-        <a href="skincare.html">Skin care</a>
-        <a href="accesorios.html">Accesorios</a>
-        <a href="sobre-nosotros.html">Sobre nosotros</a>
-        <a href="index.html#contactanos">Contáctanos</a>
-
-    </nav>
-
-
-    <!-- PRESENTACIÓN -->
-
-    <header>
-
-        <div class="alas-con-estrella">
-
-            <span class="alas">🪽</span>
-
-            <span class="estrella-alas">✦</span>
-
-        </div>
-
-        <h1>Pantalones</h1>
-
-        <p>
-            Descubre tu estilo en Angel's Fashion World 💕
-        </p>
-
-        <a href="moda.html" class="volver">
-            ← Volver a Moda
-        </a>
-
-    </header>
-
-
-    <!-- PRODUCTOS -->
-
-    <main class="productos">
-
-
-        <!-- 1 -->
-
-        <article class="producto">
-
-            <img
-                src="imagenes/pantalones/Screenshot_2026-08-29-17-57-56-257_com.pinterest~2.jpg"
-                alt="Pantalón de Jean con estrellas"
-                onclick="abrirFoto(this)"
-            >
-
-            <h2>
-                Pantalón de Jean con estrellas
-            </h2>
-
-            <div class="precio">
-                $50.000
-            </div>
-
-            <p>
-                Un hermoso pantalón de jean con estrellas
-                para darle un toque especial a tu estilo. 
-            </p>
-
-            <button
-                class="boton-carrito"
-                onclick="agregarAlCarrito('Pantalón de Jean con estrellas', 50000)"
-            >
-                🛒 Agregar al carrito
-            </button>
-
-        </article>
-
-
-        <!-- 2 -->
-
-        <article class="producto">
-
-            <img
-                src="imagenes/pantalones/Screenshot_2026-08-29-17-58-38-593_com.pinterest~2.jpg"
-                alt="Lindo jean"
-                onclick="abrirFoto(this)"
-            >
-
-            <h2>
-                Lindo jean
-            </h2>
-
-            <div class="precio">
-                $47.000
-            </div>
-
-            <p>
-                Un jean lindo y versátil para combinar
-                con tus outfits favoritos. 
-            </p>
-
-            <button
-                class="boton-carrito"
-                onclick="agregarAlCarrito('Lindo jean', 47000)"
-            >
-                🛒 Agregar al carrito
-            </button>
-
-        </article>
-
-
-        <!-- 3 -->
-
-        <article class="producto">
-
-            <img
-                src="imagenes/pantalones/Screenshot_2026-08-29-18-01-46-360_com.pinterest~2.jpg"
-                alt="Lindo jean con corazón en la cintura"
-                onclick="abrirFoto(this)"
-            >
-
-            <h2>
-                Lindo jean con corazón en la cintura
-            </h2>
-
-            <div class="precio">
-                $55.000
-            </div>
-
-            <p>
-                Un hermoso jean con un detalle de corazón
-                en la cintura. 
-            </p>
-
-            <button
-                class="boton-carrito"
-                onclick="agregarAlCarrito('Lindo jean con corazón en la cintura', 55000)"
-            >
-                🛒 Agregar al carrito
-            </button>
-
-        </article>
-
-
-        <!-- 4 -->
-
-        <article class="producto">
-
-            <img
-                src="imagenes/pantalones/Screenshot_2026-08-29-18-02-22-950_com.pinterest~2.jpg"
-                alt="Lindo leggins"
-                onclick="abrirFoto(this)"
-            >
-
-            <h2>
-                Lindo leggins
-            </h2>
-
-            <div class="precio">
-                $52.000
-            </div>
-
-            <p>
-                Un lindo leggins cómodo para crear
-                diferentes outfits. 
-            </p>
-
-            <button
-                class="boton-carrito"
-                onclick="agregarAlCarrito('Lindo leggins', 52000)"
-            >
-                🛒 Agregar al carrito
-            </button>
-
-        </article>
-
-
-        <!-- 5 -->
-
-        <article class="producto">
-
-            <img
-                src="imagenes/pantalones/Screenshot_2026-08-29-18-03-18-214_com.pinterest~2.jpg"
-                alt="Pantalón con estrellas a los lados"
-                onclick="abrirFoto(this)"
-            >
-
-            <h2>
-                Pantalón con estrellas a los lados
-            </h2>
-
-            <div class="precio">
-                $50.000
-            </div>
-
-            <p>
-                Un pantalón con estrellas a los lados
-                para darle un toque único a tu outfit. 
-            </p>
-
-            <button
-                class="boton-carrito"
-                onclick="agregarAlCarrito('Pantalón con estrellas a los lados', 50000)"
-            >
-                🛒 Agregar al carrito
-            </button>
-
-        </article>
-
-
-        <!-- 6 -->
-
-        <article class="producto">
-
-            <img
-                src="imagenes/pantalones/Screenshot_2026-08-29-18-03-54-386_com.pinterest~2.jpg"
-                alt="Pantalón con lazitos"
-                onclick="abrirFoto(this)"
-            >
-
-            <h2>
-                Pantalón con lazitos
-            </h2>
-
-            <div class="precio">
-                $60.000
-            </div>
-
-            <p>
-                Un hermoso pantalón con lazitos
-                para un look dulce y especial. 
-            </p>
-
-            <button
-                class="boton-carrito"
-                onclick="agregarAlCarrito('Pantalón con lazitos', 60000)"
-            >
-                🛒 Agregar al carrito
-            </button>
-
-        </article>
-
-
-        <!-- 7 -->
-
-        <article class="producto">
-
-            <img
-                src="imagenes/pantalones/Screenshot_2026-08-29-18-05-42-286_com.pinterest~2.jpg"
-                alt="Hermoso pantalón negro"
-                onclick="abrirFoto(this)"
-            >
-
-            <h2>
-                Hermoso pantalón negro
-            </h2>
-
-            <div class="precio">
-                $49.999
-            </div>
-
-            <p>
-                Un hermoso pantalón negro, elegante
-                y fácil de combinar. 
-            </p>
-
-            <button
-                class="boton-carrito"
-                onclick="agregarAlCarrito('Hermoso pantalón negro', 49999)"
-            >
-                🛒 Agregar al carrito
-            </button>
-
-        </article>
-
-    </main>
-
-
-    <!-- CARRITO FLOTANTE -->
-
-    <a href="carrito.html" class="carrito-flotante">
-
-        🛒 Ver carrito
-
-        <span
-            class="contador-carrito"
-            id="contador-carrito"
-        >
-            0
-        </span>
-
-    </a>
-
-
-    <!-- MODAL -->
-
-    <div
-        class="modal"
-        id="modal"
-        onclick="cerrarFoto(event)"
-    >
-
-        <div
-            class="modal-contenido"
-            onclick="event.stopPropagation()"
-        >
-
-            <button
-                class="cerrar"
-                onclick="cerrarFoto()"
-            >
-                ×
-            </button>
-
-            <img
-                id="imagenModal"
-                src=""
-                alt=""
-            >
-
-            <h2 id="nombreModal"></h2>
-
-            <p id="descripcionModal"></p>
-
-            <div
-                class="precio"
-                id="precioModal"
-            ></div>
-
-            <button
-                class="boton-carrito"
-                id="botonModal"
-            >
-                🛒 Agregar al carrito
-            </button>
-
-        </div>
+        <span class="estrella-alas">✦</span>
 
     </div>
 
+    <h1>Pantalones</h1>
 
-    <!-- FOOTER -->
+    <p>
+        Descubre tu estilo en Angel's Fashion World 💕
+    </p>
 
-    <footer>
+    <a href="moda.html" class="volver">
+        ← Volver a Moda
+    </a>
+
+</header>
+
+
+<!-- PRODUCTOS -->
+
+<main class="productos">
+
+
+    <!-- 1 -->
+
+    <article class="producto">
+
+        <img
+            src="imagenes/pantalones/Screenshot_2026-08-29-17-57-56-257_com.pinterest~2.jpg"
+            alt="Pantalón de Jean con estrellas"
+            onclick="abrirFoto(this)"
+        >
+
+        <h2>
+            Pantalón de Jean con estrellas
+        </h2>
+
+        <div class="precio">
+            $50.000
+        </div>
 
         <p>
-            🪽 Angel's Fashion World 🪽
+            Un hermoso pantalón de jean con estrellas
+            para darle un toque especial a tu estilo. 
         </p>
+
+        <label class="talla">
+            Talla:
+            <select class="selector-talla">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+        </label>
+
+        <button
+            class="boton-carrito"
+            onclick="agregarProducto(this)"
+        >
+            🛒 Agregar al carrito
+        </button>
+
+    </article>
+
+
+    <!-- 2 -->
+
+    <article class="producto">
+
+        <img
+            src="imagenes/pantalones/Screenshot_2026-08-29-17-58-38-593_com.pinterest~2.jpg"
+            alt="Lindo jean"
+            onclick="abrirFoto(this)"
+        >
+
+        <h2>
+            Lindo jean
+        </h2>
+
+        <div class="precio">
+            $47.000
+        </div>
 
         <p>
-            Moda • Belleza • Skin Care • Accesorios
+            Un jean lindo y versátil para combinar
+            con tus outfits favoritos. 
         </p>
 
-    </footer>
+        <label class="talla">
+            Talla:
+            <select class="selector-talla">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+        </label>
+
+        <button
+            class="boton-carrito"
+            onclick="agregarProducto(this)"
+        >
+            🛒 Agregar al carrito
+        </button>
+
+    </article>
 
 
-    <!-- JAVASCRIPT -->
+    <!-- 3 -->
 
-    <script>
+    <article class="producto">
+
+        <img
+            src="imagenes/pantalones/Screenshot_2026-08-29-18-01-46-360_com.pinterest~2.jpg"
+            alt="Lindo jean con corazón en la cintura"
+            onclick="abrirFoto(this)"
+        >
+
+        <h2>
+            Lindo jean con corazón en la cintura
+        </h2>
+
+        <div class="precio">
+            $55.000
+        </div>
+
+        <p>
+            Un hermoso jean con un detalle de corazón
+            en la cintura. 
+        </p>
+
+        <label class="talla">
+            Talla:
+            <select class="selector-talla">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+        </label>
+
+        <button
+            class="boton-carrito"
+            onclick="agregarProducto(this)"
+        >
+            🛒 Agregar al carrito
+        </button>
+
+    </article>
+
+
+    <!-- 4 -->
+
+    <article class="producto">
+
+        <img
+            src="imagenes/pantalones/Screenshot_2026-08-29-18-02-22-950_com.pinterest~2.jpg"
+            alt="Lindo leggins"
+            onclick="abrirFoto(this)"
+        >
+
+        <h2>
+            Lindo leggins
+        </h2>
+
+        <div class="precio">
+            $52.000
+        </div>
+
+        <p>
+            Un lindo leggins cómodo para crear
+            diferentes outfits. 
+        </p>
+
+        <label class="talla">
+            Talla:
+            <select class="selector-talla">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+        </label>
+
+        <button
+            class="boton-carrito"
+            onclick="agregarProducto(this)"
+        >
+            🛒 Agregar al carrito
+        </button>
+
+    </article>
+
+
+    <!-- 5 -->
+
+    <article class="producto">
+
+        <img
+            src="imagenes/pantalones/Screenshot_2026-08-29-18-03-18-214_com.pinterest~2.jpg"
+            alt="Pantalón con estrellas a los lados"
+            onclick="abrirFoto(this)"
+        >
+
+        <h2>
+            Pantalón con estrellas a los lados
+        </h2>
+
+        <div class="precio">
+            $50.000
+        </div>
+
+        <p>
+            Un pantalón con estrellas a los lados
+            para darle un toque único a tu outfit. 
+        </p>
+
+        <label class="talla">
+            Talla:
+            <select class="selector-talla">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+        </label>
+
+        <button
+            class="boton-carrito"
+            onclick="agregarProducto(this)"
+        >
+            🛒 Agregar al carrito
+        </button>
+
+    </article>
+
+
+    <!-- 6 -->
+
+    <article class="producto">
+
+        <img
+            src="imagenes/pantalones/Screenshot_2026-08-29-18-03-54-386_com.pinterest~2.jpg"
+            alt="Pantalón con lazitos"
+            onclick="abrirFoto(this)"
+        >
+
+        <h2>
+            Pantalón con lazitos
+        </h2>
+
+        <div class="precio">
+            $60.000
+        </div>
+
+        <p>
+            Un hermoso pantalón con lazitos
+            para un look dulce y especial. 
+        </p>
+
+        <label class="talla">
+            Talla:
+            <select class="selector-talla">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+        </label>
+
+        <button
+            class="boton-carrito"
+            onclick="agregarProducto(this)"
+        >
+            🛒 Agregar al carrito
+        </button>
+
+    </article>
+
+
+    <!-- 7 -->
+
+    <article class="producto">
+
+        <img
+            src="imagenes/pantalones/Screenshot_2026-08-29-18-05-42-286_com.pinterest~2.jpg"
+            alt="Hermoso pantalón negro"
+            onclick="abrirFoto(this)"
+        >
+
+        <h2>
+            Hermoso pantalón negro
+        </h2>
+
+        <div class="precio">
+            $49.999
+        </div>
+
+        <p>
+            Un hermoso pantalón negro, elegante
+            y fácil de combinar. 
+        </p>
+
+        <label class="talla">
+            Talla:
+            <select class="selector-talla">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+        </label>
+
+        <button
+            class="boton-carrito"
+            onclick="agregarProducto(this)"
+        >
+            🛒 Agregar al carrito
+        </button>
+
+    </article>
+
+</main>
+
+
+<!-- CARRITO FLOTANTE -->
+
+<a href="carrito.html" class="carrito-flotante">
+
+    🛒 Ver carrito
+
+    <span
+        class="contador-carrito"
+        id="contador-carrito"
+    >
+        0
+    </span>
+
+</a>
+
+
+<!-- MODAL -->
+
+<div
+    class="modal"
+    id="modal"
+    onclick="cerrarFoto(event)"
+>
+
+    <div
+        class="modal-contenido"
+        onclick="event.stopPropagation()"
+    >
+
+        <button
+            class="cerrar"
+            onclick="cerrarFoto()"
+        >
+            ×
+        </button>
+
+        <img
+            id="imagenModal"
+            src=""
+            alt=""
+        >
+
+        <h2 id="nombreModal"></h2>
+
+        <p id="descripcionModal"></p>
+
+        <div
+            class="precio"
+            id="precioModal"
+        ></div>
+
+        <label class="talla">
+            Talla:
+            <select
+                class="selector-talla"
+                id="tallaModal"
+            >
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+        </label>
+
+        <button
+            class="boton-carrito"
+            id="botonModal"
+        >
+            🛒 Agregar al carrito
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        🪽 Angel's Fashion World 🪽
+    </p>
+
+    <p>
+        Moda • Belleza • Skin Care • Accesorios
+    </p>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
 
         let carrito = JSON.parse(
             localStorage.getItem("carritoAngel")
@@ -941,11 +1037,52 @@
         }
 
 
-        function agregarAlCarrito(nombre, precio) {
+        function agregarProducto(boton) {
+
+            const producto =
+                boton.closest(".producto");
+
+            const nombre =
+                producto
+                    .querySelector("h2")
+                    .textContent
+                    .trim();
+
+            const precioTexto =
+                producto
+                    .querySelector(".precio")
+                    .textContent
+                    .trim();
+
+            const precio =
+                parseInt(
+                    precioTexto
+                        .replace(/\./g, "")
+                        .replace("$", "")
+                        .trim()
+                );
+
+            const talla =
+                producto
+                    .querySelector(".selector-talla")
+                    .value;
+
+
+            agregarAlCarrito(
+                nombre,
+                precio,
+                talla
+            );
+        }
+
+
+        function agregarAlCarrito(nombre, precio, talla) {
 
             const productoExistente =
                 carrito.find(
-                    producto => producto.nombre === nombre
+                    producto =>
+                        producto.nombre === nombre &&
+                        producto.talla === talla
                 );
 
 
@@ -959,6 +1096,7 @@
                 carrito.push({
                     nombre: nombre,
                     precio: precio,
+                    talla: talla,
                     cantidad: 1
                 });
 
@@ -967,7 +1105,10 @@
 
             guardarCarrito();
 
-            alert("🛍️ ¡Producto agregado al carrito!");
+            alert(
+                "🛍️ ¡Producto agregado al carrito! 💕\n\n" +
+                "Talla: " + talla
+            );
         }
 
 
@@ -982,7 +1123,7 @@
             const nombreModal =
                 document.getElementById("nombreModal");
 
-const descripcionModal =
+            const descripcionModal =
                 document.getElementById("descripcionModal");
 
             const precioModal =
@@ -990,6 +1131,9 @@ const descripcionModal =
 
             const botonModal =
                 document.getElementById("botonModal");
+
+            const tallaModal =
+                document.getElementById("tallaModal");
 
 
             imagenModal.src = imagen.src;
@@ -1022,11 +1166,19 @@ const descripcionModal =
                     .trim();
 
 
+            const tallaSeleccionada =
+                producto
+                    .querySelector(".selector-talla")
+                    .value;
+
+
             nombreModal.textContent = nombre;
 
             descripcionModal.textContent = descripcion;
 
             precioModal.textContent = precioTexto;
+
+            tallaModal.value = tallaSeleccionada;
 
 
             const precioNumerico =
@@ -1042,7 +1194,8 @@ const descripcionModal =
 
                 agregarAlCarrito(
                     nombre,
-                    precioNumerico
+                    precioNumerico,
+                    tallaModal.value
                 );
 
             };
