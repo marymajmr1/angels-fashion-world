@@ -247,7 +247,6 @@
             margin: 5px;
         }
 
-        /* MODAL DE IMAGEN */
         .modal {
             display: none;
             position: fixed;
@@ -316,7 +315,9 @@
 
         <h1>Faldas cortas</h1>
 
-        <p>Descubre faldas hermosas para completar tu estilo en Angel's Fashion World 💕</p>
+        <p>
+            Descubre faldas hermosas para completar tu estilo en Angel's Fashion World 💕
+        </p>
     </header>
 
     <nav>
@@ -335,14 +336,17 @@
 
         <section class="presentacion">
             <h2>✨ Faldas cortas ✨</h2>
+
             <p>
                 Encuentra tu falda favorita y crea looks únicos con Angel's Fashion World 🪽
             </p>
         </section>
-<section class="productos">
+
+        <section class="productos">
 
             <!-- PRODUCTO 1 -->
             <article class="producto">
+
                 <img
                     src="imagenes/faldas-cortas/Screenshot_2026-08-29-17-46-47-035_com.pinterest~jpg"
                     alt="Linda falda corta"
@@ -357,14 +361,19 @@
 
                 <div class="precio">$35.000</div>
 
-                <button class="carrito-btn"
-                    onclick="agregarCarrito('Linda falda corta', 35000)">
+                <button
+                    class="carrito-btn"
+                    onclick="agregarCarrito('Linda falda corta', 35000)"
+                >
                     Agregar al carrito 🛍️
                 </button>
+
             </article>
+
 
             <!-- PRODUCTO 2 -->
             <article class="producto">
+
                 <img
                     src="imagenes/faldas-cortas/Screenshot_2026-08-29-17-46-58-418_com.pinterest~jpg"
                     alt="Linda falda de jean"
@@ -379,14 +388,19 @@
 
                 <div class="precio">$40.000</div>
 
-                <button class="carrito-btn"
-                    onclick="agregarCarrito('Linda falda de jean', 40000)">
+                <button
+                    class="carrito-btn"
+                    onclick="agregarCarrito('Linda falda de jean', 40000)"
+                >
                     Agregar al carrito 🛍️
                 </button>
+
             </article>
+
 
             <!-- PRODUCTO 3 -->
             <article class="producto">
+
                 <img
                     src="imagenes/faldas-cortas/Screenshot_2026-08-29-17-48-01-550_com.pinterest~2.jpg"
                     alt="Linda falda de jean oscuro"
@@ -401,14 +415,18 @@
 
                 <div class="precio">$40.000</div>
 
-                <button class="carrito-btn"
-                    onclick="agregarCarrito('Linda falda de jean oscuro', 40000)">
+                <button
+                    class="carrito-btn"
+                    onclick="agregarCarrito('Linda falda de jean oscuro', 40000)"
+                >
                     Agregar al carrito 🛍️
                 </button>
-            </article>
+</article>
+
 
             <!-- PRODUCTO 4 -->
             <article class="producto">
+
                 <img
                     src="imagenes/faldas-cortas/Screenshot_2026-08-29-17-48-25-074_com.pinterest~2.jpg"
                     alt="Linda falda corta"
@@ -423,14 +441,19 @@
 
                 <div class="precio">$55.000</div>
 
-                <button class="carrito-btn"
-                    onclick="agregarCarrito('Linda falda corta', 55000)">
+                <button
+                    class="carrito-btn"
+                    onclick="agregarCarrito('Linda falda corta', 55000)"
+                >
                     Agregar al carrito 🛍️
                 </button>
+
             </article>
+
 
             <!-- PRODUCTO 5 -->
             <article class="producto">
+
                 <img
                     src="imagenes/faldas-cortas/Screenshot_2026-08-29-17-52-12-644_com.pinterest~2.jpg"
                     alt="Linda falda con estrellas"
@@ -445,14 +468,19 @@
 
                 <div class="precio">$59.999</div>
 
-                <button class="carrito-btn"
-                    onclick="agregarCarrito('Linda falda con estrellas', 59999)">
+                <button
+                    class="carrito-btn"
+                    onclick="agregarCarrito('Linda falda con estrellas', 59999)"
+                >
                     Agregar al carrito 🛍️
                 </button>
+
             </article>
+
 
             <!-- PRODUCTO 6 -->
             <article class="producto">
+
                 <img
                     src="imagenes/faldas-cortas/Screenshot_2026-08-29-17-53-27-783_com.pinterest~2.jpg"
                     alt="Linda falda de cuero"
@@ -467,14 +495,19 @@
 
                 <div class="precio">$60.000</div>
 
-                <button class="carrito-btn"
-                    onclick="agregarCarrito('Linda falda de cuero', 60000)">
+                <button
+                    class="carrito-btn"
+                    onclick="agregarCarrito('Linda falda de cuero', 60000)"
+                >
                     Agregar al carrito 🛍️
                 </button>
+
             </article>
+
 
             <!-- PRODUCTO 7 -->
             <article class="producto">
+
                 <img
                     src="imagenes/faldas-cortas/Screenshot_2026-08-29-17-56-41-528_com.pinterest~2.jpg"
                     alt="Linda falda de jean"
@@ -489,73 +522,146 @@
 
                 <div class="precio">$65.000</div>
 
-                <button class="carrito-btn"
-                    onclick="agregarCarrito('Linda falda de jean', 65000)">
+                <button
+                    class="carrito-btn"
+                    onclick="agregarCarrito('Linda falda de jean', 65000)"
+                >
                     Agregar al carrito 🛍️
                 </button>
+
             </article>
 
         </section>
+
     </main>
+
 
     <!-- CARRITO FLOTANTE -->
     <a href="carrito.html" class="carrito-flotante">
+
         🛍️
-        <span class="contador" id="contadorCarrito">0</span>
+
+        <span
+            class="contador"
+            id="contadorCarrito"
+        >
+            0
+        </span>
+
     </a>
 
+
     <!-- MODAL -->
-    <div class="modal" id="modal">
-        <span class="cerrar" onclick="cerrarFoto()">×</span>
-        <img id="imagenGrande" src="" alt="Imagen ampliada">
+    <div
+        class="modal"
+        id="modal"
+    >
+
+        <span
+            class="cerrar"
+            onclick="cerrarFoto()"
+        >
+            ×
+        </span>
+
+        <img
+            id="imagenGrande"
+            src=""
+            alt="Imagen ampliada"
+        >
+
     </div>
 
+
     <footer>
-        <p>🪽 Angel's Fashion World 🪽</p>
-        <p>Moda, belleza y estilo para ti 💕</p>
+
+        <p>
+            🪽 Angel's Fashion World 🪽
+        </p>
+
+        <p>
+            Moda, belleza y estilo para ti 💕
+        </p>
+
     </footer>
 
+
     <script>
+
         function abrirFoto(imagen) {
+
             document.getElementById("modal").style.display = "flex";
-            document.getElementById("imagenGrande").src = imagen.src;
+
+            document.getElementById("imagenGrande").src =
+                imagen.src;
         }
+
 
         function cerrarFoto() {
+
             document.getElementById("modal").style.display = "none";
+
         }
 
+
         window.onclick = function(event) {
-            const modal = document.getElementById("modal");
+
+            const modal =
+                document.getElementById("modal");
 
             if (event.target === modal) {
+
                 cerrarFoto();
+
             }
+
         };
 
+
         function agregarCarrito(nombre, precio) {
-            let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+            let carrito =
+                JSON.parse(
+                    localStorage.getItem("carrito")
+                ) || [];
 
             carrito.push({
+
                 nombre: nombre,
                 precio: precio
+
             });
 
-            localStorage.setItem("carrito", JSON.stringify(carrito));
+            localStorage.setItem(
+                "carrito",
+                JSON.stringify(carrito)
+            );
 
             actualizarContador();
 
-            alert("¡Producto agregado al carrito! 🛍️💕");
+            alert(
+                "¡Producto agregado al carrito! 🛍️💕"
+            );
+
         }
+
 
         function actualizarContador() {
-            let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-            document.getElementById("contadorCarrito").textContent =
-                carrito.length;
+            let carrito =
+                JSON.parse(
+                    localStorage.getItem("carrito")
+                ) || [];
+
+            document.getElementById(
+                "contadorCarrito"
+            ).textContent = carrito.length;
+
         }
 
+
         actualizarContador();
+
     </script>
 
 </body>
