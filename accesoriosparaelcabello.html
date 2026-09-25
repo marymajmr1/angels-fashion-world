@@ -28,313 +28,559 @@
             min-height: 100vh;
         }
 
+
+        /* =========================================
+           ESTRELLAS DECORATIVAS
+        ========================================= */
+
         .estrella1,
         .estrella2,
         .estrella3,
         .estrella4 {
             position: fixed;
+            font-size: 28px;
             color: #d85b91;
-            font-size: 25px;
             z-index: 0;
             pointer-events: none;
+            animation: flotar 3s ease-in-out infinite;
         }
 
         .estrella1 {
             top: 120px;
-            left: 20px;
+            left: 4%;
         }
 
         .estrella2 {
-            top: 300px;
-            right: 25px;
+            top: 280px;
+            right: 5%;
+            animation-delay: .7s;
         }
 
         .estrella3 {
             bottom: 180px;
-            left: 30px;
+            left: 6%;
+            animation-delay: 1.3s;
         }
 
         .estrella4 {
-            bottom: 60px;
-            right: 35px;
+            bottom: 80px;
+            right: 7%;
+            animation-delay: 2s;
         }
+
+        @keyframes flotar {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-12px) rotate(12deg);
+            }
+        }
+
+
+        /* =========================================
+           MENÚ
+        ========================================= */
 
         .menu {
             width: 92%;
-            margin: 20px auto;
-            padding: 15px;
-            background: white;
-            border-radius: 30px;
+            max-width: 1200px;
+            margin: 25px auto 0;
+
             display: flex;
             justify-content: center;
+            align-items: center;
             flex-wrap: wrap;
             gap: 10px;
-            box-shadow: 0 5px 20px rgba(216, 91, 145, 0.12);
+
+            background: rgba(255, 255, 255, 0.92);
+            padding: 14px 18px;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 8px 25px rgba(216, 91, 145, 0.15);
+
+            border: 1px solid #f5d3e2;
+
             position: relative;
-            z-index: 2;
+            z-index: 10;
         }
 
         .menu a {
             text-decoration: none;
             color: #6b4055;
             font-weight: bold;
-            padding: 8px 14px;
+
+            padding: 10px 16px;
             border-radius: 20px;
-            transition: 0.3s;
+
+            transition: .3s ease;
         }
 
         .menu a:hover {
-            background: #ffe1ef;
+            background: #ffe0ed;
             color: #d85b91;
+            transform: translateY(-2px);
         }
 
+
+        /* =========================================
+           PRESENTACIÓN
+        ========================================= */
+
         header {
+            width: 92%;
+            max-width: 1000px;
+
+            margin: 35px auto 45px;
+
             text-align: center;
-            padding: 35px 20px 25px;
+
+            background: rgba(255, 255, 255, 0.94);
+
+            padding: 35px 25px;
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 12px 35px rgba(216, 91, 145, 0.18);
+
+            border: 1px solid #f5d3e2;
+
             position: relative;
-            z-index: 1;
+            z-index: 2;
+        }
+
+        .alas-con-estrella {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 5px;
         }
 
         .alas {
-            font-size: 42px;
-            margin-bottom: 5px;
+            font-size: 48px;
+            display: inline-block;
+            animation: alasMovimiento 3s ease-in-out infinite;
+        }
+
+        .estrella-alas {
+            font-size: 25px;
+            color: #d85b91;
+            animation: estrellaMovimiento 2s ease-in-out infinite;
+        }
+
+        @keyframes alasMovimiento {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-7px) rotate(-4deg);
+            }
+        }
+
+        @keyframes estrellaMovimiento {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+            }
+
+            50% {
+                transform: scale(1.25) rotate(15deg);
+            }
         }
 
         header h1 {
             color: #d85b91;
             font-size: 42px;
-            margin-bottom: 10px;
+            margin: 5px 0 10px;
         }
 
         header p {
-            font-size: 17px;
+            font-size: 18px;
             margin-bottom: 20px;
         }
 
         .volver {
             display: inline-block;
+
             text-decoration: none;
+
             background: #d85b91;
             color: white;
-            padding: 10px 20px;
+
+            padding: 12px 24px;
+
             border-radius: 25px;
+
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(216, 91, 145, 0.12);
+
+            transition: .3s ease;
         }
 
         .volver:hover {
-            background: #c5487d;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 18px rgba(216, 91, 145, .25);
         }
+
+
+        /* =========================================
+           PRODUCTOS
+        ========================================= */
 
         .productos {
             width: 92%;
             max-width: 1200px;
-            margin: 20px auto 60px;
+
+            margin: auto;
+
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+
+            gap: 28px;
+
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
         .producto {
             background: white;
+
             border-radius: 25px;
+
             padding: 18px;
+
             text-align: center;
-            box-shadow: 0 6px 20px rgba(216, 91, 145, 0.12);
-            transition: 0.3s;
+
+            box-shadow:
+                0 10px 25px rgba(107, 64, 85, 0.12);
+
+            border: 1px solid #f5d3e2;
+
+            transition: .3s ease;
         }
 
         .producto:hover {
-            transform: translateY(-5px);
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 15px 30px rgba(216, 91, 145, 0.18);
         }
 
         .producto img {
             width: 100%;
-            height: 320px;
+            height: 330px;
+
             object-fit: cover;
+
             border-radius: 20px;
-            display: block;
-            margin-bottom: 15px;
+
             cursor: pointer;
+
+            display: block;
+
+            transition: .3s ease;
+        }
+
+        .producto img:hover {
+            transform: scale(1.02);
         }
 
         .producto h2 {
             color: #d85b91;
+
             font-size: 21px;
-            margin-bottom: 10px;
+
+            margin: 18px 5px 8px;
         }
 
         .producto p {
             font-size: 15px;
+
             line-height: 1.5;
-            margin-bottom: 12px;
+
+            margin: 0 5px 12px;
         }
 
         .precio {
-            font-size: 20px;
-            font-weight: bold;
             color: #6b4055;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
             margin-bottom: 15px;
         }
 
+
+        /* =========================================
+           BOTÓN CARRITO
+        ========================================= */
+
         .boton-carrito {
+            display: inline-block;
+
             border: none;
+
             background: #d85b91;
             color: white;
+
             padding: 11px 18px;
-            border-radius: 25px;
+
+            border-radius: 22px;
+
             font-weight: bold;
+
             cursor: pointer;
-            font-size: 14px;
-            transition: 0.3s;
+
+            transition: .3s ease;
         }
 
         .boton-carrito:hover {
-            background: #c5487d;
-            transform: scale(1.03);
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 6px 15px rgba(216, 91, 145, .25);
         }
 
-        /* CARRITO FLOTANTE */
+
+        /* =========================================
+           CARRITO FLOTANTE
+        ========================================= */
+
         .carrito-flotante {
             position: fixed;
+
             right: 20px;
             bottom: 20px;
-            background: #d85b91;
-            color: white;
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 25px;
-            box-shadow: 0 5px 20px rgba(216, 91, 145, 0.3);
-            z-index: 10;
-        }
 
-        #contadorCarrito {
-            position: absolute;
-            top: -5px;
-            right: -3px;
+            z-index: 100;
+
+            text-decoration: none;
+
             background: white;
             color: #d85b91;
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            font-size: 12px;
+
+            padding: 14px 20px;
+
+            border-radius: 30px;
+
             font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+
+            box-shadow:
+                0 8px 25px rgba(107, 64, 85, 0.2);
+
+            border: 1px solid #f5d3e2;
+
+            transition: .3s ease;
         }
 
-        /* MODAL */
+        .carrito-flotante:hover {
+            transform: translateY(-4px);
+        }
+
+        .contador-carrito {
+            display: inline-flex;
+
+            justify-content: center;
+            align-items: center;
+
+            min-width: 24px;
+            height: 24px;
+
+            margin-left: 5px;
+
+            padding: 0 6px;
+
+            border-radius: 50%;
+
+            background: #d85b91;
+            color: white;
+
+            font-size: 13px;
+        }
+
+
+        */
+=========================================
+           MODAL
+        ========================================= */
+
         .modal {
             display: none;
+
             position: fixed;
+
             inset: 0;
-            background: rgba(107, 64, 85, 0.45);
-            z-index: 20;
-            align-items: center;
+
+            z-index: 200;
+
+            background: rgba(60, 30, 45, .75);
+
             justify-content: center;
+            align-items: center;
+
             padding: 20px;
         }
 
+        .modal.activo {
+            display: flex;
+        }
+
         .modal-contenido {
-            background: white;
-            width: 95%;
-            max-width: 500px;
-            max-height: 90vh;
+            width: min(900px, 95%);
+
+            max-height: 95vh;
+
             overflow-y: auto;
+
+            background: white;
+
             border-radius: 25px;
-            padding: 25px;
+
+            padding: 20px;
+
             text-align: center;
+
             position: relative;
+        }
+
+        .modal-contenido img {
+            max-width: 100%;
+            max-height: 65vh;
+
+            object-fit: contain;
+
+            border-radius: 18px;
         }
 
         .cerrar {
             position: absolute;
-            top: 12px;
-            right: 18px;
-            font-size: 28px;
-            color: #d85b91;
+
+            top: 10px;
+            right: 15px;
+
+            width: 40px;
+            height: 40px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: #d85b91;
+            color: white;
+
+            font-size: 24px;
+
             cursor: pointer;
-            font-weight: bold;
+
+            z-index: 5;
         }
 
-        #imagenModal {
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: 20px;
-            margin-bottom: 15px;
-        }
-
-        #nombreModal {
+        .modal h2 {
             color: #d85b91;
+            margin: 15px 0 8px;
+        }
+
+        .modal p {
             margin-bottom: 10px;
         }
 
-        #descripcionModal {
-            margin-bottom: 12px;
-            line-height: 1.5;
-        }
 
-        #precioModal {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
+        /* =========================================
+           FOOTER
+        ========================================= */
 
         footer {
             text-align: center;
+
+            margin-top: 70px;
+
             padding: 30px 20px;
+
             background: white;
-            margin-top: 30px;
-            position: relative;
-            z-index: 1;
+
+            border-top: 1px solid #f5d3e2;
+
+            color: #6b4055;
+
+            line-height: 1.8;
         }
 
-        footer h3 {
-            color: #d85b91;
-            margin-bottom: 8px;
-        }
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
 
         @media (max-width: 850px) {
+
             .productos {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .producto img {
+                height: 300px;
             }
         }
 
         @media (max-width: 600px) {
+
+            .menu {
+                width: 94%;
+                gap: 5px;
+                padding: 12px 8px;
+            }
+
+            .menu a {
+                padding: 8px 10px;
+                font-size: 14px;
+            }
+
+            header {
+                margin-top: 25px;
+                padding: 28px 18px;
+            }
+
+            header h1 {
+                font-size: 35px;
+            }
+
             .productos {
                 grid-template-columns: 1fr;
             }
 
-            header h1 {
-                font-size: 34px;
-            }
-
             .producto img {
-                height: 330px;
+                height: auto;
+                max-height: 500px;
             }
 
-            .menu {
-                width: 95%;
+            .carrito-flotante {
+                right: 12px;
+                bottom: 12px;
+                padding: 12px 15px;
             }
         }
     </style>
 </head>
 
 <body>
-<div class="estrella1">✦</div>
+
+    <!-- =========================================
+         ESTRELLAS
+    ========================================= -->
+
+    <div class="estrella1">✦</div>
     <div class="estrella2">✧</div>
     <div class="estrella3">✦</div>
     <div class="estrella4">✧</div>
 
+
+    <!-- =========================================
+         MENÚ
+    ========================================= -->
 
     <nav class="menu">
 
@@ -355,18 +601,24 @@
     </nav>
 
 
+    <!-- =========================================
+         PRESENTACIÓN
+    ========================================= -->
+
     <header>
 
-        <div class="alas">
-            🪽 ✦
+        <div class="alas-con-estrella">
+
+            <span class="alas">🪽</span>
+
+            <span class="estrella-alas">✦</span>
+
         </div>
 
-        <h1>
-            Accesorios para el cabello
-        </h1>
+        <h1>Accesorios para el cabello</h1>
 
         <p>
-            Dale un toque especial a tu estilo con nuestros accesorios para el cabello. 💕
+            Descubre accesorios hermosos para tu cabello 💕
         </p>
 
         <a href="accesorios.html" class="volver">
@@ -376,22 +628,21 @@
     </header>
 
 
+    <!-- =========================================
+         PRODUCTOS
+    ========================================= -->
+
     <main class="productos">
 
 
-        <!-- PRODUCTO 1 -->
+        <!-- 1. LINDO ACCESORIO -->
 
-        <div class="producto">
+        <article class="producto">
 
             <img
                 src="imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-36-45-182_com.pinterest~2.jpg"
                 alt="Lindo accesorio"
-                onclick="abrirModal(
-                    'Lindo accesorio',
-                    'Un lindo accesorio para darle un toque especial a tu cabello. ✨',
-                    '$18.000',
-                    'imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-36-45-182_com.pinterest~2.jpg'
-                )"
+                onclick="abrirFoto(this)"
             >
 
             <h2>
@@ -408,31 +659,22 @@
 
             <button
                 class="boton-carrito"
-                onclick="abrirModal(
-                    'Lindo accesorio',
-                    'Un lindo accesorio para darle un toque especial a tu cabello. ✨',
-                    '$18.000',
-                    'imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-36-45-182_com.pinterest~2.jpg'
-                )">
+                onclick="agregarProducto(this)"
+            >
                 🛒 Agregar al carrito
             </button>
 
-        </div>
+        </article>
 
 
-        <!-- PRODUCTO 2 -->
+        <!-- 2. BELLO ACCESORIO -->
 
-        <div class="producto">
+        <article class="producto">
 
             <img
                 src="imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-36-56-691_com.pinterest~2.jpg"
                 alt="Bello accesorio"
-                onclick="abrirModal(
-                    'Bello accesorio',
-                    'Un bello accesorio para complementar tus peinados favoritos. 💕',
-                    '$12.000',
-                    'imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-36-56-691_com.pinterest~2.jpg'
-                )"
+                onclick="abrirFoto(this)"
             >
 
             <h2>
@@ -449,31 +691,22 @@
 
             <button
                 class="boton-carrito"
-                onclick="abrirModal(
-                    'Bello accesorio',
-                    'Un bello accesorio para complementar tus peinados favoritos. 💕',
-                    '$12.000',
-                    'imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-36-56-691_com.pinterest~2.jpg'
-                )">
+                onclick="agregarProducto(this)"
+            >
                 🛒 Agregar al carrito
             </button>
 
-        </div>
+        </article>
 
 
-        <!-- PRODUCTO 3 -->
+        <!-- 3. ACCESORIO MARIPOSA -->
 
-        <div class="producto">
+        <article class="producto">
 
             <img
                 src="imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-37-27-302_com.pinterest~2.jpg"
                 alt="Lindo accesorio en forma de mariposa"
-                onclick="abrirModal(
-                    'Lindo accesorio en forma de mariposa',
-                    'Un hermoso detalle en forma de mariposa para tu cabello. 🦋',
-                    '$10.000',
-                    'imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-37-27-302_com.pinterest~2.jpg'
-                )"
+                onclick="abrirFoto(this)"
             >
 
             <h2>
@@ -490,31 +723,22 @@
 
             <button
                 class="boton-carrito"
-                onclick="abrirModal(
-                    'Lindo accesorio en forma de mariposa',
-                    'Un hermoso detalle en forma de mariposa para tu cabello. 🦋',
-                    '$10.000',
-                    'imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-37-27-302_com.pinterest~2.jpg'
-                )">
+                onclick="agregarProducto(this)"
+            >
                 🛒 Agregar al carrito
             </button>
 
-        </div>
+        </article>
 
 
-        <!-- PRODUCTO 4 -->
+        <!-- 4. ACCESORIO ESTRELLA -->
 
-        <div class="producto">
+        <article class="producto">
 
             <img
                 src="imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-38-02-130_com.pinterest~2.jpg"
                 alt="Lindo accesorio en forma de estrella"
-                onclick="abrirModal(
-                    'Lindo accesorio en forma de estrella',
-                    'Un lindo accesorio en forma de estrella para darle brillo a tu estilo. ✦',
-                    '$10.000',
-                    'imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-38-02-130_com.pinterest~2.jpg'
-                )"
+                onclick="abrirFoto(this)"
             >
 
             <h2>
@@ -531,31 +755,22 @@
 
             <button
                 class="boton-carrito"
-                onclick="abrirModal(
-                    'Lindo accesorio en forma de estrella',
-                    'Un lindo accesorio en forma de estrella para darle brillo a tu estilo. ✦',
-                    '$10.000',
-                    'imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-38-02-130_com.pinterest~2.jpg'
-                )">
+                onclick="agregarProducto(this)"
+            >
                 🛒 Agregar al carrito
             </button>
 
-        </div>
+        </article>
 
 
-        <!-- PRODUCTO 5 -->
+        <!-- 5. ACCESORIO EN FORMA DE ALAS -->
 
-        <div class="producto">
+        <article class="producto">
 
             <img
                 src="imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-39-51-993_com.pinterest~2.jpg"
                 alt="Lindo accesorio en forma de alas"
-                onclick="abrirModal(
-                    'Lindo accesorio en forma de alas',
-                    'Un precioso accesorio inspirado en unas delicadas alas. 🪽',
-                    '$20.000',
-                    'imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-39-51-993_com.pinterest~2.jpg'
-                )"
+                onclick="abrirFoto(this)"
             >
 
             <h2>
@@ -572,31 +787,22 @@
 
             <button
                 class="boton-carrito"
-                onclick="abrirModal(
-                    'Lindo accesorio en forma de alas',
-                    'Un precioso accesorio inspirado en unas delicadas alas. 🪽',
-                    '$20.000',
-                    'imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-39-51-993_com.pinterest~2.jpg'
-                )">
+                onclick="agregarProducto(this)"
+            >
                 🛒 Agregar al carrito
             </button>
 
-        </div>
+        </article>
 
 
-        <!-- PRODUCTO 6 -->
+        <!-- 6. ACCESORIO PARA EL CABELLO -->
 
-        <div class="producto">
+        <article class="producto">
 
             <img
                 src="imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-40-06-658_com.pinterest~2.jpg"
                 alt="Lindo accesorio para el cabello"
-                onclick="abrirModal(
-                    'Lindo accesorio para el cabello',
-                    'Un lindo accesorio para completar tus peinados de una manera especial. 💗',
-                    '$14.000',
-                    'imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-40-06-658_com.pinterest~2.jpg'
-                )"
+                onclick="abrirFoto(this)"
             >
 
             <h2>
@@ -613,31 +819,22 @@
 
             <button
                 class="boton-carrito"
-                onclick="abrirModal(
-                    'Lindo accesorio para el cabello',
-                    'Un lindo accesorio para completar tus peinados de una manera especial. 💗',
-                    '$14.000',
-                    'imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-40-06-658_com.pinterest~2.jpg'
-                )">
+                onclick="agregarProducto(this)"
+            >
                 🛒 Agregar al carrito
             </button>
 
-        </div>
+        </article>
 
 
-        <!-- PRODUCTO 7 -->
+        <!-- 7. DIVINO ACCESORIO -->
 
-        <div class="producto">
+        <article class="producto">
 
             <img
                 src="imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-40-41-887_com.pinterest~2.jpg"
                 alt="Divino accesorio"
-                onclick="abrirModal(
-                    'Divino accesorio',
-                    'Un divino accesorio para darle un toque bonito y delicado a tu look. ✨',
-                    '$20.000',
-                    'imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-40-41-887_com.pinterest~2.jpg'
-                )"
+                onclick="abrirFoto(this)"
             >
 
             <h2>
@@ -654,31 +851,22 @@
 
             <button
                 class="boton-carrito"
-                onclick="abrirModal(
-                    'Divino accesorio',
-                    'Un divino accesorio para darle un toque bonito y delicado a tu look. ✨',
-                    '$20.000',
-                    'imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-40-41-887_com.pinterest~2.jpg'
-                )">
+                onclick="agregarProducto(this)"
+            >
                 🛒 Agregar al carrito
             </button>
 
-        </div>
+        </article>
 
 
-        <!-- PRODUCTO 8 -->
+        <!-- 8. HERMOSO ACCESORIO -->
 
-        <div class="producto">
+        <article class="producto">
 
             <img
                 src="imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-41-05-823_com.pinterest~2.jpg"
                 alt="Hermoso accesorio"
-                onclick="abrirModal(
-                    'Hermoso accesorio:',
-                    'Un hermoso accesorio para complementar tu estilo con un toque especial. 💕',
-                    '$21.000',
-                    'imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-41-05-823_com.pinterest~2.jpg'
-                )"
+                onclick="abrirFoto(this)"
             >
 
             <h2>
@@ -695,58 +883,75 @@
 
             <button
                 class="boton-carrito"
-                onclick="abrirModal(
-                    'Hermoso accesorio:',
-                    'Un hermoso accesorio para complementar tu estilo con un toque especial. 💕',
-                    '$21.000',
-                    'imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-41-05-823_com.pinterest~2.jpg'
-                )">
+                onclick="agregarProducto(this)"
+            >
                 🛒 Agregar al carrito
             </button>
 
-        </div>
+        </article>
 
     </main>
 
 
-    <!-- CARRITO -->
+    <!-- =========================================
+         CARRITO FLOTANTE
+    ========================================= -->
 
     <a href="carrito.html" class="carrito-flotante">
 
-        🛒
+        🛒 Ver carrito
 
-        <span id="contadorCarrito">
+        <span
+            class="contador-carrito"
+            id="contador-carrito"
+        >
             0
         </span>
 
     </a>
 
 
-    <!-- MODAL -->
+    <!-- =========================================
+         MODAL
+    ========================================= -->
 
-    <div class="modal" id="modal">
+    <div
+        class="modal"
+        id="modal"
+        onclick="cerrarFoto(event)"
+    >
 
-        <div class="modal-contenido">
+        <div
+            class="modal-contenido"
+            onclick="event.stopPropagation()"
+        >
 
-            <span class="cerrar" onclick="cerrarModal()">
+            <button
+                class="cerrar"
+                onclick="cerrarFoto()"
+            >
                 ×
-            </span>
+            </button>
 
             <img
                 id="imagenModal"
                 src=""
-                alt="Producto"
+                alt=""
             >
 
             <h2 id="nombreModal"></h2>
 
             <p id="descripcionModal"></p>
 
-            <div id="precioModal"></div>
+            <div
+                class="precio"
+                id="precioModal"
+            ></div>
 
             <button
                 class="boton-carrito"
-                id="botonModal">
+                id="botonModal"
+            >
                 🛒 Agregar al carrito
             </button>
 
@@ -755,13 +960,15 @@
     </div>
 
 
-    <!-- FOOTER -->
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
 
     <footer>
 
-        <h3>
+        <p>
             🪽 Angel's Fashion World 🪽
-        </h3>
+        </p>
 
         <p>
             Moda • Belleza • Skin Care • Accesorios
@@ -770,70 +977,16 @@
     </footer>
 
 
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================= -->
+
     <script>
 
-        /* =========================================
-           CARRITO
-        ========================================= */
+        let carrito = JSON.parse(
+            localStorage.getItem("carritoAngel")
+        ) || [];
 
-        let carrito =
-            JSON.parse(
-                localStorage.getItem("carritoAngel")
-            ) || [];
-
-
-        /* =========================================
-           EVITAR NaN
-        ========================================= */
-
-        carrito = carrito.map(producto => {
-
-            let cantidad = Number(producto.cantidad);
-
-            if (!Number.isFinite(cantidad) || cantidad < 1) {
-                cantidad = 1;
-            }
-
-            return {
-                ...producto,
-                cantidad: cantidad
-            };
-
-        });
-
-
-        /* =========================================
-           ACTUALIZAR CONTADOR
-        ========================================= */
-
-        function actualizarContador() {
-
-            const contador =
-                document.getElementById("contadorCarrito");
-
-            let cantidadTotal = 0;
-
-            carrito.forEach(producto => {
-
-                const cantidad =
-                    Number(producto.cantidad);
-
-                if (
-                    Number.isFinite(cantidad) &&
-                    cantidad > 0
-                ) {
-                    cantidadTotal += cantidad;
-                }
-
-            });
-
-            contador.textContent = cantidadTotal;
-        }
-
-
-        /* =========================================
-           GUARDAR CARRITO
-        ========================================= */
 
         function guardarCarrito() {
 
@@ -846,8 +999,63 @@
         }
 
 
+        function actualizarContador() {
+
+            const contador =
+                document.getElementById("contador-carrito");
+
+            if (contador) {
+
+                let cantidad = carrito.reduce(
+                    (total, producto) =>
+                        total + (producto.cantidad || 1),
+                    0
+                );
+
+                contador.textContent = cantidad;
+            }
+        }
+
+
         /* =========================================
-           AGREGAR AL CARRITO
+           AGREGAR PRODUCTO
+        ========================================= */
+
+        function agregarProducto(boton) {
+
+            const producto =
+                boton.closest(".producto");
+
+            const nombre =
+                producto
+                    .querySelector("h2")
+                    .textContent
+                    .trim();
+
+            const precioTexto =
+                producto
+                    .querySelector(".precio")
+                    .textContent
+                    .trim();
+
+            const precio =
+                parseInt(
+                    precioTexto
+                        .replace(/\./g, "")
+                        .replace("$", "")
+                        .trim()
+                );
+
+
+            agregarAlCarrito(
+                nombre,
+                precio
+            );
+        }
+
+
+        /* =========================================
+           CARRITO
         ========================================= */
 
         function agregarAlCarrito(nombre, precio) {
@@ -862,18 +1070,8 @@
 
             if (productoExistente) {
 
-                let cantidad =
-                    Number(productoExistente.cantidad);
-
-                if (
-                    !Number.isFinite(cantidad) ||
-                    cantidad < 1
-                ) {
-                    cantidad = 0;
-                }
-
                 productoExistente.cantidad =
-                    cantidad + 1;
+                    (productoExistente.cantidad || 1) + 1;
 
             } else {
 
@@ -886,65 +1084,103 @@
                     cantidad: 1
 
                 });
-
             }
 
 
             guardarCarrito();
 
-
             alert(
-                "🩷 Producto agregado al carrito"
+                "🛍️ ¡Producto agregado al carrito! 💕"
             );
         }
 
 
         /* =========================================
-           ABRIR MODAL
+           ABRIR FOTO
         ========================================= */
 
-        function abrirModal(
-            nombre,
-            descripcion,
-            precio,
-            imagen
-        ) {
+        function abrirFoto(imagen) {
 
-            document.getElementById("modal").style.display =
-                "flex";
+            const modal =
+                document.getElementById("modal");
+
+            const imagenModal =
+                document.getElementById("imagenModal");
+
+            const nombreModal =
+                document.getElementById("nombreModal");
+
+            const descripcionModal =
+                document.getElementById("descripcionModal");
+
+            const precioModal =
+                document.getElementById("precioModal");
+
+            const botonModal =
+                document.getElementById("botonModal");
 
 
-            document.getElementById("imagenModal").src =
-                imagen;
+            imagenModal.src = imagen.src;
 
-            document.getElementById("imagenModal").alt =
-                nombre;
+            imagenModal.alt = imagen.alt;
 
 
-            document.getElementById("nombreModal").textContent =
-                nombre;
+            const producto =
+                imagen.closest(".producto");
 
 
-            document.getElementById("descripcionModal").textContent =
+            const nombre =
+                producto
+                    .querySelector("h2")
+                    .textContent
+                    .trim();
+
+
+            const descripcion =
+                producto
+                    .querySelector("p")
+                    .textContent
+                    .trim();
+
+
+            const precioTexto =
+                producto
+                    .querySelector(".precio")
+                    .textContent
+                    .trim();
+
+
+            nombreModal.textContent = nombre;
+
+            descripcionModal.textContent =
                 descripcion;
 
+            precioModal.textContent =
+                precioTexto;
 
-            document.getElementById("precioModal").textContent =
-                precio;
+
+            const precioNumerico =
+                parseInt(
+                    precioTexto
+                        .replace(/\./g, "")
+                        .replace("$", "")
+                        .trim()
+                );
 
 
-            document.getElementById("botonModal").onclick =
-                function () {
+            botonModal.onclick = function () {
 
-                    agregarAlCarrito(
-                        nombre,
-                        precio
-                    );
+                agregarAlCarrito(
+                    nombre,
+                    precioNumerico
+                );
 
-                    cerrarModal();
+            };
 
-                };
 
+            modal.classList.add("activo");
+
+            document.body.style.overflow = "hidden";
         }
 
 
@@ -952,24 +1188,40 @@
            CERRAR MODAL
         ========================================= */
 
-        function cerrarModal() {
+        function cerrarFoto(event) {
 
-            document.getElementById("modal").style.display =
-                "none";
+            if (
+                event &&
+                event.target !==
+                document.getElementById("modal")
+            ) {
+                return;
+            }
+
+
+            const modal =
+                document.getElementById("modal");
+
+            modal.classList.remove("activo");
+
+            document.body.style.overflow = "";
         }
 
 
         /* =========================================
-           CERRAR AL HACER CLIC AFUERA
+           ESC PARA CERRAR
         ========================================= */
 
-        document.getElementById("modal").addEventListener(
-            "click",
-            function (evento) {
+        document.addEventListener(
+            "keydown",
+            function(event) {
 
-                if (evento.target === this) {
+                if (event.key === "Escape") {
 
-                    cerrarModal();
+                    cerrarFoto({
+                        target:
+                            document.getElementById("modal")
+                    });
 
                 }
 
@@ -978,10 +1230,10 @@
 
 
         /* =========================================
-           INICIAR
+           CONTADOR
         ========================================= */
 
-        guardarCarrito();
+        actualizarContador();
 
     </script>
 
