@@ -1,1 +1,579 @@
 
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cuidado personal | Angel's Fashion World</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background:
+                radial-gradient(circle at top left, #ffffff 0%, transparent 35%),
+                radial-gradient(circle at bottom right, #ffe1ef 0%, transparent 40%),
+                #fff0f6;
+            color: #6b4055;
+            min-height: 100vh;
+        }
+
+        .estrella1,
+        .estrella2,
+        .estrella3,
+        .estrella4 {
+            position: fixed;
+            color: #d85b91;
+            font-size: 25px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .estrella1 {
+            top: 120px;
+            left: 20px;
+        }
+
+        .estrella2 {
+            top: 300px;
+            right: 25px;
+        }
+
+        .estrella3 {
+            bottom: 180px;
+            left: 30px;
+        }
+
+        .estrella4 {
+            bottom: 60px;
+            right: 35px;
+        }
+
+        .menu {
+            width: 92%;
+            margin: 20px auto;
+            padding: 15px;
+            background: white;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            box-shadow: 0 5px 20px rgba(216, 91, 145, 0.12);
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #6b4055;
+            font-weight: bold;
+            padding: 8px 14px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            background: #ffe1ef;
+            color: #d85b91;
+        }
+
+        header {
+            text-align: center;
+            padding: 35px 20px 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .alas {
+            font-size: 42px;
+            margin-bottom: 5px;
+        }
+
+        header h1 {
+            color: #d85b91;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+
+        .volver {
+            display: inline-block;
+            text-decoration: none;
+            background: white;
+            color: #d85b91;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(216, 91, 145, 0.12);
+        }
+
+        .volver:hover {
+            background: #ffe1ef;
+        }
+
+        .productos {
+            width: 92%;
+            max-width: 1200px;
+            margin: 20px auto 60px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .producto {
+            background: white;
+            border-radius: 25px;
+            padding: 18px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(216, 91, 145, 0.12);
+            transition: 0.3s;
+        }
+
+        .producto:hover {
+            transform: translateY(-5px);
+        }
+
+        .producto img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 20px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .producto h2 {
+            color: #d85b91;
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .producto p {
+            font-size: 15px;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .precio {
+            font-size: 20px;
+            font-weight: bold;
+            color: #6b4055;
+            margin-bottom: 15px;
+        }
+
+        .boton-carrito {
+            border: none;
+            background: #d85b91;
+            color: white;
+            padding: 11px 18px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .boton-carrito:hover {
+            background: #c5487d;
+            transform: scale(1.03);
+        }
+
+        .carrito-flotante {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: #d85b91;
+            color: white;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 25px;
+            box-shadow: 0 5px 20px rgba(216, 91, 145, 0.3);
+            z-index: 10;
+        }
+
+        #contadorCarrito {
+            position: absolute;
+            top: -5px;
+            right: -3px;
+            background: white;
+            color: #d85b91;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(107, 64, 85, 0.45);
+            z-index: 20;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-contenido {
+            background: white;
+            width: 95%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 25px;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+
+        .cerrar {
+            position: absolute;
+            top: 12px;
+            right: 18px;
+            font-size: 28px;
+            color: #d85b91;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #imagenModal {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+
+        #nombreModal {
+            color: #d85b91;
+            margin-bottom: 10px;
+        }
+
+        #descripcionModal {
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        #precioModal {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        footer h3 {
+            color: #d85b91;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 850px) {
+            .productos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .productos {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 34px;
+            }
+
+            .producto img {
+                height: 330px;
+            }
+
+            .menu {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="estrella1">✦</div>
+    <div class="estrella2">✧</div>
+    <div class="estrella3">✦</div>
+    <div class="estrella4">✧</div>
+
+    <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="moda.html">Moda</a>
+        <a href="belleza.html">Belleza</a>
+        <a href="skincare.html">Skin care</a>
+        <a href="accesorios.html">Accesorios</a>
+        <a href="sobre-nosotros.html">Sobre nosotros</a>
+        <a href="index.html#contactanos">Contáctanos</a>
+    </nav>
+
+    <header>
+        <div class="alas">🪽 ✦</div>
+
+        <h1>Cuidado personal</h1>
+
+        <p>
+            Cuida de ti y disfruta de productos especiales para tu cuidado personal. 💕
+        </p>
+
+        <a href="skincare.html" class="volver">
+            ← Volver a Skin care
+        </a>
+    </header>
+
+    <main class="productos">
+
+        <div class="producto">
+            <img
+                src="imagenes/cuidadopersonal/Screenshot_2026-09-01-10-53-55-487_com.pinterest~2.jpg"
+                alt="Combo de cuidado personal">
+
+            <h2>Combo de cuidado personal</h2>
+
+            <p>
+                Un hermoso combo para consentirte y cuidar de ti. 🩷
+            </p>
+
+            <div class="precio">$500.000</div>
+
+            <button
+                class="boton-carrito"
+                onclick="abrirModal(
+                    'Combo de cuidado personal',
+                    'Un hermoso combo para consentirte y cuidar de ti. 🩷',
+                    '$500.000',
+                    'imagenes/cuidadopersonal/Screenshot_2026-09-01-10-53-55-487_com.pinterest~2.jpg'
+                )">
+                🛒 Agregar al carrito
+            </button>
+        </div>
+
+        <div class="producto">
+            <img
+                src="imagenes/cuidadopersonal/Screenshot_2026-09-01-10-55-07-148_com.pinterest~2.jpg"
+                alt="Combo de cuidado personal">
+
+            <h2>Combo de cuidado personal</h2>
+
+            <p>
+                Todo lo que necesitas para disfrutar de tu rutina de cuidado. 🩷
+            </p>
+
+            <div class="precio">$400.000</div>
+
+            <button
+                class="boton-carrito"
+                onclick="abrirModal(
+                    'Combo de cuidado personal',
+                    'Todo lo que necesitas para disfrutar de tu rutina de cuidado. 🩷',
+                    '$400.000',
+                    'imagenes/cuidadopersonal/Screenshot_2026-09-01-10-55-07-148_com.pinterest~2.jpg'
+                )">
+                🛒 Agregar al carrito
+            </button>
+        </div>
+
+        <div class="producto">
+            <img
+                src="imagenes/cuidadopersonal/Screenshot_2026-09-01-20-18-12-112_com.pinterest~2.jpg"
+                alt="Combo de cuidado personal">
+
+            <h2>Combo de cuidado personal</h2>
+
+            <p>
+                Un combo ideal para cuidar de ti y disfrutar cada momento. 🩷
+            </p>
+
+            <div class="precio">$390.000</div>
+
+            <button
+                class="boton-carrito"
+                onclick="abrirModal(
+                    'Combo de cuidado personal',
+                    'Un combo ideal para cuidar de ti y disfrutar cada momento. 🩷',
+                    '$390.000',
+                    'imagenes/cuidadopersonal/Screenshot_2026-09-01-20-18-12-112_com.pinterest~2.jpg'
+                )">
+                🛒 Agregar al carrito
+            </button>
+        </div>
+
+        <div class="producto">
+            <img
+                src="imagenes/cuidadopersonal/Screenshot_2026-09-01-20-19-04-559_com.pinterest-edit.jpg"
+                alt="Combo de cuidado personal">
+
+            <h2>Combo de cuidado personal</h2>
+
+            <p>
+                Un lindo combo para complementar tu rutina de cuidado personal. 🩷
+            </p>
+
+            <div class="precio">$300.000</div>
+
+            <button
+                class="boton-carrito"
+                onclick="abrirModal(
+                    'Combo de cuidado personal',
+                    'Un lindo combo para complementar tu rutina de cuidado personal. 🩷',
+                    '$300.000',
+                    'imagenes/cuidadopersonal/Screenshot_2026-09-01-20-19-04-559_com.pinterest-edit.jpg'
+                )">
+                🛒 Agregar al carrito
+            </button>
+        </div>
+
+    </main>
+
+    <a href="carrito.html" class="carrito-flotante">
+        🛒
+        <span id="contadorCarrito">0</span>
+    </a>
+
+    <div class="modal" id="modal">
+
+        <div class="modal-contenido">
+
+            <span class="cerrar" onclick="cerrarModal()">×</span>
+
+            <img id="imagenModal" src="" alt="Producto">
+
+            <h2 id="nombreModal"></h2>
+
+            <p id="descripcionModal"></p>
+
+            <div id="precioModal"></div>
+
+            <button
+                class="boton-carrito"
+                id="botonModal">
+                🛒 Agregar al carrito
+            </button>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <h3>🪽 Angel's Fashion World 🪽</h3>
+        <p>Moda • Belleza • Skin Care • Accesorios</p>
+    </footer>
+
+    <script>
+        let carrito = JSON.parse(localStorage.getItem("carritoAngel")) || [];
+
+        function actualizarContador() {
+            const contador = document.getElementById("contadorCarrito");
+
+            const cantidadTotal = carrito.reduce(
+                (total, producto) => total + producto.cantidad,
+                0
+            );
+
+            contador.textContent = cantidadTotal;
+        }
+
+        function guardarCarrito() {
+            localStorage.setItem(
+                "carritoAngel",
+                JSON.stringify(carrito)
+            );
+
+            actualizarContador();
+        }
+
+        function agregarAlCarrito(nombre, precio) {
+
+            const productoExistente = carrito.find(
+                producto =>
+                    producto.nombre === nombre &&
+                    producto.precio === precio
+            );
+
+            if (productoExistente) {
+                productoExistente.cantidad++;
+            } else {
+                carrito.push({
+                    nombre: nombre,
+                    precio: precio,
+                    cantidad: 1
+                });
+            }
+
+            guardarCarrito();
+
+            alert("🩷 Producto agregado al carrito");
+        }
+
+        function abrirModal(nombre, descripcion, precio, imagen) {
+
+            document.getElementById("modal").style.display = "flex";
+
+            document.getElementById("imagenModal").src = imagen;
+            document.getElementById("imagenModal").alt = nombre;
+
+            document.getElementById("nombreModal").textContent = nombre;
+            document.getElementById("descripcionModal").textContent = descripcion;
+            document.getElementById("precioModal").textContent = precio;
+
+            document.getElementById("botonModal").onclick = function () {
+                agregarAlCarrito(nombre, precio);
+                cerrarModal();
+            };
+        }
+
+        function cerrarModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+
+        document.getElementById("modal").addEventListener(
+            "click",
+            function (evento) {
+                if (evento.target === this) {
+                    cerrarModal();
+                }
+            }
+        );
+
+        actualizarContador();
+    </script>
+
+</body>
+
+</html>
