@@ -1,1 +1,1580 @@
 
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Joyería | Angel's Fashion World</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background:
+                radial-gradient(circle at top left, #ffffff 0%, transparent 35%),
+                radial-gradient(circle at bottom right, #ffe1ef 0%, transparent 40%),
+                #fff0f6;
+            color: #6b4055;
+            min-height: 100vh;
+        }
+
+        /* ESTRELLAS */
+
+        .estrella1,
+        .estrella2,
+        .estrella3,
+        .estrella4 {
+            position: fixed;
+            font-size: 28px;
+            color: #d85b91;
+            z-index: 0;
+            pointer-events: none;
+            animation: flotar 3s ease-in-out infinite;
+        }
+
+        .estrella1 {
+            top: 120px;
+            left: 4%;
+        }
+
+        .estrella2 {
+            top: 280px;
+            right: 5%;
+            animation-delay: .7s;
+        }
+
+        .estrella3 {
+            bottom: 180px;
+            left: 6%;
+            animation-delay: 1.3s;
+        }
+
+        .estrella4 {
+            bottom: 80px;
+            right: 7%;
+            animation-delay: 2s;
+        }
+
+        @keyframes flotar {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-12px) rotate(12deg);
+            }
+        }
+
+        /* MENÚ */
+
+        .menu {
+            width: 92%;
+            max-width: 1200px;
+            margin: 25px auto 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            background: rgba(255, 255, 255, 0.92);
+            padding: 14px 18px;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 8px 25px rgba(216, 91, 145, 0.15);
+
+            border: 1px solid #f5d3e2;
+
+            position: relative;
+            z-index: 10;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #6b4055;
+            font-weight: bold;
+
+            padding: 10px 16px;
+            border-radius: 20px;
+
+            transition: .3s ease;
+        }
+
+        .menu a:hover {
+            background: #ffe0ed;
+            color: #d85b91;
+            transform: translateY(-2px);
+        }
+
+        /* PRESENTACIÓN */
+
+        header {
+            width: 92%;
+            max-width: 1000px;
+
+            margin: 35px auto 45px;
+
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.94);
+
+            padding: 35px 25px;
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 12px 35px rgba(216, 91, 145, 0.18);
+
+            border: 1px solid #f5d3e2;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .alas-con-estrella {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+
+            margin-bottom: 5px;
+        }
+
+        .alas {
+            font-size: 48px;
+            display: inline-block;
+            animation: alasMovimiento 3s ease-in-out infinite;
+        }
+
+        .estrella-alas {
+            font-size: 25px;
+            color: #d85b91;
+            animation: estrellaMovimiento 2s ease-in-out infinite;
+        }
+
+        @keyframes alasMovimiento {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-7px) rotate(-4deg);
+            }
+        }
+
+        @keyframes estrellaMovimiento {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+            }
+
+            50% {
+                transform: scale(1.25) rotate(15deg);
+            }
+        }
+
+        header h1 {
+            color: #d85b91;
+            font-size: 42px;
+            margin: 5px 0 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .volver {
+            display: inline-block;
+            text-decoration: none;
+            background: #d85b91;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: .3s ease;
+        }
+
+        .volver:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 18px rgba(216, 91, 145, .25);
+        }
+
+        /* PRODUCTOS */
+
+        .productos {
+            width: 92%;
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 28px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .producto {
+            background: white;
+            border-radius: 25px;
+            padding: 18px;
+            text-align: center;
+
+            box-shadow:
+                0 10px 25px rgba(107, 64, 85, 0.12);
+
+            border: 1px solid #f5d3e2;
+
+            transition: .3s ease;
+        }
+
+        .producto:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 15px 30px rgba(216, 91, 145, 0.18);
+        }
+
+        .producto img {
+            width: 100%;
+            height: 330px;
+
+            object-fit: cover;
+
+            border-radius: 20px;
+
+            cursor: pointer;
+
+            display: block;
+
+            transition: .3s ease;
+        }
+
+        .producto img:hover {
+            transform: scale(1.02);
+        }
+
+        .producto h2 {
+            color: #d85b91;
+            font-size: 21px;
+            margin: 18px 5px 8px;
+        }
+
+        .producto p {
+            font-size: 15px;
+            line-height: 1.5;
+            margin: 0 5px 12px;
+        }
+
+        .precio {
+            color: #6b4055;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .boton-carrito {
+            display: inline-block;
+            border: none;
+
+            background: #d85b91;
+            color: white;
+
+            padding: 11px 18px;
+
+            border-radius: 22px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: .3s ease;
+        }
+
+        .boton-carrito:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 6px 15px rgba(216, 91, 145, .25);
+        }
+
+        /* CARRITO */
+
+        .carrito-flotante {
+            position: fixed;
+
+            right: 20px;
+            bottom: 20px;
+
+            z-index: 100;
+
+            text-decoration: none;
+
+            background: white;
+            color: #d85b91;
+
+            padding: 14px 20px;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 8px 25px rgba(107, 64, 85, 0.2);
+
+            border: 1px solid #f5d3e2;
+
+            transition: .3s ease;
+        }
+
+        .carrito-flotante:hover {
+            transform: translateY(-4px);
+        }
+
+        .contador-carrito {
+            display: inline-flex;
+
+            justify-content: center;
+            align-items: center;
+
+            min-width: 24px;
+            height: 24px;
+
+            margin-left: 5px;
+
+            padding: 0 6px;
+
+            border-radius: 50%;
+
+            background: #d85b91;
+            color: white;
+
+            font-size: 13px;
+        }
+
+        /* MODAL */
+
+        .modal {
+            display: none;
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 200;
+
+            background: rgba(60, 30, 45, .75);
+
+            justify-content: center;
+            align-items: center;
+
+            padding: 10px;
+        }
+
+        .modal.activo {
+            display: flex;
+        }
+
+        .modal-contenido {
+            width: min(900px, 95%);
+
+            max-height: 95vh;
+
+            overflow-y: auto;
+
+            background: white;
+
+            border-radius: 25px;
+
+            padding: 20px;
+
+            text-align: center;
+
+            position: relative;
+        }
+
+        .modal-contenido img {
+            display: block;
+
+            width: auto;
+            height: auto;
+
+            max-width: 100%;
+            max-height: 75vh;
+
+            object-fit: contain;
+
+            border-radius: 18px;
+
+            margin: 0 auto;
+        }
+
+        .cerrar {
+            position: absolute;
+
+            top: 10px;
+            right: 15px;
+
+            width: 40px;
+            height: 40px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: #d85b91;
+            color: white;
+
+            font-size: 24px;
+
+            cursor: pointer;
+
+            z-index: 5;
+        }
+
+        .modal h2 {
+            color: #d85b91;
+            margin: 15px 0 8px;
+        }
+
+        .modal p {
+            margin-bottom: 10px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+
+            margin-top: 70px;
+
+            padding: 30px 20px;
+
+            background: white;
+
+            border-top: 1px solid #f5d3e2;
+
+            color: #6b4055;
+
+            line-height: 1.8;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 850px) {
+
+            .productos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .producto img {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .menu {
+                width: 94%;
+                gap: 5px;
+                padding: 12px 8px;
+            }
+
+            .menu a {
+                padding: 8px 10px;
+                font-size: 14px;
+            }
+
+            header {
+                margin-top: 25px;
+                padding: 28px 18px;
+            }
+
+            header h1 {
+                font-size: 35px;
+            }
+
+            .productos {
+                grid-template-columns: 1fr;
+            }
+
+            .producto img {
+                height: auto;
+                max-height: 500px;
+            }
+
+            .modal {
+                padding: 5px;
+            }
+
+            .modal-contenido {
+                width: 98%;
+                max-height: 96vh;
+                padding: 15px;
+            }
+
+            .modal-contenido img {
+                max-width: 100%;
+                max-height: 65vh;
+                width: auto;
+                height: auto;
+                object-fit: contain;
+            }
+
+            .carrito-flotante {
+                right: 12px;
+                bottom: 12px;
+                padding: 12px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ESTRELLAS -->
+<div class="estrella1">✦</div>
+    <div class="estrella2">✧</div>
+    <div class="estrella3">✦</div>
+    <div class="estrella4">✧</div>
+
+
+    <!-- MENÚ -->
+
+    <nav class="menu">
+
+        <a href="index.html">Inicio</a>
+        <a href="moda.html">Moda</a>
+        <a href="belleza.html">Belleza</a>
+        <a href="skincare.html">Skin care</a>
+        <a href="accesorios.html">Accesorios</a>
+        <a href="sobre-nosotros.html">Sobre nosotros</a>
+        <a href="index.html#contactanos">Contáctanos</a>
+
+    </nav>
+
+
+    <!-- PRESENTACIÓN -->
+
+    <header>
+
+        <div class="alas-con-estrella">
+
+            <span class="alas">🪽</span>
+
+            <span class="estrella-alas">✦</span>
+
+        </div>
+
+        <h1>Joyería</h1>
+
+        <p>
+            Descubre joyas hermosas para darle un toque
+            especial a tu estilo. 💕
+        </p>
+
+        <a href="accesorios.html" class="volver">
+            ← Volver a Accesorios
+        </a>
+
+    </header>
+
+
+    <!-- PRODUCTOS -->
+
+    <main class="productos">
+
+
+        <!-- 1 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-09-28-435_com.pinterest~2.jpg"
+                alt="Lindo collar"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Lindo collar</h2>
+
+            <div class="precio">$19.000</div>
+
+            <p>
+                Un lindo collar para complementar
+                tus looks favoritos.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 2 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-10-00-655_com.pinterest~2.jpg"
+                alt="Lindo corazoncito"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Lindo corazoncito</h2>
+
+            <div class="precio">$500.000</div>
+
+            <p>
+                Un lindo detalle en forma de corazón
+                para complementar tu estilo.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 3 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-10-40-364_com.pinterest~2.jpg"
+                alt="Lindo collar"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Lindo collar</h2>
+
+            <div class="precio">$20.000</div>
+
+            <p>
+                Un collar lindo y delicado para
+                tus outfits favoritos.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 4 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-11-20-537_com.pinterest~2.jpg"
+                alt="Collar bonito"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Collar bonito</h2>
+
+            <div class="precio">$400.000</div>
+
+            <p>
+                Un collar bonito para darle un toque
+                especial a tu estilo.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 5 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-11-36-363_com.pinterest~2.jpg"
+                alt="Elegante collar"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Elegante collar</h2>
+
+            <div class="precio">$80.000.000</div>
+
+            <p>
+                Un elegante collar para completar
+                tus looks.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 6 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-11-49-718_com.pinterest~2.jpg"
+                alt="Divino collar"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Divino collar</h2>
+
+            <div class="precio">$90.000.000</div>
+
+            <p>
+                Un divino collar para darle elegancia
+                a tu estilo.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 7 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-12-37-506_com.pinterest~2.jpg"
+                alt="Belleza de collar y aretes"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Belleza de collar y aretes</h2>
+
+            <div class="precio">$99.000.000</div>
+
+            <p>
+                Un hermoso conjunto de collar y aretes
+                para completar tu estilo.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 8 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-12-45-889_com.pinterest~2.jpg"
+                alt="Divino collar"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Divino collar</h2>
+
+            <div class="precio">$98.000.000</div>
+
+            <p>
+                Un divino collar para complementar
+                tus outfits.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 9 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-12-04-751_com.pinterest~2.jpg"
+                alt="Divino collar"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Divino collar</h2>
+
+            <div class="precio">$30.000</div>
+
+            <p>
+                Un collar divino para darle un toque
+                especial a tu estilo.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 10 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-13-47-404_com.pinterest~2.jpg"
+                alt="Divina pulsera"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Divina pulsera</h2>
+
+            <div class="precio">$18.000</div>
+
+            <p>
+                Una divina pulsera para completar
+                tus looks favoritos.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 11 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-14-22-676_com.pinterest~2.jpg"
+                alt="Elegante pulsera"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Elegante pulsera</h2>
+
+            <div class="precio">$5.000.000</div>
+
+            <p>
+                Una elegante pulsera para darle
+                un toque especial a tu estilo.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 12 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-14-37-275_com.pinterest~2.jpg"
+                alt="Divina pulsera"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Divina pulsera</h2>
+
+            <div class="precio">$4.000.000</div>
+
+            <p>
+                Una pulsera divina para complementar
+                tus outfits favoritos.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 13 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-14-54-397_com.pinterest~2.jpg"
+                alt="Divinas pulseras"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Divinas pulseras</h2>
+
+            <div class="precio">$7.777.000</div>
+
+            <p>
+                Divinas pulseras para complementar
+                diferentes estilos.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 14 -->
+<article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-16-35-919_com.pinterest~2.jpg"
+                alt="Linda pulsera Pandora"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Linda pulsera Pandora</h2>
+
+            <div class="precio">$2.000.000</div>
+
+            <p>
+                Una linda pulsera para darle un toque
+                especial a tu estilo.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 15 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-18-01-544_com.pinterest~2.jpg"
+                alt="Linda pulsera"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Linda pulsera</h2>
+
+            <div class="precio">$3.000.000</div>
+
+            <p>
+                Una linda pulsera para complementar
+                tus looks favoritos.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 16 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-18-14-802_com.pinterest~2.jpg"
+                alt="Pulseras"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Pulseras</h2>
+
+            <div class="precio">$9.000.000</div>
+
+            <p>
+                Pulseras bonitas para completar
+                tus diferentes looks.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 17 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-19-23-498_com.pinterest~2.jpg"
+                alt="Pulseras Dior"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Pulseras Dior</h2>
+
+            <div class="precio">$7.000.000</div>
+
+            <p>
+                Pulseras elegantes para darle
+                un toque especial a tu estilo.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 18 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-21-22-076_com.pinterest~2.jpg"
+                alt="Divinos aretes"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Divinos aretes</h2>
+
+            <div class="precio">$4.000.000</div>
+
+            <p>
+                Divinos aretes para complementar
+                tus looks favoritos.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 19 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-21-06-179_com.pinterest~2.jpg"
+                alt="Aretes Chanel"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Aretes Chanel</h2>
+
+            <div class="precio">$5.000.000</div>
+
+            <p>
+                Aretes elegantes para darle un toque
+                especial a tu estilo.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 20 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-21-32-059_com.pinterest~2.jpg"
+                alt="Bellos aretes Chanel"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Bellos aretes Chanel</h2>
+
+            <div class="precio">$5.000.000</div>
+
+            <p>
+                Bellos aretes para completar
+                tus outfits favoritos.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 21 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-22-48-051_com.pinterest~2.jpg"
+                alt="Aretes bonitos"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Aretes bonitos</h2>
+
+            <div class="precio">$5.000.000</div>
+
+            <p>
+                Aretes bonitos para darle un toque
+                especial a tus looks.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 22 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-24-45-044_com.pinterest~2.jpg"
+                alt="Lindo anillo de corazón"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Lindo anillo de corazón</h2>
+
+            <div class="precio">$7.000.000</div>
+
+            <p>
+                Un lindo anillo de corazón para
+                complementar tu estilo.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 23 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-27-28-120_com.pinterest~2.jpg"
+                alt="Lindo anillo"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Lindo anillo</h2>
+
+            <div class="precio">$50.000</div>
+
+            <p>
+                Un lindo anillo para completar
+                tus looks favoritos.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 24 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-28-14-687_com.pinterest~2.jpg"
+                alt="Anillo elegante"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Anillo elegante</h2>
+
+            <div class="precio">$99.000.000</div>
+
+            <p>
+                Un anillo elegante para darle
+                un toque especial a tu estilo.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 25 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-27-56-305_com.pinterest~2.jpg"
+                alt="Bello anillo elegante"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Bello anillo elegante</h2>
+
+            <div class="precio">$97.000.000</div>
+
+            <p>
+                Un bello anillo elegante para
+                completar tus outfits.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 26 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-29-12-127_com.pinterest~2.jpg"
+                alt="Elegante anillo"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Elegante anillo</h2>
+
+            <div class="precio">$99.888.000</div>
+
+            <p>
+                Un elegante anillo para darle
+                un toque especial a tu estilo.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 27 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/joyeria/Screenshot_2026-09-01-11-26-16-816_com.pinterest~2.jpg"
+                alt="Lindo anillo"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Lindo anillo</h2>
+
+            <div class="precio">$99.777.000</div>
+
+            <p>
+                Un lindo anillo para completar
+                tus looks favoritos.
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+    </main>
+
+
+    <!-- CARRITO FLOTANTE -->
+<a href="carrito.html" class="carrito-flotante">
+
+        🛒 Ver carrito
+
+        <span
+            class="contador-carrito"
+            id="contador-carrito"
+        >
+            0
+        </span>
+
+    </a>
+
+
+    <!-- MODAL -->
+
+    <div
+        class="modal"
+        id="modal"
+        onclick="cerrarFoto(event)"
+    >
+
+        <div
+            class="modal-contenido"
+            onclick="event.stopPropagation()"
+        >
+
+            <button
+                class="cerrar"
+                onclick="cerrarFoto()"
+            >
+                ×
+            </button>
+
+            <img
+                id="imagenModal"
+                src=""
+                alt=""
+            >
+
+            <h2 id="nombreModal"></h2>
+
+            <p id="descripcionModal"></p>
+
+            <div
+                class="precio"
+                id="precioModal"
+            ></div>
+
+            <button
+                class="boton-carrito"
+                id="botonModal"
+            >
+                🛒 Agregar al carrito
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            🪽 Angel's Fashion World 🪽
+        </p>
+
+        <p>
+            Moda • Belleza • Skin Care • Accesorios
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function abrirFoto(imagen) {
+
+            const modal =
+                document.getElementById("modal");
+
+            const imagenModal =
+                document.getElementById("imagenModal");
+
+            const nombreModal =
+                document.getElementById("nombreModal");
+
+            const descripcionModal =
+                document.getElementById("descripcionModal");
+
+            const precioModal =
+                document.getElementById("precioModal");
+
+            const botonModal =
+                document.getElementById("botonModal");
+
+            const producto =
+                imagen.closest(".producto");
+
+            const nombre =
+                producto
+                    .querySelector("h2")
+                    .textContent
+                    .trim();
+
+            const descripcion =
+                producto
+                    .querySelector("p")
+                    .textContent
+                    .trim();
+
+            const precioTexto =
+                producto
+                    .querySelector(".precio")
+                    .textContent
+                    .trim();
+
+            imagenModal.src =
+                imagen.src;
+
+            imagenModal.alt =
+                imagen.alt;
+
+            nombreModal.textContent =
+                nombre;
+
+            descripcionModal.textContent =
+                descripcion;
+
+            precioModal.textContent =
+                precioTexto;
+
+            const precioNumero =
+                parseInt(
+                    precioTexto.replace(/\D/g, ""),
+                    10
+                );
+
+            botonModal.onclick = function () {
+
+                agregarAlCarrito(
+                    nombre,
+                    precioNumero
+                );
+
+                cerrarFoto();
+            };
+
+            modal.classList.add("activo");
+        }
+
+
+        function cerrarFoto(event) {
+
+            if (
+                !event ||
+                event.target ===
+                document.getElementById("modal") ||
+                event.target.classList.contains("cerrar")
+            ) {
+
+                document
+                    .getElementById("modal")
+                    .classList.remove("activo");
+            }
+        }
+
+
+        function agregarProducto(boton) {
+
+            const producto =
+                boton.closest(".producto");
+
+            const nombre =
+                producto
+                    .querySelector("h2")
+                    .textContent
+                    .trim();
+
+            const precioTexto =
+                producto
+                    .querySelector(".precio")
+                    .textContent
+                    .trim();
+
+            const precio =
+                parseInt(
+                    precioTexto.replace(/\D/g, ""),
+                    10
+                );
+
+            agregarAlCarrito(
+                nombre,
+                precio
+            );
+        }
+
+
+        function agregarAlCarrito(
+            nombre,
+            precio
+        ) {
+
+            let carrito =
+                JSON.parse(
+                    localStorage.getItem("carrito")
+                ) || [];
+
+            const productoExistente =
+                carrito.find(
+                    producto =>
+                        producto.nombre === nombre &&
+                        producto.precio === precio
+                );
+
+            if (productoExistente) {
+
+                productoExistente.cantidad++;
+
+            } else {
+
+                carrito.push({
+
+                    nombre: nombre,
+
+                    precio: precio,
+
+                    cantidad: 1
+
+                });
+            }
+
+            localStorage.setItem(
+                "carrito",
+                JSON.stringify(carrito)
+            );
+
+            actualizarContador();
+        }
+
+
+        function actualizarContador() {
+
+            const carrito =
+                JSON.parse(
+                    localStorage.getItem("carrito")
+                ) || [];
+
+            const cantidad =
+                carrito.reduce(
+                    (total, producto) =>
+                        total +
+                        (producto.cantidad || 1),
+                    0
+                );
+
+            document
+                .getElementById("contador-carrito")
+                .textContent = cantidad;
+        }
+
+
+        actualizarContador();
+
+    </script>
+
+</body>
+
+</html>
