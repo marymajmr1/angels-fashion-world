@@ -1,1 +1,887 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cuidado para la cara | Angel's Fashion World</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background:
+                radial-gradient(circle at top left, #ffffff 0%, transparent 35%),
+                radial-gradient(circle at bottom right, #ffe1ef 0%, transparent 40%),
+                #fff0f6;
+            color: #6b4055;
+            min-height: 100vh;
+        }
+
+        .estrella1,
+        .estrella2,
+        .estrella3,
+        .estrella4 {
+            position: fixed;
+            font-size: 28px;
+            color: #d85b91;
+            z-index: 0;
+            pointer-events: none;
+            animation: flotar 3s ease-in-out infinite;
+        }
+
+        .estrella1 {
+            top: 120px;
+            left: 4%;
+        }
+
+        .estrella2 {
+            top: 280px;
+            right: 5%;
+            animation-delay: .7s;
+        }
+
+        .estrella3 {
+            bottom: 180px;
+            left: 6%;
+            animation-delay: 1.3s;
+        }
+
+        .estrella4 {
+            bottom: 80px;
+            right: 7%;
+            animation-delay: 2s;
+        }
+
+        @keyframes flotar {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-12px) rotate(12deg);
+            }
+        }
+
+        .menu {
+            width: 92%;
+            max-width: 1200px;
+            margin: 25px auto 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.92);
+            padding: 14px 18px;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(216, 91, 145, 0.15);
+            border: 1px solid #f5d3e2;
+            position: relative;
+            z-index: 10;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #6b4055;
+            font-weight: bold;
+            padding: 10px 16px;
+            border-radius: 20px;
+            transition: .3s ease;
+        }
+
+        .menu a:hover {
+            background: #ffe0ed;
+            color: #d85b91;
+            transform: translateY(-2px);
+        }
+
+        header {
+            width: 92%;
+            max-width: 1000px;
+            margin: 35px auto 45px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.94);
+            padding: 35px 25px;
+            border-radius: 30px;
+            box-shadow: 0 12px 35px rgba(216, 91, 145, 0.18);
+            border: 1px solid #f5d3e2;
+            position: relative;
+            z-index: 2;
+        }
+
+        .alas-con-estrella {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 5px;
+        }
+
+        .alas {
+            font-size: 48px;
+            display: inline-block;
+            animation: alasMovimiento 3s ease-in-out infinite;
+        }
+
+        .estrella-alas {
+            font-size: 25px;
+            color: #d85b91;
+            animation: estrellaMovimiento 2s ease-in-out infinite;
+        }
+
+        @keyframes alasMovimiento {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-7px) rotate(-4deg);
+            }
+        }
+
+        @keyframes estrellaMovimiento {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+            }
+
+            50% {
+                transform: scale(1.25) rotate(15deg);
+            }
+        }
+
+        header h1 {
+            color: #d85b91;
+            font-size: 42px;
+            margin: 5px 0 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .volver {
+            display: inline-block;
+            text-decoration: none;
+            background: #d85b91;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: .3s ease;
+        }
+
+        .volver:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 18px rgba(216, 91, 145, .25);
+        }
+
+        .productos {
+            width: 92%;
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .producto {
+            background: white;
+            border-radius: 25px;
+            padding: 18px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(107, 64, 85, 0.12);
+            border: 1px solid #f5d3e2;
+            transition: .3s ease;
+        }
+
+        .producto:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 30px rgba(216, 91, 145, 0.18);
+        }
+
+        .producto img {
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+            border-radius: 20px;
+            cursor: pointer;
+            display: block;
+            transition: .3s ease;
+        }
+
+        .producto img:hover {
+            transform: scale(1.02);
+        }
+
+        .producto h2 {
+            color: #d85b91;
+            font-size: 21px;
+            margin: 18px 5px 8px;
+        }
+
+        .producto p {
+            font-size: 15px;
+            line-height: 1.5;
+            margin: 0 5px 12px;
+        }
+
+        .precio {
+            color: #6b4055;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .boton-carrito {
+            display: inline-block;
+            border: none;
+            background: #d85b91;
+            color: white;
+            padding: 11px 18px;
+            border-radius: 22px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+
+        .boton-carrito:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(216, 91, 145, .25);
+        }
+
+        .carrito-flotante {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 100;
+            text-decoration: none;
+            background: white;
+            color: #d85b91;
+            padding: 14px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            box-shadow: 0 8px 25px rgba(107, 64, 85, 0.2);
+            border: 1px solid #f5d3e2;
+            transition: .3s ease;
+        }
+
+        .carrito-flotante:hover {
+            transform: translateY(-4px);
+        }
+
+        .contador-carrito {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 24px;
+            height: 24px;
+            margin-left: 5px;
+            padding: 0 6px;
+            border-radius: 50%;
+            background: #d85b91;
+            color: white;
+            font-size: 13px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: rgba(60, 30, 45, .75);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal.activo {
+            display: flex;
+        }
+
+        .modal-contenido {
+            width: min(900px, 95%);
+            max-height: 95vh;
+            overflow-y: auto;
+            background: white;
+            border-radius: 25px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .modal-contenido img {
+            max-width: 100%;
+            max-height: 65vh;
+            object-fit: contain;
+            border-radius: 18px;
+        }
+
+        .cerrar {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            background: #d85b91;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 5;
+        }
+
+        .modal h2 {
+            color: #d85b91;
+            margin: 15px 0 8px;
+        }
+
+        .modal p {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 70px;
+            padding: 30px 20px;
+            background: white;
+            border-top: 1px solid #f5d3e2;
+            color: #6b4055;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 850px) {
+
+            .productos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .producto img {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .menu {
+                width: 94%;
+                gap: 5px;
+                padding: 12px 8px;
+            }
+
+            .menu a {
+                padding: 8px 10px;
+                font-size: 14px;
+            }
+
+            header {
+                margin-top: 25px;
+                padding: 28px 18px;
+            }
+
+            header h1 {
+                font-size: 35px;
+            }
+
+            .productos {
+                grid-template-columns: 1fr;
+            }
+
+            .producto img {
+                height: auto;
+                max-height: 500px;
+            }
+
+            .carrito-flotante {
+                right: 12px;
+                bottom: 12px;
+                padding: 12px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="estrella1">✦</div>
+    <div class="estrella2">✧</div>
+    <div class="estrella3">✦</div>
+    <div class="estrella4">✧</div>
+
+
+    <!-- MENÚ -->
+
+    <nav class="menu">
+
+        <a href="index.html">Inicio</a>
+        <a href="moda.html">Moda</a>
+        <a href="belleza.html">Belleza</a>
+        <a href="skincare.html">Skin care</a>
+        <a href="accesorios.html">Accesorios</a>
+        <a href="sobre-nosotros.html">Sobre nosotros</a>
+        <a href="index.html#contactanos">Contáctanos</a>
+
+    </nav>
+
+
+    <!-- PRESENTACIÓN -->
+
+    <header>
+
+        <div class="alas-con-estrella">
+
+            <span class="alas">🪽</span>
+
+            <span class="estrella-alas">✦</span>
+
+        </div>
+
+        <h1>Cuidado para la cara</h1>
+
+        <p>
+            Cuida tu piel y hazla brillar en Angel's Fashion World 💕
+        </p>
+
+        <a href="skincare.html" class="volver">
+            ← Volver a Skin care
+        </a>
+
+    </header>
+
+
+    <!-- PRODUCTOS -->
+
+    <main class="productos">
+
+
+        <!-- 1 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/cuidadoparalacara/Screenshot_2026-09-01-10-07-53-875_com.pinterest-edit.jpg"
+                alt="Producto para tu cara linda"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Producto para tu cara linda</h2>
+
+            <p>
+                Un producto especial para cuidar
+                y consentir tu rostro.
+            </p>
+
+            <div class="precio">
+                $100.000
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 2 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/cuidadoparalacara/Screenshot_2026-09-01-10-10-02-516_com.pinterest-edit.jpg"
+                alt="Producto para que sigas teniendo tu piel brillante"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Producto para que sigas teniendo tu piel brillante</h2>
+
+            <p>
+                Un producto pensado para acompañar
+                tu rutina de cuidado facial.
+            </p>
+
+            <div class="precio">
+                $270.000
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 3 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/cuidadoparalacara/Screenshot_2026-09-01-10-08-40-748_com.pinterest-edit.jpg"
+                alt="Producto para tu cara bonita"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Producto para tu cara bonita</h2>
+
+            <p>
+                Un producto para complementar
+                el cuidado de tu rostro.
+            </p>
+
+            <div class="precio">
+                $300.000
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 4 -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/cuidadoparalacara/Screenshot_2026-09-01-10-10-34-146_com.pinterest-edit.jpg"
+                alt="Cuida de tu cara bonita"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Cuida de tu cara bonita</h2>
+
+            <p>
+                Un producto para acompañar
+                tu rutina de cuidado facial.
+            </p>
+
+            <div class="precio">
+                $290.000
+            </div>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+    </main>
+
+
+    <!-- CARRITO -->
+
+    <a href="carrito.html" class="carrito-flotante">
+
+        🛒 Ver carrito
+
+        <span class="contador-carrito" id="contador-carrito">
+            0
+        </span>
+
+    </a>
+
+
+    <!-- MODAL -->
+
+    <div
+        class="modal"
+        id="modal"
+        onclick="cerrarFoto(event)"
+    >
+
+        <div
+            class="modal-contenido"
+            onclick="event.stopPropagation()"
+        >
+
+            <button
+                class="cerrar"
+                onclick="cerrarFoto()"
+            >
+                ×
+            </button>
+
+            <img
+                id="imagenModal"
+                src=""
+                alt=""
+            >
+
+            <h2 id="nombreModal"></h2>
+
+            <p id="descripcionModal"></p>
+
+            <div
+                class="precio"
+                id="precioModal"
+            ></div>
+
+            <button
+                class="boton-carrito"
+                id="botonModal"
+            >
+                🛒 Agregar al carrito
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            🪽 Angel's Fashion World 🪽
+        </p>
+
+        <p>
+            Moda • Belleza • Skin Care • Accesorios
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        let carrito = JSON.parse(
+            localStorage.getItem("carritoAngel")
+        ) || [];
+
+
+        function guardarCarrito() {
+
+            localStorage.setItem(
+                "carritoAngel",
+                JSON.stringify(carrito)
+            );
+
+            actualizarContador();
+        }
+
+
+        function actualizarContador() {
+
+            const contador =
+                document.getElementById("contador-carrito");
+
+            if (contador) {
+
+                let cantidad = carrito.reduce(
+                    (total, producto) =>
+                        total + (producto.cantidad || 1),
+                    0
+                );
+
+                contador.textContent = cantidad;
+            }
+        }
+
+
+        function agregarProducto(boton) {
+
+            const producto =
+                boton.closest(".producto");
+
+            const nombre =
+                producto
+                    .querySelector("h2")
+                    .textContent
+                    .trim();
+
+            const precioTexto =
+                producto
+                    .querySelector(".precio")
+                    .textContent
+                    .trim();
+
+            const precio =
+                parseInt(
+                    precioTexto
+                        .replace(/\./g, "")
+                        .replace("$", "")
+                        .trim()
+                );
+
+            agregarAlCarrito(nombre, precio);
+        }
+
+
+        function agregarAlCarrito(nombre, precio) {
+
+            const productoExistente =
+                carrito.find(
+                    producto =>
+                        producto.nombre === nombre &&
+                        producto.precio === precio
+                );
+
+
+            if (productoExistente) {
+
+                productoExistente.cantidad =
+                    (productoExistente.cantidad || 1) + 1;
+
+            } else {
+
+                carrito.push({
+                    nombre: nombre,
+                    precio: precio,
+                    cantidad: 1
+                });
+
+            }
+
+
+            guardarCarrito();
+
+            alert(
+                "🧴 ¡Producto agregado al carrito! 💕"
+            );
+        }
+
+
+        function abrirFoto(imagen) {
+
+            const modal =
+                document.getElementById("modal");
+
+            const imagenModal =
+                document.getElementById("imagenModal");
+
+            const nombreModal =
+                document.getElementById("nombreModal");
+
+            const descripcionModal =
+                document.getElementById("descripcionModal");
+
+            const precioModal =
+                document.getElementById("precioModal");
+
+            const botonModal =
+                document.getElementById("botonModal");
+
+
+            imagenModal.src = imagen.src;
+
+            imagenModal.alt = imagen.alt;
+
+
+            const producto =
+                imagen.closest(".producto");
+
+
+            const nombre =
+                producto
+                    .querySelector("h2")
+                    .textContent
+                    .trim();
+
+            const descripcion =
+                producto
+                    .querySelector("p")
+                    .textContent
+                    .trim();
+
+            const precioTexto =
+                producto
+                    .querySelector(".precio")
+                    .textContent
+                    .trim();
+
+
+            nombreModal.textContent = nombre;
+
+            descripcionModal.textContent =
+                descripcion;
+
+            precioModal.textContent =
+                precioTexto;
+
+
+            const precioNumerico =
+                parseInt(
+                    precioTexto
+                        .replace(/\./g, "")
+                        .replace("$", "")
+                        .trim()
+                );
+
+
+            botonModal.onclick = function () {
+
+                agregarAlCarrito(
+                    nombre,
+                    precioNumerico
+                );
+
+            };
+
+
+            modal.classList.add("activo");
+
+            document.body.style.overflow = "hidden";
+        }
+
+
+        function cerrarFoto(event) {
+
+            if (
+                event &&
+                event.target !==
+                document.getElementById("modal")
+            ) {
+                return;
+            }
+
+
+            const modal =
+                document.getElementById("modal");
+
+            modal.classList.remove("activo");
+
+            document.body.style.overflow = "";
+        }
+
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Escape") {
+
+                    cerrarFoto({
+                        target:
+                            document.getElementById("modal")
+                    });
+
+                }
+
+            }
+        );
+
+
+        actualizarContador();
+
+    </script>
+
+</body>
+
+</html>
