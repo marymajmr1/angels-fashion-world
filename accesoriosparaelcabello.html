@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -230,14 +229,38 @@
             right: 20px;
             bottom: 20px;
             z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            background: #d85b91;
+            color: white;
+            text-decoration: none;
+            padding: 13px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            border: 2px solid white;
+            box-shadow: 0 6px 20px rgba(216, 91, 145, 0.35);
+            transition: 0.3s;
+        }
+
+        .carrito-flotante:hover {
+            background: #c5487d;
+            transform: translateY(-3px);
+            box-shadow: 0 9px 25px rgba(216, 91, 145, 0.45);
+        }
+
+        #contadorCarrito {
             background: white;
             color: #d85b91;
-            text-decoration: none;
-            padding: 12px 18px;
-            border-radius: 25px;
+            min-width: 24px;
+            height: 24px;
+            padding: 2px 6px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
             font-weight: bold;
-            border: 1px solid #f3c8da;
-            box-shadow: 0 5px 20px rgba(216, 91, 145, 0.2);
         }
 
         /* MODAL */
@@ -359,6 +382,12 @@
                 object-fit: contain;
             }
 
+            .carrito-flotante {
+                right: 12px;
+                bottom: 12px;
+                padding: 11px 16px;
+            }
+
             .modal {
                 padding: 10px;
             }
@@ -380,9 +409,8 @@
 </head>
 
 <body>
-
-    <!-- ESTRELLAS -->
-<div class="estrella estrella1">✦</div>
+!-- ESTRELLAS -->
+    <div class="estrella estrella1">✦</div>
     <div class="estrella estrella2">✧</div>
     <div class="estrella estrella3">✦</div>
     <div class="estrella estrella4">✧</div>
@@ -416,169 +444,129 @@
     <!-- PRODUCTOS -->
     <main class="productos">
 
-        <!-- PRODUCTO 1 -->
         <article class="producto">
             <img
                 src="imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-36-45-182_com.pinterest~2.jpg"
                 alt="Lindo accesorio"
                 onclick="abrirFoto(this)"
             >
-
             <h2>Lindo accesorio</h2>
-
             <p class="precio">$18.000</p>
-
             <p class="descripcion">
                 Un lindo accesorio para darle un toque especial a tu cabello. ✨
             </p>
-
             <button class="boton-carrito" onclick="agregarProducto(this)">
                 🛍️ Agregar al carrito
             </button>
         </article>
 
-        <!-- PRODUCTO 2 -->
         <article class="producto">
             <img
                 src="imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-36-56-691_com.pinterest~2.jpg"
                 alt="Bello accesorio"
                 onclick="abrirFoto(this)"
             >
-
             <h2>Bello accesorio</h2>
-
             <p class="precio">$12.000</p>
-
             <p class="descripcion">
                 Un bello accesorio para complementar tus peinados favoritos. 💕
             </p>
-
             <button class="boton-carrito" onclick="agregarProducto(this)">
                 🛍️ Agregar al carrito
             </button>
         </article>
 
-        <!-- PRODUCTO 3 -->
         <article class="producto">
             <img
                 src="imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-37-27-302_com.pinterest~2.jpg"
                 alt="Lindo accesorio en forma de mariposa"
                 onclick="abrirFoto(this)"
             >
-
             <h2>Lindo accesorio en forma de mariposa</h2>
-
             <p class="precio">$10.000</p>
-
             <p class="descripcion">
                 Un hermoso detalle en forma de mariposa para tu cabello. 🦋
             </p>
-
             <button class="boton-carrito" onclick="agregarProducto(this)">
                 🛍️ Agregar al carrito
             </button>
         </article>
 
-        <!-- PRODUCTO 4 -->
         <article class="producto">
             <img
                 src="imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-38-02-130_com.pinterest~2.jpg"
                 alt="Lindo accesorio en forma de estrella"
                 onclick="abrirFoto(this)"
             >
-
             <h2>Lindo accesorio en forma de estrella</h2>
-
             <p class="precio">$10.000</p>
-
             <p class="descripcion">
                 Un lindo accesorio en forma de estrella para darle brillo a tu estilo. ✦
             </p>
-
             <button class="boton-carrito" onclick="agregarProducto(this)">
                 🛍️ Agregar al carrito
             </button>
         </article>
 
-        <!-- PRODUCTO 5 -->
         <article class="producto">
             <img
                 src="imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-39-51-993_com.pinterest~2.jpg"
                 alt="Lindo accesorio en forma de alas"
                 onclick="abrirFoto(this)"
             >
-
             <h2>Lindo accesorio en forma de alas</h2>
-
             <p class="precio">$20.000</p>
-
             <p class="descripcion">
                 Un precioso accesorio inspirado en unas delicadas alas. 🪽
             </p>
-
             <button class="boton-carrito" onclick="agregarProducto(this)">
                 🛍️ Agregar al carrito
             </button>
         </article>
 
-        <!-- PRODUCTO 6 -->
         <article class="producto">
             <img
                 src="imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-40-06-658_com.pinterest~2.jpg"
                 alt="Lindo accesorio para el cabello"
                 onclick="abrirFoto(this)"
             >
-
             <h2>Lindo accesorio para el cabello</h2>
-
             <p class="precio">$14.000</p>
-
             <p class="descripcion">
                 Un lindo accesorio para completar tus peinados de una manera especial. 💗
             </p>
-
             <button class="boton-carrito" onclick="agregarProducto(this)">
                 🛍️ Agregar al carrito
             </button>
         </article>
 
-        <!-- PRODUCTO 7 -->
         <article class="producto">
             <img
                 src="imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-40-41-887_com.pinterest~2.jpg"
                 alt="Divino accesorio"
                 onclick="abrirFoto(this)"
             >
-
             <h2>Divino accesorio</h2>
-
             <p class="precio">$20.000</p>
-
             <p class="descripcion">
                 Un divino accesorio para darle un toque bonito y delicado a tu look. ✨
             </p>
-
             <button class="boton-carrito" onclick="agregarProducto(this)">
                 🛍️ Agregar al carrito
             </button>
         </article>
 
-        <!-- PRODUCTO 8 -->
         <article class="producto">
             <img
                 src="imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-41-05-823_com.pinterest~2.jpg"
                 alt="Hermoso accesorio"
                 onclick="abrirFoto(this)"
             >
-
             <h2>Hermoso accesorio:</h2>
-
             <p class="precio">$21.000</p>
-
             <p class="descripcion">
                 Un hermoso accesorio para complementar tu estilo con un toque especial. 💕
             </p>
-
             <button class="boton-carrito" onclick="agregarProducto(this)">
                 🛍️ Agregar al carrito
             </button>
@@ -586,9 +574,10 @@
 
     </main>
 
-    <!-- CARRITO -->
+    <!-- CARRITO FLOTANTE -->
     <a href="carrito.html" class="carrito-flotante">
-        🛒 Carrito (<span id="contadorCarrito">0</span>)
+        🛒 Carrito
+        <span id="contadorCarrito">0</span>
     </a>
 
     <!-- MODAL -->
@@ -625,7 +614,6 @@
 
         let productoActual = null;
 
-        /* ABRIR MODAL */
         function abrirFoto(imagen) {
 
             const producto = imagen.closest(".producto");
@@ -647,6 +635,7 @@
             };
 
             document.getElementById("botonModal").onclick = function () {
+
                 agregarAlCarrito(
                     productoActual.nombre,
                     productoActual.precio
@@ -658,12 +647,10 @@
             document.getElementById("modal").style.display = "flex";
         }
 
-        /* CERRAR MODAL */
         function cerrarFoto() {
             document.getElementById("modal").style.display = "none";
         }
 
-        /* CERRAR AL HACER CLIC FUERA */
         document.getElementById("modal").addEventListener("click", function (event) {
 
             if (event.target === this) {
@@ -672,7 +659,6 @@
 
         });
 
-        /* AGREGAR DESDE TARJETA */
         function agregarProducto(boton) {
 
             const producto = boton.closest(".producto");
@@ -683,7 +669,6 @@
             agregarAlCarrito(nombre, precio);
         }
 
-        /* AGREGAR AL CARRITO */
         function agregarAlCarrito(nombre, precio) {
 
             let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -715,7 +700,6 @@
             alert("🛍️ ¡Producto agregado al carrito!");
         }
 
-        /* ACTUALIZAR CONTADOR */
         function actualizarContador() {
 
             const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
