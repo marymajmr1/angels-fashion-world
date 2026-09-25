@@ -229,37 +229,50 @@
             right: 20px;
             bottom: 20px;
             z-index: 10;
+
             display: flex;
             align-items: center;
-            gap: 7px;
+            gap: 8px;
+
             background: #d85b91;
             color: white;
+
             text-decoration: none;
-            padding: 13px 20px;
-            border-radius: 30px;
+
+            padding: 12px 18px;
+            border-radius: 35px;
+
             font-weight: bold;
-            border: 2px solid white;
+            font-size: 18px;
+
+            border: 2px solid rgba(255, 255, 255, 0.7);
+
             box-shadow: 0 6px 20px rgba(216, 91, 145, 0.35);
+
             transition: 0.3s;
         }
 
         .carrito-flotante:hover {
             background: #c5487d;
             transform: translateY(-3px);
-            box-shadow: 0 9px 25px rgba(216, 91, 145, 0.45);
         }
 
         #contadorCarrito {
-            background: white;
+            background: #fff8fb;
             color: #d85b91;
-            min-width: 24px;
-            height: 24px;
-            padding: 2px 6px;
+
+            min-width: 42px;
+            height: 42px;
+
+            padding: 0 8px;
+
             border-radius: 50%;
-            display: inline-flex;
+
+            display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 13px;
+
+            font-size: 17px;
             font-weight: bold;
         }
 
@@ -343,6 +356,7 @@
 
         /* TABLET */
         @media (max-width: 850px) {
+
             .productos {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -354,6 +368,7 @@
 
         /* CELULAR */
         @media (max-width: 600px) {
+
             .menu {
                 width: 94%;
             }
@@ -385,7 +400,13 @@
             .carrito-flotante {
                 right: 12px;
                 bottom: 12px;
-                padding: 11px 16px;
+                padding: 10px 15px;
+                font-size: 16px;
+            }
+
+            #contadorCarrito {
+                min-width: 38px;
+                height: 38px;
             }
 
             .modal {
@@ -409,28 +430,44 @@
 </head>
 
 <body>
-!-- ESTRELLAS -->
+
+    <!-- ESTRELLAS -->
     <div class="estrella estrella1">✦</div>
     <div class="estrella estrella2">✧</div>
     <div class="estrella estrella3">✦</div>
     <div class="estrella estrella4">✧</div>
 
+
     <!-- MENÚ -->
     <nav class="menu">
+
         <a href="index.html">Inicio</a>
+
         <a href="moda.html">Moda</a>
+
         <a href="belleza.html">Belleza</a>
+
         <a href="skincare.html">Skin care</a>
+
         <a href="accesorios.html">Accesorios</a>
+
         <a href="sobre-nosotros.html">Sobre nosotros</a>
+
         <a href="index.html#contactanos">Contáctanos</a>
+
     </nav>
+
 
     <!-- ENCABEZADO -->
     <header>
-        <div class="alas">🪽 ✦</div>
 
-        <h1>Accesorios para el cabello</h1>
+        <div class="alas">
+            🪽 ✦
+        </div>
+
+        <h1>
+            Accesorios para el cabello
+        </h1>
 
         <p>
             Dale un toque especial a tu estilo con nuestros accesorios para el cabello 💕
@@ -439,163 +476,311 @@
         <a href="accesorios.html" class="volver">
             ← Volver a Accesorios
         </a>
+
     </header>
+
 
     <!-- PRODUCTOS -->
     <main class="productos">
 
+
+        <!-- 1 -->
         <article class="producto">
+
             <img
                 src="imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-36-45-182_com.pinterest~2.jpg"
                 alt="Lindo accesorio"
                 onclick="abrirFoto(this)"
             >
-            <h2>Lindo accesorio</h2>
-            <p class="precio">$18.000</p>
+
+            <h2>
+                Lindo accesorio
+            </h2>
+
+            <p class="precio">
+                $18.000
+            </p>
+
             <p class="descripcion">
                 Un lindo accesorio para darle un toque especial a tu cabello. ✨
             </p>
-            <button class="boton-carrito" onclick="agregarProducto(this)">
+
+            <button
+                class="boton-carrito"
+                onclick="agregarProducto(this)"
+            >
                 🛍️ Agregar al carrito
             </button>
+
         </article>
 
+
+        <!-- 2 -->
         <article class="producto">
+
             <img
                 src="imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-36-56-691_com.pinterest~2.jpg"
                 alt="Bello accesorio"
                 onclick="abrirFoto(this)"
             >
-            <h2>Bello accesorio</h2>
-            <p class="precio">$12.000</p>
+
+            <h2>
+                Bello accesorio
+            </h2>
+
+            <p class="precio">
+                $12.000
+            </p>
+
             <p class="descripcion">
                 Un bello accesorio para complementar tus peinados favoritos. 💕
             </p>
-            <button class="boton-carrito" onclick="agregarProducto(this)">
+
+            <button
+                class="boton-carrito"
+                onclick="agregarProducto(this)"
+            >
                 🛍️ Agregar al carrito
             </button>
+
         </article>
 
+
+        <!-- 3 -->
         <article class="producto">
+
             <img
                 src="imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-37-27-302_com.pinterest~2.jpg"
                 alt="Lindo accesorio en forma de mariposa"
                 onclick="abrirFoto(this)"
             >
-            <h2>Lindo accesorio en forma de mariposa</h2>
-            <p class="precio">$10.000</p>
+
+            <h2>
+                Lindo accesorio en forma de mariposa
+            </h2>
+
+            <p class="precio">
+                $10.000
+            </p>
+
             <p class="descripcion">
                 Un hermoso detalle en forma de mariposa para tu cabello. 🦋
             </p>
-            <button class="boton-carrito" onclick="agregarProducto(this)">
+
+            <button
+                class="boton-carrito"
+                onclick="agregarProducto(this)"
+            >
                 🛍️ Agregar al carrito
             </button>
+
         </article>
 
+
+        <!-- 4 -->
         <article class="producto">
+
             <img
                 src="imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-38-02-130_com.pinterest~2.jpg"
                 alt="Lindo accesorio en forma de estrella"
                 onclick="abrirFoto(this)"
             >
-            <h2>Lindo accesorio en forma de estrella</h2>
-            <p class="precio">$10.000</p>
+
+            <h2>
+                Lindo accesorio en forma de estrella
+            </h2>
+
+            <p class="precio">
+                $10.000
+            </p>
+
             <p class="descripcion">
                 Un lindo accesorio en forma de estrella para darle brillo a tu estilo. ✦
             </p>
-            <button class="boton-carrito" onclick="agregarProducto(this)">
+
+            <button
+                class="boton-carrito"
+                onclick="agregarProducto(this)"
+            >
                 🛍️ Agregar al carrito
             </button>
+
         </article>
 
+
+        <!-- 5 -->
         <article class="producto">
+
             <img
                 src="imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-39-51-993_com.pinterest~2.jpg"
                 alt="Lindo accesorio en forma de alas"
                 onclick="abrirFoto(this)"
             >
-            <h2>Lindo accesorio en forma de alas</h2>
-            <p class="precio">$20.000</p>
+
+            <h2>
+                Lindo accesorio en forma de alas
+            </h2>
+
+            <p class="precio">
+                $20.000
+            </p>
+
             <p class="descripcion">
                 Un precioso accesorio inspirado en unas delicadas alas. 🪽
             </p>
-            <button class="boton-carrito" onclick="agregarProducto(this)">
+
+            <button
+                class="boton-carrito"
+                onclick="agregarProducto(this)"
+            >
                 🛍️ Agregar al carrito
             </button>
+
         </article>
 
+
+        <!-- 6 -->
         <article class="producto">
+
             <img
                 src="imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-40-06-658_com.pinterest~2.jpg"
                 alt="Lindo accesorio para el cabello"
                 onclick="abrirFoto(this)"
             >
-            <h2>Lindo accesorio para el cabello</h2>
-            <p class="precio">$14.000</p>
+
+            <h2>
+                Lindo accesorio para el cabello
+            </h2>
+
+            <p class="precio">
+                $14.000
+            </p>
+
             <p class="descripcion">
                 Un lindo accesorio para completar tus peinados de una manera especial. 💗
             </p>
-            <button class="boton-carrito" onclick="agregarProducto(this)">
+
+            <button
+                class="boton-carrito"
+                onclick="agregarProducto(this)"
+            >
                 🛍️ Agregar al carrito
             </button>
+
         </article>
 
+
+        <!-- 7 -->
         <article class="producto">
+
             <img
                 src="imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-40-41-887_com.pinterest~2.jpg"
                 alt="Divino accesorio"
                 onclick="abrirFoto(this)"
             >
-            <h2>Divino accesorio</h2>
-            <p class="precio">$20.000</p>
+
+            <h2>
+                Divino accesorio
+            </h2>
+
+            <p class="precio">
+                $20.000
+            </p>
+
             <p class="descripcion">
                 Un divino accesorio para darle un toque bonito y delicado a tu look. ✨
             </p>
-            <button class="boton-carrito" onclick="agregarProducto(this)">
+
+            <button
+                class="boton-carrito"
+                onclick="agregarProducto(this)"
+            >
                 🛍️ Agregar al carrito
             </button>
+
         </article>
 
+
+        <!-- 8 -->
         <article class="producto">
+
             <img
                 src="imagenes/accesoriosparaelcabello/Screenshot_2026-09-01-11-41-05-823_com.pinterest~2.jpg"
                 alt="Hermoso accesorio"
                 onclick="abrirFoto(this)"
             >
-            <h2>Hermoso accesorio:</h2>
-            <p class="precio">$21.000</p>
+
+            <h2>
+                Hermoso accesorio:
+            </h2>
+
+            <p class="precio">
+                $21.000
+            </p>
+
             <p class="descripcion">
                 Un hermoso accesorio para complementar tu estilo con un toque especial. 💕
             </p>
-            <button class="boton-carrito" onclick="agregarProducto(this)">
+
+            <button
+                class="boton-carrito"
+                onclick="agregarProducto(this)"
+            >
                 🛍️ Agregar al carrito
             </button>
+
         </article>
 
     </main>
 
+
     <!-- CARRITO FLOTANTE -->
     <a href="carrito.html" class="carrito-flotante">
-        🛒 Carrito
-        <span id="contadorCarrito">0</span>
+
+        🛒
+
+        <span>
+            Ver carrito
+        </span>
+
+        <span id="contadorCarrito">
+            0
+        </span>
+
     </a>
+
 
     <!-- MODAL -->
     <div class="modal" id="modal">
 
         <div class="modal-contenido">
 
-            <button class="cerrar" onclick="cerrarFoto()">×</button>
+            <button
+                class="cerrar"
+                onclick="cerrarFoto()"
+            >
+                ×
+            </button>
 
-            <img id="imagenModal" src="" alt="">
+            <img
+                id="imagenModal"
+                src=""
+                alt=""
+            >
 
             <h2 id="nombreModal"></h2>
 
             <p id="descripcionModal"></p>
 
-            <p class="precio" id="precioModal"></p>
+            <p
+                class="precio"
+                id="precioModal"
+            ></p>
 
-            <button class="boton-carrito" id="botonModal">
+            <button
+                class="boton-carrito"
+                id="botonModal"
+            >
                 🛍️ Agregar al carrito
             </button>
 
@@ -603,114 +788,263 @@
 
     </div>
 
+
     <!-- PIE DE PÁGINA -->
     <footer>
-        <strong>🪽 Angel's Fashion World 🪽</strong>
-        <br><br>
+
+        <strong>
+            🪽 Angel's Fashion World 🪽
+        </strong>
+
+        <br>
+        <br>
+
         Moda • Belleza • Skin Care • Accesorios
+
     </footer>
+
 
     <script>
 
         let productoActual = null;
 
+
+        /* ================================
+           ABRIR MODAL
+        ================================= */
+
         function abrirFoto(imagen) {
 
             const producto = imagen.closest(".producto");
 
-            const nombre = producto.querySelector("h2").textContent.trim();
-            const descripcion = producto.querySelector(".descripcion").textContent.trim();
-            const precio = producto.querySelector(".precio").textContent.trim();
+            const nombre =
+                producto.querySelector("h2").textContent.trim();
 
-            document.getElementById("imagenModal").src = imagen.src;
-            document.getElementById("imagenModal").alt = imagen.alt;
+            const descripcion =
+                producto.querySelector(".descripcion").textContent.trim();
 
-            document.getElementById("nombreModal").textContent = nombre;
-            document.getElementById("descripcionModal").textContent = descripcion;
-            document.getElementById("precioModal").textContent = precio;
+            const precio =
+                producto.querySelector(".precio").textContent.trim();
+
+
+            document.getElementById("imagenModal").src =
+                imagen.src;
+
+            document.getElementById("imagenModal").alt =
+                imagen.alt;
+
+
+            document.getElementById("nombreModal").textContent =
+                nombre;
+
+            document.getElementById("descripcionModal").textContent =
+                descripcion;
+
+            document.getElementById("precioModal").textContent =
+                precio;
+
 
             productoActual = {
                 nombre: nombre,
                 precio: precio
             };
 
-            document.getElementById("botonModal").onclick = function () {
 
-                agregarAlCarrito(
-                    productoActual.nombre,
-                    productoActual.precio
-                );
+            document.getElementById("botonModal").onclick =
+                function () {
 
-                cerrarFoto();
-            };
+                    agregarAlCarrito(
+                        productoActual.nombre,
+                        productoActual.precio
+                    );
 
-            document.getElementById("modal").style.display = "flex";
+                    cerrarFoto();
+
+                };
+
+
+            document.getElementById("modal").style.display =
+                "flex";
         }
+
+
+        /* ================================
+           CERRAR MODAL
+        ================================= */
 
         function cerrarFoto() {
-            document.getElementById("modal").style.display = "none";
+
+            document.getElementById("modal").style.display =
+                "none";
         }
 
-        document.getElementById("modal").addEventListener("click", function (event) {
 
-            if (event.target === this) {
-                cerrarFoto();
+        /* ================================
+           CERRAR MODAL FUERA
+        ================================= */
+
+        document.getElementById("modal").addEventListener(
+            "click",
+            function (event) {
+
+                if (event.target === this) {
+
+                    cerrarFoto();
+
+                }
+
             }
+        );
 
-        });
+
+        /* ================================
+           AGREGAR DESDE TARJETA
+        ================================= */
 
         function agregarProducto(boton) {
 
-            const producto = boton.closest(".producto");
+            const producto =
+                boton.closest(".producto");
 
-            const nombre = producto.querySelector("h2").textContent.trim();
-            const precio = producto.querySelector(".precio").textContent.trim();
 
-            agregarAlCarrito(nombre, precio);
+            const nombre =
+                producto.querySelector("h2").textContent.trim();
+
+
+            const precio =
+                producto.querySelector(".precio").textContent.trim();
+
+
+            agregarAlCarrito(
+                nombre,
+                precio
+            );
         }
+
+
+        /* ================================
+           AGREGAR AL CARRITO
+           SIN NaN
+        ================================= */
 
         function agregarAlCarrito(nombre, precio) {
 
-            let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            let carrito =
+                JSON.parse(
+                    localStorage.getItem("carrito")
+                ) || [];
 
-            const productoExistente = carrito.find(
+
+            /* Limpiamos productos dañados */
+            carrito = carrito.filter(
                 producto =>
-                    producto.nombre === nombre &&
-                    producto.precio === precio
+                    producto &&
+                    producto.nombre &&
+                    producto.precio
             );
+
+
+            const productoExistente =
+                carrito.find(
+                    producto =>
+                        producto.nombre === nombre &&
+                        producto.precio === precio
+                );
+
 
             if (productoExistente) {
 
-                productoExistente.cantidad += 1;
+                let cantidad =
+                    Number(productoExistente.cantidad);
+
+
+                if (
+                    !Number.isFinite(cantidad) ||
+                    cantidad < 1
+                ) {
+
+                    cantidad = 0;
+
+                }
+
+
+                productoExistente.cantidad =
+                    cantidad + 1;
+
 
             } else {
 
                 carrito.push({
+
                     nombre: nombre,
+
                     precio: precio,
+
                     cantidad: 1
+
                 });
 
             }
 
-            localStorage.setItem("carrito", JSON.stringify(carrito));
+
+            localStorage.setItem(
+                "carrito",
+                JSON.stringify(carrito)
+            );
+
 
             actualizarContador();
 
-            alert("🛍️ ¡Producto agregado al carrito!");
+
+            alert(
+                "🛍️ ¡Producto agregado al carrito!"
+            );
         }
+
+
+        /* ================================
+           ACTUALIZAR CONTADOR
+           NUNCA NaN
+        ================================= */
 
         function actualizarContador() {
 
-            const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            const carrito =
+                JSON.parse(
+                    localStorage.getItem("carrito")
+                ) || [];
 
-            const cantidad = carrito.reduce(
-                (total, producto) => total + producto.cantidad,
-                0
-            );
 
-            document.getElementById("contadorCarrito").textContent = cantidad;
+            let cantidadTotal = 0;
+
+
+            carrito.forEach(producto => {
+
+                const cantidad =
+                    Number(producto.cantidad);
+
+
+                if (
+                    Number.isFinite(cantidad) &&
+                    cantidad > 0
+                ) {
+
+                    cantidadTotal += cantidad;
+
+                }
+
+            });
+
+
+            document.getElementById(
+                "contadorCarrito"
+            ).textContent = cantidadTotal;
         }
+
+
+        /* ================================
+           INICIAR CONTADOR
+        ================================= */
 
         actualizarContador();
 
