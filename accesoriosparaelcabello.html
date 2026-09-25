@@ -1,1 +1,737 @@
 
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Accesorios para el cabello | Angel's Fashion World</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #6b4055;
+            background:
+                radial-gradient(circle at top left, #ffffff 0%, transparent 35%),
+                radial-gradient(circle at bottom right, #ffe1ef 0%, transparent 40%),
+                #fff0f6;
+            min-height: 100vh;
+            padding-bottom: 40px;
+        }
+
+        /* ESTRELLAS */
+        .estrella {
+            position: fixed;
+            z-index: 0;
+            color: #d85b91;
+            font-size: 25px;
+            animation: flotar 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .estrella1 {
+            top: 12%;
+            left: 5%;
+        }
+
+        .estrella2 {
+            top: 30%;
+            right: 6%;
+            animation-delay: 1s;
+        }
+
+        .estrella3 {
+            bottom: 20%;
+            left: 8%;
+            animation-delay: 2s;
+        }
+
+        .estrella4 {
+            bottom: 10%;
+            right: 10%;
+            animation-delay: 3s;
+        }
+
+        @keyframes flotar {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* MENÚ */
+        .menu {
+            width: 92%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #f3c8da;
+            border-radius: 25px;
+            box-shadow: 0 5px 20px rgba(216, 91, 145, 0.12);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #6b4055;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 18px;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            background: #ffe1ef;
+            color: #d85b91;
+        }
+
+        /* ENCABEZADO */
+        header {
+            width: 92%;
+            max-width: 1200px;
+            margin: 25px auto;
+            padding: 35px 20px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #f3c8da;
+            border-radius: 30px;
+            box-shadow: 0 8px 25px rgba(216, 91, 145, 0.12);
+            position: relative;
+            z-index: 1;
+        }
+
+        .alas {
+            font-size: 42px;
+            margin-bottom: 5px;
+        }
+
+        header h1 {
+            color: #d85b91;
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .volver {
+            display: inline-block;
+            text-decoration: none;
+            background: #d85b91;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(216, 91, 145, 0.2);
+            transition: 0.3s;
+        }
+
+        .volver:hover {
+            background: #c5487d;
+            transform: translateY(-2px);
+        }
+
+        /* PRODUCTOS */
+        .productos {
+            width: 92%;
+            max-width: 1200px;
+            margin: 30px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .producto {
+            background: white;
+            border: 1px solid #f3c8da;
+            border-radius: 25px;
+            padding: 18px;
+            box-shadow: 0 8px 25px rgba(216, 91, 145, 0.12);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .producto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(216, 91, 145, 0.18);
+        }
+
+        .producto img {
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+            border-radius: 18px;
+            cursor: pointer;
+            display: block;
+        }
+
+        .producto h2 {
+            color: #d85b91;
+            font-size: 21px;
+            margin: 15px 0 8px;
+        }
+
+        .precio {
+            font-size: 20px;
+            font-weight: bold;
+            color: #6b4055;
+            margin-bottom: 10px;
+        }
+
+        .descripcion {
+            font-size: 15px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .boton-carrito {
+            border: none;
+            background: #d85b91;
+            color: white;
+            padding: 11px 20px;
+            border-radius: 22px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .boton-carrito:hover {
+            background: #c5487d;
+            transform: translateY(-2px);
+        }
+
+        /* CARRITO FLOTANTE */
+        .carrito-flotante {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 10;
+            background: white;
+            color: #d85b91;
+            text-decoration: none;
+            padding: 12px 18px;
+            border-radius: 25px;
+            font-weight: bold;
+            border: 1px solid #f3c8da;
+            box-shadow: 0 5px 20px rgba(216, 91, 145, 0.2);
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(80, 40, 60, 0.65);
+            z-index: 20;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-contenido {
+            width: min(900px, 95%);
+            max-height: 95vh;
+            overflow-y: auto;
+            background: white;
+            border-radius: 25px;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+
+        .cerrar {
+            position: absolute;
+            top: 12px;
+            right: 18px;
+            border: none;
+            background: #d85b91;
+            color: white;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            font-size: 22px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .modal-contenido img {
+            display: block;
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 75vh;
+            object-fit: contain;
+            border-radius: 18px;
+            margin: 0 auto 20px;
+        }
+
+        .modal-contenido h2 {
+            color: #d85b91;
+            margin-bottom: 10px;
+        }
+
+        .modal-contenido p {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        /* PIE DE PÁGINA */
+        footer {
+            width: 92%;
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding: 25px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #f3c8da;
+            border-radius: 25px;
+            color: #6b4055;
+            position: relative;
+            z-index: 1;
+        }
+
+        footer strong {
+            color: #d85b91;
+        }
+
+        /* TABLET */
+        @media (max-width: 850px) {
+            .productos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .producto img {
+                height: 300px;
+            }
+        }
+
+        /* CELULAR */
+        @media (max-width: 600px) {
+            .menu {
+                width: 94%;
+            }
+
+            header {
+                width: 94%;
+                padding: 28px 15px;
+            }
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            .productos {
+                width: 94%;
+                grid-template-columns: 1fr;
+            }
+
+            .producto img {
+                height: auto;
+                max-height: 500px;
+                object-fit: contain;
+            }
+
+            .modal {
+                padding: 10px;
+            }
+
+            .modal-contenido {
+                width: 96%;
+                padding: 20px 15px;
+            }
+
+            .modal-contenido img {
+                max-width: 100%;
+                max-height: 65vh;
+                width: auto;
+                height: auto;
+                object-fit: contain;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ESTRELLAS -->
+<div class="estrella estrella1">✦</div>
+    <div class="estrella estrella2">✧</div>
+    <div class="estrella estrella3">✦</div>
+    <div class="estrella estrella4">✧</div>
+
+    <!-- MENÚ -->
+    <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="moda.html">Moda</a>
+        <a href="belleza.html">Belleza</a>
+        <a href="skincare.html">Skin care</a>
+        <a href="accesorios.html">Accesorios</a>
+        <a href="sobre-nosotros.html">Sobre nosotros</a>
+        <a href="index.html#contactanos">Contáctanos</a>
+    </nav>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <div class="alas">🪽 ✦</div>
+
+        <h1>Accesorios para el cabello</h1>
+
+        <p>
+            Dale un toque especial a tu estilo con nuestros accesorios para el cabello 💕
+        </p>
+
+        <a href="accesorios.html" class="volver">
+            ← Volver a Accesorios
+        </a>
+    </header>
+
+    <!-- PRODUCTOS -->
+    <main class="productos">
+
+        <!-- PRODUCTO 1 -->
+        <article class="producto">
+            <img
+                src="imagenes/accesorioscabello/Screenshot_2026-09-01-11-36-45-182_com.pinterest~2.jpg"
+                alt="Lindo accesorio"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Lindo accesorio</h2>
+
+            <p class="precio">$18.000</p>
+
+            <p class="descripcion">
+                Un lindo accesorio para darle un toque especial a tu cabello. ✨
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛍️ Agregar al carrito
+            </button>
+        </article>
+
+        <!-- PRODUCTO 2 -->
+        <article class="producto">
+            <img
+                src="imagenes/accesorioscabello/Screenshot_2026-09-01-11-36-56-691_com.pinterest~2.jpg"
+                alt="Bello accesorio"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Bello accesorio</h2>
+
+            <p class="precio">$12.000</p>
+
+            <p class="descripcion">
+                Un bello accesorio para complementar tus peinados favoritos. 💕
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛍️ Agregar al carrito
+            </button>
+        </article>
+
+        <!-- PRODUCTO 3 -->
+        <article class="producto">
+            <img
+                src="imagenes/accesorioscabello/Screenshot_2026-09-01-11-37-27-302_com.pinterest~2.jpg"
+                alt="Lindo accesorio en forma de mariposa"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Lindo accesorio en forma de mariposa</h2>
+
+            <p class="precio">$10.000</p>
+
+            <p class="descripcion">
+                Un hermoso detalle en forma de mariposa para tu cabello. 🦋
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛍️ Agregar al carrito
+            </button>
+        </article>
+
+        <!-- PRODUCTO 4 -->
+        <article class="producto">
+            <img
+                src="imagenes/accesorioscabello/Screenshot_2026-09-01-11-38-02-130_com.pinterest~2.jpg"
+                alt="Lindo accesorio en forma de estrella"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Lindo accesorio en forma de estrella</h2>
+
+            <p class="precio">$10.000</p>
+
+            <p class="descripcion">
+                Un lindo accesorio en forma de estrella para darle brillo a tu estilo. ✦
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛍️ Agregar al carrito
+            </button>
+        </article>
+
+        <!-- PRODUCTO 5 -->
+        <article class="producto">
+            <img
+                src="imagenes/accesorioscabello/Screenshot_2026-09-01-11-39-51-993_com.pinterest~2.jpg"
+                alt="Lindo accesorio en forma de alas"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Lindo accesorio en forma de alas</h2>
+
+            <p class="precio">$20.000</p>
+
+            <p class="descripcion">
+                Un precioso accesorio inspirado en unas delicadas alas. 🪽
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛍️ Agregar al carrito
+            </button>
+        </article>
+
+        <!-- PRODUCTO 6 -->
+        <article class="producto">
+            <img
+                src="imagenes/accesorioscabello/Screenshot_2026-09-01-11-40-06-658_com.pinterest~2.jpg"
+                alt="Lindo accesorio para el cabello"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Lindo accesorio para el cabello</h2>
+
+            <p class="precio">$14.000</p>
+
+            <p class="descripcion">
+                Un lindo accesorio para completar tus peinados de una manera especial. 💗
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛍️ Agregar al carrito
+            </button>
+        </article>
+
+        <!-- PRODUCTO 7 -->
+        <article class="producto">
+            <img
+                src="imagenes/accesorioscabello/Screenshot_2026-09-01-11-40-41-887_com.pinterest~2.jpg"
+                alt="Divino accesorio"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Divino accesorio</h2>
+
+            <p class="precio">$20.000</p>
+
+            <p class="descripcion">
+                Un divino accesorio para darle un toque bonito y delicado a tu look. ✨
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛍️ Agregar al carrito
+            </button>
+        </article>
+
+        <!-- PRODUCTO 8 -->
+        <article class="producto">
+            <img
+                src="imagenes/accesorioscabello/Screenshot_2026-09-01-11-41-05-823_com.pinterest~2.jpg"
+                alt="Hermoso accesorio"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>Hermoso accesorio:</h2>
+
+            <p class="precio">$21.000</p>
+
+            <p class="descripcion">
+                Un hermoso accesorio para complementar tu estilo con un toque especial. 💕
+            </p>
+
+            <button class="boton-carrito" onclick="agregarProducto(this)">
+                🛍️ Agregar al carrito
+            </button>
+        </article>
+
+    </main>
+
+    <!-- CARRITO -->
+    <a href="carrito.html" class="carrito-flotante">
+        🛒 Carrito (<span id="contadorCarrito">0</span>)
+    </a>
+
+    <!-- MODAL -->
+    <div class="modal" id="modal">
+
+        <div class="modal-contenido">
+
+            <button class="cerrar" onclick="cerrarFoto()">×</button>
+
+            <img id="imagenModal" src="" alt="">
+
+            <h2 id="nombreModal"></h2>
+
+            <p id="descripcionModal"></p>
+
+            <p class="precio" id="precioModal"></p>
+
+            <button class="boton-carrito" id="botonModal">
+                🛍️ Agregar al carrito
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <strong>🪽 Angel's Fashion World 🪽</strong>
+        <br><br>
+        Moda • Belleza • Skin Care • Accesorios
+    </footer>
+
+    <script>
+
+        let productoActual = null;
+
+        /* ABRIR MODAL */
+        function abrirFoto(imagen) {
+
+            const producto = imagen.closest(".producto");
+
+            const nombre = producto.querySelector("h2").textContent.trim();
+            const descripcion = producto.querySelector(".descripcion").textContent.trim();
+            const precio = producto.querySelector(".precio").textContent.trim();
+
+            document.getElementById("imagenModal").src = imagen.src;
+            document.getElementById("imagenModal").alt = imagen.alt;
+
+            document.getElementById("nombreModal").textContent = nombre;
+            document.getElementById("descripcionModal").textContent = descripcion;
+            document.getElementById("precioModal").textContent = precio;
+
+            productoActual = {
+                nombre: nombre,
+                precio: precio
+            };
+
+            document.getElementById("botonModal").onclick = function () {
+                agregarAlCarrito(
+                    productoActual.nombre,
+                    productoActual.precio
+                );
+
+                cerrarFoto();
+            };
+
+            document.getElementById("modal").style.display = "flex";
+        }
+
+        /* CERRAR MODAL */
+        function cerrarFoto() {
+            document.getElementById("modal").style.display = "none";
+        }
+
+        /* CERRAR AL HACER CLIC FUERA */
+        document.getElementById("modal").addEventListener("click", function (event) {
+
+            if (event.target === this) {
+                cerrarFoto();
+            }
+
+        });
+
+        /* AGREGAR DESDE TARJETA */
+        function agregarProducto(boton) {
+
+            const producto = boton.closest(".producto");
+
+            const nombre = producto.querySelector("h2").textContent.trim();
+            const precio = producto.querySelector(".precio").textContent.trim();
+
+            agregarAlCarrito(nombre, precio);
+        }
+
+        /* AGREGAR AL CARRITO */
+        function agregarAlCarrito(nombre, precio) {
+
+            let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+            const productoExistente = carrito.find(
+                producto =>
+                    producto.nombre === nombre &&
+                    producto.precio === precio
+            );
+
+            if (productoExistente) {
+
+                productoExistente.cantidad += 1;
+
+            } else {
+
+                carrito.push({
+                    nombre: nombre,
+                    precio: precio,
+                    cantidad: 1
+                });
+
+            }
+
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+
+            actualizarContador();
+
+            alert("🛍️ ¡Producto agregado al carrito!");
+        }
+
+        /* ACTUALIZAR CONTADOR */
+        function actualizarContador() {
+
+            const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+            const cantidad = carrito.reduce(
+                (total, producto) => total + producto.cantidad,
+                0
+            );
+
+            document.getElementById("contadorCarrito").textContent = cantidad;
+        }
+
+        actualizarContador();
+
+    </script>
+
+</body>
+
+</html>
