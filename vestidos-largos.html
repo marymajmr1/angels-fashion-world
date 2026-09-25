@@ -403,7 +403,7 @@
             justify-content: center;
             align-items: center;
 
-            padding: 20px;
+            padding: 10px;
         }
 
         .modal.activo {
@@ -428,16 +428,24 @@
             position: relative;
         }
 
-      .modal-contenido img {
+        /* IMAGEN COMPLETA DEL MODAL */
+
+        .modal-contenido img {
+            display: block;
+
             width: auto;
+            height: auto;
+
             max-width: 100%;
             max-height: 75vh;
-            height: auto;
+
             object-fit: contain;
+
             border-radius: 18px;
-            display: block;
+
             margin: 0 auto;
-}
+        }
+
         .cerrar {
             position: absolute;
 
@@ -530,6 +538,24 @@
             .producto img {
                 height: auto;
                 max-height: 500px;
+            }
+
+            .modal {
+                padding: 5px;
+            }
+
+            .modal-contenido {
+                width: 98%;
+                max-height: 96vh;
+                padding: 15px;
+            }
+
+            .modal-contenido img {
+                max-width: 100%;
+                max-height: 65vh;
+                width: auto;
+                height: auto;
+                object-fit: contain;
             }
 
             .carrito-flotante {
@@ -939,7 +965,6 @@
 
         </article>
 
-
     </main>
 
 
@@ -996,6 +1021,7 @@
 
             <label class="talla">
                 Talla:
+
                 <select
                     class="selector-talla"
                     id="tallaModal"
@@ -1005,6 +1031,7 @@
                     <option value="L">L</option>
                     <option value="XL">XL</option>
                 </select>
+
             </label>
 
             <button
@@ -1040,15 +1067,29 @@
 
         function abrirFoto(imagen) {
 
-            const modal = document.getElementById("modal");
-            const imagenModal = document.getElementById("imagenModal");
-            const nombreModal = document.getElementById("nombreModal");
-            const descripcionModal = document.getElementById("descripcionModal");
-            const precioModal = document.getElementById("precioModal");
-            const botonModal = document.getElementById("botonModal");
-            const tallaModal = document.getElementById("tallaModal");
+            const modal =
+                document.getElementById("modal");
 
-            const producto = imagen.closest(".producto");
+            const imagenModal =
+                document.getElementById("imagenModal");
+
+            const nombreModal =
+                document.getElementById("nombreModal");
+
+            const descripcionModal =
+                document.getElementById("descripcionModal");
+
+            const precioModal =
+                document.getElementById("precioModal");
+
+            const botonModal =
+                document.getElementById("botonModal");
+
+            const tallaModal =
+                document.getElementById("tallaModal");
+
+            const producto =
+                imagen.closest(".producto");
 
             const nombre =
                 producto.querySelector("h2").textContent.trim();
@@ -1063,18 +1104,25 @@
                 producto.querySelector(".selector-talla");
 
             imagenModal.src = imagen.src;
+
             imagenModal.alt = imagen.alt;
 
             nombreModal.textContent = nombre;
-            descripcionModal.textContent = descripcion;
-            precioModal.textContent = precioTexto;
 
-            tallaModal.value = selectorTalla.value;
+            descripcionModal.textContent =
+                descripcion;
 
-            const precioNumero = parseInt(
-                precioTexto.replace(/\D/g, ""),
-                10
-            );
+            precioModal.textContent =
+                precioTexto;
+
+            tallaModal.value =
+                selectorTalla.value;
+
+            const precioNumero =
+                parseInt(
+                    precioTexto.replace(/\D/g, ""),
+                    10
+                );
 
             botonModal.onclick = function () {
 
@@ -1094,7 +1142,8 @@
 
             if (
                 !event ||
-                event.target === document.getElementById("modal") ||
+                event.target ===
+                document.getElementById("modal") ||
                 event.target.classList.contains("cerrar")
             ) {
 
@@ -1111,10 +1160,16 @@
                 boton.closest(".producto");
 
             const nombre =
-                producto.querySelector("h2").textContent.trim();
+                producto
+                    .querySelector("h2")
+                    .textContent
+                    .trim();
 
             const precioTexto =
-                producto.querySelector(".precio").textContent.trim();
+                producto
+                    .querySelector(".precio")
+                    .textContent
+                    .trim();
 
             const precio =
                 parseInt(
@@ -1123,7 +1178,9 @@
                 );
 
             const talla =
-                producto.querySelector(".selector-talla").value;
+                producto
+                    .querySelector(".selector-talla")
+                    .value;
 
             agregarAlCarrito(
                 nombre,
@@ -1133,12 +1190,82 @@
         }
 
 
-        function agregarAlCarrito(nombre, precio, talla) {
+        function agregarAlCarrito(
+            nombre,
+            precio,
+            talla
+        ) {
 
             let carrito =
-                JSON.parse(localStorage.getItem("carrito")) || [];
+                JSON.parse(
+                    localStorage.getItem("carrito")
+                ) || [];
 
-            carrito.push({
-                nombre: nombre,
-                precio: precio,
-                talla: talla
+            const productoExistente =
+                carrito.find(
+                    producto =>
+                        producto.nombre === nombre &&
+                        producto.precio === precio &&
+                        producto.talla === talla
+                );
+
+            if (productoExistente) {
+
+                productoExistente.cantidad++;
+
+            } else {
+
+                carrito.push({
+
+                    nombre: nombre,
+
+                    precio: precio,
+
+                    talla: talla,
+
+                    cantidad: 1
+
+                });
+            }
+
+            localStorage.setItem(
+                "carrito",
+                JSON.stringify(carrito)
+            );
+
+            actualizarContador();
+
+            document
+                .getElementById("modal")
+                .classList.remove("activo");
+        }
+
+
+        function actualizarContador() {
+
+            const carrito =
+                JSON.parse(
+                    localStorage.getItem("carrito")
+                ) || [];
+
+            const cantidad =
+                carrito.reduce(
+                    (total, producto) =>
+                        total +
+                        (producto.cantidad || 1),
+                    0
+                );
+
+            document
+                .getElementById("contador-carrito")
+                .textContent = cantidad;
+        }
+
+
+        actualizarContador();
+
+    </script>
+
+</body>
+
+</html>
