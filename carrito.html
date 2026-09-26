@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Carrito | Angel's Fashion World</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+
+            background:
+                radial-gradient(circle at top left, #ffffff 0%, transparent 35%),
+                radial-gradient(circle at bottom right, #ffe1ef 0%, transparent 40%),
+                #fff0f6;
+
+            color: #6b4055;
+
+            min-height: 100vh;
+        }
+
+
+        /* =========================================
+           ESTRELLAS DECORATIVAS
+        ========================================= */
+
+        .estrella1,
+        .estrella2,
+        .estrella3,
+        .estrella4 {
+
+            position: fixed;
+
+            font-size: 28px;
+
+            color: #d85b91;
+
+            z-index: 0;
+
+            pointer-events: none;
+
+            animation: flotar 3s ease-in-out infinite;
+        }
+
+        .estrella1 {
+            top: 120px;
+            left: 4%;
+        }
+
+        .estrella2 {
+            top: 280px;
+            right: 5%;
+
+            animation-delay: .7s;
+        }
+
+        .estrella3 {
+            bottom: 180px;
+            left: 6%;
+
+            animation-delay: 1.3s;
+        }
+
+        .estrella4 {
+            bottom: 80px;
+            right: 7%;
+
+            animation-delay: 2s;
+        }
+
+
+        @keyframes flotar {
+
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-12px) rotate(12deg);
+            }
+        }
+
+
+        /* =========================================
+           MENÚ
+        ========================================= */
+
+        .menu {
+
+            width: 92%;
+
+            max-width: 1200px;
+
+            margin: 25px auto 0;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            background: rgba(255, 255, 255, 0.92);
+
+            padding: 14px 18px;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 8px 25px rgba(216, 91, 145, 0.15);
+
+            border: 1px solid #f5d3e2;
+
+            position: relative;
+
+            z-index: 10;
+        }
+
+
+        .menu a {
+
+            text-decoration: none;
+
+            color: #6b4055;
+
+            font-weight: bold;
+
+            padding: 10px 16px;
+
+            border-radius: 20px;
+
+            transition: .3s ease;
+        }
+
+
+        .menu a:hover {
+
+            background: #ffe0ed;
+
+            color: #d85b91;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           PRESENTACIÓN
+        ========================================= */
+
+        header {
+
+            width: 92%;
+
+            max-width: 1000px;
+
+            margin: 35px auto 45px;
+
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.94);
+
+            padding: 35px 25px;
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 12px 35px rgba(216, 91, 145, 0.18);
+
+            border: 1px solid #f5d3e2;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .alas-con-estrella {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 5px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .alas {
+
+            font-size: 48px;
+
+            display: inline-block;
+
+            animation: alasMovimiento 3s ease-in-out infinite;
+        }
+
+
+        .estrella-alas {
+
+            font-size: 25px;
+
+            color: #d85b91;
+
+            animation: estrellaMovimiento 2s ease-in-out infinite;
+        }
+
+
+        @keyframes alasMovimiento {
+
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-7px) rotate(-4deg);
+            }
+        }
+
+
+        @keyframes estrellaMovimiento {
+
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+            }
+
+            50% {
+                transform: scale(1.25) rotate(15deg);
+            }
+        }
+
+
+        header h1 {
+
+            color: #d85b91;
+
+            font-size: 42px;
+
+            margin: 5px 0 10px;
+        }
+
+
+        header p {
+
+            font-size: 18px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .volver {
+
+            display: inline-block;
+
+            text-decoration: none;
+
+            background: #d85b91;
+
+            color: white;
+
+            padding: 12px 24px;
+
+            border-radius: 25px;
+
+            font-weight: bold;
+
+            transition: .3s ease;
+        }
+
+
+        .volver:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 7px 18px rgba(216, 91, 145, .25);
+        }
+
+
+        /* =========================================
+           CARRITO
+        ========================================= */
+
+        .carrito-contenedor {
+
+            width: 92%;
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .carrito-vacio {
+
+            background: white;
+
+            border: 1px solid #f5d3e2;
+
+            border-radius: 25px;
+
+            padding: 45px 25px;
+
+            text-align: center;
+
+            box-shadow:
+                0 10px 25px rgba(107, 64, 85, 0.12);
+        }
+
+
+        .carrito-vacio h2 {
+
+            color: #d85b91;
+
+            margin-bottom: 12px;
+
+            font-size: 27px;
+        }
+
+
+        .carrito-vacio p {
+
+            margin-bottom: 22px;
+
+            font-size: 16px;
+        }
+
+
+        .boton-comprar {
+
+            display: inline-block;
+
+            background: #d85b91;
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 12px 25px;
+
+            border-radius: 25px;
+
+            font-weight: bold;
+
+            transition: .3s ease;
+        }
+
+
+        .boton-comprar:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 7px 18px rgba(216, 91, 145, .25);
+        }
+
+
+        /* =========================================
+           PRODUCTO DEL CARRITO
+        ========================================= */
+
+        .lista-carrito {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 18px;
+        }
+
+
+        .producto-carrito {
+
+            background: white;
+
+            border: 1px solid #f5d3e2;
+
+            border-radius: 25px;
+
+            padding: 22px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            box-shadow:
+                0 10px 25px rgba(107, 64, 85, 0.12);
+
+            transition: .3s ease;
+        }
+
+
+        .producto-carrito:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 15px 30px rgba(216, 91, 145, 0.16);
+        }
+
+
+        .info-producto {
+
+            flex: 1;
+        }
+
+
+        .info-producto h2 {
+
+            color: #d85b91;
+
+            font-size: 21px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .precio-producto {
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            color: #6b4055;
+
+            margin-bottom: 5px;
+        }
+
+
+        .cantidad-texto {
+
+            font-size: 15px;
+
+            color: #8b6375;
+        }
+
+
+        /*
+=========================================
+           CONTROLES
+        ========================================= */
+
+        .controles {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+        }
+
+
+        .btn-cantidad {
+
+            width: 36px;
+
+            height: 36px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: #ffe0ed;
+
+            color: #d85b91;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: .3s ease;
+        }
+
+
+        .btn-cantidad:hover {
+
+            background: #d85b91;
+
+            color: white;
+        }
+
+
+        .cantidad {
+
+            min-width: 30px;
+
+            text-align: center;
+
+            font-weight: bold;
+
+            color: #6b4055;
+        }
+
+
+        .btn-eliminar {
+
+            border: none;
+
+            background: #d85b91;
+
+            color: white;
+
+            padding: 10px 15px;
+
+            border-radius: 20px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: .3s ease;
+        }
+
+
+        .btn-eliminar:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 6px 15px rgba(216, 91, 145, .25);
+        }
+
+
+        /* =========================================
+           RESUMEN
+        ========================================= */
+
+        .resumen {
+
+            background: white;
+
+            border: 1px solid #f5d3e2;
+
+            border-radius: 25px;
+
+            padding: 25px;
+
+            margin-top: 25px;
+
+            box-shadow:
+                0 10px 25px rgba(107, 64, 85, 0.12);
+
+            text-align: right;
+        }
+
+
+        .resumen h2 {
+
+            color: #d85b91;
+
+            margin-bottom: 15px;
+        }
+
+
+        .total {
+
+            font-size: 25px;
+
+            font-weight: bold;
+
+            color: #6b4055;
+
+            margin-bottom: 20px;
+        }
+
+
+        .vaciar {
+
+            border: none;
+
+            background: #ffe0ed;
+
+            color: #d85b91;
+
+            padding: 11px 18px;
+
+            border-radius: 22px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            margin-right: 8px;
+
+            transition: .3s ease;
+        }
+
+
+        .vaciar:hover {
+
+            background: #d85b91;
+
+            color: white;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+
+            text-align: center;
+
+            margin-top: 70px;
+
+            padding: 30px 20px;
+
+            background: white;
+
+            border-top: 1px solid #f5d3e2;
+
+            color: #6b4055;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 700px) {
+
+            .producto-carrito {
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                text-align: center;
+            }
+
+
+            .controles {
+
+                justify-content: center;
+            }
+
+
+            .resumen {
+
+                text-align: center;
+            }
+
+
+            .vaciar {
+
+                margin-bottom: 10px;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .menu {
+
+                width: 94%;
+
+                gap: 5px;
+
+                padding: 12px 8px;
+            }
+
+
+            .menu a {
+
+                padding: 8px 10px;
+
+                font-size: 14px;
+            }
+
+
+            header {
+
+                margin-top: 25px;
+
+                padding: 28px 18px;
+            }
+
+
+            header h1 {
+
+                font-size: 35px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         ESTRELLAS
+    ========================================= -->
+
+    <div class="estrella1">✦</div>
+
+    <div class="estrella2">✧</div>
+
+    <div class="estrella3">✦</div>
+
+    <div class="estrella4">✧</div>
+
+
+    <!-- =========================================
+         MENÚ
+    ========================================= -->
+
+    <nav class="menu">
+
+        <a href="index.html">Inicio</a>
+
+        <a href="moda.html">Moda</a>
+
+        <a href="belleza.html">Belleza</a>
+
+        <a href="skincare.html">Skin care</a>
+
+        <a href="accesorios.html">Accesorios</a>
+
+        <a href="sobre-nosotros.html">Sobre nosotros</a>
+
+        <a href="index.html#contactanos">Contáctanos</a>
+
+    </nav>
+
+
+    <!-- =========================================
+         PRESENTACIÓN
+    ========================================= -->
+
+    <header>
+
+        <div class="alas-con-estrella">
+
+            <span class="alas">🪽</span>
+
+            <span class="estrella-alas">✦</span>
+
+        </div>
+
+        <h1>Mi carrito 🛒</h1>
+
+        <p>
+            Revisa tus productos favoritos de Angel's Fashion World 💕
+        </p>
+
+        <a href="index.html" class="volver">
+            ← Seguir comprando
+        </a>
+
+    </header>
+
+
+    <!-- =========================================
+         CARRITO
+    ========================================= -->
+
+    <main class="carrito-contenedor">
+
+        <div id="carritoContenido"></div>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
+
+    <footer>
+
+        <p>
+            🪽 Angel's Fashion World 🪽
+        </p>
+
+        <p>
+            Moda • Belleza • Skin Care • Accesorios
+        </p>
+
+    </footer>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================= -->
+
+    <script>
+
+        let carrito = JSON.parse(
+            localStorage.getItem("carritoAngel")
+        ) || [];
+
+
+        /* =========================================
+           GUARDAR
+        ========================================= */
+
+        function guardarCarrito() {
+
+            localStorage.setItem(
+                "carritoAngel",
+                JSON.stringify(carrito)
+            );
+
+            mostrarCarrito();
+        }
+
+
+        /* =========================================
+           FORMATO DEL PRECIO
+        ========================================= */
+
+        function formatoPrecio(numero) {
+
+            return "$" + Number(numero).toLocaleString("es-CO");
+        }
+
+
+        /* =========================================
+           MOSTRAR CARRITO
+        ========================================= */
+
+        function mostrarCarrito() {
+
+            const contenido =
+                document.getElementById("carritoContenido");
+
+
+            if (!carrito.length) {
+
+                contenido.innerHTML = `
+
+                    <div class="carrito-vacio">
+
+                        <h2>
+                            Tu carrito está vacío 🛒
+                        </h2>
+
+                        <p>
+                            Todavía no tienes productos agregados.
+                            ¡Ve a descubrir tus favoritos! 💕
+                        </p>
+
+                        <a
+                            href="index.html"
+                            class="boton-comprar"
+                        >
+                            Explorar Angel's 🪽
+                        </a>
+
+                    </div>
+
+                `;
+
+                return;
+            }
+
+
+            let html = `
+                <div class="lista-carrito">
+            `;
+
+
+            carrito.forEach(function(producto, indice) {
+
+                const cantidad =
+                    Number(producto.cantidad) || 1;
+
+
+                const precio =
+                    Number(producto.precio) || 0;
+
+
+                html += `
+
+                    <article class="producto-carrito">
+
+                        <div class="info-producto">
+
+                            <h2>
+                                ${producto.nombre}
+                            </h2>
+
+                            <div class="precio-producto">
+                                ${formatoPrecio(precio)}
+                            </div>
+
+                            <div class="cantidad-texto">
+                                Cantidad: ${cantidad}
+                            </div>
+
+                        </div>
+
+
+                        <div class="controles">
+
+                            <button
+                                class="btn-cantidad"
+                                onclick="disminuirCantidad(${indice})"
+                            >
+                                −
+                            </button>
+
+                            <span class="cantidad">
+                                ${cantidad}
+                            </span>
+
+                            <button
+                                class="btn-cantidad"
+                                onclick="aumentarCantidad(${indice})"
+                            >
+                                +
+                            </button>
+
+                            <button
+                                class="btn-eliminar"
+                                onclick="eliminarProducto(${indice})"
+                            >
+                                Eliminar
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                `;
+            });
+
+
+            html += `
+                </div>
+            `;
+
+
+            let total = 0;
+
+
+            carrito.forEach(function(producto) {
+
+                const cantidad =
+                    Number(producto.cantidad) || 1;
+
+                const precio =
+                    Number(producto.precio) || 0;
+
+                total += precio * cantidad;
+            });
+
+
+            html += `
+
+                <section class="resumen">
+
+                    <h2>
+                        Resumen de compra ✨
+                    </h2>
+
+                    <div class="total">
+                        Total: ${formatoPrecio(total)}
+                    </div>
+
+                    <button
+                        class="vaciar"
+                        onclick="vaciarCarrito()"
+                    >
+                        Vaciar carrito
+                    </button>
+
+                </section>
+
+            `;
+
+
+            contenido.innerHTML = html;
+        }
+
+
+        /* =========================================
+           AUMENTAR
+        ========================================= */
+
+        function aumentarCantidad(indice) {
+
+            carrito[indice].cantidad =
+                (Number(carrito[indice].cantidad) || 1) + 1;
+
+            guardarCarrito();
+        }
+
+
+        /* =========================================
+           DISMINUIR
+        ========================================= */
+
+        function disminuirCantidad(indice) {
+
+            const cantidad =
+                Number(carrito[indice].cantidad) || 1;
+
+
+            if (cantidad > 1) {
+
+                carrito[indice].cantidad =
+                    cantidad - 1;
+
+            } else {
+
+                carrito.splice(indice, 1);
+            }
+
+
+            guardarCarrito();
+        }
+
+
+        /* =========================================
+           ELIMINAR
+        ========================================= */
+
+        function eliminarProducto(indice) {
+
+            carrito.splice(indice, 1);
+
+            guardarCarrito();
+        }
+
+
+        /* =========================================
+           VACIAR
+        ========================================= */
+
+        function vaciarCarrito() {
+
+            if (!carrito.length) {
+                return;
+            }
+
+
+            const confirmar =
+                confirm(
+                    "¿Quieres vaciar todo tu carrito? 🛒💕"
+                );
+
+
+            if (confirmar) {
+
+                carrito = [];
+
+                guardarCarrito();
+            }
+        }
+
+
+        /* =========================================
+           MOSTRAR AL CARGAR
+        ========================================= */
+
+        mostrarCarrito();
+
+    </script>
+
+</body>
+
+</html>
