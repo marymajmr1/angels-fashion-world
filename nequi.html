@@ -1,1 +1,565 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pago por Nequi | Angel's Fashion World</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background:
+                radial-gradient(circle at top left, #ffffff 0%, transparent 35%),
+                radial-gradient(circle at bottom right, #ffe1ef 0%, transparent 40%),
+                #fff0f6;
+            color: #6b4055;
+            min-height: 100vh;
+        }
+
+        /* ESTRELLAS */
+
+        .estrella {
+            position: fixed;
+            color: #d85b91;
+            font-size: 22px;
+            z-index: 0;
+            animation: flotar 4s ease-in-out infinite;
+        }
+
+        .estrella1 {
+            top: 12%;
+            left: 5%;
+        }
+
+        .estrella2 {
+            top: 25%;
+            right: 7%;
+            animation-delay: 1s;
+        }
+
+        .estrella3 {
+            bottom: 20%;
+            left: 8%;
+            animation-delay: 2s;
+        }
+
+        .estrella4 {
+            bottom: 10%;
+            right: 10%;
+            animation-delay: 3s;
+        }
+
+        @keyframes flotar {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* MENÚ */
+
+        .menu {
+            width: 92%;
+            max-width: 1200px;
+            margin: 25px auto;
+            padding: 15px 20px;
+
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #f2c8da;
+            border-radius: 25px;
+
+            box-shadow: 0 5px 20px rgba(216, 91, 145, 0.12);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #6b4055;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: #d85b91;
+        }
+
+        /* PRESENTACIÓN */
+
+        .presentacion {
+            width: 92%;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 35px 20px;
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #f2c8da;
+            border-radius: 25px;
+
+            box-shadow: 0 5px 20px rgba(216, 91, 145, 0.12);
+
+            position: relative;
+            z-index: 1;
+        }
+
+        .alas {
+            font-size: 35px;
+            margin-bottom: 5px;
+        }
+
+        .presentacion h1 {
+            color: #d85b91;
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .presentacion p {
+            font-size: 17px;
+        }
+
+        /* CONTENEDOR */
+
+        .pago-contenedor {
+            width: 92%;
+            max-width: 600px;
+            margin: 30px auto 60px;
+
+            position: relative;
+            z-index: 1;
+        }
+
+        /* TARJETA DE PAGO */
+
+        .pago {
+            background: white;
+            border: 1px solid #f2c8da;
+            border-radius: 25px;
+
+            padding: 30px 25px;
+
+            text-align: center;
+
+            box-shadow: 0 5px 20px rgba(216, 91, 145, 0.12);
+        }
+
+        .pago h2 {
+            color: #d85b91;
+            margin-bottom: 20px;
+        }
+
+        /* DATOS */
+
+        .dato {
+            background: #fff0f6;
+            border: 1px solid #f2c8da;
+            border-radius: 18px;
+
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .dato strong {
+            display: block;
+            color: #d85b91;
+            margin-bottom: 7px;
+        }
+
+        /* NÚMERO */
+
+        .numero-nequi {
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* TOTAL */
+
+        #totalPago {
+            font-size: 25px;
+            font-weight: bold;
+            color: #d85b91;
+        }
+
+        /* QR */
+
+        .texto-qr {
+            margin: 20px 0 10px;
+        }
+
+        .qr {
+            width: 280px;
+            max-width: 90%;
+
+            margin: 20px auto;
+
+            display: block;
+
+            border-radius: 15px;
+
+            box-shadow: 0 5px 18px rgba(216, 91, 145, 0.12);
+        }
+
+        /* BOTÓN PAGAR */
+
+        .boton-pagar {
+            display: inline-block;
+
+            margin-top: 15px;
+
+            background: #d85b91;
+            color: white;
+
+            border: none;
+
+            padding: 14px 35px;
+
+            border-radius: 22px;
+
+            cursor: pointer;
+
+            font-size: 17px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .boton-pagar:hover {
+            transform: scale(1.04);
+        }
+
+        /* MENSAJE */
+
+        .mensaje {
+            display: none;
+
+            margin-top: 20px;
+
+            padding: 18px;
+
+            background: #fff0f6;
+
+            border: 1px solid #f2c8da;
+
+            border-radius: 18px;
+        }
+
+        .mensaje h3 {
+            color: #d85b91;
+            margin-bottom: 8px;
+        }
+
+        /* VOLVER */
+
+        .volver {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            background: white;
+            color: #d85b91;
+
+            border: 2px solid #d85b91;
+
+            padding: 11px 22px;
+
+            border-radius: 20px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 30px 15px;
+            color: #6b4055;
+        }
+
+        footer strong {
+            color: #d85b91;
+        }
+
+        /* CELULAR */
+
+        @media (max-width: 600px) {
+
+            .menu {
+                gap: 12px;
+                padding: 14px;
+            }
+
+            .menu a {
+                font-size: 14px;
+            }
+
+            .presentacion h1 {
+                font-size: 28px;
+            }
+
+            .qr {
+                width: 240px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ESTRELLAS -->
+
+    <div class="estrella estrella1">✦</div>
+    <div class="estrella estrella2">✧</div>
+    <div class="estrella estrella3">✦</div>
+    <div class="estrella estrella4">✧</div>
+
+
+    <!-- MENÚ -->
+
+    <nav class="menu">
+
+        <a href="index.html">Inicio</a>
+
+        <a href="moda.html">Moda</a>
+
+        <a href="belleza.html">Belleza</a>
+
+        <a href="skincare.html">Skin care</a>
+
+        <a href="accesorios.html">Accesorios</a>
+
+        <a href="sobre-nosotros.html">Sobre nosotros</a>
+
+        <a href="index.html#contactanos">Contáctanos</a>
+
+    </nav>
+
+
+    <!-- PRESENTACIÓN -->
+
+    <header class="presentacion">
+
+        <div class="alas">
+            🪽 ✦
+        </div>
+
+        <h1>
+            Pago por Nequi 💗
+        </h1>
+
+        <p>
+            Realiza el pago de tu compra de forma sencilla y segura.
+        </p>
+
+    </header>
+
+
+    <!-- PAGO -->
+
+    <main class="pago-contenedor">
+
+        <section class="pago">
+
+            <h2>
+                💗 Datos de tu pago
+            </h2>
+
+
+            <!-- NÚMERO DE NEQUI -->
+
+            <div class="dato">
+
+                <strong>
+                    Número de Nequi
+                </strong>
+
+                <div class="numero-nequi">
+                    3170948192
+                </div>
+
+            </div>
+
+
+            <!-- CANTIDAD -->
+
+            <div class="dato">
+
+                <strong>
+                    Cantidad a pagar
+                </strong>
+
+                <div id="totalPago">
+                    $0
+                </div>
+
+            </div>
+
+
+            <!-- QR -->
+
+            <p class="texto-qr">
+                Escanea este código QR para realizar el pago:
+            </p>
+
+            <img
+                class="qr"
+                src="imagenes/nequi/Screenshot_2026-09-25-22-33-15-889_com.nequi.MobileApp-edit.jpg"
+                alt="Código QR de Nequi">
+
+
+            <p>
+                Después de realizar el pago, presiona:
+            </p>
+
+
+            <!-- BOTÓN -->
+
+            <button
+                class="boton-pagar"
+                onclick="confirmarPago()">
+
+                Pagar
+
+            </button>
+
+
+            <!-- MENSAJE -->
+
+            <div
+                class="mensaje"
+                id="mensaje">
+
+                <h3>
+                    🪽 ¡Gracias por tu compra!
+                </h3>
+
+                <p>
+                    Tu pago debe ser verificado antes de confirmar el pedido. 💕
+                </p>
+
+            </div>
+
+
+            <!-- VOLVER -->
+
+            <a
+                href="carrito.html"
+                class="volver">
+
+                ← Volver al carrito
+
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        🪽
+        <strong>
+            Angel's Fashion World
+        </strong>
+        🪽
+
+        <br>
+
+        Moda • Belleza • Skin Care • Accesorios
+
+    </footer>
+
+
+    <script>
+
+        /*
+        ========================================
+        TOMAR EL TOTAL DEL CARRITO
+        ========================================
+        */
+
+        const carrito =
+            JSON.parse(
+                localStorage.getItem("carritoAngel")
+            ) || [];
+
+
+        let total = 0;
+
+
+        carrito.forEach(producto => {
+
+            const precio =
+                Number(producto.precio) || 0;
+
+            const cantidad =
+                Number(producto.cantidad) || 1;
+
+            total += precio * cantidad;
+
+        });
+
+
+        /*
+        ========================================
+        MOSTRAR TOTAL
+        ========================================
+        */
+
+        document.getElementById("totalPago").textContent =
+            "$" + total.toLocaleString("es-CO");
+
+
+        /*
+        ========================================
+        BOTÓN PAGAR
+        ========================================
+        */
+
+        function confirmarPago() {
+
+            const mensaje =
+                document.getElementById("mensaje");
+
+            mensaje.style.display = "block";
+
+            mensaje.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
