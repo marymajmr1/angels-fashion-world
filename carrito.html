@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Carrito | Angel's Fashion World</title>
+    <title>Mi carrito | Angel's Fashion World</title>
 
     <style>
-
         * {
             box-sizing: border-box;
             margin: 0;
@@ -21,758 +20,439 @@
 
         body {
             font-family: Arial, sans-serif;
-
             background:
                 radial-gradient(circle at top left, #ffffff 0%, transparent 35%),
                 radial-gradient(circle at bottom right, #ffe1ef 0%, transparent 40%),
                 #fff0f6;
-
             color: #6b4055;
-
             min-height: 100vh;
         }
 
+        /* ESTRELLAS */
 
-        /* =========================================
-           ESTRELLAS DECORATIVAS
-        ========================================= */
-
-        .estrella1,
-        .estrella2,
-        .estrella3,
-        .estrella4 {
-
+        .estrella {
             position: fixed;
-
-            font-size: 28px;
-
             color: #d85b91;
-
+            font-size: 22px;
             z-index: 0;
-
-            pointer-events: none;
-
-            animation: flotar 3s ease-in-out infinite;
+            animation: flotar 4s ease-in-out infinite;
         }
 
         .estrella1 {
-            top: 120px;
-            left: 4%;
+            top: 12%;
+            left: 5%;
         }
 
         .estrella2 {
-            top: 280px;
-            right: 5%;
-
-            animation-delay: .7s;
+            top: 25%;
+            right: 7%;
+            animation-delay: 1s;
         }
 
         .estrella3 {
-            bottom: 180px;
-            left: 6%;
-
-            animation-delay: 1.3s;
-        }
-
-        .estrella4 {
-            bottom: 80px;
-            right: 7%;
-
+            bottom: 20%;
+            left: 8%;
             animation-delay: 2s;
         }
 
+        .estrella4 {
+            bottom: 10%;
+            right: 10%;
+            animation-delay: 3s;
+        }
 
         @keyframes flotar {
-
             0%, 100% {
-                transform: translateY(0) rotate(0deg);
+                transform: translateY(0);
             }
 
             50% {
-                transform: translateY(-12px) rotate(12deg);
+                transform: translateY(-10px);
             }
         }
 
-
-        /* =========================================
-           MENÚ
-        ========================================= */
+        /* MENÚ */
 
         .menu {
-
             width: 92%;
-
             max-width: 1200px;
-
-            margin: 25px auto 0;
+            margin: 25px auto;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #f2c8da;
+            border-radius: 25px;
+            box-shadow: 0 5px 20px rgba(216, 91, 145, 0.12);
 
             display: flex;
-
             justify-content: center;
-
             align-items: center;
-
+            gap: 20px;
             flex-wrap: wrap;
 
-            gap: 10px;
-
-            background: rgba(255, 255, 255, 0.92);
-
-            padding: 14px 18px;
-
-            border-radius: 25px;
-
-            box-shadow:
-                0 8px 25px rgba(216, 91, 145, 0.15);
-
-            border: 1px solid #f5d3e2;
-
             position: relative;
-
-            z-index: 10;
-        }
-
-
-        .menu a {
-
-            text-decoration: none;
-
-            color: #6b4055;
-
-            font-weight: bold;
-
-            padding: 10px 16px;
-
-            border-radius: 20px;
-
-            transition: .3s ease;
-        }
-
-
-        .menu a:hover {
-
-            background: #ffe0ed;
-
-            color: #d85b91;
-
-            transform: translateY(-2px);
-        }
-
-
-        /* =========================================
-           PRESENTACIÓN
-        ========================================= */
-
-        header {
-
-            width: 92%;
-
-            max-width: 1000px;
-
-            margin: 35px auto 45px;
-
-            text-align: center;
-
-            background: rgba(255, 255, 255, 0.94);
-
-            padding: 35px 25px;
-
-            border-radius: 30px;
-
-            box-shadow:
-                0 12px 35px rgba(216, 91, 145, 0.18);
-
-            border: 1px solid #f5d3e2;
-
-            position: relative;
-
             z-index: 2;
         }
 
+        .menu a {
+            text-decoration: none;
+            color: #6b4055;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-        .alas-con-estrella {
+        .menu a:hover {
+            color: #d85b91;
+        }
 
-            display: flex;
+        /* PRESENTACIÓN */
 
-            justify-content: center;
+        .presentacion {
+            width: 92%;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 35px 20px;
+            text-align: center;
 
-            align-items: center;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #f2c8da;
+            border-radius: 25px;
+            box-shadow: 0 5px 20px rgba(216, 91, 145, 0.12);
 
-            gap: 5px;
+            position: relative;
+            z-index: 1;
+        }
 
+        .alas {
+            font-size: 35px;
             margin-bottom: 5px;
         }
 
-
-        .alas {
-
-            font-size: 48px;
-
-            display: inline-block;
-
-            animation: alasMovimiento 3s ease-in-out infinite;
-        }
-
-
-        .estrella-alas {
-
-            font-size: 25px;
-
+        .presentacion h1 {
             color: #d85b91;
-
-            animation: estrellaMovimiento 2s ease-in-out infinite;
+            font-size: 34px;
+            margin-bottom: 10px;
         }
 
-
-        @keyframes alasMovimiento {
-
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(-7px) rotate(-4deg);
-            }
-        }
-
-
-        @keyframes estrellaMovimiento {
-
-            0%, 100% {
-                transform: scale(1) rotate(0deg);
-            }
-
-            50% {
-                transform: scale(1.25) rotate(15deg);
-            }
-        }
-
-
-        header h1 {
-
-            color: #d85b91;
-
-            font-size: 42px;
-
-            margin: 5px 0 10px;
-        }
-
-
-        header p {
-
-            font-size: 18px;
-
+        .presentacion p {
+            font-size: 17px;
             margin-bottom: 20px;
         }
 
-
         .volver {
-
             display: inline-block;
-
-            text-decoration: none;
-
             background: #d85b91;
-
             color: white;
-
-            padding: 12px 24px;
-
-            border-radius: 25px;
-
+            padding: 12px 22px;
+            border-radius: 20px;
+            text-decoration: none;
             font-weight: bold;
-
-            transition: .3s ease;
+            transition: 0.3s;
         }
-
 
         .volver:hover {
-
-            transform: translateY(-3px);
-
-            box-shadow:
-                0 7px 18px rgba(216, 91, 145, .25);
+            transform: scale(1.04);
         }
 
-
-        /* =========================================
-           CARRITO
-        ========================================= */
+        /* CARRITO */
 
         .carrito-contenedor {
-
             width: 92%;
-
-            max-width: 1100px;
-
-            margin: auto;
-
+            max-width: 1000px;
+            margin: 30px auto 60px;
             position: relative;
-
-            z-index: 2;
+            z-index: 1;
         }
 
-
-        .carrito-vacio {
-
-            background: white;
-
-            border: 1px solid #f5d3e2;
-
-            border-radius: 25px;
-
-            padding: 45px 25px;
-
+        .titulo-carrito {
             text-align: center;
-
-            box-shadow:
-                0 10px 25px rgba(107, 64, 85, 0.12);
-        }
-
-
-        .carrito-vacio h2 {
-
             color: #d85b91;
-
-            margin-bottom: 12px;
-
-            font-size: 27px;
+            font-size: 30px;
+            margin-bottom: 25px;
         }
 
+        .producto-carrito {
+            background: white;
+            border: 1px solid #f2c8da;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 18px rgba(216, 91, 145, 0.10);
 
-        .carrito-vacio p {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
 
-            margin-bottom: 22px;
+        .producto-info {
+            flex: 1;
+            min-width: 220px;
+        }
 
+        .producto-info h3 {
+            color: #d85b91;
+            margin-bottom: 8px;
+            font-size: 19px;
+        }
+
+        .producto-info p {
+            margin: 4px 0;
+        }
+
+        .cantidad {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cantidad button {
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 50%;
+            background: #d85b91;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .cantidad span {
+            font-weight: bold;
+            min-width: 25px;
+            text-align: center;
+        }
+
+        .eliminar {
+            border: none;
+            background: #ffe1ef;
+            color: #d85b91;
+            padding: 9px 14px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* RESUMEN */
+
+        .resumen {
+            background: white;
+            border: 1px solid #f2c8da;
+            border-radius: 25px;
+            padding: 25px;
+            margin-top: 25px;
+            box-shadow: 0 5px 20px rgba(216, 91, 145, 0.12);
+        }
+
+        .resumen h2 {
+            color: #d85b91;
+            margin-bottom: 18px;
+            font-size: 25px;
+        }
+
+        .total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 21px;
+            font-weight: bold;
+            padding: 15px 0;
+            border-top: 1px solid #f2c8da;
+        }
+
+        .total span:last-child {
+            color: #d85b91;
+        }
+
+        /* BOTONES */
+
+        .acciones {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .vaciar {
+            background: white;
+            color: #d85b91;
+            border: 2px solid #d85b91;
+            padding: 12px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .comprar {
+            background: #d85b91;
+            color: white;
+            border: none;
+            padding: 13px 30px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
             font-size: 16px;
         }
 
+        /* PAGO */
 
-        .boton-comprar {
-
-            display: inline-block;
-
-            background: #d85b91;
-
-            color: white;
-
-            text-decoration: none;
-
-            padding: 12px 25px;
-
-            border-radius: 25px;
-
-            font-weight: bold;
-
-            transition: .3s ease;
-        }
-
-
-        .boton-comprar:hover {
-
-            transform: translateY(-3px);
-
-            box-shadow:
-                0 7px 18px rgba(216, 91, 145, .25);
-        }
-
-
-        /* =========================================
-           PRODUCTO DEL CARRITO
-        ========================================= */
-
-        .lista-carrito {
-
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 18px;
-        }
-
-
-        .producto-carrito {
-
-            background: white;
-
-            border: 1px solid #f5d3e2;
-
-            border-radius: 25px;
-
+        .pago {
+            display: none;
+            margin-top: 20px;
             padding: 22px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            gap: 20px;
-
-            box-shadow:
-                0 10px 25px rgba(107, 64, 85, 0.12);
-
-            transition: .3s ease;
-        }
-
-
-        .producto-carrito:hover {
-
-            transform: translateY(-3px);
-
-            box-shadow:
-                0 15px 30px rgba(216, 91, 145, 0.16);
-        }
-
-
-        .info-producto {
-
-            flex: 1;
-        }
-
-
-        .info-producto h2 {
-
-            color: #d85b91;
-
-            font-size: 21px;
-
-            margin-bottom: 8px;
-        }
-
-
-        .precio-producto {
-
-            font-size: 17px;
-
-            font-weight: bold;
-
-            color: #6b4055;
-
-            margin-bottom: 5px;
-        }
-
-
-        .cantidad-texto {
-
-            font-size: 15px;
-
-            color: #8b6375;
-        }
-
-
-        /*
-=========================================
-           CONTROLES
-        ========================================= */
-
-        .controles {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 8px;
-        }
-
-
-        .btn-cantidad {
-
-            width: 36px;
-
-            height: 36px;
-
-            border: none;
-
-            border-radius: 50%;
-
-            background: #ffe0ed;
-
-            color: #d85b91;
-
-            font-size: 20px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-            transition: .3s ease;
-        }
-
-
-        .btn-cantidad:hover {
-
-            background: #d85b91;
-
-            color: white;
-        }
-
-
-        .cantidad {
-
-            min-width: 30px;
-
-            text-align: center;
-
-            font-weight: bold;
-
-            color: #6b4055;
-        }
-
-
-        .btn-eliminar {
-
-            border: none;
-
-            background: #d85b91;
-
-            color: white;
-
-            padding: 10px 15px;
-
+            background: #fff0f6;
+            border: 1px solid #f2c8da;
             border-radius: 20px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-            transition: .3s ease;
+            text-align: center;
         }
 
-
-        .btn-eliminar:hover {
-
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 6px 15px rgba(216, 91, 145, .25);
-        }
-
-
-        /* =========================================
-           RESUMEN
-        ========================================= */
-
-        .resumen {
-
-            background: white;
-
-            border: 1px solid #f5d3e2;
-
-            border-radius: 25px;
-
-            padding: 25px;
-
-            margin-top: 25px;
-
-            box-shadow:
-                0 10px 25px rgba(107, 64, 85, 0.12);
-
-            text-align: right;
-        }
-
-
-        .resumen h2 {
-
+        .pago h3 {
             color: #d85b91;
-
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+            font-size: 22px;
         }
 
-
-        .total {
-
-            font-size: 25px;
-
+        .numero-nequi {
+            font-size: 24px;
             font-weight: bold;
-
             color: #6b4055;
+            letter-spacing: 1px;
+            margin: 10px 0;
+        }
 
+        .boton-pagar {
+            margin-top: 18px;
+            background: #d85b91;
+            color: white;
+            border: none;
+            padding: 13px 35px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* MENSAJE FINAL */
+
+        .mensaje-final {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border: 1px solid #f2c8da;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .mensaje-final h3 {
+            color: #d85b91;
+            margin-bottom: 10px;
+        }
+
+        /* CARRITO VACÍO */
+
+        .vacio {
+            background: white;
+            border: 1px solid #f2c8da;
+            border-radius: 25px;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(216, 91, 145, 0.12);
+        }
+
+        .vacio h2 {
+            color: #d85b91;
+            margin-bottom: 12px;
+        }
+
+        .vacio p {
             margin-bottom: 20px;
         }
 
-
-        .vaciar {
-
-            border: none;
-
-            background: #ffe0ed;
-
-            color: #d85b91;
-
-            padding: 11px 18px;
-
-            border-radius: 22px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-            margin-right: 8px;
-
-            transition: .3s ease;
-        }
-
-
-        .vaciar:hover {
-
-            background: #d85b91;
-
-            color: white;
-        }
-
-
-        /* =========================================
-           FOOTER
-        ========================================= */
+        /* FOOTER */
 
         footer {
-
             text-align: center;
-
-            margin-top: 70px;
-
-            padding: 30px 20px;
-
-            background: white;
-
-            border-top: 1px solid #f5d3e2;
-
+            padding: 30px 15px;
             color: #6b4055;
-
-            line-height: 1.8;
+            position: relative;
+            z-index: 1;
         }
 
-
-        /* =========================================
-           RESPONSIVE
-        ========================================= */
-
-        @media (max-width: 700px) {
-
-            .producto-carrito {
-
-                flex-direction: column;
-
-                align-items: stretch;
-
-                text-align: center;
-            }
-
-
-            .controles {
-
-                justify-content: center;
-            }
-
-
-            .resumen {
-
-                text-align: center;
-            }
-
-
-            .vaciar {
-
-                margin-bottom: 10px;
-            }
+        footer strong {
+            color: #d85b91;
         }
-
+/* RESPONSIVE */
 
         @media (max-width: 600px) {
 
             .menu {
-
-                width: 94%;
-
-                gap: 5px;
-
-                padding: 12px 8px;
+                gap: 12px;
+                padding: 14px;
             }
 
-
             .menu a {
-
-                padding: 8px 10px;
-
                 font-size: 14px;
             }
 
-
-            header {
-
-                margin-top: 25px;
-
-                padding: 28px 18px;
+            .presentacion h1 {
+                font-size: 28px;
             }
 
+            .producto-carrito {
+                align-items: flex-start;
+            }
 
-            header h1 {
+            .acciones {
+                flex-direction: column;
+                align-items: stretch;
+            }
 
-                font-size: 35px;
+            .vaciar,
+            .comprar {
+                width: 100%;
+            }
+
+            .total {
+                font-size: 18px;
             }
         }
-
     </style>
 </head>
 
-
 <body>
 
-    <!-- =========================================
-         ESTRELLAS
-    ========================================= -->
+    <!-- ESTRELLAS -->
 
-    <div class="estrella1">✦</div>
+    <div class="estrella estrella1">✦</div>
+    <div class="estrella estrella2">✧</div>
+    <div class="estrella estrella3">✦</div>
+    <div class="estrella estrella4">✧</div>
 
-    <div class="estrella2">✧</div>
-
-    <div class="estrella3">✦</div>
-
-    <div class="estrella4">✧</div>
-
-
-    <!-- =========================================
-         MENÚ
-    ========================================= -->
+    <!-- MENÚ -->
 
     <nav class="menu">
-
         <a href="index.html">Inicio</a>
-
         <a href="moda.html">Moda</a>
-
         <a href="belleza.html">Belleza</a>
-
         <a href="skincare.html">Skin care</a>
-
         <a href="accesorios.html">Accesorios</a>
-
         <a href="sobre-nosotros.html">Sobre nosotros</a>
-
         <a href="index.html#contactanos">Contáctanos</a>
-
     </nav>
 
+    <!-- PRESENTACIÓN -->
 
-    <!-- =========================================
-         PRESENTACIÓN
-    ========================================= -->
+    <header class="presentacion">
 
-    <header>
-
-        <div class="alas-con-estrella">
-
-            <span class="alas">🪽</span>
-
-            <span class="estrella-alas">✦</span>
-
-        </div>
+        <div class="alas">🪽 ✦</div>
 
         <h1>Mi carrito 🛒</h1>
 
         <p>
-            Revisa tus productos favoritos de Angel's Fashion World 💕
+            Revisa tus productos antes de comprar. 💕
         </p>
 
         <a href="index.html" class="volver">
@@ -781,49 +461,101 @@
 
     </header>
 
-
-    <!-- =========================================
-         CARRITO
-    ========================================= -->
+    <!-- CARRITO -->
 
     <main class="carrito-contenedor">
 
-        <div id="carritoContenido"></div>
+        <h2 class="titulo-carrito">
+            Resumen de carrito
+        </h2>
+
+        <div id="listaCarrito"></div>
+
+        <!-- RESUMEN -->
+
+        <section class="resumen" id="resumenCarrito">
+
+            <h2>Resumen de carrito 🛍️</h2>
+
+            <div class="total">
+                <span>Total:</span>
+                <span id="totalCarrito">$0</span>
+            </div>
+
+            <div class="acciones">
+
+                <button class="vaciar" onclick="vaciarCarrito()">
+                    Vaciar carrito
+                </button>
+
+                <button class="comprar" onclick="mostrarPago()">
+                    Comprar
+                </button>
+
+            </div>
+
+            <!-- PAGO -->
+
+            <div class="pago" id="pago">
+
+                <h3>💗 Realiza tu pago por Nequi</h3>
+
+                <p>
+                    Envía el total de tu compra al siguiente número:
+                </p>
+
+                <div class="numero-nequi">
+                    3170948192
+                </div>
+
+                <p>
+                    Después de realizar el pago, presiona el botón:
+                </p>
+
+                <button class="boton-pagar" onclick="finalizarPago()">
+                    Pagar
+                </button>
+
+            </div>
+
+            <!-- MENSAJE FINAL -->
+
+            <div class="mensaje-final" id="mensajeFinal">
+
+                <h3>🪽 ¡Gracias por tu compra!</h3>
+
+                <p>
+                    Hemos recibido tu solicitud de pago.
+                    💕
+                </p>
+
+            </div>
+
+        </section>
 
     </main>
 
-
-    <!-- =========================================
-         FOOTER
-    ========================================= -->
+    <!-- FOOTER -->
 
     <footer>
-
-        <p>
-            🪽 Angel's Fashion World 🪽
-        </p>
-
-        <p>
-            Moda • Belleza • Skin Care • Accesorios
-        </p>
-
+        🪽 <strong>Angel's Fashion World</strong> 🪽
+        <br>
+        Moda • Belleza • Skin Care • Accesorios
     </footer>
 
 
-    <!-- =========================================
-         JAVASCRIPT
-    ========================================= -->
-
     <script>
 
-        let carrito = JSON.parse(
-            localStorage.getItem("carritoAngel")
-        ) || [];
+        let carrito = JSON.parse(localStorage.getItem("carritoAngel")) || [];
 
 
-        /* =========================================
-           GUARDAR
-        ========================================= */
+        function formatoPrecio(numero) {
+
+            numero = Number(numero) || 0;
+
+            return "$" + numero.toLocaleString("es-CO");
+        }
+
 
         function guardarCarrito() {
 
@@ -836,254 +568,190 @@
         }
 
 
-        /* =========================================
-           FORMATO DEL PRECIO
-        ========================================= */
-
-        function formatoPrecio(numero) {
-
-            return "$" + Number(numero).toLocaleString("es-CO");
-        }
-
-
-        /* =========================================
-           MOSTRAR CARRITO
-        ========================================= */
-
         function mostrarCarrito() {
 
-            const contenido =
-                document.getElementById("carritoContenido");
+            const lista = document.getElementById("listaCarrito");
+            const resumen = document.getElementById("resumenCarrito");
 
+            lista.innerHTML = "";
 
-            if (!carrito.length) {
+            if (!Array.isArray(carrito) || carrito.length === 0) {
 
-                contenido.innerHTML = `
-
-                    <div class="carrito-vacio">
+                lista.innerHTML = `
+                    <div class="vacio">
 
                         <h2>
                             Tu carrito está vacío 🛒
                         </h2>
 
                         <p>
-                            Todavía no tienes productos agregados.
-                            ¡Ve a descubrir tus favoritos! 💕
+                            Todavía no has agregado ningún producto. 💕
                         </p>
 
-                        <a
-                            href="index.html"
-                            class="boton-comprar"
-                        >
+                        <a href="index.html" class="volver">
                             Explorar Angel's 🪽
                         </a>
 
                     </div>
-
                 `;
+
+                resumen.style.display = "none";
 
                 return;
             }
 
-
-            let html = `
-                <div class="lista-carrito">
-            `;
-
-
-            carrito.forEach(function(producto, indice) {
-
-                const cantidad =
-                    Number(producto.cantidad) || 1;
-
-
-                const precio =
-                    Number(producto.precio) || 0;
-
-
-                html += `
-
-                    <article class="producto-carrito">
-
-                        <div class="info-producto">
-
-                            <h2>
-                                ${producto.nombre}
-                            </h2>
-
-                            <div class="precio-producto">
-                                ${formatoPrecio(precio)}
-                            </div>
-
-                            <div class="cantidad-texto">
-                                Cantidad: ${cantidad}
-                            </div>
-
-                        </div>
-
-
-                        <div class="controles">
-
-                            <button
-                                class="btn-cantidad"
-                                onclick="disminuirCantidad(${indice})"
-                            >
-                                −
-                            </button>
-
-                            <span class="cantidad">
-                                ${cantidad}
-                            </span>
-
-                            <button
-                                class="btn-cantidad"
-                                onclick="aumentarCantidad(${indice})"
-                            >
-                                +
-                            </button>
-
-                            <button
-                                class="btn-eliminar"
-                                onclick="eliminarProducto(${indice})"
-                            >
-                                Eliminar
-                            </button>
-
-                        </div>
-
-                    </article>
-
-                `;
-            });
-
-
-            html += `
-                </div>
-            `;
-
+            resumen.style.display = "block";
 
             let total = 0;
 
+            carrito.forEach((producto, index) => {
 
-            carrito.forEach(function(producto) {
-
-                const cantidad =
-                    Number(producto.cantidad) || 1;
-
-                const precio =
-                    Number(producto.precio) || 0;
+                const precio = Number(producto.precio) || 0;
+                const cantidad = Number(producto.cantidad) || 1;
 
                 total += precio * cantidad;
+
+                lista.innerHTML += `
+
+                    <div class="producto-carrito">
+
+                        <div class="producto-info">
+
+                            <h3>
+                                ${producto.nombre || "Producto"}
+                            </h3>
+
+                            <p>
+                                Precio: ${formatoPrecio(precio)}
+                            </p>
+
+                            ${
+                                producto.talla
+                                ? `<p>Talla: ${producto.talla}</p>`
+                                : ""
+                            }
+
+                        </div>
+
+                        <div class="cantidad">
+
+                            <button onclick="disminuirCantidad(${index})">
+                                −
+                            </button>
+
+                            <span>
+                                ${cantidad}
+                            </span>
+
+                            <button onclick="aumentarCantidad(${index})">
+                                +
+                            </button>
+
+                        </div>
+
+                        <button
+                            class="eliminar"
+                            onclick="eliminarProducto(${index})"
+                        >
+                            Eliminar
+                        </button>
+
+                    </div>
+                `;
             });
 
-
-            html += `
-
-                <section class="resumen">
-
-                    <h2>
-                        Resumen de compra ✨
-                    </h2>
-
-                    <div class="total">
-                        Total: ${formatoPrecio(total)}
-                    </div>
-
-                    <button
-                        class="vaciar"
-                        onclick="vaciarCarrito()"
-                    >
-                        Vaciar carrito
-                    </button>
-
-                </section>
-
-            `;
-
-
-            contenido.innerHTML = html;
+            document.getElementById("totalCarrito").textContent =
+                formatoPrecio(total);
         }
 
 
-        /* =========================================
-           AUMENTAR
-        ========================================= */
+        function aumentarCantidad(index) {
 
-        function aumentarCantidad(indice) {
-
-            carrito[indice].cantidad =
-                (Number(carrito[indice].cantidad) || 1) + 1;
+            carrito[index].cantidad =
+                (Number(carrito[index].cantidad) || 0) + 1;
 
             guardarCarrito();
         }
 
 
-        /* =========================================
-           DISMINUIR
-        ========================================= */
-
-        function disminuirCantidad(indice) {
+        function disminuirCantidad(index) {
 
             const cantidad =
-                Number(carrito[indice].cantidad) || 1;
-
+                Number(carrito[index].cantidad) || 1;
 
             if (cantidad > 1) {
 
-                carrito[indice].cantidad =
-                    cantidad - 1;
+                carrito[index].cantidad = cantidad - 1;
 
             } else {
 
-                carrito.splice(indice, 1);
+                carrito.splice(index, 1);
             }
 
-
             guardarCarrito();
         }
 
 
-        /* =========================================
-           ELIMINAR
-        ========================================= */
+        function eliminarProducto(index) {
 
-        function eliminarProducto(indice) {
-
-            carrito.splice(indice, 1);
+            carrito.splice(index, 1);
 
             guardarCarrito();
         }
 
-
-        /* =========================================
-           VACIAR
-        ========================================= */
 
         function vaciarCarrito() {
 
-            if (!carrito.length) {
+            if (carrito.length === 0) {
                 return;
             }
 
-
-            const confirmar =
-                confirm(
-                    "¿Quieres vaciar todo tu carrito? 🛒💕"
-                );
-
+            const confirmar = confirm(
+                "¿Quieres vaciar todo el carrito?"
+            );
 
             if (confirmar) {
 
                 carrito = [];
 
-                guardarCarrito();
+                localStorage.setItem(
+                    "carritoAngel",
+                    JSON.stringify(carrito)
+                );
+
+                mostrarCarrito();
             }
         }
 
 
-        /* =========================================
-           MOSTRAR AL CARGAR
-        ========================================= */
+        function mostrarPago() {
+
+            const pago = document.getElementById("pago");
+
+            pago.style.display = "block";
+
+            pago.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        }
+
+
+        function finalizarPago() {
+
+            const pago = document.getElementById("pago");
+            const mensaje = document.getElementById("mensajeFinal");
+
+            pago.style.display = "none";
+
+            mensaje.style.display = "block";
+
+            mensaje.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        }
+
 
         mostrarCarrito();
 
