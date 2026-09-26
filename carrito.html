@@ -62,7 +62,9 @@
         }
 
         @keyframes flotar {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0);
             }
 
@@ -78,9 +80,11 @@
             max-width: 1200px;
             margin: 25px auto;
             padding: 15px 20px;
+
             background: rgba(255, 255, 255, 0.9);
             border: 1px solid #f2c8da;
             border-radius: 25px;
+
             box-shadow: 0 5px 20px rgba(216, 91, 145, 0.12);
 
             display: flex;
@@ -116,6 +120,7 @@
             background: rgba(255, 255, 255, 0.9);
             border: 1px solid #f2c8da;
             border-radius: 25px;
+
             box-shadow: 0 5px 20px rgba(216, 91, 145, 0.12);
 
             position: relative;
@@ -176,6 +181,7 @@
             border-radius: 20px;
             padding: 20px;
             margin-bottom: 15px;
+
             box-shadow: 0 5px 18px rgba(216, 91, 145, 0.10);
 
             display: flex;
@@ -241,6 +247,7 @@
             border-radius: 25px;
             padding: 25px;
             margin-top: 25px;
+
             box-shadow: 0 5px 20px rgba(216, 91, 145, 0.12);
         }
 
@@ -254,9 +261,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             font-size: 21px;
             font-weight: bold;
+
             padding: 15px 0;
+
             border-top: 1px solid #f2c8da;
         }
 
@@ -270,6 +280,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             gap: 15px;
             margin-top: 20px;
             flex-wrap: wrap;
@@ -278,87 +289,47 @@
         .vaciar {
             background: white;
             color: #d85b91;
+
             border: 2px solid #d85b91;
+
             padding: 12px 20px;
+
             border-radius: 20px;
+
             cursor: pointer;
+
             font-weight: bold;
         }
 
         .comprar {
             background: #d85b91;
             color: white;
+
             border: none;
+
             padding: 13px 30px;
+
             border-radius: 20px;
+
             cursor: pointer;
+
             font-weight: bold;
             font-size: 16px;
-        }
-
-        /* PAGO */
-
-        .pago {
-            display: none;
-            margin-top: 20px;
-            padding: 22px;
-            background: #fff0f6;
-            border: 1px solid #f2c8da;
-            border-radius: 20px;
-            text-align: center;
-        }
-
-        .pago h3 {
-            color: #d85b91;
-            margin-bottom: 10px;
-            font-size: 22px;
-        }
-
-        .numero-nequi {
-            font-size: 24px;
-            font-weight: bold;
-            color: #6b4055;
-            letter-spacing: 1px;
-            margin: 10px 0;
-        }
-
-        .boton-pagar {
-            margin-top: 18px;
-            background: #d85b91;
-            color: white;
-            border: none;
-            padding: 13px 35px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        /* MENSAJE FINAL */
-
-        .mensaje-final {
-            display: none;
-            margin-top: 20px;
-            padding: 20px;
-            background: white;
-            border: 1px solid #f2c8da;
-            border-radius: 20px;
-            text-align: center;
-        }
-
-        .mensaje-final h3 {
-            color: #d85b91;
-            margin-bottom: 10px;
         }
 
         /* CARRITO VACÍO */
 
         .vacio {
             background: white;
+
             border: 1px solid #f2c8da;
+
             border-radius: 25px;
+
             padding: 40px 20px;
+
             text-align: center;
+
             box-shadow: 0 5px 20px rgba(216, 91, 145, 0.12);
         }
 
@@ -377,6 +348,7 @@
             text-align: center;
             padding: 30px 15px;
             color: #6b4055;
+
             position: relative;
             z-index: 1;
         }
@@ -384,7 +356,8 @@
         footer strong {
             color: #d85b91;
         }
-/* RESPONSIVE */
+
+        /* CELULAR */
 
         @media (max-width: 600px) {
 
@@ -431,35 +404,68 @@
     <div class="estrella estrella3">✦</div>
     <div class="estrella estrella4">✧</div>
 
+
     <!-- MENÚ -->
 
     <nav class="menu">
-        <a href="index.html">Inicio</a>
-        <a href="moda.html">Moda</a>
-        <a href="belleza.html">Belleza</a>
-        <a href="skincare.html">Skin care</a>
-        <a href="accesorios.html">Accesorios</a>
-        <a href="sobre-nosotros.html">Sobre nosotros</a>
-        <a href="index.html#contactanos">Contáctanos</a>
+
+        <a href="index.html">
+            Inicio
+        </a>
+
+        <a href="moda.html">
+            Moda
+        </a>
+
+        <a href="belleza.html">
+            Belleza
+        </a>
+
+        <a href="skincare.html">
+            Skin care
+        </a>
+
+        <a href="accesorios.html">
+            Accesorios
+        </a>
+
+        <a href="sobre-nosotros.html">
+            Sobre nosotros
+        </a>
+
+        <a href="index.html#contactanos">
+            Contáctanos
+        </a>
+
     </nav>
+
 
     <!-- PRESENTACIÓN -->
 
     <header class="presentacion">
 
-        <div class="alas">🪽 ✦</div>
+        <div class="alas">
+            🪽 ✦
+        </div>
 
-        <h1>Mi carrito 🛒</h1>
+        <h1>
+            Mi carrito 🛒
+        </h1>
 
         <p>
             Revisa tus productos antes de comprar. 💕
         </p>
 
-        <a href="index.html" class="volver">
+        <a
+            href="index.html"
+            class="volver">
+
             ← Seguir comprando
+
         </a>
 
     </header>
+
 
     <!-- CARRITO -->
 
@@ -469,65 +475,56 @@
             Resumen de carrito
         </h2>
 
+
         <div id="listaCarrito"></div>
+
 
         <!-- RESUMEN -->
 
-        <section class="resumen" id="resumenCarrito">
+        <section
+            class="resumen"
+            id="resumenCarrito">
 
-            <h2>Resumen de carrito 🛍️</h2>
+            <h2>
+                Resumen de carrito 🛍️
+            </h2>
+
 
             <div class="total">
-                <span>Total:</span>
-                <span id="totalCarrito">$0</span>
+
+                <span>
+                    Total:
+                </span>
+
+                <span id="totalCarrito">
+                    $0
+                </span>
+
             </div>
+
 
             <div class="acciones">
 
-                <button class="vaciar" onclick="vaciarCarrito()">
+                <!-- IZQUIERDA -->
+
+                <button
+                    class="vaciar"
+                    onclick="vaciarCarrito()">
+
                     Vaciar carrito
+
                 </button>
 
-                <button class="comprar" onclick="mostrarPago()">
+
+                <!-- DERECHA -->
+
+                <button
+                    class="comprar"
+                    onclick="irAPagar()">
+
                     Comprar
+
                 </button>
-
-            </div>
-
-            <!-- PAGO -->
-
-            <div class="pago" id="pago">
-
-                <h3>💗 Realiza tu pago por Nequi</h3>
-
-                <p>
-                    Envía el total de tu compra al siguiente número:
-                </p>
-
-                <div class="numero-nequi">
-                    3170948192
-                </div>
-
-                <p>
-                    Después de realizar el pago, presiona el botón:
-                </p>
-
-                <button class="boton-pagar" onclick="finalizarPago()">
-                    Pagar
-                </button>
-
-            </div>
-
-            <!-- MENSAJE FINAL -->
-
-            <div class="mensaje-final" id="mensajeFinal">
-
-                <h3>🪽 ¡Gracias por tu compra!</h3>
-
-                <p>
-                    Hemos recibido tu solicitud de pago.
-                    💕
-                </p>
 
             </div>
 
@@ -535,27 +532,57 @@
 
     </main>
 
+
     <!-- FOOTER -->
 
     <footer>
-        🪽 <strong>Angel's Fashion World</strong> 🪽
+
+        🪽
+        <strong>
+            Angel's Fashion World
+        </strong>
+        🪽
+
         <br>
+
         Moda • Belleza • Skin Care • Accesorios
+
     </footer>
 
 
     <script>
 
-        let carrito = JSON.parse(localStorage.getItem("carritoAngel")) || [];
+        /*
+        ========================================
+        CARRITO
+        ========================================
+        */
+let carrito =
+            JSON.parse(
+                localStorage.getItem("carritoAngel")
+            ) || [];
 
+
+        /*
+        ========================================
+        FORMATO DE PRECIO
+        ========================================
+        */
 
         function formatoPrecio(numero) {
 
             numero = Number(numero) || 0;
 
             return "$" + numero.toLocaleString("es-CO");
+
         }
 
+
+        /*
+        ========================================
+        GUARDAR CARRITO
+        ========================================
+        */
 
         function guardarCarrito() {
 
@@ -565,19 +592,39 @@
             );
 
             mostrarCarrito();
+
         }
 
 
+        /*
+        ========================================
+        MOSTRAR CARRITO
+        ========================================
+        */
+
         function mostrarCarrito() {
 
-            const lista = document.getElementById("listaCarrito");
-            const resumen = document.getElementById("resumenCarrito");
+            const lista =
+                document.getElementById("listaCarrito");
+
+            const resumen =
+                document.getElementById("resumenCarrito");
+
 
             lista.innerHTML = "";
 
-            if (!Array.isArray(carrito) || carrito.length === 0) {
+
+            /*
+            CARRITO VACÍO
+            */
+
+            if (
+                !Array.isArray(carrito) ||
+                carrito.length === 0
+            ) {
 
                 lista.innerHTML = `
+
                     <div class="vacio">
 
                         <h2>
@@ -588,11 +635,16 @@
                             Todavía no has agregado ningún producto. 💕
                         </p>
 
-                        <a href="index.html" class="volver">
+                        <a
+                            href="index.html"
+                            class="volver">
+
                             Explorar Angel's 🪽
+
                         </a>
 
                     </div>
+
                 `;
 
                 resumen.style.display = "none";
@@ -600,105 +652,178 @@
                 return;
             }
 
+
             resumen.style.display = "block";
+
 
             let total = 0;
 
-            carrito.forEach((producto, index) => {
 
-                const precio = Number(producto.precio) || 0;
-                const cantidad = Number(producto.cantidad) || 1;
+            /*
+            PRODUCTOS
+            */
 
-                total += precio * cantidad;
+            carrito.forEach(
+                (producto, index) => {
 
-                lista.innerHTML += `
+                    const precio =
+                        Number(producto.precio) || 0;
 
-                    <div class="producto-carrito">
+                    const cantidad =
+                        Number(producto.cantidad) || 1;
 
-                        <div class="producto-info">
 
-                            <h3>
-                                ${producto.nombre || "Producto"}
-                            </h3>
+                    total +=
+                        precio * cantidad;
 
-                            <p>
-                                Precio: ${formatoPrecio(precio)}
-                            </p>
 
-                            ${
-                                producto.talla
-                                ? `<p>Talla: ${producto.talla}</p>`
-                                : ""
-                            }
+                    lista.innerHTML += `
+
+                        <div class="producto-carrito">
+
+                            <div class="producto-info">
+
+                                <h3>
+                                    ${producto.nombre || "Producto"}
+                                </h3>
+
+                                <p>
+                                    Precio:
+                                    ${formatoPrecio(precio)}
+                                </p>
+
+                                ${
+                                    producto.talla
+                                    ?
+                                    `<p>
+                                        Talla:
+                                        ${producto.talla}
+                                    </p>`
+                                    :
+                                    ""
+                                }
+
+                            </div>
+
+
+                            <div class="cantidad">
+
+                                <button
+                                    onclick="disminuirCantidad(${index})">
+
+                                    −
+
+                                </button>
+
+
+                                <span>
+                                    ${cantidad}
+                                </span>
+
+
+                                <button
+                                    onclick="aumentarCantidad(${index})">
+
+                                    +
+
+                                </button>
+
+                            </div>
+
+
+                            <button
+                                class="eliminar"
+                                onclick="eliminarProducto(${index})">
+
+                                Eliminar
+
+                            </button>
 
                         </div>
 
-                        <div class="cantidad">
+                    `;
+                }
+            );
 
-                            <button onclick="disminuirCantidad(${index})">
-                                −
-                            </button>
 
-                            <span>
-                                ${cantidad}
-                            </span>
-
-                            <button onclick="aumentarCantidad(${index})">
-                                +
-                            </button>
-
-                        </div>
-
-                        <button
-                            class="eliminar"
-                            onclick="eliminarProducto(${index})"
-                        >
-                            Eliminar
-                        </button>
-
-                    </div>
-                `;
-            });
-
-            document.getElementById("totalCarrito").textContent =
+            document.getElementById(
+                "totalCarrito"
+            ).textContent =
                 formatoPrecio(total);
+
         }
 
+
+        /*
+        ========================================
+        AUMENTAR CANTIDAD
+        ========================================
+        */
 
         function aumentarCantidad(index) {
 
             carrito[index].cantidad =
-                (Number(carrito[index].cantidad) || 0) + 1;
+                (Number(
+                    carrito[index].cantidad
+                ) || 0) + 1;
+
 
             guardarCarrito();
+
         }
 
+
+        /*
+        ========================================
+        DISMINUIR CANTIDAD
+        ========================================
+        */
 
         function disminuirCantidad(index) {
 
             const cantidad =
-                Number(carrito[index].cantidad) || 1;
+                Number(
+                    carrito[index].cantidad
+                ) || 1;
+
 
             if (cantidad > 1) {
 
-                carrito[index].cantidad = cantidad - 1;
+                carrito[index].cantidad =
+                    cantidad - 1;
 
             } else {
 
                 carrito.splice(index, 1);
+
             }
 
+
             guardarCarrito();
+
         }
 
+
+        /*
+        ========================================
+        ELIMINAR
+        ========================================
+        */
 
         function eliminarProducto(index) {
 
             carrito.splice(index, 1);
 
             guardarCarrito();
+
         }
 
+
+        /*
+        ========================================
+        VACIAR CARRITO
+        ========================================
+        */
 
         function vaciarCarrito() {
 
@@ -706,52 +831,50 @@
                 return;
             }
 
-            const confirmar = confirm(
-                "¿Quieres vaciar todo el carrito?"
-            );
+
+            const confirmar =
+                confirm(
+                    "¿Quieres vaciar todo el carrito?"
+                );
+
 
             if (confirmar) {
 
                 carrito = [];
+
 
                 localStorage.setItem(
                     "carritoAngel",
                     JSON.stringify(carrito)
                 );
 
+
                 mostrarCarrito();
+
             }
+
         }
 
 
-        function mostrarPago() {
+        /*
+        ========================================
+        IR A PAGAR
+        ========================================
+        */
 
-            const pago = document.getElementById("pago");
+        function irAPagar() {
 
-            pago.style.display = "block";
+            window.location.href =
+                "nequi.html";
 
-            pago.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
         }
 
 
-        function finalizarPago() {
-
-            const pago = document.getElementById("pago");
-            const mensaje = document.getElementById("mensajeFinal");
-
-            pago.style.display = "none";
-
-            mensaje.style.display = "block";
-
-            mensaje.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
-        }
-
+        /*
+        ========================================
+        INICIAR
+        ========================================
+        */
 
         mostrarCarrito();
 
