@@ -344,8 +344,7 @@
         /* =========================================
            CARRITO FLOTANTE
         ========================================= */
-
-        .carrito-flotante {
+.carrito-flotante {
             position: fixed;
 
             right: 20px;
@@ -397,8 +396,383 @@
             font-size: 13px;
         }
 
-        /*
-=========================================
+        /* =========================================
+           MODAL
+        ========================================= */
+
+        .modal {
+            display: none;
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 200;
+
+            background: rgba(60, 30, 45, .75);
+
+            justify-content: center;
+            align-items: center;
+
+            padding: 20px;
+        }
+
+        .modal.activo {
+            display: flex;
+        }
+
+        .modal-contenido {
+            width: min(900px, 95%);
+
+            max-height: 95vh;
+
+            overflow-y: auto;
+
+            background: white;
+
+            border-radius: 25px;
+
+            padding: 20px;
+
+            text-align: center;
+
+            position: relative;
+        }
+
+        .modal-contenido img {
+            max-width: 100%;
+            max-height: 65vh;
+
+            object-fit: contain;
+
+            border-radius: 18px;
+        }
+
+        .cerrar {
+            position: absolute;
+
+            top: 10px;
+            right: 15px;
+
+            width: 40px;
+            height: 40px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: #d85b91;
+            color: white;
+
+            font-size: 24px;
+
+            cursor: pointer;
+
+            z-index: 5;
+        }
+
+        .modal h2 {
+            color: #d85b91;
+            margin: 15px 0 8px;
+        }
+
+        .modal p {
+            margin-bottom: 10px;
+        }
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+            text-align: center;
+
+            margin-top: 70px;
+
+            padding: 30px 20px;
+
+            background: white;
+
+            border-top: 1px solid #f5d3e2;
+
+            color: #6b4055;
+
+            line-height: 1.8;
+        }
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 850px) {
+
+            .productos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .producto img {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .menu {
+                width: 94%;
+                gap: 5px;
+                padding: 12px 8px;
+            }
+
+            .menu a {
+                padding: 8px 10px;
+                font-size: 14px;
+            }
+
+            header {
+                margin-top: 25px;
+                padding: 28px 18px;
+            }
+
+            header h1 {
+                font-size: 35px;
+            }
+
+            .productos {
+                grid-template-columns: 1fr;
+            }
+
+            .producto img {
+                height: auto;
+                max-height: 500px;
+            }
+
+            .carrito-flotante {
+                right: 12px;
+                bottom: 12px;
+                padding: 12px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================
+         ESTRELLAS
+    ========================================= -->
+
+    <div class="estrella1">✦</div>
+    <div class="estrella2">✧</div>
+    <div class="estrella3">✦</div>
+    <div class="estrella4">✧</div>
+
+
+    <!-- =========================================
+         MENÚ
+    ========================================= -->
+
+    <nav class="menu">
+
+        <a href="index.html">Inicio</a>
+
+        <a href="moda.html">Moda</a>
+
+        <a href="belleza.html">Belleza</a>
+
+        <a href="skincare.html">Skin care</a>
+
+        <a href="accesorios.html">Accesorios</a>
+
+        <a href="sobre-nosotros.html">Sobre nosotros</a>
+
+        <a href="index.html#contactanos">Contáctanos</a>
+
+    </nav>
+
+
+    <!-- =========================================
+         PRESENTACIÓN
+    ========================================= -->
+
+    <header>
+
+        <div class="alas-con-estrella">
+
+            <span class="alas">🪽</span>
+
+            <span class="estrella-alas">✦</span>
+
+        </div>
+
+        <h1>Guantes</h1>
+
+        <p>
+            Descubre guantes hermosos para completar tu estilo 💕
+        </p>
+
+        <a href="accesorios.html" class="volver">
+            ← Volver a Accesorios
+        </a>
+
+    </header>
+
+
+    <!-- =========================================
+         PRODUCTOS
+    ========================================= -->
+
+    <main class="productos">
+
+
+        <!-- 1. GUANTES BONITOS -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/guantes/Screenshot_2026-09-02-12-06-46-199_com.pinterest-edit.jpg"
+                alt="Guantes bonitos"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>
+                Guantes bonitos:
+            </h2>
+
+            <p>
+                Unos guantes bonitos para complementar tu estilo con un toque especial. ✨
+            </p>
+
+            <div class="precio">
+                $20.000
+            </div>
+
+            <button
+                class="boton-carrito"
+                onclick="agregarProducto(this)"
+            >
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 2. GUANTES ELEGANTES -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/guantes/Screenshot_2026-09-02-12-10-15-759_com.pinterest-edit.jpg"
+                alt="Guantes elegantes"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>
+                Guantes elegantes
+            </h2>
+
+            <p>
+                Elegantes guantes para darle un toque bonito y especial a tu look. 💕
+            </p>
+
+            <div class="precio">
+                $500.000
+            </div>
+
+            <button
+                class="boton-carrito"
+                onclick="agregarProducto(this)"
+            >
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 3. DIVINOS GUANTES ELEGANTES -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/guantes/Screenshot_2026-09-02-12-17-23-653_com.pinterest-edit.jpg"
+                alt="Divinos guantes elegantes"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>
+                Divinos guantes elegantes
+            </h2>
+
+            <p>
+                Divinos guantes elegantes para completar tu estilo con delicadeza. ✦
+            </p>
+
+            <div class="precio">
+                $4.000.000
+            </div>
+
+            <button
+                class="boton-carrito"
+                onclick="agregarProducto(this)"
+            >
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+
+        <!-- 4. GUANTES ELEGANTES -->
+
+        <article class="producto">
+
+            <img
+                src="imagenes/guantes/Screenshot_2026-09-01-11-47-05-707_com.pinterest~2.jpg"
+                alt="Guantes elegantes"
+                onclick="abrirFoto(this)"
+            >
+
+            <h2>
+                Guantes elegantes
+            </h2>
+
+            <p>
+                Unos hermosos guantes elegantes para acompañar tus momentos especiales. 💗
+            </p>
+
+            <div class="precio">
+                $5.000.000
+            </div>
+
+            <button
+                class="boton-carrito"
+                onclick="agregarProducto(this)"
+            >
+                🛒 Agregar al carrito
+            </button>
+
+        </article>
+
+    </main>
+
+
+    <!-- =========================================
+         CARRITO FLOTANTE
+    ========================================= -->
+
+    <a href="carrito.html" class="carrito-flotante">
+
+        🛒 Ver carrito
+
+        <span
+            class="contador-carrito"
+            id="contador-carrito"
+        >
+            0
+        </span>
+
+    </a>
+
+
+    <!-- =========================================
          MODAL
     ========================================= -->
 
