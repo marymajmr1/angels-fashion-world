@@ -10,9 +10,7 @@
     <link rel="stylesheet" href="./style.css?v=18">
 
     <style>
-        /* =========================================
-           PANTALLA DE BIENVENIDA Y CORREO
-        ========================================== */
+        /* PANTALLA DE BIENVENIDA */
 
         .pantalla-bienvenida {
             position: fixed;
@@ -101,9 +99,7 @@
             overflow: hidden;
         }
 
-        /* =========================================
-           BUSCADOR
-        ========================================== */
+        /* BUSCADOR */
 
         .buscador-tienda {
             width: 92%;
@@ -155,9 +151,18 @@
             font-size: 14px;
         }
 
-        /* =========================================
-           PERFIL, PEDIDOS Y CARRITO
-        ========================================== */
+        /* MENÚ INFERIOR */
+
+        .menu-inferior {
+            margin-top: 30px;
+            margin-bottom: 25px;
+        }
+
+        .menu-inferior a {
+            white-space: nowrap;
+        }
+
+        /* PERFIL, PEDIDOS Y CARRITO */
 
         .accesos-cliente {
             width: 92%;
@@ -234,9 +239,7 @@
 
 <body>
 
-    <!-- =========================================
-         BIENVENIDA: CORREO ANTES DE ENTRAR
-    ========================================== -->
+    <!-- BIENVENIDA Y REGISTRO -->
 
     <section
         id="pantallaBienvenida"
@@ -254,8 +257,8 @@
             </p>
 
             <p>
-                Escribe tu correo electrónico para entrar
-                a nuestro mundo de moda y belleza.
+                Crea tu acceso a nuestro mundo de moda y belleza.
+                Comprueba que tus datos estén escritos correctamente.
             </p>
 
             <form id="formularioCorreo">
@@ -273,8 +276,63 @@
                     required
                 >
 
+                <label for="confirmarCorreo">
+                    Confirma tu correo electrónico
+                </label>
+
+                <input
+                    type="email"
+                    id="confirmarCorreo"
+                    placeholder="Escribe tu correo otra vez"
+                    autocomplete="off"
+                    maxlength="254"
+                    required
+                >
+
+                <label for="contrasenaEntrada">
+                    Crea una contraseña para Angel's
+                </label>
+
+                <input
+                    type="password"
+                    id="contrasenaEntrada"
+                    placeholder="Mínimo 8 caracteres"
+                    autocomplete="new-password"
+                    minlength="8"
+                    maxlength="128"
+                    required
+                >
+
+                <label for="confirmarContrasena">
+                    Confirma tu contraseña
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmarContrasena"
+                    placeholder="Escribe la contraseña otra vez"
+                    autocomplete="new-password"
+                    minlength="8"
+                    maxlength="128"
+                    required
+                >
+
+                <label style="display:flex;align-items:center;gap:8px;font-weight:normal;">
+                    <input
+                        type="checkbox"
+                        id="mostrarContrasenas"
+                        style="width:auto;"
+                    >
+                    Mostrar contraseñas
+                </label>
+
+                <p class="nota-bienvenida" style="text-align:left;">
+                    Usa una contraseña diferente a la de tu correo personal.
+                    No compartas tu contraseña con nadie.
+                </p>
+
                 <button type="submit">
-                    Entrar a la tienda ✨
+                    Crear acceso y entrar ✨
                 </button>
 
             </form>
@@ -288,9 +346,7 @@
     </section>
 
 
-    <!-- =========================================
-         MENÚ
-    ========================================== -->
+    <!-- MENÚ SUPERIOR -->
 
     <nav class="menu">
 
@@ -306,20 +362,12 @@
 
         <a href="sobre-nosotros.html">Sobre nosotros</a>
 
-        <a href="perfil.html">👤 Mi perfil</a>
-
-        <a href="pedido.html">📦 Mis pedidos</a>
-
-        <a href="carrito.html">🛒 Mi carrito</a>
-
         <a href="#contactanos">Contáctanos</a>
 
     </nav>
 
 
-    <!-- =========================================
-         PRESENTACIÓN
-    ========================================== -->
+    <!-- PRESENTACIÓN -->
 
     <header class="presentacion">
 
@@ -347,9 +395,7 @@
     </header>
 
 
-    <!-- =========================================
-         BUSCADOR
-    ========================================== -->
+    <!-- BUSCADOR -->
 
     <section class="buscador-tienda">
 
@@ -377,13 +423,9 @@
     </section>
 
 
-    <!-- =========================================
-         CATEGORÍAS
-    ========================================== -->
+    <!-- CATEGORÍAS -->
 
     <main class="categorias-inicio">
-
-        <!-- MODA -->
 
         <a href="moda.html" class="categoria-inicio">
 
@@ -403,8 +445,6 @@
         </a>
 
 
-        <!-- BELLEZA -->
-
         <a href="belleza.html" class="categoria-inicio">
 
             <div class="emoji">💄</div>
@@ -423,8 +463,6 @@
         </a>
 
 
-        <!-- SKIN CARE -->
-
         <a href="skincare.html" class="categoria-inicio">
 
             <div class="emoji">🧴</div>
@@ -442,8 +480,6 @@
 
         </a>
 
-
-        <!-- ACCESORIOS -->
 
         <a href="accesorios.html" class="categoria-inicio">
 
@@ -465,9 +501,7 @@
     </main>
 
 
-    <!-- =========================================
-         MENSAJE DE ANGEL'S
-    ========================================== -->
+    <!-- MENSAJE DE ANGEL'S -->
 
     <section class="sobre-inicio">
 
@@ -492,9 +526,7 @@
     </section>
 
 
-    <!-- =========================================
-         PERFIL, PEDIDOS Y CARRITO ABAJO
-    ========================================== -->
+    <!-- PERFIL, PEDIDOS Y CARRITO -->
 
     <section class="accesos-cliente">
 
@@ -562,9 +594,7 @@
     </section>
 
 
-    <!-- =========================================
-         CONTACTO
-    ========================================== -->
+    <!-- CONTACTO -->
 
     <section class="contacto" id="contactanos">
 
@@ -589,24 +619,37 @@
     </section>
 
 
-    <!-- =========================================
-         CARRITO FLOTANTE
-    ========================================== -->
+    <!-- MENÚ INFERIOR ROSADO -->
 
-    <a href="carrito.html" class="carrito-flotante">
+    <nav class="menu menu-inferior" aria-label="Mi espacio Angel's">
 
-        🛒 Ver carrito
+        <a href="perfil.html">
+            👤 Mi perfil
+        </a>
 
-        <span class="contador-carrito" id="contador-carrito">
-            0
-        </span>
+        <a href="pedido.html">
+            📦 Mis pedidos
+        </a>
 
+        <a href="carrito.html" class="enlace-carrito">
+            🛒 Carrito
+        </a>
+
+        <a href="#buscarProducto" id="enlaceBuscarAbajo">
+            🔎 Buscar
+        </a>
+
+    </nav>
+
+
+    <!-- CARRITO FLOTANTE SIN NÚMERO -->
+
+    <a href="carrito.html" class="carrito-flotante enlace-carrito">
+        🛒 Carrito
     </a>
 
 
-    <!-- =========================================
-         PIE DE PÁGINA
-    ========================================== -->
+    <!-- PIE DE PÁGINA -->
 
     <footer>
 
@@ -621,9 +664,7 @@
     </footer>
 
 
-    <!-- =========================================
-         JAVASCRIPT
-    ========================================== -->
+    <!-- JAVASCRIPT -->
 
     <script src="./script.js?v=16"></script>
 
@@ -631,9 +672,7 @@
 
         document.addEventListener("DOMContentLoaded", function() {
 
-            /* =====================================
-               SOLICITAR CORREO
-            ====================================== */
+            /* REGISTRO DE BIENVENIDA */
 
             const formularioCorreo =
                 document.getElementById("formularioCorreo");
@@ -656,62 +695,210 @@
 
                 }
 
-                formularioCorreo.addEventListener(
-                    "submit",
-                    function(event) {
+                const campoCorreo =
+                    document.getElementById("correoEntrada");
 
-                        event.preventDefault();
+                const confirmarCorreo =
+                    document.getElementById("confirmarCorreo");
 
-                        const campoCorreo =
-                            document.getElementById("correoEntrada");
+                const contrasena =
+                    document.getElementById("contrasenaEntrada");
 
-                        const correo = campoCorreo.value.trim();
+                const confirmarContrasena =
+                    document.getElementById("confirmarContrasena");
 
-                        if (!campoCorreo.checkValidity()) {
-                            campoCorreo.reportValidity();
-                            return;
-                        }
+                const mostrarContrasenas =
+                    document.getElementById("mostrarContrasenas");
 
-                        sessionStorage.setItem(
-                            "angelsCorreoEntrada",
-                            correo
-                        );
+                if (mostrarContrasenas) {
 
-                        let clienteAnterior = {};
+                    mostrarContrasenas.addEventListener("change", function() {
 
-                        try {
-                            clienteAnterior = JSON.parse(
-                                sessionStorage.getItem(
-                                    "angelsClienteTemporal"
-                                ) || "{}"
-                            );
-                        } catch (error) {
-                            clienteAnterior = {};
-                        }
+                        const tipo = mostrarContrasenas.checked
+                            ? "text"
+                            : "password";
 
-                        sessionStorage.setItem(
-                            "angelsClienteTemporal",
-                            JSON.stringify({
-                                ...clienteAnterior,
-                                correo: correo
-                            })
-                        );
+                        contrasena.type = tipo;
+                        confirmarContrasena.type = tipo;
 
-                        pantallaBienvenida.style.display = "none";
+                    });
 
-                        document.body.classList.remove(
-                            "tienda-bloqueada"
-                        );
+                }
+
+                formularioCorreo.addEventListener("submit", function(event) {
+
+                    event.preventDefault();
+
+                    const correo =
+                        campoCorreo.value.trim().toLowerCase();
+
+                    const correoConfirmado =
+                        confirmarCorreo.value.trim().toLowerCase();
+
+                    if (!campoCorreo.checkValidity()) {
+
+                        campoCorreo.reportValidity();
+                        return;
 
                     }
-                );
+
+                    if (correo !== correoConfirmado) {
+
+                        confirmarCorreo.setCustomValidity(
+                            "Los correos electrónicos no coinciden."
+                        );
+
+                        confirmarCorreo.reportValidity();
+                        confirmarCorreo.setCustomValidity("");
+                        return;
+
+                    }
+
+                    if (!contrasena.checkValidity()) {
+
+                        contrasena.reportValidity();
+                        return;
+
+                    }
+
+                    if (contrasena.value !== confirmarContrasena.value) {
+
+                        confirmarContrasena.setCustomValidity(
+                            "Las contraseñas no coinciden."
+                        );
+
+                        confirmarContrasena.reportValidity();
+                        confirmarContrasena.setCustomValidity("");
+                        return;
+
+                    }
+
+                    /*
+                     * No guardamos la contraseña en el navegador.
+                     * Esta pantalla valida los campos, pero aún no crea
+                     * una cuenta segura ni verifica el correo.
+                     */
+
+                    sessionStorage.setItem(
+                        "angelsCorreoEntrada",
+                        correo
+                    );
+
+                    let clienteAnterior = {};
+
+                    try {
+
+                        clienteAnterior = JSON.parse(
+                            sessionStorage.getItem(
+                                "angelsClienteTemporal"
+                            ) || "{}"
+                        );
+
+                    } catch (error) {
+
+                        clienteAnterior = {};
+
+                    }
+
+                    sessionStorage.setItem(
+                        "angelsClienteTemporal",
+                        JSON.stringify({
+                            ...clienteAnterior,
+                            correo: correo
+                        })
+                    );
+
+                    pantallaBienvenida.style.display = "none";
+
+                    document.body.classList.remove(
+                        "tienda-bloqueada"
+                    );
+
+                });
 
             }
 
 
-            /* =====================================
-               BUSCADOR DE PRODUCTOS
-            ====================================== */
+            /* COMPROBAR PERFIL ANTES DE ABRIR EL CARRITO */
+
+            function clienteTienePerfilCompleto() {
+
+                try {
+
+                    const cliente = JSON.parse(
+                        sessionStorage.getItem(
+                            "angelsClienteTemporal"
+                        ) || "{}"
+                    );
+
+                    return Boolean(
+                        cliente &&
+                        String(cliente.nombre || "").trim() &&
+                        String(cliente.correo || "").trim() &&
+                        String(
+                            cliente.telefono || cliente.celular || ""
+                        ).trim()
+                    );
+
+                } catch (error) {
+
+                    return false;
+
+                }
+
+            }
+
+            document.querySelectorAll(".enlace-carrito").forEach(
+                function(enlace) {
+
+                    enlace.addEventListener("click", function(event) {
+
+                        if (!clienteTienePerfilCompleto()) {
+
+                            event.preventDefault();
+
+                            alert(
+                                "Antes de comprar, completa tu registro en Mi perfil. 💗"
+                            );
+
+                            window.location.href = "perfil.html";
+
+                        }
+
+                    });
+
+                }
+            );
+
+
+            /* LUPITA DEL MENÚ INFERIOR */
+
+            const enlaceBuscarAbajo =
+                document.getElementById("enlaceBuscarAbajo");
+
+            if (enlaceBuscarAbajo) {
+
+                enlaceBuscarAbajo.addEventListener("click", function() {
+
+                    const campo =
+                        document.getElementById("buscarProducto");
+
+                    if (campo) {
+
+                        window.setTimeout(function() {
+
+                            campo.focus();
+
+                        }, 150);
+
+                    }
+
+                });
+
+            }
+
+
+            /* BUSCADOR DE PRODUCTOS */
 
             const buscador =
                 document.getElementById("buscarProducto");
