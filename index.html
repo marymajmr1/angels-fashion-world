@@ -149,7 +149,7 @@
         /* BARRA INFERIOR FIJA */
 
         body {
-            padding-bottom: 88px;
+            padding-bottom: 85px;
         }
 
         .menu-inferior {
@@ -184,6 +184,7 @@
             font-size: 12px;
             line-height: 1.2;
             white-space: nowrap;
+            cursor: pointer;
         }
 
         .menu-inferior .icono-inferior {
@@ -210,74 +211,7 @@
             }
         }
 
-        /* TARJETAS DE PERFIL, PEDIDOS Y CARRITO */
-
-        .accesos-cliente {
-            width: 92%;
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 25px 0;
-            text-align: center;
-        }
-
-        .accesos-cliente > h2 {
-            color: #d85b91;
-            margin-bottom: 12px;
-        }
-
-        .accesos-cliente > p {
-            color: #68495a;
-            margin-bottom: 25px;
-        }
-
-        .accesos-cliente-contenedor {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 22px;
-        }
-
-        .acceso-cliente {
-            display: block;
-            padding: 25px 18px;
-            background: white;
-            border: 1px solid #f1d5e2;
-            border-radius: 22px;
-            text-decoration: none;
-            color: #68495a;
-            box-shadow: 0 5px 18px rgba(216, 91, 145, 0.08);
-            transition: transform 0.2s ease;
-        }
-
-        .acceso-cliente:hover {
-            transform: translateY(-4px);
-        }
-
-        .acceso-cliente > span:first-child {
-            display: block;
-            font-size: 35px;
-            margin-bottom: 12px;
-        }
-
-        .acceso-cliente h3 {
-            color: #d85b91;
-            margin-bottom: 12px;
-        }
-
-        .acceso-cliente p {
-            margin-bottom: 18px;
-            line-height: 1.6;
-        }
-
-        .acceso-cliente .explorar {
-            color: #d85b91;
-            font-weight: bold;
-        }
-
         @media (max-width: 750px) {
-            .accesos-cliente-contenedor {
-                grid-template-columns: 1fr;
-            }
-
             .buscador-contenedor {
                 flex-direction: column;
             }
@@ -306,7 +240,10 @@
 
             <form id="formularioCorreo">
 
-                <label for="correoEntrada">Tu correo electrónico</label>
+                <label for="correoEntrada">
+                    Tu correo electrónico
+                </label>
+
                 <input
                     type="email"
                     id="correoEntrada"
@@ -316,7 +253,10 @@
                     required
                 >
 
-                <label for="confirmarCorreo">Confirma tu correo electrónico</label>
+                <label for="confirmarCorreo">
+                    Confirma tu correo electrónico
+                </label>
+
                 <input
                     type="email"
                     id="confirmarCorreo"
@@ -329,6 +269,7 @@
                 <label for="contrasenaEntrada">
                     Crea una contraseña para Angel's
                 </label>
+
                 <input
                     type="password"
                     id="contrasenaEntrada"
@@ -342,6 +283,7 @@
                 <label for="confirmarContrasena">
                     Confirma tu contraseña
                 </label>
+
                 <input
                     type="password"
                     id="confirmarContrasena"
@@ -366,11 +308,15 @@
                     No compartas tu contraseña con nadie.
                 </p>
 
-                <button type="submit">Crear acceso y entrar ✨</button>
+                <button type="submit">
+                    Crear acceso y entrar ✨
+                </button>
 
             </form>
 
-            <p class="nota-bienvenida">Tu estilo, tu esencia. 🤍</p>
+            <p class="nota-bienvenida">
+                Tu estilo, tu esencia. 🤍
+            </p>
 
         </div>
 
@@ -380,6 +326,7 @@
     <!-- MENÚ SUPERIOR -->
 
     <nav class="menu">
+
         <a href="index.html">Inicio</a>
         <a href="moda.html">Moda</a>
         <a href="belleza.html">Belleza</a>
@@ -387,6 +334,7 @@
         <a href="accesorios.html">Accesorios</a>
         <a href="sobre-nosotros.html">Sobre nosotros</a>
         <a href="#contactanos">Contáctanos</a>
+
     </nav>
 
 
@@ -401,7 +349,9 @@
 
         <h1>¡Angel's!</h1>
 
-        <p class="frase">Explora un mundo de moda y belleza. ✨</p>
+        <p class="frase">
+            Explora un mundo de moda y belleza. ✨
+        </p>
 
         <p>
             Descubre prendas, accesorios y productos de belleza
@@ -415,9 +365,11 @@
 
     <!-- BUSCADOR -->
 
-    <section class="buscador-tienda">
+    <section class="buscador-tienda" id="seccionBuscador">
 
-        <label for="buscarProducto">🔎 Buscar productos</label>
+        <label for="buscarProducto">
+            Buscar productos
+        </label>
 
         <div class="buscador-contenedor">
 
@@ -428,7 +380,9 @@
                 autocomplete="off"
             >
 
-            <button type="button" id="limpiarBusqueda">Limpiar</button>
+            <button type="button" id="limpiarBusqueda">
+                Limpiar
+            </button>
 
         </div>
 
@@ -442,31 +396,67 @@
     <main class="categorias-inicio">
 
         <a href="moda.html" class="categoria-inicio">
+
             <div class="emoji">👗</div>
+
             <h2>Moda</h2>
-            <p>Descubre prendas para diferentes estilos y ocasiones.</p>
-            <span class="explorar">Explorar moda ✦</span>
+
+            <p>
+                Descubre prendas para diferentes estilos y ocasiones.
+            </p>
+
+            <span class="explorar">
+                Explorar moda ✦
+            </span>
+
         </a>
 
         <a href="belleza.html" class="categoria-inicio">
+
             <div class="emoji">💄</div>
+
             <h2>Belleza</h2>
-            <p>Maquillaje, perfumes y productos para uñas.</p>
-            <span class="explorar">Explorar belleza ✦</span>
+
+            <p>
+                Maquillaje, perfumes y productos para uñas.
+            </p>
+
+            <span class="explorar">
+                Explorar belleza ✦
+            </span>
+
         </a>
 
         <a href="skincare.html" class="categoria-inicio">
+
             <div class="emoji">🧴</div>
+
             <h2>Skin care</h2>
-            <p>Cuidado para la cara, el pelo y cuidado personal.</p>
-            <span class="explorar">Explorar Skin care ✦</span>
+
+            <p>
+                Cuidado para la cara, el pelo y cuidado personal.
+            </p>
+
+            <span class="explorar">
+                Explorar Skin care ✦
+            </span>
+
         </a>
 
         <a href="accesorios.html" class="categoria-inicio">
+
             <div class="emoji">👜</div>
+
             <h2>Accesorios</h2>
-            <p>Detalles especiales para complementar tus looks.</p>
-            <span class="explorar">Explorar accesorios ✦</span>
+
+            <p>
+                Detalles especiales para complementar tus looks.
+            </p>
+
+            <span class="explorar">
+                Explorar accesorios ✦
+            </span>
+
         </a>
 
     </main>
@@ -477,6 +467,7 @@
     <section class="sobre-inicio">
 
         <div class="alas">🪽</div>
+
         <span class="decoracion">✦</span>
 
         <h2>Tu estilo, tu esencia. ✨</h2>
@@ -488,45 +479,6 @@
         </p>
 
         <span class="decoracion">✧</span>
-
-    </section>
-
-
-    <!-- ESPACIO DEL CLIENTE -->
-
-    <section class="accesos-cliente">
-
-        <h2>Tu espacio Angel's 💗</h2>
-
-        <p>
-            Consulta tu perfil y sigue tus compras
-            desde un mismo lugar.
-        </p>
-
-        <div class="accesos-cliente-contenedor">
-
-            <a href="perfil.html" class="acceso-cliente">
-                <span>👤</span>
-                <h3>Mi perfil</h3>
-                <p>Completa tus datos de cliente.</p>
-                <span class="explorar">Crear mi perfil ✦</span>
-            </a>
-
-            <a href="pedido.html" class="acceso-cliente">
-                <span>📦</span>
-                <h3>Mis pedidos</h3>
-                <p>Consulta el seguimiento de tus compras.</p>
-                <span class="explorar">Ver mis pedidos ✦</span>
-            </a>
-
-            <a href="carrito.html" class="acceso-cliente enlace-carrito">
-                <span>🛒</span>
-                <h3>Mi carrito</h3>
-                <p>Revisa los productos que deseas comprar.</p>
-                <span class="explorar">Ir al carrito ✦</span>
-            </a>
-
-        </div>
 
     </section>
 
@@ -554,52 +506,45 @@
     </section>
 
 
-    <!-- BARRA INFERIOR FIJA -->
+    <!-- BARRA INFERIOR ÚNICA -->
 
     <nav class="menu-inferior" aria-label="Navegación inferior">
 
         <a
-            href="#buscarProducto"
+            href="#seccionBuscador"
             id="enlaceBuscarAbajo"
             class="opcion-inferior"
         >
-            <span class="icono-inferior" aria-hidden="true">⌕</span>
+            <span class="icono-inferior" aria-hidden="true">🔍</span>
             <span>Buscar</span>
         </a>
 
         <a href="pedido.html" class="opcion-inferior">
-            <span class="icono-inferior" aria-hidden="true">♧</span>
+            <span class="icono-inferior" aria-hidden="true">📦</span>
             <span>Pedidos</span>
         </a>
 
-        <a
-            href="carrito.html"
-            class="opcion-inferior enlace-carrito"
-        >
+        <a href="carrito.html" class="opcion-inferior enlace-carrito">
             <span class="icono-inferior" aria-hidden="true">🛒</span>
             <span>Carrito</span>
         </a>
 
         <a href="perfil.html" class="opcion-inferior">
-            <span class="icono-inferior" aria-hidden="true">♙</span>
+            <span class="icono-inferior" aria-hidden="true">👤</span>
             <span>Mi perfil</span>
         </a>
 
     </nav>
 
 
-    <!-- CARRITO FLOTANTE SIN CONTADOR -->
-
-    <a href="carrito.html" class="carrito-flotante enlace-carrito">
-        🛒 Carrito
-    </a>
-
-
     <!-- PIE DE PÁGINA -->
 
     <footer>
+
         <p>🪽 Angel's Fashion World 🪽</p>
+
         <p>Moda • Belleza • Skin Care • Accesorios</p>
+
     </footer>
 
 
@@ -641,16 +586,19 @@
 
             if (mostrarContrasenas) {
                 mostrarContrasenas.addEventListener("change", function() {
+
                     const tipo = mostrarContrasenas.checked
                         ? "text"
                         : "password";
 
                     contrasena.type = tipo;
                     confirmarContrasena.type = tipo;
+
                 });
             }
 
             formularioCorreo.addEventListener("submit", function(event) {
+
                 event.preventDefault();
 
                 const correo =
@@ -665,9 +613,11 @@
                 }
 
                 if (correo !== correoConfirmado) {
+
                     confirmarCorreo.setCustomValidity(
                         "Los correos electrónicos no coinciden."
                     );
+
                     confirmarCorreo.reportValidity();
                     confirmarCorreo.setCustomValidity("");
                     return;
@@ -679,30 +629,42 @@
                 }
 
                 if (contrasena.value !== confirmarContrasena.value) {
+
                     confirmarContrasena.setCustomValidity(
                         "Las contraseñas no coinciden."
                     );
+
                     confirmarContrasena.reportValidity();
                     confirmarContrasena.setCustomValidity("");
                     return;
                 }
 
                 /*
-                 * No guardamos la contraseña en el navegador.
-                 * Este formulario solo valida los campos; no crea
-                 * una cuenta segura ni verifica que el correo exista.
+                 * La contraseña no se guarda en el navegador.
+                 * Este formulario solo comprueba los campos.
+                 * Todavía no crea una cuenta segura ni verifica
+                 * que el correo pertenezca realmente al cliente.
                  */
 
-                sessionStorage.setItem("angelsCorreoEntrada", correo);
+                sessionStorage.setItem(
+                    "angelsCorreoEntrada",
+                    correo
+                );
 
                 let clienteAnterior = {};
 
                 try {
+
                     clienteAnterior = JSON.parse(
-                        sessionStorage.getItem("angelsClienteTemporal") || "{}"
+                        sessionStorage.getItem(
+                            "angelsClienteTemporal"
+                        ) || "{}"
                     );
+
                 } catch (error) {
+
                     clienteAnterior = {};
+
                 }
 
                 sessionStorage.setItem(
@@ -714,67 +676,44 @@
                 );
 
                 pantallaBienvenida.style.display = "none";
+
                 document.body.classList.remove("tienda-bloqueada");
+
             });
 
 
-            /* REVISAR EL PERFIL ANTES DE ABRIR EL CARRITO */
-
-            function clienteTienePerfilCompleto() {
-                try {
-                    const cliente = JSON.parse(
-                        sessionStorage.getItem("angelsClienteTemporal") || "{}"
-                    );
-
-                    return Boolean(
-                        cliente &&
-                        String(cliente.nombre || "").trim() &&
-                        String(cliente.correo || "").trim() &&
-                        String(
-                            cliente.telefono || cliente.celular || ""
-                        ).trim()
-                    );
-                } catch (error) {
-                    return false;
-                }
-            }
-
-            document.querySelectorAll(".enlace-carrito").forEach(
-                function(enlace) {
-                    enlace.addEventListener("click", function(event) {
-                        if (!clienteTienePerfilCompleto()) {
-                            event.preventDefault();
-
-                            alert(
-                                "Antes de comprar, completa tu registro en Mi perfil. 💗"
-                            );
-
-                            window.location.href = "perfil.html";
-                        }
-                    });
-                }
-            );
-
-
-            /* LUPITA INFERIOR */
+            /* LUPA: IR AL BUSCADOR */
 
             const enlaceBuscarAbajo =
                 document.getElementById("enlaceBuscarAbajo");
 
-            if (enlaceBuscarAbajo) {
-                enlaceBuscarAbajo.addEventListener("click", function() {
-                    const campo = document.getElementById("buscarProducto");
+            const campoBuscar =
+                document.getElementById("buscarProducto");
 
-                    if (campo) {
-                        window.setTimeout(function() {
-                            campo.focus();
-                        }, 150);
-                    }
+            if (enlaceBuscarAbajo && campoBuscar) {
+
+                enlaceBuscarAbajo.addEventListener("click", function(event) {
+
+                    event.preventDefault();
+
+                    const seccionBuscador =
+                        document.getElementById("seccionBuscador");
+
+                    seccionBuscador.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+                    setTimeout(function() {
+                        campoBuscar.focus();
+                    }, 400);
+
                 });
+
             }
 
 
-            /* BUSCADOR */
+            /* BUSCADOR DE ESTA PÁGINA */
 
             const buscador =
                 document.getElementById("buscarProducto");
@@ -788,6 +727,7 @@
             if (buscador && limpiar && mensaje) {
 
                 buscador.addEventListener("input", function() {
+
                     const consulta = buscador.value
                         .trim()
                         .toLocaleLowerCase("es");
@@ -799,6 +739,7 @@
                     let encontrados = 0;
 
                     productos.forEach(function(producto) {
+
                         const coincide = producto.textContent
                             .toLocaleLowerCase("es")
                             .includes(consulta);
@@ -809,27 +750,44 @@
                         if (coincide) {
                             encontrados++;
                         }
+
                     });
 
                     if (consulta === "") {
+
                         mensaje.textContent = "";
+
                     } else if (productos.length === 0) {
+
                         mensaje.textContent =
                             "Visita una categoría para consultar sus productos.";
+
                     } else if (encontrados === 0) {
+
                         mensaje.textContent =
                             "No encontramos productos en esta página.";
+
                     } else {
+
                         mensaje.textContent =
                             "Encontramos " + encontrados + " producto(s).";
+
                     }
+
                 });
 
                 limpiar.addEventListener("click", function() {
+
                     buscador.value = "";
-                    buscador.dispatchEvent(new Event("input"));
+
+                    buscador.dispatchEvent(
+                        new Event("input")
+                    );
+
                     buscador.focus();
+
                 });
+
             }
 
         });
