@@ -7,7 +7,7 @@
 
     <title>Angel's Fashion World</title>
 
-    <link rel="stylesheet" href="./style.css?v=17">
+    <link rel="stylesheet" href="./style.css?v=18">
 </head>
 
 <body>
@@ -29,6 +29,12 @@
         <a href="accesorios.html">Accesorios</a>
 
         <a href="sobre-nosotros.html">Sobre nosotros</a>
+
+        <a href="perfil.html">👤 Mi perfil</a>
+
+        <a href="pedido.html">📦 Mis pedidos</a>
+
+        <a href="carrito.html">🛒 Mi carrito</a>
 
         <a href="#contactanos">Contáctanos</a>
 
@@ -63,6 +69,36 @@
         <span class="decoracion">✧</span>
 
     </header>
+
+
+    <!-- =========================================
+         BUSCADOR
+    ========================================== -->
+
+    <section class="buscador-tienda">
+
+        <label for="buscarProducto">
+            🔎 Buscar productos
+        </label>
+
+        <div class="buscador-contenedor">
+
+            <input
+                type="search"
+                id="buscarProducto"
+                placeholder="Busca blusas, vestidos, perfumes..."
+                autocomplete="off"
+            >
+
+            <button type="button" id="limpiarBusqueda">
+                Limpiar
+            </button>
+
+        </div>
+
+        <p id="mensajeBusqueda" aria-live="polite"></p>
+
+    </section>
 
 
     <!-- =========================================
@@ -163,6 +199,76 @@
 
 
     <!-- =========================================
+         ACCESOS A TU CUENTA Y PEDIDOS
+    ========================================== -->
+
+    <section class="accesos-cliente">
+
+        <h2>Tu espacio Angel's 💗</h2>
+
+        <p>
+            Consulta tu perfil y sigue tus compras
+            desde un mismo lugar.
+        </p>
+
+        <div class="accesos-cliente-contenedor">
+
+            <a href="perfil.html" class="acceso-cliente">
+
+                <span>👤</span>
+
+                <h3>Mi perfil</h3>
+
+                <p>
+                    Completa tus datos de cliente.
+                </p>
+
+                <span class="explorar">
+                    Crear mi perfil ✦
+                </span>
+
+            </a>
+
+
+            <a href="pedido.html" class="acceso-cliente">
+
+                <span>📦</span>
+
+                <h3>Mis pedidos</h3>
+
+                <p>
+                    Consulta el seguimiento de tus compras.
+                </p>
+
+                <span class="explorar">
+                    Ver mis pedidos ✦
+                </span>
+
+            </a>
+
+
+            <a href="carrito.html" class="acceso-cliente">
+
+                <span>🛒</span>
+
+                <h3>Mi carrito</h3>
+
+                <p>
+                    Revisa los productos que deseas comprar.
+                </p>
+
+                <span class="explorar">
+                    Ir al carrito ✦
+                </span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
          MENSAJE DE ANGEL'S
     ========================================== -->
 
@@ -208,7 +314,12 @@
             sobre nuestros productos?
         </p>
 
-        <a class="whatsapp" href="https://wa.me/" target="_blank">
+        <a
+            class="whatsapp"
+            href="https://wa.me/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
             💬 Escríbenos por WhatsApp
         </a>
 
@@ -216,7 +327,7 @@
 
 
     <!-- =========================================
-         CARRITO
+         CARRITO FLOTANTE
     ========================================== -->
 
     <a href="carrito.html" class="carrito-flotante">
@@ -247,7 +358,220 @@
     </footer>
 
 
+    <!-- =========================================
+         ESTILOS ADICIONALES
+    ========================================== -->
+
+    <style>
+
+        .buscador-tienda {
+            width: 92%;
+            max-width: 850px;
+            margin: 25px auto;
+            padding: 20px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid #f5d5e4;
+            border-radius: 22px;
+            box-shadow: 0 5px 18px rgba(216, 91, 145, 0.10);
+        }
+
+        .buscador-tienda label {
+            display: block;
+            margin-bottom: 12px;
+            color: #68495a;
+            font-weight: bold;
+        }
+
+        .buscador-contenedor {
+            display: flex;
+            gap: 10px;
+        }
+
+        .buscador-contenedor input {
+            flex: 1;
+            min-width: 0;
+            padding: 13px;
+            border: 1px solid #e8b4cc;
+            border-radius: 14px;
+            outline-color: #d85b91;
+            font-size: 15px;
+        }
+
+        .buscador-contenedor button {
+            padding: 12px 16px;
+            border: none;
+            border-radius: 14px;
+            background: #d85b91;
+            color: white;
+            cursor: pointer;
+        }
+
+        #mensajeBusqueda {
+            margin-top: 10px;
+            color: #68495a;
+            font-size: 14px;
+        }
+
+        .accesos-cliente {
+            width: 92%;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 25px 0;
+            text-align: center;
+        }
+
+        .accesos-cliente > h2 {
+            color: #d85b91;
+            margin-bottom: 12px;
+        }
+
+        .accesos-cliente > p {
+            color: #68495a;
+            margin-bottom: 25px;
+        }
+
+        .accesos-cliente-contenedor {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .acceso-cliente {
+            display: block;
+            padding: 25px 18px;
+            background: white;
+            border: 1px solid #f1d5e2;
+            border-radius: 22px;
+            text-decoration: none;
+            color: #68495a;
+            box-shadow: 0 5px 18px rgba(216, 91, 145, 0.08);
+            transition: transform 0.2s ease;
+        }
+
+        .acceso-cliente:hover {
+            transform: translateY(-4px);
+        }
+
+        .acceso-cliente > span:first-child {
+            display: block;
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .acceso-cliente h3 {
+            color: #d85b91;
+            margin-bottom: 12px;
+        }
+
+        .acceso-cliente p {
+            margin-bottom: 18px;
+            line-height: 1.6;
+        }
+
+        .acceso-cliente .explorar {
+            color: #d85b91;
+            font-weight: bold;
+        }
+
+        @media (max-width: 750px) {
+
+            .accesos-cliente-contenedor {
+                grid-template-columns: 1fr;
+            }
+
+            .buscador-contenedor {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
     <script src="./script.js?v=16"></script>
+
+    <script>
+
+        // Buscador básico de productos presentes en esta página.
+        // Para buscar en todas las categorías se conectará un catálogo común.
+
+        document.addEventListener("DOMContentLoaded", function() {
+
+            const buscador = document.getElementById("buscarProducto");
+            const limpiar = document.getElementById("limpiarBusqueda");
+            const mensaje = document.getElementById("mensajeBusqueda");
+
+            if (!buscador || !limpiar || !mensaje) {
+                return;
+            }
+
+            buscador.addEventListener("input", function() {
+
+                const consulta = buscador.value
+                    .trim()
+                    .toLocaleLowerCase("es");
+
+                const productos = document.querySelectorAll(
+                    ".producto, .producto-card, .tarjeta-producto"
+                );
+
+                let encontrados = 0;
+
+                productos.forEach(function(producto) {
+
+                    const coincide = producto.textContent
+                        .toLocaleLowerCase("es")
+                        .includes(consulta);
+
+                    producto.hidden = consulta !== "" && !coincide;
+
+                    if (coincide) {
+                        encontrados++;
+                    }
+
+                });
+
+                if (consulta === "") {
+
+                    mensaje.textContent = "";
+
+                } else if (productos.length === 0) {
+
+                    mensaje.textContent =
+                        "Visita una categoría para consultar sus productos.";
+
+                } else if (encontrados === 0) {
+
+                    mensaje.textContent =
+                        "No encontramos productos en esta página.";
+
+                } else {
+
+                    mensaje.textContent =
+                        "Encontramos " + encontrados + " producto(s).";
+
+                }
+
+            });
+
+            limpiar.addEventListener("click", function() {
+
+                buscador.value = "";
+
+                buscador.dispatchEvent(new Event("input"));
+
+                buscador.focus();
+
+            });
+
+        });
+
+    </script>
 
 </body>
 
