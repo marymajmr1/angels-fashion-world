@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -33,60 +34,11 @@
             text-decoration: none;
         }
 
-        .bienvenida {
-            position: fixed;
-            inset: 0;
-            z-index: 1000;
-            background: rgba(255, 235, 245, .97);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .bienvenida-contenido {
-            background: white;
-            width: 100%;
-            max-width: 420px;
-            padding: 28px;
-            border-radius: 25px;
-            box-shadow: 0 8px 25px #d85b9125;
-            text-align: center;
-        }
-
-        .bienvenida h2 {
-            color: #d85b91;
-        }
-
-        .bienvenida input {
-            width: 100%;
-            padding: 13px;
-            margin: 7px 0;
-            border: 1px solid #f0c5d8;
-            border-radius: 12px;
-            font-size: 15px;
-        }
-
-        .boton-rosa {
-            display: inline-block;
-            border: none;
-            background: #d85b91;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 15px;
-        }
-
-        .boton-rosa:hover {
-            background: #bd4278;
-        }
-
         .menu {
             width: 92%;
             max-width: 1200px;
             margin: 25px auto;
-            padding: 17px;
+            padding: 20px;
             background: white;
             border-radius: 25px;
             box-shadow: 0 5px 20px #d85b9115;
@@ -94,7 +46,7 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            gap: 18px;
+            gap: 22px;
         }
 
         .menu a {
@@ -155,6 +107,23 @@
             border-radius: 25px;
         }
 
+        .boton-rosa {
+            display: inline-block;
+            border: none;
+            background: #d85b91;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: .2s;
+        }
+
+        .boton-rosa:hover {
+            background: #bd4278;
+            transform: translateY(-2px);
+        }
+
         .seccion {
             width: 92%;
             max-width: 1200px;
@@ -178,7 +147,8 @@
         .categoria {
             background: white;
             padding: 25px 15px;
-            border-radius: 22px;
+            border-radius: 25px;
+            border: 1px solid #f5d8e5;
             box-shadow: 0 5px 18px #d85b9115;
             transition: transform .2s;
         }
@@ -189,12 +159,13 @@
 
         .categoria h3 {
             color: #d85b91;
-            margin: 8px 0;
+            margin: 12px 0;
+            font-size: 21px;
         }
 
         .categoria p {
             font-size: 14px;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .estrella {
@@ -214,22 +185,22 @@
             outline-color: #d85b91;
         }
 
+        .mensaje-busqueda {
+            font-size: 14px;
+            margin: 12px auto;
+        }
+
         .contacto {
             background: white;
             padding: 30px 20px;
+            border: 1px solid #f5d8e5;
             border-radius: 25px;
             line-height: 1.8;
         }
 
-        .contacto a {
+        .contacto a:not(.boton-rosa) {
             color: #d85b91;
             font-weight: bold;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px 15px 100px;
-            color: #68495a;
         }
 
         .estrellas-decorativas {
@@ -311,9 +282,10 @@
             margin-bottom: 4px;
         }
 
-        .mensaje-busqueda {
-            font-size: 14px;
-            margin: 12px auto;
+        footer {
+            text-align: center;
+            padding: 30px 15px 100px;
+            color: #68495a;
         }
 
         @media (max-width: 750px) {
@@ -327,7 +299,7 @@
             }
 
             .menu {
-                gap: 12px;
+                gap: 14px;
             }
 
             .menu a {
@@ -347,16 +319,13 @@
             .categorias {
                 grid-template-columns: 1fr;
             }
-
-            .bienvenida-contenido {
-                padding: 20px;
-            }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- ESTRELLITAS DECORATIVAS -->
     <div class="estrellas-decorativas" aria-hidden="true">
         <span class="estrella1">✦</span>
         <span class="estrella2">✧</span>
@@ -364,64 +333,7 @@
         <span class="estrella4">✧</span>
     </div>
 
-    <!-- BIENVENIDA -->
-    <div class="bienvenida" id="bienvenida">
-        <div class="bienvenida-contenido">
-            <div class="estrella">✦ 🪽 ✦</div>
-
-            <h2>¡Bienvenida a Angel's! 💗</h2>
-
-            <p>Regístrate para explorar nuestra tienda.</p>
-
-            <form id="formBienvenida">
-                <input
-                    type="email"
-                    id="correo"
-                    placeholder="Tu correo electrónico"
-                    autocomplete="email"
-                    required
-                >
-
-                <input
-                    type="email"
-                    id="confirmarCorreo"
-                    placeholder="Confirma tu correo electrónico"
-                    autocomplete="email"
-                    required
-                >
-
-                <input
-                    type="password"
-                    id="contrasena"
-                    placeholder="Crea una contraseña (mínimo 8 caracteres)"
-                    minlength="8"
-                    autocomplete="new-password"
-                    required
-                >
-
-                <input
-                    type="password"
-                    id="confirmarContrasena"
-                    placeholder="Confirma tu contraseña"
-                    minlength="8"
-                    autocomplete="new-password"
-                    required
-                >
-
-                <button class="boton-rosa" type="submit">
-                    Entrar a la tienda 💕
-                </button>
-
-                <p id="errorBienvenida" role="alert"></p>
-            </form>
-
-            <p style="font-size:12px;">
-                Este formulario es una demostración y no crea una cuenta segura.
-            </p>
-        </div>
-    </div>
-
-    <!-- MENÚ -->
+    <!-- MENÚ PRINCIPAL -->
     <nav class="menu">
         <a href="./index.html">Inicio</a>
         <a href="./moda.html">Moda</a>
@@ -432,7 +344,7 @@
         <a href="#contactanos">Contáctanos</a>
     </nav>
 
-    <!-- LOGO -->
+    <!-- LOGO DE ANGEL'S -->
     <div class="logo-inicio">
         <img
             src="https://photos.app.goo.gl/J55vgiZQYYyiU2128"
@@ -440,10 +352,11 @@
         >
     </div>
 
-    <!-- PORTADA -->
+    <!-- PORTADA PRINCIPAL -->
     <section class="portada">
+
         <div class="portada-texto">
-            <div class="estrella">✦ 🪽 ✦</div>
+            <div class="estrella">🪽 ✦ 🪽</div>
 
             <h1>Angel's Fashion World</h1>
 
@@ -464,6 +377,7 @@
                 alt="Angel's Fashion World, moda y estilo"
             >
         </div>
+
     </section>
 
     <!-- BUSCADOR -->
@@ -485,36 +399,40 @@
 
     <!-- CATEGORÍAS -->
     <section class="seccion" id="categorias">
-        <h2>Nuestras categorías</h2>
 
-        <p>Encuentra tus favoritos en Angel's. <span class="estrella">✦</span></p>
+        <h2>Nuestras categorías ✦</h2>
+
+        <p>
+            Encuentra tus favoritos en Angel's.
+            <span class="estrella">✧</span>
+        </p>
 
         <div class="categorias" id="listaCategorias">
 
             <a class="categoria" href="./moda.html">
                 <span class="estrella">✦</span>
-                <h3>Moda</h3>
+                <h3>👗 Moda</h3>
                 <p>Blusas, pantalones, vestidos, conjuntos y mucho más.</p>
                 <span class="estrella">✧</span>
             </a>
 
             <a class="categoria" href="./belleza.html">
                 <span class="estrella">✦</span>
-                <h3>Belleza</h3>
+                <h3>💄 Belleza</h3>
                 <p>Perfumes, maquillaje y productos para tus uñas.</p>
                 <span class="estrella">✧</span>
             </a>
 
             <a class="categoria" href="./skincare.html">
                 <span class="estrella">✦</span>
-                <h3>Skin care</h3>
+                <h3>🧴 Skin care</h3>
                 <p>Cuidados para la cara, el pelo y el cuidado personal.</p>
                 <span class="estrella">✧</span>
             </a>
 
             <a class="categoria" href="./accesorios.html">
                 <span class="estrella">✦</span>
-                <h3>Accesorios</h3>
+                <h3>👜 Accesorios</h3>
                 <p>Carteras, gafas, joyería y detalles para tu estilo.</p>
                 <span class="estrella">✧</span>
             </a>
@@ -524,6 +442,7 @@
 
     <!-- SOBRE NOSOTROS -->
     <section class="seccion" id="sobre-nosotros">
+
         <h2>Sobre nosotros 💗</h2>
 
         <div class="contacto">
@@ -537,10 +456,12 @@
                 Conócenos más ✦
             </a>
         </div>
+
     </section>
 
     <!-- CONTACTO -->
     <section class="seccion" id="contactanos">
+
         <h2>Contáctanos 💌</h2>
 
         <div class="contacto">
@@ -550,7 +471,11 @@
             </p>
 
             <p>
-                <a href="https://wa.me/" target="_blank" rel="noopener noreferrer">
+                <a
+                    href="https://wa.me/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     💬 Escríbenos por WhatsApp
                 </a>
             </p>
@@ -560,10 +485,12 @@
                 de contacto de tu tienda.
             </p>
         </div>
+
     </section>
 
-    <!-- NAVEGACIÓN INFERIOR -->
+    <!-- MENÚ INFERIOR -->
     <nav class="navegacion-inferior" aria-label="Accesos rápidos">
+
         <a href="#buscar">
             <span>🔎</span>
             Buscar
@@ -583,6 +510,7 @@
             <span>👤</span>
             Mi perfil
         </a>
+
     </nav>
 
     <!-- PIE DE PÁGINA -->
@@ -592,47 +520,8 @@
         <p>© 2026 Angel's Fashion World</p>
     </footer>
 
+    <!-- FUNCIONAMIENTO DEL BUSCADOR -->
     <script>
-        // Formulario de bienvenida
-        const formulario = document.getElementById("formBienvenida");
-        const bienvenida = document.getElementById("bienvenida");
-        const errorBienvenida = document.getElementById("errorBienvenida");
-
-        // Mantener la bienvenida cerrada durante esta sesión
-        if (sessionStorage.getItem("angelsBienvenida") === "ok") {
-            bienvenida.style.display = "none";
-        }
-
-        formulario.addEventListener("submit", function (evento) {
-            evento.preventDefault();
-
-            const correo = document.getElementById("correo").value.trim();
-            const confirmarCorreo = document.getElementById("confirmarCorreo").value.trim();
-            const contrasena = document.getElementById("contrasena").value;
-            const confirmarContrasena = document.getElementById("confirmarContrasena").value;
-
-            if (correo !== confirmarCorreo) {
-                errorBienvenida.textContent = "Los correos electrónicos no coinciden. 💗";
-                return;
-            }
-
-            if (contrasena !== confirmarContrasena) {
-                errorBienvenida.textContent = "Las contraseñas no coinciden. 💗";
-                return;
-            }
-
-            if (contrasena.length < 8) {
-                errorBienvenida.textContent = "La contraseña debe tener al menos 8 caracteres.";
-                return;
-            }
-
-            sessionStorage.setItem("angelsBienvenida", "ok");
-            sessionStorage.setItem("angelsCorreo", correo);
-
-            bienvenida.style.display = "none";
-        });
-
-        // Buscador de categorías de la página principal
         const buscador = document.getElementById("buscador");
         const categorias = document.querySelectorAll(".categoria");
         const mensajeBusqueda = document.getElementById("mensajeBusqueda");
@@ -642,7 +531,9 @@
             let coincidencias = 0;
 
             categorias.forEach(function (categoria) {
-                const coincide = categoria.textContent.toLowerCase().includes(busqueda);
+                const coincide = categoria.textContent
+                    .toLowerCase()
+                    .includes(busqueda);
 
                 categoria.style.display = coincide ? "" : "none";
 
