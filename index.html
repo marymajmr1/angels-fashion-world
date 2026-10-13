@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angel's Fashion World</title>
+
+    <title>Angel's Fashion World 💗</title>
 
     <link rel="stylesheet" href="./style.css?v=18">
 
@@ -15,360 +16,340 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 25px;
         }
 
         body {
-            padding-bottom: 85px;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #68495a;
+            background:
+                radial-gradient(circle at top left, #ffe0ef, transparent 35%),
+                radial-gradient(circle at bottom right, #ffe8f2, transparent 35%),
+                #fff1f7;
         }
 
-        /* BIENVENIDA */
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-        .pantalla-bienvenida {
+        .bienvenida {
             position: fixed;
             inset: 0;
-            z-index: 9999;
+            z-index: 1000;
+            background: rgba(255, 235, 245, .97);
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
-            overflow-y: auto;
-            background: radial-gradient(circle at top left,
-                #ffe1ee, #fff1f7 55%, #ffffff);
         }
 
-        .bienvenida-tarjeta {
-            width: 100%;
-            max-width: 450px;
-            padding: 35px 28px;
-            text-align: center;
+        .bienvenida-contenido {
             background: white;
-            border: 1px solid #f1d5e2;
-            border-radius: 28px;
-            box-shadow: 0 10px 35px rgba(216, 91, 145, 0.15);
+            width: 100%;
+            max-width: 420px;
+            padding: 28px;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px #d85b9125;
+            text-align: center;
         }
 
-        .bienvenida-alas {
-            margin-bottom: 18px;
-            font-size: 38px;
-        }
-
-        .bienvenida-tarjeta h1 {
-            margin-bottom: 15px;
+        .bienvenida h2 {
             color: #d85b91;
         }
 
-        .bienvenida-tarjeta p {
-            margin-bottom: 15px;
-            line-height: 1.6;
-            color: #68495a;
+        .bienvenida input {
+            width: 100%;
+            padding: 13px;
+            margin: 7px 0;
+            border: 1px solid #f0c5d8;
+            border-radius: 12px;
+            font-size: 15px;
         }
 
-        .bienvenida-tarjeta label {
-            display: block;
-            margin: 20px 0 8px;
-            text-align: left;
-            color: #68495a;
+        .boton-rosa {
+            display: inline-block;
+            border: none;
+            background: #d85b91;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .boton-rosa:hover {
+            background: #bd4278;
+        }
+
+        .menu {
+            width: 92%;
+            max-width: 1200px;
+            margin: 25px auto;
+            padding: 17px;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 5px 20px #d85b9115;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .menu a {
+            font-size: 14px;
             font-weight: bold;
         }
 
-        .bienvenida-tarjeta input {
-            width: 100%;
-            box-sizing: border-box;
-            padding: 14px;
-            border: 1px solid #e8b4cc;
-            border-radius: 14px;
-            font-size: 16px;
+        .menu a:hover {
+            color: #d85b91;
         }
-
-        .bienvenida-tarjeta button {
-            width: 100%;
-            margin-top: 16px;
-            padding: 14px;
-            border: none;
-            border-radius: 14px;
-            background: #d85b91;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .bienvenida-tarjeta button:hover {
-            background: #c94b82;
-        }
-
-        .bienvenida-tarjeta .nota-bienvenida {
-            margin-top: 22px;
-            margin-bottom: 0;
-            font-size: 13px;
-        }
-
-        body.tienda-bloqueada {
-            overflow: hidden;
-        }
-
-        /* LOGO ANGEL'S */
 
         .logo-inicio {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 12px 4%;
-            background: #fff5f9;
-            border-bottom: 1px solid #f5d5e4;
-        }
-
-        .logo-inicio a {
-            display: block;
-            width: 100%;
-            max-width: 720px;
+            text-align: center;
+            padding: 10px 15px;
         }
 
         .logo-inicio img {
             display: block;
             width: 100%;
+            max-width: 430px;
             max-height: 190px;
             object-fit: contain;
-            border-radius: 12px;
+            margin: auto;
+            border-radius: 20px;
         }
 
-        /* PORTADA PRINCIPAL */
-
-        .portada-angel {
+        .portada {
+            width: 92%;
+            max-width: 1200px;
+            margin: 20px auto 45px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             align-items: center;
-            gap: 0;
-            width: 92%;
-            max-width: 1450px;
-            margin: 25px auto;
-            overflow: hidden;
-            border: 1px solid #f5d5e4;
-            border-radius: 28px;
-            background: linear-gradient(120deg, #fff7fa, #ffe5ef);
-            box-shadow: 0 8px 25px rgba(216, 91, 145, 0.10);
+            gap: 30px;
         }
 
         .portada-texto {
-            padding: 35px 20px 35px 9%;
-            color: #68495a;
-        }
-
-        .portada-etiqueta {
-            margin-bottom: 12px;
-            color: #b66c8e;
-            font-size: 13px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
+            text-align: center;
+            padding: 20px;
         }
 
         .portada-texto h1 {
-            margin: 0 0 15px;
-            color: #68495a;
-            font-family: Georgia, serif;
-            font-size: clamp(36px, 4.5vw, 66px);
-            line-height: 1.1;
-        }
-
-        .portada-texto h1 span {
-            display: block;
             color: #d85b91;
-            font-style: italic;
-            font-weight: normal;
+            font-size: clamp(30px, 5vw, 48px);
+            margin-bottom: 15px;
         }
 
-        .portada-descripcion {
-            margin: 15px 0;
-            color: #68495a;
-            font-size: clamp(14px, 1.4vw, 18px);
+        .portada-texto p {
+            font-size: 17px;
             line-height: 1.7;
-        }
-
-        .portada-categorias {
-            margin: 18px 0 25px;
-            color: #956078;
-            font-family: Georgia, serif;
-            font-size: clamp(14px, 1.5vw, 21px);
-            line-height: 1.7;
-        }
-
-        .boton-explorar-portada {
-            display: inline-block;
-            padding: 14px 32px;
-            border: none;
-            border-radius: 40px;
-            background: #d85b91;
-            color: white;
-            font-size: 16px;
-            text-decoration: none;
-            box-shadow: 0 5px 15px rgba(216, 91, 145, 0.20);
-            transition: background .2s, transform .2s;
-        }
-
-        .boton-explorar-portada:hover {
-            background: #c94b82;
-            transform: translateY(-2px);
-        }
-
-        .portada-imagen {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 0;
-            min-height: 400px;
-            overflow: hidden;
-            background: #ffe5ef;
         }
 
         .portada-imagen img {
             display: block;
             width: 100%;
-            height: 100%;
-            min-height: 400px;
-            max-height: 570px;
-            object-fit: cover;
-            object-position: center;
+            max-height: 480px;
+            object-fit: contain;
+            border-radius: 25px;
         }
 
-        /* BUSCADOR */
-
-        .buscador-tienda {
+        .seccion {
             width: 92%;
-            max-width: 850px;
-            margin: 25px auto;
-            padding: 20px;
+            max-width: 1200px;
+            margin: 55px auto;
             text-align: center;
-            background: rgba(255, 255, 255, 0.92);
-            border: 1px solid #f5d5e4;
-            border-radius: 22px;
-            box-shadow: 0 5px 18px rgba(216, 91, 145, 0.10);
+            scroll-margin-top: 25px;
         }
 
-        .buscador-tienda label {
+        .seccion h2 {
+            color: #d85b91;
+            font-size: 30px;
+        }
+
+        .categorias {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .categoria {
+            background: white;
+            padding: 25px 15px;
+            border-radius: 22px;
+            box-shadow: 0 5px 18px #d85b9115;
+            transition: transform .2s;
+        }
+
+        .categoria:hover {
+            transform: translateY(-5px);
+        }
+
+        .categoria h3 {
+            color: #d85b91;
+            margin: 8px 0;
+        }
+
+        .categoria p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .estrella {
+            color: #c8a96b;
+            font-size: 24px;
+        }
+
+        .buscador {
+            width: 100%;
+            max-width: 550px;
             display: block;
-            margin-bottom: 12px;
-            color: #68495a;
+            margin: 20px auto;
+            padding: 14px 18px;
+            border: 1px solid #edbfd3;
+            border-radius: 25px;
+            font-size: 16px;
+            outline-color: #d85b91;
+        }
+
+        .contacto {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 25px;
+            line-height: 1.8;
+        }
+
+        .contacto a {
+            color: #d85b91;
             font-weight: bold;
         }
 
-        .buscador-contenedor {
-            display: flex;
-            gap: 10px;
-        }
-
-        .buscador-contenedor input {
-            flex: 1;
-            min-width: 0;
-            padding: 13px;
-            border: 1px solid #e8b4cc;
-            border-radius: 14px;
-            outline-color: #d85b91;
-            font-size: 15px;
-        }
-
-        .buscador-contenedor button {
-            padding: 12px 16px;
-            border: none;
-            border-radius: 14px;
-            background: #d85b91;
-            color: white;
-            cursor: pointer;
-        }
-
-        #mensajeBusqueda {
-            margin-top: 10px;
+        footer {
+            text-align: center;
+            padding: 30px 15px 100px;
             color: #68495a;
-            font-size: 14px;
         }
 
-        /* BARRA INFERIOR */
-
-        .menu-inferior {
+        .estrellas-decorativas {
+            pointer-events: none;
             position: fixed;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 5000;
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            align-items: center;
-            gap: 0;
-            width: 100%;
-            margin: 0;
-            padding: 8px 5px calc(8px + env(safe-area-inset-bottom));
-            background: rgba(255, 255, 255, 0.98);
-            border-top: 1px solid #f5d5e4;
-            box-shadow: 0 -4px 18px rgba(216, 91, 145, 0.12);
+            inset: 0;
+            z-index: -1;
+            overflow: hidden;
         }
 
-        .menu-inferior .opcion-inferior {
+        .estrella1,
+        .estrella2,
+        .estrella3,
+        .estrella4 {
+            position: absolute;
+            color: #c8a96b;
+            animation: flotar 4s ease-in-out infinite;
+        }
+
+        .estrella1 {
+            top: 120px;
+            left: 4%;
+        }
+
+        .estrella2 {
+            top: 280px;
+            right: 5%;
+            animation-delay: .7s;
+        }
+
+        .estrella3 {
+            bottom: 180px;
+            left: 6%;
+            animation-delay: 1.3s;
+        }
+
+        .estrella4 {
+            bottom: 80px;
+            right: 7%;
+            animation-delay: 2s;
+        }
+
+        @keyframes flotar {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .navegacion-inferior {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            width: 94%;
+            max-width: 600px;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 3px 20px #d85b9130;
+            padding: 12px 8px;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            gap: 3px;
-            min-width: 0;
-            padding: 3px 2px;
-            color: #68495a;
-            text-decoration: none;
+            justify-content: space-around;
+            gap: 5px;
+        }
+
+        .navegacion-inferior a {
+            text-align: center;
             font-size: 12px;
-            line-height: 1.2;
-            white-space: nowrap;
-            cursor: pointer;
         }
 
-        .menu-inferior .icono-inferior {
+        .navegacion-inferior span {
             display: block;
-            min-height: 31px;
-            color: #d85b91;
-            font-size: 29px;
-            line-height: 1;
+            font-size: 20px;
+            margin-bottom: 4px;
         }
 
-        .menu-inferior .opcion-inferior:hover,
-        .menu-inferior .opcion-inferior:active {
-            color: #d85b91;
-        }
-
-        @media (min-width: 751px) {
-            .menu-inferior {
-                padding-top: 10px;
-                padding-bottom: 10px;
-            }
-
-            .menu-inferior .opcion-inferior {
-                font-size: 14px;
-            }
+        .mensaje-busqueda {
+            font-size: 14px;
+            margin: 12px auto;
         }
 
         @media (max-width: 750px) {
-            .portada-angel {
+            .portada {
                 grid-template-columns: 1fr;
             }
 
-            .portada-texto {
-                padding: 32px 24px 25px;
-                text-align: center;
+            .categorias {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
             }
 
-            .portada-imagen {
-                min-height: 300px;
-                max-height: 430px;
+            .menu {
+                gap: 12px;
+            }
+
+            .menu a {
+                font-size: 13px;
+            }
+
+            .portada-texto {
+                padding: 5px;
             }
 
             .portada-imagen img {
-                min-height: 300px;
-                max-height: 430px;
-                object-position: center 35%;
+                max-height: 400px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .categorias {
+                grid-template-columns: 1fr;
             }
 
-            .buscador-contenedor {
-                flex-direction: column;
-            }
-
-            .logo-inicio img {
-                max-height: 140px;
+            .bienvenida-contenido {
+                padding: 20px;
             }
         }
     </style>
@@ -376,620 +357,314 @@
 
 <body>
 
-    <!-- BIENVENIDA Y REGISTRO -->
+    <div class="estrellas-decorativas" aria-hidden="true">
+        <span class="estrella1">✦</span>
+        <span class="estrella2">✧</span>
+        <span class="estrella3">✦</span>
+        <span class="estrella4">✧</span>
+    </div>
 
-    <section id="pantallaBienvenida" class="pantalla-bienvenida">
+    <!-- BIENVENIDA -->
+    <div class="bienvenida" id="bienvenida">
+        <div class="bienvenida-contenido">
+            <div class="estrella">✦ 🪽 ✦</div>
 
-        <div class="bienvenida-tarjeta">
+            <h2>¡Bienvenida a Angel's! 💗</h2>
 
-            <div class="bienvenida-alas">🪽 ✦</div>
+            <p>Regístrate para explorar nuestra tienda.</p>
 
-            <h1>¡Bienvenida a Angel's!</h1>
-
-            <p>Nos alegra tenerte aquí. 💗</p>
-
-            <p>
-                Crea tu acceso a nuestro mundo de moda y belleza.
-                Comprueba que tus datos estén escritos correctamente.
-            </p>
-
-            <form id="formularioCorreo">
-
-                <label for="correoEntrada">
-                    Tu correo electrónico
-                </label>
-
+            <form id="formBienvenida">
                 <input
                     type="email"
-                    id="correoEntrada"
-                    placeholder="tucorreo@ejemplo.com"
+                    id="correo"
+                    placeholder="Tu correo electrónico"
                     autocomplete="email"
-                    maxlength="254"
                     required
                 >
-
-                <label for="confirmarCorreo">
-                    Confirma tu correo electrónico
-                </label>
 
                 <input
                     type="email"
                     id="confirmarCorreo"
-                    placeholder="Escribe tu correo otra vez"
-                    autocomplete="off"
-                    maxlength="254"
+                    placeholder="Confirma tu correo electrónico"
+                    autocomplete="email"
                     required
                 >
-
-                <label for="contrasenaEntrada">
-                    Crea una contraseña para Angel's
-                </label>
 
                 <input
                     type="password"
-                    id="contrasenaEntrada"
-                    placeholder="Mínimo 8 caracteres"
-                    autocomplete="new-password"
+                    id="contrasena"
+                    placeholder="Crea una contraseña (mínimo 8 caracteres)"
                     minlength="8"
-                    maxlength="128"
+                    autocomplete="new-password"
                     required
                 >
-
-                <label for="confirmarContrasena">
-                    Confirma tu contraseña
-                </label>
 
                 <input
                     type="password"
                     id="confirmarContrasena"
-                    placeholder="Escribe la contraseña otra vez"
-                    autocomplete="new-password"
+                    placeholder="Confirma tu contraseña"
                     minlength="8"
-                    maxlength="128"
+                    autocomplete="new-password"
                     required
                 >
 
-                <label style="display:flex;align-items:center;gap:8px;font-weight:normal;">
-                    <input
-                        type="checkbox"
-                        id="mostrarContrasenas"
-                        style="width:auto;"
-                    >
-                    Mostrar contraseñas
-                </label>
-
-                <p class="nota-bienvenida" style="text-align:left;">
-                    Usa una contraseña diferente a la de tu correo personal.
-                    No compartas tu contraseña con nadie.
-                </p>
-
-                <button type="submit">
-                    Crear acceso y entrar ✨
+                <button class="boton-rosa" type="submit">
+                    Entrar a la tienda 💕
                 </button>
 
+                <p id="errorBienvenida" role="alert"></p>
             </form>
 
-            <p class="nota-bienvenida">
-                Tu estilo, tu esencia. 🤍
+            <p style="font-size:12px;">
+                Este formulario es una demostración y no crea una cuenta segura.
             </p>
-
         </div>
-
-    </section>
-
-
-    <!-- MENÚ SUPERIOR -->
-
-    <nav class="menu">
-
-        <a href="index.html">Inicio</a>
-        <a href="moda.html">Moda</a>
-        <a href="belleza.html">Belleza</a>
-        <a href="skincare.html">Skin care</a>
-        <a href="accesorios.html">Accesorios</a>
-        <a href="sobre-nosotros.html">Sobre nosotros</a>
-        <a href="#contactanos">Contáctanos</a>
-
-    </nav>
-
-
-    <!-- LOGO DE ANGEL'S -->
-
-    <div class="logo-inicio">
-
-        <a href="index.html" aria-label="Angel's Fashion World, inicio">
-
-            <img
-                src="./angels_logo_alas.jpg"
-                alt="Angel's Fashion World con alas y estrellas"
-            >
-
-        </a>
-
     </div>
 
+    <!-- MENÚ -->
+    <nav class="menu">
+        <a href="./index.html">Inicio</a>
+        <a href="./moda.html">Moda</a>
+        <a href="./belleza.html">Belleza</a>
+        <a href="./skincare.html">Skin care</a>
+        <a href="./accesorios.html">Accesorios</a>
+        <a href="./sobre-nosotros.html">Sobre nosotros</a>
+        <a href="#contactanos">Contáctanos</a>
+    </nav>
 
-    <!-- PORTADA PRINCIPAL -->
+    <!-- LOGO -->
+    <div class="logo-inicio">
+        <img
+            src="https://photos.app.goo.gl/J55vgiZQYYyiU2128"
+            alt="Logo de Angel's Fashion World"
+        >
+    </div>
 
-    <header class="portada-angel">
-
+    <!-- PORTADA -->
+    <section class="portada">
         <div class="portada-texto">
+            <div class="estrella">✦ 🪽 ✦</div>
 
-            <p class="portada-etiqueta">
-                🪽 Bienvenida a nuestro mundo
+            <h1>Angel's Fashion World</h1>
+
+            <p>
+                ¡Descubre tu estilo con nosotras! 💗
+                Encuentra moda, belleza, cuidado personal
+                y accesorios para cada ocasión.
             </p>
 
-            <h1>
-                Tu estilo,
-                <span>tu esencia.</span>
-            </h1>
-
-            <p class="portada-descripcion">
-                Descubre prendas, accesorios y productos de belleza
-                pensados para acompañarte en cada momento. 🤍
-            </p>
-
-            <p class="portada-categorias">
-                Moda • Belleza • Skin care • Accesorios
-            </p>
-
-            <a
-                href="#categorias"
-                class="boton-explorar-portada"
-            >
+            <a href="#categorias" class="boton-rosa">
                 Explorar ✦
             </a>
-
         </div>
 
         <div class="portada-imagen">
-
             <img
-                src="./muchacha_bolso_angels.jpg"
-                alt="Muchacha con vestido rosa y bolsa de Angel's Fashion World"
+                src="https://photos.app.goo.gl/KN1Tj9C5KavBeT687"
+                alt="Angel's Fashion World, moda y estilo"
             >
-
         </div>
-
-    </header>
-
+    </section>
 
     <!-- BUSCADOR -->
+    <section class="seccion" id="buscar">
+        <h2>Encuentra lo que buscas 💕</h2>
 
-    <section class="buscador-tienda" id="seccionBuscador">
+        <input
+            class="buscador"
+            type="search"
+            id="buscador"
+            placeholder="Busca una categoría..."
+            aria-label="Buscar una categoría"
+        >
 
-        <label for="buscarProducto">
-            Buscar productos
-        </label>
-
-        <div class="buscador-contenedor">
-
-            <input
-                type="search"
-                id="buscarProducto"
-                placeholder="Busca blusas, vestidos, perfumes..."
-                autocomplete="off"
-            >
-
-            <button type="button" id="limpiarBusqueda">
-                Limpiar
-            </button>
-
-        </div>
-
-        <p id="mensajeBusqueda" aria-live="polite"></p>
-
+        <p class="mensaje-busqueda" id="mensajeBusqueda">
+            Escribe para encontrar tu categoría favorita.
+        </p>
     </section>
-
 
     <!-- CATEGORÍAS -->
+    <section class="seccion" id="categorias">
+        <h2>Nuestras categorías</h2>
 
-    <main class="categorias-inicio" id="categorias">
+        <p>Encuentra tus favoritos en Angel's. <span class="estrella">✦</span></p>
 
-        <a href="moda.html" class="categoria-inicio">
+        <div class="categorias" id="listaCategorias">
 
-            <div class="emoji">👗</div>
+            <a class="categoria" href="./moda.html">
+                <span class="estrella">✦</span>
+                <h3>Moda</h3>
+                <p>Blusas, pantalones, vestidos, conjuntos y mucho más.</p>
+                <span class="estrella">✧</span>
+            </a>
 
-            <h2>Moda</h2>
+            <a class="categoria" href="./belleza.html">
+                <span class="estrella">✦</span>
+                <h3>Belleza</h3>
+                <p>Perfumes, maquillaje y productos para tus uñas.</p>
+                <span class="estrella">✧</span>
+            </a>
 
-            <p>
-                Descubre prendas para diferentes estilos y ocasiones.
-            </p>
+            <a class="categoria" href="./skincare.html">
+                <span class="estrella">✦</span>
+                <h3>Skin care</h3>
+                <p>Cuidados para la cara, el pelo y el cuidado personal.</p>
+                <span class="estrella">✧</span>
+            </a>
 
-            <span class="explorar">
-                Explorar moda ✦
-            </span>
+            <a class="categoria" href="./accesorios.html">
+                <span class="estrella">✦</span>
+                <h3>Accesorios</h3>
+                <p>Carteras, gafas, joyería y detalles para tu estilo.</p>
+                <span class="estrella">✧</span>
+            </a>
 
-        </a>
-
-        <a href="belleza.html" class="categoria-inicio">
-
-            <div class="emoji">💄</div>
-
-            <h2>Belleza</h2>
-
-            <p>
-                Maquillaje, perfumes y productos para uñas.
-            </p>
-
-            <span class="explorar">
-                Explorar belleza ✦
-            </span>
-
-        </a>
-
-        <a href="skincare.html" class="categoria-inicio">
-
-            <div class="emoji">🧴</div>
-
-            <h2>Skin care</h2>
-
-            <p>
-                Cuidado para la cara, el pelo y cuidado personal.
-            </p>
-
-            <span class="explorar">
-                Explorar Skin care ✦
-            </span>
-
-        </a>
-
-        <a href="accesorios.html" class="categoria-inicio">
-
-            <div class="emoji">👜</div>
-
-            <h2>Accesorios</h2>
-
-            <p>
-                Detalles especiales para complementar tus looks.
-            </p>
-
-            <span class="explorar">
-                Explorar accesorios ✦
-            </span>
-
-        </a>
-
-    </main>
-
-
-    <!-- MENSAJE DE ANGEL'S -->
-
-    <section class="sobre-inicio">
-
-        <div class="alas">🪽</div>
-
-        <span class="decoracion">✦</span>
-
-        <h2>Tu estilo, tu esencia. ✨</h2>
-
-        <p>
-            En Angel's queremos crear un espacio donde la moda,
-            la belleza y los pequeños detalles se encuentren para
-            acompañarte en cada momento.
-        </p>
-
-        <span class="decoracion">✧</span>
-
+        </div>
     </section>
 
+    <!-- SOBRE NOSOTROS -->
+    <section class="seccion" id="sobre-nosotros">
+        <h2>Sobre nosotros 💗</h2>
+
+        <div class="contacto">
+            <p>
+                En Angel's Fashion World queremos acompañarte
+                a descubrir tu estilo con moda, belleza y accesorios
+                que te encanten.
+            </p>
+
+            <a href="./sobre-nosotros.html" class="boton-rosa">
+                Conócenos más ✦
+            </a>
+        </div>
+    </section>
 
     <!-- CONTACTO -->
+    <section class="seccion" id="contactanos">
+        <h2>Contáctanos 💌</h2>
 
-    <section class="contacto" id="contactanos">
+        <div class="contacto">
+            <p>
+                ¿Tienes preguntas sobre nuestros productos o pedidos?
+                ¡Nos encantará ayudarte!
+            </p>
 
-        <h2>Contáctanos 🤍</h2>
+            <p>
+                <a href="https://wa.me/" target="_blank" rel="noopener noreferrer">
+                    💬 Escríbenos por WhatsApp
+                </a>
+            </p>
 
-        <p>
-            ¿Tienes alguna pregunta o quieres conocer más
-            sobre nuestros productos?
-        </p>
-
-        <a
-            class="whatsapp"
-            href="https://wa.me/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            💬 Escríbenos por WhatsApp
-        </a>
-
+            <p>
+                Puedes actualizar el enlace de WhatsApp con el número
+                de contacto de tu tienda.
+            </p>
+        </div>
     </section>
 
-
-    <!-- BARRA INFERIOR -->
-
-    <nav class="menu-inferior" aria-label="Navegación inferior">
-
-        <a
-            href="#seccionBuscador"
-            id="enlaceBuscarAbajo"
-            class="opcion-inferior"
-        >
-            <span class="icono-inferior" aria-hidden="true">🔍</span>
-            <span>Buscar</span>
+    <!-- NAVEGACIÓN INFERIOR -->
+    <nav class="navegacion-inferior" aria-label="Accesos rápidos">
+        <a href="#buscar">
+            <span>🔎</span>
+            Buscar
         </a>
 
-        <a href="pedido.html" class="opcion-inferior">
-            <span class="icono-inferior" aria-hidden="true">📦</span>
-            <span>Pedidos</span>
+        <a href="./pedido.html">
+            <span>📦</span>
+            Pedidos
         </a>
 
-        <a href="carrito.html" class="opcion-inferior enlace-carrito">
-            <span class="icono-inferior" aria-hidden="true">🛒</span>
-            <span>Carrito</span>
+        <a href="./carrito.html">
+            <span>🛒</span>
+            Carrito
         </a>
 
-        <a href="perfil.html" class="opcion-inferior">
-            <span class="icono-inferior" aria-hidden="true">👤</span>
-            <span>Mi perfil</span>
+        <a href="./perfil.html">
+            <span>👤</span>
+            Mi perfil
         </a>
-
     </nav>
 
-
     <!-- PIE DE PÁGINA -->
-
     <footer>
-
-        <p>🪽 Angel's Fashion World 🪽</p>
-
-        <p>Moda • Belleza • Skin Care • Accesorios</p>
-
+        <p>🪽 Angel's Fashion World ✦</p>
+        <p>Moda, belleza y estilo con un toque especial. 💗</p>
+        <p>© 2026 Angel's Fashion World</p>
     </footer>
 
-
-    <!-- JAVASCRIPT EXISTENTE -->
-
-    <script src="./script.js?v=16"></script>
-
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        // Formulario de bienvenida
+        const formulario = document.getElementById("formBienvenida");
+        const bienvenida = document.getElementById("bienvenida");
+        const errorBienvenida = document.getElementById("errorBienvenida");
 
-            /* REGISTRO DE BIENVENIDA */
+        // Mantener la bienvenida cerrada durante esta sesión
+        if (sessionStorage.getItem("angelsBienvenida") === "ok") {
+            bienvenida.style.display = "none";
+        }
 
-            const formularioCorreo =
-                document.getElementById("formularioCorreo");
+        formulario.addEventListener("submit", function (evento) {
+            evento.preventDefault();
 
-            const pantallaBienvenida =
-                document.getElementById("pantallaBienvenida");
+            const correo = document.getElementById("correo").value.trim();
+            const confirmarCorreo = document.getElementById("confirmarCorreo").value.trim();
+            const contrasena = document.getElementById("contrasena").value;
+            const confirmarContrasena = document.getElementById("confirmarContrasena").value;
 
-            const campoCorreo =
-                document.getElementById("correoEntrada");
-
-            const confirmarCorreo =
-                document.getElementById("confirmarCorreo");
-
-            const contrasena =
-                document.getElementById("contrasenaEntrada");
-
-            const confirmarContrasena =
-                document.getElementById("confirmarContrasena");
-
-            const mostrarContrasenas =
-                document.getElementById("mostrarContrasenas");
-
-            if (sessionStorage.getItem("angelsCorreoEntrada")) {
-
-                pantallaBienvenida.style.display = "none";
-
-            } else {
-
-                document.body.classList.add("tienda-bloqueada");
-
+            if (correo !== confirmarCorreo) {
+                errorBienvenida.textContent = "Los correos electrónicos no coinciden. 💗";
+                return;
             }
 
-            if (mostrarContrasenas) {
-
-                mostrarContrasenas.addEventListener("change", function() {
-
-                    const tipo = mostrarContrasenas.checked
-                        ? "text"
-                        : "password";
-
-                    contrasena.type = tipo;
-                    confirmarContrasena.type = tipo;
-
-                });
-
+            if (contrasena !== confirmarContrasena) {
+                errorBienvenida.textContent = "Las contraseñas no coinciden. 💗";
+                return;
             }
 
-            formularioCorreo.addEventListener("submit", function(event) {
+            if (contrasena.length < 8) {
+                errorBienvenida.textContent = "La contraseña debe tener al menos 8 caracteres.";
+                return;
+            }
 
-                event.preventDefault();
+            sessionStorage.setItem("angelsBienvenida", "ok");
+            sessionStorage.setItem("angelsCorreo", correo);
 
-                const correo =
-                    campoCorreo.value.trim().toLowerCase();
+            bienvenida.style.display = "none";
+        });
 
-                const correoConfirmado =
-                    confirmarCorreo.value.trim().toLowerCase();
+        // Buscador de categorías de la página principal
+        const buscador = document.getElementById("buscador");
+        const categorias = document.querySelectorAll(".categoria");
+        const mensajeBusqueda = document.getElementById("mensajeBusqueda");
 
-                if (!campoCorreo.checkValidity()) {
-                    campoCorreo.reportValidity();
-                    return;
+        buscador.addEventListener("input", function () {
+            const busqueda = buscador.value.trim().toLowerCase();
+            let coincidencias = 0;
+
+            categorias.forEach(function (categoria) {
+                const coincide = categoria.textContent.toLowerCase().includes(busqueda);
+
+                categoria.style.display = coincide ? "" : "none";
+
+                if (coincide) {
+                    coincidencias++;
                 }
-
-                if (correo !== correoConfirmado) {
-
-                    confirmarCorreo.setCustomValidity(
-                        "Los correos electrónicos no coinciden."
-                    );
-
-                    confirmarCorreo.reportValidity();
-                    confirmarCorreo.setCustomValidity("");
-                    return;
-
-                }
-
-                if (!contrasena.checkValidity()) {
-                    contrasena.reportValidity();
-                    return;
-                }
-
-                if (contrasena.value !== confirmarContrasena.value) {
-
-                    confirmarContrasena.setCustomValidity(
-                        "Las contraseñas no coinciden."
-                    );
-
-                    confirmarContrasena.reportValidity();
-                    confirmarContrasena.setCustomValidity("");
-                    return;
-
-                }
-
-                /*
-                 * Este formulario solo comprueba los datos.
-                 * No crea una cuenta segura ni verifica el correo.
-                 * La contraseña no se guarda en el navegador.
-                 */
-
-                sessionStorage.setItem(
-                    "angelsCorreoEntrada",
-                    correo
-                );
-
-                let clienteAnterior = {};
-
-                try {
-
-                    clienteAnterior = JSON.parse(
-                        sessionStorage.getItem(
-                            "angelsClienteTemporal"
-                        ) || "{}"
-                    );
-
-                } catch (error) {
-
-                    clienteAnterior = {};
-
-                }
-
-                sessionStorage.setItem(
-                    "angelsClienteTemporal",
-                    JSON.stringify({
-                        ...clienteAnterior,
-                        correo: correo
-                    })
-                );
-
-                pantallaBienvenida.style.display = "none";
-
-                document.body.classList.remove("tienda-bloqueada");
-
             });
 
-
-            /* LUPA: IR AL BUSCADOR */
-
-            const enlaceBuscarAbajo =
-                document.getElementById("enlaceBuscarAbajo");
-
-            const campoBuscar =
-                document.getElementById("buscarProducto");
-
-            if (enlaceBuscarAbajo && campoBuscar) {
-
-                enlaceBuscarAbajo.addEventListener("click", function(event) {
-
-                    event.preventDefault();
-
-                    const seccionBuscador =
-                        document.getElementById("seccionBuscador");
-
-                    seccionBuscador.scrollIntoView({
-                        behavior: "smooth",
-                        block: "center"
-                    });
-
-                    setTimeout(function() {
-                        campoBuscar.focus();
-                    }, 400);
-
-                });
-
+            if (busqueda === "") {
+                mensajeBusqueda.textContent =
+                    "Escribe para encontrar tu categoría favorita.";
+            } else if (coincidencias === 0) {
+                mensajeBusqueda.textContent =
+                    "No encontramos esa categoría. Prueba con Moda, Belleza, Skin care o Accesorios.";
+            } else {
+                mensajeBusqueda.textContent =
+                    "¡Encontramos " + coincidencias + " categoría(s)! 💗";
             }
-
-
-            /* BUSCADOR DE ESTA PÁGINA */
-
-            const buscador =
-                document.getElementById("buscarProducto");
-
-            const limpiar =
-                document.getElementById("limpiarBusqueda");
-
-            const mensaje =
-                document.getElementById("mensajeBusqueda");
-
-            if (buscador && limpiar && mensaje) {
-
-                buscador.addEventListener("input", function() {
-
-                    const consulta = buscador.value
-                        .trim()
-                        .toLocaleLowerCase("es");
-
-                    const productos = document.querySelectorAll(
-                        ".producto, .producto-card, .tarjeta-producto"
-                    );
-
-                    let encontrados = 0;
-
-                    productos.forEach(function(producto) {
-
-                        const coincide = producto.textContent
-                            .toLocaleLowerCase("es")
-                            .includes(consulta);
-
-                        producto.hidden =
-                            consulta !== "" && !coincide;
-
-                        if (coincide) {
-                            encontrados++;
-                        }
-
-                    });
-
-                    if (consulta === "") {
-
-                        mensaje.textContent = "";
-
-                    } else if (productos.length === 0) {
-
-                        mensaje.textContent =
-                            "Visita una categoría para consultar sus productos.";
-
-                    } else if (encontrados === 0) {
-
-                        mensaje.textContent =
-                            "No encontramos productos en esta página.";
-
-                    } else {
-
-                        mensaje.textContent =
-                            "Encontramos " + encontrados + " producto(s).";
-
-                    }
-
-                });
-
-                limpiar.addEventListener("click", function() {
-
-                    buscador.value = "";
-
-                    buscador.dispatchEvent(
-                        new Event("input")
-                    );
-
-                    buscador.focus();
-
-                });
-
-            }
-
         });
     </script>
+
+    <script src="./script.js?v=16"></script>
 
 </body>
 </html>
