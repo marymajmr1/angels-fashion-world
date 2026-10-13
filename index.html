@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Angel's Fashion World</title>
 
     <link rel="stylesheet" href="./style.css?v=18">
 
     <style>
-        /* PANTALLA DE BIENVENIDA */
+        /* BIENVENIDA */
 
         .pantalla-bienvenida {
             position: fixed;
@@ -21,12 +20,8 @@
             justify-content: center;
             padding: 20px;
             overflow-y: auto;
-            background: radial-gradient(
-                circle at top left,
-                #ffe1ee,
-                #fff1f7 55%,
-                #ffffff
-            );
+            background: radial-gradient(circle at top left,
+                #ffe1ee, #fff1f7 55%, #ffffff);
         }
 
         .bienvenida-tarjeta {
@@ -34,7 +29,7 @@
             max-width: 450px;
             padding: 35px 28px;
             text-align: center;
-            background: #ffffff;
+            background: white;
             border: 1px solid #f1d5e2;
             border-radius: 28px;
             box-shadow: 0 10px 35px rgba(216, 91, 145, 0.15);
@@ -151,18 +146,71 @@
             font-size: 14px;
         }
 
-        /* MENÚ INFERIOR */
+        /* BARRA INFERIOR FIJA */
 
-        .menu-inferior {
-            margin-top: 30px;
-            margin-bottom: 25px;
+        body {
+            padding-bottom: 88px;
         }
 
-        .menu-inferior a {
+        .menu-inferior {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 5000;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            align-items: center;
+            gap: 0;
+            width: 100%;
+            margin: 0;
+            padding: 8px 5px calc(8px + env(safe-area-inset-bottom));
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.98);
+            border-top: 1px solid #f5d5e4;
+            box-shadow: 0 -4px 18px rgba(216, 91, 145, 0.12);
+        }
+
+        .menu-inferior .opcion-inferior {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            min-width: 0;
+            padding: 3px 2px;
+            color: #68495a;
+            text-decoration: none;
+            font-size: 12px;
+            line-height: 1.2;
             white-space: nowrap;
         }
 
-        /* PERFIL, PEDIDOS Y CARRITO */
+        .menu-inferior .icono-inferior {
+            display: block;
+            min-height: 31px;
+            color: #d85b91;
+            font-size: 29px;
+            line-height: 1;
+        }
+
+        .menu-inferior .opcion-inferior:hover,
+        .menu-inferior .opcion-inferior:active {
+            color: #d85b91;
+        }
+
+        @media (min-width: 751px) {
+            .menu-inferior {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .menu-inferior .opcion-inferior {
+                font-size: 14px;
+            }
+        }
+
+        /* TARJETAS DE PERFIL, PEDIDOS Y CARRITO */
 
         .accesos-cliente {
             width: 92%;
@@ -241,10 +289,7 @@
 
     <!-- BIENVENIDA Y REGISTRO -->
 
-    <section
-        id="pantallaBienvenida"
-        class="pantalla-bienvenida"
-    >
+    <section id="pantallaBienvenida" class="pantalla-bienvenida">
 
         <div class="bienvenida-tarjeta">
 
@@ -252,9 +297,7 @@
 
             <h1>¡Bienvenida a Angel's!</h1>
 
-            <p>
-                Nos alegra tenerte aquí. 💗
-            </p>
+            <p>Nos alegra tenerte aquí. 💗</p>
 
             <p>
                 Crea tu acceso a nuestro mundo de moda y belleza.
@@ -263,10 +306,7 @@
 
             <form id="formularioCorreo">
 
-                <label for="correoEntrada">
-                    Tu correo electrónico
-                </label>
-
+                <label for="correoEntrada">Tu correo electrónico</label>
                 <input
                     type="email"
                     id="correoEntrada"
@@ -276,10 +316,7 @@
                     required
                 >
 
-                <label for="confirmarCorreo">
-                    Confirma tu correo electrónico
-                </label>
-
+                <label for="confirmarCorreo">Confirma tu correo electrónico</label>
                 <input
                     type="email"
                     id="confirmarCorreo"
@@ -292,7 +329,6 @@
                 <label for="contrasenaEntrada">
                     Crea una contraseña para Angel's
                 </label>
-
                 <input
                     type="password"
                     id="contrasenaEntrada"
@@ -306,7 +342,6 @@
                 <label for="confirmarContrasena">
                     Confirma tu contraseña
                 </label>
-
                 <input
                     type="password"
                     id="confirmarContrasena"
@@ -331,15 +366,11 @@
                     No compartas tu contraseña con nadie.
                 </p>
 
-                <button type="submit">
-                    Crear acceso y entrar ✨
-                </button>
+                <button type="submit">Crear acceso y entrar ✨</button>
 
             </form>
 
-            <p class="nota-bienvenida">
-                Tu estilo, tu esencia. 🤍
-            </p>
+            <p class="nota-bienvenida">Tu estilo, tu esencia. 🤍</p>
 
         </div>
 
@@ -349,21 +380,13 @@
     <!-- MENÚ SUPERIOR -->
 
     <nav class="menu">
-
         <a href="index.html">Inicio</a>
-
         <a href="moda.html">Moda</a>
-
         <a href="belleza.html">Belleza</a>
-
         <a href="skincare.html">Skin care</a>
-
         <a href="accesorios.html">Accesorios</a>
-
         <a href="sobre-nosotros.html">Sobre nosotros</a>
-
         <a href="#contactanos">Contáctanos</a>
-
     </nav>
 
 
@@ -372,18 +395,13 @@
     <header class="presentacion">
 
         <div class="alas-con-estrella">
-
             <span class="alas">🪽</span>
-
             <span class="estrella-alas">✦</span>
-
         </div>
 
         <h1>¡Angel's!</h1>
 
-        <p class="frase">
-            Explora un mundo de moda y belleza. ✨
-        </p>
+        <p class="frase">Explora un mundo de moda y belleza. ✨</p>
 
         <p>
             Descubre prendas, accesorios y productos de belleza
@@ -399,9 +417,7 @@
 
     <section class="buscador-tienda">
 
-        <label for="buscarProducto">
-            🔎 Buscar productos
-        </label>
+        <label for="buscarProducto">🔎 Buscar productos</label>
 
         <div class="buscador-contenedor">
 
@@ -412,9 +428,7 @@
                 autocomplete="off"
             >
 
-            <button type="button" id="limpiarBusqueda">
-                Limpiar
-            </button>
+            <button type="button" id="limpiarBusqueda">Limpiar</button>
 
         </div>
 
@@ -428,74 +442,31 @@
     <main class="categorias-inicio">
 
         <a href="moda.html" class="categoria-inicio">
-
             <div class="emoji">👗</div>
-
             <h2>Moda</h2>
-
-            <p>
-                Descubre prendas para diferentes
-                estilos y ocasiones.
-            </p>
-
-            <span class="explorar">
-                Explorar moda ✦
-            </span>
-
+            <p>Descubre prendas para diferentes estilos y ocasiones.</p>
+            <span class="explorar">Explorar moda ✦</span>
         </a>
-
 
         <a href="belleza.html" class="categoria-inicio">
-
             <div class="emoji">💄</div>
-
             <h2>Belleza</h2>
-
-            <p>
-                Maquillaje, perfumes y productos
-                para uñas.
-            </p>
-
-            <span class="explorar">
-                Explorar belleza ✦
-            </span>
-
+            <p>Maquillaje, perfumes y productos para uñas.</p>
+            <span class="explorar">Explorar belleza ✦</span>
         </a>
-
 
         <a href="skincare.html" class="categoria-inicio">
-
             <div class="emoji">🧴</div>
-
             <h2>Skin care</h2>
-
-            <p>
-                Cuidado para la cara, el pelo
-                y cuidado personal.
-            </p>
-
-            <span class="explorar">
-                Explorar Skin care ✦
-            </span>
-
+            <p>Cuidado para la cara, el pelo y cuidado personal.</p>
+            <span class="explorar">Explorar Skin care ✦</span>
         </a>
 
-
         <a href="accesorios.html" class="categoria-inicio">
-
             <div class="emoji">👜</div>
-
             <h2>Accesorios</h2>
-
-            <p>
-                Detalles especiales para
-                complementar tus looks.
-            </p>
-
-            <span class="explorar">
-                Explorar accesorios ✦
-            </span>
-
+            <p>Detalles especiales para complementar tus looks.</p>
+            <span class="explorar">Explorar accesorios ✦</span>
         </a>
 
     </main>
@@ -505,15 +476,10 @@
 
     <section class="sobre-inicio">
 
-        <div class="alas">
-            🪽
-        </div>
-
+        <div class="alas">🪽</div>
         <span class="decoracion">✦</span>
 
-        <h2>
-            Tu estilo, tu esencia. ✨
-        </h2>
+        <h2>Tu estilo, tu esencia. ✨</h2>
 
         <p>
             En Angel's queremos crear un espacio donde la moda,
@@ -526,7 +492,7 @@
     </section>
 
 
-    <!-- PERFIL, PEDIDOS Y CARRITO -->
+    <!-- ESPACIO DEL CLIENTE -->
 
     <section class="accesos-cliente">
 
@@ -540,53 +506,24 @@
         <div class="accesos-cliente-contenedor">
 
             <a href="perfil.html" class="acceso-cliente">
-
                 <span>👤</span>
-
                 <h3>Mi perfil</h3>
-
-                <p>
-                    Completa tus datos de cliente.
-                </p>
-
-                <span class="explorar">
-                    Crear mi perfil ✦
-                </span>
-
+                <p>Completa tus datos de cliente.</p>
+                <span class="explorar">Crear mi perfil ✦</span>
             </a>
-
 
             <a href="pedido.html" class="acceso-cliente">
-
                 <span>📦</span>
-
                 <h3>Mis pedidos</h3>
-
-                <p>
-                    Consulta el seguimiento de tus compras.
-                </p>
-
-                <span class="explorar">
-                    Ver mis pedidos ✦
-                </span>
-
+                <p>Consulta el seguimiento de tus compras.</p>
+                <span class="explorar">Ver mis pedidos ✦</span>
             </a>
 
-
-            <a href="carrito.html" class="acceso-cliente">
-
+            <a href="carrito.html" class="acceso-cliente enlace-carrito">
                 <span>🛒</span>
-
                 <h3>Mi carrito</h3>
-
-                <p>
-                    Revisa los productos que deseas comprar.
-                </p>
-
-                <span class="explorar">
-                    Ir al carrito ✦
-                </span>
-
+                <p>Revisa los productos que deseas comprar.</p>
+                <span class="explorar">Ir al carrito ✦</span>
             </a>
 
         </div>
@@ -598,9 +535,7 @@
 
     <section class="contacto" id="contactanos">
 
-        <h2>
-            Contáctanos 🤍
-        </h2>
+        <h2>Contáctanos 🤍</h2>
 
         <p>
             ¿Tienes alguna pregunta o quieres conocer más
@@ -619,30 +554,41 @@
     </section>
 
 
-    <!-- MENÚ INFERIOR ROSADO -->
+    <!-- BARRA INFERIOR FIJA -->
 
-    <nav class="menu menu-inferior" aria-label="Mi espacio Angel's">
+    <nav class="menu-inferior" aria-label="Navegación inferior">
 
-        <a href="perfil.html">
-            👤 Mi perfil
+        <a
+            href="#buscarProducto"
+            id="enlaceBuscarAbajo"
+            class="opcion-inferior"
+        >
+            <span class="icono-inferior" aria-hidden="true">⌕</span>
+            <span>Buscar</span>
         </a>
 
-        <a href="pedido.html">
-            📦 Mis pedidos
+        <a href="pedido.html" class="opcion-inferior">
+            <span class="icono-inferior" aria-hidden="true">♧</span>
+            <span>Pedidos</span>
         </a>
 
-        <a href="carrito.html" class="enlace-carrito">
-            🛒 Carrito
+        <a
+            href="carrito.html"
+            class="opcion-inferior enlace-carrito"
+        >
+            <span class="icono-inferior" aria-hidden="true">🛒</span>
+            <span>Carrito</span>
         </a>
 
-        <a href="#buscarProducto" id="enlaceBuscarAbajo">
-            🔎 Buscar
+        <a href="perfil.html" class="opcion-inferior">
+            <span class="icono-inferior" aria-hidden="true">♙</span>
+            <span>Mi perfil</span>
         </a>
 
     </nav>
 
 
-    <!-- CARRITO FLOTANTE SIN NÚMERO -->
+    <!-- CARRITO FLOTANTE SIN CONTADOR -->
 
     <a href="carrito.html" class="carrito-flotante enlace-carrito">
         🛒 Carrito
@@ -652,15 +598,8 @@
     <!-- PIE DE PÁGINA -->
 
     <footer>
-
-        <p>
-            🪽 Angel's Fashion World 🪽
-        </p>
-
-        <p>
-            Moda • Belleza • Skin Care • Accesorios
-        </p>
-
+        <p>🪽 Angel's Fashion World 🪽</p>
+        <p>Moda • Belleza • Skin Care • Accesorios</p>
     </footer>
 
 
@@ -669,7 +608,6 @@
     <script src="./script.js?v=16"></script>
 
     <script>
-
         document.addEventListener("DOMContentLoaded", function() {
 
             /* REGISTRO DE BIENVENIDA */
@@ -680,155 +618,112 @@
             const pantallaBienvenida =
                 document.getElementById("pantallaBienvenida");
 
-            if (formularioCorreo && pantallaBienvenida) {
+            const campoCorreo =
+                document.getElementById("correoEntrada");
 
-                const correoGuardado =
-                    sessionStorage.getItem("angelsCorreoEntrada");
+            const confirmarCorreo =
+                document.getElementById("confirmarCorreo");
 
-                if (correoGuardado) {
+            const contrasena =
+                document.getElementById("contrasenaEntrada");
 
-                    pantallaBienvenida.style.display = "none";
+            const confirmarContrasena =
+                document.getElementById("confirmarContrasena");
 
-                } else {
+            const mostrarContrasenas =
+                document.getElementById("mostrarContrasenas");
 
-                    document.body.classList.add("tienda-bloqueada");
-
-                }
-
-                const campoCorreo =
-                    document.getElementById("correoEntrada");
-
-                const confirmarCorreo =
-                    document.getElementById("confirmarCorreo");
-
-                const contrasena =
-                    document.getElementById("contrasenaEntrada");
-
-                const confirmarContrasena =
-                    document.getElementById("confirmarContrasena");
-
-                const mostrarContrasenas =
-                    document.getElementById("mostrarContrasenas");
-
-                if (mostrarContrasenas) {
-
-                    mostrarContrasenas.addEventListener("change", function() {
-
-                        const tipo = mostrarContrasenas.checked
-                            ? "text"
-                            : "password";
-
-                        contrasena.type = tipo;
-                        confirmarContrasena.type = tipo;
-
-                    });
-
-                }
-
-                formularioCorreo.addEventListener("submit", function(event) {
-
-                    event.preventDefault();
-
-                    const correo =
-                        campoCorreo.value.trim().toLowerCase();
-
-                    const correoConfirmado =
-                        confirmarCorreo.value.trim().toLowerCase();
-
-                    if (!campoCorreo.checkValidity()) {
-
-                        campoCorreo.reportValidity();
-                        return;
-
-                    }
-
-                    if (correo !== correoConfirmado) {
-
-                        confirmarCorreo.setCustomValidity(
-                            "Los correos electrónicos no coinciden."
-                        );
-
-                        confirmarCorreo.reportValidity();
-                        confirmarCorreo.setCustomValidity("");
-                        return;
-
-                    }
-
-                    if (!contrasena.checkValidity()) {
-
-                        contrasena.reportValidity();
-                        return;
-
-                    }
-
-                    if (contrasena.value !== confirmarContrasena.value) {
-
-                        confirmarContrasena.setCustomValidity(
-                            "Las contraseñas no coinciden."
-                        );
-
-                        confirmarContrasena.reportValidity();
-                        confirmarContrasena.setCustomValidity("");
-                        return;
-
-                    }
-
-                    /*
-                     * No guardamos la contraseña en el navegador.
-                     * Esta pantalla valida los campos, pero aún no crea
-                     * una cuenta segura ni verifica el correo.
-                     */
-
-                    sessionStorage.setItem(
-                        "angelsCorreoEntrada",
-                        correo
-                    );
-
-                    let clienteAnterior = {};
-
-                    try {
-
-                        clienteAnterior = JSON.parse(
-                            sessionStorage.getItem(
-                                "angelsClienteTemporal"
-                            ) || "{}"
-                        );
-
-                    } catch (error) {
-
-                        clienteAnterior = {};
-
-                    }
-
-                    sessionStorage.setItem(
-                        "angelsClienteTemporal",
-                        JSON.stringify({
-                            ...clienteAnterior,
-                            correo: correo
-                        })
-                    );
-
-                    pantallaBienvenida.style.display = "none";
-
-                    document.body.classList.remove(
-                        "tienda-bloqueada"
-                    );
-
-                });
-
+            if (sessionStorage.getItem("angelsCorreoEntrada")) {
+                pantallaBienvenida.style.display = "none";
+            } else {
+                document.body.classList.add("tienda-bloqueada");
             }
 
+            if (mostrarContrasenas) {
+                mostrarContrasenas.addEventListener("change", function() {
+                    const tipo = mostrarContrasenas.checked
+                        ? "text"
+                        : "password";
 
-            /* COMPROBAR PERFIL ANTES DE ABRIR EL CARRITO */
+                    contrasena.type = tipo;
+                    confirmarContrasena.type = tipo;
+                });
+            }
 
-            function clienteTienePerfilCompleto() {
+            formularioCorreo.addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                const correo =
+                    campoCorreo.value.trim().toLowerCase();
+
+                const correoConfirmado =
+                    confirmarCorreo.value.trim().toLowerCase();
+
+                if (!campoCorreo.checkValidity()) {
+                    campoCorreo.reportValidity();
+                    return;
+                }
+
+                if (correo !== correoConfirmado) {
+                    confirmarCorreo.setCustomValidity(
+                        "Los correos electrónicos no coinciden."
+                    );
+                    confirmarCorreo.reportValidity();
+                    confirmarCorreo.setCustomValidity("");
+                    return;
+                }
+
+                if (!contrasena.checkValidity()) {
+                    contrasena.reportValidity();
+                    return;
+                }
+
+                if (contrasena.value !== confirmarContrasena.value) {
+                    confirmarContrasena.setCustomValidity(
+                        "Las contraseñas no coinciden."
+                    );
+                    confirmarContrasena.reportValidity();
+                    confirmarContrasena.setCustomValidity("");
+                    return;
+                }
+
+                /*
+                 * No guardamos la contraseña en el navegador.
+                 * Este formulario solo valida los campos; no crea
+                 * una cuenta segura ni verifica que el correo exista.
+                 */
+
+                sessionStorage.setItem("angelsCorreoEntrada", correo);
+
+                let clienteAnterior = {};
 
                 try {
+                    clienteAnterior = JSON.parse(
+                        sessionStorage.getItem("angelsClienteTemporal") || "{}"
+                    );
+                } catch (error) {
+                    clienteAnterior = {};
+                }
 
+                sessionStorage.setItem(
+                    "angelsClienteTemporal",
+                    JSON.stringify({
+                        ...clienteAnterior,
+                        correo: correo
+                    })
+                );
+
+                pantallaBienvenida.style.display = "none";
+                document.body.classList.remove("tienda-bloqueada");
+            });
+
+
+            /* REVISAR EL PERFIL ANTES DE ABRIR EL CARRITO */
+
+            function clienteTienePerfilCompleto() {
+                try {
                     const cliente = JSON.parse(
-                        sessionStorage.getItem(
-                            "angelsClienteTemporal"
-                        ) || "{}"
+                        sessionStorage.getItem("angelsClienteTemporal") || "{}"
                     );
 
                     return Boolean(
@@ -839,22 +734,15 @@
                             cliente.telefono || cliente.celular || ""
                         ).trim()
                     );
-
                 } catch (error) {
-
                     return false;
-
                 }
-
             }
 
             document.querySelectorAll(".enlace-carrito").forEach(
                 function(enlace) {
-
                     enlace.addEventListener("click", function(event) {
-
                         if (!clienteTienePerfilCompleto()) {
-
                             event.preventDefault();
 
                             alert(
@@ -862,43 +750,31 @@
                             );
 
                             window.location.href = "perfil.html";
-
                         }
-
                     });
-
                 }
             );
 
 
-            /* LUPITA DEL MENÚ INFERIOR */
+            /* LUPITA INFERIOR */
 
             const enlaceBuscarAbajo =
                 document.getElementById("enlaceBuscarAbajo");
 
             if (enlaceBuscarAbajo) {
-
                 enlaceBuscarAbajo.addEventListener("click", function() {
-
-                    const campo =
-                        document.getElementById("buscarProducto");
+                    const campo = document.getElementById("buscarProducto");
 
                     if (campo) {
-
                         window.setTimeout(function() {
-
                             campo.focus();
-
                         }, 150);
-
                     }
-
                 });
-
             }
 
 
-            /* BUSCADOR DE PRODUCTOS */
+            /* BUSCADOR */
 
             const buscador =
                 document.getElementById("buscarProducto");
@@ -912,7 +788,6 @@
             if (buscador && limpiar && mensaje) {
 
                 buscador.addEventListener("input", function() {
-
                     const consulta = buscador.value
                         .trim()
                         .toLocaleLowerCase("es");
@@ -924,7 +799,6 @@
                     let encontrados = 0;
 
                     productos.forEach(function(producto) {
-
                         const coincide = producto.textContent
                             .toLocaleLowerCase("es")
                             .includes(consulta);
@@ -935,51 +809,31 @@
                         if (coincide) {
                             encontrados++;
                         }
-
                     });
 
                     if (consulta === "") {
-
                         mensaje.textContent = "";
-
                     } else if (productos.length === 0) {
-
                         mensaje.textContent =
                             "Visita una categoría para consultar sus productos.";
-
                     } else if (encontrados === 0) {
-
                         mensaje.textContent =
                             "No encontramos productos en esta página.";
-
                     } else {
-
                         mensaje.textContent =
-                            "Encontramos " + encontrados +
-                            " producto(s).";
-
+                            "Encontramos " + encontrados + " producto(s).";
                     }
-
                 });
 
                 limpiar.addEventListener("click", function() {
-
                     buscador.value = "";
-
-                    buscador.dispatchEvent(
-                        new Event("input")
-                    );
-
+                    buscador.dispatchEvent(new Event("input"));
                     buscador.focus();
-
                 });
-
             }
 
         });
-
     </script>
 
 </body>
-
 </html>
