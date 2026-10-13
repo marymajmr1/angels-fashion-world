@@ -8,9 +8,285 @@
     <title>Angel's Fashion World</title>
 
     <link rel="stylesheet" href="./style.css?v=18">
+
+    <style>
+        /* =========================================
+           PANTALLA DE BIENVENIDA Y CORREO
+        ========================================== */
+
+        .pantalla-bienvenida {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-y: auto;
+            background: radial-gradient(
+                circle at top left,
+                #ffe1ee,
+                #fff1f7 55%,
+                #ffffff
+            );
+        }
+
+        .bienvenida-tarjeta {
+            width: 100%;
+            max-width: 450px;
+            padding: 35px 28px;
+            text-align: center;
+            background: #ffffff;
+            border: 1px solid #f1d5e2;
+            border-radius: 28px;
+            box-shadow: 0 10px 35px rgba(216, 91, 145, 0.15);
+        }
+
+        .bienvenida-alas {
+            margin-bottom: 18px;
+            font-size: 38px;
+        }
+
+        .bienvenida-tarjeta h1 {
+            margin-bottom: 15px;
+            color: #d85b91;
+        }
+
+        .bienvenida-tarjeta p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #68495a;
+        }
+
+        .bienvenida-tarjeta label {
+            display: block;
+            margin: 20px 0 8px;
+            text-align: left;
+            color: #68495a;
+            font-weight: bold;
+        }
+
+        .bienvenida-tarjeta input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 14px;
+            border: 1px solid #e8b4cc;
+            border-radius: 14px;
+            font-size: 16px;
+        }
+
+        .bienvenida-tarjeta button {
+            width: 100%;
+            margin-top: 16px;
+            padding: 14px;
+            border: none;
+            border-radius: 14px;
+            background: #d85b91;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .bienvenida-tarjeta button:hover {
+            background: #c94b82;
+        }
+
+        .bienvenida-tarjeta .nota-bienvenida {
+            margin-top: 22px;
+            margin-bottom: 0;
+            font-size: 13px;
+        }
+
+        body.tienda-bloqueada {
+            overflow: hidden;
+        }
+
+        /* =========================================
+           BUSCADOR
+        ========================================== */
+
+        .buscador-tienda {
+            width: 92%;
+            max-width: 850px;
+            margin: 25px auto;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid #f5d5e4;
+            border-radius: 22px;
+            box-shadow: 0 5px 18px rgba(216, 91, 145, 0.10);
+        }
+
+        .buscador-tienda label {
+            display: block;
+            margin-bottom: 12px;
+            color: #68495a;
+            font-weight: bold;
+        }
+
+        .buscador-contenedor {
+            display: flex;
+            gap: 10px;
+        }
+
+        .buscador-contenedor input {
+            flex: 1;
+            min-width: 0;
+            padding: 13px;
+            border: 1px solid #e8b4cc;
+            border-radius: 14px;
+            outline-color: #d85b91;
+            font-size: 15px;
+        }
+
+        .buscador-contenedor button {
+            padding: 12px 16px;
+            border: none;
+            border-radius: 14px;
+            background: #d85b91;
+            color: white;
+            cursor: pointer;
+        }
+
+        #mensajeBusqueda {
+            margin-top: 10px;
+            color: #68495a;
+            font-size: 14px;
+        }
+
+        /* =========================================
+           PERFIL, PEDIDOS Y CARRITO
+        ========================================== */
+
+        .accesos-cliente {
+            width: 92%;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 25px 0;
+            text-align: center;
+        }
+
+        .accesos-cliente > h2 {
+            color: #d85b91;
+            margin-bottom: 12px;
+        }
+
+        .accesos-cliente > p {
+            color: #68495a;
+            margin-bottom: 25px;
+        }
+
+        .accesos-cliente-contenedor {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .acceso-cliente {
+            display: block;
+            padding: 25px 18px;
+            background: white;
+            border: 1px solid #f1d5e2;
+            border-radius: 22px;
+            text-decoration: none;
+            color: #68495a;
+            box-shadow: 0 5px 18px rgba(216, 91, 145, 0.08);
+            transition: transform 0.2s ease;
+        }
+
+        .acceso-cliente:hover {
+            transform: translateY(-4px);
+        }
+
+        .acceso-cliente > span:first-child {
+            display: block;
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+
+        .acceso-cliente h3 {
+            color: #d85b91;
+            margin-bottom: 12px;
+        }
+
+        .acceso-cliente p {
+            margin-bottom: 18px;
+            line-height: 1.6;
+        }
+
+        .acceso-cliente .explorar {
+            color: #d85b91;
+            font-weight: bold;
+        }
+
+        @media (max-width: 750px) {
+            .accesos-cliente-contenedor {
+                grid-template-columns: 1fr;
+            }
+
+            .buscador-contenedor {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 
 <body>
+
+    <!-- =========================================
+         BIENVENIDA: CORREO ANTES DE ENTRAR
+    ========================================== -->
+
+    <section
+        id="pantallaBienvenida"
+        class="pantalla-bienvenida"
+    >
+
+        <div class="bienvenida-tarjeta">
+
+            <div class="bienvenida-alas">🪽 ✦</div>
+
+            <h1>¡Bienvenida a Angel's!</h1>
+
+            <p>
+                Nos alegra tenerte aquí. 💗
+            </p>
+
+            <p>
+                Escribe tu correo electrónico para entrar
+                a nuestro mundo de moda y belleza.
+            </p>
+
+            <form id="formularioCorreo">
+
+                <label for="correoEntrada">
+                    Tu correo electrónico
+                </label>
+
+                <input
+                    type="email"
+                    id="correoEntrada"
+                    placeholder="tucorreo@ejemplo.com"
+                    autocomplete="email"
+                    maxlength="254"
+                    required
+                >
+
+                <button type="submit">
+                    Entrar a la tienda ✨
+                </button>
+
+            </form>
+
+            <p class="nota-bienvenida">
+                Tu estilo, tu esencia. 🤍
+            </p>
+
+        </div>
+
+    </section>
+
 
     <!-- =========================================
          MENÚ
@@ -107,14 +383,11 @@
 
     <main class="categorias-inicio">
 
-
         <!-- MODA -->
 
         <a href="moda.html" class="categoria-inicio">
 
-            <div class="emoji">
-                👗
-            </div>
+            <div class="emoji">👗</div>
 
             <h2>Moda</h2>
 
@@ -134,9 +407,7 @@
 
         <a href="belleza.html" class="categoria-inicio">
 
-            <div class="emoji">
-                💄
-            </div>
+            <div class="emoji">💄</div>
 
             <h2>Belleza</h2>
 
@@ -156,9 +427,7 @@
 
         <a href="skincare.html" class="categoria-inicio">
 
-            <div class="emoji">
-                🧴
-            </div>
+            <div class="emoji">🧴</div>
 
             <h2>Skin care</h2>
 
@@ -178,9 +447,7 @@
 
         <a href="accesorios.html" class="categoria-inicio">
 
-            <div class="emoji">
-                👜
-            </div>
+            <div class="emoji">👜</div>
 
             <h2>Accesorios</h2>
 
@@ -199,7 +466,34 @@
 
 
     <!-- =========================================
-         ACCESOS A TU CUENTA Y PEDIDOS
+         MENSAJE DE ANGEL'S
+    ========================================== -->
+
+    <section class="sobre-inicio">
+
+        <div class="alas">
+            🪽
+        </div>
+
+        <span class="decoracion">✦</span>
+
+        <h2>
+            Tu estilo, tu esencia. ✨
+        </h2>
+
+        <p>
+            En Angel's queremos crear un espacio donde la moda,
+            la belleza y los pequeños detalles se encuentren para
+            acompañarte en cada momento.
+        </p>
+
+        <span class="decoracion">✧</span>
+
+    </section>
+
+
+    <!-- =========================================
+         PERFIL, PEDIDOS Y CARRITO ABAJO
     ========================================== -->
 
     <section class="accesos-cliente">
@@ -269,37 +563,6 @@
 
 
     <!-- =========================================
-         MENSAJE DE ANGEL'S
-    ========================================== -->
-
-    <section class="sobre-inicio">
-
-        <div class="alas">
-            🪽
-        </div>
-
-        <span class="decoracion">
-            ✦
-        </span>
-
-        <h2>
-            Tu estilo, tu esencia. ✨
-        </h2>
-
-        <p>
-            En Angel's queremos crear un espacio donde la moda,
-            la belleza y los pequeños detalles se encuentren para
-            acompañarte en cada momento.
-        </p>
-
-        <span class="decoracion">
-            ✧
-        </span>
-
-    </section>
-
-
-    <!-- =========================================
          CONTACTO
     ========================================== -->
 
@@ -359,137 +622,6 @@
 
 
     <!-- =========================================
-         ESTILOS ADICIONALES
-    ========================================== -->
-
-    <style>
-
-        .buscador-tienda {
-            width: 92%;
-            max-width: 850px;
-            margin: 25px auto;
-            padding: 20px;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.92);
-            border: 1px solid #f5d5e4;
-            border-radius: 22px;
-            box-shadow: 0 5px 18px rgba(216, 91, 145, 0.10);
-        }
-
-        .buscador-tienda label {
-            display: block;
-            margin-bottom: 12px;
-            color: #68495a;
-            font-weight: bold;
-        }
-
-        .buscador-contenedor {
-            display: flex;
-            gap: 10px;
-        }
-
-        .buscador-contenedor input {
-            flex: 1;
-            min-width: 0;
-            padding: 13px;
-            border: 1px solid #e8b4cc;
-            border-radius: 14px;
-            outline-color: #d85b91;
-            font-size: 15px;
-        }
-
-        .buscador-contenedor button {
-            padding: 12px 16px;
-            border: none;
-            border-radius: 14px;
-            background: #d85b91;
-            color: white;
-            cursor: pointer;
-        }
-
-        #mensajeBusqueda {
-            margin-top: 10px;
-            color: #68495a;
-            font-size: 14px;
-        }
-
-        .accesos-cliente {
-            width: 92%;
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 25px 0;
-            text-align: center;
-        }
-
-        .accesos-cliente > h2 {
-            color: #d85b91;
-            margin-bottom: 12px;
-        }
-
-        .accesos-cliente > p {
-            color: #68495a;
-            margin-bottom: 25px;
-        }
-
-        .accesos-cliente-contenedor {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 22px;
-        }
-
-        .acceso-cliente {
-            display: block;
-            padding: 25px 18px;
-            background: white;
-            border: 1px solid #f1d5e2;
-            border-radius: 22px;
-            text-decoration: none;
-            color: #68495a;
-            box-shadow: 0 5px 18px rgba(216, 91, 145, 0.08);
-            transition: transform 0.2s ease;
-        }
-
-        .acceso-cliente:hover {
-            transform: translateY(-4px);
-        }
-
-        .acceso-cliente > span:first-child {
-            display: block;
-            font-size: 35px;
-            margin-bottom: 12px;
-        }
-
-        .acceso-cliente h3 {
-            color: #d85b91;
-            margin-bottom: 12px;
-        }
-
-        .acceso-cliente p {
-            margin-bottom: 18px;
-            line-height: 1.6;
-        }
-
-        .acceso-cliente .explorar {
-            color: #d85b91;
-            font-weight: bold;
-        }
-
-        @media (max-width: 750px) {
-
-            .accesos-cliente-contenedor {
-                grid-template-columns: 1fr;
-            }
-
-            .buscador-contenedor {
-                flex-direction: column;
-            }
-
-        }
-
-    </style>
-
-
-    <!-- =========================================
          JAVASCRIPT
     ========================================== -->
 
@@ -497,77 +629,165 @@
 
     <script>
 
-        // Buscador básico de productos presentes en esta página.
-        // Para buscar en todas las categorías se conectará un catálogo común.
-
         document.addEventListener("DOMContentLoaded", function() {
 
-            const buscador = document.getElementById("buscarProducto");
-            const limpiar = document.getElementById("limpiarBusqueda");
-            const mensaje = document.getElementById("mensajeBusqueda");
+            /* =====================================
+               SOLICITAR CORREO
+            ====================================== */
 
-            if (!buscador || !limpiar || !mensaje) {
-                return;
-            }
+            const formularioCorreo =
+                document.getElementById("formularioCorreo");
 
-            buscador.addEventListener("input", function() {
+            const pantallaBienvenida =
+                document.getElementById("pantallaBienvenida");
 
-                const consulta = buscador.value
-                    .trim()
-                    .toLocaleLowerCase("es");
+            if (formularioCorreo && pantallaBienvenida) {
 
-                const productos = document.querySelectorAll(
-                    ".producto, .producto-card, .tarjeta-producto"
+                const correoGuardado =
+                    sessionStorage.getItem("angelsCorreoEntrada");
+
+                if (correoGuardado) {
+
+                    pantallaBienvenida.style.display = "none";
+
+                } else {
+
+                    document.body.classList.add("tienda-bloqueada");
+
+                }
+
+                formularioCorreo.addEventListener(
+                    "submit",
+                    function(event) {
+
+                        event.preventDefault();
+
+                        const campoCorreo =
+                            document.getElementById("correoEntrada");
+
+                        const correo = campoCorreo.value.trim();
+
+                        if (!campoCorreo.checkValidity()) {
+                            campoCorreo.reportValidity();
+                            return;
+                        }
+
+                        sessionStorage.setItem(
+                            "angelsCorreoEntrada",
+                            correo
+                        );
+
+                        let clienteAnterior = {};
+
+                        try {
+                            clienteAnterior = JSON.parse(
+                                sessionStorage.getItem(
+                                    "angelsClienteTemporal"
+                                ) || "{}"
+                            );
+                        } catch (error) {
+                            clienteAnterior = {};
+                        }
+
+                        sessionStorage.setItem(
+                            "angelsClienteTemporal",
+                            JSON.stringify({
+                                ...clienteAnterior,
+                                correo: correo
+                            })
+                        );
+
+                        pantallaBienvenida.style.display = "none";
+
+                        document.body.classList.remove(
+                            "tienda-bloqueada"
+                        );
+
+                    }
                 );
 
-                let encontrados = 0;
+            }
 
-                productos.forEach(function(producto) {
 
-                    const coincide = producto.textContent
-                        .toLocaleLowerCase("es")
-                        .includes(consulta);
+            /* =====================================
+               BUSCADOR DE PRODUCTOS
+            ====================================== */
 
-                    producto.hidden = consulta !== "" && !coincide;
+            const buscador =
+                document.getElementById("buscarProducto");
 
-                    if (coincide) {
-                        encontrados++;
+            const limpiar =
+                document.getElementById("limpiarBusqueda");
+
+            const mensaje =
+                document.getElementById("mensajeBusqueda");
+
+            if (buscador && limpiar && mensaje) {
+
+                buscador.addEventListener("input", function() {
+
+                    const consulta = buscador.value
+                        .trim()
+                        .toLocaleLowerCase("es");
+
+                    const productos = document.querySelectorAll(
+                        ".producto, .producto-card, .tarjeta-producto"
+                    );
+
+                    let encontrados = 0;
+
+                    productos.forEach(function(producto) {
+
+                        const coincide = producto.textContent
+                            .toLocaleLowerCase("es")
+                            .includes(consulta);
+
+                        producto.hidden =
+                            consulta !== "" && !coincide;
+
+                        if (coincide) {
+                            encontrados++;
+                        }
+
+                    });
+
+                    if (consulta === "") {
+
+                        mensaje.textContent = "";
+
+                    } else if (productos.length === 0) {
+
+                        mensaje.textContent =
+                            "Visita una categoría para consultar sus productos.";
+
+                    } else if (encontrados === 0) {
+
+                        mensaje.textContent =
+                            "No encontramos productos en esta página.";
+
+                    } else {
+
+                        mensaje.textContent =
+                            "Encontramos " + encontrados +
+                            " producto(s).";
+
                     }
 
                 });
 
-                if (consulta === "") {
+                limpiar.addEventListener("click", function() {
 
-                    mensaje.textContent = "";
+                    buscador.value = "";
 
-                } else if (productos.length === 0) {
+                    buscador.dispatchEvent(
+                        new Event("input")
+                    );
 
-                    mensaje.textContent =
-                        "Visita una categoría para consultar sus productos.";
+                    buscador.focus();
 
-                } else if (encontrados === 0) {
+                });
 
-                    mensaje.textContent =
-                        "No encontramos productos en esta página.";
-
-                } else {
-
-                    mensaje.textContent =
-                        "Encontramos " + encontrados + " producto(s).";
-
-                }
-
-            });
-
-            limpiar.addEventListener("click", function() {
-
-                buscador.value = "";
-
-                buscador.dispatchEvent(new Event("input"));
-
-                buscador.focus();
-
-            });
+            }
 
         });
 
