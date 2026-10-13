@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi pedido | Angel's Fashion World</title>
+    <link rel="stylesheet" href="./style.css?v=18">
+
+    <style>
+        .pedido-contenedor {
+            width: 92%;
+            max-width: 650px;
+            margin: 35px auto;
+            padding: 25px;
+            background: white;
+            border: 1px solid #f1d5e2;
+            border-radius: 24px;
+        }
+
+        .pedido-contenedor h1 {
+            color: #d85b91;
+            text-align: center;
+        }
+
+        .pedido-paso {
+            margin: 18px 0;
+            padding: 16px;
+            border: 1px solid #f1d5e2;
+            border-radius: 15px;
+            color: #68495a;
+        }
+
+        .pedido-paso.activo {
+            border-color: #d85b91;
+            background: #fff1f7;
+        }
+
+        .pedido-paso small {
+            display: block;
+            margin-top: 5px;
+        }
+
+        .pedido-aviso {
+            margin-top: 18px;
+            color: #68495a;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="moda.html">Moda</a>
+        <a href="belleza.html">Belleza</a>
+        <a href="skincare.html">Skin care</a>
+        <a href="accesorios.html">Accesorios</a>
+        <a href="perfil.html">Mi perfil</a>
+        <a href="carrito.html">Mi carrito</a>
+    </nav>
+
+    <header class="presentacion">
+        <div class="alas-con-estrella">
+            <span class="alas">🪽</span>
+            <span class="estrella-alas">✦</span>
+        </div>
+        <h1>Seguimiento de mi pedido</h1>
+        <p class="frase">Tu compra, paso a paso. ✨</p>
+        <span class="decoracion">✧</span>
+    </header>
+
+    <main class="pedido-contenedor">
+        <h1>Estado de tu pedido 💗</h1>
+
+        <p id="numeroPedido">Número de pedido: Pendiente</p>
+
+        <div class="pedido-paso" data-estado="0">
+            <strong>1. Pedido recibido</strong>
+            <small>Hemos recibido tu solicitud.</small>
+        </div>
+
+        <div class="pedido-paso" data-estado="1">
+            <strong>2. Preparando pedido</strong>
+            <small>Estamos preparando tus productos.</small>
+        </div>
+
+        <div class="pedido-paso" data-estado="2">
+            <strong>3. Saliendo del almacén</strong>
+            <small>Tu pedido está listo para salir.</small>
+        </div>
+
+        <div class="pedido-paso" data-estado="3">
+            <strong>4. En camino</strong>
+            <small>Tu pedido está en proceso de entrega.</small>
+        </div>
+
+        <div class="pedido-paso" data-estado="4">
+            <strong>5. Entregado</strong>
+            <small>El pedido ha sido entregado.</small>
+        </div>
+
+        <p class="pedido-aviso" id="avisoPedido" role="status">
+            El seguimiento se activará cuando conectemos el servidor
+            y registremos tu pedido.
+        </p>
+    </main>
+
+    <footer>
+        <p>🪽 Angel's Fashion World 🪽</p>
+        <p>Moda • Belleza • Skin Care • Accesorios</p>
+    </footer>
+
+    <script>
+        // Esta página todavía no consulta estados reales.
+        // No se debe presentar un pedido como entregado sin confirmación.
+        const pedidoGuardado = sessionStorage.getItem(
+            "angelsPedidoTemporal"
+        );
+
+        if (pedidoGuardado) {
+            try {
+                const pedido = JSON.parse(pedidoGuardado);
+
+                if (pedido.numero) {
+                    document.getElementById("numeroPedido")
+                        .textContent = "Número de pedido: " + pedido.numero;
+                }
+            } catch (error) {
+                console.warn("No se pudo leer el pedido temporal.");
+            }
+        }
+    </script>
+</body>
+</html>
