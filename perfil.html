@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi perfil | Angel's Fashion World</title>
+    <link rel="stylesheet" href="./style.css?v=18">
+    <style>
+        .perfil-contenedor {
+            width: 92%;
+            max-width: 480px;
+            margin: 40px auto;
+            padding: 28px;
+            background: white;
+            border: 1px solid #f1d5e2;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px #d85b9118;
+        }
+
+        .perfil-contenedor h1 {
+            text-align: center;
+            color: #d85b91;
+            margin-bottom: 10px;
+        }
+
+        .perfil-contenedor p {
+            text-align: center;
+            color: #68495a;
+            margin-bottom: 22px;
+        }
+
+        .perfil-contenedor label {
+            display: block;
+            margin: 14px 0 7px;
+            color: #68495a;
+            font-weight: bold;
+        }
+
+        .perfil-contenedor input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #e8b4cc;
+            border-radius: 12px;
+            font-size: 15px;
+        }
+
+        .perfil-contenedor button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 14px;
+            background: #d85b91;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .aviso-perfil {
+            margin-top: 15px;
+            color: #68495a;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="moda.html">Moda</a>
+        <a href="belleza.html">Belleza</a>
+        <a href="skincare.html">Skin care</a>
+        <a href="accesorios.html">Accesorios</a>
+        <a href="sobre-nosotros.html">Sobre nosotros</a>
+        <a href="index.html#contactanos">Contáctanos</a>
+    </nav>
+
+    <header class="presentacion">
+        <div class="alas-con-estrella">
+            <span class="alas">🪽</span>
+            <span class="estrella-alas">✦</span>
+        </div>
+
+        <h1>Mi perfil</h1>
+        <p class="frase">¡Bienvenida a Angel's! ✨</p>
+        <p>Prepara tu cuenta para realizar tus pedidos. 🤍</p>
+        <span class="decoracion">✧</span>
+    </header>
+
+    <main class="perfil-contenedor">
+        <h1>Crear mi cuenta 💗</h1>
+        <p>Completa tus datos para continuar.</p>
+
+        <form id="formularioPerfil">
+            <label for="nombre">Nombre completo</label>
+            <input id="nombre" name="nombre"
+                   type="text" autocomplete="name"
+                   required maxlength="100">
+
+            <label for="correo">Correo electrónico</label>
+            <input id="correo" name="correo"
+                   type="email" autocomplete="email"
+                   required maxlength="254">
+
+            <label for="telefono">Teléfono (opcional)</label>
+            <input id="telefono" name="telefono"
+                   type="tel" autocomplete="tel"
+                   maxlength="25">
+
+            <button type="submit">Continuar 💕</button>
+        </form>
+
+        <div id="avisoPerfil" class="aviso-perfil"
+             role="status" aria-live="polite"></div>
+    </main>
+
+    <footer>
+        <p>🪽 Angel's Fashion World 🪽</p>
+        <p>Moda • Belleza • Skin Care • Accesorios</p>
+    </footer>
+
+    <script>
+        document.getElementById("formularioPerfil")
+            .addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                const cliente = {
+                    nombre: document.getElementById("nombre")
+                        .value.trim(),
+                    correo: document.getElementById("correo")
+                        .value.trim(),
+                    telefono: document.getElementById("telefono")
+                        .value.trim()
+                };
+
+                if (!cliente.nombre || !cliente.correo) {
+                    return;
+                }
+
+                // Solo guarda datos básicos en este navegador.
+                // La cuenta real se conectará al servidor después.
+                sessionStorage.setItem(
+                    "angelsClienteTemporal",
+                    JSON.stringify(cliente)
+                );
+
+                document.getElementById("avisoPerfil").textContent =
+                    "¡Datos completados! Ya puedes continuar con tu pedido. 💗";
+
+                setTimeout(function() {
+                    window.location.href = "carrito.html";
+                }, 1000);
+            });
+    </script>
+</body>
+</html>
