@@ -40,6 +40,8 @@
       color: inherit;
     }
 
+    /* ESTRELLAS DECORATIVAS */
+
     .estrellas {
       position: fixed;
       inset: 0;
@@ -62,6 +64,8 @@
     @keyframes flotar {
       50% { transform: translateY(-9px) rotate(8deg); }
     }
+
+    /* MENÚ SUPERIOR */
 
     .menu {
       position: relative;
@@ -93,6 +97,8 @@
       background: var(--rosa);
       color: white;
     }
+
+    /* MARCA */
 
     .marca {
       position: relative;
@@ -413,6 +419,7 @@
 
 <body>
 
+  <!-- ESTRELLAS DECORATIVAS -->
   <div class="estrellas" aria-hidden="true">
     <span class="estrella estrella1">✦</span>
     <span class="estrella estrella2">✧</span>
@@ -456,13 +463,14 @@
     <p>Elige una categoría para comenzar a explorar.</p>
   </section>
 
-  <!-- CATEGORÍAS EN DOS COLUMNAS -->
+  <!-- LAS CUATRO CATEGORÍAS -->
   <main class="categorias" id="categorias">
 
+    <!-- 1. MODA -->
     <a class="categoria" href="moda.html" data-categoria="moda">
       <div class="categoria-imagen">
         <img
-          src="./imagenes/indexhtml/Screenshot_2026-10-13-17-22-18-506_com.miui.gallery-edit.jpg"
+          src="./imagenes/indexhtml/Screenshot_2026-10-16-15-58-38-649_com.openai.chatgpt-edit.jpg"
           alt="Moda"
         >
       </div>
@@ -473,10 +481,11 @@
       </div>
     </a>
 
+    <!-- 2. BELLEZA -->
     <a class="categoria" href="belleza.html" data-categoria="belleza">
       <div class="categoria-imagen">
         <img
-          src="./imagenes/indexhtml/Screenshot_2026-10-13-17-18-15-611_com.miui.gallery~2.jpg"
+          src="./imagenes/indexhtml/Screenshot_2026-10-16-15-57-11-970_com.openai.chatgpt-edit.jpg"
           alt="Belleza"
         >
       </div>
@@ -487,10 +496,11 @@
       </div>
     </a>
 
+    <!-- 3. SKIN CARE -->
     <a class="categoria" href="skincare.html" data-categoria="skincare">
       <div class="categoria-imagen">
         <img
-          src="./imagenes/indexhtml/Screenshot_2026-10-13-17-18-15-611_com.miui.gallery~2.jpg"
+          src="./imagenes/indexhtml/Screenshot_2026-10-16-16-01-20-160_com.openai.chatgpt-edit.jpg"
           alt="Skin care"
         >
       </div>
@@ -501,10 +511,11 @@
       </div>
     </a>
 
+    <!-- 4. ACCESORIOS -->
     <a class="categoria" href="accesorios.html" data-categoria="accesorios">
       <div class="categoria-imagen">
         <img
-          src="./imagenes/indexhtml/Screenshot_2026-10-13-17-18-15-611_com.miui.gallery~2.jpg"
+          src="./imagenes/indexhtml/Screenshot_2026-10-16-15-59-54-663_com.openai.chatgpt-edit.jpg"
           alt="Accesorios"
         >
       </div>
@@ -517,10 +528,12 @@
 
   </main>
 
+  <!-- VOLVER AL INICIO -->
   <div class="volver">
     <a class="boton" href="index.html">← Volver al inicio</a>
   </div>
 
+  <!-- LOGO INFERIOR -->
   <img
     class="logo-final"
     src="./imagenes/indexhtml/Screenshot_2026-10-13-17-18-15-611_com.miui.gallery~2.jpg"
@@ -528,6 +541,7 @@
     onerror="this.style.display='none'"
   >
 
+  <!-- PIE DE PÁGINA -->
   <footer>
     <strong>Angel's Fashion World</strong><br>
     Moda · Belleza · Skin care · Accesorios<br>
