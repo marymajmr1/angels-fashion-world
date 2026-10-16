@@ -1,5 +1,5 @@
-
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
@@ -28,6 +28,7 @@
                 #fff8fc;
             min-height: 100vh;
             overflow-x: hidden;
+            padding-bottom: 90px;
         }
 
         a {
@@ -35,13 +36,13 @@
             color: inherit;
         }
 
-        /* ESTRELLAS DECORATIVAS */
+        /* ESTRELLAS */
 
         .estrella {
             position: fixed;
             color: #c8a96b;
             pointer-events: none;
-            z-index: 0;
+            z-index: 3;
             animation: flotar 4s ease-in-out infinite;
         }
 
@@ -66,7 +67,7 @@
         }
 
         .estrella4 {
-            bottom: 80px;
+            bottom: 110px;
             right: 7%;
             font-size: 25px;
             animation-delay: 2s;
@@ -87,22 +88,56 @@
             z-index: 1;
         }
 
-        /* MENÚ PRINCIPAL */
+        /* ENCABEZADO CON LOGO A LA IZQUIERDA */
+
+        .encabezado {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            padding: 15px 4%;
+            background: rgba(255, 255, 255, .96);
+            border-bottom: 1px solid #f5d2e2;
+        }
+
+        .logo-lateral {
+            width: 155px;
+            height: 125px;
+            object-fit: contain;
+            flex-shrink: 0;
+            display: block;
+        }
+
+        .encabezado-derecha {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .encabezado h1 {
+            color: #d85b91;
+            font-family: Georgia, serif;
+            font-size: clamp(22px, 3vw, 36px);
+            margin-bottom: 8px;
+        }
+
+        .frase-logo {
+            font-family: Georgia, serif;
+            font-style: italic;
+            color: #8c536e;
+            font-size: 16px;
+        }
+
+        /* MENÚ SUPERIOR */
 
         .menu {
-            width: 92%;
-            max-width: 1200px;
-            margin: 25px auto 0;
-            padding: 15px 20px;
-            background: rgba(255, 255, 255, .94);
-            border: 1px solid #f8d6e6;
-            border-radius: 25px;
-            box-shadow: 0 5px 20px rgba(216, 91, 145, .10);
             display: flex;
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
             gap: 18px;
+            padding: 16px 12px;
+            background: white;
+            border-bottom: 1px solid #f8d6e6;
         }
 
         .menu a {
@@ -115,48 +150,18 @@
             color: #d85b91;
         }
 
-        /* LOGO */
-
-        .logo {
-            text-align: center;
-            padding: 30px 15px 10px;
-        }
-
-        .logo img {
-            width: 190px;
-            max-width: 80%;
-            max-height: 230px;
-            height: auto;
-            object-fit: contain;
-            display: block;
-            margin: 0 auto 12px;
-            border-radius: 15px;
-        }
-
-        .logo h1 {
-            color: #d85b91;
-            font-family: Georgia, serif;
-            font-size: clamp(28px, 5vw, 44px);
-            margin-bottom: 10px;
-        }
-
-        .logo p {
-            font-size: 16px;
-            line-height: 1.7;
-        }
-
         /* PORTADA */
 
         .portada {
             width: 92%;
-            max-width: 1200px;
-            margin: 25px auto;
+            max-width: 1250px;
+            margin: 28px auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
             align-items: center;
-            gap: 30px;
+            gap: 25px;
             padding: 25px;
-            background: white;
+            background: rgba(255, 255, 255, .88);
             border: 1px solid #f8d6e6;
             border-radius: 30px;
             box-shadow: 0 8px 25px rgba(216, 91, 145, .12);
@@ -170,7 +175,7 @@
         .portada-texto h2 {
             font-family: Georgia, serif;
             color: #d85b91;
-            font-size: clamp(25px, 4vw, 38px);
+            font-size: clamp(27px, 4vw, 43px);
             line-height: 1.3;
             margin-bottom: 18px;
         }
@@ -183,14 +188,13 @@
 
         .boton-explorar {
             display: inline-block;
-            padding: 14px 30px;
+            padding: 14px 32px;
             background: #d85b91;
             color: white;
             border: 2px solid #d85b91;
             border-radius: 30px;
             font-size: 16px;
             font-weight: bold;
-            cursor: pointer;
             box-shadow: 0 5px 12px rgba(216, 91, 145, .22);
             transition: .3s;
         }
@@ -244,7 +248,7 @@
             border: 1px solid #f5d2e2;
             border-radius: 25px;
             padding: 25px 15px;
-            min-height: 150px;
+            min-height: 155px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -271,6 +275,37 @@
         .categoria p {
             font-size: 13px;
             line-height: 1.5;
+        }
+
+        /* SERVICIOS */
+
+        .servicios {
+            width: 92%;
+            max-width: 1250px;
+            margin: 35px auto;
+            padding: 25px 15px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            text-align: center;
+            background: #fff0f7;
+            border: 1px solid #f5d2e2;
+            border-radius: 28px;
+        }
+
+        .servicio {
+            padding: 10px;
+            line-height: 1.8;
+        }
+
+        .servicio span {
+            display: block;
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .servicio strong {
+            color: #8c315f;
         }
 
         /* CONTACTO */
@@ -300,19 +335,38 @@
             padding: 13px 24px;
             border-radius: 25px;
             font-weight: bold;
-            transition: .3s;
         }
 
         .boton-whatsapp:hover {
             background: #bd4279;
         }
 
+        /* LOGO FINAL */
+
+        .logo-final {
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        .logo-final img {
+            width: 125px;
+            height: 110px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto 12px;
+        }
+
+        .logo-final p {
+            color: #8c536e;
+            font-family: Georgia, serif;
+            font-style: italic;
+        }
+
         /* PIE DE PÁGINA */
 
         footer {
             text-align: center;
-            padding: 25px 15px;
-            margin-top: 35px;
+            padding: 20px 15px;
             background: rgba(255, 255, 255, .8);
             border-top: 1px solid #f5d2e2;
             line-height: 1.8;
@@ -323,12 +377,98 @@
             color: #d85b91;
         }
 
+        /* MENÚ INFERIOR */
+
+        .menu-inferior {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 10;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            align-items: center;
+            background: rgba(255, 255, 255, .97);
+            border-top: 1px solid #f2c8dc;
+            box-shadow: 0 -5px 20px rgba(216, 91, 145, .10);
+            padding: 10px 8px calc(10px + env(safe-area-inset-bottom));
+        }
+
+        .menu-inferior a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            color: #8c315f;
+            font-size: 12px;
+            transition: color .2s;
+        }
+
+        .menu-inferior a:hover {
+            color: #d85b91;
+        }
+
+        .menu-inferior .icono {
+            font-size: 23px;
+            line-height: 1;
+        }
+
+        /* BUSCADOR */
+
+        .zona-busqueda {
+            width: 92%;
+            max-width: 750px;
+            margin: 30px auto;
+            scroll-margin-top: 25px;
+        }
+
+        .zona-busqueda h2 {
+            text-align: center;
+            color: #d85b91;
+            font-family: Georgia, serif;
+            margin-bottom: 15px;
+        }
+
+        .busqueda-fila {
+            display: flex;
+            gap: 10px;
+        }
+
+        .busqueda-fila input {
+            min-width: 0;
+            flex: 1;
+            padding: 13px 16px;
+            border: 1px solid #eab5ce;
+            border-radius: 25px;
+            font-size: 15px;
+            outline-color: #d85b91;
+        }
+
+        .busqueda-fila button {
+            border: none;
+            border-radius: 25px;
+            background: #d85b91;
+            color: white;
+            padding: 12px 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
         /* TABLETAS */
 
-        @media (max-width: 800px) {
+        @media (max-width: 850px) {
+            .encabezado {
+                gap: 15px;
+            }
+
+            .logo-lateral {
+                width: 120px;
+                height: 100px;
+            }
+
             .portada {
                 grid-template-columns: 1fr;
-                padding: 18px;
             }
 
             .portada-imagen {
@@ -337,33 +477,46 @@
 
             .categorias {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 14px;
             }
 
             .menu {
-                gap: 13px;
+                gap: 14px;
             }
         }
 
         /* TELÉFONOS */
 
-        @media (max-width: 450px) {
-            .menu {
-                width: 94%;
-                padding: 15px 10px;
+        @media (max-width: 500px) {
+            .encabezado {
+                padding: 12px 4%;
                 gap: 12px;
+            }
+
+            .logo-lateral {
+                width: 95px;
+                height: 90px;
+            }
+
+            .encabezado h1 {
+                font-size: 21px;
+            }
+
+            .frase-logo {
+                font-size: 13px;
+            }
+
+            .menu {
+                gap: 12px;
+                padding: 13px 8px;
             }
 
             .menu a {
                 font-size: 12px;
             }
 
-            .logo img {
-                width: 160px;
-            }
-
             .portada {
                 width: 94%;
+                padding: 16px;
             }
 
             .portada-imagen {
@@ -386,6 +539,19 @@
             .categoria h3 {
                 font-size: 16px;
             }
+
+            .servicios {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .busqueda-fila {
+                flex-direction: column;
+            }
+
+            .busqueda-fila button {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -401,9 +567,31 @@
 
     <div class="contenido">
 
-        <!-- MENÚ -->
+        <!-- ENCABEZADO: LOGO A LA IZQUIERDA -->
+
+        <header class="encabezado">
+
+            <img
+                class="logo-lateral"
+                src="./imagenes/indexhtml/Screenshot_2026-10-16-13-00-40-119_com.whatsapp-edit.jpg"
+                alt="Logo de Angel's Fashion World">
+
+            <div class="encabezado-derecha">
+
+                <h1>Angel's Fashion World ✦</h1>
+
+                <p class="frase-logo">
+                    Tu estilo, nuestra inspiración
+                </p>
+
+            </div>
+
+        </header>
+
+        <!-- MENÚ SUPERIOR -->
 
         <nav class="menu">
+
             <a href="./index.html">Inicio</a>
             <a href="./moda.html">Moda</a>
             <a href="./belleza.html">Belleza</a>
@@ -411,27 +599,14 @@
             <a href="./accesorios.html">Accesorios</a>
             <a href="./sobre-nosotros.html">Sobre nosotros</a>
             <a href="#contactanos">Contáctanos</a>
+
         </nav>
-
-        <!-- LOGO -->
-
-        <header class="logo">
-
-            <img
-                src="./imagenes/indexhtml/Screenshot_2026-10-13-17-18-15-611_com.miui.gallery~2.jpg"
-                alt="Logo de Angel's Fashion World">
-
-            <h1>🪽 Angel's Fashion World ✦</h1>
-
-            <p>Tu estilo, tu esencia, tu mundo de moda 💗</p>
-
-        </header>
 
         <main>
 
-            <!-- PORTADA -->
+            <!-- PORTADA: LA MUCHACHA CONSERVA SU LUGAR -->
 
-            <section class="portada">
+            <section class="portada" id="inicio">
 
                 <div class="portada-texto">
 
@@ -452,7 +627,33 @@
                 <img
                     class="portada-imagen"
                     src="./imagenes/indexhtml/Screenshot_2026-10-13-17-22-18-506_com.miui.gallery-edit.jpg"
-                    alt="Portada de Angel's Fashion World">
+                    alt="Imagen de portada de Angel's Fashion World">
+
+            </section>
+
+            <!-- BUSCADOR -->
+
+            <section class="zona-busqueda" id="buscarProducto">
+
+                <h2>🔎 Buscar productos</h2>
+
+                <form class="busqueda-fila" id="formularioBusqueda">
+
+                    <input
+                        type="search"
+                        id="campoBusqueda"
+                        placeholder="Busca blusas, vestidos, perfumes..."
+                        aria-label="Buscar productos">
+
+                    <button type="submit">Buscar</button>
+
+                    <button type="button" id="limpiarBusqueda">
+                        Limpiar
+                    </button>
+
+                </form>
+
+                <p id="mensajeBusqueda" role="status" aria-live="polite"></p>
 
             </section>
 
@@ -466,31 +667,75 @@
                     Encuentra tus favoritos en Angel's Fashion World.
                 </p>
 
-                <div class="categorias">
+                <div class="categorias" id="tarjetasCategorias">
 
                     <a class="categoria" href="./moda.html">
+
                         <span class="emoji">👗</span>
                         <h3>Moda</h3>
                         <p>Prendas para expresar tu estilo.</p>
+
                     </a>
 
                     <a class="categoria" href="./belleza.html">
+
                         <span class="emoji">💄</span>
                         <h3>Belleza</h3>
                         <p>Maquillaje, perfumes y uñas.</p>
+
                     </a>
 
                     <a class="categoria" href="./skincare.html">
+
                         <span class="emoji">🧴</span>
                         <h3>Skin care</h3>
                         <p>Cuida tu rostro, cabello y piel.</p>
+
                     </a>
 
                     <a class="categoria" href="./accesorios.html">
+
                         <span class="emoji">👜</span>
                         <h3>Accesorios</h3>
                         <p>Detalles para completar tu look.</p>
+
                     </a>
+
+                </div>
+
+            </section>
+
+            <!-- SERVICIOS -->
+
+            <section class="servicios">
+
+                <div class="servicio">
+
+                    <span>🚚</span>
+
+                    <strong>Envíos a todo el país</strong>
+
+                    <p>Rápido y seguro</p>
+
+                </div>
+
+                <div class="servicio">
+
+                    <span>♡</span>
+
+                    <strong>Compra segura</strong>
+
+                    <p>Tus datos protegidos</p>
+
+                </div>
+
+                <div class="servicio">
+
+                    <span>♡</span>
+
+                    <strong>Siempre contigo</strong>
+
+                    <p>Atención personalizada</p>
 
                 </div>
 
@@ -512,8 +757,22 @@
                     href="https://wa.me/573170948192"
                     target="_blank"
                     rel="noopener noreferrer">
+
                     💬 Escríbenos por WhatsApp
+
                 </a>
+
+            </section>
+
+            <!-- LOGO AL FINAL -->
+
+            <section class="logo-final">
+
+                <img
+                    src="./imagenes/indexhtml/Screenshot_2026-10-16-13-00-40-119_com.whatsapp-edit.jpg"
+                    alt="Logo de Angel's Fashion World">
+
+                <p>Tu estilo, nuestra inspiración ✦</p>
 
             </section>
 
@@ -522,15 +781,149 @@
         <!-- PIE DE PÁGINA -->
 
         <footer>
-            <p><strong>🪽 Angel's Fashion World ✦</strong></p>
-            <p>Tu estilo, tu esencia, tu mundo de moda 💗</p>
-            <p>© 2026 Angel's Fashion World. Todos los derechos reservados.</p>
+
+            <p>
+                <strong>🪽 Angel's Fashion World ✦</strong>
+            </p>
+
+            <p>Tu estilo, nuestra inspiración 💗</p>
+
+            <p>
+                © 2026 Angel's Fashion World. Todos los derechos reservados.
+            </p>
+
         </footer>
 
     </div>
 
+    <!-- MENÚ INFERIOR -->
+
+    <nav class="menu-inferior" aria-label="Menú inferior">
+
+        <a href="#buscarProducto">
+
+            <span class="icono">⌕</span>
+            <span>Buscar</span>
+
+        </a>
+
+        <a href="./pedido.html">
+
+            <span class="icono">♧</span>
+            <span>Pedidos</span>
+
+        </a>
+
+        <a href="./carrito.html">
+
+            <span class="icono">🛒</span>
+            <span>Carrito</span>
+
+        </a>
+
+        <a href="./perfil.html">
+
+            <span class="icono">♙</span>
+            <span>Mi perfil</span>
+
+        </a>
+
+    </nav>
+
     <script src="./script.js?v=16"></script>
+
+    <script>
+        // Buscador de las categorías de la página principal.
+
+        const formularioBusqueda =
+            document.getElementById("formularioBusqueda");
+
+        const campoBusqueda =
+            document.getElementById("campoBusqueda");
+
+        const limpiarBusqueda =
+            document.getElementById("limpiarBusqueda");
+
+        const mensajeBusqueda =
+            document.getElementById("mensajeBusqueda");
+
+        const tarjetasCategorias =
+            document.querySelectorAll(".categoria");
+
+        if (formularioBusqueda) {
+
+            formularioBusqueda.addEventListener("submit", function (evento) {
+
+                evento.preventDefault();
+
+                const consulta = campoBusqueda.value
+                    .trim()
+                    .toLocaleLowerCase("es");
+
+                let coincidencias = 0;
+
+                tarjetasCategorias.forEach(tarjeta => {
+
+                    const texto = tarjeta.textContent
+                        .toLocaleLowerCase("es");
+
+                    const coincide = texto.includes(consulta);
+
+                    tarjeta.style.display = coincide ? "" : "none";
+
+                    if (coincide) {
+                        coincidencias++;
+                    }
+
+                });
+
+                if (!consulta) {
+
+                    mensajeBusqueda.textContent =
+                        "Escribe lo que quieres buscar.";
+
+                } else if (coincidencias === 0) {
+
+                    mensajeBusqueda.textContent =
+                        "No encontramos esa categoría aquí. Puedes entrar en Moda, Belleza, Skin care o Accesorios.";
+
+                } else {
+
+                    mensajeBusqueda.textContent =
+                        "Encontramos " + coincidencias +
+                        " categoría(s).";
+
+                    document.getElementById("categorias")
+                        .scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+
+                }
+
+            });
+
+        }
+
+        if (limpiarBusqueda) {
+
+            limpiarBusqueda.addEventListener("click", function () {
+
+                campoBusqueda.value = "";
+
+                tarjetasCategorias.forEach(tarjeta => {
+                    tarjeta.style.display = "";
+                });
+
+                mensajeBusqueda.textContent = "";
+
+                campoBusqueda.focus();
+
+            });
+
+        }
+
+    </script>
 
 </body>
 </html>
-```
