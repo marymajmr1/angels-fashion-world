@@ -7,6 +7,10 @@
 
     <title>Categorías | Angel's Fashion World</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
     <style>
         * {
             box-sizing: border-box;
@@ -17,19 +21,22 @@
         :root {
             --rosa: #d85b91;
             --rosa-oscuro: #a52f68;
+            --rosa-claro: #fff0f7;
             --texto: #68495a;
             --dorado: #c8a96b;
             --borde: #f4cfe0;
             --fondo: #fffafd;
+            --blanco: #ffffff;
         }
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 25px;
         }
 
         body {
             min-height: 100vh;
-            font-family: Arial, sans-serif;
+            font-family: 'DM Sans', sans-serif;
             color: var(--texto);
             background:
                 radial-gradient(circle at top left, #ffe2ef 0, transparent 30%),
@@ -42,6 +49,11 @@
         a {
             text-decoration: none;
             color: inherit;
+        }
+
+        button,
+        input {
+            font: inherit;
         }
 
         /* ESTRELLAS DECORATIVAS */
@@ -85,6 +97,7 @@
             0%, 100% {
                 transform: translateY(0) rotate(0deg);
             }
+
             50% {
                 transform: translateY(-10px) rotate(10deg);
             }
@@ -102,18 +115,19 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 10px;
-            background: rgba(255, 255, 255, .92);
+            background: rgba(255, 255, 255, .94);
             border: 1px solid var(--borde);
             border-radius: 30px;
             box-shadow: 0 5px 20px #d85b9115;
         }
 
         .menu a {
-            padding: 10px 15px;
+            padding: 10px 17px;
             border-radius: 22px;
             color: var(--texto);
-            font-size: 14px;
-            font-weight: bold;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .3px;
             transition: .25s;
         }
 
@@ -121,24 +135,25 @@
         .menu a.activo {
             background: var(--rosa);
             color: white;
+            box-shadow: 0 4px 12px #d85b9130;
         }
 
         /* PRESENTACIÓN */
 
         .presentacion {
             text-align: center;
-            padding: 35px 15px 20px;
+            padding: 38px 15px 22px;
         }
 
         .alas-con-estrella {
             position: relative;
             display: inline-block;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
         .alas {
             display: inline-block;
-            font-size: 43px;
+            font-size: 46px;
             animation: moverAlas 3s ease-in-out infinite;
         }
 
@@ -155,6 +170,7 @@
             0%, 100% {
                 transform: translateY(0);
             }
+
             50% {
                 transform: translateY(-5px);
             }
@@ -165,6 +181,7 @@
                 opacity: .5;
                 transform: scale(.9);
             }
+
             50% {
                 opacity: 1;
                 transform: scale(1.2);
@@ -172,21 +189,27 @@
         }
 
         .presentacion h1 {
+            font-family: 'Playfair Display', Georgia, serif;
             color: var(--rosa);
-            font-size: clamp(30px, 5vw, 43px);
-            margin-bottom: 12px;
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 600;
+            letter-spacing: .4px;
+            line-height: 1.25;
+            margin-bottom: 14px;
         }
 
         .presentacion p {
             max-width: 650px;
             margin: 0 auto;
-            line-height: 1.7;
-            font-size: 16px;
+            line-height: 1.85;
+            font-size: 15px;
+            font-weight: 400;
         }
 
         .frase {
             color: var(--rosa-oscuro);
-            font-weight: bold;
+            font-weight: 700 !important;
+            font-size: 16px !important;
             margin-bottom: 5px !important;
         }
 
@@ -194,7 +217,7 @@
             display: block;
             margin-top: 12px;
             color: var(--dorado);
-            font-size: 23px;
+            font-size: 25px;
         }
 
         /* BUSCADOR */
@@ -202,14 +225,16 @@
         .buscador-contenedor {
             width: 92%;
             max-width: 750px;
-            margin: 10px auto 35px;
+            margin: 10px auto 38px;
         }
 
         .buscador-contenedor h2 {
+            font-family: 'Playfair Display', Georgia, serif;
             text-align: center;
             color: var(--rosa-oscuro);
-            font-size: 22px;
-            margin-bottom: 15px;
+            font-size: 25px;
+            font-weight: 600;
+            margin-bottom: 17px;
         }
 
         .buscador {
@@ -221,13 +246,14 @@
         .buscador input {
             flex: 1;
             min-width: 0;
-            padding: 14px 17px;
+            padding: 14px 18px;
             border: 1px solid #e8b4cc;
             border-radius: 25px;
             outline: none;
-            font-size: 15px;
+            font-size: 14px;
             color: var(--texto);
             background: white;
+            transition: box-shadow .2s, border .2s;
         }
 
         .buscador input:focus {
@@ -237,13 +263,14 @@
 
         .boton-buscar,
         .boton-limpiar {
-            padding: 13px 20px;
+            padding: 13px 22px;
             border: none;
             border-radius: 25px;
             background: var(--rosa);
             color: white;
-            font-size: 14px;
-            font-weight: bold;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .3px;
             cursor: pointer;
             transition: .25s;
         }
@@ -275,7 +302,8 @@
             min-height: 22px;
             text-align: center;
             margin-top: 12px;
-            font-size: 14px;
+            font-size: 13px;
+            line-height: 1.6;
             color: var(--rosa-oscuro);
         }
 
@@ -284,17 +312,21 @@
         .titulo-categorias {
             text-align: center;
             padding: 0 15px;
-            margin-bottom: 25px;
+            margin-bottom: 28px;
         }
 
         .titulo-categorias h2 {
+            font-family: 'Playfair Display', Georgia, serif;
             color: var(--rosa);
-            font-size: clamp(25px, 4vw, 32px);
-            margin-bottom: 8px;
+            font-size: clamp(27px, 4vw, 35px);
+            font-weight: 600;
+            letter-spacing: .3px;
+            margin-bottom: 10px;
         }
 
         .titulo-categorias p {
-            line-height: 1.6;
+            font-size: 14px;
+            line-height: 1.8;
         }
 
         /* TARJETAS DE CATEGORÍAS */
@@ -350,19 +382,23 @@
             flex-direction: column;
             align-items: flex-start;
             flex: 1;
-            padding: 22px;
+            padding: 23px;
         }
 
         .categoria-texto h3 {
+            font-family: 'Playfair Display', Georgia, serif;
             color: var(--rosa-oscuro);
-            font-size: 25px;
-            margin-bottom: 10px;
+            font-size: 27px;
+            font-weight: 600;
+            letter-spacing: .3px;
+            margin-bottom: 12px;
         }
 
         .categoria-texto p {
-            font-size: 15px;
-            line-height: 1.7;
-            margin-bottom: 18px;
+            font-size: 14px;
+            line-height: 1.9;
+            font-weight: 400;
+            margin-bottom: 21px;
         }
 
         /* BOTÓN EXPLORAR */
@@ -370,19 +406,22 @@
         .explorar {
             display: inline-block;
             margin-top: auto;
-            padding: 12px 22px;
+            padding: 13px 23px;
             border-radius: 25px;
             background: var(--rosa);
             color: white;
-            font-size: 14px;
-            font-weight: bold;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .3px;
             text-align: center;
-            transition: background .2s, transform .2s;
+            box-shadow: 0 4px 12px #d85b9125;
+            transition: background .2s, transform .2s, box-shadow .2s;
         }
 
         .categoria:hover .explorar {
             background: var(--rosa-oscuro);
             transform: translateY(-2px);
+            box-shadow: 0 6px 15px #a52f6825;
         }
 
         .categoria[hidden] {
@@ -404,7 +443,8 @@
             border-radius: 25px;
             background: white;
             color: var(--rosa-oscuro);
-            font-weight: bold;
+            font-size: 13px;
+            font-weight: 700;
             transition: .25s;
         }
 
@@ -420,16 +460,17 @@
             text-align: center;
             background: #fff0f7;
             border-top: 1px solid var(--borde);
-            line-height: 1.8;
+            line-height: 1.9;
         }
 
         footer p:first-child {
+            font-family: 'Playfair Display', Georgia, serif;
             color: var(--rosa-oscuro);
-            font-weight: bold;
-            font-size: 18px;
+            font-weight: 600;
+            font-size: 21px;
         }
 
-        footer p:last-child {
+        footer p {
             font-size: 13px;
         }
 
@@ -448,7 +489,7 @@
             width: 92%;
             max-width: 600px;
             padding: 10px 8px;
-            background: rgba(255, 255, 255, .96);
+            background: rgba(255, 255, 255, .97);
             border: 1px solid var(--borde);
             border-radius: 28px;
             box-shadow: 0 5px 25px #d85b9125;
@@ -459,13 +500,13 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 4px;
+            gap: 5px;
             flex: 1;
             padding: 7px 3px;
             border-radius: 18px;
             color: var(--rosa-oscuro);
-            font-size: 12px;
-            font-weight: bold;
+            font-size: 11px;
+            font-weight: 700;
             text-align: center;
             transition: .2s;
         }
@@ -476,7 +517,7 @@
         }
 
         .icono-inferior {
-            font-size: 22px;
+            font-size: 23px;
             line-height: 1;
         }
 
@@ -489,12 +530,16 @@
             }
 
             .menu a {
-                padding: 9px 10px;
+                padding: 9px 12px;
                 font-size: 12px;
             }
 
             .presentacion {
                 padding-top: 28px;
+            }
+
+            .presentacion p {
+                font-size: 14px;
             }
 
             .categorias {
@@ -515,17 +560,18 @@
             }
 
             .categoria-texto h3 {
-                font-size: 21px;
+                font-size: 22px;
             }
 
             .categoria-texto p {
                 font-size: 13px;
+                line-height: 1.75;
             }
 
             .explorar {
                 width: 100%;
-                padding: 11px 8px;
-                font-size: 13px;
+                padding: 12px 8px;
+                font-size: 12px;
             }
 
             .buscador {
@@ -551,17 +597,18 @@
             }
 
             .categoria-texto h3 {
-                font-size: 18px;
+                font-size: 19px;
             }
 
             .categoria-texto p {
                 font-size: 12px;
-                line-height: 1.6;
+                line-height: 1.7;
             }
 
             .explorar {
-                padding: 10px 5px;
-                font-size: 12px;
+                padding: 11px 5px;
+                font-size: 11px;
+                letter-spacing: 0;
             }
 
             .menu-inferior {
@@ -570,7 +617,7 @@
             }
 
             .menu-inferior a {
-                font-size: 11px;
+                font-size: 10px;
             }
         }
     </style>
@@ -593,8 +640,6 @@
         <a href="belleza.html">Belleza</a>
         <a href="skincare.html">Skin care</a>
         <a href="accesorios.html">Accesorios</a>
-        <a href="sobre-nosotros.html">Sobre nosotros</a>
-        <a href="index.html#contactanos">Contáctanos</a>
     </nav>
 
     <!-- PRESENTACIÓN -->
@@ -670,7 +715,7 @@
         >
             <div class="categoria-imagen">
                 <img
-                    src="./imagenes/categorias.html/Screenshot_2026-10-16-15-58-38-649_com.openai.chatgpt-edit.jpg"
+                    src="./imagenes/indexhtml/Screenshot_2026-10-16-15-58-38-649_com.openai.chatgpt-edit.jpg"
                     alt="Categoría Moda"
                     loading="eager"
                 >
@@ -698,7 +743,7 @@
         >
             <div class="categoria-imagen">
                 <img
-                    src="./imagenes/categorias.html/Screenshot_2026-10-16-15-57-11-970_com.openai.chatgpt-edit.jpg"
+                    src="./imagenes/indexhtml/Screenshot_2026-10-16-15-57-11-970_com.openai.chatgpt-edit.jpg"
                     alt="Categoría Belleza"
                     loading="eager"
                 >
@@ -726,7 +771,7 @@
         >
             <div class="categoria-imagen">
                 <img
-                    src="./imagenes/categorias.html/Screenshot_2026-10-16-16-01-20-160_com.openai.chatgpt-edit.jpg"
+                    src="./imagenes/indexhtml/Screenshot_2026-10-16-16-01-20-160_com.openai.chatgpt-edit.jpg"
                     alt="Categoría Skin care"
                     loading="eager"
                 >
@@ -754,7 +799,7 @@
         >
             <div class="categoria-imagen">
                 <img
-                    src="./imagenes/categorias.html/Screenshot_2026-10-16-15-59-54-663_com.openai.chatgpt-edit.jpg"
+                    src="./imagenes/indexhtml/Screenshot_2026-10-16-15-59-54-663_com.openai.chatgpt-edit.jpg"
                     alt="Categoría Accesorios"
                     loading="eager"
                 >
@@ -839,12 +884,16 @@
         const categorias =
             document.querySelectorAll(".categoria");
 
-        function buscarCategoria(termino) {
-            const texto = termino
+        function normalizarTexto(texto) {
+            return texto
                 .trim()
                 .toLowerCase()
                 .normalize("NFD")
                 .replace(/[\u0300-\u036f]/g, "");
+        }
+
+        function buscarCategoria(termino) {
+            const texto = normalizarTexto(termino);
 
             if (!texto) {
                 mensajeBusqueda.textContent =
@@ -861,14 +910,11 @@
             let resultados = 0;
 
             categorias.forEach(function(categoria) {
-                const nombre = (
+                const nombre = normalizarTexto(
                     categoria.dataset.categoria + " " +
                     categoria.dataset.palabras + " " +
                     categoria.innerText
-                )
-                    .toLowerCase()
-                    .normalize("NFD")
-                    .replace(/[\u0300-\u036f]/g, "");
+                );
 
                 const coincide = palabras.every(function(palabra) {
                     return nombre.includes(palabra);
@@ -915,7 +961,6 @@
             entradaBusqueda.focus();
         });
 
-        // Permite recibir búsquedas mediante ?buscar= en la dirección.
         const parametros = new URLSearchParams(window.location.search);
         const busquedaInicial = parametros.get("buscar");
 
