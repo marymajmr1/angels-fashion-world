@@ -1,3 +1,4 @@
+```javascript
 // ========================================
 // ANGEL'S FASHION WORLD
 // SCRIPT.JS
@@ -12,9 +13,11 @@ document.querySelectorAll('a[href^="#"]').forEach(enlace => {
 
     enlace.addEventListener("click", function (e) {
 
-        const destino = document.querySelector(
-            this.getAttribute("href")
-        );
+        const href = this.getAttribute("href");
+
+        if (!href || href === "#") return;
+
+        const destino = document.querySelector(href);
 
         if (destino) {
 
@@ -33,7 +36,7 @@ document.querySelectorAll('a[href^="#"]').forEach(enlace => {
 
 
 // ========================================
-// ANIMACIÓN SUAVE DE LAS ESTRELLAS
+// ANIMACIÓN DE LAS ESTRELLAS
 // ========================================
 
 const estrellas = document.querySelectorAll(".estrella");
@@ -51,7 +54,7 @@ estrellas.forEach((estrella, indice) => {
 // ========================================
 
 const alas = document.querySelectorAll(
-    ".alas-inicio, .alas-explorar, .contacto-alas, .footer-alas, .logo-alas"
+    ".alas-inicio, .alas-explorar, .contacto-alas, .footer-alas, .logo-alas, .alasMovimiento"
 );
 
 alas.forEach((ala, indice) => {
@@ -63,35 +66,117 @@ alas.forEach((ala, indice) => {
 
 
 // ========================================
-// EFECTO SUAVE AL APARECER
+// EFECTO DE APARICIÓN
 // ========================================
 
-const elementos = document.querySelectorAll(
+const elementosAnimados = document.querySelectorAll(
     ".categoria, .titulo-explorar, .frase-explorar"
 );
 
-const observador = new IntersectionObserver(
-    (entradas) => {
+if ("IntersectionObserver" in window) {
 
-        entradas.forEach(entrada => {
+    const observador = new IntersectionObserver(
+        (entradas) => {
 
-            if (entrada.isIntersecting) {
+            entradas.forEach(entrada => {
 
-                entrada.target.classList.add("aparecer");
+                if (entrada.isIntersecting) {
 
-            }
+                    entrada.target.classList.add("aparecer");
 
-        });
+                    observador.unobserve(entrada.target);
 
-    },
-    {
-        threshold: 0.15
-    }
-);
+                }
 
-elementos.forEach(elemento => {
+            });
 
-    observador.observe(elemento);
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+    elementosAnimados.forEach(elemento => {
+        observador.observe(elemento);
+    });
+
+}
+
+
+// ========================================
+// BUSCADOR DE PRODUCTOS
+// ========================================
+
+const campoBusqueda = document.getElementById("buscarProducto");
+const botonLimpiar = document.getElementById("limpiarBusqueda");
+
+function buscarProductos() {
+
+    if (!campoBusqueda) return;
+
+    const consulta = campoBusqueda.value
+        .trim()
+        .toLocaleLowerCase("es");
+
+    // Productos y categorías que se pueden filtrar.
+    const elementos = document.querySelectorAll(
+        ".producto, .producto-card, .tarjeta-producto, .categoria"
+    );
+
+    elementos.forEach(elemento => {
+
+        const texto = elemento.textContent
+            .toLocaleLowerCase("es");
+
+        const coincide = texto.includes(consulta);
+
+        elemento.style.display = coincide ? "" : "none";
+
+    });
+
+}
+
+if (campoBusqueda) {
+
+    campoBusqueda.addEventListener("input", buscarProductos);
+
+}
+
+if (botonLimpiar) {
+
+    botonLimpiar.addEventListener("click", () => {
+
+        if (campoBusqueda) {
+            campoBusqueda.value = "";
+            buscarProductos();
+            campoBusqueda.focus();
+        }
+
+    });
+
+}
+
+
+// ========================================
+// BOTÓN EXPLORAR
+// ========================================
+
+document.querySelectorAll(".boton-explorar").forEach(boton => {
+
+    boton.addEventListener("click", function () {
+
+        const destino = document.getElementById("categorias");
+
+        if (destino) {
+
+            destino.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+
+    });
 
 });
 
@@ -103,3 +188,4 @@ elementos.forEach(elemento => {
 console.log(
     "🪽 Angel's Fashion World está funcionando ✦"
 );
+```
