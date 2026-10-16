@@ -1,0 +1,684 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff1f7">
+  <title>Categorías | Angel's Fashion World</title>
+
+  <style>
+    :root {
+      --rosa: #d85b91;
+      --rosa-oscuro: #a52f68;
+      --texto: #68495a;
+      --dorado: #c8a96b;
+      --borde: #f4cfe0;
+      --fondo: #fffafd;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding-bottom: 90px;
+      font-family: Arial, sans-serif;
+      color: var(--texto);
+      background:
+        radial-gradient(circle at top left, #ffe1ee, transparent 28%),
+        radial-gradient(circle at 90% 30%, #fff0f7, transparent 25%),
+        var(--fondo);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .estrellas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      color: var(--dorado);
+      opacity: .75;
+    }
+
+    .estrella {
+      position: absolute;
+      animation: flotar 5s ease-in-out infinite;
+    }
+
+    .estrella1 { top: 120px; left: 4%; }
+    .estrella2 { top: 280px; right: 5%; animation-delay: .7s; }
+    .estrella3 { bottom: 180px; left: 6%; animation-delay: 1.3s; }
+    .estrella4 { bottom: 80px; right: 7%; animation-delay: 2s; }
+
+    @keyframes flotar {
+      50% { transform: translateY(-9px) rotate(8deg); }
+    }
+
+    .menu {
+      position: relative;
+      z-index: 2;
+      width: 94%;
+      max-width: 1200px;
+      margin: 16px auto;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      flex-wrap: wrap;
+      border: 1px solid var(--borde);
+      border-radius: 20px;
+      background: #ffffffed;
+      box-shadow: 0 5px 20px #d85b9112;
+    }
+
+    .menu a {
+      padding: 10px 13px;
+      border-radius: 25px;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .menu a:hover,
+    .menu a.activo {
+      background: var(--rosa);
+      color: white;
+    }
+
+    .marca {
+      position: relative;
+      z-index: 1;
+      width: 92%;
+      max-width: 1100px;
+      margin: 25px auto;
+      padding: 25px 15px;
+      text-align: center;
+      border: 1px solid var(--borde);
+      border-radius: 25px;
+      background: linear-gradient(120deg, #ffe5f0, #fffafd, #fbe6ef);
+    }
+
+    .marca .mini {
+      color: var(--dorado);
+      font-size: 12px;
+      letter-spacing: 3px;
+    }
+
+    .marca h1 {
+      margin: 12px 0;
+      color: var(--rosa-oscuro);
+      font: 400 clamp(34px, 5vw, 55px) Georgia, serif;
+    }
+
+    .marca p {
+      margin-bottom: 0;
+      color: #9c5276;
+      font: italic 18px Georgia, serif;
+    }
+
+    /* BUSCADOR */
+
+    .buscador {
+      position: relative;
+      z-index: 2;
+      width: 92%;
+      max-width: 620px;
+      margin: 25px auto;
+    }
+
+    .buscador form {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 8px 7px 15px;
+      border: 1px solid var(--borde);
+      border-radius: 30px;
+      background: white;
+      box-shadow: 0 5px 18px #d85b9112;
+    }
+
+    .lupa {
+      color: var(--rosa);
+      font-size: 23px;
+    }
+
+    .buscador input {
+      width: 100%;
+      min-width: 0;
+      padding: 9px 0;
+      border: 0;
+      outline: none;
+      color: var(--texto);
+      background: transparent;
+      font-size: 14px;
+    }
+
+    .buscador button {
+      padding: 11px 15px;
+      border: 0;
+      border-radius: 25px;
+      background: var(--rosa);
+      color: white;
+      cursor: pointer;
+    }
+
+    .resultado {
+      min-height: 20px;
+      margin: 12px 5px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .resultado a {
+      color: var(--rosa-oscuro);
+      font-weight: bold;
+    }
+
+    /* ENCABEZADO DE CATEGORÍAS */
+
+    .titulo {
+      position: relative;
+      z-index: 1;
+      margin: 35px 15px 25px;
+      text-align: center;
+    }
+
+    .titulo h2 {
+      margin-bottom: 10px;
+      color: var(--rosa-oscuro);
+      font: 400 clamp(30px, 4vw, 43px) Georgia, serif;
+    }
+
+    .titulo p {
+      line-height: 1.7;
+    }
+
+    /* CUATRO CATEGORÍAS */
+
+    .categorias {
+      position: relative;
+      z-index: 1;
+      width: 92%;
+      max-width: 1050px;
+      margin: 0 auto 40px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .categoria {
+      min-width: 0;
+      overflow: hidden;
+      display: block;
+      border: 1px solid var(--borde);
+      border-radius: 25px;
+      background: #ffffffed;
+      box-shadow: 0 10px 28px #9a396710;
+      text-decoration: none;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .categoria:hover {
+      transform: translateY(-4px);
+      border-color: var(--rosa);
+    }
+
+    .categoria-imagen {
+      height: 210px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #fce2ed, #fff5fa);
+    }
+
+    .categoria-imagen img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform .3s;
+    }
+
+    .categoria:hover .categoria-imagen img {
+      transform: scale(1.04);
+    }
+
+    .categoria-texto {
+      padding: 20px;
+    }
+
+    .categoria h3 {
+      margin: 0 0 10px;
+      color: var(--rosa-oscuro);
+      font: 400 28px Georgia, serif;
+    }
+
+    .categoria p {
+      min-height: 45px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .explorar {
+      display: inline-block;
+      margin-top: 5px;
+      color: var(--rosa-oscuro);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .volver {
+      position: relative;
+      z-index: 1;
+      margin: 25px auto 35px;
+      text-align: center;
+    }
+
+    .boton {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 30px;
+      background: var(--rosa);
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .logo-final {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 90px;
+      height: 90px;
+      margin: 25px auto 8px;
+      object-fit: contain;
+      opacity: .8;
+    }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      padding: 10px 20px 25px;
+      color: #87556f;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* BARRA INFERIOR FIJA */
+
+    .menu-inferior {
+      position: fixed;
+      z-index: 1000;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 5px;
+      padding: 10px 5px calc(10px + env(safe-area-inset-bottom));
+      border-top: 1px solid var(--borde);
+      background: #fffafc;
+      box-shadow: 0 -5px 20px #d85b9118;
+    }
+
+    .menu-inferior a {
+      min-width: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      color: var(--rosa-oscuro);
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    .icono {
+      font-size: 23px;
+    }
+
+    @media (max-width: 650px) {
+      .menu {
+        gap: 3px;
+      }
+
+      .menu a {
+        padding: 8px 9px;
+        font-size: 12px;
+      }
+
+      .categorias {
+        gap: 12px;
+      }
+
+      .categoria-imagen {
+        height: 150px;
+      }
+
+      .categoria-texto {
+        padding: 14px;
+      }
+
+      .categoria h3 {
+        font-size: 23px;
+      }
+
+      .categoria p {
+        min-height: 65px;
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .categorias {
+        width: 94%;
+      }
+
+      .categoria-imagen {
+        height: 125px;
+      }
+
+      .categoria-texto {
+        padding: 12px;
+      }
+
+      .categoria h3 {
+        font-size: 21px;
+      }
+
+      .categoria p {
+        font-size: 12px;
+      }
+
+      .menu-inferior a {
+        min-width: 0;
+        font-size: 11px;
+      }
+
+      .icono {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="estrellas" aria-hidden="true">
+    <span class="estrella estrella1">✦</span>
+    <span class="estrella estrella2">✧</span>
+    <span class="estrella estrella3">✦</span>
+    <span class="estrella estrella4">✧</span>
+  </div>
+
+  <!-- MENÚ SUPERIOR -->
+  <nav class="menu" aria-label="Menú principal">
+    <a href="index.html">Inicio</a>
+    <a class="activo" href="categorias.html">Tienda</a>
+    <a href="sobre-nosotros.html">Sobre nosotros</a>
+    <a href="index.html#contactanos">Contáctanos</a>
+  </nav>
+
+  <!-- ENCABEZADO -->
+  <header class="marca">
+    <div class="mini">✧ BIENVENIDA A TU ESPACIO ✧</div>
+    <h1>Explora nuestras categorías</h1>
+    <p>Encuentra tus favoritos en Angel's Fashion World.</p>
+  </header>
+
+  <!-- BUSCADOR DE CATEGORÍAS Y PRODUCTOS -->
+  <section class="buscador">
+    <form id="formularioBusqueda">
+      <span class="lupa">⌕</span>
+      <input
+        type="search"
+        id="buscarProducto"
+        placeholder="Buscar categoría o producto..."
+        aria-label="Buscar categoría o producto"
+      >
+      <button type="submit">Buscar</button>
+    </form>
+
+    <p class="resultado" id="resultadoBusqueda" aria-live="polite"></p>
+  </section>
+
+  <section class="titulo">
+    <h2>¿Qué te gustaría descubrir? <span style="color:var(--dorado)">✦</span></h2>
+    <p>Elige una categoría para comenzar a explorar.</p>
+  </section>
+
+  <!-- CATEGORÍAS EN DOS COLUMNAS -->
+  <main class="categorias" id="categorias">
+
+    <a class="categoria" href="moda.html" data-categoria="moda">
+      <div class="categoria-imagen">
+        <img
+          src="./imagenes/indexhtml/Screenshot_2026-10-13-17-22-18-506_com.miui.gallery-edit.jpg"
+          alt="Moda"
+        >
+      </div>
+      <div class="categoria-texto">
+        <h3>Moda</h3>
+        <p>Blusas, pantalones, vestidos, conjuntos, faldas, shorts, abrigos y calzados.</p>
+        <span class="explorar">Explorar moda ↗</span>
+      </div>
+    </a>
+
+    <a class="categoria" href="belleza.html" data-categoria="belleza">
+      <div class="categoria-imagen">
+        <img
+          src="./imagenes/indexhtml/Screenshot_2026-10-13-17-18-15-611_com.miui.gallery~2.jpg"
+          alt="Belleza"
+        >
+      </div>
+      <div class="categoria-texto">
+        <h3>Belleza</h3>
+        <p>Perfumes, maquillaje y productos para uñas.</p>
+        <span class="explorar">Explorar belleza ↗</span>
+      </div>
+    </a>
+
+    <a class="categoria" href="skincare.html" data-categoria="skincare">
+      <div class="categoria-imagen">
+        <img
+          src="./imagenes/indexhtml/Screenshot_2026-10-13-17-18-15-611_com.miui.gallery~2.jpg"
+          alt="Skin care"
+        >
+      </div>
+      <div class="categoria-texto">
+        <h3>Skin care</h3>
+        <p>Cuidado para la cara, el cabello y el cuidado personal.</p>
+        <span class="explorar">Explorar Skin care ↗</span>
+      </div>
+    </a>
+
+    <a class="categoria" href="accesorios.html" data-categoria="accesorios">
+      <div class="categoria-imagen">
+        <img
+          src="./imagenes/indexhtml/Screenshot_2026-10-13-17-18-15-611_com.miui.gallery~2.jpg"
+          alt="Accesorios"
+        >
+      </div>
+      <div class="categoria-texto">
+        <h3>Accesorios</h3>
+        <p>Carteras, gafas, joyería, gorras, medias y detalles para el cabello.</p>
+        <span class="explorar">Explorar accesorios ↗</span>
+      </div>
+    </a>
+
+  </main>
+
+  <div class="volver">
+    <a class="boton" href="index.html">← Volver al inicio</a>
+  </div>
+
+  <img
+    class="logo-final"
+    src="./imagenes/indexhtml/Screenshot_2026-10-13-17-18-15-611_com.miui.gallery~2.jpg"
+    alt="Logo de Angel's Fashion World"
+    onerror="this.style.display='none'"
+  >
+
+  <footer>
+    <strong>Angel's Fashion World</strong><br>
+    Moda · Belleza · Skin care · Accesorios<br>
+    <span style="color:var(--dorado)">✦ Hecho con cariño ✦</span>
+  </footer>
+
+  <!-- BARRA INFERIOR FIJA -->
+  <nav class="menu-inferior" aria-label="Accesos rápidos">
+
+    <a href="#buscarProducto" id="enlaceBuscar">
+      <span class="icono">⌕</span>
+      Buscar
+    </a>
+
+    <a href="pedido.html">
+      <span class="icono">♧</span>
+      Pedidos
+    </a>
+
+    <a href="carrito.html">
+      <span class="icono">🛒</span>
+      Carrito
+    </a>
+
+    <a href="perfil.html">
+      <span class="icono">♙</span>
+      Mi perfil
+    </a>
+
+  </nav>
+
+  <script>
+    const formulario = document.getElementById("formularioBusqueda");
+    const campo = document.getElementById("buscarProducto");
+    const resultado = document.getElementById("resultadoBusqueda");
+    const tarjetas = Array.from(document.querySelectorAll(".categoria"));
+
+    function normalizar(texto) {
+      return texto
+        .toLocaleLowerCase("es")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
+    }
+
+    const datosCategorias = [
+      {
+        archivo: "moda.html",
+        nombre: "Moda",
+        palabras: [
+          "moda", "ropa", "blusa", "blusas", "pantalon",
+          "pantalones", "jean", "jeans", "vestido", "vestidos",
+          "conjunto", "conjuntos", "falda", "faldas", "short",
+          "shorts", "abrigo", "abrigos", "calzado", "calzados",
+          "tacon", "tacones", "bota", "botas", "sandalia", "sandalias"
+        ]
+      },
+      {
+        archivo: "belleza.html",
+        nombre: "Belleza",
+        palabras: [
+          "belleza", "perfume", "perfumes", "maquillaje",
+          "labial", "labiales", "unas", "esmalte", "esmaltes"
+        ]
+      },
+      {
+        archivo: "skincare.html",
+        nombre: "Skin care",
+        palabras: [
+          "skin care", "skincare", "cara", "rostro", "facial",
+          "cabello", "pelo", "champu", "shampoo", "crema",
+          "cremas", "cuidado personal", "acondicionador"
+        ]
+      },
+      {
+        archivo: "accesorios.html",
+        nombre: "Accesorios",
+        palabras: [
+          "accesorio", "accesorios", "gorra", "gorras", "medias",
+          "cartera", "carteras", "gafas", "joyeria", "collar",
+          "collares", "arete", "aretes", "guantes", "correa",
+          "correas", "hebilla", "hebillas"
+        ]
+      }
+    ];
+
+    function buscarCategoria(consulta) {
+      return datosCategorias.find(function(categoria) {
+        return categoria.palabras.some(function(palabra) {
+          const p = normalizar(palabra);
+          return p === consulta || p.includes(consulta) ||
+                 consulta.includes(p);
+        });
+      });
+    }
+
+    function procesarBusqueda(consulta, actualizarCampo) {
+      const texto = normalizar(consulta);
+
+      if (!texto) {
+        resultado.textContent = "Escribe una categoría o producto.";
+        return;
+      }
+
+      if (actualizarCampo) {
+        campo.value = consulta;
+      }
+
+      const coincidencia = buscarCategoria(texto);
+
+      if (!coincidencia) {
+        resultado.textContent =
+          "No encontramos una categoría para esa búsqueda. " +
+          "Prueba con blusas, vestidos, perfumes, Skin care o accesorios.";
+        return;
+      }
+
+      resultado.innerHTML =
+        "Categoría encontrada: <a href=\"" +
+        coincidencia.archivo + "?buscar=" +
+        encodeURIComponent(consulta) + "\">" +
+        coincidencia.nombre + " — ver categoría ↗</a>";
+
+      tarjetas.forEach(function(tarjeta) {
+        tarjeta.style.outline =
+          tarjeta.dataset.categoria ===
+          normalizar(coincidencia.nombre).replace(/\s/g, "")
+            ? "2px solid var(--rosa)"
+            : "";
+      });
+    }
+
+    formulario.addEventListener("submit", function(evento) {
+      evento.preventDefault();
+      procesarBusqueda(campo.value, false);
+    });
+
+    /* RECIBE LO QUE SE BUSCÓ EN LA PÁGINA PRINCIPAL */
+    const parametros = new URLSearchParams(window.location.search);
+    const busquedaInicial = parametros.get("buscar");
+
+    if (busquedaInicial) {
+      procesarBusqueda(busquedaInicial, true);
+    }
+
+    document.getElementById("enlaceBuscar").addEventListener("click", function() {
+      setTimeout(function() {
+        campo.focus({ preventScroll: true });
+      }, 100);
+    });
+  </script>
+
+</body>
+</html>
