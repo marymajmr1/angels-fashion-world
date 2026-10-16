@@ -1,4 +1,4 @@
-```javascript
+
 // ========================================
 // ANGEL'S FASHION WORLD
 // SCRIPT.JS
