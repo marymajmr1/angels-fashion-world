@@ -1,945 +1,816 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#fff1f7">
-<title>Angel's Fashion World</title>
-
-<style>
-:root {
-  --pink: #d85b91;
-  --deep: #a52f68;
-  --ink: #68495a;
-  --gold: #c8a96b;
-  --line: #f4cfe0;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  padding-bottom: 85px;
-  font-family: Arial, sans-serif;
-  color: var(--ink);
-  background:
-    radial-gradient(circle at top left, #ffe1ee, transparent 28%),
-    radial-gradient(circle at 90% 30%, #fff0f7, transparent 25%),
-    #fffafd;
-}
-
-a {
-  color: inherit;
-}
-
-/* MENÚ PRINCIPAL */
-
-.menu {
-  position: relative;
-  z-index: 10;
-  width: 94%;
-  max-width: 1200px;
-  margin: 15px auto;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  flex-wrap: wrap;
-  background: #ffffffed;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  box-shadow: 0 5px 20px #d85b9117;
-}
-
-.menu a {
-  padding: 9px 12px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-size: 13px;
-}
-
-.menu a:hover,
-.menu a:first-child {
-  background: var(--pink);
-  color: white;
-}
-
-/* BUSCADOR PEQUEÑO SUPERIOR */
-
-.buscador-superior {
-  width: 90%;
-  max-width: 520px;
-  margin: 18px auto 25px;
-  position: relative;
-  z-index: 3;
-}
-
-.buscador-superior form {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 8px 7px 15px;
-  border: 1px solid var(--line);
-  border-radius: 30px;
-  background: white;
-  box-shadow: 0 5px 18px #d85b9112;
-}
-
-.buscador-superior .lupa {
-  color: var(--pink);
-  font-size: 20px;
-}
-
-.buscador-superior input {
-  width: 100%;
-  min-width: 0;
-  border: 0;
-  outline: none;
-  background: transparent;
-  color: var(--ink);
-  font-size: 14px;
-  padding: 8px 0;
-}
-
-.buscador-superior button {
-  border: 0;
-  border-radius: 25px;
-  background: var(--pink);
-  color: white;
-  padding: 10px 15px;
-  cursor: pointer;
-}
-
-#resultadoBusqueda {
-  margin: 8px 10px 0;
-  font-size: 13px;
-  text-align: center;
-  line-height: 1.5;
-}
-
-#resultadoBusqueda a {
-  color: var(--deep);
-  font-weight: bold;
-}
-
-/* LOGO Y MARCA */
-
-.marca {
-  width: 92%;
-  max-width: 1200px;
-  margin: 25px auto;
-  display: grid;
-  grid-template-columns: .9fr 1.1fr;
-  align-items: center;
-  gap: 25px;
-}
-
-.logo {
-  position: relative;
-  min-height: 220px;
-  overflow: hidden;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--line);
-  border-radius: 25px;
-  background: linear-gradient(135deg, #ffe6f0, white, #fbe6ef);
-}
-
-.logo::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("./imagenes/indexhtml/Screenshot_2026-10-16-13-00-40-119_com.whatsapp-edit.jpg")
-    center / contain no-repeat;
-  filter: blur(5px);
-  opacity: .18;
-  transform: scale(1.1);
-}
-
-.logo img {
-  position: relative;
-  width: 90%;
-  max-height: 200px;
-  object-fit: contain;
-}
-
-.marca-texto {
-  text-align: center;
-  padding: 15px;
-}
-
-.mini {
-  font-size: 12px;
-  letter-spacing: 3px;
-  color: var(--gold);
-}
-
-.marca h1 {
-  margin: 14px 0;
-  color: var(--deep);
-  font: 400 clamp(40px, 5vw, 68px)/1.05 Georgia, serif;
-}
-
-.marca h1 span {
-  display: block;
-  margin-top: 12px;
-  font-size: .4em;
-  letter-spacing: .2em;
-}
-
-.tagline {
-  color: #9c5276;
-  font: italic clamp(18px, 2vw, 24px) Georgia, serif;
-}
-
-.dorado {
-  color: var(--gold);
-  letter-spacing: 7px;
-}
-
-/* PRESENTACIÓN CON LA MUCHACHA */
-
-.hero {
-  width: 92%;
-  max-width: 1200px;
-  margin: 25px auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  background: linear-gradient(120deg, #fff5fa, #ffe5f0, white);
-}
-
-.hero-copy {
-  align-self: center;
-  padding: clamp(25px, 5vw, 60px);
-}
-
-.eyebrow {
-  color: var(--gold);
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
-.hero h2 {
-  margin: 15px 0;
-  color: var(--deep);
-  font: 400 clamp(30px, 4vw, 48px)/1.15 Georgia, serif;
-}
-
-.hero p {
-  line-height: 1.8;
-}
-
-.boton {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 13px 25px;
-  border-radius: 30px;
-  background: var(--pink);
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.hero-foto {
-  position: relative;
-  min-height: 350px;
-  background: #f9dce9;
-}
-
-.hero-foto img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  min-height: 350px;
-  object-fit: cover;
-  object-position: center 35%;
-}
-
-.frase-foto {
-  position: absolute;
-  right: 6%;
-  bottom: 8%;
-  color: #8f3f68;
-  text-align: center;
-  font: italic 24px Georgia, serif;
-  text-shadow: 0 1px 12px white;
-}
-
-/* ESTRELLAS ORIGINALES */
-
-.estrellas {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  color: var(--gold);
-  opacity: .8;
-}
-
-.estrella {
-  position: absolute;
-  animation: flotar 5s ease-in-out infinite;
-}
-
-.estrella1 {
-  top: 120px;
-  left: 4%;
-}
-
-.estrella2 {
-  top: 280px;
-  right: 5%;
-  animation-delay: .7s;
-}
-
-.estrella3 {
-  bottom: 180px;
-  left: 6%;
-  animation-delay: 1.3s;
-}
-
-.estrella4 {
-  bottom: 80px;
-  right: 7%;
-  animation-delay: 2s;
-}
-
-@keyframes flotar {
-  50% {
-    transform: translateY(-9px) rotate(8deg);
-  }
-}
-
-/* TÍTULOS */
-
-.titulo {
-  margin: 42px auto 25px;
-  padding: 0 15px;
-  text-align: center;
-}
-
-.titulo h2 {
-  color: var(--deep);
-  font: 400 clamp(28px, 3.5vw, 40px) Georgia, serif;
-}
-
-.titulo p {
-  line-height: 1.6;
-}
-
-/* CUATRO CATEGORÍAS EN DOS COLUMNAS */
-
-.categorias {
-  position: relative;
-  z-index: 2;
-  width: 92%;
-  max-width: 900px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.categoria {
-  min-height: 185px;
-  padding: 23px;
-  display: block;
-  text-decoration: none;
-  border: 1px solid var(--line);
-  border-radius: 23px;
-  background: #ffffffed;
-  box-shadow: 0 10px 28px #9a396710;
-  transition: transform .2s, border-color .2s;
-}
-
-.categoria:hover {
-  transform: translateY(-4px);
-  border-color: var(--pink);
-}
-
-.emoji {
-  margin-bottom: 10px;
-  font-size: 32px;
-}
-
-.categoria h3 {
-  margin: 0 0 9px;
-  color: var(--deep);
-  font: 400 25px Georgia, serif;
-}
-
-.categoria p {
-  min-height: 40px;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.explorar {
-  color: var(--deep);
-  font-size: 13px;
-  font-weight: bold;
-}
-
-/* BENEFICIOS */
-
-.beneficios {
-  width: 92%;
-  max-width: 1200px;
-  margin: 28px auto;
-  padding: 15px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background: linear-gradient(120deg, #fbe2ee, #fff3f8);
-  border: 1px solid var(--line);
-  border-radius: 25px;
-}
-
-.beneficio {
-  padding: 14px;
-  text-align: center;
-  line-height: 1.6;
-}
-
-.beneficio strong {
-  display: block;
-  margin-bottom: 6px;
-  color: var(--deep);
-}
-
-/* SOBRE NOSOTROS Y CONTACTO */
-
-.sobre,
-.contacto {
-  position: relative;
-  z-index: 2;
-  width: 92%;
-  max-width: 1000px;
-  margin: 35px auto;
-  padding: 30px;
-  text-align: center;
-  border: 1px solid var(--line);
-  border-radius: 25px;
-  background: #ffffffed;
-}
-
-.sobre h2,
-.contacto h2 {
-  color: var(--deep);
-  font: 400 30px Georgia, serif;
-}
-
-.sobre p,
-.contacto p {
-  line-height: 1.8;
-}
-
-.whatsapp {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 13px 22px;
-  border-radius: 30px;
-  background: var(--pink);
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-/* BARRA INFERIOR SIEMPRE VISIBLE */
-
-.menu-inferior {
-  position: fixed;
-  z-index: 1000;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px 5px calc(10px + env(safe-area-inset-bottom));
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  background: #fffafc;
-  border-top: 1px solid var(--line);
-  box-shadow: 0 -5px 20px #d85b9118;
-}
-
-.menu-inferior a {
-  min-width: 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  color: var(--deep);
-  font-size: 12px;
-  text-decoration: none;
-}
-
-.icono {
-  font-size: 23px;
-}
-
-.menu-inferior a:hover {
-  color: var(--pink);
-}
-
-.logo-final {
-  display: block;
-  width: 90px;
-  height: 90px;
-  margin: 22px auto 8px;
-  object-fit: contain;
-  opacity: .75;
-}
-
-footer {
-  padding: 10px 20px 25px;
-  color: #87556f;
-  text-align: center;
-  font-size: 13px;
-  line-height: 1.8;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 750px) {
-  .menu {
-    gap: 3px;
-  }
-
-  .menu a {
-    padding: 8px;
-    font-size: 12px;
-  }
-
-  .marca {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .logo {
-    min-height: 160px;
-  }
-
-  .logo img {
-    max-height: 145px;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-foto {
-    order: -1;
-    min-height: 290px;
-    max-height: 400px;
-  }
-
-  .hero-foto img {
-    min-height: 290px;
-    max-height: 400px;
-  }
-
-  .categorias {
-    gap: 12px;
-  }
-
-  .categoria {
-    padding: 17px;
-  }
-
-  .beneficios {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 420px) {
-  .buscador-superior {
-    width: 94%;
-  }
-
-  .buscador-superior button {
-    padding: 10px 12px;
-  }
-
-  .hero,
-  .marca,
-  .categorias,
-  .beneficios {
-    width: 94%;
-  }
-
-  .hero-copy {
-    padding: 25px 20px;
-  }
-
-  .hero-foto,
-  .hero-foto img {
-    min-height: 250px;
-  }
-
-  .categoria {
-    min-height: 175px;
-    padding: 14px 12px;
-  }
-
-  .categoria h3 {
-    font-size: 21px;
-  }
-
-  .categoria p {
-    font-size: 13px;
-  }
-
-  .menu-inferior a {
-    min-width: 0;
-    font-size: 11px;
-  }
-
-  .icono {
-    font-size: 22px;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff1f7">
+  <title>Angel's Fashion World</title>
+
+  <style>
+    :root {
+      --rosa: #d85b91;
+      --rosa-oscuro: #a52f68;
+      --texto: #68495a;
+      --dorado: #c8a96b;
+      --borde: #f4cfe0;
+      --fondo: #fffafd;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 20px;
+    }
+
+    body {
+      margin: 0;
+      padding-bottom: 90px;
+      font-family: Arial, sans-serif;
+      color: var(--texto);
+      background:
+        radial-gradient(circle at top left, #ffe1ee, transparent 28%),
+        radial-gradient(circle at 90% 30%, #fff0f7, transparent 25%),
+        var(--fondo);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* ESTRELLAS DECORATIVAS */
+
+    .estrellas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      color: var(--dorado);
+      opacity: .75;
+    }
+
+    .estrella {
+      position: absolute;
+      animation: flotar 5s ease-in-out infinite;
+    }
+
+    .estrella1 { top: 120px; left: 4%; }
+    .estrella2 { top: 280px; right: 5%; animation-delay: .7s; }
+    .estrella3 { bottom: 180px; left: 6%; animation-delay: 1.3s; }
+    .estrella4 { bottom: 80px; right: 7%; animation-delay: 2s; }
+
+    @keyframes flotar {
+      50% { transform: translateY(-9px) rotate(8deg); }
+    }
+
+    /* MENÚ SUPERIOR */
+
+    .menu {
+      position: relative;
+      z-index: 2;
+      width: 94%;
+      max-width: 1200px;
+      margin: 16px auto;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      flex-wrap: wrap;
+      border: 1px solid var(--borde);
+      border-radius: 20px;
+      background: #ffffffed;
+      box-shadow: 0 5px 20px #d85b9112;
+    }
+
+    .menu a {
+      padding: 10px 13px;
+      border-radius: 25px;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .menu a:hover,
+    .menu a.activo {
+      background: var(--rosa);
+      color: white;
+    }
+
+    /* BUSCADOR DE INICIO */
+
+    .buscador {
+      position: relative;
+      z-index: 2;
+      width: 92%;
+      max-width: 520px;
+      margin: 20px auto 28px;
+    }
+
+    .buscador form {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 8px 7px 15px;
+      border: 1px solid var(--borde);
+      border-radius: 30px;
+      background: white;
+      box-shadow: 0 5px 18px #d85b9112;
+    }
+
+    .lupa {
+      color: var(--rosa);
+      font-size: 23px;
+    }
+
+    .buscador input {
+      width: 100%;
+      min-width: 0;
+      padding: 9px 0;
+      border: 0;
+      outline: none;
+      color: var(--texto);
+      background: transparent;
+      font-size: 14px;
+    }
+
+    .buscador button {
+      padding: 11px 15px;
+      border: 0;
+      border-radius: 25px;
+      background: var(--rosa);
+      color: white;
+      cursor: pointer;
+    }
+
+    .mensaje-busqueda {
+      min-height: 18px;
+      margin: 8px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    /* MARCA Y LOGO */
+
+    .marca {
+      position: relative;
+      z-index: 1;
+      width: 92%;
+      max-width: 1200px;
+      margin: 24px auto 35px;
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .logo {
+      position: relative;
+      min-height: 240px;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--borde);
+      border-radius: 25px;
+      background: linear-gradient(135deg, #ffe6f0, white, #fbe6ef);
+    }
+
+    .logo::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        url("./imagenes/indexhtml/Screenshot_2026-10-16-13-00-40-119_com.whatsapp-edit.jpg")
+        center / contain no-repeat;
+      filter: blur(5px);
+      opacity: .2;
+      transform: scale(1.1);
+    }
+
+    .logo img {
+      position: relative;
+      width: 92%;
+      max-height: 215px;
+      object-fit: contain;
+    }
+
+    .marca-texto {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .mini {
+      color: var(--dorado);
+      font-size: 12px;
+      letter-spacing: 3px;
+    }
+
+    .marca h1 {
+      margin: 15px 0;
+      color: var(--rosa-oscuro);
+      font: 400 clamp(42px, 6vw, 72px)/1.05 Georgia, serif;
+    }
+
+    .marca h1 span {
+      display: block;
+      margin-top: 12px;
+      font-size: .38em;
+      letter-spacing: .22em;
+    }
+
+    .frase-marca {
+      color: #9c5276;
+      font: italic clamp(18px, 2vw, 24px) Georgia, serif;
+    }
+
+    .adorno {
+      margin-top: 17px;
+      color: var(--dorado);
+      letter-spacing: 7px;
+    }
+
+    /* PRESENTACIÓN PRINCIPAL */
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      width: 92%;
+      max-width: 1200px;
+      margin: 25px auto 45px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      border: 1px solid var(--borde);
+      border-radius: 28px;
+      background: linear-gradient(120deg, #fff5fa, #ffe5f0, white);
+      box-shadow: 0 10px 30px #9a39670c;
+    }
+
+    .hero-texto {
+      align-self: center;
+      padding: clamp(25px, 5vw, 60px);
+    }
+
+    .eyebrow {
+      color: var(--dorado);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .hero h2 {
+      margin: 16px 0;
+      color: var(--rosa-oscuro);
+      font: 400 clamp(30px, 4vw, 48px)/1.15 Georgia, serif;
+    }
+
+    .hero p {
+      line-height: 1.8;
+    }
+
+    .boton {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 13px 24px;
+      border-radius: 30px;
+      background: var(--rosa);
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background .2s, transform .2s;
+    }
+
+    .boton:hover {
+      background: var(--rosa-oscuro);
+      transform: translateY(-2px);
+    }
+
+    .hero-imagen {
+      display: block;
+      position: relative;
+      min-height: 390px;
+      overflow: hidden;
+      background: #f9dce9;
+      text-decoration: none;
+    }
+
+    .hero-imagen img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 390px;
+      object-fit: cover;
+      object-position: center 35%;
+      transition: transform .4s;
+    }
+
+    .hero-imagen:hover img {
+      transform: scale(1.025);
+    }
+
+    .etiqueta-imagen {
+      position: absolute;
+      right: 15px;
+      bottom: 15px;
+      left: 15px;
+      padding: 13px;
+      border: 1px solid #ffffffb0;
+      border-radius: 15px;
+      background: #fffaf0d9;
+      color: var(--rosa-oscuro);
+      text-align: center;
+      font: italic 20px Georgia, serif;
+    }
+
+    /* SECCIÓN UN MUNDO CREADO PARA TI */
+
+    .conocenos {
+      position: relative;
+      z-index: 1;
+      width: 92%;
+      max-width: 1200px;
+      min-height: 290px;
+      margin: 40px auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      border: 1px solid var(--borde);
+      border-radius: 27px;
+      background: linear-gradient(135deg, #fce5ef, #fffafd);
+    }
+
+    .conocenos-imagen {
+      min-height: 290px;
+      display: grid;
+      place-items: center;
+      padding: 25px;
+      background:
+        radial-gradient(circle at 50% 40%, #ffffff 0, #fff8fb 35%, transparent 70%),
+        linear-gradient(135deg, #f9d7e7, #fff1f7);
+    }
+
+    .conocenos-imagen img {
+      display: block;
+      width: 100%;
+      max-height: 260px;
+      object-fit: contain;
+      border-radius: 18px;
+    }
+
+    .conocenos-imagen .imagen-fallback {
+      text-align: center;
+      color: var(--rosa-oscuro);
+      font-family: Georgia, serif;
+    }
+
+    .imagen-fallback .alas {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 42px;
+    }
+
+    .imagen-fallback strong {
+      display: block;
+      font-size: clamp(25px, 3vw, 39px);
+      font-weight: normal;
+    }
+
+    .imagen-fallback span {
+      display: block;
+      margin-top: 12px;
+      color: #9c5276;
+      font-size: 16px;
+      font-style: italic;
+    }
+
+    .conocenos-texto {
+      align-self: center;
+      padding: clamp(25px, 4vw, 50px);
+    }
+
+    .conocenos h2 {
+      margin: 13px 0;
+      color: var(--rosa-oscuro);
+      font: 400 clamp(28px, 3.5vw, 42px)/1.2 Georgia, serif;
+    }
+
+    .conocenos p {
+      line-height: 1.8;
+    }
+
+    /* CONTACTO WHATSAPP */
+
+    .contacto {
+      position: relative;
+      z-index: 1;
+      width: 92%;
+      max-width: 1200px;
+      min-height: 230px;
+      margin: 40px auto;
+      padding: clamp(25px, 5vw, 48px);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 20px;
+      border: 1px solid var(--borde);
+      border-radius: 27px;
+      background:
+        radial-gradient(circle at 90% 20%, #fff 0, transparent 30%),
+        linear-gradient(120deg, #f7d9e7, #fff3f8);
+    }
+
+    .contacto h2 {
+      margin: 12px 0;
+      color: var(--rosa-oscuro);
+      font: 400 clamp(28px, 4vw, 43px) Georgia, serif;
+    }
+
+    .contacto p {
+      line-height: 1.8;
+    }
+
+    .contacto-decoracion {
+      text-align: center;
+      color: var(--rosa-oscuro);
+    }
+
+    .contacto-decoracion .telefono {
+      width: 100px;
+      height: 100px;
+      margin: auto;
+      display: grid;
+      place-items: center;
+      border: 1px solid #e9b5ce;
+      border-radius: 50%;
+      background: #fffafd;
+      font-size: 44px;
+      box-shadow: 0 8px 22px #d85b9120;
+    }
+
+    .contacto-decoracion p {
+      font-family: Georgia, serif;
+      font-style: italic;
+    }
+
+    /* BARRA INFERIOR FIJA */
+
+    .menu-inferior {
+      position: fixed;
+      z-index: 1000;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 5px;
+      padding: 10px 5px calc(10px + env(safe-area-inset-bottom));
+      border-top: 1px solid var(--borde);
+      background: #fffafc;
+      box-shadow: 0 -5px 20px #d85b9118;
+    }
+
+    .menu-inferior a {
+      min-width: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      color: var(--rosa-oscuro);
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    .menu-inferior a:hover {
+      color: var(--rosa);
+    }
+
+    .icono {
+      font-size: 23px;
+    }
+
+    /* LOGO ANTERIOR AL FINAL */
+
+    .logo-final {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 95px;
+      height: 95px;
+      margin: 28px auto 8px;
+      object-fit: contain;
+      opacity: .8;
+    }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      padding: 10px 20px 25px;
+      color: #87556f;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 750px) {
+      .menu {
+        gap: 3px;
+      }
+
+      .menu a {
+        padding: 8px 9px;
+        font-size: 12px;
+      }
+
+      .marca {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .logo {
+        min-height: 170px;
+      }
+
+      .logo img {
+        max-height: 155px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-imagen {
+        grid-row: 1;
+        min-height: 300px;
+      }
+
+      .hero-imagen img {
+        min-height: 300px;
+        max-height: 440px;
+      }
+
+      .hero-texto {
+        padding: 28px;
+      }
+
+      .conocenos {
+        grid-template-columns: 1fr;
+      }
+
+      .conocenos-imagen {
+        min-height: 220px;
+      }
+
+      .conocenos-imagen img {
+        max-height: 220px;
+      }
+
+      .contacto {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .contacto-decoracion .telefono {
+        width: 78px;
+        height: 78px;
+        font-size: 35px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .menu {
+        width: 96%;
+      }
+
+      .buscador {
+        width: 94%;
+      }
+
+      .buscador button {
+        padding: 10px 12px;
+      }
+
+      .hero,
+      .marca,
+      .conocenos,
+      .contacto {
+        width: 94%;
+      }
+
+      .hero-imagen,
+      .hero-imagen img {
+        min-height: 255px;
+      }
+
+      .menu-inferior a {
+        min-width: 0;
+        font-size: 11px;
+      }
+
+      .icono {
+        font-size: 22px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ESTRELLAS -->
-<div class="estrellas" aria-hidden="true">
-  <span class="estrella estrella1">✦</span>
-  <span class="estrella estrella2">✧</span>
-  <span class="estrella estrella3">✦</span>
-  <span class="estrella estrella4">✧</span>
-</div>
-
-<!-- MENÚ -->
-<nav class="menu" aria-label="Menú principal">
-  <a href="index.html">Inicio</a>
-  <a href="moda.html">Moda</a>
-  <a href="belleza.html">Belleza</a>
-  <a href="skincare.html">Skin care</a>
-  <a href="accesorios.html">Accesorios</a>
-  <a href="sobre-nosotros.html">Sobre nosotros</a>
-  <a href="#contactanos">Contáctanos</a>
-</nav>
-
-<!-- BUSCADOR PEQUEÑO ARRIBA -->
-<section class="buscador-superior">
-  <form id="formularioBusqueda">
-    <span class="lupa">⌕</span>
-    <input
-      type="search"
-      id="buscarProducto"
-      placeholder="Buscar categoría o producto..."
-      aria-label="Buscar categoría o producto"
-      autocomplete="off"
-    >
-    <button type="submit">Buscar</button>
-  </form>
-  <p id="resultadoBusqueda" aria-live="polite"></p>
-</section>
-
-<!-- LOGO Y NOMBRE -->
-<section class="marca" id="inicio">
-
-  <div class="logo">
-    <img
-      src="./imagenes/indexhtml/Screenshot_2026-10-16-13-00-40-119_com.whatsapp-edit.jpg"
-      alt="Logo de Angel's Fashion World"
-      onerror="this.style.display='none'"
-    >
+  <div class="estrellas" aria-hidden="true">
+    <span class="estrella estrella1">✦</span>
+    <span class="estrella estrella2">✧</span>
+    <span class="estrella estrella3">✦</span>
+    <span class="estrella estrella4">✧</span>
   </div>
 
-  <div class="marca-texto">
-    <div class="mini">✧ TU BELLEZA, TU ESENCIA ✧</div>
+  <!-- MENÚ SUPERIOR -->
+  <nav class="menu" aria-label="Menú principal">
+    <a class="activo" href="index.html">Inicio</a>
+    <a href="categorias.html">Tienda</a>
+    <a href="sobre-nosotros.html">Sobre nosotros</a>
+    <a href="#contactanos">Contáctanos</a>
+  </nav>
 
-    <h1>
-      Angel's
-      <span>FASHION WORLD</span>
-    </h1>
+  <!-- EL BUSCADOR DE INICIO SE CONSERVA -->
+  <section class="buscador">
+    <form id="formularioBusqueda">
+      <span class="lupa">⌕</span>
+      <input
+        type="search"
+        id="buscarProducto"
+        placeholder="Buscar categoría o producto..."
+        aria-label="Buscar categoría o producto"
+      >
+      <button type="submit">Buscar</button>
+    </form>
+    <p class="mensaje-busqueda" id="mensajeBusqueda" aria-live="polite"></p>
+  </section>
 
-    <p class="tagline">Un mundo creado para ti.</p>
-
-    <div class="dorado">✧ ✦ ✧</div>
-  </div>
-
-</section>
-
-<!-- PRESENTACIÓN: CONSERVAMOS LA MUCHACHA -->
-<header class="hero">
-
-  <div class="hero-copy">
-    <div class="eyebrow">Bienvenida a tu espacio</div>
-
-    <h2>Descubre tu próxima versión favorita.</h2>
-
-    <p>
-      Encuentra prendas, accesorios y productos de belleza
-      para acompañarte en cada ocasión.
-    </p>
-
-    <a class="boton" href="#categorias">
-      Explorar la tienda ✦
-    </a>
-  </div>
-
-  <div class="hero-foto">
-    <img
-      src="./imagenes/indexhtml/Screenshot_2026-10-13-17-22-18-506_com.miui.gallery-edit.jpg"
-      alt="Imagen de presentación de Angel's Fashion World"
-    >
-
-    <div class="frase-foto">
-      Tu estilo, tu esencia ♡
+  <!-- LOGO Y NOMBRE -->
+  <section class="marca">
+    <div class="logo">
+      <img
+        src="./imagenes/indexhtml/Screenshot_2026-10-16-13-00-40-119_com.whatsapp-edit.jpg"
+        alt="Logo de Angel's Fashion World"
+        onerror="this.style.display='none'"
+      >
     </div>
-  </div>
 
-</header>
+    <div class="marca-texto">
+      <div class="mini">✧ TU BELLEZA, TU ESENCIA ✧</div>
+      <h1>Angel's <span>FASHION WORLD</span></h1>
+      <p class="frase-marca">Un mundo creado para ti.</p>
+      <div class="adorno">✧ ✦ ✧</div>
+    </div>
+  </section>
 
-<!-- CATEGORÍAS -->
-<section class="titulo" id="categorias">
-  <h2>Explora nuestras categorías <span style="color:var(--gold)">✦</span></h2>
-  <p>Encuentra tus favoritos en Angel's Fashion World.</p>
-</section>
+  <!-- PORTADA: LA IMAGEN ABRE CATEGORIAS.HTML -->
+  <section class="hero">
 
-<main class="categorias">
+    <div class="hero-texto">
+      <div class="eyebrow">Bienvenida a tu espacio</div>
+      <h2>Descubre tu próxima versión favorita.</h2>
+      <p>
+        Explora prendas, belleza y accesorios elegidos para
+        acompañarte y expresar tu estilo en cada ocasión.
+      </p>
+      <a class="boton" href="categorias.html">Explorar tienda ✦</a>
+    </div>
 
-  <a href="moda.html" class="categoria">
-    <div class="emoji">👗</div>
-    <h3>Moda</h3>
-    <p>Prendas para expresar tu estilo en cada ocasión.</p>
-    <span class="explorar">Explorar moda ↗</span>
-  </a>
+    <a
+      class="hero-imagen"
+      href="categorias.html"
+      aria-label="Entrar a la tienda y ver las categorías"
+    >
+      <img
+        src="./imagenes/indexhtml/Screenshot_2026-10-13-17-22-18-506_com.miui.gallery-edit.jpg"
+        alt="Imagen principal de Angel's Fashion World"
+      >
+      <span class="etiqueta-imagen">Descubre tu estilo ♡ · Entrar a la tienda</span>
+    </a>
 
-  <a href="belleza.html" class="categoria">
-    <div class="emoji">💄</div>
-    <h3>Belleza</h3>
-    <p>Maquillaje, perfumes y productos para uñas.</p>
-    <span class="explorar">Explorar belleza ↗</span>
-  </a>
+  </section>
 
-  <a href="skincare.html" class="categoria">
-    <div class="emoji">🧴</div>
-    <h3>Skin care</h3>
-    <p>Cuidado para tu cara, cabello y cuidado personal.</p>
-    <span class="explorar">Explorar Skin care ↗</span>
-  </a>
+  <!-- UN MUNDO CREADO PARA TI + CONÓCENOS -->
+  <section class="conocenos">
 
-  <a href="accesorios.html" class="categoria">
-    <div class="emoji">👜</div>
-    <h3>Accesorios</h3>
-    <p>Detalles especiales que completan tu look.</p>
-    <span class="explorar">Explorar accesorios ↗</span>
-  </a>
+    <div class="conocenos-imagen">
+      <div class="imagen-fallback">
+        <span class="alas">🪽 ✦</span>
+        <strong>Un mundo<br>creado para ti</strong>
+        <span>Tu estilo, tu esencia.</span>
+      </div>
+    </div>
 
-</main>
+    <div class="conocenos-texto">
+      <div class="eyebrow">Nuestra esencia</div>
+      <h2>Un mundo creado para ti.</h2>
+      <p>
+        Cada detalle cuenta. Queremos acompañarte a descubrir
+        tus favoritos de moda, belleza, skin care y accesorios.
+      </p>
+      <a class="boton" href="sobre-nosotros.html">Conócenos ♡</a>
+    </div>
 
-<!-- BENEFICIOS -->
-<section class="beneficios">
+  </section>
 
-  <div class="beneficio">
-    <strong>♡ Atención cercana</strong>
-    <span>Estamos aquí para ayudarte.</span>
-  </div>
+  <!-- INVITACIÓN VISUAL A WHATSAPP -->
+  <section class="contacto" id="contactanos">
 
-  <div class="beneficio">
-    <strong>✦ Explora tus favoritos</strong>
-    <span>Moda, belleza y mucho más.</span>
-  </div>
+    <div>
+      <div class="eyebrow">Estamos para ayudarte</div>
+      <h2>¡Hablemos! ♡</h2>
+      <p>
+        ¿Tienes alguna pregunta o necesitas ayuda con tu pedido?
+        Escríbenos y conversemos.
+      </p>
 
-  <div class="beneficio">
-    <strong>♡ Compra con tranquilidad</strong>
-    <span>Revisa tus productos antes de confirmar.</span>
-  </div>
+      <a
+        class="boton"
+        href="https://wa.me/573170948192"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Hablemos por WhatsApp ♡
+      </a>
+    </div>
 
-</section>
+    <div class="contacto-decoracion" aria-hidden="true">
+      <div class="telefono">♡</div>
+      <p>Un mensaje nos acerca.</p>
+      <span style="color:var(--dorado)">✧ ✦ ✧</span>
+    </div>
 
-<!-- SOBRE NOSOTROS -->
-<section class="sobre" id="sobre-nosotros">
-  <div style="font-size:32px;color:var(--gold)">🪽 ✦</div>
+  </section>
 
-  <h2>Un mundo creado para ti.</h2>
-
-  <p>
-    En Angel's Fashion World creemos que cada detalle cuenta.
-    Queremos acompañarte con opciones de moda, belleza,
-    skin care y accesorios para que encuentres tus favoritos.
-  </p>
-
-  <p class="dorado">✧ ✦ ✧</p>
-
-  <a class="boton" href="sobre-nosotros.html">Conócenos</a>
-</section>
-
-<!-- CONTACTO -->
-<section class="contacto" id="contactanos">
-  <h2>¿Hablamos? 💗</h2>
-
-  <p>
-    ¿Tienes preguntas sobre nuestros productos o quieres
-    hacer un pedido? Escríbenos.
-  </p>
-
-  <a
-    class="whatsapp"
-    href="https://wa.me/573170948192"
-    target="_blank"
-    rel="noopener noreferrer"
+  <!-- LOGO ANTERIOR AL FINAL -->
+  <img
+    class="logo-final"
+    src="./imagenes/indexhtml/Screenshot_2026-10-13-17-18-15-611_com.miui.gallery~2.jpg"
+    alt="Logo de Angel's Fashion World"
+    onerror="this.style.display='none'"
   >
-    ♡ Escríbenos por WhatsApp
-  </a>
-</section>
 
-<!-- BARRA FIJA: SIEMPRE VISIBLE -->
-<nav class="menu-inferior" aria-label="Accesos rápidos">
+  <footer>
+    <strong>Angel's Fashion World</strong><br>
+    Moda · Belleza · Skin care · Accesorios<br>
+    <span style="color:var(--dorado)">✦ Hecho con cariño ✦</span>
+  </footer>
 
-  <a href="#buscarProducto" id="enlaceBuscar">
-    <span class="icono">⌕</span>
-    Buscar
-  </a>
+  <!-- BARRA INFERIOR FIJA -->
+  <nav class="menu-inferior" aria-label="Accesos rápidos">
 
-  <a href="pedido.html">
-    <span class="icono">♧</span>
-    Pedidos
-  </a>
+    <a href="#buscarProducto" id="enlaceBuscar">
+      <span class="icono">⌕</span>
+      Buscar
+    </a>
 
-  <a href="carrito.html">
-    <span class="icono">🛒</span>
-    Carrito
-  </a>
+    <a href="pedido.html">
+      <span class="icono">♧</span>
+      Pedidos
+    </a>
 
-  <a href="perfil.html">
-    <span class="icono">♙</span>
-    Mi perfil
-  </a>
+    <a href="carrito.html">
+      <span class="icono">🛒</span>
+      Carrito
+    </a>
 
-</nav>
+    <a href="perfil.html">
+      <span class="icono">♙</span>
+      Mi perfil
+    </a>
 
-<!-- LOGO ANTERIOR AL FINAL -->
-<img
-  class="logo-final"
-  src="./imagenes/indexhtml/Screenshot_2026-10-13-17-18-15-611_com.miui.gallery~2.jpg"
-  alt="Logo de Angel's Fashion World"
-  onerror="this.style.display='none'"
->
+  </nav>
 
-<footer>
-  <strong>Angel's Fashion World</strong><br>
-  Moda · Belleza · Skin care · Accesorios<br>
-  <span style="color:var(--gold)">✦ Hecho con cariño ✦</span>
-</footer>
+  <script>
+    const formulario = document.getElementById("formularioBusqueda");
+    const campo = document.getElementById("buscarProducto");
+    const mensaje = document.getElementById("mensajeBusqueda");
 
-<script>
-/*
-  Este buscador reconoce categorías y términos de productos.
-  Después se puede conectar a los catálogos para mostrar
-  directamente la tarjeta exacta de cada producto.
-*/
+    formulario.addEventListener("submit", function(evento) {
+      evento.preventDefault();
 
-const formularioBusqueda = document.getElementById("formularioBusqueda");
-const campoBusqueda = document.getElementById("buscarProducto");
-const resultadoBusqueda = document.getElementById("resultadoBusqueda");
+      const consulta = campo.value.trim();
 
-const categoriasBusqueda = [
-  {
-    nombre: "Moda",
-    archivo: "moda.html",
-    palabras: [
-      "moda", "ropa", "blusa", "blusas", "pantalon", "pantalones",
-      "jean", "jeans", "vestido", "vestidos", "conjunto", "conjuntos",
-      "falda", "faldas", "short", "shorts", "abrigo", "abrigos",
-      "calzado", "calzados", "tacon", "tacones", "bota", "botas",
-      "sandalia", "sandalias"
-    ]
-  },
-  {
-    nombre: "Belleza",
-    archivo: "belleza.html",
-    palabras: [
-      "belleza", "perfume", "perfumes", "maquillaje", "labial",
-      "labiales", "unas", "esmalte", "esmaltes", "cosmetico",
-      "cosmeticos"
-    ]
-  },
-  {
-    nombre: "Skin care",
-    archivo: "skincare.html",
-    palabras: [
-      "skin care", "skincare", "cuidado facial", "cara", "rostro",
-      "cabello", "pelo", "champu", "shampoo", "acondicionador",
-      "cuidado personal", "crema", "cremas"
-    ]
-  },
-  {
-    nombre: "Accesorios",
-    archivo: "accesorios.html",
-    palabras: [
-      "accesorio", "accesorios", "gorra", "gorras", "medias",
-      "cartera", "carteras", "gafas", "joyeria", "collar", "collares",
-      "arete", "aretes", "guantes", "correa", "correas",
-      "cabello", "hebilla", "hebillas"
-    ]
-  }
-];
+      if (!consulta) {
+        mensaje.textContent = "Escribe un producto o una categoría.";
+        campo.focus();
+        return;
+      }
 
-function normalizar(texto) {
-  return texto
-    .toLocaleLowerCase("es")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .trim();
-}
-
-formularioBusqueda.addEventListener("submit", function(evento) {
-  evento.preventDefault();
-
-  const consulta = normalizar(campoBusqueda.value);
-
-  if (!consulta) {
-    resultadoBusqueda.textContent =
-      "Escribe una categoría o el nombre de un producto.";
-    campoBusqueda.focus();
-    return;
-  }
-
-  const coincidencia = categoriasBusqueda.find(function(categoria) {
-    return categoria.palabras.some(function(palabra) {
-      return normalizar(palabra).includes(consulta) ||
-             consulta.includes(normalizar(palabra));
+      window.location.href =
+        "categorias.html?buscar=" + encodeURIComponent(consulta);
     });
-  });
 
-  if (coincidencia) {
-    resultadoBusqueda.textContent =
-      "Te llevamos a " + coincidencia.nombre + "...";
-
-    window.location.href =
-      coincidencia.archivo + "?buscar=" +
-      encodeURIComponent(campoBusqueda.value.trim());
-  } else {
-    resultadoBusqueda.textContent =
-      "No reconocemos esa búsqueda todavía. Prueba con Moda, blusas, vestidos, perfumes, Skin care o accesorios.";
-  }
-});
-
-/* EL BOTÓN INFERIOR LLEVA AL BUSCADOR */
-document.getElementById("enlaceBuscar").addEventListener("click", function() {
-  setTimeout(function() {
-    campoBusqueda.focus({ preventScroll: true });
-  }, 100);
-});
-</script>
+    document.getElementById("enlaceBuscar").addEventListener("click", function() {
+      setTimeout(function() {
+        campo.focus({ preventScroll: true });
+      }, 100);
+    });
+  </script>
 
 </body>
 </html>
