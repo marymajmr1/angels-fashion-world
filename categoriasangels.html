@@ -1,1 +1,593 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff1f7">
 
+    <title>Categorías | Angel's Fashion World</title>
+
+    <style>
+        :root {
+            --rosa: #d85b91;
+            --rosa-oscuro: #a52f68;
+            --rosa-claro: #fff1f7;
+            --texto: #68495a;
+            --texto-suave: #8b7180;
+            --dorado: #c8a96b;
+            --borde: #f1d5e1;
+            --fondo: #fffafd;
+            --blanco: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 95px;
+        }
+
+        body {
+            margin: 0;
+            padding-bottom: 85px;
+            color: var(--texto);
+            background:
+                radial-gradient(circle at top left, #ffe1ee, transparent 28%),
+                radial-gradient(circle at 90% 30%, #fff0f7, transparent 25%),
+                var(--fondo);
+            font-family: Arial, sans-serif;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        /* Menú superior */
+
+        .menu {
+            position: sticky;
+            top: 10px;
+            z-index: 10;
+            width: 94%;
+            max-width: 1200px;
+            margin: 14px auto;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+            border: 1px solid var(--borde);
+            border-radius: 20px;
+            background: #ffffffed;
+            box-shadow: 0 5px 20px #d85b9112;
+            backdrop-filter: blur(10px);
+        }
+
+        .menu a {
+            padding: 10px 14px;
+            border-radius: 25px;
+            color: var(--texto);
+            font-size: 13px;
+            text-decoration: none;
+            transition: background .2s, color .2s;
+        }
+
+        .menu a:hover,
+        .menu a.activo {
+            background: var(--rosa);
+            color: var(--blanco);
+        }
+
+        /* Portada */
+
+        .portada {
+            position: relative;
+            width: 92%;
+            max-width: 1200px;
+            min-height: 340px;
+            margin: 25px auto 35px;
+            padding: clamp(30px, 6vw, 70px);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            border: 1px solid var(--borde);
+            border-radius: 28px;
+            background:
+                linear-gradient(90deg, #fffafd 0%, #fffafde8 45%, #fffafda1 100%),
+                url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=85")
+                center 40% / cover no-repeat;
+            box-shadow: 0 10px 30px #9a39670c;
+        }
+
+        .portada-contenido {
+            max-width: 570px;
+        }
+
+        .mini {
+            color: var(--dorado);
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .portada h1 {
+            margin: 15px 0;
+            color: var(--rosa-oscuro);
+            font: 400 clamp(38px, 6vw, 66px)/1.08 Georgia, serif;
+        }
+
+        .portada p {
+            max-width: 480px;
+            margin: 0;
+            color: var(--texto);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        /* Atajos de categorías */
+
+        .atajos {
+            width: 92%;
+            max-width: 1200px;
+            margin: 0 auto 55px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .atajo {
+            padding: 15px 12px;
+            border: 1px solid var(--borde);
+            border-radius: 16px;
+            background: #ffffffdf;
+            color: var(--rosa-oscuro);
+            text-align: center;
+            text-decoration: none;
+            font-family: Georgia, serif;
+            font-size: 17px;
+            transition: transform .2s, box-shadow .2s;
+        }
+
+        .atajo:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px #d85b9118;
+        }
+
+        .atajo span {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--dorado);
+            font-size: 20px;
+        }
+
+        /* Encabezado de secciones */
+
+        .encabezado-seccion {
+            width: 92%;
+            max-width: 1200px;
+            margin: 0 auto 25px;
+            text-align: center;
+        }
+
+        .encabezado-seccion h2 {
+            margin: 10px 0;
+            color: var(--rosa-oscuro);
+            font: 400 clamp(29px, 4vw, 42px) Georgia, serif;
+        }
+
+        .encabezado-seccion p {
+            margin: 0;
+            color: var(--texto-suave);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* Tarjetas de categorías */
+
+        .categorias {
+            width: 92%;
+            max-width: 1200px;
+            margin: 0 auto 70px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .categoria {
+            min-height: 340px;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            border: 1px solid var(--borde);
+            border-radius: 23px;
+            background: #f7e7ee;
+            text-decoration: none;
+            isolation: isolate;
+        }
+
+        .categoria::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            inset: 0;
+            background: linear-gradient(
+                0deg,
+                rgba(55, 27, 41, .78) 0%,
+                rgba(55, 27, 41, .12) 72%,
+                rgba(55, 27, 41, .02) 100%
+            );
+        }
+
+        .categoria img {
+            position: absolute;
+            z-index: -2;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .45s ease;
+        }
+
+        .categoria:hover img {
+            transform: scale(1.045);
+        }
+
+        .categoria-texto {
+            width: 100%;
+            padding: 25px;
+            color: var(--blanco);
+        }
+
+        .categoria-texto .numero {
+            color: #f5dca8;
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        .categoria-texto h3 {
+            margin: 9px 0;
+            font: 400 clamp(28px, 4vw, 39px) Georgia, serif;
+        }
+
+        .categoria-texto p {
+            max-width: 420px;
+            margin: 0 0 15px;
+            color: #fffafc;
+            font-size: 13px;
+            line-height: 1.65;
+        }
+
+        .ver-categoria {
+            display: inline-block;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #f5dca8;
+            color: #fff;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Mensaje final */
+
+        .mensaje-final {
+            width: 92%;
+            max-width: 1200px;
+            margin: 0 auto 45px;
+            padding: 35px 25px;
+            border: 1px solid var(--borde);
+            border-radius: 23px;
+            background: linear-gradient(120deg, #fce5ef, #fffafd);
+            text-align: center;
+        }
+
+        .mensaje-final h2 {
+            margin: 0 0 12px;
+            color: var(--rosa-oscuro);
+            font: 400 clamp(26px, 4vw, 36px) Georgia, serif;
+        }
+
+        .mensaje-final p {
+            max-width: 650px;
+            margin: 0 auto;
+            color: var(--texto-suave);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .boton {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 13px 23px;
+            border-radius: 30px;
+            background: var(--rosa);
+            color: var(--blanco);
+            font-size: 13px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background .2s, transform .2s;
+        }
+
+        .boton:hover {
+            transform: translateY(-2px);
+            background: var(--rosa-oscuro);
+        }
+
+        /* Pie de página */
+
+        footer {
+            padding: 10px 20px 25px;
+            color: #87556f;
+            text-align: center;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        footer strong {
+            color: var(--rosa-oscuro);
+        }
+
+        footer .adorno {
+            color: var(--dorado);
+        }
+
+        /* Barra inferior fija */
+
+        .menu-inferior {
+            position: fixed;
+            z-index: 20;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 5px;
+            padding: 10px 5px calc(10px + env(safe-area-inset-bottom));
+            border-top: 1px solid var(--borde);
+            background: #fffafc;
+            box-shadow: 0 -5px 20px #d85b9118;
+        }
+
+        .menu-inferior a {
+            min-width: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            color: var(--rosa-oscuro);
+            font-size: 11px;
+            text-decoration: none;
+        }
+
+        .menu-inferior a:hover {
+            color: var(--rosa);
+        }
+
+        .icono {
+            font-size: 22px;
+        }
+
+        @media (max-width: 700px) {
+            .portada {
+                min-height: 300px;
+                background-position: 60% center;
+            }
+
+            .atajos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .categorias {
+                gap: 14px;
+            }
+
+            .categoria {
+                min-height: 300px;
+            }
+
+            .categoria-texto {
+                padding: 19px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu {
+                width: 96%;
+                gap: 2px;
+            }
+
+            .menu a {
+                padding: 9px 10px;
+                font-size: 12px;
+            }
+
+            .portada,
+            .categorias,
+            .atajos,
+            .encabezado-seccion,
+            .mensaje-final {
+                width: 94%;
+            }
+
+            .portada {
+                min-height: 280px;
+                padding: 25px;
+                background-position: 63% center;
+            }
+
+            .portada p {
+                font-size: 14px;
+            }
+
+            .categorias {
+                grid-template-columns: 1fr;
+            }
+
+            .categoria {
+                min-height: 300px;
+            }
+
+            .atajo {
+                font-size: 15px;
+            }
+
+            .menu-inferior a {
+                min-width: 0;
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="menu" aria-label="Menú principal">
+        <a href="index.html">Inicio</a>
+        <a class="activo" href="categoriasangels.html">Tienda</a>
+        <a href="sobre-nosotros.html">Sobre nosotros</a>
+        <a href="index.html#contactanos">Contáctanos</a>
+    </nav>
+
+    <header class="portada">
+        <div class="portada-contenido">
+            <div class="mini">✧ Angel's Fashion World ✧</div>
+            <h1>Encuentra lo que va contigo</h1>
+            <p>
+                Explora nuestras categorías y descubre tus favoritos de moda,
+                belleza, skincare y accesorios.
+            </p>
+        </div>
+    </header>
+
+    <nav class="atajos" aria-label="Categorías de la tienda">
+        <a class="atajo" href="#moda"><span>✧</span>Moda</a>
+        <a class="atajo" href="#belleza"><span>♡</span>Belleza</a>
+        <a class="atajo" href="#skincare"><span>❀</span>Skincare</a>
+        <a class="atajo" href="#accesorios"><span>✦</span>Accesorios</a>
+    </nav>
+
+    <section class="encabezado-seccion">
+        <div class="mini">Nuestra selección</div>
+        <h2>Explora las categorías</h2>
+        <p>Todo lo que necesitas para expresar tu estilo y cuidar de ti.</p>
+    </section>
+
+    <main class="categorias">
+
+        <a class="categoria" id="moda" href="index.html#contactanos">
+            <img
+                src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=85"
+                alt="Mujeres disfrutando de la moda"
+            >
+            <div class="categoria-texto">
+                <span class="numero">01 · TU ESTILO</span>
+                <h3>Moda</h3>
+                <p>
+                    Prendas para acompañarte en tus días especiales y en cada
+                    momento cotidiano.
+                </p>
+                <span class="ver-categoria">Consultar colección →</span>
+            </div>
+        </a>
+
+        <a class="categoria" id="belleza" href="index.html#contactanos">
+            <img
+                src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1000&q=85"
+                alt="Productos y accesorios de belleza"
+            >
+            <div class="categoria-texto">
+                <span class="numero">02 · TU BRILLO</span>
+                <h3>Belleza</h3>
+                <p>
+                    Encuentra detalles para crear looks que reflejen tu
+                    personalidad y tu esencia.
+                </p>
+                <span class="ver-categoria">Consultar colección →</span>
+            </div>
+        </a>
+
+        <a class="categoria" id="skincare" href="index.html#contactanos">
+            <img
+                src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=1000&q=85"
+                alt="Productos para el cuidado de la piel"
+            >
+            <div class="categoria-texto">
+                <span class="numero">03 · TU MOMENTO</span>
+                <h3>Skincare</h3>
+                <p>
+                    Haz del cuidado de tu piel un momento especial de bienestar
+                    y amor propio.
+                </p>
+                <span class="ver-categoria">Consultar colección →</span>
+            </div>
+        </a>
+
+        <a class="categoria" id="accesorios" href="index.html#contactanos">
+            <img
+                src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1000&q=85"
+                alt="Accesorios y joyería"
+            >
+            <div class="categoria-texto">
+                <span class="numero">04 · EL DETALLE FINAL</span>
+                <h3>Accesorios</h3>
+                <p>
+                    Complementos delicados para darle un toque único a cada
+                    uno de tus looks.
+                </p>
+                <span class="ver-categoria">Consultar colección →</span>
+            </div>
+        </a>
+
+    </main>
+
+    <section class="mensaje-final">
+        <h2>¿Buscas algo especial? ♡</h2>
+        <p>
+            Escríbenos para conocer la disponibilidad de nuestros productos.
+            Estaremos felices de ayudarte a encontrar tus favoritos.
+        </p>
+        <a
+            class="boton"
+            href="https://wa.me/573170948192"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Consultar por WhatsApp
+        </a>
+    </section>
+
+    <footer>
+        <strong>Angel's Fashion World</strong><br>
+        Moda · Belleza · Skincare · Accesorios<br>
+        <span class="adorno">✦ Hecho con cariño ✦</span>
+    </footer>
+
+    <nav class="menu-inferior" aria-label="Accesos rápidos">
+        <a href="index.html">
+            <span class="icono">⌂</span>
+            Inicio
+        </a>
+
+        <a href="#moda">
+            <span class="icono">✧</span>
+            Moda
+        </a>
+
+        <a href="#skincare">
+            <span class="icono">❀</span>
+            Skincare
+        </a>
+
+        <a href="index.html#contactanos">
+            <span class="icono">♡</span>
+            Contacto
+        </a>
+    </nav>
+
+</body>
+</html>
