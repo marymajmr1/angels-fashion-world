@@ -99,7 +99,7 @@
       color: white;
     }
 
-    /* BUSCADOR */
+    /* BUSCADOR DE INICIO */
 
     .buscador {
       position: relative;
@@ -325,73 +325,7 @@
       font: italic 20px Georgia, serif;
     }
 
-    /* CATEGORÍAS */
-
-    .categorias {
-      position: relative;
-      z-index: 1;
-      width: 92%;
-      max-width: 1200px;
-      margin: 45px auto;
-    }
-
-    .categorias-titulo {
-      margin: 0 0 10px;
-      text-align: center;
-      color: var(--rosa-oscuro);
-      font: 400 clamp(30px, 4vw, 42px)/1.2 Georgia, serif;
-    }
-
-    .categorias-descripcion {
-      margin: 0 auto 25px;
-      text-align: center;
-      color: #9c5276;
-      line-height: 1.8;
-    }
-
-    .categorias-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .categoria-card {
-      display: block;
-      min-width: 0;
-      overflow: hidden;
-      border: 1px solid var(--borde);
-      border-radius: 22px;
-      background: white;
-      box-shadow: 0 6px 20px #d85b9112;
-      text-decoration: none;
-      transition: transform .25s, box-shadow .25s;
-    }
-
-    .categoria-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 24px #d85b9124;
-    }
-
-    .categoria-card img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      background: linear-gradient(135deg, #ffe6f0, white, #fbe6ef);
-    }
-
-    .categoria-nombre {
-      padding: 14px 6px;
-      text-align: center;
-      color: var(--rosa-oscuro);
-      font: 400 19px Georgia, serif;
-    }
-
-    .categoria-nombre span {
-      color: var(--dorado);
-    }
-
-    /* UN MUNDO CREADO PARA TI */
+    /* SECCIÓN UN MUNDO CREADO PARA TI */
 
     .conocenos {
       position: relative;
@@ -467,28 +401,31 @@
       line-height: 1.8;
     }
 
-    /* CONTACTO */
+    /* CONTACTO WHATSAPP */
 
     .contacto {
       position: relative;
       z-index: 1;
       width: 92%;
       max-width: 1200px;
+      min-height: 230px;
       margin: 40px auto;
-      padding: clamp(25px, 5vw, 50px);
+      padding: clamp(25px, 5vw, 48px);
       display: grid;
-      grid-template-columns: 1.2fr .8fr;
+      grid-template-columns: 1fr auto;
       align-items: center;
-      gap: 30px;
+      gap: 20px;
       border: 1px solid var(--borde);
       border-radius: 27px;
-      background: linear-gradient(120deg, #fff4f9, #ffe7f1, white);
+      background:
+        radial-gradient(circle at 90% 20%, #fff 0, transparent 30%),
+        linear-gradient(120deg, #f7d9e7, #fff3f8);
     }
 
     .contacto h2 {
-      margin: 13px 0;
+      margin: 12px 0;
       color: var(--rosa-oscuro);
-      font: 400 clamp(28px, 3.5vw, 42px)/1.2 Georgia, serif;
+      font: 400 clamp(28px, 4vw, 43px) Georgia, serif;
     }
 
     .contacto p {
@@ -518,7 +455,7 @@
       font-style: italic;
     }
 
-    /* BARRA INFERIOR */
+    /* BARRA INFERIOR FIJA */
 
     .menu-inferior {
       position: fixed;
@@ -555,7 +492,7 @@
       font-size: 23px;
     }
 
-    /* LOGO INFERIOR */
+    /* LOGO ANTERIOR AL FINAL */
 
     .logo-final {
       position: relative;
@@ -578,19 +515,7 @@
       line-height: 1.8;
     }
 
-    /* DISEÑO PARA CELULARES */
-
     @media (max-width: 750px) {
-      .categorias-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 13px;
-      }
-
-      .categoria-nombre {
-        font-size: 17px;
-        padding: 12px 5px;
-      }
-
       .menu {
         gap: 3px;
       }
@@ -694,7 +619,6 @@
 
 <body>
 
-  <!-- ESTRELLAS DECORATIVAS -->
   <div class="estrellas" aria-hidden="true">
     <span class="estrella estrella1">✦</span>
     <span class="estrella estrella2">✧</span>
@@ -710,7 +634,7 @@
     <a href="#contactanos">Contáctanos</a>
   </nav>
 
-  <!-- BUSCADOR -->
+  <!-- EL BUSCADOR DE INICIO SE CONSERVA -->
   <section class="buscador">
     <form id="formularioBusqueda">
       <span class="lupa">⌕</span>
@@ -743,8 +667,9 @@
     </div>
   </section>
 
-  <!-- PORTADA -->
+  <!-- PORTADA: LA IMAGEN ABRE CATEGORIAS.HTML -->
   <section class="hero">
+
     <div class="hero-texto">
       <div class="eyebrow">Bienvenida a tu espacio</div>
       <h2>Descubre tu próxima versión favorita.</h2>
@@ -766,45 +691,12 @@
       >
       <span class="etiqueta-imagen">Descubre tu estilo ♡ · Entrar a la tienda</span>
     </a>
-  </section>
 
-  <!-- CATEGORÍAS PRINCIPALES -->
-  <section class="categorias" id="categorias">
-    <h2 class="categorias-titulo">
-      Descubre tu estilo <span style="color:var(--dorado)">✦</span>
-    </h2>
-
-    <p class="categorias-descripcion">
-      Encuentra tus favoritos y enamórate de cada detalle ♡
-    </p>
-
-    <div class="categorias-grid">
-
-      <a href="moda.html" class="categoria-card">
-        <img src="imagenes/moda.jpg" alt="Moda">
-        <div class="categoria-nombre">Moda <span>♡</span></div>
-      </a>
-
-      <a href="belleza.html" class="categoria-card">
-        <img src="imagenes/belleza.jpg" alt="Belleza">
-        <div class="categoria-nombre">Belleza <span>♡</span></div>
-      </a>
-
-      <a href="skincare.html" class="categoria-card">
-        <img src="imagenes/skincare.jpg" alt="Skin care">
-        <div class="categoria-nombre">Skin care <span>♡</span></div>
-      </a>
-
-      <a href="accesorios.html" class="categoria-card">
-        <img src="imagenes/accesorios.jpg" alt="Accesorios">
-        <div class="categoria-nombre">Accesorios <span>♡</span></div>
-      </a>
-
-    </div>
   </section>
 
   <!-- UN MUNDO CREADO PARA TI + CONÓCENOS -->
   <section class="conocenos">
+
     <div class="conocenos-imagen">
       <div class="imagen-fallback">
         <span class="alas">🪽 ✦</span>
@@ -822,10 +714,12 @@
       </p>
       <a class="boton" href="sobre-nosotros.html">Conócenos ♡</a>
     </div>
+
   </section>
 
-  <!-- CONTACTO WHATSAPP -->
+  <!-- INVITACIÓN VISUAL A WHATSAPP -->
   <section class="contacto" id="contactanos">
+
     <div>
       <div class="eyebrow">Estamos para ayudarte</div>
       <h2>¡Hablemos! ♡</h2>
@@ -849,9 +743,10 @@
       <p>Un mensaje nos acerca.</p>
       <span style="color:var(--dorado)">✧ ✦ ✧</span>
     </div>
+
   </section>
 
-  <!-- LOGO INFERIOR -->
+  <!-- LOGO ANTERIOR AL FINAL -->
   <img
     class="logo-final"
     src="./imagenes/indexhtml/Screenshot_2026-10-13-17-18-15-611_com.miui.gallery~2.jpg"
@@ -859,7 +754,6 @@
     onerror="this.style.display='none'"
   >
 
-  <!-- PIE DE PÁGINA -->
   <footer>
     <strong>Angel's Fashion World</strong><br>
     Moda · Belleza · Skin care · Accesorios<br>
