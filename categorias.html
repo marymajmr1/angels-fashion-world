@@ -7,11 +7,6 @@
   <meta name="theme-color" content="#fff1f7">
   <title>Categorías | Angel's Fashion World</title>
 
-  <!-- TIPOGRAFÍAS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
-
   <style>
     :root {
       --rosa: #d85b91;
@@ -33,7 +28,7 @@
     body {
       margin: 0;
       padding-bottom: 90px;
-      font-family: 'DM Sans', Arial, sans-serif;
+      font-family: Arial, sans-serif;
       color: var(--texto);
       background:
         radial-gradient(circle at top left, #ffe1ee, transparent 28%),
@@ -44,6 +39,8 @@
     a {
       color: inherit;
     }
+
+    /* ESTRELLAS DECORATIVAS */
 
     .estrellas {
       position: fixed;
@@ -93,7 +90,6 @@
       border-radius: 25px;
       font-size: 13px;
       text-decoration: none;
-      transition: background .2s, color .2s;
     }
 
     .menu a:hover,
@@ -126,18 +122,13 @@
     .marca h1 {
       margin: 12px 0;
       color: var(--rosa-oscuro);
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(34px, 5vw, 55px);
-      font-weight: 600;
-      line-height: 1.2;
+      font: 400 clamp(34px, 5vw, 55px) Georgia, serif;
     }
 
     .marca p {
       margin-bottom: 0;
       color: #9c5276;
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 18px;
-      font-style: italic;
+      font: italic 18px Georgia, serif;
     }
 
     /* BUSCADOR */
@@ -146,7 +137,7 @@
       position: relative;
       z-index: 2;
       width: 92%;
-      max-width: 620px;
+      max-width: 700px;
       margin: 25px auto;
     }
 
@@ -174,35 +165,69 @@
       outline: none;
       color: var(--texto);
       background: transparent;
-      font-family: 'DM Sans', Arial, sans-serif;
       font-size: 14px;
     }
 
     .buscador button {
-      padding: 11px 15px;
+      padding: 11px 18px;
       border: 0;
       border-radius: 25px;
       background: var(--rosa);
       color: white;
-      font-family: 'DM Sans', Arial, sans-serif;
-      font-weight: 700;
       cursor: pointer;
+      font-weight: bold;
+    }
+
+    .buscador button:hover {
+      background: var(--rosa-oscuro);
     }
 
     .resultado {
-      min-height: 20px;
-      margin: 12px 5px;
+      margin: 15px 5px;
       text-align: center;
       font-size: 14px;
       line-height: 1.7;
     }
 
-    .resultado a {
-      color: var(--rosa-oscuro);
-      font-weight: 700;
+    .resultados-productos {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 15px;
     }
 
-    /* TÍTULO DE LA SECCIÓN */
+    .resultado-producto {
+      padding: 14px;
+      border: 1px solid var(--borde);
+      border-radius: 17px;
+      background: white;
+      text-align: left;
+    }
+
+    .resultado-producto strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--rosa-oscuro);
+    }
+
+    .resultado-producto span {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+
+    .resultado-producto a {
+      display: inline-block;
+      padding: 8px 13px;
+      border-radius: 20px;
+      background: var(--rosa);
+      color: white;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    /* TÍTULO DE CATEGORÍAS */
 
     .titulo {
       position: relative;
@@ -214,10 +239,7 @@
     .titulo h2 {
       margin-bottom: 10px;
       color: var(--rosa-oscuro);
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(30px, 4vw, 43px);
-      font-weight: 600;
-      line-height: 1.3;
+      font: 400 clamp(30px, 4vw, 43px) Georgia, serif;
     }
 
     .titulo p {
@@ -276,39 +298,37 @@
       padding: 20px;
     }
 
-    /* ESTA ES LA TIPOGRAFÍA NUEVA DE LAS CUATRO CATEGORÍAS */
-
-    .categoria .categoria-texto h3 {
-      margin: 0 0 14px;
-      color: #c74783;
-      font-family: 'Playfair Display', Georgia, serif !important;
-      font-size: 32px !important;
-      font-weight: 700;
-      font-style: italic;
-      letter-spacing: 1px;
-      line-height: 1.3;
-      text-shadow: 1px 2px 5px #d85b911c;
+    .categoria h3 {
+      margin: 0 0 10px;
+      color: var(--rosa-oscuro);
+      font: 400 28px Georgia, serif;
     }
 
-    .categoria .categoria-texto p {
+    .categoria p {
       min-height: 45px;
-      margin: 0 0 21px;
-      color: #68495a;
-      font-family: 'DM Sans', Arial, sans-serif !important;
-      font-size: 15px !important;
-      font-weight: 500;
-      line-height: 1.9;
-      letter-spacing: .2px;
+      font-size: 14px;
+      line-height: 1.7;
     }
+
+    /* BOTÓN ROSA EXPLORAR ✦ */
 
     .explorar {
       display: inline-block;
-      margin-top: 5px;
-      color: var(--rosa-oscuro);
-      font-family: 'DM Sans', Arial, sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: .5px;
+      margin-top: 8px;
+      padding: 11px 19px;
+      border: 1px solid var(--rosa);
+      border-radius: 25px;
+      background: var(--rosa);
+      color: white;
+      font-size: 13px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background .2s, transform .2s;
+    }
+
+    .categoria:hover .explorar {
+      background: var(--rosa-oscuro);
+      border-color: var(--rosa-oscuro);
     }
 
     /* VOLVER AL INICIO */
@@ -326,12 +346,13 @@
       border-radius: 30px;
       background: var(--rosa);
       color: white;
-      font-weight: 700;
+      font-weight: bold;
       text-decoration: none;
-      font-family: 'DM Sans', Arial, sans-serif;
     }
 
-    /* LOGO INFERIOR */
+    .boton:hover {
+      background: var(--rosa-oscuro);
+    }
 
     .logo-final {
       position: relative;
@@ -344,8 +365,6 @@
       opacity: .8;
     }
 
-    /* PIE DE PÁGINA */
-
     footer {
       position: relative;
       z-index: 1;
@@ -356,7 +375,7 @@
       line-height: 1.8;
     }
 
-    /* BARRA INFERIOR FIJA */
+    /* BARRA INFERIOR */
 
     .menu-inferior {
       position: fixed;
@@ -389,8 +408,6 @@
       font-size: 23px;
     }
 
-    /* TABLET Y CELULAR */
-
     @media (max-width: 650px) {
       .menu {
         gap: 3px;
@@ -413,28 +430,23 @@
         padding: 14px;
       }
 
-      .categoria .categoria-texto h3 {
-        font-size: 25px !important;
-        letter-spacing: .5px;
+      .categoria h3 {
+        font-size: 23px;
       }
 
-      .categoria .categoria-texto p {
+      .categoria p {
         min-height: 65px;
-        font-size: 13px !important;
-        line-height: 1.8;
+        font-size: 13px;
       }
 
-      .explorar {
-        font-size: 12px;
+      .resultados-productos {
+        grid-template-columns: 1fr;
       }
     }
-
-    /* CELULARES PEQUEÑOS */
 
     @media (max-width: 420px) {
       .categorias {
         width: 94%;
-        gap: 10px;
       }
 
       .categoria-imagen {
@@ -445,20 +457,17 @@
         padding: 12px;
       }
 
-      .categoria .categoria-texto h3 {
-        font-size: 21px !important;
-        letter-spacing: .2px;
+      .categoria h3 {
+        font-size: 21px;
       }
 
-      .categoria .categoria-texto p {
-        min-height: 70px;
-        font-size: 12px !important;
-        line-height: 1.7;
+      .categoria p {
+        font-size: 12px;
       }
 
       .explorar {
-        font-size: 11px;
-        letter-spacing: 0;
+        padding: 9px 12px;
+        font-size: 12px;
       }
 
       .menu-inferior a {
@@ -498,92 +507,93 @@
     <p>Encuentra tus favoritos en Angel's Fashion World.</p>
   </header>
 
-  <!-- BUSCADOR -->
-  <section class="buscador">
+  <!-- BUSCADOR DE PRODUCTOS -->
+  <section class="buscador" id="seccionBuscador">
     <form id="formularioBusqueda">
       <span class="lupa">⌕</span>
       <input
         type="search"
         id="buscarProducto"
-        placeholder="Buscar categoría o producto..."
+        placeholder="Busca blusas, vestidos, perfumes..."
         aria-label="Buscar categoría o producto"
+        autocomplete="off"
       >
       <button type="submit">Buscar</button>
     </form>
 
     <p class="resultado" id="resultadoBusqueda" aria-live="polite"></p>
+    <div class="resultados-productos" id="listaResultados"></div>
   </section>
 
-  <!-- TÍTULO -->
   <section class="titulo">
     <h2>¿Qué te gustaría descubrir? <span style="color:var(--dorado)">✦</span></h2>
     <p>Elige una categoría para comenzar a explorar.</p>
   </section>
 
-<!-- CATEGORÍAS EN DOS COLUMNAS -->
-<main class="categorias" id="categorias">
+  <!-- LAS CUATRO CATEGORÍAS -->
+  <main class="categorias" id="categorias">
 
-  <!-- MODA -->
-  <a class="categoria" href="moda.html" data-categoria="moda">
-    <div class="categoria-imagen">
-      <img
-        src="./imagenes/categorias.html/Screenshot_2026-10-16-15-58-38-649_com.openai.chatgpt-edit.jpg"
-        alt="Moda"
-      >
-    </div>
-    <div class="categoria-texto">
-      <h3>Moda</h3>
-      <p>Blusas, pantalones, vestidos, conjuntos, faldas, shorts, abrigos y calzados.</p>
-      <span class="explorar">Explorar moda ↗</span>
-    </div>
-  </a>
+    <!-- MODA -->
+    <a class="categoria" href="moda.html" data-categoria="moda">
+      <div class="categoria-imagen">
+        <img
+          src="./imagenes/categorias.html/Screenshot_2026-10-16-15-58-38-649_com.openai.chatgpt-edit.jpg"
+          alt="Moda"
+        >
+      </div>
+      <div class="categoria-texto">
+        <h3>Moda</h3>
+        <p>Blusas, pantalones, vestidos, conjuntos, faldas, shorts, abrigos y calzados.</p>
+        <span class="explorar">Explorar ✦</span>
+      </div>
+    </a>
 
-  <!-- BELLEZA -->
-  <a class="categoria" href="belleza.html" data-categoria="belleza">
-    <div class="categoria-imagen">
-      <img
-        src="./imagenes/categorias.html/Screenshot_2026-10-16-15-57-11-970_com.openai.chatgpt-edit.jpg"
-        alt="Belleza"
-      >
-    </div>
-    <div class="categoria-texto">
-      <h3>Belleza</h3>
-      <p>Perfumes, maquillaje y productos para uñas.</p>
-      <span class="explorar">Explorar belleza ↗</span>
-    </div>
-  </a>
+    <!-- BELLEZA -->
+    <a class="categoria" href="belleza.html" data-categoria="belleza">
+      <div class="categoria-imagen">
+        <img
+          src="./imagenes/categorias.html/Screenshot_2026-10-16-15-57-11-970_com.openai.chatgpt-edit.jpg"
+          alt="Belleza"
+        >
+      </div>
+      <div class="categoria-texto">
+        <h3>Belleza</h3>
+        <p>Perfumes, maquillaje y productos para uñas.</p>
+        <span class="explorar">Explorar ✦</span>
+      </div>
+    </a>
 
-  <!-- SKIN CARE -->
-  <a class="categoria" href="skincare.html" data-categoria="skincare">
-    <div class="categoria-imagen">
-      <img
-        src="./imagenes/categorias.html/Screenshot_2026-10-16-16-01-20-160_com.openai.chatgpt-edit.jpg"
-        alt="Skin care"
-      >
-    </div>
-    <div class="categoria-texto">
-      <h3>Skin care</h3>
-      <p>Cuidado para la cara, el cabello y el cuidado personal.</p>
-      <span class="explorar">Explorar Skin care ↗</span>
-    </div>
-  </a>
+    <!-- SKIN CARE -->
+    <a class="categoria" href="skincare.html" data-categoria="skincare">
+      <div class="categoria-imagen">
+        <img
+          src="./imagenes/categorias.htmñ/Screenshot_2026-10-16-16-01-20-160_com.openai.chatgpt-edit.jpg"
+          alt="Skin care"
+        >
+      </div>
+      <div class="categoria-texto">
+        <h3>Skin care</h3>
+        <p>Cuidado para la cara, el cabello y el cuidado personal.</p>
+        <span class="explorar">Explorar ✦</span>
+      </div>
+    </a>
 
-  <!-- ACCESORIOS -->
-  <a class="categoria" href="accesorios.html" data-categoria="accesorios">
-    <div class="categoria-imagen">
-      <img
-        src="./imagenes/categorias.html/Screenshot_2026-10-16-15-59-54-663_com.openai.chatgpt-edit.jpg"
-        alt="Accesorios"
-      >
-    </div>
-    <div class="categoria-texto">
-      <h3>Accesorios</h3>
-      <p>Carteras, gafas, joyería, gorras, medias y detalles para el cabello.</p>
-      <span class="explorar">Explorar accesorios ↗</span>
-    </div>
-  </a>
+    <!-- ACCESORIOS -->
+    <a class="categoria" href="accesorios.html" data-categoria="accesorios">
+      <div class="categoria-imagen">
+        <img
+          src="./imagenes/categorias.html/Screenshot_2026-10-16-15-59-54-663_com.openai.chatgpt-edit.jpg"
+          alt="Accesorios"
+        >
+      </div>
+      <div class="categoria-texto">
+        <h3>Accesorios</h3>
+        <p>Carteras, gafas, joyería, gorras, medias y detalles para el cabello.</p>
+        <span class="explorar">Explorar ✦</span>
+      </div>
+    </a>
 
-</main>
+  </main>
 
   <!-- VOLVER AL INICIO -->
   <div class="volver">
@@ -605,9 +615,9 @@
     <span style="color:var(--dorado)">✦ Hecho con cariño ✦</span>
   </footer>
 
-  <!-- BARRA INFERIOR -->
+  <!-- BARRA INFERIOR FIJA -->
   <nav class="menu-inferior" aria-label="Accesos rápidos">
-    <a href="#buscarProducto" id="enlaceBuscar">
+    <a href="#seccionBuscador" id="enlaceBuscar">
       <span class="icono">⌕</span>
       Buscar
     </a>
@@ -633,7 +643,7 @@
     const formulario = document.getElementById("formularioBusqueda");
     const campo = document.getElementById("buscarProducto");
     const resultado = document.getElementById("resultadoBusqueda");
-    const tarjetas = Array.from(document.querySelectorAll(".categoria"));
+    const listaResultados = document.getElementById("listaResultados");
 
     function normalizar(texto) {
       return texto
@@ -643,107 +653,121 @@
         .trim();
     }
 
-    const datosCategorias = [
-      {
-        archivo: "moda.html",
-        nombre: "Moda",
-        palabras: [
-          "moda", "ropa", "blusa", "blusas", "pantalon",
-          "pantalones", "jean", "jeans", "vestido", "vestidos",
-          "conjunto", "conjuntos", "falda", "faldas", "short",
-          "shorts", "abrigo", "abrigos", "calzado", "calzados",
-          "tacon", "tacones", "bota", "botas", "sandalia", "sandalias"
-        ]
-      },
-      {
-        archivo: "belleza.html",
-        nombre: "Belleza",
-        palabras: [
-          "belleza", "perfume", "perfumes", "maquillaje",
-          "labial", "labiales", "unas", "esmalte", "esmaltes"
-        ]
-      },
-      {
-        archivo: "skincare.html",
-        nombre: "Skin care",
-        palabras: [
-          "skin care", "skincare", "cara", "rostro", "facial",
-          "cabello", "pelo", "champu", "shampoo", "crema",
-          "cremas", "cuidado personal", "acondicionador"
-        ]
-      },
-      {
-        archivo: "accesorios.html",
-        nombre: "Accesorios",
-        palabras: [
-          "accesorio", "accesorios", "gorra", "gorras", "medias",
-          "cartera", "carteras", "gafas", "joyeria", "collar",
-          "collares", "arete", "aretes", "guantes", "correa",
-          "correas", "hebilla", "hebillas"
-        ]
-      }
+    /*
+      Estos nombres se usan para que el buscador encuentre productos
+      y dirija al cliente a la página de la categoría correspondiente.
+    */
+    const productos = [
+      { nombre: "Linda camisa con escote", categoria: "Moda", archivo: "moda.html", palabras: "blusa camisa rosada" },
+      { nombre: "Hermosa camisa con un escote al lado", categoria: "Moda", archivo: "moda.html", palabras: "blusa camisa escote" },
+      { nombre: "Linda camisa rosada con un diseño hermoso", categoria: "Moda", archivo: "moda.html", palabras: "blusa camisa rosada" },
+      { nombre: "Increíble camisa rosada con escote", categoria: "Moda", archivo: "moda.html", palabras: "blusa camisa rosada" },
+      { nombre: "Hermosa camisa de jean", categoria: "Moda", archivo: "moda.html", palabras: "blusa camisa jean denim" },
+      { nombre: "Hermosa camisa elegante", categoria: "Moda", archivo: "moda.html", palabras: "blusa camisa elegante" },
+      { nombre: "Linda camisa con estampado azul", categoria: "Moda", archivo: "moda.html", palabras: "blusa camisa estampado" },
+      { nombre: "Hermosa camisa negra para ti", categoria: "Moda", archivo: "moda.html", palabras: "blusa camisa negra" },
+      { nombre: "Divina camisa elegante", categoria: "Moda", archivo: "moda.html", palabras: "blusa camisa elegante" },
+
+      { nombre: "Pantalón de jean con estrellas", categoria: "Moda", archivo: "moda.html", palabras: "pantalon jean estrellas" },
+      { nombre: "Lindo jean", categoria: "Moda", archivo: "moda.html", palabras: "pantalon jean denim" },
+      { nombre: "Lindo jean con corazón en la cintura", categoria: "Moda", archivo: "moda.html", palabras: "pantalon jean corazon" },
+      { nombre: "Lindo leggins", categoria: "Moda", archivo: "moda.html", palabras: "pantalon leggings leggins" },
+      { nombre: "Pantalón con estrellas a los lados", categoria: "Moda", archivo: "moda.html", palabras: "pantalon estrellas" },
+      { nombre: "Pantalón con lazitos", categoria: "Moda", archivo: "moda.html", palabras: "pantalon lazos" },
+      { nombre: "Hermoso pantalón negro", categoria: "Moda", archivo: "moda.html", palabras: "pantalon negro" },
+
+      { nombre: "Vestido largo negro elegante", categoria: "Moda", archivo: "moda.html", palabras: "vestido largo negro elegante" },
+      { nombre: "Vestido largo color cielo", categoria: "Moda", archivo: "moda.html", palabras: "vestido largo azul cielo" },
+      { nombre: "Vestido largo elegante", categoria: "Moda", archivo: "moda.html", palabras: "vestido largo elegante" },
+      { nombre: "Vestido femenino", categoria: "Moda", archivo: "moda.html", palabras: "vestido femenino" },
+      { nombre: "Conjunto de moda", categoria: "Moda", archivo: "moda.html", palabras: "conjunto ropa" },
+      { nombre: "Falda corta", categoria: "Moda", archivo: "moda.html", palabras: "falda corta" },
+      { nombre: "Short de jean", categoria: "Moda", archivo: "moda.html", palabras: "short jean pantalon corto" },
+      { nombre: "Abrigo elegante", categoria: "Moda", archivo: "moda.html", palabras: "abrigo chaqueta" },
+      { nombre: "Tacones", categoria: "Moda", archivo: "moda.html", palabras: "calzado zapatos tacones" },
+      { nombre: "Botas", categoria: "Moda", archivo: "moda.html", palabras: "calzado zapatos botas" },
+      { nombre: "Sandalias", categoria: "Moda", archivo: "moda.html", palabras: "calzado sandalias zapatos" },
+
+      { nombre: "Perfumes", categoria: "Belleza", archivo: "belleza.html", palabras: "perfume fragancia aromas" },
+      { nombre: "Maquillaje", categoria: "Belleza", archivo: "belleza.html", palabras: "maquillaje cosmeticos belleza" },
+      { nombre: "Productos para uñas", categoria: "Belleza", archivo: "belleza.html", palabras: "unas esmalte manicure" },
+
+      { nombre: "Cuidado para la cara", categoria: "Skin care", archivo: "skincare.html", palabras: "cara rostro facial skincare" },
+      { nombre: "Cuidado del cabello", categoria: "Skin care", archivo: "skincare.html", palabras: "pelo cabello champu shampoo" },
+      { nombre: "Cuidado personal", categoria: "Skin care", archivo: "skincare.html", palabras: "cuidado personal higiene" },
+      { nombre: "Cremas para la piel", categoria: "Skin care", archivo: "skincare.html", palabras: "crema piel hidratante rostro" },
+
+      { nombre: "Carteras", categoria: "Accesorios", archivo: "accesorios.html", palabras: "cartera bolso bolsos" },
+      { nombre: "Gafas", categoria: "Accesorios", archivo: "accesorios.html", palabras: "gafas lentes" },
+      { nombre: "Joyería", categoria: "Accesorios", archivo: "accesorios.html", palabras: "joyeria collar aretes pulseras anillos" },
+      { nombre: "Gorras", categoria: "Accesorios", archivo: "accesorios.html", palabras: "gorra gorras" },
+      { nombre: "Medias", categoria: "Accesorios", archivo: "accesorios.html", palabras: "medias calcetines" },
+      { nombre: "Accesorios para el cabello", categoria: "Accesorios", archivo: "accesorios.html", palabras: "cabello pelo pinzas lazos diademas" },
+      { nombre: "Guantes", categoria: "Accesorios", archivo: "accesorios.html", palabras: "guantes" },
+      { nombre: "Correas", categoria: "Accesorios", archivo: "accesorios.html", palabras: "correa correas cinturon" }
     ];
 
-    function buscarCategoria(consulta) {
-      return datosCategorias.find(function(categoria) {
-        return categoria.palabras.some(function(palabra) {
-          const p = normalizar(palabra);
-          return p === consulta ||
-                 p.includes(consulta) ||
-                 consulta.includes(p);
-        });
-      });
-    }
-
-    function procesarBusqueda(consulta) {
+    function mostrarResultados(consulta) {
       const texto = normalizar(consulta);
-
-      tarjetas.forEach(function(tarjeta) {
-        tarjeta.style.outline = "";
-      });
+      listaResultados.replaceChildren();
 
       if (!texto) {
-        resultado.textContent = "Escribe una categoría o producto.";
+        resultado.textContent = "";
         return;
       }
 
-      const coincidencia = buscarCategoria(texto);
+      const coincidencias = productos.filter(function(producto) {
+        const textoProducto = normalizar(
+          producto.nombre + " " +
+          producto.categoria + " " +
+          producto.palabras
+        );
 
-      if (!coincidencia) {
+        return textoProducto.includes(texto);
+      });
+
+      if (coincidencias.length === 0) {
         resultado.textContent =
-          "No encontramos una categoría para esa búsqueda. " +
-          "Prueba con blusas, vestidos, perfumes, Skin care o accesorios.";
+          "No encontramos coincidencias. Prueba con blusas, vestidos, perfumes o carteras.";
         return;
       }
 
-      resultado.innerHTML =
-        "Categoría encontrada: <a href=\"" +
-        coincidencia.archivo + "?buscar=" +
-        encodeURIComponent(consulta) + "\">" +
-        coincidencia.nombre + " — ver categoría ↗</a>";
+      resultado.textContent =
+        "Encontramos " + coincidencias.length +
+        " resultado(s) para tu búsqueda:";
 
-      const nombreNormalizado =
-        normalizar(coincidencia.nombre).replace(/\s/g, "");
+      coincidencias.forEach(function(producto) {
+        const tarjeta = document.createElement("div");
+        tarjeta.className = "resultado-producto";
 
-      tarjetas.forEach(function(tarjeta) {
-        if (tarjeta.dataset.categoria === nombreNormalizado) {
-          tarjeta.style.outline = "2px solid var(--rosa)";
-        }
+        const nombre = document.createElement("strong");
+        nombre.textContent = producto.nombre;
+
+        const categoria = document.createElement("span");
+        categoria.textContent = producto.categoria;
+
+        const enlace = document.createElement("a");
+        enlace.href = producto.archivo;
+        enlace.textContent = "Ver categoría ✦";
+
+        tarjeta.append(nombre, categoria, enlace);
+        listaResultados.appendChild(tarjeta);
       });
     }
 
     formulario.addEventListener("submit", function(evento) {
       evento.preventDefault();
-      procesarBusqueda(campo.value);
+      mostrarResultados(campo.value);
     });
 
-    const parametros = new URLSearchParams(window.location.search);
-    const busquedaInicial = parametros.get("buscar");
-
-    if (busquedaInicial) {
-      campo.value = busquedaInicial;
-      procesarBusqueda(busquedaInicial);
-    }
+    campo.addEventListener("input", function() {
+      if (campo.value.trim() === "") {
+        listaResultados.replaceChildren();
+        resultado.textContent = "";
+      } else {
+        mostrarResultados(campo.value);
+      }
+    });
 
     document.getElementById("enlaceBuscar").addEventListener("click", function() {
       setTimeout(function() {
