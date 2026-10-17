@@ -1,11 +1,11 @@
-
+```html
 <!DOCTYPE html>
-<html 
-    lang="es">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#fff1f7">
+
     <title>Moda | Angel's Fashion World</title>
 
     <style>
@@ -58,10 +58,28 @@
             animation: flotar 5s ease-in-out infinite;
         }
 
-        .estrella1 { top: 120px; left: 4%; }
-        .estrella2 { top: 280px; right: 5%; animation-delay: .7s; }
-        .estrella3 { bottom: 180px; left: 6%; animation-delay: 1.3s; }
-        .estrella4 { bottom: 80px; right: 7%; animation-delay: 2s; }
+        .estrella1 {
+            top: 120px;
+            left: 4%;
+        }
+
+        .estrella2 {
+            top: 280px;
+            right: 5%;
+            animation-delay: .7s;
+        }
+
+        .estrella3 {
+            bottom: 180px;
+            left: 6%;
+            animation-delay: 1.3s;
+        }
+
+        .estrella4 {
+            bottom: 80px;
+            right: 7%;
+            animation-delay: 2s;
+        }
 
         @keyframes flotar {
             50% {
@@ -161,7 +179,30 @@
             letter-spacing: 7px;
         }
 
-        /* BUSCADOR ENCIMA DE LAS CATEGORÍAS */
+        /* BOTÓN EXPLORAR */
+
+        .boton-explorar {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 12px 28px;
+            border: 1px solid var(--rosa);
+            border-radius: 30px;
+            background: var(--rosa);
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: .3s;
+            box-shadow: 0 5px 15px #d85b9118;
+        }
+
+        .boton-explorar:hover {
+            background: white;
+            color: var(--rosa);
+            box-shadow: 0 5px 15px #d85b9125;
+            transform: translateY(-2px);
+        }
+
+        /* BUSCADOR */
 
         .buscador {
             position: relative;
@@ -246,7 +287,7 @@
             line-height: 1.7;
         }
 
-        /* TARJETAS DE MODA */
+        /* TARJETAS */
 
         .categorias {
             position: relative;
@@ -288,7 +329,7 @@
             font: 400 23px Georgia, serif;
         }
 
-        /* BARRA INFERIOR FIJA */
+        /* BARRA INFERIOR */
 
         .menu-inferior {
             position: fixed;
@@ -336,6 +377,8 @@
             font-size: 13px;
             line-height: 1.8;
         }
+
+        /* DISEÑO RESPONSIVE */
 
         @media (max-width: 750px) {
             .menu {
@@ -415,7 +458,7 @@
         <span class="estrella estrella4">✧</span>
     </div>
 
-    <!-- MENÚ SUPERIOR: SIN SOBRE NOSOTROS -->
+    <!-- MENÚ SUPERIOR -->
     <nav class="menu" aria-label="Menú principal">
         <a href="index.html">Inicio</a>
         <a class="activo" href="moda.html" aria-current="page">Moda</a>
@@ -426,13 +469,20 @@
 
     <!-- PORTADA -->
     <header class="portada">
+
         <img
-            src="./moda/Screenshot_2026-10-16-19-35-33-286_com.openai.chatgpt-edit.jpg"
+            src="./imagen/moda/Screenshot_2026-10-16-19-35-33-286_com.openai.chatgpt-edit.jpg"
             alt="Moda de Angel's Fashion World"
         >
 
         <div class="portada-texto">
+
             <div class="mini">✧ TU ESTILO, TU ESENCIA ✧</div>
+
+            <div class="alas-con-estrella">
+                <span class="alas">🪽</span>
+                <span style="color: var(--dorado);">✦</span>
+            </div>
 
             <h1>
                 Angel's
@@ -440,12 +490,19 @@
             </h1>
 
             <p class="frase">Un mundo creado para ti.</p>
+
+            <a href="#categorias" class="boton-explorar">
+                Explorar ✦
+            </a>
+
             <div class="adorno">✧ ✦ ✧</div>
+
         </div>
     </header>
 
-    <!-- BUSCADOR -->
+    <!-- BUSCADOR ENCIMA DE LAS CATEGORÍAS -->
     <section class="buscador" id="buscarProducto">
+
         <h2>Buscar productos ✦</h2>
 
         <form id="formularioBusqueda">
@@ -461,78 +518,115 @@
             <button type="submit">Buscar</button>
         </form>
 
-        <p class="mensaje-busqueda" id="mensajeBusqueda"
+        <p class="mensaje-busqueda"
+           id="mensajeBusqueda"
            aria-live="polite"></p>
+
     </section>
 
     <!-- TÍTULO DE CATEGORÍAS -->
     <section class="titulo-categorias" id="categorias">
+
         <div class="mini">✧ DESCUBRE TUS FAVORITOS ✧</div>
+
         <h2>Nuestra colección de moda</h2>
+
         <p>Encuentra prendas especiales para expresar tu estilo. 💗</p>
+
         <div class="adorno">✧ ✦ ✧</div>
+
     </section>
 
     <!-- CATEGORÍAS -->
     <main class="categorias">
 
         <article class="categoria">
-            <img src="./moda/Screenshot_2026-10-16-19-46-02-958_com.pinterest-edit.jpg"
-                 alt="Blusas" loading="lazy">
+            <img
+                src="./imagen/moda/Screenshot_2026-10-16-19-46-02-958_com.pinterest-edit.jpg"
+                alt="Blusas"
+                loading="lazy"
+            >
             <h3>Blusas</h3>
         </article>
 
         <article class="categoria">
-            <img src="./moda/Screenshot_2026-10-16-19-50-05-406_com.pinterest-edit.jpg"
-                 alt="Pantalones" loading="lazy">
+            <img
+                src="./imagen/moda/Screenshot_2026-10-16-19-50-05-406_com.pinterest-edit.jpg"
+                alt="Pantalones"
+                loading="lazy"
+            >
             <h3>Pantalones</h3>
         </article>
 
         <article class="categoria">
-            <img src="./moda/Screenshot_2026-10-16-19-54-14-423_com.pinterest~2.jpg"
-                 alt="Vestidos cortos" loading="lazy">
+            <img
+                src="./imagen/moda/Screenshot_2026-10-16-19-54-14-423_com.pinterest~2.jpg"
+                alt="Vestidos cortos"
+                loading="lazy"
+            >
             <h3>Vestidos cortos</h3>
         </article>
 
         <article class="categoria">
-            <img src="./moda/Screenshot_2026-10-16-19-58-46-893_com.pinterest-edit.jpg"
-                 alt="Vestidos largos" loading="lazy">
+            <img
+                src="./imagen/moda/Screenshot_2026-10-16-19-58-46-893_com.pinterest-edit.jpg"
+                alt="Vestidos largos"
+                loading="lazy"
+            >
             <h3>Vestidos largos</h3>
         </article>
 
         <article class="categoria">
-            <img src="./moda/Screenshot_2026-10-16-20-00-17-969_com.pinterest~2.jpg"
-                 alt="Conjuntos" loading="lazy">
+            <img
+                src="./imagen/moda/Screenshot_2026-10-16-20-00-17-969_com.pinterest~2.jpg"
+                alt="Conjuntos"
+                loading="lazy"
+            >
             <h3>Conjuntos</h3>
         </article>
 
         <article class="categoria">
-            <img src="./moda/Screenshot_2026-10-16-20-01-59-370_com.pinterest-edit.jpg"
-                 alt="Faldas cortas" loading="lazy">
+            <img
+                src="./imagen/moda/Screenshot_2026-10-16-20-01-59-370_com.pinterest-edit.jpg"
+                alt="Faldas cortas"
+                loading="lazy"
+            >
             <h3>Faldas cortas</h3>
         </article>
 
         <article class="categoria">
-            <img src="./moda/Screenshot_2026-10-16-20-03-13-874_com.pinterest-edit.jpg"
-                 alt="Faldas largas" loading="lazy">
+            <img
+                src="./imagen/moda/Screenshot_2026-10-16-20-03-13-874_com.pinterest-edit.jpg"
+                alt="Faldas largas"
+                loading="lazy"
+            >
             <h3>Faldas largas</h3>
         </article>
 
         <article class="categoria">
-            <img src="./moda/Screenshot_2026-10-16-20-05-08-637_com.pinterest-edit.jpg"
-                 alt="Shorts" loading="lazy">
+            <img
+                src="./imagen/moda/Screenshot_2026-10-16-20-05-08-637_com.pinterest-edit.jpg"
+                alt="Shorts"
+                loading="lazy"
+            >
             <h3>Shorts</h3>
         </article>
 
         <article class="categoria">
-            <img src="./moda/Screenshot_2026-10-16-20-44-40-128_com.pinterest-edit.jpg"
-                 alt="Abrigos" loading="lazy">
+            <img
+                src="./imagen/moda/Screenshot_2026-10-16-20-44-40-128_com.pinterest-edit.jpg"
+                alt="Abrigos"
+                loading="lazy"
+            >
             <h3>Abrigos</h3>
         </article>
 
         <article class="categoria">
-            <img src="./moda/Screenshot_2026-10-16-20-49-33-152_com.openai.chatgpt-edit.jpg"
-                 alt="Calzados" loading="lazy">
+            <img
+                src="./imagen/moda/Screenshot_2026-10-16-20-49-33-152_com.openai.chatgpt-edit.jpg"
+                alt="Calzados"
+                loading="lazy"
+            >
             <h3>Calzados</h3>
         </article>
 
@@ -542,11 +636,14 @@
     <footer>
         <strong>Angel's Fashion World</strong><br>
         Moda · Belleza · Skin care · Accesorios<br>
-        <span style="color:var(--dorado)">✦ Hecho con cariño ✦</span>
+        <span style="color: var(--dorado);">
+            ✦ Hecho con cariño ✦
+        </span>
     </footer>
 
     <!-- BARRA INFERIOR -->
     <nav class="menu-inferior" aria-label="Accesos rápidos">
+
         <a href="#buscarProducto" id="enlaceBuscar">
             <span class="icono">⌕</span>
             Buscar
@@ -566,6 +663,7 @@
             <span class="icono">♙</span>
             Mi perfil
         </a>
+
     </nav>
 
     <script>
@@ -577,10 +675,13 @@
         formulario.addEventListener("submit", function(evento) {
             evento.preventDefault();
 
-            const consulta = campo.value.trim().toLocaleLowerCase("es");
+            const consulta = campo.value
+                .trim()
+                .toLocaleLowerCase("es");
 
             if (!consulta) {
-                mensaje.textContent = "Escribe una categoría para buscar. 💗";
+                mensaje.textContent =
+                    "Escribe una categoría para buscar. 💗";
                 campo.focus();
                 return;
             }
@@ -588,8 +689,10 @@
             let encontrados = 0;
 
             tarjetas.forEach(function(tarjeta) {
-                const nombre = tarjeta.querySelector("h3")
-                    .textContent.toLocaleLowerCase("es");
+                const nombre = tarjeta
+                    .querySelector("h3")
+                    .textContent
+                    .toLocaleLowerCase("es");
 
                 const coincide = nombre.includes(consulta);
 
@@ -624,12 +727,14 @@
             }
         });
 
-        document.getElementById("enlaceBuscar").addEventListener("click", function() {
-            setTimeout(function() {
-                campo.focus({ preventScroll: true });
-            }, 100);
-        });
+        document.getElementById("enlaceBuscar")
+            .addEventListener("click", function() {
+                setTimeout(function() {
+                    campo.focus({ preventScroll: true });
+                }, 100);
+            });
     </script>
 
 </body>
 </html>
+```
