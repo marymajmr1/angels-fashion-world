@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -24,7 +23,7 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 20px;
+            scroll-padding-top: 25px;
         }
 
         body {
@@ -121,14 +120,18 @@
             color: white;
         }
 
-        /* PORTADA */
+        /* PORTADA: TEXTO A LA IZQUIERDA E IMAGEN A LA DERECHA */
 
         .portada {
             position: relative;
             z-index: 1;
             width: 92%;
             max-width: 1200px;
+            min-height: 320px;
             margin: 25px auto 30px;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
             overflow: hidden;
             border: 1px solid var(--borde);
             border-radius: 28px;
@@ -136,55 +139,79 @@
             box-shadow: 0 10px 30px #9a39670c;
         }
 
-        .portada img {
-            display: block;
-            width: 100%;
-            height: clamp(150px, 22vw, 250px);
-            object-fit: cover;
-            object-position: center;
+        .portada-texto {
+            flex: 1;
+            min-width: 0;
+            padding: clamp(20px, 4vw, 48px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
         }
 
-        .portada-texto {
-            padding: 20px;
-            text-align: center;
+        .portada img {
+            display: block;
+            flex: 1;
+            width: 50%;
+            min-width: 0;
+            height: auto;
+            min-height: 320px;
+            max-height: 420px;
+            object-fit: cover;
+            object-position: center;
         }
 
         .mini {
             color: var(--dorado);
             font-size: 12px;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
+        }
+
+        .alas-con-estrella {
+            margin-top: 15px;
+            color: var(--dorado);
+            font-size: 23px;
+        }
+
+        .alas {
+            display: inline-block;
+            animation: moverAlas 3s ease-in-out infinite;
+        }
+
+        @keyframes moverAlas {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
         }
 
         .portada h1 {
-            margin: 13px 0;
+            margin: 12px 0;
             color: var(--rosa-oscuro);
-            font: 400 clamp(34px, 6vw, 55px)/1.1 Georgia, serif;
+            font: 400 clamp(34px, 5vw, 58px)/1.1 Georgia, serif;
         }
 
         .portada h1 span {
             display: block;
             margin-top: 10px;
-            font-size: .4em;
-            letter-spacing: .22em;
+            font-size: .35em;
+            letter-spacing: .2em;
         }
 
         .frase {
+            margin: 5px 0;
             color: #9c5276;
-            font: italic clamp(17px, 2vw, 22px) Georgia, serif;
+            font: italic clamp(16px, 2vw, 22px) Georgia, serif;
+            line-height: 1.5;
         }
-
-        .adorno {
-            margin-top: 14px;
-            color: var(--dorado);
-            letter-spacing: 7px;
-        }
-
-        /* BOTÓN EXPLORAR */
 
         .boton-explorar {
             display: inline-block;
-            margin-top: 12px;
-            padding: 12px 28px;
+            margin-top: 20px;
+            padding: 12px 27px;
             border: 1px solid var(--rosa);
             border-radius: 30px;
             background: var(--rosa);
@@ -198,8 +225,14 @@
         .boton-explorar:hover {
             background: white;
             color: var(--rosa);
-            box-shadow: 0 5px 15px #d85b9125;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px #d85b9125;
+        }
+
+        .adorno {
+            margin-top: 16px;
+            color: var(--dorado);
+            letter-spacing: 7px;
         }
 
         /* BUSCADOR */
@@ -209,7 +242,7 @@
             z-index: 2;
             width: 92%;
             max-width: 650px;
-            margin: 30px auto 35px;
+            margin: 35px auto;
             scroll-margin-top: 20px;
         }
 
@@ -233,7 +266,7 @@
 
         .lupa {
             color: var(--rosa);
-            font-size: 23px;
+            font-size: 25px;
         }
 
         .buscador input {
@@ -254,6 +287,7 @@
             background: var(--rosa);
             color: white;
             cursor: pointer;
+            font-size: 14px;
         }
 
         .buscador button:hover {
@@ -267,12 +301,12 @@
             font-size: 13px;
         }
 
-        /* TÍTULO DE CATEGORÍAS */
+        /* ENCABEZADO DE CATEGORÍAS */
 
         .titulo-categorias {
             position: relative;
             z-index: 1;
-            margin: 35px 15px 30px;
+            margin: 40px 15px 30px;
             text-align: center;
             scroll-margin-top: 20px;
         }
@@ -287,7 +321,7 @@
             line-height: 1.7;
         }
 
-        /* TARJETAS */
+        /* TARJETAS DE CATEGORÍAS */
 
         .categorias {
             position: relative;
@@ -301,10 +335,13 @@
         }
 
         .categoria {
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
             overflow: hidden;
             border: 1px solid var(--borde);
             border-radius: 23px;
-            background: #fff;
+            background: white;
             box-shadow: 0 7px 22px #d85b9112;
             text-align: center;
             transition: transform .25s, box-shadow .25s;
@@ -324,9 +361,52 @@
         }
 
         .categoria h3 {
-            margin: 18px 8px 22px;
+            margin: 18px 8px 12px;
             color: var(--rosa-oscuro);
             font: 400 23px Georgia, serif;
+        }
+
+        .boton-categoria {
+            display: inline-block;
+            align-self: center;
+            margin: auto 10px 20px;
+            padding: 11px 18px;
+            border: 1px solid var(--rosa);
+            border-radius: 25px;
+            background: var(--rosa);
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        .boton-categoria:hover {
+            background: white;
+            color: var(--rosa);
+            transform: translateY(-2px);
+        }
+
+        .sin-resultados {
+            display: none;
+            grid-column: 1 / -1;
+            padding: 25px;
+            border: 1px solid var(--borde);
+            border-radius: 20px;
+            background: white;
+            text-align: center;
+            color: var(--rosa-oscuro);
+        }
+
+        /* PIE DE PÁGINA */
+
+        footer {
+            position: relative;
+            z-index: 1;
+            padding: 15px 20px 25px;
+            color: #87556f;
+            text-align: center;
+            font-size: 13px;
+            line-height: 1.8;
         }
 
         /* BARRA INFERIOR */
@@ -366,22 +446,24 @@
             font-size: 23px;
         }
 
-        /* PIE DE PÁGINA */
+        /* TABLETAS */
 
-        footer {
-            position: relative;
-            z-index: 1;
-            padding: 15px 20px 25px;
-            color: #87556f;
-            text-align: center;
-            font-size: 13px;
-            line-height: 1.8;
+        @media (max-width: 850px) {
+            .categorias {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 18px;
+            }
+
+            .categoria img {
+                height: 260px;
+            }
         }
 
-        /* DISEÑO RESPONSIVE */
+        /* CELULARES */
 
-        @media (max-width: 750px) {
+        @media (max-width: 520px) {
             .menu {
+                width: 96%;
                 gap: 3px;
             }
 
@@ -390,28 +472,68 @@
                 font-size: 12px;
             }
 
-            .categorias {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 16px;
+            .portada {
+                width: 94%;
+                min-height: 250px;
             }
 
-            .categoria img {
-                height: 240px;
+            .portada-texto {
+                flex: 1.1;
+                padding: 16px 12px;
             }
 
-            .categoria h3 {
-                font-size: 20px;
-            }
-        }
-
-        @media (max-width: 420px) {
-            .menu {
-                width: 96%;
+            .portada img {
+                flex: .9;
+                width: 42%;
+                min-height: 250px;
+                max-height: 320px;
             }
 
-            .portada,
+            .portada .mini {
+                font-size: 9px;
+                letter-spacing: 1px;
+            }
+
+            .portada .alas-con-estrella {
+                font-size: 19px;
+                margin-top: 10px;
+            }
+
+            .portada h1 {
+                font-size: clamp(27px, 7vw, 35px);
+            }
+
+            .portada h1 span {
+                font-size: .33em;
+                letter-spacing: .12em;
+            }
+
+            .portada .frase {
+                font-size: 14px;
+            }
+
+            .portada .boton-explorar {
+                margin-top: 13px;
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+
+            .portada .adorno {
+                font-size: 12px;
+                letter-spacing: 4px;
+            }
+
             .buscador {
                 width: 94%;
+            }
+
+            .buscador form {
+                gap: 5px;
+                padding-left: 10px;
+            }
+
+            .buscador button {
+                padding: 10px 12px;
             }
 
             .categorias {
@@ -424,7 +546,14 @@
             }
 
             .categoria h3 {
-                font-size: 17px;
+                margin: 15px 5px 10px;
+                font-size: 18px;
+            }
+
+            .boton-categoria {
+                margin: auto 6px 15px;
+                padding: 10px 9px;
+                font-size: 12px;
             }
 
             .menu-inferior a {
@@ -435,14 +564,31 @@
             .icono {
                 font-size: 22px;
             }
+        }
 
-            .buscador form {
-                gap: 5px;
-                padding-left: 10px;
+        @media (max-width: 360px) {
+            .portada-texto {
+                padding: 12px 8px;
             }
 
-            .buscador button {
-                padding: 10px 12px;
+            .portada h1 {
+                font-size: 25px;
+            }
+
+            .portada .frase {
+                font-size: 12px;
+            }
+
+            .portada img {
+                min-height: 230px;
+            }
+
+            .categoria img {
+                height: 175px;
+            }
+
+            .boton-categoria {
+                font-size: 11px;
             }
         }
     </style>
@@ -458,7 +604,7 @@
         <span class="estrella estrella4">✧</span>
     </div>
 
-    <!-- MENÚ SUPERIOR -->
+    <!-- MENÚ SUPERIOR: SIN SOBRE NOSOTROS -->
     <nav class="menu" aria-label="Menú principal">
         <a href="index.html">Inicio</a>
         <a class="activo" href="moda.html" aria-current="page">Moda</a>
@@ -470,18 +616,12 @@
     <!-- PORTADA -->
     <header class="portada">
 
-        <img
-            src="imagenes/moda/Screenshot_2026-10-16-19-35-33-286_com.openai.chatgpt-edit.jpg"
-            alt="Moda de Angel's Fashion World"
-        >
-
         <div class="portada-texto">
-
             <div class="mini">✧ TU ESTILO, TU ESENCIA ✧</div>
 
             <div class="alas-con-estrella">
                 <span class="alas">🪽</span>
-                <span style="color: var(--dorado);">✦</span>
+                <span>✦</span>
             </div>
 
             <h1>
@@ -496,8 +636,13 @@
             </a>
 
             <div class="adorno">✧ ✦ ✧</div>
-
         </div>
+
+        <img
+            src="./moda/Screenshot_2026-10-16-19-35-33-286_com.openai.chatgpt-edit.jpg"
+            alt="Moda de Angel's Fashion World"
+        >
+
     </header>
 
     <!-- BUSCADOR ENCIMA DE LAS CATEGORÍAS -->
@@ -506,7 +651,7 @@
         <h2>Buscar productos ✦</h2>
 
         <form id="formularioBusqueda">
-            <span class="lupa">⌕</span>
+            <span class="lupa" aria-hidden="true">⌕</span>
 
             <input
                 type="search"
@@ -518,9 +663,11 @@
             <button type="submit">Buscar</button>
         </form>
 
-        <p class="mensaje-busqueda"
-           id="mensajeBusqueda"
-           aria-live="polite"></p>
+        <p
+            class="mensaje-busqueda"
+            id="mensajeBusqueda"
+            aria-live="polite"
+        ></p>
 
     </section>
 
@@ -537,107 +684,152 @@
 
     </section>
 
-    <!-- CATEGORÍAS -->
-    <main class="categorias">
+    <!-- CATEGORÍAS DE MODA -->
+    <main class="categorias" id="listaCategorias">
 
-        <article class="categoria">
+        <!-- BLUSAS -->
+        <article class="categoria" data-busqueda="blusas blusa camisas camisa">
             <img
-                src="imagenes/moda/Screenshot_2026-10-16-19-46-02-958_com.pinterest-edit.jpg"
+                src="./moda/Screenshot_2026-10-16-19-46-02-958_com.pinterest-edit.jpg"
                 alt="Blusas"
                 loading="lazy"
             >
             <h3>Blusas</h3>
+            <a href="blusas.html" class="boton-categoria">
+                Explorar blusas ✦
+            </a>
         </article>
 
-        <article class="categoria">
+        <!-- PANTALONES -->
+        <article class="categoria" data-busqueda="pantalones pantalon jeans jean">
             <img
-                src="imagenes/moda/Screenshot_2026-10-16-19-50-05-406_com.pinterest-edit.jpg"
+                src="./moda/Screenshot_2026-10-16-19-50-05-406_com.pinterest-edit.jpg"
                 alt="Pantalones"
                 loading="lazy"
             >
             <h3>Pantalones</h3>
+            <a href="pantalones.html" class="boton-categoria">
+                Explorar pantalones ✦
+            </a>
         </article>
 
-        <article class="categoria">
+        <!-- VESTIDOS CORTOS -->
+        <article class="categoria" data-busqueda="vestidos cortos vestido corto">
             <img
-                src="imagenes/moda/Screenshot_2026-10-16-19-54-14-423_com.pinterest~2.jpg"
+                src="./moda/Screenshot_2026-10-16-19-54-14-423_com.pinterest~2.jpg"
                 alt="Vestidos cortos"
                 loading="lazy"
             >
             <h3>Vestidos cortos</h3>
+            <a href="vestidos-cortos.html" class="boton-categoria">
+                Explorar vestidos cortos ✦
+            </a>
         </article>
 
-        <article class="categoria">
+        <!-- VESTIDOS LARGOS -->
+        <article class="categoria" data-busqueda="vestidos largos vestido largo">
             <img
-                src="imagenes/moda/Screenshot_2026-10-16-19-58-46-893_com.pinterest-edit.jpg"
+                src="./moda/Screenshot_2026-10-16-19-58-46-893_com.pinterest-edit.jpg"
                 alt="Vestidos largos"
                 loading="lazy"
             >
             <h3>Vestidos largos</h3>
+            <a href="vestidos-largos.html" class="boton-categoria">
+                Explorar vestidos largos ✦
+            </a>
         </article>
 
-        <article class="categoria">
+        <!-- CONJUNTOS -->
+        <article class="categoria" data-busqueda="conjuntos conjunto">
             <img
-                src="imagenes/moda/Screenshot_2026-10-16-20-00-17-969_com.pinterest~2.jpg"
+                src="./moda/Screenshot_2026-10-16-20-00-17-969_com.pinterest~2.jpg"
                 alt="Conjuntos"
                 loading="lazy"
             >
             <h3>Conjuntos</h3>
+            <a href="conjuntos.html" class="boton-categoria">
+                Explorar conjuntos ✦
+            </a>
         </article>
 
-        <article class="categoria">
+        <!-- FALDAS CORTAS -->
+        <article class="categoria" data-busqueda="faldas cortas falda corta">
             <img
-                src="imagenes/moda/Screenshot_2026-10-16-20-01-59-370_com.pinterest-edit.jpg"
+                src="./moda/Screenshot_2026-10-16-20-01-59-370_com.pinterest-edit.jpg"
                 alt="Faldas cortas"
                 loading="lazy"
             >
             <h3>Faldas cortas</h3>
+            <a href="Faldas-cortas.html" class="boton-categoria">
+                Explorar faldas cortas ✦
+            </a>
         </article>
 
-        <article class="categoria">
+        <!-- FALDAS LARGAS -->
+        <article class="categoria" data-busqueda="faldas largas falda larga">
             <img
-                src="imagenes/moda/Screenshot_2026-10-16-20-03-13-874_com.pinterest-edit.jpg"
+                src="./moda/Screenshot_2026-10-16-20-03-13-874_com.pinterest-edit.jpg"
                 alt="Faldas largas"
                 loading="lazy"
             >
             <h3>Faldas largas</h3>
+            <a href="faldas-largas.html" class="boton-categoria">
+                Explorar faldas largas ✦
+            </a>
         </article>
 
-        <article class="categoria">
+        <!-- SHORTS -->
+        <article class="categoria" data-busqueda="shorts short">
             <img
-                src="imagenes/moda/Screenshot_2026-10-16-20-05-08-637_com.pinterest-edit.jpg"
+                src="./moda/Screenshot_2026-10-16-20-05-08-637_com.pinterest-edit.jpg"
                 alt="Shorts"
                 loading="lazy"
             >
             <h3>Shorts</h3>
+            <a href="shorts.html" class="boton-categoria">
+                Explorar shorts ✦
+            </a>
         </article>
 
-        <article class="categoria">
+        <!-- ABRIGOS -->
+        <article class="categoria" data-busqueda="abrigos abrigo chaquetas chaqueta">
             <img
-                src="imagenes/moda/Screenshot_2026-10-16-20-44-40-128_com.pinterest-edit.jpg"
+                src="./moda/Screenshot_2026-10-16-20-44-40-128_com.pinterest-edit.jpg"
                 alt="Abrigos"
                 loading="lazy"
             >
             <h3>Abrigos</h3>
+            <a href="Abrigos.html" class="boton-categoria">
+                Explorar abrigos ✦
+            </a>
         </article>
 
-        <article class="categoria">
+        <!-- CALZADO -->
+        <article class="categoria" data-busqueda="calzado calzados zapatos zapato tacones botas sandalias">
             <img
-                src="imagenes/moda/Screenshot_2026-10-16-20-49-33-152_com.openai.chatgpt-edit.jpg"
-                alt="Calzados"
+                src="./moda/Screenshot_2026-10-16-20-49-33-152_com.openai.chatgpt-edit.jpg"
+                alt="Calzado"
                 loading="lazy"
             >
-            <h3>Calzados</h3>
+            <h3>Calzado</h3>
+            <a href="calzados.html" class="boton-categoria">
+                Explorar calzado ✦
+            </a>
         </article>
+
+        <div class="sin-resultados" id="sinResultados">
+            No encontramos esa categoría. Prueba con blusas, vestidos,
+            pantalones o shorts. 💗
+        </div>
 
     </main>
 
     <!-- PIE DE PÁGINA -->
     <footer>
-        <strong>Angel's Fashion World</strong><br>
+        <strong>Angel's Fashion World 🪽</strong><br>
         Moda · Belleza · Skin care · Accesorios<br>
         <span style="color: var(--dorado);">
-            ✦ Hecho con cariño ✦
+            ✧ Hecho con cariño ✦
         </span>
     </footer>
 
@@ -671,6 +863,7 @@
         const campo = document.getElementById("campoBusqueda");
         const mensaje = document.getElementById("mensajeBusqueda");
         const tarjetas = document.querySelectorAll(".categoria");
+        const sinResultados = document.getElementById("sinResultados");
 
         formulario.addEventListener("submit", function(evento) {
             evento.preventDefault();
@@ -689,12 +882,10 @@
             let encontrados = 0;
 
             tarjetas.forEach(function(tarjeta) {
-                const nombre = tarjeta
-                    .querySelector("h3")
-                    .textContent
+                const palabras = tarjeta.dataset.busqueda
                     .toLocaleLowerCase("es");
 
-                const coincide = nombre.includes(consulta);
+                const coincide = palabras.includes(consulta);
 
                 tarjeta.style.display = coincide ? "" : "none";
 
@@ -702,6 +893,9 @@
                     encontrados++;
                 }
             });
+
+            sinResultados.style.display =
+                encontrados === 0 ? "block" : "none";
 
             if (encontrados > 0) {
                 mensaje.textContent = encontrados === 1
@@ -713,7 +907,7 @@
                 });
             } else {
                 mensaje.textContent =
-                    "No encontramos esa categoría. Prueba con blusas, vestidos o shorts. 💕";
+                    "No encontramos esa categoría. Intenta con otro nombre. 💕";
             }
         });
 
@@ -723,6 +917,7 @@
                     tarjeta.style.display = "";
                 });
 
+                sinResultados.style.display = "none";
                 mensaje.textContent = "";
             }
         });
@@ -737,4 +932,3 @@
 
 </body>
 </html>
-
