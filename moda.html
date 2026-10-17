@@ -1,10 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#fff1f7">
-
     <title>Moda | Angel's Fashion World</title>
 
     <style>
@@ -17,9 +17,7 @@
             --fondo: #fffafd;
         }
 
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
         html {
             scroll-behavior: smooth;
@@ -37,12 +35,9 @@
                 var(--fondo);
         }
 
-        a {
-            color: inherit;
-        }
+        a { color: inherit; }
 
         /* ESTRELLAS DECORATIVAS */
-
         .estrellas {
             position: fixed;
             inset: 0;
@@ -57,23 +52,17 @@
             animation: flotar 5s ease-in-out infinite;
         }
 
-        .estrella1 {
-            top: 120px;
-            left: 4%;
-        }
-
+        .estrella1 { top: 120px; left: 4%; }
         .estrella2 {
             top: 280px;
             right: 5%;
             animation-delay: .7s;
         }
-
         .estrella3 {
             bottom: 180px;
             left: 6%;
             animation-delay: 1.3s;
         }
-
         .estrella4 {
             bottom: 80px;
             right: 7%;
@@ -81,13 +70,10 @@
         }
 
         @keyframes flotar {
-            50% {
-                transform: translateY(-9px) rotate(8deg);
-            }
+            50% { transform: translateY(-9px) rotate(8deg); }
         }
 
         /* MENÚ SUPERIOR */
-
         .menu {
             position: relative;
             z-index: 2;
@@ -120,8 +106,7 @@
             color: white;
         }
 
-        /* PORTADA: TEXTO A LA IZQUIERDA E IMAGEN A LA DERECHA */
-
+        /* PORTADA */
         .portada {
             position: relative;
             z-index: 1;
@@ -180,12 +165,8 @@
         }
 
         @keyframes moverAlas {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-5px);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
         }
 
         .portada h1 {
@@ -236,7 +217,6 @@
         }
 
         /* BUSCADOR */
-
         .buscador {
             position: relative;
             z-index: 2;
@@ -290,9 +270,7 @@
             font-size: 14px;
         }
 
-        .buscador button:hover {
-            background: var(--rosa-oscuro);
-        }
+        .buscador button:hover { background: var(--rosa-oscuro); }
 
         .mensaje-busqueda {
             min-height: 18px;
@@ -301,8 +279,7 @@
             font-size: 13px;
         }
 
-        /* ENCABEZADO DE CATEGORÍAS */
-
+        /* TÍTULO DE CATEGORÍAS */
         .titulo-categorias {
             position: relative;
             z-index: 1;
@@ -317,12 +294,9 @@
             font: 400 clamp(28px, 4vw, 42px) Georgia, serif;
         }
 
-        .titulo-categorias p {
-            line-height: 1.7;
-        }
+        .titulo-categorias p { line-height: 1.7; }
 
-        /* TARJETAS DE CATEGORÍAS */
-
+        /* TARJETAS */
         .categorias {
             position: relative;
             z-index: 1;
@@ -398,7 +372,6 @@
         }
 
         /* PIE DE PÁGINA */
-
         footer {
             position: relative;
             z-index: 1;
@@ -410,7 +383,6 @@
         }
 
         /* BARRA INFERIOR */
-
         .menu-inferior {
             position: fixed;
             z-index: 1000;
@@ -438,29 +410,20 @@
             text-decoration: none;
         }
 
-        .menu-inferior a:hover {
-            color: var(--rosa);
-        }
-
-        .icono {
-            font-size: 23px;
-        }
+        .menu-inferior a:hover { color: var(--rosa); }
+        .icono { font-size: 23px; }
 
         /* TABLETAS */
-
         @media (max-width: 850px) {
             .categorias {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
                 gap: 18px;
             }
 
-            .categoria img {
-                height: 260px;
-            }
+            .categoria img { height: 260px; }
         }
 
         /* CELULARES */
-
         @media (max-width: 520px) {
             .menu {
                 width: 96%;
@@ -477,10 +440,7 @@
                 min-height: 250px;
             }
 
-            .portada-texto {
-                flex: 1.1;
-                padding: 16px 12px;
-            }
+            .portada-texto { flex: 1.1; padding: 16px 12px; }
 
             .portada img {
                 flex: .9;
@@ -499,18 +459,14 @@
                 margin-top: 10px;
             }
 
-            .portada h1 {
-                font-size: clamp(27px, 7vw, 35px);
-            }
+            .portada h1 { font-size: clamp(27px, 7vw, 35px); }
 
             .portada h1 span {
                 font-size: .33em;
                 letter-spacing: .12em;
             }
 
-            .portada .frase {
-                font-size: 14px;
-            }
+            .portada .frase { font-size: 14px; }
 
             .portada .boton-explorar {
                 margin-top: 13px;
@@ -523,27 +479,21 @@
                 letter-spacing: 4px;
             }
 
-            .buscador {
-                width: 94%;
-            }
+            .buscador { width: 94%; }
 
             .buscador form {
                 gap: 5px;
                 padding-left: 10px;
             }
 
-            .buscador button {
-                padding: 10px 12px;
-            }
+            .buscador button { padding: 10px 12px; }
 
             .categorias {
                 width: 92%;
                 gap: 12px;
             }
 
-            .categoria img {
-                height: 205px;
-            }
+            .categoria img { height: 205px; }
 
             .categoria h3 {
                 margin: 15px 5px 10px;
@@ -561,42 +511,23 @@
                 font-size: 11px;
             }
 
-            .icono {
-                font-size: 22px;
-            }
+            .icono { font-size: 22px; }
         }
 
         @media (max-width: 360px) {
-            .portada-texto {
-                padding: 12px 8px;
-            }
-
-            .portada h1 {
-                font-size: 25px;
-            }
-
-            .portada .frase {
-                font-size: 12px;
-            }
-
-            .portada img {
-                min-height: 230px;
-            }
-
-            .categoria img {
-                height: 175px;
-            }
-
-            .boton-categoria {
-                font-size: 11px;
-            }
+            .portada-texto { padding: 12px 8px; }
+            .portada h1 { font-size: 25px; }
+            .portada .frase { font-size: 12px; }
+            .portada img { min-height: 230px; }
+            .categoria img { height: 175px; }
+            .boton-categoria { font-size: 11px; }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- ESTRELLAS DECORATIVAS -->
+    <!-- ESTRELLAS -->
     <div class="estrellas" aria-hidden="true">
         <span class="estrella estrella1">✦</span>
         <span class="estrella estrella2">✧</span>
@@ -604,7 +535,7 @@
         <span class="estrella estrella4">✧</span>
     </div>
 
-    <!-- MENÚ SUPERIOR: SIN SOBRE NOSOTROS -->
+    <!-- MENÚ SUPERIOR -->
     <nav class="menu" aria-label="Menú principal">
         <a href="index.html">Inicio</a>
         <a class="activo" href="moda.html" aria-current="page">Moda</a>
@@ -615,7 +546,6 @@
 
     <!-- PORTADA -->
     <header class="portada">
-
         <div class="portada-texto">
             <div class="mini">✧ TU ESTILO, TU ESENCIA ✧</div>
 
@@ -631,6 +561,10 @@
 
             <p class="frase">Un mundo creado para ti.</p>
 
+            <a href="#categorias" class="boton-explorar">
+                Explorar ✦
+            </a>
+
             <div class="adorno">✧ ✦ ✧</div>
         </div>
 
@@ -638,12 +572,10 @@
             src="imagenes/moda/Screenshot_2026-10-16-19-35-33-286_com.openai.chatgpt-edit.jpg"
             alt="Moda de Angel's Fashion World"
         >
-
     </header>
 
-    <!-- BUSCADOR ENCIMA DE LAS CATEGORÍAS -->
+    <!-- BUSCADOR -->
     <section class="buscador" id="buscarProducto">
-
         <h2>Buscar productos ✦</h2>
 
         <form id="formularioBusqueda">
@@ -652,51 +584,39 @@
             <input
                 type="search"
                 id="campoBusqueda"
-                placeholder="Busca blusas, vestidos, shorts..."
+                placeholder="Busca camisas, vestidos, shorts..."
                 aria-label="Buscar categorías de moda"
             >
 
             <button type="submit">Buscar</button>
         </form>
 
-        <p
-            class="mensaje-busqueda"
-            id="mensajeBusqueda"
-            aria-live="polite"
-        ></p>
-
+        <p class="mensaje-busqueda" id="mensajeBusqueda" aria-live="polite"></p>
     </section>
 
-    <!-- TÍTULO DE CATEGORÍAS -->
+    <!-- TÍTULO -->
     <section class="titulo-categorias" id="categorias">
-
         <div class="mini">✧ DESCUBRE TUS FAVORITOS ✧</div>
-
         <h2>Nuestra colección de moda</h2>
-
         <p>Encuentra prendas especiales para expresar tu estilo. 💗</p>
-
         <div class="adorno">✧ ✦ ✧</div>
-
     </section>
 
-    <!-- CATEGORÍAS DE MODA -->
+    <!-- CATEGORÍAS EN EL ORDEN SOLICITADO -->
     <main class="categorias" id="listaCategorias">
 
-        <!-- BLUSAS -->
-        <article class="categoria" data-busqueda="blusas blusa camisas camisa">
+        <!-- 1. CAMISAS -->
+        <article class="categoria" data-busqueda="camisas camisa blusas blusa">
             <img
                 src="imagenes/moda/Screenshot_2026-10-16-19-46-02-958_com.pinterest-edit.jpg"
-                alt="Blusas"
+                alt="Camisas"
                 loading="lazy"
             >
-            <h3>Blusas</h3>
-            <a href="blusas.html" class="boton-categoria">
-                Explorar blusas ✦
-            </a>
+            <h3>Camisas</h3>
+            <a href="blusas.html" class="boton-categoria">Explorar camisas ✦</a>
         </article>
 
-        <!-- PANTALONES -->
+        <!-- 2. PANTALONES -->
         <article class="categoria" data-busqueda="pantalones pantalon jeans jean">
             <img
                 src="imagenes/moda/Screenshot_2026-10-16-19-50-05-406_com.pinterest-edit.jpg"
@@ -704,12 +624,10 @@
                 loading="lazy"
             >
             <h3>Pantalones</h3>
-            <a href="pantalones.html" class="boton-categoria">
-                Explorar pantalones ✦
-            </a>
+            <a href="pantalones.html" class="boton-categoria">Explorar pantalones ✦</a>
         </article>
 
-        <!-- VESTIDOS CORTOS -->
+        <!-- 3. VESTIDOS CORTOS -->
         <article class="categoria" data-busqueda="vestidos cortos vestido corto">
             <img
                 src="imagenes/moda/Screenshot_2026-10-16-19-54-14-423_com.pinterest~2.jpg"
@@ -717,12 +635,10 @@
                 loading="lazy"
             >
             <h3>Vestidos cortos</h3>
-            <a href="vestidos-cortos.html" class="boton-categoria">
-                Explorar vestidos cortos ✦
-            </a>
+            <a href="vestidos-cortos.html" class="boton-categoria">Explorar vestidos cortos ✦</a>
         </article>
 
-        <!-- VESTIDOS LARGOS -->
+        <!-- 4. VESTIDOS LARGOS -->
         <article class="categoria" data-busqueda="vestidos largos vestido largo">
             <img
                 src="imagenes/moda/Screenshot_2026-10-16-19-58-46-893_com.pinterest-edit.jpg"
@@ -730,12 +646,10 @@
                 loading="lazy"
             >
             <h3>Vestidos largos</h3>
-            <a href="vestidos-largos.html" class="boton-categoria">
-                Explorar vestidos largos ✦
-            </a>
+            <a href="vestidos-largos.html" class="boton-categoria">Explorar vestidos largos ✦</a>
         </article>
 
-        <!-- CONJUNTOS -->
+        <!-- 5. CONJUNTOS -->
         <article class="categoria" data-busqueda="conjuntos conjunto">
             <img
                 src="imagenes/moda/Screenshot_2026-10-16-20-00-17-969_com.pinterest~2.jpg"
@@ -743,12 +657,10 @@
                 loading="lazy"
             >
             <h3>Conjuntos</h3>
-            <a href="conjuntos.html" class="boton-categoria">
-                Explorar conjuntos ✦
-            </a>
+            <a href="conjuntos.html" class="boton-categoria">Explorar conjuntos ✦</a>
         </article>
 
-        <!-- FALDAS CORTAS -->
+        <!-- 6. FALDAS CORTAS -->
         <article class="categoria" data-busqueda="faldas cortas falda corta">
             <img
                 src="imagenes/moda/Screenshot_2026-10-16-20-01-59-370_com.pinterest-edit.jpg"
@@ -756,25 +668,10 @@
                 loading="lazy"
             >
             <h3>Faldas cortas</h3>
-            <a href="Faldas-cortas.html" class="boton-categoria">
-                Explorar faldas cortas ✦
-            </a>
+            <a href="Faldas-cortas.html" class="boton-categoria">Explorar faldas cortas ✦</a>
         </article>
 
-        <!-- FALDAS LARGAS -->
-        <article class="categoria" data-busqueda="faldas largas falda larga">
-            <img
-                src="imagenes/moda/Screenshot_2026-10-16-20-03-13-874_com.pinterest-edit.jpg"
-                alt="Faldas largas"
-                loading="lazy"
-            >
-            <h3>Faldas largas</h3>
-            <a href="faldas-largas.html" class="boton-categoria">
-                Explorar faldas largas ✦
-            </a>
-        </article>
-
-        <!-- SHORTS -->
+        <!-- 7. SHORTS -->
         <article class="categoria" data-busqueda="shorts short">
             <img
                 src="imagenes/moda/Screenshot_2026-10-16-20-05-08-637_com.pinterest-edit.jpg"
@@ -782,12 +679,10 @@
                 loading="lazy"
             >
             <h3>Shorts</h3>
-            <a href="shorts.html" class="boton-categoria">
-                Explorar shorts ✦
-            </a>
+            <a href="shorts.html" class="boton-categoria">Explorar shorts ✦</a>
         </article>
 
-        <!-- ABRIGOS -->
+        <!-- 8. ABRIGOS -->
         <article class="categoria" data-busqueda="abrigos abrigo chaquetas chaqueta">
             <img
                 src="imagenes/moda/Screenshot_2026-10-16-20-44-40-128_com.pinterest-edit.jpg"
@@ -795,26 +690,33 @@
                 loading="lazy"
             >
             <h3>Abrigos</h3>
-            <a href="Abrigos.html" class="boton-categoria">
-                Explorar abrigos ✦
-            </a>
+            <a href="Abrigos.html" class="boton-categoria">Explorar abrigos ✦</a>
         </article>
 
-        <!-- CALZADO -->
-        <article class="categoria" data-busqueda="calzado calzados zapatos zapato tacones botas sandalias">
+        <!-- 9. FALDAS LARGAS -->
+        <article class="categoria" data-busqueda="faldas largas falda larga">
             <img
-                src="imagenes/moda/Screenshot_2026-10-16-20-49-33-152_com.openai.chatgpt-edit.jpg"
-                alt="Calzado"
+                src="imagenes/moda/Screenshot_2026-10-16-20-03-13-874_com.pinterest-edit.jpg"
+                alt="Faldas largas"
                 loading="lazy"
             >
-            <h3>Calzado</h3>
-            <a href="calzados.html" class="boton-categoria">
-                Explorar calzado ✦
-            </a>
+            <h3>Faldas largas</h3>
+            <a href="faldas-largas.html" class="boton-categoria">Explorar faldas largas ✦</a>
+        </article>
+
+        <!-- 10. CALZADOS -->
+        <article class="categoria" data-busqueda="calzados calzado zapatos zapato tacones botas sandalias">
+            <img
+                src="imagenes/moda/Screenshot_2026-10-16-20-49-33-152_com.openai.chatgpt-edit.jpg"
+                alt="Calzados"
+                loading="lazy"
+            >
+            <h3>Calzados</h3>
+            <a href="calzados.html" class="boton-categoria">Explorar calzados ✦</a>
         </article>
 
         <div class="sin-resultados" id="sinResultados">
-            No encontramos esa categoría. Prueba con blusas, vestidos,
+            No encontramos esa categoría. Prueba con camisas, vestidos,
             pantalones o shorts. 💗
         </div>
 
@@ -824,14 +726,11 @@
     <footer>
         <strong>Angel's Fashion World 🪽</strong><br>
         Moda · Belleza · Skin care · Accesorios<br>
-        <span style="color: var(--dorado);">
-            ✧ Hecho con cariño ✦
-        </span>
+        <span style="color: var(--dorado);">✧ Hecho con cariño ✦</span>
     </footer>
 
     <!-- BARRA INFERIOR -->
     <nav class="menu-inferior" aria-label="Accesos rápidos">
-
         <a href="#buscarProducto" id="enlaceBuscar">
             <span class="icono">⌕</span>
             Buscar
@@ -851,7 +750,6 @@
             <span class="icono">♙</span>
             Mi perfil
         </a>
-
     </nav>
 
     <script>
@@ -864,13 +762,10 @@
         formulario.addEventListener("submit", function(evento) {
             evento.preventDefault();
 
-            const consulta = campo.value
-                .trim()
-                .toLocaleLowerCase("es");
+            const consulta = campo.value.trim().toLocaleLowerCase("es");
 
             if (!consulta) {
-                mensaje.textContent =
-                    "Escribe una categoría para buscar. 💗";
+                mensaje.textContent = "Escribe una categoría para buscar. 💗";
                 campo.focus();
                 return;
             }
@@ -878,20 +773,15 @@
             let encontrados = 0;
 
             tarjetas.forEach(function(tarjeta) {
-                const palabras = tarjeta.dataset.busqueda
-                    .toLocaleLowerCase("es");
-
+                const palabras = tarjeta.dataset.busqueda.toLocaleLowerCase("es");
                 const coincide = palabras.includes(consulta);
 
                 tarjeta.style.display = coincide ? "" : "none";
 
-                if (coincide) {
-                    encontrados++;
-                }
+                if (coincide) encontrados++;
             });
 
-            sinResultados.style.display =
-                encontrados === 0 ? "block" : "none";
+            sinResultados.style.display = encontrados === 0 ? "block" : "none";
 
             if (encontrados > 0) {
                 mensaje.textContent = encontrados === 1
@@ -918,13 +808,13 @@
             }
         });
 
-        document.getElementById("enlaceBuscar")
-            .addEventListener("click", function() {
-                setTimeout(function() {
-                    campo.focus({ preventScroll: true });
-                }, 100);
-            });
+        document.getElementById("enlaceBuscar").addEventListener("click", function() {
+            setTimeout(function() {
+                campo.focus({ preventScroll: true });
+            }, 100);
+        });
     </script>
 
 </body>
 </html>
+```
