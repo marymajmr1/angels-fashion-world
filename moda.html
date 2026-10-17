@@ -1,10 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#fff1f7">
-
     <title>Moda | Angel's Fashion World</title>
 
     <style>
@@ -102,14 +102,14 @@
             color: white;
         }
 
-        /* PORTADA: UNA SOLA IMAGEN */
+        /* PORTADA: IMAGEN MÁS PEQUEÑA */
 
         .portada {
             position: relative;
             z-index: 1;
             width: 92%;
             max-width: 1200px;
-            margin: 30px auto 35px;
+            margin: 25px auto 30px;
             overflow: hidden;
             border: 1px solid var(--borde);
             border-radius: 28px;
@@ -120,13 +120,13 @@
         .portada img {
             display: block;
             width: 100%;
-            height: clamp(240px, 42vw, 440px);
+            height: clamp(150px, 22vw, 250px);
             object-fit: cover;
             object-position: center;
         }
 
         .portada-texto {
-            padding: 28px 20px;
+            padding: 20px;
             text-align: center;
         }
 
@@ -160,7 +160,7 @@
             letter-spacing: 7px;
         }
 
-        /* BUSCADOR: ENCIMA DE LAS CATEGORÍAS */
+        /* BUSCADOR ENCIMA DE LAS CATEGORÍAS */
 
         .buscador {
             position: relative;
@@ -424,7 +424,7 @@
         <a href="sobre-nosotros.html">Sobre nosotros</a>
     </nav>
 
-    <!-- PORTADA CON UNA SOLA IMAGEN -->
+    <!-- PORTADA -->
     <header class="portada">
         <img
             src="./moda/Screenshot_2026-10-16-19-35-33-286_com.openai.chatgpt-edit.jpg"
@@ -444,7 +444,7 @@
         </div>
     </header>
 
-    <!-- BUSCADOR: VA ANTES DE LAS CATEGORÍAS -->
+    <!-- BUSCADOR -->
     <section class="buscador" id="buscarProducto">
         <h2>Buscar productos ✦</h2>
 
@@ -473,7 +473,7 @@
         <div class="adorno">✧ ✦ ✧</div>
     </section>
 
-    <!-- CATEGORÍAS: SIN BOTONES EXPLORAR -->
+    <!-- CATEGORÍAS -->
     <main class="categorias">
 
         <article class="categoria">
@@ -545,7 +545,7 @@
         <span style="color:var(--dorado)">✦ Hecho con cariño ✦</span>
     </footer>
 
-    <!-- BARRA INFERIOR FIJA -->
+    <!-- BARRA INFERIOR -->
     <nav class="menu-inferior" aria-label="Accesos rápidos">
         <a href="#buscarProducto" id="enlaceBuscar">
             <span class="icono">⌕</span>
