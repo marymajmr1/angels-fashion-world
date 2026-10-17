@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -103,41 +102,31 @@
             color: white;
         }
 
-        /* PRESENTACIÓN DE MODA */
+        /* PORTADA: UNA SOLA IMAGEN */
 
-        .marca {
+        .portada {
             position: relative;
             z-index: 1;
             width: 92%;
             max-width: 1200px;
-            margin: 35px auto;
-            display: grid;
-            grid-template-columns: .9fr 1.1fr;
-            align-items: center;
-            gap: 28px;
-        }
-
-        .logo {
-            position: relative;
-            min-height: 260px;
+            margin: 30px auto 35px;
             overflow: hidden;
-            display: grid;
-            place-items: center;
             border: 1px solid var(--borde);
-            border-radius: 25px;
+            border-radius: 28px;
             background: linear-gradient(135deg, #ffe6f0, white, #fbe6ef);
+            box-shadow: 0 10px 30px #9a39670c;
         }
 
-        .logo img {
-            position: relative;
+        .portada img {
             display: block;
-            width: 92%;
-            height: 260px;
+            width: 100%;
+            height: clamp(240px, 42vw, 440px);
             object-fit: cover;
+            object-position: center;
         }
 
-        .marca-texto {
-            padding: 15px;
+        .portada-texto {
+            padding: 28px 20px;
             text-align: center;
         }
 
@@ -147,121 +136,93 @@
             letter-spacing: 3px;
         }
 
-        .marca h1 {
-            margin: 15px 0;
+        .portada h1 {
+            margin: 13px 0;
             color: var(--rosa-oscuro);
-            font: 400 clamp(42px, 6vw, 68px)/1.05 Georgia, serif;
+            font: 400 clamp(34px, 6vw, 55px)/1.1 Georgia, serif;
         }
 
-        .marca h1 span {
+        .portada h1 span {
             display: block;
-            margin-top: 12px;
-            font-size: .38em;
+            margin-top: 10px;
+            font-size: .4em;
             letter-spacing: .22em;
         }
 
-        .frase-marca {
+        .frase {
             color: #9c5276;
-            font: italic clamp(18px, 2vw, 24px) Georgia, serif;
+            font: italic clamp(17px, 2vw, 22px) Georgia, serif;
         }
 
         .adorno {
-            margin-top: 17px;
+            margin-top: 14px;
             color: var(--dorado);
             letter-spacing: 7px;
         }
 
-        /* PORTADA PRINCIPAL */
+        /* BUSCADOR: ENCIMA DE LAS CATEGORÍAS */
 
-        .hero {
+        .buscador {
             position: relative;
-            z-index: 1;
+            z-index: 2;
             width: 92%;
-            max-width: 1200px;
-            margin: 25px auto 45px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            overflow: hidden;
-            border: 1px solid var(--borde);
-            border-radius: 28px;
-            background: linear-gradient(120deg, #fff5fa, #ffe5f0, white);
-            box-shadow: 0 10px 30px #9a39670c;
+            max-width: 650px;
+            margin: 30px auto 35px;
+            scroll-margin-top: 20px;
         }
 
-        .hero-texto {
-            align-self: center;
-            padding: clamp(25px, 5vw, 55px);
-        }
-
-        .eyebrow {
-            color: var(--dorado);
-            font-size: 12px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .hero h2 {
-            margin: 16px 0;
-            color: var(--rosa-oscuro);
-            font: 400 clamp(30px, 4vw, 46px)/1.15 Georgia, serif;
-        }
-
-        .hero p {
-            line-height: 1.8;
-        }
-
-        .boton {
-            display: inline-block;
-            margin-top: 12px;
-            padding: 13px 24px;
-            border-radius: 30px;
-            background: var(--rosa);
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            transition: background .2s, transform .2s;
-        }
-
-        .boton:hover {
-            background: var(--rosa-oscuro);
-            transform: translateY(-2px);
-        }
-
-        .hero-imagen {
-            position: relative;
-            display: block;
-            min-height: 390px;
-            overflow: hidden;
-            background: #f9dce9;
-        }
-
-        .hero-imagen img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            min-height: 390px;
-            object-fit: cover;
-            object-position: center;
-            transition: transform .4s;
-        }
-
-        .hero-imagen:hover img {
-            transform: scale(1.025);
-        }
-
-        .etiqueta-imagen {
-            position: absolute;
-            right: 15px;
-            bottom: 15px;
-            left: 15px;
-            padding: 13px;
-            border: 1px solid #ffffffb0;
-            border-radius: 15px;
-            background: #fffaf0d9;
+        .buscador h2 {
+            margin-bottom: 17px;
             color: var(--rosa-oscuro);
             text-align: center;
-            font: italic 20px Georgia, serif;
+            font: 400 clamp(25px, 4vw, 32px) Georgia, serif;
+        }
+
+        .buscador form {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 8px 7px 15px;
+            border: 1px solid var(--borde);
+            border-radius: 30px;
+            background: white;
+            box-shadow: 0 5px 18px #d85b9112;
+        }
+
+        .lupa {
+            color: var(--rosa);
+            font-size: 23px;
+        }
+
+        .buscador input {
+            width: 100%;
+            min-width: 0;
+            padding: 10px 0;
+            border: 0;
+            outline: none;
+            color: var(--texto);
+            background: transparent;
+            font-size: 14px;
+        }
+
+        .buscador button {
+            padding: 11px 17px;
+            border: 0;
+            border-radius: 25px;
+            background: var(--rosa);
+            color: white;
+            cursor: pointer;
+        }
+
+        .buscador button:hover {
+            background: var(--rosa-oscuro);
+        }
+
+        .mensaje-busqueda {
+            min-height: 18px;
+            margin: 10px 8px;
+            text-align: center;
+            font-size: 13px;
         }
 
         /* TÍTULO DE CATEGORÍAS */
@@ -269,26 +230,22 @@
         .titulo-categorias {
             position: relative;
             z-index: 1;
-            margin: 45px 15px 30px;
+            margin: 35px 15px 30px;
             text-align: center;
+            scroll-margin-top: 20px;
         }
 
         .titulo-categorias h2 {
-            margin-bottom: 10px;
+            margin: 12px 0;
             color: var(--rosa-oscuro);
-            font: 400 clamp(30px, 4vw, 43px) Georgia, serif;
+            font: 400 clamp(28px, 4vw, 42px) Georgia, serif;
         }
 
         .titulo-categorias p {
             line-height: 1.7;
         }
 
-        .titulo-categorias .adorno {
-            color: var(--dorado);
-            font-size: 18px;
-        }
-
-        /* CATEGORÍAS */
+        /* TARJETAS DE MODA */
 
         .categorias {
             position: relative;
@@ -312,7 +269,7 @@
         }
 
         .categoria:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
             box-shadow: 0 12px 28px #d85b9125;
         }
 
@@ -325,75 +282,9 @@
         }
 
         .categoria h3 {
-            margin: 18px 8px 12px;
+            margin: 18px 8px 22px;
             color: var(--rosa-oscuro);
             font: 400 23px Georgia, serif;
-        }
-
-        .categoria .boton {
-            margin: 0 10px 22px;
-            padding: 11px 22px;
-            font-size: 14px;
-        }
-
-        /* BUSCADOR */
-
-        .buscador {
-            position: relative;
-            z-index: 2;
-            width: 92%;
-            max-width: 650px;
-            margin: 30px auto 40px;
-            scroll-margin-top: 20px;
-        }
-
-        .buscador h2 {
-            color: var(--rosa-oscuro);
-            text-align: center;
-            font: 400 30px Georgia, serif;
-        }
-
-        .buscador form {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 7px 8px 7px 15px;
-            border: 1px solid var(--borde);
-            border-radius: 30px;
-            background: white;
-            box-shadow: 0 5px 18px #d85b9112;
-        }
-
-        .lupa {
-            color: var(--rosa);
-            font-size: 23px;
-        }
-
-        .buscador input {
-            width: 100%;
-            min-width: 0;
-            padding: 9px 0;
-            border: 0;
-            outline: none;
-            color: var(--texto);
-            background: transparent;
-            font-size: 14px;
-        }
-
-        .buscador button {
-            padding: 11px 15px;
-            border: 0;
-            border-radius: 25px;
-            background: var(--rosa);
-            color: white;
-            cursor: pointer;
-        }
-
-        .mensaje-busqueda {
-            min-height: 18px;
-            margin: 8px;
-            text-align: center;
-            font-size: 13px;
         }
 
         /* BARRA INFERIOR FIJA */
@@ -425,8 +316,7 @@
             text-decoration: none;
         }
 
-        .menu-inferior a:hover,
-        .menu-inferior a.activo {
+        .menu-inferior a:hover {
             color: var(--rosa);
         }
 
@@ -456,37 +346,6 @@
                 font-size: 12px;
             }
 
-            .marca {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
-
-            .logo {
-                min-height: 230px;
-            }
-
-            .logo img {
-                height: 230px;
-            }
-
-            .hero {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-imagen {
-                grid-row: 1;
-                min-height: 300px;
-            }
-
-            .hero-imagen img {
-                min-height: 300px;
-                max-height: 440px;
-            }
-
-            .hero-texto {
-                padding: 28px;
-            }
-
             .categorias {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
                 gap: 16px;
@@ -506,14 +365,9 @@
                 width: 96%;
             }
 
-            .marca,
-            .hero {
+            .portada,
+            .buscador {
                 width: 94%;
-            }
-
-            .hero-imagen,
-            .hero-imagen img {
-                min-height: 255px;
             }
 
             .categorias {
@@ -526,12 +380,7 @@
             }
 
             .categoria h3 {
-                font-size: 18px;
-            }
-
-            .categoria .boton {
-                padding: 10px 15px;
-                font-size: 12px;
+                font-size: 17px;
             }
 
             .menu-inferior a {
@@ -541,6 +390,15 @@
 
             .icono {
                 font-size: 22px;
+            }
+
+            .buscador form {
+                gap: 5px;
+                padding-left: 10px;
+            }
+
+            .buscador button {
+                padding: 10px 12px;
             }
         }
     </style>
@@ -566,133 +424,29 @@
         <a href="sobre-nosotros.html">Sobre nosotros</a>
     </nav>
 
-    <!-- PRESENTACIÓN DE LA MARCA -->
-    <section class="marca">
-        <div class="logo">
-            <img
-                src="./moda/Screenshot_2026-10-16-19-35-33-286_com.openai.chatgpt-edit.jpg"
-                alt="Moda de Angel's Fashion World"
-            >
-        </div>
+    <!-- PORTADA CON UNA SOLA IMAGEN -->
+    <header class="portada">
+        <img
+            src="./moda/Screenshot_2026-10-16-19-35-33-286_com.openai.chatgpt-edit.jpg"
+            alt="Moda de Angel's Fashion World"
+        >
 
-        <div class="marca-texto">
+        <div class="portada-texto">
             <div class="mini">✧ TU ESTILO, TU ESENCIA ✧</div>
-            <h1>Angel's <span>FASHION WORLD</span></h1>
-            <p class="frase-marca">Un mundo creado para ti.</p>
+
+            <h1>
+                Angel's
+                <span>FASHION WORLD</span>
+            </h1>
+
+            <p class="frase">Un mundo creado para ti.</p>
             <div class="adorno">✧ ✦ ✧</div>
         </div>
-    </section>
+    </header>
 
-    <!-- PORTADA DE MODA -->
-    <section class="hero">
-        <div class="hero-texto">
-            <div class="eyebrow">Nuestra colección</div>
-            <h2>Descubre tu próximo look favorito.</h2>
-
-            <p>
-                Explora nuestra colección de moda y encuentra prendas
-                hermosas para expresar tu estilo en cada ocasión. 💗
-            </p>
-
-            <a class="boton" href="#categorias">Explorar moda ✦</a>
-        </div>
-
-        <a class="hero-imagen" href="#categorias"
-           aria-label="Ver todas las categorías de moda">
-            <img
-                src="./moda/Screenshot_2026-10-16-19-46-02-958_com.pinterest-edit.jpg"
-                alt="Colección de prendas de moda"
-            >
-            <span class="etiqueta-imagen">Encuentra tu estilo ♡</span>
-        </a>
-    </section>
-
-    <!-- TÍTULO -->
-    <section class="titulo-categorias" id="categorias">
-        <div class="eyebrow">Descubre tus favoritos</div>
-        <h2>Nuestra colección de moda</h2>
-        <p>Elige tu categoría favorita y encuentra algo especial para ti.</p>
-        <div class="adorno">✧ ✦ ✧</div>
-    </section>
-
-    <!-- CATEGORÍAS DE MODA -->
-    <main class="categorias">
-
-        <article class="categoria">
-            <img src="./moda/Screenshot_2026-10-16-19-46-02-958_com.pinterest-edit.jpg"
-                 alt="Colección de blusas" loading="lazy">
-            <h3>Blusas</h3>
-            <a class="boton" href="blusas.html">Explorar ✦</a>
-        </article>
-
-        <article class="categoria">
-            <img src="./moda/Screenshot_2026-10-16-19-50-05-406_com.pinterest-edit.jpg"
-                 alt="Colección de pantalones" loading="lazy">
-            <h3>Pantalones</h3>
-            <a class="boton" href="pantalones.html">Explorar ✦</a>
-        </article>
-
-        <article class="categoria">
-            <img src="./moda/Screenshot_2026-10-16-19-54-14-423_com.pinterest~2.jpg"
-                 alt="Vestidos cortos" loading="lazy">
-            <h3>Vestidos cortos</h3>
-            <a class="boton" href="vestidos-cortos.html">Explorar ✦</a>
-        </article>
-
-        <article class="categoria">
-            <img src="./moda/Screenshot_2026-10-16-19-58-46-893_com.pinterest-edit.jpg"
-                 alt="Vestidos largos" loading="lazy">
-            <h3>Vestidos largos</h3>
-            <a class="boton" href="vestidos-largos.html">Explorar ✦</a>
-        </article>
-
-        <article class="categoria">
-            <img src="./moda/Screenshot_2026-10-16-20-00-17-969_com.pinterest~2.jpg"
-                 alt="Conjuntos de moda" loading="lazy">
-            <h3>Conjuntos</h3>
-            <a class="boton" href="conjuntos.html">Explorar ✦</a>
-        </article>
-
-        <article class="categoria">
-            <img src="./moda/Screenshot_2026-10-16-20-01-59-370_com.pinterest-edit.jpg"
-                 alt="Faldas cortas" loading="lazy">
-            <h3>Faldas cortas</h3>
-            <a class="boton" href="Faldas-cortas.html">Explorar ✦</a>
-        </article>
-
-        <article class="categoria">
-            <img src="./moda/Screenshot_2026-10-16-20-03-13-874_com.pinterest-edit.jpg"
-                 alt="Faldas largas" loading="lazy">
-            <h3>Faldas largas</h3>
-            <a class="boton" href="faldas-largas.html">Explorar ✦</a>
-        </article>
-
-        <article class="categoria">
-            <img src="./moda/Screenshot_2026-10-16-20-05-08-637_com.pinterest-edit.jpg"
-                 alt="Shorts" loading="lazy">
-            <h3>Shorts</h3>
-            <a class="boton" href="shorts.html">Explorar ✦</a>
-        </article>
-
-        <article class="categoria">
-            <img src="./moda/Screenshot_2026-10-16-20-44-40-128_com.pinterest-edit.jpg"
-                 alt="Abrigos" loading="lazy">
-            <h3>Abrigos</h3>
-            <a class="boton" href="Abrigos.html">Explorar ✦</a>
-        </article>
-
-        <article class="categoria">
-            <img src="./moda/Screenshot_2026-10-16-20-49-33-152_com.openai.chatgpt-edit.jpg"
-                 alt="Calzados" loading="lazy">
-            <h3>Calzados</h3>
-            <a class="boton" href="calzados.html">Explorar ✦</a>
-        </article>
-
-    </main>
-
-    <!-- BUSCADOR -->
+    <!-- BUSCADOR: VA ANTES DE LAS CATEGORÍAS -->
     <section class="buscador" id="buscarProducto">
-        <h2>Buscar en Moda</h2>
+        <h2>Buscar productos ✦</h2>
 
         <form id="formularioBusqueda">
             <span class="lupa">⌕</span>
@@ -701,7 +455,7 @@
                 type="search"
                 id="campoBusqueda"
                 placeholder="Busca blusas, vestidos, shorts..."
-                aria-label="Buscar categoría de moda"
+                aria-label="Buscar categorías de moda"
             >
 
             <button type="submit">Buscar</button>
@@ -710,6 +464,79 @@
         <p class="mensaje-busqueda" id="mensajeBusqueda"
            aria-live="polite"></p>
     </section>
+
+    <!-- TÍTULO DE CATEGORÍAS -->
+    <section class="titulo-categorias" id="categorias">
+        <div class="mini">✧ DESCUBRE TUS FAVORITOS ✧</div>
+        <h2>Nuestra colección de moda</h2>
+        <p>Encuentra prendas especiales para expresar tu estilo. 💗</p>
+        <div class="adorno">✧ ✦ ✧</div>
+    </section>
+
+    <!-- CATEGORÍAS: SIN BOTONES EXPLORAR -->
+    <main class="categorias">
+
+        <article class="categoria">
+            <img src="./moda/Screenshot_2026-10-16-19-46-02-958_com.pinterest-edit.jpg"
+                 alt="Blusas" loading="lazy">
+            <h3>Blusas</h3>
+        </article>
+
+        <article class="categoria">
+            <img src="./moda/Screenshot_2026-10-16-19-50-05-406_com.pinterest-edit.jpg"
+                 alt="Pantalones" loading="lazy">
+            <h3>Pantalones</h3>
+        </article>
+
+        <article class="categoria">
+            <img src="./moda/Screenshot_2026-10-16-19-54-14-423_com.pinterest~2.jpg"
+                 alt="Vestidos cortos" loading="lazy">
+            <h3>Vestidos cortos</h3>
+        </article>
+
+        <article class="categoria">
+            <img src="./moda/Screenshot_2026-10-16-19-58-46-893_com.pinterest-edit.jpg"
+                 alt="Vestidos largos" loading="lazy">
+            <h3>Vestidos largos</h3>
+        </article>
+
+        <article class="categoria">
+            <img src="./moda/Screenshot_2026-10-16-20-00-17-969_com.pinterest~2.jpg"
+                 alt="Conjuntos" loading="lazy">
+            <h3>Conjuntos</h3>
+        </article>
+
+        <article class="categoria">
+            <img src="./moda/Screenshot_2026-10-16-20-01-59-370_com.pinterest-edit.jpg"
+                 alt="Faldas cortas" loading="lazy">
+            <h3>Faldas cortas</h3>
+        </article>
+
+        <article class="categoria">
+            <img src="./moda/Screenshot_2026-10-16-20-03-13-874_com.pinterest-edit.jpg"
+                 alt="Faldas largas" loading="lazy">
+            <h3>Faldas largas</h3>
+        </article>
+
+        <article class="categoria">
+            <img src="./moda/Screenshot_2026-10-16-20-05-08-637_com.pinterest-edit.jpg"
+                 alt="Shorts" loading="lazy">
+            <h3>Shorts</h3>
+        </article>
+
+        <article class="categoria">
+            <img src="./moda/Screenshot_2026-10-16-20-44-40-128_com.pinterest-edit.jpg"
+                 alt="Abrigos" loading="lazy">
+            <h3>Abrigos</h3>
+        </article>
+
+        <article class="categoria">
+            <img src="./moda/Screenshot_2026-10-16-20-49-33-152_com.openai.chatgpt-edit.jpg"
+                 alt="Calzados" loading="lazy">
+            <h3>Calzados</h3>
+        </article>
+
+    </main>
 
     <!-- PIE DE PÁGINA -->
     <footer>
@@ -720,7 +547,6 @@
 
     <!-- BARRA INFERIOR FIJA -->
     <nav class="menu-inferior" aria-label="Accesos rápidos">
-
         <a href="#buscarProducto" id="enlaceBuscar">
             <span class="icono">⌕</span>
             Buscar
@@ -740,19 +566,18 @@
             <span class="icono">♙</span>
             Mi perfil
         </a>
-
     </nav>
 
     <script>
         const formulario = document.getElementById("formularioBusqueda");
         const campo = document.getElementById("campoBusqueda");
         const mensaje = document.getElementById("mensajeBusqueda");
+        const tarjetas = document.querySelectorAll(".categoria");
 
         formulario.addEventListener("submit", function(evento) {
             evento.preventDefault();
 
             const consulta = campo.value.trim().toLocaleLowerCase("es");
-            const tarjetas = document.querySelectorAll(".categoria");
 
             if (!consulta) {
                 mensaje.textContent = "Escribe una categoría para buscar. 💗";
@@ -791,7 +616,7 @@
 
         campo.addEventListener("input", function() {
             if (!campo.value.trim()) {
-                document.querySelectorAll(".categoria").forEach(function(tarjeta) {
+                tarjetas.forEach(function(tarjeta) {
                     tarjeta.style.display = "";
                 });
 
