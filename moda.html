@@ -1,11 +1,13 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Moda | Angel's Fashion World</title>
-    <meta name="description" content="Descubre las categorías de moda de Angel's Fashion World y encuentra prendas para expresar tu estilo.">
+    <meta name="description" content="Descubre la colección de moda de Angel's Fashion World. Encuentra prendas y calzados para expresar tu estilo.">
 
     <link rel="stylesheet" href="./style.css?v=19">
 
@@ -25,18 +27,20 @@
             font-family: "Trebuchet MS", Arial, sans-serif;
         }
 
+        /* MENÚ PRINCIPAL */
+
         .menu {
             width: 92%;
             max-width: 1200px;
-            margin: 24px auto;
+            margin: 25px auto;
             padding: 16px 20px;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             flex-wrap: wrap;
-            gap: 12px 25px;
+            gap: 14px 24px;
             background: #fff;
-            border: 1px solid #f4d9e5;
+            border: 1px solid #f1d5e2;
             border-radius: 22px;
             box-shadow: 0 8px 25px #d85b9110;
         }
@@ -45,7 +49,7 @@
             color: #68495a;
             text-decoration: none;
             font-size: 13px;
-            font-weight: 700;
+            font-weight: bold;
             transition: color .25s ease;
         }
 
@@ -53,77 +57,86 @@
             color: #d85b91;
         }
 
+        /* PORTADA PRINCIPAL */
+
         .portada-moda {
             width: 92%;
             max-width: 1200px;
-            min-height: 340px;
-            margin: 28px auto 55px;
-            position: relative;
-            overflow: hidden;
-            display: flex;
+            margin: 30px auto 65px;
+            padding: 35px;
+            display: grid;
+            grid-template-columns: 1fr .85fr;
             align-items: center;
-            justify-content: center;
-            text-align: center;
+            gap: 35px;
+            background: linear-gradient(135deg, #fff0f7, #fff);
             border: 1px solid #f2d4e2;
             border-radius: 30px;
-            background:
-                linear-gradient(135deg, #fff0f7dd, #ffffffb8),
-                url("./moda/Screenshot_2026-10-16-19-35-33-286_com.openai.chatgpt-edit.jpg")
-                center 45% / cover no-repeat;
             box-shadow: 0 12px 35px #d85b9117;
         }
 
         .portada-contenido {
-            width: min(90%, 700px);
-            padding: 45px 20px;
-            position: relative;
-            z-index: 1;
+            padding: 20px;
+            text-align: left;
         }
 
         .marca {
-            margin-bottom: 12px;
+            margin-bottom: 18px;
             color: #c8a96b;
-            font-size: 20px;
-            letter-spacing: 7px;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 4px;
+        }
+
+        .marca .alas {
+            color: #d85b91;
+            font-size: 21px;
         }
 
         .portada-moda h1 {
             margin: 0;
             color: #c34e83;
             font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(42px, 7vw, 76px);
+            font-size: clamp(44px, 5vw, 70px);
             font-weight: 500;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
         .subtitulo-portada {
-            margin: 16px 0 12px;
+            margin: 16px 0;
             color: #68495a;
             font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(19px, 3vw, 25px);
+            font-size: clamp(21px, 2.5vw, 28px);
             font-style: italic;
         }
 
         .texto-portada {
-            max-width: 540px;
-            margin: 0 auto;
+            max-width: 460px;
+            margin: 0;
+            color: #68495a;
             font-size: 15px;
             line-height: 1.9;
         }
 
+        .estrella-portada {
+            margin-top: 17px;
+            color: #c8a96b;
+            font-size: 22px;
+        }
+
         .boton-portada {
             display: inline-block;
-            margin-top: 24px;
-            padding: 13px 25px;
+            margin-top: 23px;
+            padding: 14px 23px;
             color: #fff;
             background: #d85b91;
+            border: 1px solid #d85b91;
             border-radius: 30px;
             text-decoration: none;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: bold;
-            letter-spacing: .5px;
-            box-shadow: 0 6px 18px #d85b9130;
-            transition: transform .25s, background .25s;
+            letter-spacing: .6px;
+            box-shadow: 0 6px 18px #d85b9125;
+            transition: background .25s, transform .25s;
         }
 
         .boton-portada:hover {
@@ -131,14 +144,39 @@
             transform: translateY(-3px);
         }
 
+        .portada-imagen {
+            width: 100%;
+            overflow: hidden;
+            background: #fff0f7;
+            border: 5px solid #fff;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px #d85b9125;
+        }
+
+        .portada-imagen img {
+            width: 100%;
+            height: 390px;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+            transition: transform .4s ease;
+        }
+
+        .portada-imagen:hover img {
+            transform: scale(1.035);
+        }
+
+        /* ENCABEZADO DE CATEGORÍAS */
+
         .seccion-categorias {
             width: 92%;
             max-width: 1200px;
-            margin: 0 auto 65px;
+            margin: 0 auto 70px;
+            scroll-margin-top: 25px;
         }
 
         .encabezado-categorias {
-            margin-bottom: 32px;
+            margin-bottom: 35px;
             text-align: center;
         }
 
@@ -147,11 +185,10 @@
             font-size: 11px;
             font-weight: bold;
             letter-spacing: 4px;
-            text-transform: uppercase;
         }
 
         .encabezado-categorias h2 {
-            margin: 12px 0;
+            margin: 13px 0;
             color: #c34e83;
             font-family: Georgia, "Times New Roman", serif;
             font-size: clamp(30px, 4vw, 43px);
@@ -159,11 +196,19 @@
         }
 
         .encabezado-categorias p {
-            max-width: 600px;
+            max-width: 620px;
             margin: 0 auto;
             font-size: 14px;
-            line-height: 1.8;
+            line-height: 1.9;
         }
+
+        .adorno-categorias {
+            margin-top: 15px;
+            color: #c8a96b;
+            font-size: 22px;
+        }
+
+        /* TARJETAS DE CATEGORÍAS */
 
         .categorias {
             display: grid;
@@ -175,15 +220,15 @@
             min-width: 0;
             overflow: hidden;
             background: #fff;
-            border: 1px solid #f3dce6;
-            border-radius: 23px;
-            box-shadow: 0 7px 22px #d85b910b;
+            border: 1px solid #f1d5e2;
+            border-radius: 24px;
+            box-shadow: 0 7px 23px #d85b9110;
             transition: transform .3s ease, box-shadow .3s ease;
         }
 
         .categoria:hover {
             transform: translateY(-6px);
-            box-shadow: 0 14px 30px #d85b9120;
+            box-shadow: 0 15px 32px #d85b9120;
         }
 
         .imagen-categoria {
@@ -193,7 +238,7 @@
             object-fit: cover;
             object-position: center;
             background: #fff0f7;
-            transition: transform .45s ease;
+            transition: transform .4s ease;
         }
 
         .categoria:hover .imagen-categoria {
@@ -201,29 +246,31 @@
         }
 
         .categoria-contenido {
-            padding: 22px 19px 24px;
+            padding: 22px 19px 25px;
             text-align: center;
         }
 
         .numero-categoria {
-            color: #c8a96b;
-            font-size: 11px;
-            letter-spacing: 3px;
+            color: #b79a5d;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 2.5px;
         }
 
         .categoria h3 {
-            margin: 10px 0;
+            margin: 12px 0;
             color: #c34e83;
             font-family: Georgia, "Times New Roman", serif;
-            font-size: 24px;
+            font-size: 25px;
             font-weight: 500;
         }
 
         .categoria p {
-            min-height: 44px;
+            min-height: 45px;
             margin: 0 0 20px;
+            color: #68495a;
             font-size: 13px;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         .boton {
@@ -236,7 +283,7 @@
             text-decoration: none;
             font-size: 12px;
             font-weight: bold;
-            transition: background .25s, color .25s;
+            transition: color .25s ease, background .25s ease;
         }
 
         .boton:hover {
@@ -244,19 +291,22 @@
             background: #fff0f7;
         }
 
+        /* MENSAJE FINAL */
+
         .sobre-inicio {
             width: 92%;
             max-width: 1000px;
-            margin: 0 auto 60px;
+            margin: 0 auto 65px;
             padding: 45px 22px;
             text-align: center;
             background: linear-gradient(135deg, #fff0f7, #fff);
-            border: 1px solid #f3dce6;
+            border: 1px solid #f1d5e2;
             border-radius: 28px;
+            box-shadow: 0 8px 25px #d85b9110;
         }
 
         .sobre-inicio .alas {
-            font-size: 30px;
+            font-size: 31px;
         }
 
         .sobre-inicio h2 {
@@ -269,12 +319,12 @@
 
         .sobre-inicio p {
             font-size: 14px;
-            line-height: 1.8;
+            line-height: 1.9;
         }
 
         .decoracion {
             display: block;
-            margin: 10px 0;
+            margin: 12px 0;
             color: #c8a96b;
             font-size: 23px;
         }
@@ -283,15 +333,7 @@
             color: #d85b91;
         }
 
-        footer {
-            padding: 28px 15px;
-            text-align: center;
-            color: #68495a;
-            background: #fff0f7;
-            border-top: 1px solid #f3dce6;
-            font-size: 13px;
-            line-height: 1.8;
-        }
+        /* CARRITO FLOTANTE */
 
         .carrito-flotante {
             position: fixed;
@@ -323,18 +365,47 @@
             font-size: 12px;
         }
 
+        /* PIE DE PÁGINA */
+
+        footer {
+            padding: 28px 15px;
+            text-align: center;
+            color: #68495a;
+            background: #fff0f7;
+            border-top: 1px solid #f1d5e2;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        /* TABLET */
+
         @media (max-width: 850px) {
+            .portada-moda {
+                gap: 20px;
+                padding: 25px;
+            }
+
+            .portada-contenido {
+                padding: 10px;
+            }
+
+            .portada-imagen img {
+                height: 340px;
+            }
+
             .categorias {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 18px;
+                gap: 20px;
             }
 
             .imagen-categoria {
-                height: 260px;
+                height: 280px;
             }
         }
 
-        @media (max-width: 540px) {
+        /* CELULARES */
+
+        @media (max-width: 600px) {
             .menu {
                 gap: 12px 16px;
                 padding: 16px 12px;
@@ -345,21 +416,36 @@
             }
 
             .portada-moda {
-                min-height: 310px;
-                border-radius: 23px;
+                grid-template-columns: 1fr;
+                padding: 20px;
+                gap: 24px;
+                border-radius: 24px;
+            }
+
+            .portada-contenido {
+                padding: 10px 5px;
+                text-align: center;
+            }
+
+            .texto-portada {
+                margin: 0 auto;
+            }
+
+            .portada-imagen img {
+                height: 330px;
             }
 
             .categorias {
                 grid-template-columns: 1fr;
-                gap: 22px;
+                gap: 23px;
             }
 
             .imagen-categoria {
-                height: 340px;
+                height: 350px;
             }
 
             .categoria-contenido {
-                padding: 20px 16px 23px;
+                padding: 22px 17px 25px;
             }
 
             .carrito-flotante {
@@ -373,6 +459,8 @@
 
 <body>
 
+    <!-- MENÚ PRINCIPAL -->
+
     <nav class="menu">
         <a href="index.html">Inicio</a>
         <a href="moda.html">Moda</a>
@@ -383,35 +471,74 @@
         <a href="index.html#contactanos">Contáctanos</a>
     </nav>
 
+    <!-- PORTADA: TEXTO A LA IZQUIERDA E IMAGEN A LA DERECHA -->
+
     <header class="portada-moda">
+
         <div class="portada-contenido">
-            <div class="marca">🪽 ANGEL'S 🪽</div>
+
+            <div class="marca">
+                <span class="alas">🪽</span> ANGEL'S <span class="alas">🪽</span>
+            </div>
+
             <h1>Moda</h1>
-            <p class="subtitulo-portada">Tu estilo, tu esencia.</p>
-            <p class="texto-portada">
-                Descubre prendas que hablan de ti, combinan con tu personalidad
-                y te acompañan en cada ocasión especial. ✨
+
+            <p class="subtitulo-portada">
+                Tu estilo, tu esencia. ✨
             </p>
+
+            <p class="texto-portada">
+                Descubre prendas que hablan de ti, combinan con tu
+                personalidad y te acompañan en cada ocasión especial.
+                Encuentra inspiración para crear looks que te encanten. 🤍
+            </p>
+
+            <div class="estrella-portada">✦ ✧ ✦</div>
+
             <a class="boton-portada" href="#explorar-categorias">
                 DESCUBRIR CATEGORÍAS ✦
             </a>
+
         </div>
+
+        <div class="portada-imagen">
+            <img
+                src="./moda/Screenshot_2026-10-16-19-35-33-286_com.openai.chatgpt-edit.jpg"
+                alt="Portada principal de moda de Angel's Fashion World">
+        </div>
+
     </header>
 
+    <!-- CATEGORÍAS -->
+
     <main class="seccion-categorias" id="explorar-categorias">
+
         <div class="encabezado-categorias">
+
             <span class="etiqueta">ANGEL'S FASHION WORLD</span>
+
             <h2>Explora nuestra colección</h2>
+
             <p>
                 Encuentra tus prendas favoritas y crea combinaciones
-                que reflejen tu estilo. Tu próximo look comienza aquí. ♡
+                que reflejen tu personalidad. Tu próximo look comienza aquí. ♡
             </p>
+
+            <div class="adorno-categorias">✧ ✦ ✧</div>
+
         </div>
 
         <div class="categorias">
 
+            <!-- 01. BLUSAS -->
+
             <section class="categoria">
-                <img class="imagen-categoria" src="./moda/Screenshot_2026-10-16-19-46-02-958_com.pinterest-edit.jpg" alt="Colección de blusas" loading="lazy">
+                <img
+                    class="imagen-categoria"
+                    src="./moda/Screenshot_2026-10-16-19-46-02-958_com.pinterest-edit.jpg"
+                    alt="Colección de blusas"
+                    loading="lazy">
+
                 <div class="categoria-contenido">
                     <span class="numero-categoria">01 · COLECCIÓN</span>
                     <h3>Blusas</h3>
@@ -420,8 +547,15 @@
                 </div>
             </section>
 
+            <!-- 02. PANTALONES -->
+
             <section class="categoria">
-                <img class="imagen-categoria" src="./moda/Screenshot_2026-10-16-19-50-05-406_com.pinterest-edit.jpg" alt="Colección de pantalones" loading="lazy">
+                <img
+                    class="imagen-categoria"
+                    src="./moda/Screenshot_2026-10-16-19-50-05-406_com.pinterest-edit.jpg"
+                    alt="Colección de pantalones"
+                    loading="lazy">
+
                 <div class="categoria-contenido">
                     <span class="numero-categoria">02 · COLECCIÓN</span>
                     <h3>Pantalones</h3>
@@ -430,28 +564,49 @@
                 </div>
             </section>
 
+            <!-- 03. VESTIDOS CORTOS -->
+
             <section class="categoria">
-                <img class="imagen-categoria" src="./moda/Screenshot_2026-10-16-19-54-14-423_com.pinterest~2.jpg" alt="Colección de vestidos cortos" loading="lazy">
+                <img
+                    class="imagen-categoria"
+                    src="./moda/Screenshot_2026-10-16-19-54-14-423_com.pinterest~2.jpg"
+                    alt="Colección de vestidos cortos"
+                    loading="lazy">
+
                 <div class="categoria-contenido">
                     <span class="numero-categoria">03 · COLECCIÓN</span>
                     <h3>Vestidos cortos</h3>
-                    <p>Diseños para destacar en tus momentos favoritos.</p>
+                    <p>Diseños especiales para destacar en tus momentos favoritos.</p>
                     <a class="boton" href="vestidos-cortos.html">Explorar vestidos cortos ✦</a>
                 </div>
             </section>
 
+            <!-- 04. VESTIDOS LARGOS -->
+
             <section class="categoria">
-                <img class="imagen-categoria" src="./moda/Screenshot_2026-10-16-19-58-46-893_com.pinterest-edit.jpg" alt="Colección de vestidos largos" loading="lazy">
+                <img
+                    class="imagen-categoria"
+                    src="./moda/Screenshot_2026-10-16-19-58-46-893_com.pinterest-edit.jpg"
+                    alt="Colección de vestidos largos"
+                    loading="lazy">
+
                 <div class="categoria-contenido">
                     <span class="numero-categoria">04 · COLECCIÓN</span>
                     <h3>Vestidos largos</h3>
-                    <p>Elegancia y movimiento para ocasiones especiales.</p>
+                    <p>Elegancia y movimiento para tus ocasiones especiales.</p>
                     <a class="boton" href="vestidos-largos.html">Explorar vestidos largos ✦</a>
                 </div>
             </section>
 
+            <!-- 05. CONJUNTOS -->
+
             <section class="categoria">
-                <img class="imagen-categoria" src="./moda/Screenshot_2026-10-16-20-00-17-969_com.pinterest~2.jpg" alt="Colección de conjuntos" loading="lazy">
+                <img
+                    class="imagen-categoria"
+                    src="./moda/Screenshot_2026-10-16-20-00-17-969_com.pinterest~2.jpg"
+                    alt="Colección de conjuntos"
+                    loading="lazy">
+
                 <div class="categoria-contenido">
                     <span class="numero-categoria">05 · COLECCIÓN</span>
                     <h3>Conjuntos</h3>
@@ -460,8 +615,15 @@
                 </div>
             </section>
 
+            <!-- 06. FALDAS CORTAS -->
+
             <section class="categoria">
-                <img class="imagen-categoria" src="./moda/Screenshot_2026-10-16-20-01-59-370_com.pinterest-edit.jpg" alt="Colección de faldas cortas" loading="lazy">
+                <img
+                    class="imagen-categoria"
+                    src="./moda/Screenshot_2026-10-16-20-01-59-370_com.pinterest-edit.jpg"
+                    alt="Colección de faldas cortas"
+                    loading="lazy">
+
                 <div class="categoria-contenido">
                     <span class="numero-categoria">06 · COLECCIÓN</span>
                     <h3>Faldas cortas</h3>
@@ -470,71 +632,112 @@
                 </div>
             </section>
 
+            <!-- 07. FALDAS LARGAS -->
+
             <section class="categoria">
-                <img class="imagen-categoria" src="./moda/Screenshot_2026-10-16-20-03-13-874_com.pinterest-edit.jpg" alt="Colección de shorts" loading="lazy">
+                <img
+                    class="imagen-categoria"
+                    src="./moda/Screenshot_2026-10-16-20-03-13-874_com.pinterest-edit.jpg"
+                    alt="Colección de faldas largas"
+                    loading="lazy">
+
                 <div class="categoria-contenido">
                     <span class="numero-categoria">07 · COLECCIÓN</span>
+                    <h3>Faldas largas</h3>
+                    <p>Diseños fluidos para crear looks delicados y elegantes.</p>
+                    <a class="boton" href="faldas-largas.html">Explorar faldas largas ✦</a>
+                </div>
+            </section>
+
+            <!-- 08. SHORTS -->
+
+            <section class="categoria">
+                <img
+                    class="imagen-categoria"
+                    src="./moda/Screenshot_2026-10-16-20-05-08-637_com.pinterest-edit.jpg"
+                    alt="Colección de shorts"
+                    loading="lazy">
+
+                <div class="categoria-contenido">
+                    <span class="numero-categoria">08 · COLECCIÓN</span>
                     <h3>Shorts</h3>
                     <p>Opciones frescas y cómodas para tus outfits favoritos.</p>
                     <a class="boton" href="shorts.html">Explorar shorts ✦</a>
                 </div>
             </section>
 
+            <!-- 09. ABRIGOS -->
+
             <section class="categoria">
-                <img class="imagen-categoria" src="./moda/Screenshot_2026-10-16-20-05-08-637_com.pinterest-edit.jpg" alt="Colección de abrigos" loading="lazy">
+                <img
+                    class="imagen-categoria"
+                    src="./moda/Screenshot_2026-10-16-20-44-40-128_com.pinterest-edit.jpg"
+                    alt="Colección de abrigos"
+                    loading="lazy">
+
                 <div class="categoria-contenido">
-                    <span class="numero-categoria">08 · COLECCIÓN</span>
+                    <span class="numero-categoria">09 · COLECCIÓN</span>
                     <h3>Abrigos</h3>
-                    <p>Capas ideales para sumar personalidad y abrigo a tu look.</p>
+                    <p>Prendas ideales para sumar calidez y personalidad a tu look.</p>
                     <a class="boton" href="abrigo.html">Explorar abrigos ✦</a>
                 </div>
             </section>
 
+            <!-- 10. CALZADOS -->
+
             <section class="categoria">
-                <img class="imagen-categoria" src="./moda/Screenshot_2026-10-16-20-44-40-128_com.pinterest-edit.jpg" alt="Colección de calzados" loading="lazy">
+                <img
+                    class="imagen-categoria"
+                    src="./moda/Screenshot_2026-10-16-20-49-33-152_com.openai.chatgpt-edit.jpg"
+                    alt="Colección de calzados"
+                    loading="lazy">
+
                 <div class="categoria-contenido">
-                    <span class="numero-categoria">09 · COLECCIÓN</span>
+                    <span class="numero-categoria">10 · COLECCIÓN</span>
                     <h3>Calzados</h3>
                     <p>El toque final para completar cada uno de tus looks.</p>
                     <a class="boton" href="calzados.html">Explorar calzados ✦</a>
                 </div>
             </section>
 
-            <section class="categoria">
-                <img class="imagen-categoria" src="./moda/Screenshot_2026-10-16-20-49-33-152_com.openai.chatgpt-edit.jpg" alt="Inspiración de moda y accesorios" loading="lazy">
-                <div class="categoria-contenido">
-                    <span class="numero-categoria">10 · COLECCIÓN</span>
-                    <h3>Estilo y accesorios</h3>
-                    <p>Inspírate y descubre detalles que complementan tu estilo.</p>
-                    <a class="boton" href="accesorios.html">Explorar accesorios ✦</a>
-                </div>
-            </section>
-
         </div>
     </main>
 
+    <!-- MENSAJE FINAL -->
+
     <section class="sobre-inicio">
+
         <div class="alas">🪽</div>
+
         <span class="decoracion">✦</span>
+
         <h2>Tu estilo, tu esencia. ✨</h2>
+
         <p>
             En Angel's Fashion World, cada detalle cuenta.
             Encuentra tu inspiración y viste como te gusta. 🤍
         </p>
+
         <span class="decoracion">✧</span>
+
     </section>
+
+    <!-- CARRITO -->
 
     <a href="carrito.html" class="carrito-flotante">
         🛒 Ver carrito
         <span class="contador-carrito" id="contador-carrito">0</span>
     </a>
 
+    <!-- PIE DE PÁGINA -->
+
     <footer>
         <p>🪽 Angel's Fashion World 🪽</p>
         <p>Moda • Belleza • Skin Care • Accesorios</p>
     </footer>
 
-    <script src="./script.js?v=15"></script>
+    <script src="./script.js?v=16"></script>
 
 </body>
 </html>
+```
