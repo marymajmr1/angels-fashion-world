@@ -53,16 +53,19 @@
         }
 
         .estrella1 { top: 120px; left: 4%; }
+
         .estrella2 {
             top: 280px;
             right: 5%;
             animation-delay: .7s;
         }
+
         .estrella3 {
             bottom: 180px;
             left: 6%;
             animation-delay: 1.3s;
         }
+
         .estrella4 {
             bottom: 80px;
             right: 7%;
@@ -189,30 +192,31 @@
             line-height: 1.5;
         }
 
+        /* BOTÓN EXPLORAR DE LA PORTADA */
         .boton-explorar {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 27px;
-    border: 1px solid var(--rosa) !important;
-    border-radius: 30px;
-    background: var(--rosa) !important;
-    color: white !important;
-    text-decoration: none;
-    font-size: 15px;
-    transition: .3s;
-    box-shadow: 0 5px 15px #d85b9118;
-}
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 27px;
+            border: 1px solid var(--rosa) !important;
+            border-radius: 30px;
+            background: var(--rosa) !important;
+            color: white !important;
+            text-decoration: none;
+            font-size: 15px;
+            transition: .3s;
+            box-shadow: 0 5px 15px #d85b9118;
+        }
 
-.boton-explorar:hover,
-.boton-explorar:focus,
-.boton-explorar:active {
-    background: var(--rosa) !important;
-    color: white !important;
-    border-color: var(--rosa) !important;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px #d85b9125;
-}
-       
+        .boton-explorar:hover,
+        .boton-explorar:focus,
+        .boton-explorar:active {
+            background: var(--rosa) !important;
+            color: white !important;
+            border-color: var(--rosa) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px #d85b9125;
+        }
+
         .adorno {
             margin-top: 16px;
             color: var(--dorado);
@@ -273,7 +277,9 @@
             font-size: 14px;
         }
 
-        .buscador button:hover { background: var(--rosa-oscuro); }
+        .buscador button:hover {
+            background: var(--rosa-oscuro);
+        }
 
         .mensaje-busqueda {
             min-height: 18px;
@@ -343,24 +349,29 @@
             font: 400 23px Georgia, serif;
         }
 
+        /* BOTONES EXPLORAR DE LAS CATEGORÍAS */
         .boton-categoria {
             display: inline-block;
             align-self: center;
             margin: auto 10px 20px;
             padding: 11px 18px;
-            border: 1px solid var(--rosa);
+            border: 1px solid var(--rosa) !important;
             border-radius: 25px;
-            background: var(--rosa);
-            color: white;
+            background: var(--rosa) !important;
+            color: white !important;
             text-decoration: none;
             font-size: 14px;
             transition: .3s;
         }
 
-        .boton-categoria:hover {
-            background: white;
-            color: var(--rosa);
+        .boton-categoria:hover,
+        .boton-categoria:focus,
+        .boton-categoria:active {
+            background: var(--rosa) !important;
+            color: white !important;
+            border-color: var(--rosa) !important;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px #d85b9125;
         }
 
         .sin-resultados {
@@ -414,6 +425,7 @@
         }
 
         .menu-inferior a:hover { color: var(--rosa); }
+
         .icono { font-size: 23px; }
 
         /* TABLETAS */
@@ -443,7 +455,10 @@
                 min-height: 250px;
             }
 
-            .portada-texto { flex: 1.1; padding: 16px 12px; }
+            .portada-texto {
+                flex: 1.1;
+                padding: 16px 12px;
+            }
 
             .portada img {
                 flex: .9;
@@ -462,7 +477,9 @@
                 margin-top: 10px;
             }
 
-            .portada h1 { font-size: clamp(27px, 7vw, 35px); }
+            .portada h1 {
+                font-size: clamp(27px, 7vw, 35px);
+            }
 
             .portada h1 span {
                 font-size: .33em;
@@ -519,10 +536,15 @@
 
         @media (max-width: 360px) {
             .portada-texto { padding: 12px 8px; }
+
             .portada h1 { font-size: 25px; }
+
             .portada .frase { font-size: 12px; }
+
             .portada img { min-height: 230px; }
+
             .categoria img { height: 175px; }
+
             .boton-categoria { font-size: 11px; }
         }
     </style>
@@ -674,45 +696,45 @@
             <a href="Faldas-cortas.html" class="boton-categoria">Explorar faldas cortas ✦</a>
         </article>
 
-<!-- 7. SHORTS -->
-<article class="categoria">
-    <img
-        src="imagenes/moda/Screenshot_2026-10-16-20-03-13-874_com.pinterest-edit.jpg"
-        alt="Shorts"
-        loading="lazy"
-    >
-    <h3>Shorts</h3>
-    <a href="shorts.html" class="boton-categoria">
-        Explorar shorts ✦
-    </a>
-</article>
+        <!-- 7. SHORTS -->
+        <article class="categoria" data-busqueda="shorts short">
+            <img
+                src="imagenes/moda/Screenshot_2026-10-16-20-03-13-874_com.pinterest-edit.jpg"
+                alt="Shorts"
+                loading="lazy"
+            >
+            <h3>Shorts</h3>
+            <a href="shorts.html" class="boton-categoria">
+                Explorar shorts ✦
+            </a>
+        </article>
 
-<!-- 8. ABRIGOS -->
-<article class="categoria">
-    <img
-        src="imagenes/moda/Screenshot_2026-10-16-20-05-08-637_com.pinterest-edit.jpg"
-        alt="Abrigos"
-        loading="lazy"
-    >
-    <h3>Abrigos</h3>
-    <a href="Abrigos.html" class="boton-categoria">
-        Explorar abrigos ✦
-    </a>
-</article>
+        <!-- 8. ABRIGOS -->
+        <article class="categoria" data-busqueda="abrigos abrigo">
+            <img
+                src="imagenes/moda/Screenshot_2026-10-16-20-05-08-637_com.pinterest-edit.jpg"
+                alt="Abrigos"
+                loading="lazy"
+            >
+            <h3>Abrigos</h3>
+            <a href="Abrigos.html" class="boton-categoria">
+                Explorar abrigos ✦
+            </a>
+        </article>
 
-<!-- 9. FALDAS LARGAS -->
-<article class="categoria">
-    <img
-        src="imagenes/moda/Screenshot_2026-10-16-20-44-40-128_com.pinterest-edit.jpg"
-        alt="Faldas largas"
-        loading="lazy"
-    >
-    <h3>Faldas largas</h3>
-    <a href="faldas-largas.html" class="boton-categoria">
-        Explorar faldas largas ✦
-    </a>
-</article>
-        
+        <!-- 9. FALDAS LARGAS -->
+        <article class="categoria" data-busqueda="faldas largas falda larga">
+            <img
+                src="imagenes/moda/Screenshot_2026-10-16-20-44-40-128_com.pinterest-edit.jpg"
+                alt="Faldas largas"
+                loading="lazy"
+            >
+            <h3>Faldas largas</h3>
+            <a href="faldas-largas.html" class="boton-categoria">
+                Explorar faldas largas ✦
+            </a>
+        </article>
+
         <!-- 10. CALZADOS -->
         <article class="categoria" data-busqueda="calzados calzado zapatos zapato tacones botas sandalias">
             <img
@@ -782,15 +804,23 @@
             let encontrados = 0;
 
             tarjetas.forEach(function(tarjeta) {
-                const palabras = tarjeta.dataset.busqueda.toLocaleLowerCase("es");
-                const coincide = palabras.includes(consulta);
+                const palabras = (tarjeta.dataset.busqueda || "")
+                    .toLocaleLowerCase("es");
+
+                const titulo = tarjeta.querySelector("h3").textContent
+                    .toLocaleLowerCase("es");
+
+                const coincide =
+                    palabras.includes(consulta) ||
+                    titulo.includes(consulta);
 
                 tarjeta.style.display = coincide ? "" : "none";
 
                 if (coincide) encontrados++;
             });
 
-            sinResultados.style.display = encontrados === 0 ? "block" : "none";
+            sinResultados.style.display =
+                encontrados === 0 ? "block" : "none";
 
             if (encontrados > 0) {
                 mensaje.textContent = encontrados === 1
@@ -826,3 +856,4 @@
 
 </body>
 </html>
+
