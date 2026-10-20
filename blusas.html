@@ -108,10 +108,7 @@
     }
 
     .volver-contenedor {
-      position: relative;
-      z-index: 1;
-      margin: 0 auto 35px;
-      text-align: center;
+      margin: 0 0 10px;
     }
 
     .boton-volver {
@@ -358,6 +355,56 @@
       outline-offset: 3px;
     }
 
+    .cantidad-contenedor {
+      margin: 0 15px 15px;
+      text-align: left;
+    }
+
+    .cantidad-titulo {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .control-cantidad {
+      display: inline-flex;
+      align-items: center;
+      overflow: hidden;
+      border: 1px solid var(--borde);
+      border-radius: 25px;
+      background: white;
+    }
+
+    .control-cantidad button {
+      width: 38px;
+      height: 36px;
+      border: 0;
+      background: #fff3f8;
+      color: var(--rosa-oscuro);
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .control-cantidad button:hover { background: #ffe1ee; }
+
+    .control-cantidad input {
+      width: 42px;
+      border: 0;
+      outline: 0;
+      background: white;
+      color: var(--texto);
+      text-align: center;
+      font-size: 14px;
+      -moz-appearance: textfield;
+    }
+
+    .control-cantidad input::-webkit-inner-spin-button,
+    .control-cantidad input::-webkit-outer-spin-button {
+      margin: 0;
+      -webkit-appearance: none;
+    }
+
     .acciones-producto {
       display: flex;
       gap: 8px;
@@ -583,6 +630,10 @@
 
   <header class="portada">
     <div class="portada-texto">
+      <div class="volver-contenedor">
+        <a class="boton-volver" href="moda.html">← Volver</a>
+      </div>
+
       <div class="mini">✧ TU ESTILO, TU ESENCIA ✧</div>
 
       <div class="alas-con-estrella">
@@ -613,10 +664,6 @@
   </section>
 
   <main class="categorias" id="listaBlusas"></main>
-
-  <div class="volver-contenedor">
-    <a class="boton-volver" href="moda.html">← Volver</a>
-  </div>
 
   <div class="modal" id="modalFoto" onclick="cerrarFoto(event)">
     <button class="cerrar-modal" type="button"
@@ -862,6 +909,55 @@
 
         contenedorTalla.append(etiqueta, selector);
 
+        const cantidadContenedor = document.createElement("div");
+        cantidadContenedor.className = "cantidad-contenedor";
+
+        const etiquetaCantidad = document.createElement("span");
+        etiquetaCantidad.className = "cantidad-titulo";
+        etiquetaCantidad.textContent = "Cantidad:";
+
+        const controlCantidad = document.createElement("div");
+        controlCantidad.className = "control-cantidad";
+
+        const botonMenos = document.createElement("button");
+        botonMenos.type = "button";
+        botonMenos.setAttribute("aria-label", "Quitar una unidad");
+        botonMenos.textContent = "−";
+
+        const campoCantidad = document.createElement("input");
+        campoCantidad.type = "number";
+        campoCantidad.min = "1";
+        campoCantidad.step = "1";
+        campoCantidad.value = "1";
+        campoCantidad.setAttribute("aria-label", "Cantidad de blusas");
+
+        const botonMas = document.createElement("button");
+        botonMas.type = "button";
+        botonMas.setAttribute("aria-label", "Agregar una unidad");
+        botonMas.textContent = "+";
+
+        botonMenos.addEventListener("click", function() {
+          campoCantidad.value = Math.max(
+            1,
+            (parseInt(campoCantidad.value, 10) || 1) - 1
+          );
+        });
+
+        botonMas.addEventListener("click", function() {
+          campoCantidad.value =
+            (parseInt(campoCantidad.value, 10) || 1) + 1;
+        });
+
+        campoCantidad.addEventListener("change", function() {
+          campoCantidad.value = Math.max(
+            1,
+            parseInt(campoCantidad.value, 10) || 1
+          );
+        });
+
+        controlCantidad.append(botonMenos, campoCantidad, botonMas);
+        cantidadContenedor.append(etiquetaCantidad, controlCantidad);
+
         const acciones = document.createElement("div");
         acciones.className = "acciones-producto";
 
@@ -870,7 +966,7 @@
         boton.className = "boton-categoria";
         boton.textContent = "🛒 Agregar";
         boton.addEventListener("click", function() {
-          agregarAlCarrito(blusa, selector);
+          agregarAlCarrito(blusa, selector, campoCantidad.value);
         });
 
         const botonCompartir = document.createElement("button");
@@ -889,6 +985,7 @@
           precio,
           nota,
           contenedorTalla,
+          cantidadContenedor,
           acciones
         );
 
@@ -898,7 +995,8 @@
       lista.appendChild(sinResultados);
     }
 
-    function agregarAlCarrito(blusa, selector) {
+    function agregarAlCarrito(blusa, selector, cantidadElegida) {
+      const cantidad = Math.max(1, parseInt(cantidadElegida, 10) || 1);
       const seleccionada = selector.querySelector(
         "input[type=radio]:checked"
       );
@@ -925,21 +1023,21 @@
       });
 
       if (existente) {
-        existente.cantidad = (Number(existente.cantidad) || 1) + 1;
+        existente.cantidad = (Number(existente.cantidad) || 1) + cantidad;
       } else {
         carrito.push({
           nombre: blusa.nombre,
           precio: blusa.precio,
           imagen: carpeta + blusa.imagen,
           talla: talla,
-          cantidad: 1
+          cantidad: cantidad
         });
       }
 
       try {
         localStorage.setItem("angelsCarrito", JSON.stringify(carrito));
         alert(
-          "💕 ¡Agregaste " + blusa.nombre +
+          "💕 Agregaste " + cantidad + " unidad(es) de " + blusa.nombre +
           " en talla " + talla + " al carrito!"
         );
       } catch (error) {
