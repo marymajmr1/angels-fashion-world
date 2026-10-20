@@ -1,1 +1,1104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff1f7">
+  <title>Blusas | Angel's Fashion World</title>
 
+  <style>
+    :root {
+      --rosa: #df4f8e;
+      --rosa-oscuro: #a52f68;
+      --rosa-intenso: #c92f75;
+      --texto: #68495a;
+      --dorado: #c8a96b;
+      --borde: #f4cfe0;
+      --fondo: #fff8fc;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 25px;
+    }
+
+    body {
+      margin: 0;
+      padding-bottom: 85px;
+      font-family: Arial, sans-serif;
+      color: var(--texto);
+      background:
+        radial-gradient(circle at top left, #ffe1ee, transparent 28%),
+        radial-gradient(circle at 90% 30%, #fff0f7, transparent 25%),
+        var(--fondo);
+    }
+
+    a { color: inherit; }
+
+    /* ESTRELLAS DECORATIVAS */
+    .estrellas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      color: var(--dorado);
+      opacity: .75;
+    }
+
+    .estrella {
+      position: absolute;
+      animation: flotar 5s ease-in-out infinite;
+    }
+
+    .estrella1 { top: 120px; left: 4%; }
+
+    .estrella2 {
+      top: 280px;
+      right: 5%;
+      animation-delay: .7s;
+    }
+
+    .estrella3 {
+      bottom: 180px;
+      left: 6%;
+      animation-delay: 1.3s;
+    }
+
+    .estrella4 {
+      bottom: 80px;
+      right: 7%;
+      animation-delay: 2s;
+    }
+
+    @keyframes flotar {
+      50% { transform: translateY(-9px) rotate(8deg); }
+    }
+
+    /* MENÚ SUPERIOR */
+    .menu {
+      position: relative;
+      z-index: 2;
+      width: 94%;
+      max-width: 1200px;
+      margin: 16px auto;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      flex-wrap: wrap;
+      border: 1px solid var(--borde);
+      border-radius: 20px;
+      background: #ffffffed;
+      box-shadow: 0 5px 20px #d85b9112;
+    }
+
+    .menu a {
+      padding: 10px 13px;
+      border-radius: 25px;
+      font-size: 13px;
+      text-decoration: none;
+      transition: .2s;
+    }
+
+    .menu a:hover,
+    .menu a.activo {
+      background: var(--rosa);
+      color: white;
+    }
+
+    /* PORTADA */
+    .portada {
+      position: relative;
+      z-index: 1;
+      width: 92%;
+      max-width: 1200px;
+      min-height: 320px;
+      margin: 25px auto 30px;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      overflow: hidden;
+      border: 1px solid var(--borde);
+      border-radius: 28px;
+      background: linear-gradient(135deg, #ffc5df, #ffdaea, #ffb9d5);
+      box-shadow: 0 10px 30px #9a39670c;
+    }
+
+    .portada-texto {
+      flex: 1;
+      min-width: 0;
+      padding: clamp(20px, 4vw, 48px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .portada img {
+      display: block;
+      flex: 1;
+      width: 50%;
+      min-width: 0;
+      height: auto;
+      min-height: 320px;
+      max-height: 420px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .mini {
+      color: var(--dorado);
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .alas-con-estrella {
+      margin-top: 15px;
+      color: var(--dorado);
+      font-size: 23px;
+    }
+
+    .alas {
+      display: inline-block;
+      animation: moverAlas 3s ease-in-out infinite;
+    }
+
+    @keyframes moverAlas {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .portada h1 {
+      margin: 12px 0;
+      color: var(--rosa-oscuro);
+      font: 400 clamp(34px, 5vw, 58px)/1.1 Georgia, serif;
+    }
+
+    .portada h1 span {
+      display: block;
+      margin-top: 10px;
+      font-size: .35em;
+      letter-spacing: .2em;
+    }
+
+    .frase {
+      margin: 5px 0;
+      color: #9c5276;
+      font: italic clamp(16px, 2vw, 22px) Georgia, serif;
+      line-height: 1.5;
+    }
+
+    .boton-explorar,
+    .boton-categoria {
+      border: 1px solid var(--rosa) !important;
+      border-radius: 30px;
+      background: var(--rosa) !important;
+      color: white !important;
+      text-decoration: none;
+      transition: .3s;
+    }
+
+    .boton-explorar {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 27px;
+      font-size: 15px;
+      box-shadow: 0 5px 15px #d85b9118;
+    }
+
+    .boton-explorar:hover,
+    .boton-categoria:hover {
+      background: var(--rosa-intenso) !important;
+      border-color: var(--rosa-intenso) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 7px 18px #c92f7540;
+    }
+
+    .adorno {
+      margin-top: 16px;
+      color: var(--dorado);
+      letter-spacing: 7px;
+    }
+
+    /* BUSCADOR */
+    .buscador {
+      position: relative;
+      z-index: 2;
+      width: 92%;
+      max-width: 650px;
+      margin: 35px auto;
+      scroll-margin-top: 20px;
+    }
+
+    .buscador h2 {
+      margin-bottom: 17px;
+      color: var(--rosa-oscuro);
+      text-align: center;
+      font: 400 clamp(25px, 4vw, 32px) Georgia, serif;
+    }
+
+    .buscador form {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 8px 7px 15px;
+      border: 1px solid var(--borde);
+      border-radius: 30px;
+      background: white;
+      box-shadow: 0 5px 18px #d85b9112;
+    }
+
+    .lupa {
+      color: var(--rosa);
+      font-size: 25px;
+    }
+
+    .buscador input {
+      width: 100%;
+      min-width: 0;
+      padding: 10px 0;
+      border: 0;
+      outline: none;
+      color: var(--texto);
+      background: transparent;
+      font-size: 14px;
+    }
+
+    .buscador button {
+      padding: 11px 17px;
+      border: 0;
+      border-radius: 25px;
+      background: var(--rosa);
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .buscador button:hover { background: var(--rosa-oscuro); }
+
+    .mensaje-busqueda {
+      min-height: 18px;
+      margin: 10px 8px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    /* TÍTULO */
+    .titulo-categorias {
+      position: relative;
+      z-index: 1;
+      margin: 40px 15px 30px;
+      text-align: center;
+      scroll-margin-top: 20px;
+    }
+
+    .titulo-categorias h2 {
+      margin: 12px 0;
+      color: var(--rosa-oscuro);
+      font: 400 clamp(28px, 4vw, 42px) Georgia, serif;
+    }
+
+    .titulo-categorias p { line-height: 1.7; }
+
+    /* CATÁLOGO */
+    .categorias {
+      position: relative;
+      z-index: 1;
+      width: 92%;
+      max-width: 1200px;
+      margin: 0 auto 45px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .categoria {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--borde);
+      border-radius: 23px;
+      background: white;
+      box-shadow: 0 7px 22px #d85b9112;
+      text-align: center;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .categoria:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px #d85b9125;
+    }
+
+    .categoria img {
+      display: block;
+      width: 100%;
+      height: 290px;
+      object-fit: cover;
+      background: #fff0f6;
+      cursor: zoom-in;
+    }
+
+    .categoria h3 {
+      margin: 18px 8px 8px;
+      color: var(--rosa-oscuro);
+      font: 400 21px Georgia, serif;
+    }
+
+    .precio {
+      margin: 5px 8px 12px;
+      color: var(--rosa-oscuro);
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .nota-precio {
+      margin: 0 10px 12px;
+      color: #947587;
+      font-size: 11px;
+    }
+
+    .talla-contenedor {
+      margin: 0 15px 15px;
+      text-align: left;
+    }
+
+    .talla-contenedor label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .talla {
+      width: 100%;
+      padding: 11px;
+      border: 1px solid var(--borde);
+      border-radius: 12px;
+      outline-color: var(--rosa);
+      background: white;
+      color: var(--texto);
+      font-size: 14px;
+    }
+
+    .boton-categoria {
+      display: block;
+      margin: auto 15px 20px;
+      padding: 12px 10px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .sin-resultados {
+      display: none;
+      grid-column: 1 / -1;
+      padding: 25px;
+      border: 1px solid var(--borde);
+      border-radius: 20px;
+      background: white;
+      text-align: center;
+      color: var(--rosa-oscuro);
+    }
+
+    /* IMAGEN AMPLIADA */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: #2d1725e8;
+    }
+
+    .modal.abierto { display: flex; }
+
+    .modal img {
+      max-width: 95%;
+      max-height: 82vh;
+      object-fit: contain;
+      border-radius: 15px;
+    }
+
+    .cerrar-modal {
+      position: absolute;
+      top: 12px;
+      right: 22px;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+    }
+
+    /* PIE DE PÁGINA */
+    footer {
+      position: relative;
+      z-index: 1;
+      padding: 15px 20px 25px;
+      color: #87556f;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* BARRA INFERIOR */
+    .menu-inferior {
+      position: fixed;
+      z-index: 1000;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 5px;
+      padding: 10px 5px calc(10px + env(safe-area-inset-bottom));
+      border-top: 1px solid var(--borde);
+      background: #fffafc;
+      box-shadow: 0 -5px 20px #d85b9118;
+    }
+
+    .menu-inferior a {
+      min-width: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      color: var(--rosa-oscuro);
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    .menu-inferior a:hover { color: var(--rosa); }
+    .icono { font-size: 23px; }
+
+    @media (max-width: 850px) {
+      .categorias {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .categoria img { height: 260px; }
+    }
+
+    @media (max-width: 520px) {
+      .menu {
+        width: 96%;
+        gap: 3px;
+      }
+
+      .menu a {
+        padding: 8px 9px;
+        font-size: 12px;
+      }
+
+      .portada {
+        width: 94%;
+        min-height: 250px;
+      }
+
+      .portada-texto {
+        flex: 1.1;
+        padding: 16px 12px;
+      }
+
+      .portada img {
+        flex: .9;
+        width: 42%;
+        min-height: 250px;
+        max-height: 320px;
+      }
+
+      .portada .mini {
+        font-size: 9px;
+        letter-spacing: 1px;
+      }
+
+      .portada .alas-con-estrella {
+        font-size: 19px;
+        margin-top: 10px;
+      }
+
+      .portada h1 { font-size: clamp(27px, 7vw, 35px); }
+
+      .portada h1 span {
+        font-size: .33em;
+        letter-spacing: .12em;
+      }
+
+      .portada .frase { font-size: 14px; }
+
+      .portada .boton-explorar {
+        margin-top: 13px;
+        padding: 10px 16px;
+        font-size: 13px;
+      }
+
+      .portada .adorno {
+        font-size: 12px;
+        letter-spacing: 4px;
+      }
+
+      .buscador { width: 94%; }
+
+      .buscador form {
+        gap: 5px;
+        padding-left: 10px;
+      }
+
+      .buscador button { padding: 10px 12px; }
+
+      .categorias {
+        width: 92%;
+        gap: 12px;
+      }
+
+      .categoria img { height: 205px; }
+
+      .categoria h3 {
+        margin: 15px 5px 8px;
+        font-size: 17px;
+      }
+
+      .precio { font-size: 16px; }
+
+      .talla-contenedor { margin: 0 9px 12px; }
+
+      .talla {
+        padding: 9px 5px;
+        font-size: 12px;
+      }
+
+      .boton-categoria {
+        margin: auto 7px 15px;
+        padding: 10px 5px;
+        font-size: 12px;
+      }
+
+      .menu-inferior a {
+        min-width: 0;
+        font-size: 11px;
+      }
+
+      .icono { font-size: 22px; }
+    }
+
+    @media (max-width: 360px) {
+      .portada-texto { padding: 12px 8px; }
+      .portada h1 { font-size: 25px; }
+      .portada .frase { font-size: 12px; }
+      .portada img { min-height: 230px; }
+      .categoria img { height: 175px; }
+      .boton-categoria { font-size: 11px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ESTRELLAS DECORATIVAS -->
+  <div class="estrellas" aria-hidden="true">
+    <span class="estrella estrella1">✦</span>
+    <span class="estrella estrella2">✧</span>
+    <span class="estrella estrella3">✦</span>
+    <span class="estrella estrella4">✧</span>
+  </div>
+
+  <!-- MENÚ: IGUAL QUE MODA.HTML -->
+  <nav class="menu" aria-label="Menú principal">
+    <a href="index.html">Inicio</a>
+    <a class="activo" href="moda.html">Moda</a>
+    <a href="belleza.html">Belleza</a>
+    <a href="skincare.html">Skin care</a>
+    <a href="accesorios.html">Accesorios</a>
+  </nav>
+
+  <!-- PORTADA CON LA PRIMERA IMAGEN ENVIADA -->
+  <header class="portada">
+    <div class="portada-texto">
+      <div class="mini">✧ TU ESTILO, TU ESENCIA ✧</div>
+
+      <div class="alas-con-estrella">
+        <span class="alas">🪽</span>
+        <span>✦</span>
+      </div>
+
+      <h1>
+        Angel's
+        <span>FASHION WORLD</span>
+      </h1>
+
+      <p class="frase">Blusas bonitas, creadas para expresar tu estilo.</p>
+
+      <a href="#categorias" class="boton-explorar">
+        Explorar ✦
+      </a>
+
+      <div class="adorno">✧ ✦ ✧</div>
+    </div>
+
+    <img
+      src="imagenes/blusas/IMG-20261020-WA0005.jpg"
+      alt="Portada de blusas de Angel's Fashion World"
+    >
+  </header>
+
+  <!-- BUSCADOR -->
+  <section class="buscador" id="buscarProducto">
+    <h2>Buscar blusas ✦</h2>
+
+    <form id="formularioBusqueda">
+      <span class="lupa" aria-hidden="true">⌕</span>
+
+      <input
+        type="search"
+        id="campoBusqueda"
+        placeholder="Busca tu blusa favorita..."
+        aria-label="Buscar blusas"
+      >
+
+      <button type="submit">Buscar</button>
+    </form>
+
+    <p class="mensaje-busqueda" id="mensajeBusqueda" aria-live="polite"></p>
+  </section>
+
+  <!-- TÍTULO DEL CATÁLOGO -->
+  <section class="titulo-categorias" id="categorias">
+    <div class="mini">✧ DESCUBRE TUS FAVORITAS ✧</div>
+    <h2>Nuestra colección de blusas</h2>
+    <p>Elige tu favorita y selecciona tu talla antes de agregarla al carrito.</p>
+    <div class="adorno">✧ ✦ ✧</div>
+  </section>
+
+  <!-- LAS 31 BLUSAS -->
+  <main class="categorias" id="listaBlusas"></main>
+
+  <!-- IMAGEN AMPLIADA -->
+  <div class="modal" id="modalFoto" onclick="cerrarFoto(event)">
+    <button class="cerrar-modal" type="button"
+      aria-label="Cerrar imagen" onclick="cerrarFoto(event)">×</button>
+    <img id="fotoAmpliada" src="" alt="Blusa ampliada">
+  </div>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    <strong>Angel's Fashion World 🪽</strong><br>
+    Moda · Belleza · Skin care · Accesorios<br>
+    <span style="color: var(--dorado);">✧ Hecho con cariño ✦</span>
+  </footer>
+
+  <!-- BARRA INFERIOR: IGUAL QUE MODA.HTML -->
+  <nav class="menu-inferior" aria-label="Accesos rápidos">
+    <a href="#buscarProducto" id="enlaceBuscar">
+      <span class="icono">⌕</span>
+      Buscar
+    </a>
+
+    <a href="pedido.html">
+      <span class="icono">♧</span>
+      Pedidos
+    </a>
+
+    <a href="carrito.html">
+      <span class="icono">🛒</span>
+      Carrito
+    </a>
+
+    <a href="perfil.html">
+      <span class="icono">♙</span>
+      Mi perfil
+    </a>
+  </nav>
+
+  <script>
+    /*
+      IMPORTANTE:
+      Las rutas de las imágenes son exactamente las que enviaste.
+      Los precios de las primeras nueve prendas se conservan según
+      los datos disponibles. Los demás precios de ejemplo se pueden editar.
+    */
+
+    const blusas = [
+      {
+        imagen: "IMG-20261020-WA0005.jpg",
+        nombre: "Linda camisa con escote",
+        precio: 37000
+      },
+      {
+        imagen: "Screenshot_2026-08-29-16-13-34-137_com.pinterest-edit.jpg",
+        nombre: "Hermosa camisa con un escote al lado",
+        precio: 35000
+      },
+      {
+        imagen: "Screenshot_2026-08-29-16-15-01-447_com.pinterest-edit~2.jpg",
+        nombre: "Linda camisa rosada con un diseño hermoso",
+        precio: 40000
+      },
+      {
+        imagen: "Screenshot_2026-08-29-16-26-20-243_com.pinterest-edit.jpg",
+        nombre: "Increíble camisa rosada con escote",
+        precio: 41000
+      },
+      {
+        imagen: "Screenshot_2026-08-29-16-27-15-807_com.pinterest-edit.jpg",
+        nombre: "Hermosa camisa de jean",
+        precio: 42000
+      },
+      {
+        imagen: "Screenshot_2026-08-29-16-28-54-074_com.pinterest-edit.jpg",
+        nombre: "Hermosa camisa elegante",
+        precio: 44000
+      },
+      {
+        imagen: "Screenshot_2026-08-29-16-31-17-936_com.pinterest-edit.jpg",
+        nombre: "Linda camisa con estampado azul",
+        precio: 32000
+      },
+      {
+        imagen: "Screenshot_2026-08-29-16-33-53-613_com.pinterest-edit.jpg",
+        nombre: "Hermosa camisa negra para ti",
+        precio: 29999
+      },
+      {
+        imagen: "Screenshot_2026-08-29-16-35-02-866_com.pinterest-edit.jpg",
+        nombre: "Divina camisa elegante",
+        precio: 45000
+      },
+      {
+        imagen: "Screenshot_2026-10-07-13-31-45-865_com.pinterest-edit.jpg",
+        nombre: "Blusa bonita 10",
+        precio: 40000
+      },
+      {
+        imagen: "Screenshot_2026-10-07-13-32-24-057_com.pinterest-edit.jpg",
+        nombre: "Blusa bonita 11",
+        precio: 40000
+      },
+      {
+        imagen: "Screenshot_2026-10-07-13-33-29-134_com.pinterest-edit.jpg",
+        nombre: "Blusa bonita 12",
+        precio: 40000
+      },
+      {
+        imagen: "Screenshot_2026-10-07-13-33-56-950_com.pinterest-edit.jpg",
+        nombre: "Blusa bonita 13",
+        precio: 40000
+      },
+      {
+        imagen: "Screenshot_2026-10-07-13-35-10-264_com.pinterest-edit.jpg",
+        nombre: "Blusa bonita 14",
+        precio: 40000
+      },
+      {
+        imagen: "Screenshot_2026-10-07-13-35-53-812_com.pinterest-edit.jpg",
+        nombre: "Blusa bonita 15",
+        precio: 40000
+      },
+      {
+        imagen: "Screenshot_2026-10-07-13-36-31-622_com.pinterest-edit.jpg",
+        nombre: "Blusa bonita 16",
+        precio: 40000
+      },
+      {
+        imagen: "Screenshot_2026-10-07-13-38-42-271_com.pinterest-edit.jpg",
+        nombre: "Blusa bonita 17",
+        precio: 40000
+      },
+      {
+        imagen: "Screenshot_2026-10-07-13-39-53-007_com.pinterest-edit.jpg",
+        nombre: "Blusa bonita 18",
+        precio: 40000
+      },
+      {
+        imagen: "Screenshot_2026-10-07-13-41-57-047_com.pinterest-edit.jpg",
+        nombre: "Blusa bonita 19",
+        precio: 40000
+      },
+      {
+        imagen: "Screenshot_2026-10-07-13-43-27-595_com.pinterest-edit.jpg",
+        nombre: "Blusa bonita 20",
+        precio: 40000
+      },
+      {
+        imagen: "Screenshot_2026-10-07-13-44-42-084_com.pinterest-edit.jpg",
+        nombre: "Blusa bonita 21",
+        precio: 40000
+      },
+      {
+        imagen: "Screenshot_2026-10-07-13-45-45-193_com.pinterest-edit.jpg",
+        nombre: "Blusa bonita 22",
+        precio: 40000
+      },
+      {
+        imagen: "Screenshot_2026-10-07-14-20-08-678_com.pinterest-edit.jpg",
+        nombre: "Blusa bonita 23",
+        precio: 40000
+      },
+      {
+        imagen: "Screenshot_2026-10-07-14-21-30-902_com.pinterest-edit.jpg",
+        nombre: "Blusa bonita 24",
+        precio: 40000
+      },
+      {
+        imagen: "Screenshot_2026-10-07-14-25-07-252_com.pinterest-edit.jpg",
+        nombre: "Blusa bonita 25",
+        precio: 40000
+      },
+      {
+        imagen: "Screenshot_2026-10-07-14-25-37-659_com.pinterest-edit.jpg",
+        nombre: "Blusa bonita 26",
+        precio: 40000
+      },
+      {
+        imagen: "Screenshot_2026-10-07-14-26-48-302_com.pinterest-edit.jpg",
+        nombre: "Blusa bonita 27",
+        precio: 40000
+      },
+      {
+        imagen: "Screenshot_2026-10-07-14-27-12-272_com.pinterest-edit.jpg",
+        nombre: "Blusa bonita 28",
+        precio: 40000
+      },
+      {
+        imagen: "Screenshot_2026-10-07-14-27-34-134_com.pinterest-edit.jpg",
+        nombre: "Blusa bonita 29",
+        precio: 40000
+      },
+      {
+        imagen: "Screenshot_2026-10-20-11-31-20-107_com.pinterest-edit.jpg",
+        nombre: "Blusa bonita 30",
+        precio: 40000
+      }
+    ];
+
+    const carpeta = "imagenes/blusas/";
+    const lista = document.getElementById("listaBlusas");
+    const campo = document.getElementById("campoBusqueda");
+    const mensaje = document.getElementById("mensajeBusqueda");
+    const sinResultados = document.createElement("div");
+
+    sinResultados.className = "sin-resultados";
+    sinResultados.id = "sinResultados";
+    sinResultados.textContent =
+      "No encontramos esa blusa. Prueba con otro nombre. 💕";
+
+    function formatoPrecio(precio) {
+      return "$" + Number(precio).toLocaleString("es-CO") + " COP";
+    }
+
+    function mostrarBlusas() {
+      blusas.forEach(function(blusa, indice) {
+        const tarjeta = document.createElement("article");
+        tarjeta.className = "categoria";
+        tarjeta.dataset.busqueda =
+          (blusa.nombre + " blusa camisa").toLocaleLowerCase("es");
+
+        const imagen = document.createElement("img");
+        imagen.src = carpeta + blusa.imagen;
+        imagen.alt = blusa.nombre;
+        imagen.loading = indice < 6 ? "eager" : "lazy";
+        imagen.addEventListener("click", function() {
+          abrirFoto(imagen);
+        });
+
+        imagen.addEventListener("error", function() {
+          imagen.alt = "No se pudo cargar: " + blusa.imagen;
+          tarjeta.style.borderColor = "#df4f8e";
+          console.error("Revisa el nombre de esta imagen:", imagen.src);
+        });
+
+        const titulo = document.createElement("h3");
+        titulo.textContent = blusa.nombre;
+
+        const precio = document.createElement("p");
+        precio.className = "precio";
+        precio.textContent = formatoPrecio(blusa.precio);
+
+        const nota = document.createElement("p");
+        nota.className = "nota-precio";
+        nota.textContent = indice >= 9
+          ? "Precio de ejemplo: confirma el precio real"
+          : " ";
+
+        const contenedorTalla = document.createElement("div");
+        contenedorTalla.className = "talla-contenedor";
+
+        const etiqueta = document.createElement("label");
+        const idTalla = "talla-" + indice;
+        etiqueta.htmlFor = idTalla;
+        etiqueta.textContent = "Selecciona tu talla:";
+
+        const selector = document.createElement("select");
+        selector.id = idTalla;
+        selector.className = "talla";
+        selector.required = true;
+
+        const opcionInicial = document.createElement("option");
+        opcionInicial.value = "";
+        opcionInicial.textContent = "Elige una talla";
+        selector.appendChild(opcionInicial);
+
+        ["XS", "S", "M", "L", "XL"].forEach(function(talla) {
+          const opcion = document.createElement("option");
+          opcion.value = talla;
+          opcion.textContent = talla;
+          selector.appendChild(opcion);
+        });
+
+        contenedorTalla.append(etiqueta, selector);
+
+        const boton = document.createElement("button");
+        boton.type = "button";
+        boton.className = "boton-categoria";
+        boton.textContent = "🛒 Agregar al carrito";
+
+        boton.addEventListener("click", function() {
+          agregarAlCarrito(blusa, selector, imagen.src);
+        });
+
+        tarjeta.append(
+          imagen,
+          titulo,
+          precio,
+          nota,
+          contenedorTalla,
+          boton
+        );
+
+        lista.appendChild(tarjeta);
+      });
+
+      lista.appendChild(sinResultados);
+    }
+
+    function agregarAlCarrito(blusa, selector, imagen) {
+      const talla = selector.value;
+
+      if (!talla) {
+        alert("💕 Por favor, selecciona una talla antes de continuar.");
+        selector.focus();
+        return;
+      }
+
+      let carrito = [];
+
+      try {
+        carrito = JSON.parse(localStorage.getItem("angelsCarrito")) || [];
+        if (!Array.isArray(carrito)) carrito = [];
+      } catch (error) {
+        carrito = [];
+      }
+
+      const existente = carrito.find(function(producto) {
+        return producto.nombre === blusa.nombre &&
+               producto.talla === talla;
+      });
+
+      if (existente) {
+        existente.cantidad = (Number(existente.cantidad) || 1) + 1;
+      } else {
+        carrito.push({
+          nombre: blusa.nombre,
+          precio: blusa.precio,
+          imagen: carpeta + blusa.imagen,
+          talla: talla,
+          cantidad: 1
+        });
+      }
+
+      try {
+        localStorage.setItem("angelsCarrito", JSON.stringify(carrito));
+        alert(
+          "💕 ¡Agregaste " + blusa.nombre +
+          " en talla " + talla + " al carrito!"
+        );
+      } catch (error) {
+        alert("No pudimos guardar el producto. Revisa el almacenamiento del navegador.");
+      }
+    }
+
+    /* BUSCADOR */
+    document.getElementById("formularioBusqueda")
+      .addEventListener("submit", function(evento) {
+        evento.preventDefault();
+
+        const consulta = campo.value.trim().toLocaleLowerCase("es");
+        const tarjetas = document.querySelectorAll(".categoria");
+        let encontrados = 0;
+
+        tarjetas.forEach(function(tarjeta) {
+          const coincide = (tarjeta.dataset.busqueda || "")
+            .includes(consulta);
+
+          tarjeta.style.display = coincide ? "" : "none";
+          if (coincide) encontrados++;
+        });
+
+        sinResultados.style.display =
+          encontrados === 0 ? "block" : "none";
+
+        if (!consulta) {
+          mensaje.textContent = "Escribe el nombre de una blusa. 💗";
+        } else {
+          mensaje.textContent = encontrados
+            ? "Encontramos " + encontrados + " blusas. ✨"
+            : "No encontramos esa blusa. Intenta con otro nombre. 💕";
+
+          document.getElementById("categorias").scrollIntoView({
+            behavior: "smooth"
+          });
+        }
+      });
+
+    campo.addEventListener("input", function() {
+      if (!campo.value.trim()) {
+        document.querySelectorAll(".categoria").forEach(function(tarjeta) {
+          tarjeta.style.display = "";
+        });
+
+        sinResultados.style.display = "none";
+        mensaje.textContent = "";
+      }
+    });
+
+    /* FOTO AMPLIADA */
+    function abrirFoto(imagen) {
+      document.getElementById("fotoAmpliada").src = imagen.src;
+      document.getElementById("modalFoto").classList.add("abierto");
+    }
+
+    function cerrarFoto(evento) {
+      if (
+        evento.target.id === "modalFoto" ||
+        evento.target.classList.contains("cerrar-modal")
+      ) {
+        document.getElementById("modalFoto").classList.remove("abierto");
+      }
+    }
+
+    document.addEventListener("keydown", function(evento) {
+      if (evento.key === "Escape") {
+        document.getElementById("modalFoto").classList.remove("abierto");
+      }
+    });
+
+    /* BOTÓN INFERIOR DE BUSCAR */
+    document.getElementById("enlaceBuscar").addEventListener("click", function() {
+      setTimeout(function() {
+        campo.focus({ preventScroll: true });
+      }, 100);
+    });
+
+    mostrarBlusas();
+  </script>
+
+</body>
+</html>
