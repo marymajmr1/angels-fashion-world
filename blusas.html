@@ -107,6 +107,17 @@
       color: white;
     }
 
+    .menu a.boton-volver {
+      border: 1px solid var(--rosa);
+      color: var(--rosa-oscuro);
+      font-weight: bold;
+    }
+
+    .menu a.boton-volver:hover {
+      background: var(--rosa);
+      color: white;
+    }
+
     .portada {
       position: relative;
       z-index: 1;
@@ -406,31 +417,17 @@
       z-index: 1500;
       right: 20px;
       bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 13px 18px;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
       border: 1px solid #ffffffa8;
-      border-radius: 30px;
+      border-radius: 50%;
       background: var(--rosa);
       color: white;
       text-decoration: none;
       box-shadow: 0 8px 24px #a52f6845;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .carrito-flotante > span:first-child { font-size: 20px; }
-
-    .carrito-contador {
-      min-width: 22px;
-      height: 22px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: white;
-      color: var(--rosa-oscuro);
-      font-size: 12px;
+      font-size: 27px;
     }
 
     footer {
@@ -538,7 +535,8 @@
       .carrito-flotante {
         right: 14px;
         bottom: 14px;
-        padding: 11px 15px;
+        width: 52px;
+        height: 52px;
       }
     }
 
@@ -563,6 +561,7 @@
   </div>
 
   <nav class="menu" aria-label="Menú principal">
+    <a class="boton-volver" href="moda.html">← Volver</a>
     <a href="index.html">Inicio</a>
     <a class="activo" href="moda.html">Moda</a>
     <a href="belleza.html">Belleza</a>
@@ -615,10 +614,8 @@
     <span style="color: var(--dorado);">✧ Hecho con cariño ✦</span>
   </footer>
 
-  <a class="carrito-flotante" href="carrito.html" aria-label="Ver carrito">
+  <a class="carrito-flotante" href="carrito.html" aria-label="Ver carrito" title="Ver carrito">
     <span aria-hidden="true">🛒</span>
-    <span>Carrito</span>
-    <span class="carrito-contador" id="contadorCarrito">0</span>
   </a>
 
   <script>
@@ -779,8 +776,6 @@
     const lista = document.getElementById("listaBlusas");
     const sinResultados = document.createElement("div");
 
-
-
     function formatoPrecio(precio) {
       return "$" + Number(precio).toLocaleString("es-CO") + " COP";
     }
@@ -859,7 +854,7 @@
         boton.className = "boton-categoria";
         boton.textContent = "🛒 Agregar";
         boton.addEventListener("click", function() {
-          agregarAlCarrito(blusa, selector, imagen.src);
+          agregarAlCarrito(blusa, selector);
         });
 
         const botonCompartir = document.createElement("button");
@@ -927,7 +922,6 @@
 
       try {
         localStorage.setItem("angelsCarrito", JSON.stringify(carrito));
-        actualizarContadorCarrito();
         alert(
           "💕 ¡Agregaste " + blusa.nombre +
           " en talla " + talla + " al carrito!"
@@ -962,21 +956,6 @@
       }
     }
 
-    function actualizarContadorCarrito() {
-      try {
-        const carrito = JSON.parse(localStorage.getItem("angelsCarrito")) || [];
-        const total = Array.isArray(carrito)
-          ? carrito.reduce(function(suma, producto) {
-              return suma + (Number(producto.cantidad) || 1);
-            }, 0)
-          : 0;
-
-        document.getElementById("contadorCarrito").textContent = total;
-      } catch (error) {
-        document.getElementById("contadorCarrito").textContent = "0";
-      }
-    }
-
     function abrirFoto(imagen) {
       document.getElementById("fotoAmpliada").src = imagen.src;
       document.getElementById("modalFoto").classList.add("abierto");
@@ -998,7 +977,6 @@
     });
 
     mostrarBlusas();
-    actualizarContadorCarrito();
   </script>
 
 </body>
