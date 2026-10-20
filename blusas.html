@@ -37,7 +37,6 @@
 
     a { color: inherit; }
 
-    /* ESTRELLAS DECORATIVAS */
     .estrellas {
       position: fixed;
       inset: 0;
@@ -76,7 +75,6 @@
       50% { transform: translateY(-9px) rotate(8deg); }
     }
 
-    /* MENÚ SUPERIOR */
     .menu {
       position: relative;
       z-index: 2;
@@ -109,7 +107,6 @@
       color: white;
     }
 
-    /* PORTADA */
     .portada {
       position: relative;
       z-index: 1;
@@ -192,7 +189,6 @@
       line-height: 1.5;
     }
 
-    .boton-explorar,
     .boton-categoria {
       border: 1px solid var(--rosa) !important;
       border-radius: 30px;
@@ -202,15 +198,6 @@
       transition: .3s;
     }
 
-    .boton-explorar {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 27px;
-      font-size: 15px;
-      box-shadow: 0 5px 15px #d85b9118;
-    }
-
-    .boton-explorar:hover,
     .boton-categoria:hover {
       background: var(--rosa-intenso) !important;
       border-color: var(--rosa-intenso) !important;
@@ -224,70 +211,6 @@
       letter-spacing: 7px;
     }
 
-    /* BUSCADOR */
-    .buscador {
-      position: relative;
-      z-index: 2;
-      width: 92%;
-      max-width: 650px;
-      margin: 35px auto;
-      scroll-margin-top: 20px;
-    }
-
-    .buscador h2 {
-      margin-bottom: 17px;
-      color: var(--rosa-oscuro);
-      text-align: center;
-      font: 400 clamp(25px, 4vw, 32px) Georgia, serif;
-    }
-
-    .buscador form {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 8px 7px 15px;
-      border: 1px solid var(--borde);
-      border-radius: 30px;
-      background: white;
-      box-shadow: 0 5px 18px #d85b9112;
-    }
-
-    .lupa {
-      color: var(--rosa);
-      font-size: 25px;
-    }
-
-    .buscador input {
-      width: 100%;
-      min-width: 0;
-      padding: 10px 0;
-      border: 0;
-      outline: none;
-      color: var(--texto);
-      background: transparent;
-      font-size: 14px;
-    }
-
-    .buscador button {
-      padding: 11px 17px;
-      border: 0;
-      border-radius: 25px;
-      background: var(--rosa);
-      color: white;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .buscador button:hover { background: var(--rosa-oscuro); }
-
-    .mensaje-busqueda {
-      min-height: 18px;
-      margin: 10px 8px;
-      text-align: center;
-      font-size: 13px;
-    }
-
-    /* TÍTULO */
     .titulo-categorias {
       position: relative;
       z-index: 1;
@@ -304,7 +227,6 @@
 
     .titulo-categorias p { line-height: 1.7; }
 
-    /* CATÁLOGO */
     .categorias {
       position: relative;
       z-index: 1;
@@ -374,15 +296,69 @@
       font-weight: bold;
     }
 
-    .talla {
-      width: 100%;
-      padding: 11px;
+    .opciones-talla {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .opcion-talla input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .opcion-talla span {
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
       border: 1px solid var(--borde);
-      border-radius: 12px;
-      outline-color: var(--rosa);
+      border-radius: 50%;
       background: white;
       color: var(--texto);
-      font-size: 14px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .opcion-talla input:checked + span {
+      border-color: var(--rosa);
+      background: var(--rosa);
+      color: white;
+      box-shadow: 0 0 0 3px #df4f8e26;
+    }
+
+    .opcion-talla input:focus-visible + span {
+      outline: 2px solid var(--rosa-oscuro);
+      outline-offset: 3px;
+    }
+
+    .acciones-producto {
+      display: flex;
+      gap: 8px;
+      margin: auto 12px 18px;
+    }
+
+    .acciones-producto button {
+      flex: 1;
+      min-width: 0;
+      margin: 0;
+    }
+
+    .boton-compartir {
+      border: 1px solid var(--borde);
+      border-radius: 25px;
+      background: white;
+      color: var(--rosa-oscuro);
+      cursor: pointer;
+      font-size: 13px;
+      transition: .2s;
+    }
+
+    .boton-compartir:hover {
+      border-color: var(--rosa);
+      background: #fff3f8;
     }
 
     .boton-categoria {
@@ -394,18 +370,6 @@
       font-size: 14px;
     }
 
-    .sin-resultados {
-      display: none;
-      grid-column: 1 / -1;
-      padding: 25px;
-      border: 1px solid var(--borde);
-      border-radius: 20px;
-      background: white;
-      text-align: center;
-      color: var(--rosa-oscuro);
-    }
-
-    /* IMAGEN AMPLIADA */
     .modal {
       display: none;
       position: fixed;
@@ -437,7 +401,38 @@
       cursor: pointer;
     }
 
-    /* PIE DE PÁGINA */
+    .carrito-flotante {
+      position: fixed;
+      z-index: 1500;
+      right: 20px;
+      bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 18px;
+      border: 1px solid #ffffffa8;
+      border-radius: 30px;
+      background: var(--rosa);
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 8px 24px #a52f6845;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .carrito-flotante > span:first-child { font-size: 20px; }
+
+    .carrito-contador {
+      min-width: 22px;
+      height: 22px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: white;
+      color: var(--rosa-oscuro);
+      font-size: 12px;
+    }
+
     footer {
       position: relative;
       z-index: 1;
@@ -447,37 +442,6 @@
       font-size: 13px;
       line-height: 1.8;
     }
-
-    /* BARRA INFERIOR */
-    .menu-inferior {
-      position: fixed;
-      z-index: 1000;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      gap: 5px;
-      padding: 10px 5px calc(10px + env(safe-area-inset-bottom));
-      border-top: 1px solid var(--borde);
-      background: #fffafc;
-      box-shadow: 0 -5px 20px #d85b9118;
-    }
-
-    .menu-inferior a {
-      min-width: 60px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-      color: var(--rosa-oscuro);
-      font-size: 12px;
-      text-decoration: none;
-    }
-
-    .menu-inferior a:hover { color: var(--rosa); }
-    .icono { font-size: 23px; }
 
     @media (max-width: 850px) {
       .categorias {
@@ -535,25 +499,10 @@
 
       .portada .frase { font-size: 14px; }
 
-      .portada .boton-explorar {
-        margin-top: 13px;
-        padding: 10px 16px;
-        font-size: 13px;
-      }
-
       .portada .adorno {
         font-size: 12px;
         letter-spacing: 4px;
       }
-
-      .buscador { width: 94%; }
-
-      .buscador form {
-        gap: 5px;
-        padding-left: 10px;
-      }
-
-      .buscador button { padding: 10px 12px; }
 
       .categorias {
         width: 92%;
@@ -571,23 +520,26 @@
 
       .talla-contenedor { margin: 0 9px 12px; }
 
-      .talla {
-        padding: 9px 5px;
-        font-size: 12px;
+      .opcion-talla span {
+        width: 35px;
+        height: 35px;
       }
 
-      .boton-categoria {
+      .acciones-producto {
         margin: auto 7px 15px;
-        padding: 10px 5px;
-        font-size: 12px;
+        gap: 5px;
       }
 
-      .menu-inferior a {
-        min-width: 0;
+      .acciones-producto button {
+        padding: 10px 4px;
         font-size: 11px;
       }
 
-      .icono { font-size: 22px; }
+      .carrito-flotante {
+        right: 14px;
+        bottom: 14px;
+        padding: 11px 15px;
+      }
     }
 
     @media (max-width: 360px) {
@@ -596,14 +548,13 @@
       .portada .frase { font-size: 12px; }
       .portada img { min-height: 230px; }
       .categoria img { height: 175px; }
-      .boton-categoria { font-size: 11px; }
+      .acciones-producto button { font-size: 10px; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ESTRELLAS DECORATIVAS -->
   <div class="estrellas" aria-hidden="true">
     <span class="estrella estrella1">✦</span>
     <span class="estrella estrella2">✧</span>
@@ -611,7 +562,6 @@
     <span class="estrella estrella4">✧</span>
   </div>
 
-  <!-- MENÚ: IGUAL QUE MODA.HTML -->
   <nav class="menu" aria-label="Menú principal">
     <a href="index.html">Inicio</a>
     <a class="activo" href="moda.html">Moda</a>
@@ -620,7 +570,6 @@
     <a href="accesorios.html">Accesorios</a>
   </nav>
 
-  <!-- PORTADA CON LA PRIMERA IMAGEN ENVIADA -->
   <header class="portada">
     <div class="portada-texto">
       <div class="mini">✧ TU ESTILO, TU ESENCIA ✧</div>
@@ -636,11 +585,6 @@
       </h1>
 
       <p class="frase">Blusas bonitas, creadas para expresar tu estilo.</p>
-
-      <a href="#categorias" class="boton-explorar">
-        Explorar ✦
-      </a>
-
       <div class="adorno">✧ ✦ ✧</div>
     </div>
 
@@ -650,27 +594,6 @@
     >
   </header>
 
-  <!-- BUSCADOR -->
-  <section class="buscador" id="buscarProducto">
-    <h2>Buscar blusas ✦</h2>
-
-    <form id="formularioBusqueda">
-      <span class="lupa" aria-hidden="true">⌕</span>
-
-      <input
-        type="search"
-        id="campoBusqueda"
-        placeholder="Busca tu blusa favorita..."
-        aria-label="Buscar blusas"
-      >
-
-      <button type="submit">Buscar</button>
-    </form>
-
-    <p class="mensaje-busqueda" id="mensajeBusqueda" aria-live="polite"></p>
-  </section>
-
-  <!-- TÍTULO DEL CATÁLOGO -->
   <section class="titulo-categorias" id="categorias">
     <div class="mini">✧ DESCUBRE TUS FAVORITAS ✧</div>
     <h2>Nuestra colección de blusas</h2>
@@ -678,211 +601,182 @@
     <div class="adorno">✧ ✦ ✧</div>
   </section>
 
-  <!-- LAS 31 BLUSAS -->
   <main class="categorias" id="listaBlusas"></main>
 
-  <!-- IMAGEN AMPLIADA -->
   <div class="modal" id="modalFoto" onclick="cerrarFoto(event)">
     <button class="cerrar-modal" type="button"
       aria-label="Cerrar imagen" onclick="cerrarFoto(event)">×</button>
     <img id="fotoAmpliada" src="" alt="Blusa ampliada">
   </div>
 
-  <!-- PIE DE PÁGINA -->
   <footer>
     <strong>Angel's Fashion World 🪽</strong><br>
     Moda · Belleza · Skin care · Accesorios<br>
     <span style="color: var(--dorado);">✧ Hecho con cariño ✦</span>
   </footer>
 
-  <!-- BARRA INFERIOR: IGUAL QUE MODA.HTML -->
-  <nav class="menu-inferior" aria-label="Accesos rápidos">
-    <a href="#buscarProducto" id="enlaceBuscar">
-      <span class="icono">⌕</span>
-      Buscar
-    </a>
-
-    <a href="pedido.html">
-      <span class="icono">♧</span>
-      Pedidos
-    </a>
-
-    <a href="carrito.html">
-      <span class="icono">🛒</span>
-      Carrito
-    </a>
-
-    <a href="perfil.html">
-      <span class="icono">♙</span>
-      Mi perfil
-    </a>
-  </nav>
+  <a class="carrito-flotante" href="carrito.html" aria-label="Ver carrito">
+    <span aria-hidden="true">🛒</span>
+    <span>Carrito</span>
+    <span class="carrito-contador" id="contadorCarrito">0</span>
+  </a>
 
   <script>
-    /*
-      IMPORTANTE:
-      Las rutas de las imágenes son exactamente las que enviaste.
-      Los precios de las primeras nueve prendas se conservan según
-      los datos disponibles. Los demás precios de ejemplo se pueden editar.
-    */
-
     const blusas = [
       {
         imagen: "IMG-20261020-WA0005.jpg",
-        nombre: "Linda camisa con escote",
+        nombre: "Blusa Encanto Asimétrico",
         precio: 37000
       },
       {
         imagen: "Screenshot_2026-08-29-16-13-34-137_com.pinterest-edit.jpg",
-        nombre: "Hermosa camisa con un escote al lado",
+        nombre: "Blusa Brisa Lateral",
         precio: 35000
       },
       {
         imagen: "Screenshot_2026-08-29-16-15-01-447_com.pinterest-edit~2.jpg",
-        nombre: "Linda camisa rosada con un diseño hermoso",
+        nombre: "Blusa Rosa de Ensueño",
         precio: 40000
       },
       {
         imagen: "Screenshot_2026-08-29-16-26-20-243_com.pinterest-edit.jpg",
-        nombre: "Increíble camisa rosada con escote",
+        nombre: "Blusa Aura Rosada",
         precio: 41000
       },
       {
         imagen: "Screenshot_2026-08-29-16-27-15-807_com.pinterest-edit.jpg",
-        nombre: "Hermosa camisa de jean",
+        nombre: "Blusa Denim Celeste",
         precio: 42000
       },
       {
         imagen: "Screenshot_2026-08-29-16-28-54-074_com.pinterest-edit.jpg",
-        nombre: "Hermosa camisa elegante",
+        nombre: "Blusa Noche de Gala",
         precio: 44000
       },
       {
         imagen: "Screenshot_2026-08-29-16-31-17-936_com.pinterest-edit.jpg",
-        nombre: "Linda camisa con estampado azul",
+        nombre: "Blusa Cielo Azul",
         precio: 32000
       },
       {
         imagen: "Screenshot_2026-08-29-16-33-53-613_com.pinterest-edit.jpg",
-        nombre: "Hermosa camisa negra para ti",
+        nombre: "Blusa Ébano Chic",
         precio: 29999
       },
       {
         imagen: "Screenshot_2026-08-29-16-35-02-866_com.pinterest-edit.jpg",
-        nombre: "Divina camisa elegante",
+        nombre: "Blusa Perla Elegante",
         precio: 45000
       },
       {
         imagen: "Screenshot_2026-10-07-13-31-45-865_com.pinterest-edit.jpg",
-        nombre: "Blusa bonita 10",
+        nombre: "Blusa Jardín Secreto",
         precio: 40000
       },
       {
         imagen: "Screenshot_2026-10-07-13-32-24-057_com.pinterest-edit.jpg",
-        nombre: "Blusa bonita 11",
+        nombre: "Blusa Dulce Aurora",
         precio: 40000
       },
       {
         imagen: "Screenshot_2026-10-07-13-33-29-134_com.pinterest-edit.jpg",
-        nombre: "Blusa bonita 12",
+        nombre: "Blusa Flor de Luna",
         precio: 40000
       },
       {
         imagen: "Screenshot_2026-10-07-13-33-56-950_com.pinterest-edit.jpg",
-        nombre: "Blusa bonita 13",
+        nombre: "Blusa Encaje Romántico",
         precio: 40000
       },
       {
         imagen: "Screenshot_2026-10-07-13-35-10-264_com.pinterest-edit.jpg",
-        nombre: "Blusa bonita 14",
+        nombre: "Blusa Alma Bohemia",
         precio: 40000
       },
       {
         imagen: "Screenshot_2026-10-07-13-35-53-812_com.pinterest-edit.jpg",
-        nombre: "Blusa bonita 15",
+        nombre: "Blusa Seda Serena",
         precio: 40000
       },
       {
         imagen: "Screenshot_2026-10-07-13-36-31-622_com.pinterest-edit.jpg",
-        nombre: "Blusa bonita 16",
+        nombre: "Blusa Rosa Silvestre",
         precio: 40000
       },
       {
         imagen: "Screenshot_2026-10-07-13-38-42-271_com.pinterest-edit.jpg",
-        nombre: "Blusa bonita 17",
+        nombre: "Blusa Sol de Verano",
         precio: 40000
       },
       {
         imagen: "Screenshot_2026-10-07-13-39-53-007_com.pinterest-edit.jpg",
-        nombre: "Blusa bonita 18",
+        nombre: "Blusa Lirio Blanco",
         precio: 40000
       },
       {
         imagen: "Screenshot_2026-10-07-13-41-57-047_com.pinterest-edit.jpg",
-        nombre: "Blusa bonita 19",
+        nombre: "Blusa Coral Encantado",
         precio: 40000
       },
       {
         imagen: "Screenshot_2026-10-07-13-43-27-595_com.pinterest-edit.jpg",
-        nombre: "Blusa bonita 20",
+        nombre: "Blusa Nube de Algodón",
         precio: 40000
       },
       {
         imagen: "Screenshot_2026-10-07-13-44-42-084_com.pinterest-edit.jpg",
-        nombre: "Blusa bonita 21",
+        nombre: "Blusa Bella Italia",
         precio: 40000
       },
       {
         imagen: "Screenshot_2026-10-07-13-45-45-193_com.pinterest-edit.jpg",
-        nombre: "Blusa bonita 22",
+        nombre: "Blusa Violeta Soñada",
         precio: 40000
       },
       {
         imagen: "Screenshot_2026-10-07-14-20-08-678_com.pinterest-edit.jpg",
-        nombre: "Blusa bonita 23",
+        nombre: "Blusa Margarita",
         precio: 40000
       },
       {
         imagen: "Screenshot_2026-10-07-14-21-30-902_com.pinterest-edit.jpg",
-        nombre: "Blusa bonita 24",
+        nombre: "Blusa Estrella Dorada",
         precio: 40000
       },
       {
         imagen: "Screenshot_2026-10-07-14-25-07-252_com.pinterest-edit.jpg",
-        nombre: "Blusa bonita 25",
+        nombre: "Blusa Mariposa",
         precio: 40000
       },
       {
         imagen: "Screenshot_2026-10-07-14-25-37-659_com.pinterest-edit.jpg",
-        nombre: "Blusa bonita 26",
+        nombre: "Blusa Rosa Vintage",
         precio: 40000
       },
       {
         imagen: "Screenshot_2026-10-07-14-26-48-302_com.pinterest-edit.jpg",
-        nombre: "Blusa bonita 27",
+        nombre: "Blusa Brillo de Luna",
         precio: 40000
       },
       {
         imagen: "Screenshot_2026-10-07-14-27-12-272_com.pinterest-edit.jpg",
-        nombre: "Blusa bonita 28",
+        nombre: "Blusa Flor de Cerezo",
         precio: 40000
       },
       {
         imagen: "Screenshot_2026-10-07-14-27-34-134_com.pinterest-edit.jpg",
-        nombre: "Blusa bonita 29",
+        nombre: "Blusa Encanto Floral",
         precio: 40000
       },
       {
         imagen: "Screenshot_2026-10-20-11-31-20-107_com.pinterest-edit.jpg",
-        nombre: "Blusa bonita 30",
+        nombre: "Blusa Aurora Chic",
         precio: 40000
       }
     ];
 
     const carpeta = "imagenes/blusas/";
     const lista = document.getElementById("listaBlusas");
-    const campo = document.getElementById("campoBusqueda");
-    const mensaje = document.getElementById("mensajeBusqueda");
     const sinResultados = document.createElement("div");
 
     sinResultados.className = "sin-resultados";
@@ -936,33 +830,50 @@
         etiqueta.htmlFor = idTalla;
         etiqueta.textContent = "Selecciona tu talla:";
 
-        const selector = document.createElement("select");
-        selector.id = idTalla;
-        selector.className = "talla";
-        selector.required = true;
-
-        const opcionInicial = document.createElement("option");
-        opcionInicial.value = "";
-        opcionInicial.textContent = "Elige una talla";
-        selector.appendChild(opcionInicial);
+        const selector = document.createElement("div");
+        selector.className = "opciones-talla";
+        selector.setAttribute("role", "radiogroup");
+        selector.setAttribute("aria-label", "Selecciona tu talla");
 
         ["XS", "S", "M", "L", "XL"].forEach(function(talla) {
-          const opcion = document.createElement("option");
-          opcion.value = talla;
-          opcion.textContent = talla;
-          selector.appendChild(opcion);
+          const label = document.createElement("label");
+          label.className = "opcion-talla";
+
+          const radio = document.createElement("input");
+          radio.type = "radio";
+          radio.name = idTalla;
+          radio.value = talla;
+          radio.setAttribute("aria-label", "Talla " + talla);
+
+          const circulo = document.createElement("span");
+          circulo.textContent = talla;
+
+          label.append(radio, circulo);
+          selector.appendChild(label);
         });
 
         contenedorTalla.append(etiqueta, selector);
 
+        const acciones = document.createElement("div");
+        acciones.className = "acciones-producto";
+
         const boton = document.createElement("button");
         boton.type = "button";
         boton.className = "boton-categoria";
-        boton.textContent = "🛒 Agregar al carrito";
-
+        boton.textContent = "🛒 Agregar";
         boton.addEventListener("click", function() {
           agregarAlCarrito(blusa, selector, imagen.src);
         });
+
+        const botonCompartir = document.createElement("button");
+        botonCompartir.type = "button";
+        botonCompartir.className = "boton-compartir";
+        botonCompartir.textContent = "↗ Compartir";
+        botonCompartir.addEventListener("click", function() {
+          compartirBlusa(blusa);
+        });
+
+        acciones.append(boton, botonCompartir);
 
         tarjeta.append(
           imagen,
@@ -970,7 +881,7 @@
           precio,
           nota,
           contenedorTalla,
-          boton
+          acciones
         );
 
         lista.appendChild(tarjeta);
@@ -979,12 +890,15 @@
       lista.appendChild(sinResultados);
     }
 
-    function agregarAlCarrito(blusa, selector, imagen) {
-      const talla = selector.value;
+    function agregarAlCarrito(blusa, selector) {
+      const seleccionada = selector.querySelector(
+        "input[type=radio]:checked"
+      );
+      const talla = seleccionada ? seleccionada.value : "";
 
       if (!talla) {
         alert("💕 Por favor, selecciona una talla antes de continuar.");
-        selector.focus();
+        selector.querySelector("input[type=radio]").focus();
         return;
       }
 
@@ -1016,6 +930,7 @@
 
       try {
         localStorage.setItem("angelsCarrito", JSON.stringify(carrito));
+        actualizarContadorCarrito();
         alert(
           "💕 ¡Agregaste " + blusa.nombre +
           " en talla " + talla + " al carrito!"
@@ -1025,51 +940,46 @@
       }
     }
 
-    /* BUSCADOR */
-    document.getElementById("formularioBusqueda")
-      .addEventListener("submit", function(evento) {
-        evento.preventDefault();
+    async function compartirBlusa(blusa) {
+      const datos = {
+        title: blusa.nombre + " | Angel's Fashion World",
+        text: blusa.nombre + " — " + formatoPrecio(blusa.precio),
+        url: window.location.href.split("#")[0] + "#categorias"
+      };
 
-        const consulta = campo.value.trim().toLocaleLowerCase("es");
-        const tarjetas = document.querySelectorAll(".categoria");
-        let encontrados = 0;
-
-        tarjetas.forEach(function(tarjeta) {
-          const coincide = (tarjeta.dataset.busqueda || "")
-            .includes(consulta);
-
-          tarjeta.style.display = coincide ? "" : "none";
-          if (coincide) encontrados++;
-        });
-
-        sinResultados.style.display =
-          encontrados === 0 ? "block" : "none";
-
-        if (!consulta) {
-          mensaje.textContent = "Escribe el nombre de una blusa. 💗";
+      try {
+        if (navigator.share) {
+          await navigator.share(datos);
+        } else if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(
+            datos.text + "\n" + datos.url
+          );
+          alert("¡Enlace copiado! Ya puedes compartir " + blusa.nombre + " ✨");
         } else {
-          mensaje.textContent = encontrados
-            ? "Encontramos " + encontrados + " blusas. ✨"
-            : "No encontramos esa blusa. Intenta con otro nombre. 💕";
-
-          document.getElementById("categorias").scrollIntoView({
-            behavior: "smooth"
-          });
+          window.prompt("Copia este enlace para compartir:", datos.url);
         }
-      });
-
-    campo.addEventListener("input", function() {
-      if (!campo.value.trim()) {
-        document.querySelectorAll(".categoria").forEach(function(tarjeta) {
-          tarjeta.style.display = "";
-        });
-
-        sinResultados.style.display = "none";
-        mensaje.textContent = "";
+      } catch (error) {
+        if (error.name !== "AbortError") {
+          alert("No se pudo compartir el enlace.");
+        }
       }
-    });
+    }
 
-    /* FOTO AMPLIADA */
+    function actualizarContadorCarrito() {
+      try {
+        const carrito = JSON.parse(localStorage.getItem("angelsCarrito")) || [];
+        const total = Array.isArray(carrito)
+          ? carrito.reduce(function(suma, producto) {
+              return suma + (Number(producto.cantidad) || 1);
+            }, 0)
+          : 0;
+
+        document.getElementById("contadorCarrito").textContent = total;
+      } catch (error) {
+        document.getElementById("contadorCarrito").textContent = "0";
+      }
+    }
+
     function abrirFoto(imagen) {
       document.getElementById("fotoAmpliada").src = imagen.src;
       document.getElementById("modalFoto").classList.add("abierto");
@@ -1090,14 +1000,8 @@
       }
     });
 
-    /* BOTÓN INFERIOR DE BUSCAR */
-    document.getElementById("enlaceBuscar").addEventListener("click", function() {
-      setTimeout(function() {
-        campo.focus({ preventScroll: true });
-      }, 100);
-    });
-
     mostrarBlusas();
+    actualizarContadorCarrito();
   </script>
 
 </body>
