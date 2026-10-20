@@ -107,13 +107,26 @@
       color: white;
     }
 
-    .menu a.boton-volver {
-      border: 1px solid var(--rosa);
-      color: var(--rosa-oscuro);
-      font-weight: bold;
+    .volver-contenedor {
+      position: relative;
+      z-index: 1;
+      margin: 0 auto 35px;
+      text-align: center;
     }
 
-    .menu a.boton-volver:hover {
+    .boton-volver {
+      display: inline-block;
+      padding: 11px 24px;
+      border: 1px solid var(--rosa);
+      border-radius: 25px;
+      background: white;
+      color: var(--rosa-oscuro);
+      font-weight: bold;
+      text-decoration: none;
+      transition: .2s;
+    }
+
+    .boton-volver:hover {
       background: var(--rosa);
       color: white;
     }
@@ -561,7 +574,6 @@
   </div>
 
   <nav class="menu" aria-label="Menú principal">
-    <a class="boton-volver" href="moda.html">← Volver</a>
     <a href="index.html">Inicio</a>
     <a class="activo" href="moda.html">Moda</a>
     <a href="belleza.html">Belleza</a>
@@ -601,6 +613,10 @@
   </section>
 
   <main class="categorias" id="listaBlusas"></main>
+
+  <div class="volver-contenedor">
+    <a class="boton-volver" href="moda.html">← Volver</a>
+  </div>
 
   <div class="modal" id="modalFoto" onclick="cerrarFoto(event)">
     <button class="cerrar-modal" type="button"
