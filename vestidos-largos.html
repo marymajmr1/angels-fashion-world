@@ -703,6 +703,7 @@
       { imagen: 'Screenshot_2026-10-07-15-28-45-485_com.pinterest-edit.jpg', nombre: 'Vestido Linda', precio: 40000 },
       { imagen: 'Screenshot_2026-10-07-15-32-37-024_com.pinterest-edit.jpg', nombre: 'Vestido Arcoíris', precio: 40000 },
       { imagen: 'Screenshot_2026-10-07-15-36-45-049_com.pinterest-edit.jpg', nombre: 'Vestido Destello', precio: 40000 },
+      { imagen: 'Screenshot_2026-10-07-15-44-43-211_com.pinterest-edit.jpg', nombre: 'Vestido Encanto', precio: 40000 },
       { imagen: 'Screenshot_2026-10-07-15-47-22-377_com.pinterest-edit.jpg', nombre: 'Vestido Nube', precio: 40000 },
       { imagen: 'Screenshot_2026-10-07-15-48-02-017_com.pinterest-edit.jpg', nombre: 'Vestido Alegría', precio: 40000 },
       { imagen: 'Screenshot_2026-10-07-15-49-31-865_com.pinterest-edit.jpg', nombre: 'Vestido Rosa', precio: 40000 },
@@ -789,31 +790,45 @@
         const etiquetaCantidad = document.createElement("span");
         etiquetaCantidad.className = "cantidad-titulo";
         etiquetaCantidad.textContent = "Cantidad:";
+
         const controlCantidad = document.createElement("div");
         controlCantidad.className = "control-cantidad";
+
         const botonMenos = document.createElement("button");
         botonMenos.type = "button";
         botonMenos.setAttribute("aria-label", "Quitar una unidad");
         botonMenos.textContent = "−";
+
         const campoCantidad = document.createElement("input");
         campoCantidad.type = "number";
         campoCantidad.min = "1";
         campoCantidad.step = "1";
         campoCantidad.value = "1";
         campoCantidad.setAttribute("aria-label", "Cantidad de vestidos");
+
         const botonMas = document.createElement("button");
         botonMas.type = "button";
         botonMas.setAttribute("aria-label", "Agregar una unidad");
         botonMas.textContent = "+";
+
         botonMenos.addEventListener("click", function() {
-          campoCantidad.value = Math.max(1, (parseInt(campoCantidad.value, 10) || 1) - 1);
+          campoCantidad.value = Math.max(
+            1,
+            (parseInt(campoCantidad.value, 10) || 1) - 1
+          );
         });
+
         botonMas.addEventListener("click", function() {
           campoCantidad.value = (parseInt(campoCantidad.value, 10) || 1) + 1;
         });
+
         campoCantidad.addEventListener("change", function() {
-          campoCantidad.value = Math.max(1, parseInt(campoCantidad.value, 10) || 1);
+          campoCantidad.value = Math.max(
+            1,
+            parseInt(campoCantidad.value, 10) || 1
+          );
         });
+
         controlCantidad.append(botonMenos, campoCantidad, botonMas);
         cantidadContenedor.append(etiquetaCantidad, controlCantidad);
 
