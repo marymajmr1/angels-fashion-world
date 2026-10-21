@@ -682,36 +682,65 @@
 
   <script>
     const vestidos = [
-      { imagen: 'Screenshot_2026-10-07-15-27-39-210_com.pinterest-edit.jpg', nombre: 'Vestido Bella', precio: 40000 },
-      { imagen: 'Screenshot_2026-09-01-09-35-42-875_com.pinterest~2.jpg', nombre: 'Vestido Dulce Encanto', precio: 40000 },
-      { imagen: 'Screenshot_2026-09-01-09-28-25-468_com.pinterest-edit.jpg', nombre: 'Vestido Mariposa', precio: 40000 },
-      { imagen: 'Screenshot_2026-10-07-15-24-21-714_com.pinterest-edit.jpg', nombre: 'Vestido Luna', precio: 40000 },
-      { imagen: 'Screenshot_2026-09-01-09-29-23-817_com.pinterest-edit.jpg', nombre: 'Vestido Estrellita', precio: 40000 },
-      { imagen: 'Screenshot_2026-09-01-09-32-14-027_com.pinterest-edit.jpg', nombre: 'Vestido Amor Bonito', precio: 40000 },
-      { imagen: 'Screenshot_2026-09-01-09-36-48-779_com.pinterest~2.jpg', nombre: 'Vestido Princesa', precio: 40000 },
-      { imagen: 'Screenshot_2026-09-01-09-38-28-775_com.pinterest-edit.jpg', nombre: 'Vestido Flor de Abril', precio: 40000 },
-      { imagen: 'Screenshot_2026-09-01-09-40-48-687_com.pinterest-edit.jpg', nombre: 'Vestido Dulce Sueño', precio: 40000 },
-      { imagen: 'Screenshot_2026-09-01-09-41-30-814_com.pinterest-edit.jpg', nombre: 'Vestido Aurora', precio: 40000 },
-      { imagen: 'Screenshot_2026-09-01-09-42-20-639_com.pinterest-edit.jpg', nombre: 'Vestido Bonita', precio: 40000 },
-      { imagen: 'Screenshot_2026-09-01-09-46-16-786_com.pinterest~2.jpg', nombre: 'Vestido Encanto', precio: 40000 },
-      { imagen: 'Screenshot_2026-09-01-09-47-08-623_com.pinterest~2.jpg', nombre: 'Vestido Cielito', precio: 40000 },
-      { imagen: 'Screenshot_2026-10-07-15-20-37-067_com.pinterest-edit.jpg', nombre: 'Vestido Perla', precio: 40000 },
-      { imagen: 'Screenshot_2026-10-07-15-21-12-690_com.pinterest-edit.jpg', nombre: 'Vestido Margarita', precio: 40000 },
-      { imagen: 'Screenshot_2026-10-07-15-23-49-788_com.pinterest-edit.jpg', nombre: 'Vestido Violeta', precio: 40000 },
-      { imagen: 'Screenshot_2026-10-07-15-26-01-197_com.pinterest-edit.jpg', nombre: 'Vestido Corazón', precio: 40000 },
-      { imagen: 'Screenshot_2026-10-07-15-28-14-090_com.pinterest-edit.jpg', nombre: 'Vestido Rayito de Sol', precio: 40000 },
-      { imagen: 'Screenshot_2026-10-07-15-28-45-485_com.pinterest-edit.jpg', nombre: 'Vestido Linda', precio: 40000 },
-      { imagen: 'Screenshot_2026-10-07-15-32-37-024_com.pinterest-edit.jpg', nombre: 'Vestido Arcoíris', precio: 40000 },
-      { imagen: 'Screenshot_2026-10-07-15-36-45-049_com.pinterest-edit.jpg', nombre: 'Vestido Destello', precio: 40000 },
-      { imagen: 'Screenshot_2026-10-07-15-44-43-211_com.pinterest-edit.jpg', nombre: 'Vestido Encanto', precio: 40000 },
-      { imagen: 'Screenshot_2026-10-07-15-47-22-377_com.pinterest-edit.jpg', nombre: 'Vestido Nube', precio: 40000 },
-      { imagen: 'Screenshot_2026-10-07-15-48-02-017_com.pinterest-edit.jpg', nombre: 'Vestido Alegría', precio: 40000 },
-      { imagen: 'Screenshot_2026-10-07-15-49-31-865_com.pinterest-edit.jpg', nombre: 'Vestido Rosa', precio: 40000 },
-      { imagen: 'Screenshot_2026-10-07-15-51-33-354_com.pinterest-edit.jpg', nombre: 'Vestido Lucerito', precio: 40000 },
-      { imagen: 'Screenshot_2026-10-07-15-55-01-077_com.pinterest-edit.jpg', nombre: 'Vestido Brillito', precio: 40000 },
-      { imagen: 'Screenshot_2026-10-07-15-55-43-939_com.pinterest-edit.jpg', nombre: 'Vestido Ángel', precio: 40000 },
-      { imagen: 'Screenshot_2026-10-07-15-56-59-608_com.pinterest-edit.jpg', nombre: 'Vestido Fantasía', precio: 40000 },
-      { imagen: 'Screenshot_2026-10-07-15-58-29-675_com.pinterest-edit.jpg', nombre: 'Vestido Dulzura', precio: 40000 }
+      { imagen: 'Screenshot_2026-10-07-15-27-39-210_com.pinterest-edit.jpg', nombre: 'Vestido bonito y elegante', precio: 500000 },
+      
+      { imagen: 'Screenshot_2026-09-01-09-35-42-875_com.pinterest~2.jpg', nombre: 'Vestido estilo Barbie', precio: 300000 },
+      
+      { imagen: 'Screenshot_2026-09-01-09-28-25-468_com.pinterest-edit.jpg', nombre: 'Vestido rojo', precio: 450000 },
+      
+      { imagen: 'Screenshot_2026-10-07-15-24-21-714_com.pinterest-edit.jpg', nombre: 'Vestido rosa pastel', precio: 250000 },
+      
+      { imagen: 'Screenshot_2026-09-01-09-29-23-817_com.pinterest-edit.jpg', nombre: 'Vestido negro y elegante', precio: 490000 },
+      
+      { imagen: 'Screenshot_2026-09-01-09-32-14-027_com.pinterest-edit.jpg', nombre: 'Vestido azuldado', precio: 320000 },
+      
+      { imagen: 'Screenshot_2026-09-01-09-36-48-779_com.pinterest~2.jpg', nombre: 'Vestido estrella', precio: 480000 },
+      
+      { imagen: 'Screenshot_2026-09-01-09-38-28-775_com.pinterest-edit.jpg', nombre: 'Vestido negro y elegante', precio: 490000 },
+      
+      { imagen: 'Screenshot_2026-09-01-09-40-48-687_com.pinterest-edit.jpg', nombre: 'Vestido elegante', precio: 495000 },
+      
+      { imagen: 'Screenshot_2026-09-01-09-41-30-814_com.pinterest-edit.jpg', nombre: 'Vestido precioso', precio: 550000 },
+      
+      { imagen: 'Screenshot_2026-09-01-09-42-20-639_com.pinterest-edit.jpg', nombre: 'Vestido verde y divino', precio: 570000 },
+      
+      { imagen: 'Screenshot_2026-09-01-09-46-16-786_com.pinterest~2.jpg', nombre: 'Vestido Encanto', precio: 100000 },
+      
+      { imagen: 'Screenshot_2026-09-01-09-47-08-623_com.pinterest~2.jpg', nombre: 'Vestido negro divino', precio: 200000 }, 
+      
+      { imagen: 'Screenshot_2026-10-07-15-20-37-067_com.pinterest-edit.jpg', nombre: 'Vestido cielo', precio: 250000 },
+      
+      { imagen: 'Screenshot_2026-10-07-15-21-12-690_com.pinterest-edit.jpg', nombre: 'Vestido azul rey', precio: 250000 },
+      
+      { imagen: 'Screenshot_2026-10-07-15-23-49-788_com.pinterest-edit.jpg', nombre: 'Vestido lindo y elegante', precio: 280000 },
+      
+      { imagen: 'Screenshot_2026-10-07-15-26-01-197_com.pinterest-edit.jpg', nombre: 'Vestido rojo y divino', precio: 440000 },
+      
+      { imagen: 'Screenshot_2026-10-07-15-28-14-090_com.pinterest-edit.jpg', nombre: 'Vestido Rayito de Sol', precio: 590000 },
+      
+      { imagen: 'Screenshot_2026-10-07-15-28-45-485_com.pinterest-edit.jpg', nombre: 'Vestido elegante', precio: 570000 },
+      
+      { imagen: 'Screenshot_2026-10-07-15-32-37-024_com.pinterest-edit.jpg', nombre: 'Vestido color rey con dorado', precio: 470000 },
+      
+      { imagen: 'Screenshot_2026-10-07-15-36-45-049_com.pinterest-edit.jpg', nombre: 'Vestido Destello', precio: 490000 },
+      
+      { imagen: 'Screenshot_2026-10-07-15-44-43-211_com.pinterest-edit.jpg', nombre: 'Vestido Encanto', precio: 300000 },
+      
+      { imagen: 'Screenshot_2026-10-07-15-47-22-377_com.pinterest-edit.jpg', nombre: 'Vestido cielo', precio: 410000 },
+      
+      { imagen: 'Screenshot_2026-10-07-15-48-02-017_com.pinterest-edit.jpg', nombre: 'Vestido rojo', precio: 490000 },
+      
+      { imagen: 'Screenshot_2026-10-07-15-49-31-865_com.pinterest-edit.jpg', nombre: 'Vestido divino', precio: 480000 },
+      
+      { imagen: 'Screenshot_2026-10-07-15-51-33-354_com.pinterest-edit.jpg', nombre: 'Vestido divino', precio: 888000 },
+      
+      { imagen: 'Screenshot_2026-10-07-15-55-01-077_com.pinterest-edit.jpg', nombre: 'Vestido lindo', precio: 888000 },
+      
+      { imagen: 'Screenshot_2026-10-07-15-55-43-939_com.pinterest-edit.jpg', nombre: 'Vestido elegante', precio: 700000 },
+      
+      { imagen: 'Screenshot_2026-10-07-15-56-59-608_com.pinterest-edit.jpg', nombre: 'Vestido fantasía', precio: 800000 },
+      
+      { imagen: 'Screenshot_2026-10-07-15-58-29-675_com.pinterest-edit.jpg', nombre: 'Vestido divino', precio: 400000 }
     ];
 
     const carpeta = "imagenes/vestidoslargos/";
