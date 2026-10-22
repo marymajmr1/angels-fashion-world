@@ -612,7 +612,6 @@
 </head>
 
 <body>
-
   <div class="estrellas" aria-hidden="true">
     <span class="estrella estrella1">✦</span>
     <span class="estrella estrella2">✧</span>
@@ -914,7 +913,9 @@
         if (navigator.share) {
           await navigator.share(datos);
         } else if (navigator.clipboard && navigator.clipboard.writeText) {
-          await navigator.clipboard.writeText(datos.text + "\n" + datos.url);
+          await navigator.clipboard.writeText(
+            datos.text + "\n" + datos.url
+          );
           alert("¡Enlace copiado! Ya puedes compartir " + conjunto.nombre + " ✨");
         } else {
           window.prompt("Copia este enlace para compartir:", datos.url);
@@ -948,6 +949,5 @@
 
     mostrarConjuntos();
   </script>
-
 </body>
 </html>
