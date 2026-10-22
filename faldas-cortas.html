@@ -650,7 +650,7 @@
     </div>
 
     <img
-      src="Screenshot_2026-10-07-16-44-09-083_com.pinterest-edit~2.jpg"
+      src="imagenes/faldascortas/Screenshot_2026-10-07-16-44-09-083_com.pinterest-edit~2.jpg"
       alt="Portada de faldas cortas de Angel's Fashion World"
     >
   </header>
@@ -682,7 +682,7 @@
 
   <script>
     const faldas = [
-      { imagen: 'Screenshot_2026-10-07-16-44-09-083_com.pinterest-edit~2.jpg', nombre: 'Falda Bella', precio: 40000 },
+      { imagen: 'Screenshot_2026-10-07-16-44-09-083_com.pinterest-edit.jpg', nombre: 'Falda Bella', precio: 40000 },
       { imagen: 'Screenshot_2026-08-29-17-46-47-035_com.pinterest~2.jpg', nombre: 'Falda Encanto', precio: 40000 },
       { imagen: 'Screenshot_2026-08-29-17-46-58-418_com.pinterest~2.jpg', nombre: 'Falda Bonita', precio: 40000 },
       { imagen: 'Screenshot_2026-08-29-17-48-01-550_com.pinterest~2.jpg', nombre: 'Falda Dulzura', precio: 40000 },
@@ -820,7 +820,8 @@
         });
 
         botonMas.addEventListener("click", function() {
-          campoCantidad.value = (parseInt(campoCantidad.value, 10) || 1) + 1;
+          campoCantidad.value =
+            (parseInt(campoCantidad.value, 10) || 1) + 1;
         });
 
         campoCantidad.addEventListener("change", function() {
