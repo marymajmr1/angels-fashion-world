@@ -569,35 +569,22 @@
       .categoria img { height: 205px; }
 
       .categoria h3 {
-        margin: 15px 5px 8px;
-        font-size: 17px;
+        margin: 15px 5px 10px;
+        font-size: 18px;
       }
 
-      .precio { font-size: 16px; }
-
-      .talla-contenedor { margin: 0 9px 12px; }
-
-      .opcion-talla span {
-        width: 35px;
-        height: 35px;
+      .boton-categoria {
+        margin: auto 6px 15px;
+        padding: 10px 9px;
+        font-size: 12px;
       }
 
-      .acciones-producto {
-        margin: auto 7px 15px;
-        gap: 5px;
-      }
-
-      .acciones-producto button {
-        padding: 10px 4px;
+      .menu-inferior a {
+        min-width: 0;
         font-size: 11px;
       }
 
-      .carrito-flotante {
-        right: 14px;
-        bottom: 14px;
-        width: 52px;
-        height: 52px;
-      }
+      .icono { font-size: 22px; }
     }
 
     @media (max-width: 360px) {
@@ -606,367 +593,296 @@
       .portada .frase { font-size: 12px; }
       .portada img { min-height: 230px; }
       .categoria img { height: 175px; }
-      .acciones-producto button { font-size: 10px; }
+      .boton-categoria { font-size: 11px; }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="estrellas" aria-hidden="true">
-    <span class="estrella estrella1">✦</span>
-    <span class="estrella estrella2">✧</span>
-    <span class="estrella estrella3">✦</span>
-    <span class="estrella estrella4">✧</span>
-  </div>
-
-  <nav class="menu" aria-label="Menú principal">
-    <a href="index.html">Inicio</a>
-    <a class="activo" href="moda.html">Moda</a>
-    <a href="belleza.html">Belleza</a>
-    <a href="skincare.html">Skin care</a>
-    <a href="accesorios.html">Accesorios</a>
-  </nav>
-
-  <header class="portada">
-    <div class="portada-texto">
-      <div class="volver-contenedor">
-        <a class="boton-volver" href="moda.html">← Volver</a>
-      </div>
-
-      <div class="mini">✧ TU ESTILO, TU ESENCIA ✧</div>
-
-      <div class="alas-con-estrella">
-        <span class="alas">🪽</span>
-        <span>✦</span>
-      </div>
-
-      <h1>
-        Angel's
-        <span>FASHION WORLD</span>
-      </h1>
-
-      <p class="frase">Abrigos para completar tu estilo.</p>
-      <div class="adorno">✧ ✦ ✧</div>
+    <div class="estrellas" aria-hidden="true">
+        <span class="estrella estrella1">✦</span>
+        <span class="estrella estrella2">✧</span>
+        <span class="estrella estrella3">✦</span>
+        <span class="estrella estrella4">✧</span>
     </div>
 
-    <img
-      src="imagenes/abrigos/Screenshot_2026-10-07-20-28-16-694_com.pinterest~2.jpg"
-      alt="Portada de abrigos de Angel's Fashion World"
-    >
-  </header>
+    <nav class="menu" aria-label="Menú principal">
+        <a href="index.html">Inicio</a>
+        <a class="activo" href="moda.html" aria-current="page">Moda</a>
+        <a href="belleza.html">Belleza</a>
+        <a href="skincare.html">Skin care</a>
+        <a href="accesorios.html">Accesorios</a>
+    </nav>
 
-  <section class="titulo-categorias" id="categorias">
-    <div class="mini">✧ DESCUBRE TUS FAVORITAS ✧</div>
-    <h2>Nuestra colección de abrigos</h2>
-    <p>Elige tu abrigo, selecciona tu talla y cantidad antes de agregarlo al carrito.</p>
-    <div class="adorno">✧ ✦ ✧</div>
-  </section>
+    <header class="portada">
+        <div class="portada-texto">
+            <div class="mini">✧ TU ESTILO, TU ESENCIA ✧</div>
 
-  <main class="categorias" id="listaAbrigos"></main>
+            <div class="alas-con-estrella">
+                <span class="alas">🪽</span>
+                <span>✦</span>
+            </div>
 
-  <div class="modal" id="modalFoto" onclick="cerrarFoto(event)">
-    <button class="cerrar-modal" type="button"
-      aria-label="Cerrar imagen" onclick="cerrarFoto(event)">×</button>
-    <img id="fotoAmpliada" src="" alt="Abrigo ampliado">
-  </div>
+            <h1>
+                Angel's
+                <span>FASHION WORLD</span>
+            </h1>
 
-  <footer>
-    <strong>Angel's Fashion World 🪽</strong><br>
-    Moda · Belleza · Skin care · Accesorios<br>
-    <span style="color: var(--dorado);">✧ Hecho con cariño ✦</span>
-  </footer>
+            <p class="frase">Un mundo creado para ti.</p>
 
-  <a class="carrito-flotante" href="carrito.html" aria-label="Ver carrito" title="Ver carrito">
-    <span aria-hidden="true">🛒</span>
-  </a>
+            <a href="#categorias" class="boton-explorar">
+                Explorar ✦
+            </a>
 
-  <script>
-    const abrigos = [
-      { imagen: "Screenshot_2026-10-07-20-28-16-694_com.pinterest~2.jpg", nombre: "Abrigo Brisa de Abril", precio: 40000 },
-      { imagen: "Screenshot_2026-08-29-14-55-53-252_com.pinterest-edit.jpg", nombre: "Abrigo Tarde Serena", precio: 40000 },
-      { imagen: "Screenshot_2026-08-29-15-56-44-690_com.pinterest-edit.jpg", nombre: "Abrigo Danza de Seda", precio: 40000 },
-      { imagen: "Screenshot_2026-08-29-15-55-30-950_com.pinterest-edit.jpg", nombre: "Abrigo Sueño de Verano", precio: 40000 },
-      { imagen: "Screenshot_2026-08-29-16-05-12-476_com.pinterest-edit.jpg", nombre: "Abrigo Toque de Encaje", precio: 40000 },
-      { imagen: "Screenshot_2026-08-29-16-05-54-491_com.pinterest-edit.jpg", nombre: "Abrigo Noche de Cristal", precio: 40000 },
-      { imagen: "Screenshot_2026-08-29-16-09-56-065_com.pinterest-edit.jpg", nombre: "Abrigo Brisa Marina", precio: 40000 },
-      { imagen: "Screenshot_2026-09-02-12-19-16-380_com.pinterest-edit.jpg", nombre: "Abrigo Jardín Secreto", precio: 40000 },
-      { imagen: "Screenshot_2026-09-02-12-21-54-355_com.pinterest-edit.jpg", nombre: "Abrigo Encaje de Luna", precio: 40000 },
-      { imagen: "Screenshot_2026-09-02-12-24-42-909_com.pinterest-edit.jpg", nombre: "Abrigo Día de Ensueño", precio: 40000 },
-      { imagen: "Screenshot_2026-09-01-11-43-22-185_com.pinterest~2.jpg", nombre: "Abrigo Paseo de Rosas", precio: 40000 },
-      { imagen: "Screenshot_2026-10-07-20-22-18-074_com.pinterest-edit.jpg", nombre: "Abrigo Noche Serena", precio: 40000 },
-      { imagen: "Screenshot_2026-10-07-20-20-57-787_com.pinterest-edit.jpg", nombre: "Abrigo Encaje Fino", precio: 40000 },
-      { imagen: "Screenshot_2026-10-07-20-23-00-875_com.pinterest-edit.jpg", nombre: "Abrigo Jardín de Abril", precio: 40000 },
-      { imagen: "Screenshot_2026-10-07-20-25-43-932_com.pinterest-edit.jpg", nombre: "Abrigo Tarde Dorada", precio: 40000 },
-      { imagen: "Screenshot_2026-10-07-20-28-27-819_com.pinterest-edit.jpg", nombre: "Abrigo Delicadeza", precio: 40000 },
-      { imagen: "Screenshot_2026-10-07-20-24-40-826_com.pinterest-edit.jpg", nombre: "Abrigo Encaje de Ensueño", precio: 40000 },
-      { imagen: "Screenshot_2026-10-07-20-57-06-472_com.pinterest-edit.jpg", nombre: "Abrigo Rincón de Flores", precio: 40000 },
-      { imagen: "Screenshot_2026-10-07-20-29-29-702_com.pinterest-edit.jpg", nombre: "Abrigo Paseo al Atardecer", precio: 40000 },
-      { imagen: "Screenshot_2026-10-07-20-58-07-223_com.pinterest-edit.jpg", nombre: "Abrigo Encanto de Seda", precio: 40000 },
-      { imagen: "Screenshot_2026-10-07-20-58-43-747_com.pinterest-edit.jpg", nombre: "Abrigo Tarde de Jardín", precio: 40000 },
-      { imagen: "Screenshot_2026-10-07-20-59-41-614_com.pinterest-edit.jpg", nombre: "Abrigo Brisa Suave", precio: 40000 },
-      { imagen: "Screenshot_2026-10-07-21-01-29-964_com.pinterest-edit.jpg", nombre: "Abrigo Encaje Romántico", precio: 40000 },
-      { imagen: "Screenshot_2026-10-07-21-01-02-619_com.pinterest-edit.jpg", nombre: "Abrigo Tarde de Abril", precio: 40000 },
-      { imagen: "Screenshot_2026-10-07-21-02-05-740_com.pinterest-edit.jpg", nombre: "Abrigo Brisa de Seda", precio: 40000 },
-      { imagen: "Screenshot_2026-08-29-14-54-41-328_com.pinterest-edit.jpg", nombre: "Abrigo Cielo de Verano", precio: 40000 },
-      { imagen: "Screenshot_2026-10-07-20-30-56-085_com.pinterest-edit.jpg", nombre: "Abrigo Tarde de Encaje", precio: 40000 },
-      { imagen: "Screenshot_2026-09-01-11-45-23-782_com.pinterest~2.jpg", nombre: "Abrigo Paseo de Abril", precio: 40000 },
-      { imagen: "Screenshot_2026-10-07-20-23-49-760_com.pinterest-edit.jpg", nombre: "Abrigo Jardín de Seda", precio: 40000 },
-      { imagen: "Screenshot_2026-08-29-15-59-47-410_com.pinterest-edit.jpg", nombre: "Abrigo Atardecer Suave", precio: 40000 }
-    ];
+            <div class="adorno">✧ ✦ ✧</div>
+        </div>
 
-    const carpeta = "imagenes/abrigos/";
-    const lista = document.getElementById("listaAbrigos");
+        <img
+            src="imagenes/moda/Screenshot_2026-10-16-19-35-33-286_com.openai.chatgpt-edit.jpg"
+            alt="Moda de Angel's Fashion World"
+        >
+    </header>
 
-    function formatoPrecio(precio) {
-      return "$" + Number(precio).toLocaleString("es-CO") + " COP";
-    }
+    <section class="buscador" id="buscarProducto">
+        <h2>Buscar productos ✦</h2>
 
-    function mostrarAbrigos() {
-      abrigos.forEach(function(abrigo, indice) {
-        const tarjeta = document.createElement("article");
-        tarjeta.className = "categoria";
-        tarjeta.dataset.busqueda =
-          (abrigo.nombre + " abrigo").toLocaleLowerCase("es");
+        <form id="formularioBusqueda">
+            <span class="lupa" aria-hidden="true">⌕</span>
 
-        const imagen = document.createElement("img");
-        imagen.src = carpeta + abrigo.imagen;
-        imagen.alt = abrigo.nombre;
-        imagen.loading = indice < 6 ? "eager" : "lazy";
-        imagen.addEventListener("click", function() {
-          abrirFoto(imagen);
+            <input
+                type="search"
+                id="campoBusqueda"
+                placeholder="Busca camisas, vestidos, shorts..."
+                aria-label="Buscar categorías de moda"
+            >
+
+            <button type="submit">Buscar</button>
+        </form>
+
+        <p class="mensaje-busqueda" id="mensajeBusqueda" aria-live="polite"></p>
+    </section>
+
+    <section class="titulo-categorias" id="categorias">
+        <div class="mini">✧ DESCUBRE TUS FAVORITOS ✧</div>
+        <h2>Nuestra colección de moda</h2>
+        <p>Encuentra prendas especiales para expresar tu estilo.</p>
+        <div class="adorno">✧ ✦ ✧</div>
+    </section>
+
+    <main class="categorias" id="listaCategorias">
+
+        <article class="categoria" data-busqueda="camisas camisa blusas blusa">
+            <img
+                src="imagenes/moda/Screenshot_2026-10-16-19-46-02-958_com.pinterest-edit.jpg"
+                alt="Camisas"
+                loading="lazy"
+            >
+            <h3>Camisas</h3>
+            <a href="blusas.html" class="boton-categoria">Explorar camisas ✦</a>
+        </article>
+
+        <article class="categoria" data-busqueda="pantalones pantalon jeans jean">
+            <img
+                src="imagenes/moda/Screenshot_2026-10-16-19-50-05-406_com.pinterest-edit.jpg"
+                alt="Pantalones"
+                loading="lazy"
+            >
+            <h3>Pantalones</h3>
+            <a href="pantalones.html" class="boton-categoria">Explorar pantalones ✦</a>
+        </article>
+
+        <article class="categoria" data-busqueda="vestidos cortos vestido corto">
+            <img
+                src="imagenes/moda/Screenshot_2026-10-16-19-54-14-423_com.pinterest~2.jpg"
+                alt="Vestidos cortos"
+                loading="lazy"
+            >
+            <h3>Vestidos cortos</h3>
+            <a href="vestidos-cortos.html" class="boton-categoria">Explorar vestidos cortos ✦</a>
+        </article>
+
+        <article class="categoria" data-busqueda="vestidos largos vestido largo">
+            <img
+                src="imagenes/moda/Screenshot_2026-10-16-19-58-46-893_com.pinterest-edit.jpg"
+                alt="Vestidos largos"
+                loading="lazy"
+            >
+            <h3>Vestidos largos</h3>
+            <a href="vestidos-largos.html" class="boton-categoria">Explorar vestidos largos ✦</a>
+        </article>
+
+        <article class="categoria" data-busqueda="conjuntos conjunto">
+            <img
+                src="imagenes/moda/Screenshot_2026-10-16-20-00-17-969_com.pinterest~2.jpg"
+                alt="Conjuntos"
+                loading="lazy"
+            >
+            <h3>Conjuntos</h3>
+            <a href="cojuntos.html" class="boton-categoria">Explorar conjuntos ✦</a>
+        </article>
+
+        <article class="categoria" data-busqueda="faldas cortas falda corta">
+            <img
+                src="imagenes/moda/Screenshot_2026-10-16-20-01-59-370_com.pinterest-edit.jpg"
+                alt="Faldas cortas"
+                loading="lazy"
+            >
+            <h3>Faldas cortas</h3>
+            <a href="faldas-cortas.html" class="boton-categoria">Explorar faldas cortas ✦</a>
+        </article>
+
+        <article class="categoria" data-busqueda="shorts short">
+            <img
+                src="imagenes/moda/Screenshot_2026-10-16-20-03-13-874_com.pinterest-edit.jpg"
+                alt="Shorts"
+                loading="lazy"
+            >
+            <h3>Shorts</h3>
+            <a href="shorts.html" class="boton-categoria">
+                Explorar shorts ✦
+            </a>
+        </article>
+
+        <article class="categoria" data-busqueda="abrigos abrigo">
+            <img
+                src="imagenes/moda/Screenshot_2026-10-16-20-05-08-637_com.pinterest-edit.jpg"
+                alt="Abrigos"
+                loading="lazy"
+            >
+            <h3>Abrigos</h3>
+            <a href="abrigo.html" class="boton-categoria">
+                Explorar abrigos ✦
+            </a>
+        </article>
+
+        <article class="categoria" data-busqueda="faldas largas falda larga">
+            <img
+                src="imagenes/moda/Screenshot_2026-10-16-20-44-40-128_com.pinterest-edit.jpg"
+                alt="Faldas largas"
+                loading="lazy"
+            >
+            <h3>Faldas largas</h3>
+            <a href="faldas-largas.html" class="boton-categoria">
+                Explorar faldas largas ✦
+            </a>
+        </article>
+
+        <article class="categoria" data-busqueda="calzados calzado zapatos zapato tacones botas sandalias">
+            <img
+                src="imagenes/moda/Screenshot_2026-10-16-20-49-33-152_com.openai.chatgpt-edit.jpg"
+                alt="Calzados"
+                loading="lazy"
+            >
+            <h3>Calzados</h3>
+            <a href="calzados.html" class="boton-categoria">Explorar calzados ✦</a>
+        </article>
+
+        <div class="sin-resultados" id="sinResultados">
+            No encontramos esa categoría. Prueba con camisas, vestidos,
+            pantalones o shorts.
+        </div>
+
+    </main>
+
+    <footer>
+        <strong>Angel's Fashion World 🪽</strong><br>
+        Moda · Belleza · Skin care · Accesorios<br>
+        <span style="color: var(--dorado);">✧ Hecho con cariño ✦</span>
+    </footer>
+
+    <nav class="menu-inferior" aria-label="Accesos rápidos">
+        <a href="#buscarProducto" id="enlaceBuscar">
+            <span class="icono">⌕</span>
+            Buscar
+        </a>
+
+        <a href="pedido.html">
+            <span class="icono">♧</span>
+            Pedidos
+        </a>
+
+        <a href="carrito.html">
+            <span class="icono">🛒</span>
+            Carrito
+        </a>
+
+        <a href="perfil.html">
+            <span class="icono">♙</span>
+            Mi perfil
+        </a>
+    </nav>
+
+    <script>
+        const formulario = document.getElementById("formularioBusqueda");
+        const campo = document.getElementById("campoBusqueda");
+        const mensaje = document.getElementById("mensajeBusqueda");
+        const tarjetas = document.querySelectorAll(".categoria");
+        const sinResultados = document.getElementById("sinResultados");
+
+        formulario.addEventListener("submit", function(evento) {
+            evento.preventDefault();
+
+            const consulta = campo.value.trim().toLocaleLowerCase("es");
+
+            if (!consulta) {
+                mensaje.textContent = "Escribe una categoría para buscar. 💗";
+                campo.focus();
+                return;
+            }
+
+            let encontrados = 0;
+
+            tarjetas.forEach(function(tarjeta) {
+                const palabras = (tarjeta.dataset.busqueda || "")
+                    .toLocaleLowerCase("es");
+
+                const titulo = tarjeta.querySelector("h3").textContent
+                    .toLocaleLowerCase("es");
+
+                const coincide =
+                    palabras.includes(consulta) ||
+                    titulo.includes(consulta);
+
+                tarjeta.style.display = coincide ? "" : "none";
+
+                if (coincide) encontrados++;
+            });
+
+            sinResultados.style.display =
+                encontrados === 0 ? "block" : "none";
+
+            if (encontrados > 0) {
+                mensaje.textContent = encontrados === 1
+                    ? "Encontramos 1 categoría. ✨"
+                    : "Encontramos " + encontrados + " categorías. ✨";
+
+                document.getElementById("categorias").scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                mensaje.textContent =
+                    "No encontramos esa categoría. Intenta con otro nombre. 💕";
+            }
         });
 
-        imagen.addEventListener("error", function() {
-          imagen.alt = "No se pudo cargar: " + abrigo.imagen;
-          tarjeta.style.borderColor = "#df4f8e";
-          console.error("Revisa el nombre de esta imagen:", imagen.src);
+        campo.addEventListener("input", function() {
+            if (!campo.value.trim()) {
+                tarjetas.forEach(function(tarjeta) {
+                    tarjeta.style.display = "";
+                });
+
+                sinResultados.style.display = "none";
+                mensaje.textContent = "";
+            }
         });
 
-        const titulo = document.createElement("h3");
-        titulo.textContent = abrigo.nombre;
-
-        const precio = document.createElement("p");
-        precio.className = "precio";
-        precio.textContent = formatoPrecio(abrigo.precio);
-
-        const nota = document.createElement("p");
-        nota.className = "nota-precio";
-        nota.textContent = "Precio de ejemplo: confirma el precio real";
-
-        const contenedorTalla = document.createElement("div");
-        contenedorTalla.className = "talla-contenedor";
-
-        const etiqueta = document.createElement("label");
-        const idTalla = "talla-" + indice;
-        etiqueta.htmlFor = idTalla;
-        etiqueta.textContent = "Selecciona tu talla:";
-
-        const selector = document.createElement("div");
-        selector.className = "opciones-talla";
-        selector.setAttribute("role", "radiogroup");
-        selector.setAttribute("aria-label", "Selecciona la talla del abrigo");
-
-        ["S", "M", "L", "XL"].forEach(function(talla) {
-          const label = document.createElement("label");
-          label.className = "opcion-talla";
-
-          const radio = document.createElement("input");
-          radio.type = "radio";
-          radio.name = idTalla;
-          radio.value = talla;
-          radio.setAttribute("aria-label", "Talla " + talla);
-
-          const circulo = document.createElement("span");
-          circulo.textContent = talla;
-
-          label.append(radio, circulo);
-          selector.appendChild(label);
+        document.getElementById("enlaceBuscar").addEventListener("click", function() {
+            setTimeout(function() {
+                campo.focus({ preventScroll: true });
+            }, 100);
         });
-
-        contenedorTalla.append(etiqueta, selector);
-
-        const cantidadContenedor = document.createElement("div");
-        cantidadContenedor.className = "cantidad-contenedor";
-
-        const etiquetaCantidad = document.createElement("span");
-        etiquetaCantidad.className = "cantidad-titulo";
-        etiquetaCantidad.textContent = "Cantidad:";
-
-        const controlCantidad = document.createElement("div");
-        controlCantidad.className = "control-cantidad";
-
-        const botonMenos = document.createElement("button");
-        botonMenos.type = "button";
-        botonMenos.setAttribute("aria-label", "Quitar una unidad");
-        botonMenos.textContent = "−";
-
-        const campoCantidad = document.createElement("input");
-        campoCantidad.type = "number";
-        campoCantidad.min = "1";
-        campoCantidad.step = "1";
-        campoCantidad.value = "1";
-        campoCantidad.setAttribute("aria-label", "Cantidad de abrigos");
-
-        const botonMas = document.createElement("button");
-        botonMas.type = "button";
-        botonMas.setAttribute("aria-label", "Agregar una unidad");
-        botonMas.textContent = "+";
-
-        botonMenos.addEventListener("click", function() {
-          campoCantidad.value = Math.max(
-            1,
-            (parseInt(campoCantidad.value, 10) || 1) - 1
-          );
-        });
-
-        botonMas.addEventListener("click", function() {
-          campoCantidad.value =
-            (parseInt(campoCantidad.value, 10) || 1) + 1;
-        });
-
-        campoCantidad.addEventListener("change", function() {
-          campoCantidad.value = Math.max(
-            1,
-            parseInt(campoCantidad.value, 10) || 1
-          );
-        });
-
-        controlCantidad.append(botonMenos, campoCantidad, botonMas);
-        cantidadContenedor.append(etiquetaCantidad, controlCantidad);
-
-        const acciones = document.createElement("div");
-        acciones.className = "acciones-producto";
-
-        const boton = document.createElement("button");
-        boton.type = "button";
-        boton.className = "boton-categoria";
-        boton.textContent = "🛒 Agregar";
-        boton.addEventListener("click", function() {
-          agregarAlCarrito(abrigo, selector, campoCantidad.value);
-        });
-
-        const botonCompartir = document.createElement("button");
-        botonCompartir.type = "button";
-        botonCompartir.className = "boton-compartir";
-        botonCompartir.textContent = "↗ Compartir";
-        botonCompartir.addEventListener("click", function() {
-          compartirAbrigo(abrigo);
-        });
-
-        acciones.append(boton, botonCompartir);
-
-        tarjeta.append(
-          imagen,
-          titulo,
-          precio,
-          nota,
-          contenedorTalla,
-          cantidadContenedor,
-          acciones
-        );
-
-        lista.appendChild(tarjeta);
-      });
-    }
-
-    function agregarAlCarrito(abrigo, selector, cantidadElegida) {
-      const cantidad = Math.max(1, parseInt(cantidadElegida, 10) || 1);
-      const seleccionada = selector.querySelector(
-        "input[type=radio]:checked"
-      );
-      const talla = seleccionada ? seleccionada.value : "";
-
-      if (!talla) {
-        alert("💕 Por favor, selecciona una talla antes de continuar.");
-        selector.querySelector("input[type=radio]").focus();
-        return;
-      }
-
-      let carrito = [];
-
-      try {
-        carrito = JSON.parse(localStorage.getItem("angelsCarrito")) || [];
-        if (!Array.isArray(carrito)) carrito = [];
-      } catch (error) {
-        carrito = [];
-      }
-
-      const existente = carrito.find(function(producto) {
-        return producto.nombre === abrigo.nombre &&
-               producto.talla === talla;
-      });
-
-      if (existente) {
-        existente.cantidad = (Number(existente.cantidad) || 1) + cantidad;
-      } else {
-        carrito.push({
-          nombre: abrigo.nombre,
-          precio: abrigo.precio,
-          imagen: carpeta + abrigo.imagen,
-          talla: talla,
-          cantidad: cantidad
-        });
-      }
-
-      try {
-        localStorage.setItem("angelsCarrito", JSON.stringify(carrito));
-        alert(
-          "💕 Agregaste " + cantidad + " unidad(es) de " + abrigo.nombre +
-          " en talla " + talla + " al carrito!"
-        );
-      } catch (error) {
-        alert("No pudimos guardar el producto. Revisa el almacenamiento del navegador.");
-      }
-    }
-
-    async function compartirAbrigo(abrigo) {
-      const datos = {
-        title: abrigo.nombre + " | Angel's Fashion World",
-        text: abrigo.nombre + " — " + formatoPrecio(abrigo.precio),
-        url: window.location.href.split("#")[0] + "#categorias"
-      };
-
-      try {
-        if (navigator.share) {
-          await navigator.share(datos);
-        } else if (navigator.clipboard && navigator.clipboard.writeText) {
-          await navigator.clipboard.writeText(
-            datos.text + "\n" + datos.url
-          );
-          alert("¡Enlace copiado! Ya puedes compartir " + abrigo.nombre + " ✨");
-        } else {
-          window.prompt("Copia este enlace para compartir:", datos.url);
-        }
-      } catch (error) {
-        if (error.name !== "AbortError") {
-          alert("No se pudo compartir el enlace.");
-        }
-      }
-    }
-
-    function abrirFoto(imagen) {
-      document.getElementById("fotoAmpliada").src = imagen.src;
-      document.getElementById("modalFoto").classList.add("abierto");
-    }
-
-    function cerrarFoto(evento) {
-      if (
-        evento.target.id === "modalFoto" ||
-        evento.target.classList.contains("cerrar-modal")
-      ) {
-        document.getElementById("modalFoto").classList.remove("abierto");
-      }
-    }
-
-    document.addEventListener("keydown", function(evento) {
-      if (evento.key === "Escape") {
-        document.getElementById("modalFoto").classList.remove("abierto");
-      }
-    });
-
-    mostrarAbrigos();
-  </script>
+    </script>
 
 </body>
 </html>
