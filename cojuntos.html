@@ -684,10 +684,10 @@
     const conjuntos = [
       { imagen: 'Screenshot_2026-10-07-16-20-39-511_com.pinterest-edit.jpg', nombre: 'Conjunto Bella', precio: 40000 },
       { imagen: 'Screenshot_2026-09-01-11-59-13-942_com.pinterest~2.jpg', nombre: 'Conjunto Encanto', precio: 40000 },
-      { imagen: 'Screenshot_2026-09-01-12-01-37-306_com.pinterest~2.jpg', nombre: 'Conjunto Bonito', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-11-57-27-367_com.pinterest~3.jpg', nombre: 'Conjunto Bonito', precio: 40000 },
       { imagen: 'Screenshot_2026-09-01-11-58-42-650_com.pinterest~2.jpg', nombre: 'Conjunto Dulzura', precio: 40000 },
       { imagen: 'Screenshot_2026-09-01-11-58-36-142_com.pinterest~2.jpg', nombre: 'Conjunto Estrella', precio: 40000 },
-      { imagen: 'Screenshot_2026-09-01-11-58-06-148_com.pinterest~2.jpg', nombre: 'Conjunto Mariposa', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-11-58-42-650_com.pinterest~3.jpg', nombre: 'Conjunto Mariposa', precio: 40000 },
       { imagen: 'Screenshot_2026-09-01-11-57-27-367_com.pinterest~2.jpg', nombre: 'Conjunto Sueño', precio: 40000 },
       { imagen: 'Screenshot_2026-09-01-11-56-48-867_com.pinterest~2.jpg', nombre: 'Conjunto Perla', precio: 40000 },
       { imagen: 'Screenshot_2026-09-01-11-56-11-709_com.pinterest~2.jpg', nombre: 'Conjunto Aurora', precio: 40000 },
@@ -787,49 +787,34 @@
 
         const cantidadContenedor = document.createElement("div");
         cantidadContenedor.className = "cantidad-contenedor";
-
         const etiquetaCantidad = document.createElement("span");
         etiquetaCantidad.className = "cantidad-titulo";
         etiquetaCantidad.textContent = "Cantidad:";
-
         const controlCantidad = document.createElement("div");
         controlCantidad.className = "control-cantidad";
-
         const botonMenos = document.createElement("button");
         botonMenos.type = "button";
         botonMenos.setAttribute("aria-label", "Quitar una unidad");
         botonMenos.textContent = "−";
-
         const campoCantidad = document.createElement("input");
         campoCantidad.type = "number";
         campoCantidad.min = "1";
         campoCantidad.step = "1";
         campoCantidad.value = "1";
         campoCantidad.setAttribute("aria-label", "Cantidad de conjuntos");
-
         const botonMas = document.createElement("button");
         botonMas.type = "button";
         botonMas.setAttribute("aria-label", "Agregar una unidad");
         botonMas.textContent = "+";
-
         botonMenos.addEventListener("click", function() {
-          campoCantidad.value = Math.max(
-            1,
-            (parseInt(campoCantidad.value, 10) || 1) - 1
-          );
+          campoCantidad.value = Math.max(1, (parseInt(campoCantidad.value, 10) || 1) - 1);
         });
-
         botonMas.addEventListener("click", function() {
           campoCantidad.value = (parseInt(campoCantidad.value, 10) || 1) + 1;
         });
-
         campoCantidad.addEventListener("change", function() {
-          campoCantidad.value = Math.max(
-            1,
-            parseInt(campoCantidad.value, 10) || 1
-          );
+          campoCantidad.value = Math.max(1, parseInt(campoCantidad.value, 10) || 1);
         });
-
         controlCantidad.append(botonMenos, campoCantidad, botonMas);
         cantidadContenedor.append(etiquetaCantidad, controlCantidad);
 
