@@ -299,12 +299,6 @@
       font-weight: bold;
     }
 
-    .nota-precio {
-      margin: 0 10px 12px;
-      color: #947587;
-      font-size: 11px;
-    }
-
     .talla-contenedor {
       margin: 0 15px 15px;
       text-align: left;
@@ -750,10 +744,6 @@
         precio.className = "precio";
         precio.textContent = formatoPrecio(abrigo.precio);
 
-        const nota = document.createElement("p");
-        nota.className = "nota-precio";
-        nota.textContent = "Precio de ejemplo: confirma el precio real";
-
         const contenedorTalla = document.createElement("div");
         contenedorTalla.className = "talla-contenedor";
 
@@ -860,7 +850,6 @@
           imagen,
           titulo,
           precio,
-          nota,
           contenedorTalla,
           cantidadContenedor,
           acciones
