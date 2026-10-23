@@ -1,386 +1,983 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff1f7">
+  <title>Calzados | Angel's Fashion World</title>
 
-    <title>Calzados | Angel's Fashion World</title>
+  <style>
+    :root {
+      --rosa: #df4f8e;
+      --rosa-oscuro: #a52f68;
+      --rosa-intenso: #c92f75;
+      --texto: #68495a;
+      --dorado: #c8a96b;
+      --borde: #f4cfe0;
+      --fondo: #fff8fc;
+    }
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    * { box-sizing: border-box; }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 25px;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            color: #68495a;
-            background:
-                radial-gradient(circle at top left, #ffe0ef, transparent 35%),
-                linear-gradient(135deg, #ffffff, #fff1f7);
-            min-height: 100vh;
-        }
+    body {
+      margin: 0;
+      padding-bottom: 85px;
+      font-family: Arial, sans-serif;
+      color: var(--texto);
+      background:
+        radial-gradient(circle at top left, #ffe1ee, transparent 28%),
+        radial-gradient(circle at 90% 30%, #fff0f7, transparent 25%),
+        var(--fondo);
+    }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+    a { color: inherit; }
 
-        /* Estrellitas decorativas */
-        .estrella {
-            position: fixed;
-            color: #c8a96b;
-            pointer-events: none;
-            z-index: 0;
-            animation: flotar 4s ease-in-out infinite;
-        }
+    .estrellas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      color: var(--dorado);
+      opacity: .75;
+    }
 
-        .estrella1 {
-            top: 120px;
-            left: 4%;
-        }
+    .estrella {
+      position: absolute;
+      animation: flotar 5s ease-in-out infinite;
+    }
 
-        .estrella2 {
-            top: 280px;
-            right: 5%;
-            animation-delay: .7s;
-        }
+    .estrella1 { top: 120px; left: 4%; }
 
-        .estrella3 {
-            bottom: 180px;
-            left: 6%;
-            animation-delay: 1.3s;
-        }
+    .estrella2 {
+      top: 280px;
+      right: 5%;
+      animation-delay: .7s;
+    }
 
-        .estrella4 {
-            bottom: 80px;
-            right: 7%;
-            animation-delay: 2s;
-        }
+    .estrella3 {
+      bottom: 180px;
+      left: 6%;
+      animation-delay: 1.3s;
+    }
 
-        @keyframes flotar {
-            0%, 100% {
-                transform: translateY(0);
-            }
+    .estrella4 {
+      bottom: 80px;
+      right: 7%;
+      animation-delay: 2s;
+    }
 
-            50% {
-                transform: translateY(-12px);
-            }
-        }
+    @keyframes flotar {
+      50% { transform: translateY(-9px) rotate(8deg); }
+    }
 
-        /* Menú */
-        .menu {
-            width: 92%;
-            max-width: 1200px;
-            margin: 25px auto 0;
-            padding: 20px;
-            background: rgba(255, 255, 255, .95);
-            border-radius: 25px;
-            box-shadow: 0 5px 20px #e9b8d055;
-            position: relative;
-            z-index: 2;
-            text-align: center;
-        }
+    .menu {
+      position: relative;
+      z-index: 2;
+      width: 94%;
+      max-width: 1200px;
+      margin: 16px auto;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      flex-wrap: wrap;
+      border: 1px solid var(--borde);
+      border-radius: 20px;
+      background: #ffffffed;
+      box-shadow: 0 5px 20px #d85b9112;
+    }
 
-        .logo {
-            color: #d85b91;
-            font-size: 27px;
-            font-weight: bold;
-            margin-bottom: 18px;
-        }
+    .menu a {
+      padding: 10px 13px;
+      border-radius: 25px;
+      font-size: 13px;
+      text-decoration: none;
+      transition: .2s;
+    }
 
-        .logo span {
-            display: inline-block;
-            animation: flotar 3s infinite;
-        }
+    .menu a:hover,
+    .menu a.activo {
+      background: var(--rosa);
+      color: white;
+    }
 
-        .navegacion {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+    .volver-contenedor {
+      margin: 0 0 10px;
+    }
 
-        .navegacion a {
-            background: #fff0f7;
-            color: #b7437a;
-            padding: 11px 16px;
-            border-radius: 20px;
-            transition: .3s;
-        }
+    .boton-volver {
+      display: inline-block;
+      padding: 11px 24px;
+      border: 1px solid var(--rosa);
+      border-radius: 25px;
+      background: white;
+      color: var(--rosa-oscuro);
+      font-weight: bold;
+      text-decoration: none;
+      transition: .2s;
+    }
 
-        .navegacion a:hover {
-            background: #d85b91;
-            color: white;
-        }
+    .boton-volver:hover {
+      background: var(--rosa);
+      color: white;
+    }
 
-        /* Encabezado */
-        .encabezado {
-            text-align: center;
-            padding: 45px 15px 25px;
-            position: relative;
-            z-index: 1;
-        }
+    .portada {
+      position: relative;
+      z-index: 1;
+      width: 92%;
+      max-width: 1200px;
+      min-height: 320px;
+      margin: 25px auto 30px;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      overflow: hidden;
+      border: 1px solid var(--borde);
+      border-radius: 28px;
+      background: linear-gradient(135deg, #ffc5df, #ffdaea, #ffb9d5);
+      box-shadow: 0 10px 30px #9a39670c;
+    }
 
-        .encabezado h1 {
-            font-size: clamp(30px, 5vw, 43px);
-            color: #d85b91;
-            margin-bottom: 12px;
-        }
+    .portada-texto {
+      flex: 1;
+      min-width: 0;
+      padding: clamp(20px, 4vw, 48px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
+    }
 
-        .encabezado p {
-            font-size: 16px;
-            line-height: 1.7;
-        }
+    .portada img {
+      display: block;
+      flex: 1;
+      width: 50%;
+      min-width: 0;
+      height: auto;
+      min-height: 320px;
+      max-height: 420px;
+      object-fit: cover;
+      object-position: center;
+    }
 
-        /* Tarjetas de categorías */
-        .categorias {
-            width: 92%;
-            max-width: 1200px;
-            margin: 0 auto 35px;
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 22px;
-            position: relative;
-            z-index: 1;
-        }
+    .mini {
+      color: var(--dorado);
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
 
-        .categoria {
-            background: white;
-            border-radius: 25px;
-            overflow: hidden;
-            box-shadow: 0 5px 18px #d85b9120;
-            transition: transform .3s, box-shadow .3s;
-            text-align: center;
-        }
+    .alas-con-estrella {
+      margin-top: 15px;
+      color: var(--dorado);
+      font-size: 23px;
+    }
 
-        .categoria:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 25px #d85b9135;
-        }
+    .alas {
+      display: inline-block;
+      animation: moverAlas 3s ease-in-out infinite;
+    }
 
-        .categoria img {
-            width: 100%;
-            height: 245px;
-            object-fit: cover;
-            display: block;
-            background: #fff0f7;
-        }
+    @keyframes moverAlas {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
 
-        .categoria h2 {
-            color: #d85b91;
-            font-size: 22px;
-            padding: 18px 8px 8px;
-        }
+    .portada h1 {
+      margin: 12px 0;
+      color: var(--rosa-oscuro);
+      font: 400 clamp(34px, 5vw, 58px)/1.1 Georgia, serif;
+    }
 
-        .categoria p {
-            padding: 0 12px 16px;
-            font-size: 14px;
-            line-height: 1.5;
-        }
+    .portada h1 span {
+      display: block;
+      margin-top: 10px;
+      font-size: .35em;
+      letter-spacing: .2em;
+    }
 
-        .explorar {
-            display: inline-block;
-            margin-bottom: 20px;
-            background: #d85b91;
-            color: white;
-            padding: 11px 23px;
-            border-radius: 22px;
-            font-weight: bold;
-            transition: .3s;
-        }
+    .frase {
+      margin: 5px 0;
+      color: #9c5276;
+      font: italic clamp(16px, 2vw, 22px) Georgia, serif;
+      line-height: 1.5;
+    }
 
-        .explorar:hover {
-            background: #b7437a;
-            transform: scale(1.04);
-        }
+    .boton-categoria {
+      border: 1px solid var(--rosa) !important;
+      border-radius: 30px;
+      background: var(--rosa) !important;
+      color: white !important;
+      text-decoration: none;
+      transition: .3s;
+    }
 
-        /* Pie de página */
-        footer {
-            position: relative;
-            z-index: 1;
-            margin-top: 35px;
-            padding: 28px 15px;
-            text-align: center;
-            background: white;
-            color: #68495a;
-            line-height: 1.8;
-        }
+    .boton-categoria:hover {
+      background: var(--rosa-intenso) !important;
+      border-color: var(--rosa-intenso) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 7px 18px #c92f7540;
+    }
 
-        footer strong {
-            color: #d85b91;
-        }
+    .adorno {
+      margin-top: 16px;
+      color: var(--dorado);
+      letter-spacing: 7px;
+    }
 
-        /* Adaptación a celulares */
-        @media (max-width: 750px) {
-            .categorias {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 14px;
-            }
+    .titulo-categorias {
+      position: relative;
+      z-index: 1;
+      margin: 40px 15px 30px;
+      text-align: center;
+      scroll-margin-top: 20px;
+    }
 
-            .categoria img {
-                height: 190px;
-            }
+    .titulo-categorias h2 {
+      margin: 12px 0;
+      color: var(--rosa-oscuro);
+      font: 400 clamp(28px, 4vw, 42px) Georgia, serif;
+    }
 
-            .categoria h2 {
-                font-size: 18px;
-            }
+    .titulo-categorias p { line-height: 1.7; }
 
-            .menu {
-                padding: 17px 12px;
-            }
+    .categorias {
+      position: relative;
+      z-index: 1;
+      width: 92%;
+      max-width: 1200px;
+      margin: 0 auto 45px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+    }
 
-            .navegacion {
-                gap: 8px;
-            }
+    .categoria {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--borde);
+      border-radius: 23px;
+      background: white;
+      box-shadow: 0 7px 22px #d85b9112;
+      text-align: center;
+      transition: transform .25s, box-shadow .25s;
+    }
 
-            .navegacion a {
-                padding: 9px 12px;
-                font-size: 13px;
-            }
-        }
+    .categoria:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px #d85b9125;
+    }
 
-        @media (max-width: 380px) {
-            .categorias {
-                grid-template-columns: 1fr;
-            }
+    .categoria img {
+      display: block;
+      width: 100%;
+      height: 290px;
+      object-fit: cover;
+      background: #fff0f6;
+      cursor: zoom-in;
+    }
 
-            .categoria img {
-                height: 240px;
-            }
-        }
-    </style>
+    .categoria h3 {
+      margin: 18px 8px 8px;
+      color: var(--rosa-oscuro);
+      font: 400 21px Georgia, serif;
+    }
+
+    .precio {
+      margin: 5px 8px 12px;
+      color: var(--rosa-oscuro);
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .nota-precio {
+      margin: 0 10px 12px;
+      color: #947587;
+      font-size: 11px;
+    }
+
+    .talla-contenedor {
+      margin: 0 15px 15px;
+      text-align: left;
+    }
+
+    .talla-contenedor label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .opciones-talla {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .opcion-talla input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .opcion-talla span {
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--borde);
+      border-radius: 50%;
+      background: white;
+      color: var(--texto);
+      font-size: 12px;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .opcion-talla input:checked + span {
+      border-color: var(--rosa);
+      background: var(--rosa);
+      color: white;
+      box-shadow: 0 0 0 3px #df4f8e26;
+    }
+
+    .opcion-talla input:focus-visible + span {
+      outline: 2px solid var(--rosa-oscuro);
+      outline-offset: 3px;
+    }
+
+    .cantidad-contenedor {
+      margin: 0 15px 15px;
+      text-align: left;
+    }
+
+    .cantidad-titulo {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .control-cantidad {
+      display: inline-flex;
+      align-items: center;
+      overflow: hidden;
+      border: 1px solid var(--borde);
+      border-radius: 25px;
+      background: white;
+    }
+
+    .control-cantidad button {
+      width: 38px;
+      height: 36px;
+      border: 0;
+      background: #fff3f8;
+      color: var(--rosa-oscuro);
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .control-cantidad button:hover { background: #ffe1ee; }
+
+    .control-cantidad input {
+      width: 42px;
+      border: 0;
+      outline: 0;
+      background: white;
+      color: var(--texto);
+      text-align: center;
+      font-size: 14px;
+      -moz-appearance: textfield;
+    }
+
+    .control-cantidad input::-webkit-inner-spin-button,
+    .control-cantidad input::-webkit-outer-spin-button {
+      margin: 0;
+      -webkit-appearance: none;
+    }
+
+    .acciones-producto {
+      display: flex;
+      gap: 8px;
+      margin: auto 12px 18px;
+    }
+
+    .acciones-producto button {
+      flex: 1;
+      min-width: 0;
+      margin: 0;
+    }
+
+    .boton-compartir {
+      border: 1px solid var(--borde);
+      border-radius: 25px;
+      background: white;
+      color: var(--rosa-oscuro);
+      cursor: pointer;
+      font-size: 13px;
+      transition: .2s;
+    }
+
+    .boton-compartir:hover {
+      border-color: var(--rosa);
+      background: #fff3f8;
+    }
+
+    .boton-categoria {
+      display: block;
+      margin: auto 15px 20px;
+      padding: 12px 10px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: #2d1725e8;
+    }
+
+    .modal.abierto { display: flex; }
+
+    .modal img {
+      max-width: 95%;
+      max-height: 82vh;
+      object-fit: contain;
+      border-radius: 15px;
+    }
+
+    .cerrar-modal {
+      position: absolute;
+      top: 12px;
+      right: 22px;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+    }
+
+    .carrito-flotante {
+      position: fixed;
+      z-index: 1500;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #ffffffa8;
+      border-radius: 50%;
+      background: var(--rosa);
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 8px 24px #a52f6845;
+      font-size: 27px;
+    }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      padding: 15px 20px 25px;
+      color: #87556f;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 850px) {
+      .categorias {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .categoria img { height: 260px; }
+    }
+
+    @media (max-width: 520px) {
+      .menu {
+        width: 96%;
+        gap: 3px;
+      }
+
+      .menu a {
+        padding: 8px 9px;
+        font-size: 12px;
+      }
+
+      .portada {
+        width: 94%;
+        min-height: 250px;
+      }
+
+      .portada-texto {
+        flex: 1.1;
+        padding: 16px 12px;
+      }
+
+      .portada img {
+        flex: .9;
+        width: 42%;
+        min-height: 250px;
+        max-height: 320px;
+      }
+
+      .portada .mini {
+        font-size: 9px;
+        letter-spacing: 1px;
+      }
+
+      .portada .alas-con-estrella {
+        font-size: 19px;
+        margin-top: 10px;
+      }
+
+      .portada h1 { font-size: clamp(27px, 7vw, 35px); }
+
+      .portada h1 span {
+        font-size: .33em;
+        letter-spacing: .12em;
+      }
+
+      .portada .frase { font-size: 14px; }
+
+      .portada .adorno {
+        font-size: 12px;
+        letter-spacing: 4px;
+      }
+
+      .categorias {
+        width: 92%;
+        gap: 12px;
+      }
+
+      .categoria img { height: 205px; }
+
+      .categoria h3 {
+        margin: 15px 5px 8px;
+        font-size: 17px;
+      }
+
+      .precio { font-size: 16px; }
+
+      .talla-contenedor { margin: 0 9px 12px; }
+
+      .opcion-talla span {
+        width: 35px;
+        height: 35px;
+      }
+
+      .acciones-producto {
+        margin: auto 7px 15px;
+        gap: 5px;
+      }
+
+      .acciones-producto button {
+        padding: 10px 4px;
+        font-size: 11px;
+      }
+
+      .carrito-flotante {
+        right: 14px;
+        bottom: 14px;
+        width: 52px;
+        height: 52px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .portada-texto { padding: 12px 8px; }
+      .portada h1 { font-size: 25px; }
+      .portada .frase { font-size: 12px; }
+      .portada img { min-height: 230px; }
+      .categoria img { height: 175px; }
+      .acciones-producto button { font-size: 10px; }
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- Estrellitas -->
-    <div class="estrella estrella1">✦</div>
-    <div class="estrella estrella2">✧</div>
-    <div class="estrella estrella3">✦</div>
-    <div class="estrella estrella4">✧</div>
+  <div class="estrellas" aria-hidden="true">
+    <span class="estrella estrella1">✦</span>
+    <span class="estrella estrella2">✧</span>
+    <span class="estrella estrella3">✦</span>
+    <span class="estrella estrella4">✧</span>
+  </div>
 
-    <!-- Menú principal -->
-    <header class="menu">
-        <div class="logo">
-            <span>🪽</span> Angel's Fashion World ✦
-        </div>
+  <nav class="menu" aria-label="Menú principal">
+    <a href="index.html">Inicio</a>
+    <a class="activo" href="moda.html">Moda</a>
+    <a href="belleza.html">Belleza</a>
+    <a href="skincare.html">Skin care</a>
+    <a href="accesorios.html">Accesorios</a>
+  </nav>
 
-        <nav class="navegacion">
-            <a href="index.html">Inicio</a>
-            <a href="moda.html">Moda</a>
-            <a href="belleza.html">Belleza</a>
-            <a href="skincare.html">Skin care</a>
-            <a href="accesorios.html">Accesorios</a>
-            <a href="sobre-nosotros.html">Sobre nosotros</a>
-            <a href="index.html#contactanos">Contáctanos</a>
-        </nav>
-    </header>
+  <header class="portada">
+    <div class="portada-texto">
+      <div class="volver-contenedor">
+        <a class="boton-volver" href="moda.html">← Volver</a>
+      </div>
 
-    <!-- Título -->
-    <section class="encabezado">
-        <h1>Calzados</h1>
+      <div class="mini">✧ TU ESTILO, TU ESENCIA ✧</div>
 
-        <p>
-            Encuentra tus favoritos y camina con estilo. 🩷<br>
-            Descubre nuestra colección de calzados.
-        </p>
-    </section>
+      <div class="alas-con-estrella">
+        <span class="alas">🪽</span>
+        <span>✦</span>
+      </div>
 
-    <!-- Categorías -->
-    <main class="categorias">
+      <h1>
+        Angel's
+        <span>FASHION WORLD</span>
+      </h1>
 
-        <!-- Novedades -->
-        <article class="categoria">
-            <img
-                src="imagenes/calzados/novedades.jpg"
-                alt="Novedades de calzados"
-                loading="lazy"
-            >
+      <p class="frase">Calzados bonitos para completar tu estilo.</p>
+      <div class="adorno">✧ ✦ ✧</div>
+    </div>
 
-            <h2>Novedades</h2>
-            <p>Descubre los nuevos modelos.</p>
-            <a class="explorar" href="#novedades">Explorar ✦</a>
-        </article>
+    <img
+      src="imagenes/calzados/Screenshot_2026-09-01-09-55-59-309_com.pinterest-edit.jpg"
+      alt="Portada de calzados de Angel's Fashion World"
+    >
+  </header>
 
-        <!-- Sandalias -->
-        <article class="categoria">
-            <img
-                src="imagenes/calzados/sandalias.jpg"
-                alt="Colección de sandalias"
-                loading="lazy"
-            >
+  <section class="titulo-categorias" id="categorias">
+    <div class="mini">✧ DESCUBRE TUS FAVORITAS ✧</div>
+    <h2>Nuestra colección de calzados</h2>
+    <p>Elige tu calzado, selecciona tu talla y cantidad antes de agregarlo al carrito.</p>
+    <div class="adorno">✧ ✦ ✧</div>
+  </section>
 
-            <h2>Sandalias</h2>
-            <p>Un toque bonito para cada ocasión.</p>
-            <a class="explorar" href="#sandalias">Explorar ✦</a>
-        </article>
+  <main class="categorias" id="listaCalzados"></main>
 
-        <!-- Tacones -->
-        <article class="categoria">
-            <img
-                src="imagenes/calzados/tacones.jpg"
-                alt="Colección de tacones"
-                loading="lazy"
-            >
+  <div class="modal" id="modalFoto" onclick="cerrarFoto(event)">
+    <button class="cerrar-modal" type="button"
+      aria-label="Cerrar imagen" onclick="cerrarFoto(event)">×</button>
+    <img id="fotoAmpliada" src="" alt="Calzado ampliado">
+  </div>
 
-            <h2>Tacones</h2>
-            <p>Modelos para ocasiones especiales.</p>
-            <a class="explorar" href="#tacones">Explorar ✦</a>
-        </article>
+  <footer>
+    <strong>Angel's Fashion World 🪽</strong><br>
+    Moda · Belleza · Skin care · Accesorios<br>
+    <span style="color: var(--dorado);">✧ Hecho con cariño ✦</span>
+  </footer>
 
-        <!-- Zapatillas -->
-        <article class="categoria">
-            <img
-                src="imagenes/calzados/zapatillas.jpg"
-                alt="Colección de zapatillas"
-                loading="lazy"
-            >
+  <a class="carrito-flotante" href="carrito.html" aria-label="Ver carrito" title="Ver carrito">
+    <span aria-hidden="true">🛒</span>
+  </a>
 
-            <h2>Zapatillas</h2>
-            <p>Comodidad y estilo para tus días.</p>
-            <a class="explorar" href="#zapatillas">Explorar ✦</a>
-        </article>
+  <script>
+    const calzados = [
+      { imagen: 'Screenshot_2026-09-01-09-55-59-309_com.pinterest-edit.jpg', nombre: 'Calzado Bella', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-09-57-30-770_com.pinterest-edit~2.jpg', nombre: 'Calzado Encanto', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-09-58-12-592_com.pinterest-edit.jpg', nombre: 'Calzado Mariposa', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-09-58-46-594_com.pinterest-edit~2.jpg', nombre: 'Calzado Luna', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-09-59-31-152_com.pinterest-edit~2.jpg', nombre: 'Calzado Estrella', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-10-00-11-832_com.pinterest-edit~2.jpg', nombre: 'Calzado Amor', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-10-00-58-399_com.pinterest-edit~2.jpg', nombre: 'Calzado Princesa', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-10-02-05-524_com.pinterest-edit.jpg', nombre: 'Calzado Flor', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-10-03-06-650_com.pinterest-edit.jpg', nombre: 'Calzado Sueño', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-10-05-38-347_com.pinterest-edit.jpg', nombre: 'Calzado Aurora', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-10-06-26-703_com.pinterest-edit.jpg', nombre: 'Calzado Bonito', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-02-19-487_com.pinterest~2.jpg', nombre: 'Calzado Perla', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-02-41-201_com.pinterest~2.jpg', nombre: 'Calzado Cielo', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-03-17-806_com.pinterest~2.jpg', nombre: 'Calzado Dulzura', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-03-32-357_com.pinterest~2.jpg', nombre: 'Calzado Violeta', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-03-53-618_com.pinterest~2.jpg', nombre: 'Calzado Corazón', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-04-11-723_com.pinterest~2.jpg', nombre: 'Calzado Mágico', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-05-42-536_com.pinterest~2.jpg', nombre: 'Calzado Linda', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-06-40-778_com.pinterest~2.jpg', nombre: 'Calzado Brillo', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-07-16-285_com.pinterest~2.jpg', nombre: 'Calzado Rosa', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-08-37-920_com.pinterest~3.jpg', nombre: 'Calzado Arcoíris', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-09-25-545_com.pinterest~2.jpg', nombre: 'Calzado Encantador', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-10-35-256_com.pinterest~3.jpg', nombre: 'Calzado Sol', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-11-32-577_com.pinterest~2.jpg', nombre: 'Calzado Fantasía', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-16-37-050_com.pinterest~2.jpg', nombre: 'Calzado Ángel', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-16-37-050_com.pinterest~3.jpg', nombre: 'Calzado Destello', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-16-37-050_com.pinterest~4.jpg', nombre: 'Calzado Primavera', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-16-37-050_com.pinterest~5.jpg', nombre: 'Calzado Radiante', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-24-46-507_com.pinterest~2.jpg', nombre: 'Calzado Especial', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-25-03-070_com.pinterest~2.jpg', nombre: 'Calzado Soñado', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-25-14-698_com.pinterest~2.jpg', nombre: 'Calzado Precioso', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-25-38-616_com.pinterest~2.jpg', nombre: 'Calzado Encanto Rosa', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-26-08-058_com.pinterest~3.jpg', nombre: 'Calzado Estilo', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-26-16-641_com.pinterest~2.jpg', nombre: 'Calzado Nube', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-27-29-030_com.pinterest~3.jpg', nombre: 'Calzado Radiante', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-27-34-523_com.pinterest~2.jpg', nombre: 'Calzado Lindo', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-27-46-533_com.pinterest~2.jpg', nombre: 'Calzado Dulce', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-28-08-309_com.pinterest~2.jpg', nombre: 'Calzado Encantador', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-28-36-894_com.pinterest~2.jpg', nombre: 'Calzado Luz', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-12-28-58-189_com.pinterest~2.jpg', nombre: 'Calzado Jardín', precio: 40000 },
+      { imagen: 'Screenshot_2026-09-01-09-57-07-022_com.pinterest-edit~2.jpg', nombre: 'Calzado Sueño', precio: 40000 }
+    ];
 
-        <!-- Zapatos -->
-        <article class="categoria">
-            <img
-                src="imagenes/calzados/zapatos.jpg"
-                alt="Colección de zapatos"
-                loading="lazy"
-            >
+    const carpeta = "imagenes/calzados/";
+    const lista = document.getElementById("listaCalzados");
 
-            <h2>Zapatos</h2>
-            <p>Encuentra el par ideal para ti.</p>
-            <a class="explorar" href="#zapatos">Explorar ✦</a>
-        </article>
+    function formatoPrecio(precio) {
+      return "$" + Number(precio).toLocaleString("es-CO") + " COP";
+    }
 
-        <!-- Cross -->
-        <article class="categoria">
-            <img
-                src="imagenes/calzados/cross.jpg"
-                alt="Colección Cross"
-                loading="lazy"
-            >
+    function mostrarCalzados() {
+      calzados.forEach(function(calzado, indice) {
+        const tarjeta = document.createElement("article");
+        tarjeta.className = "categoria";
+        tarjeta.dataset.busqueda =
+          (calzado.nombre + " calzado").toLocaleLowerCase("es");
 
-            <h2>Cross</h2>
-            <p>Descubre esta colección de calzados.</p>
-            <a class="explorar" href="#cross">Explorar ✦</a>
-        </article>
+        const imagen = document.createElement("img");
+        imagen.src = carpeta + calzado.imagen;
+        imagen.alt = calzado.nombre;
+        imagen.loading = indice < 6 ? "eager" : "lazy";
+        imagen.addEventListener("click", function() {
+          abrirFoto(imagen);
+        });
 
-    </main>
+        imagen.addEventListener("error", function() {
+          imagen.alt = "No se pudo cargar: " + calzado.imagen;
+          tarjeta.style.borderColor = "#df4f8e";
+          console.error("Revisa el nombre de esta imagen:", imagen.src);
+        });
 
-    <!-- Pie de página -->
-    <footer>
-        <strong>Angel's Fashion World 🪽</strong>
-        <p>Tu estilo, tu esencia, tu mundo. ✨</p>
-        <p>© 2026 Angel's Fashion World</p>
-    </footer>
+        const titulo = document.createElement("h3");
+        titulo.textContent = calzado.nombre;
+
+        const precio = document.createElement("p");
+        precio.className = "precio";
+        precio.textContent = formatoPrecio(calzado.precio);
+
+        const nota = document.createElement("p");
+        nota.className = "nota-precio";
+        nota.textContent = "Precio de ejemplo: confirma el precio real";
+
+        const contenedorTalla = document.createElement("div");
+        contenedorTalla.className = "talla-contenedor";
+
+        const etiqueta = document.createElement("label");
+        const idTalla = "talla-" + indice;
+        etiqueta.htmlFor = idTalla;
+        etiqueta.textContent = "Selecciona tu talla:";
+
+        const selector = document.createElement("div");
+        selector.className = "opciones-talla";
+        selector.setAttribute("role", "radiogroup");
+        selector.setAttribute("aria-label", "Selecciona la talla del calzado");
+
+        ["36", "37", "38", "39", "40"].forEach(function(talla) {
+          const label = document.createElement("label");
+          label.className = "opcion-talla";
+
+          const radio = document.createElement("input");
+          radio.type = "radio";
+          radio.name = idTalla;
+          radio.value = talla;
+          radio.setAttribute("aria-label", "Talla " + talla);
+
+          const circulo = document.createElement("span");
+          circulo.textContent = talla;
+
+          label.append(radio, circulo);
+          selector.appendChild(label);
+        });
+
+        contenedorTalla.append(etiqueta, selector);
+
+        const cantidadContenedor = document.createElement("div");
+        cantidadContenedor.className = "cantidad-contenedor";
+
+        const etiquetaCantidad = document.createElement("span");
+        etiquetaCantidad.className = "cantidad-titulo";
+        etiquetaCantidad.textContent = "Cantidad:";
+
+        const controlCantidad = document.createElement("div");
+        controlCantidad.className = "control-cantidad";
+
+        const botonMenos = document.createElement("button");
+        botonMenos.type = "button";
+        botonMenos.setAttribute("aria-label", "Quitar una unidad");
+        botonMenos.textContent = "−";
+
+        const campoCantidad = document.createElement("input");
+        campoCantidad.type = "number";
+        campoCantidad.min = "1";
+        campoCantidad.step = "1";
+        campoCantidad.value = "1";
+        campoCantidad.setAttribute("aria-label", "Cantidad de calzados");
+
+        const botonMas = document.createElement("button");
+        botonMas.type = "button";
+        botonMas.setAttribute("aria-label", "Agregar una unidad");
+        botonMas.textContent = "+";
+
+        botonMenos.addEventListener("click", function() {
+          campoCantidad.value = Math.max(
+            1,
+            (parseInt(campoCantidad.value, 10) || 1) - 1
+          );
+        });
+
+        botonMas.addEventListener("click", function() {
+          campoCantidad.value =
+            (parseInt(campoCantidad.value, 10) || 1) + 1;
+        });
+
+        campoCantidad.addEventListener("change", function() {
+          campoCantidad.value = Math.max(
+            1,
+            parseInt(campoCantidad.value, 10) || 1
+          );
+        });
+
+        controlCantidad.append(botonMenos, campoCantidad, botonMas);
+        cantidadContenedor.append(etiquetaCantidad, controlCantidad);
+
+        const acciones = document.createElement("div");
+        acciones.className = "acciones-producto";
+
+        const boton = document.createElement("button");
+        boton.type = "button";
+        boton.className = "boton-categoria";
+        boton.textContent = "🛒 Agregar";
+        boton.addEventListener("click", function() {
+          agregarAlCarrito(calzado, selector, campoCantidad.value);
+        });
+
+        const botonCompartir = document.createElement("button");
+        botonCompartir.type = "button";
+        botonCompartir.className = "boton-compartir";
+        botonCompartir.textContent = "↗ Compartir";
+        botonCompartir.addEventListener("click", function() {
+          compartirCalzado(calzado);
+        });
+
+        acciones.append(boton, botonCompartir);
+
+        tarjeta.append(
+          imagen,
+          titulo,
+          precio,
+          nota,
+          contenedorTalla,
+          cantidadContenedor,
+          acciones
+        );
+
+        lista.appendChild(tarjeta);
+      });
+    }
+
+    function agregarAlCarrito(calzado, selector, cantidadElegida) {
+      const cantidad = Math.max(1, parseInt(cantidadElegida, 10) || 1);
+      const seleccionada = selector.querySelector(
+        "input[type=radio]:checked"
+      );
+      const talla = seleccionada ? seleccionada.value : "";
+
+      if (!talla) {
+        alert("💕 Por favor, selecciona una talla antes de continuar.");
+        selector.querySelector("input[type=radio]").focus();
+        return;
+      }
+
+      let carrito = [];
+
+      try {
+        carrito = JSON.parse(localStorage.getItem("angelsCarrito")) || [];
+        if (!Array.isArray(carrito)) carrito = [];
+      } catch (error) {
+        carrito = [];
+      }
+
+      const existente = carrito.find(function(producto) {
+        return producto.nombre === calzado.nombre &&
+               producto.talla === talla;
+      });
+
+      if (existente) {
+        existente.cantidad = (Number(existente.cantidad) || 1) + cantidad;
+      } else {
+        carrito.push({
+          nombre: calzado.nombre,
+          precio: calzado.precio,
+          imagen: carpeta + calzado.imagen,
+          talla: talla,
+          cantidad: cantidad
+        });
+      }
+
+      try {
+        localStorage.setItem("angelsCarrito", JSON.stringify(carrito));
+        alert(
+          "💕 Agregaste " + cantidad + " unidad(es) de " + calzado.nombre +
+          " en talla " + talla + " al carrito!"
+        );
+      } catch (error) {
+        alert("No pudimos guardar el producto. Revisa el almacenamiento del navegador.");
+      }
+    }
+
+    async function compartirCalzado(calzado) {
+      const datos = {
+        title: calzado.nombre + " | Angel's Fashion World",
+        text: calzado.nombre + " — " + formatoPrecio(calzado.precio),
+        url: window.location.href.split("#")[0] + "#categorias"
+      };
+
+      try {
+        if (navigator.share) {
+          await navigator.share(datos);
+        } else if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(
+            datos.text + "\n" + datos.url
+          );
+          alert("¡Enlace copiado! Ya puedes compartir " + calzado.nombre + " ✨");
+        } else {
+          window.prompt("Copia este enlace para compartir:", datos.url);
+        }
+      } catch (error) {
+        if (error.name !== "AbortError") {
+          alert("No se pudo compartir el enlace.");
+        }
+      }
+    }
+
+    function abrirFoto(imagen) {
+      document.getElementById("fotoAmpliada").src = imagen.src;
+      document.getElementById("modalFoto").classList.add("abierto");
+    }
+
+    function cerrarFoto(evento) {
+      if (
+        evento.target.id === "modalFoto" ||
+        evento.target.classList.contains("cerrar-modal")
+      ) {
+        document.getElementById("modalFoto").classList.remove("abierto");
+      }
+    }
+
+    document.addEventListener("keydown", function(evento) {
+      if (evento.key === "Escape") {
+        document.getElementById("modalFoto").classList.remove("abierto");
+      }
+    });
+
+    mostrarCalzados();
+  </script>
 
 </body>
 </html>
