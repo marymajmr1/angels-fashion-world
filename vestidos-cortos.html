@@ -299,12 +299,6 @@
       font-weight: bold;
     }
 
-    .nota-precio {
-      margin: 0 10px 12px;
-      color: #947587;
-      font-size: 11px;
-    }
-
     .talla-contenedor {
       margin: 0 15px 15px;
       text-align: left;
@@ -633,6 +627,7 @@
       <div class="volver-contenedor">
         <a class="boton-volver" href="moda.html">← Volver</a>
       </div>
+
       <div class="mini">✧ TU ESTILO, TU ESENCIA ✧</div>
 
       <div class="alas-con-estrella">
@@ -683,63 +678,34 @@
   <script>
     const vestidos = [
       { imagen: 'Screenshot_2026-09-01-09-52-19-683_com.pinterest-edit.jpg', nombre: 'Vestido Bello', precio: 70000 },
-        
       { imagen: 'Screenshot_2026-08-29-18-07-06-209_com.pinterest~2.jpg', nombre: 'Vestido vino', precio: 58000 },
-        
       { imagen: 'Screenshot_2026-09-01-09-22-25-977_com.pinterest-edit.jpg', nombre: 'Vestido rojo', precio: 59000 },
-        
       { imagen: 'Screenshot_2026-09-01-09-23-38-261_com.pinterest~2.jpg', nombre: 'Vestido elegante', precio: 49000 },
-        
       { imagen: 'Screenshot_2026-09-01-09-24-19-259_com.pinterest~2.jpg', nombre: 'Vestido negro y elegante', precio: 48000 },
-        
       { imagen: 'Screenshot_2026-09-01-09-48-18-087_com.pinterest-edit.jpg', nombre: 'Vestido bellisimo', precio: 55000 },
-        
       { imagen: 'Screenshot_2026-09-01-09-24-58-852_com.pinterest~2.jpg', nombre: 'Vestido gris y bonito', precio: 48000 },
-        
       { imagen: 'Screenshot_2026-09-01-09-25-57-606_com.pinterest-edit.jpg', nombre: 'Vestido de flor blanca', precio: 59000 },
-        
       { imagen: 'Screenshot_2026-10-07-14-51-24-596_com.pinterest-edit.jpg', nombre: 'Vestido azulado', precio: 49000 },
-        
       { imagen: 'Screenshot_2026-10-07-14-52-35-359_com.pinterest-edit~2.jpg', nombre: 'Vestido bonito', precio: 40000 },
-        
       { imagen: 'Screenshot_2026-10-07-14-53-16-673_com.pinterest-edit.jpg', nombre: 'Vestido de cereza', precio: 48000 },
-        
       { imagen: 'Screenshot_2026-10-07-14-54-25-816_com.pinterest-edit.jpg', nombre: 'Vestido lindo y negro', precio: 52000 },
-        
       { imagen: 'Screenshot_2026-10-07-14-55-21-417_com.pinterest-edit.jpg', nombre: 'Vestido color blanco con azul', precio: 50000 },
-        
       { imagen: 'Screenshot_2026-10-07-14-57-02-979_com.pinterest-edit.jpg', nombre: 'Vestido de cereza', precio: 58000 },
-        
       { imagen: 'Screenshot_2026-10-07-14-56-12-966_com.pinterest-edit.jpg', nombre: 'Vestido jeans', precio: 46000 },
-        
       { imagen: 'Screenshot_2026-10-07-14-57-47-197_com.pinterest-edit.jpg', nombre: 'Vestido blanco y hermoso', precio: 53000 },
-        
       { imagen: 'Screenshot_2026-09-01-09-52-49-427_com.pinterest-edit.jpg', nombre: 'Vestido blanco y sencillo', precio: 40000 },
-        
       { imagen: 'Screenshot_2026-09-01-09-51-28-320_com.pinterest-edit.jpg', nombre: 'Vestido rosa con blanco', precio: 54000 },
-        
       { imagen: 'Screenshot_2026-10-07-14-55-48-966_com.pinterest-edit.jpg', nombre: 'Vestido lindo y blanco', precio: 55000 },
-        
       { imagen: 'Screenshot_2026-10-07-14-58-56-896_com.pinterest-edit.jpg', nombre: 'Vestido negro', precio: 47000 },
-        
       { imagen: 'Screenshot_2026-10-07-15-04-15-371_com.pinterest-edit.jpg', nombre: 'Vestido blanco y elegante', precio: 50000 },
-        
       { imagen: 'Screenshot_2026-10-07-15-04-45-366_com.pinterest~2.jpg', nombre: 'Vestido hermoso', precio: 56000 },
-        
       { imagen: 'Screenshot_2026-10-07-15-05-16-987_com.pinterest-edit.jpg', nombre: 'Vestido rojo y bonito', precio: 40000 },
-        
       { imagen: 'Screenshot_2026-10-07-15-05-56-755_com.pinterest-edit.jpg', nombre: 'Vestido azul rey y brillante', precio: 55000 },
-        
       { imagen: 'Screenshot_2026-10-07-15-06-32-171_com.pinterest-edit.jpg', nombre: 'Vestido Lucerito', precio: 56000 },
-        
       { imagen: 'Screenshot_2026-10-07-15-07-30-396_com.pinterest-edit.jpg', nombre: 'Vestido vino', precio: 49000 },
-        
       { imagen: 'Screenshot_2026-10-07-15-08-02-498_com.pinterest-edit.jpg', nombre: 'Vestido divino', precio: 49000 },
-        
       { imagen: 'Screenshot_2026-10-07-15-08-38-182_com.pinterest-edit.jpg', nombre: 'Vestido dulzura', precio: 45000 },
-        
       { imagen: 'Screenshot_2026-10-07-15-10-01-417_com.pinterest-edit.jpg', nombre: 'Vestido blanco', precio: 48000 },
-        
       { imagen: 'Screenshot_2026-10-07-15-10-31-435_com.pinterest-edit.jpg', nombre: 'Vestido negro y bonito', precio: 50000 }
     ];
 
@@ -775,10 +741,6 @@
         const precio = document.createElement("p");
         precio.className = "precio";
         precio.textContent = formatoPrecio(vestido.precio);
-
-        const nota = document.createElement("p");
-        nota.className = "nota-precio";
-        nota.textContent = "Precio de ejemplo: confirma el precio real";
 
         const contenedorTalla = document.createElement("div");
         contenedorTalla.className = "talla-contenedor";
@@ -886,7 +848,6 @@
           imagen,
           titulo,
           precio,
-          nota,
           contenedorTalla,
           cantidadContenedor,
           acciones
