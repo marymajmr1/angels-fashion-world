@@ -1,1155 +1,709 @@
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Perfumes | Angel's Fashion World</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background:
-                radial-gradient(circle at top left, #ffffff 0%, transparent 35%),
-                radial-gradient(circle at bottom right, #ffe1ef 0%, transparent 40%),
-                #fff0f6;
-            color: #6b4055;
-            min-height: 100vh;
-        }
-
-
-        /* =========================================
-           ESTRELLAS DECORATIVAS
-        ========================================= */
-
-        .estrella1,
-        .estrella2,
-        .estrella3,
-        .estrella4 {
-            position: fixed;
-            font-size: 28px;
-            color: #d85b91;
-            z-index: 0;
-            pointer-events: none;
-            animation: flotar 3s ease-in-out infinite;
-        }
-
-        .estrella1 {
-            top: 120px;
-            left: 4%;
-        }
-
-        .estrella2 {
-            top: 280px;
-            right: 5%;
-            animation-delay: .7s;
-        }
-
-        .estrella3 {
-            bottom: 180px;
-            left: 6%;
-            animation-delay: 1.3s;
-        }
-
-        .estrella4 {
-            bottom: 80px;
-            right: 7%;
-            animation-delay: 2s;
-        }
-
-        @keyframes flotar {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(-12px) rotate(12deg);
-            }
-        }
-
-
-        /* =========================================
-           MENÚ
-        ========================================= */
-
-        .menu {
-            width: 92%;
-            max-width: 1200px;
-            margin: 25px auto 0;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-
-            background: rgba(255, 255, 255, 0.92);
-            padding: 14px 18px;
-
-            border-radius: 25px;
-
-            box-shadow:
-                0 8px 25px rgba(216, 91, 145, 0.15);
-
-            border: 1px solid #f5d3e2;
-
-            position: relative;
-            z-index: 10;
-        }
-
-        .menu a {
-            text-decoration: none;
-            color: #6b4055;
-            font-weight: bold;
-
-            padding: 10px 16px;
-            border-radius: 20px;
-
-            transition: .3s ease;
-        }
-
-        .menu a:hover {
-            background: #ffe0ed;
-            color: #d85b91;
-            transform: translateY(-2px);
-        }
-
-
-        /* =========================================
-           PRESENTACIÓN
-        ========================================= */
-
-        header {
-            width: 92%;
-            max-width: 1000px;
-
-            margin: 35px auto 45px;
-
-            text-align: center;
-
-            background: rgba(255, 255, 255, 0.94);
-
-            padding: 35px 25px;
-
-            border-radius: 30px;
-
-            box-shadow:
-                0 12px 35px rgba(216, 91, 145, 0.18);
-
-            border: 1px solid #f5d3e2;
-
-            position: relative;
-            z-index: 2;
-        }
-
-        .alas-con-estrella {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-            margin-bottom: 5px;
-        }
-
-        .alas {
-            font-size: 48px;
-            display: inline-block;
-            animation: alasMovimiento 3s ease-in-out infinite;
-        }
-
-        .estrella-alas {
-            font-size: 25px;
-            color: #d85b91;
-            animation: estrellaMovimiento 2s ease-in-out infinite;
-        }
-
-        @keyframes alasMovimiento {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(-7px) rotate(-4deg);
-            }
-        }
-
-        @keyframes estrellaMovimiento {
-            0%, 100% {
-                transform: scale(1) rotate(0deg);
-            }
-
-            50% {
-                transform: scale(1.25) rotate(15deg);
-            }
-        }
-
-        header h1 {
-            color: #d85b91;
-            font-size: 42px;
-            margin: 5px 0 10px;
-        }
-
-        header p {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        .volver {
-            display: inline-block;
-
-            text-decoration: none;
-
-            background: #d85b91;
-            color: white;
-
-            padding: 12px 24px;
-
-            border-radius: 25px;
-
-            font-weight: bold;
-
-            transition: .3s ease;
-        }
-
-        .volver:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 7px 18px rgba(216, 91, 145, .25);
-        }
-
-
-        /*
-=========================================
-           PRODUCTOS
-        ========================================= */
-
-        .productos {
-            width: 92%;
-            max-width: 1200px;
-
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 28px;
-
-            position: relative;
-            z-index: 2;
-        }
-
-        .producto {
-            background: white;
-
-            border-radius: 25px;
-
-            padding: 18px;
-
-            text-align: center;
-
-            box-shadow:
-                0 10px 25px rgba(107, 64, 85, 0.12);
-
-            border: 1px solid #f5d3e2;
-
-            transition: .3s ease;
-        }
-
-        .producto:hover {
-            transform: translateY(-7px);
-
-            box-shadow:
-                0 15px 30px rgba(216, 91, 145, 0.18);
-        }
-
-        .producto img {
-            width: 100%;
-            height: 330px;
-
-            object-fit: cover;
-
-            border-radius: 20px;
-
-            cursor: pointer;
-
-            display: block;
-
-            transition: .3s ease;
-        }
-
-        .producto img:hover {
-            transform: scale(1.02);
-        }
-
-        .producto h2 {
-            color: #d85b91;
-
-            font-size: 21px;
-
-            margin: 18px 5px 8px;
-        }
-
-        .producto p {
-            font-size: 15px;
-
-            line-height: 1.5;
-
-            margin: 0 5px 12px;
-        }
-
-        .precio {
-            color: #6b4055;
-
-            font-size: 20px;
-
-            font-weight: bold;
-
-            margin-bottom: 15px;
-        }
-
-
-        /* =========================================
-           BOTÓN CARRITO
-        ========================================= */
-
-        .boton-carrito {
-            display: inline-block;
-
-            border: none;
-
-            background: #d85b91;
-            color: white;
-
-            padding: 11px 18px;
-
-            border-radius: 22px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-            transition: .3s ease;
-        }
-
-        .boton-carrito:hover {
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 6px 15px rgba(216, 91, 145, .25);
-        }
-
-
-        /* =========================================
-           CARRITO FLOTANTE
-        ========================================= */
-
-        .carrito-flotante {
-            position: fixed;
-
-            right: 20px;
-            bottom: 20px;
-
-            z-index: 100;
-
-            text-decoration: none;
-
-            background: white;
-            color: #d85b91;
-
-            padding: 14px 20px;
-
-            border-radius: 30px;
-
-            font-weight: bold;
-
-            box-shadow:
-                0 8px 25px rgba(107, 64, 85, 0.2);
-
-            border: 1px solid #f5d3e2;
-
-            transition: .3s ease;
-        }
-
-        .carrito-flotante:hover {
-            transform: translateY(-4px);
-        }
-
-        .contador-carrito {
-            display: inline-flex;
-
-            justify-content: center;
-            align-items: center;
-
-            min-width: 24px;
-            height: 24px;
-
-            margin-left: 5px;
-
-            padding: 0 6px;
-
-            border-radius: 50%;
-
-            background: #d85b91;
-            color: white;
-
-            font-size: 13px;
-        }
-
-
-        /*
-=========================================
-           MODAL
-        ========================================= */
-
-        .modal {
-            display: none;
-
-            position: fixed;
-
-            inset: 0;
-
-            z-index: 200;
-
-            background: rgba(60, 30, 45, .75);
-
-            justify-content: center;
-            align-items: center;
-
-            padding: 20px;
-        }
-
-        .modal.activo {
-            display: flex;
-        }
-
-        .modal-contenido {
-            width: min(900px, 95%);
-
-            max-height: 95vh;
-
-            overflow-y: auto;
-
-            background: white;
-
-            border-radius: 25px;
-
-            padding: 20px;
-
-            text-align: center;
-
-            position: relative;
-        }
-
-        .modal-contenido img {
-            max-width: 100%;
-            max-height: 65vh;
-
-            object-fit: contain;
-
-            border-radius: 18px;
-        }
-
-        .cerrar {
-            position: absolute;
-
-            top: 10px;
-            right: 15px;
-
-            width: 40px;
-            height: 40px;
-
-            border: none;
-
-            border-radius: 50%;
-
-            background: #d85b91;
-            color: white;
-
-            font-size: 24px;
-
-            cursor: pointer;
-
-            z-index: 5;
-        }
-
-        .modal h2 {
-            color: #d85b91;
-            margin: 15px 0 8px;
-        }
-
-        .modal p {
-            margin-bottom: 10px;
-        }
-
-
-        /* =========================================
-           FOOTER
-        ========================================= */
-
-        footer {
-            text-align: center;
-
-            margin-top: 70px;
-
-            padding: 30px 20px;
-
-            background: white;
-
-            border-top: 1px solid #f5d3e2;
-
-            color: #6b4055;
-
-            line-height: 1.8;
-        }
-
-
-        /* =========================================
-           RESPONSIVE
-        ========================================= */
-
-        @media (max-width: 850px) {
-
-            .productos {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .producto img {
-                height: 300px;
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            .menu {
-                width: 94%;
-                gap: 5px;
-                padding: 12px 8px;
-            }
-
-            .menu a {
-                padding: 8px 10px;
-                font-size: 14px;
-            }
-
-            header {
-                margin-top: 25px;
-                padding: 28px 18px;
-            }
-
-            header h1 {
-                font-size: 35px;
-            }
-
-            .productos {
-                grid-template-columns: 1fr;
-            }
-
-            .producto img {
-                height: auto;
-                max-height: 500px;
-            }
-
-            .carrito-flotante {
-                right: 12px;
-                bottom: 12px;
-                padding: 12px 15px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff1f7">
+  <title>Perfumes | Angel's Fashion World</title>
+
+  <style>
+    :root {
+      --rosa: #df4f8e;
+      --rosa-oscuro: #a52f68;
+      --rosa-intenso: #c92f75;
+      --texto: #68495a;
+      --dorado: #c8a96b;
+      --borde: #f4cfe0;
+      --fondo: #fff8fc;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 25px;
+    }
+
+    body {
+      margin: 0;
+      padding-bottom: 85px;
+      font-family: Arial, sans-serif;
+      color: var(--texto);
+      background:
+        radial-gradient(circle at top left, #ffe1ee, transparent 28%),
+        radial-gradient(circle at 90% 30%, #fff0f7, transparent 25%),
+        var(--fondo);
+    }
+
+    a { color: inherit; }
+
+    .estrellas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      color: var(--dorado);
+      opacity: .75;
+    }
+
+    .estrella {
+      position: absolute;
+      animation: flotar 5s ease-in-out infinite;
+    }
+
+    .estrella1 { top: 120px; left: 4%; }
+
+    .estrella2 {
+      top: 280px;
+      right: 5%;
+      animation-delay: .7s;
+    }
+
+    .estrella3 {
+      bottom: 180px;
+      left: 6%;
+      animation-delay: 1.3s;
+    }
+
+    .estrella4 {
+      bottom: 80px;
+      right: 7%;
+      animation-delay: 2s;
+    }
+
+    @keyframes flotar {
+      50% { transform: translateY(-9px) rotate(8deg); }
+    }
+
+    .menu {
+      position: relative;
+      z-index: 2;
+      width: 94%;
+      max-width: 1200px;
+      margin: 16px auto;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      flex-wrap: wrap;
+      border: 1px solid var(--borde);
+      border-radius: 20px;
+      background: #ffffffed;
+      box-shadow: 0 5px 20px #d85b9112;
+    }
+
+    .menu a {
+      padding: 10px 13px;
+      border-radius: 25px;
+      font-size: 13px;
+      text-decoration: none;
+      transition: .2s;
+    }
+
+    .menu a:hover,
+    .menu a.activo {
+      background: var(--rosa);
+      color: white;
+    }
+
+    .volver-contenedor { margin-bottom: 10px; }
+
+    .boton-volver {
+      display: inline-block;
+      padding: 11px 24px;
+      border: 1px solid var(--rosa);
+      border-radius: 25px;
+      background: white;
+      color: var(--rosa-oscuro);
+      font-weight: bold;
+      text-decoration: none;
+      transition: .2s;
+    }
+
+    .boton-volver:hover {
+      background: var(--rosa);
+      color: white;
+    }
+
+    .portada {
+      position: relative;
+      z-index: 1;
+      width: 92%;
+      max-width: 1200px;
+      min-height: 320px;
+      margin: 25px auto 30px;
+      display: flex;
+      align-items: stretch;
+      overflow: hidden;
+      border: 1px solid var(--borde);
+      border-radius: 28px;
+      background: linear-gradient(135deg, #ffc5df, #ffdaea, #ffb9d5);
+      box-shadow: 0 10px 30px #9a39670c;
+    }
+
+    .portada-texto {
+      flex: 1;
+      min-width: 0;
+      padding: clamp(20px, 4vw, 48px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .portada img {
+      display: block;
+      flex: 1;
+      width: 50%;
+      min-width: 0;
+      min-height: 320px;
+      max-height: 420px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .mini {
+      color: var(--dorado);
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .alas-con-estrella {
+      margin-top: 15px;
+      color: var(--dorado);
+      font-size: 23px;
+    }
+
+    .alas {
+      display: inline-block;
+      animation: moverAlas 3s ease-in-out infinite;
+    }
+
+    @keyframes moverAlas {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .portada h1 {
+      margin: 12px 0;
+      color: var(--rosa-oscuro);
+      font: 400 clamp(34px, 5vw, 58px)/1.1 Georgia, serif;
+    }
+
+    .portada h1 span {
+      display: block;
+      margin-top: 10px;
+      font-size: .35em;
+      letter-spacing: .2em;
+    }
+
+    .frase {
+      margin: 5px 0;
+      color: #9c5276;
+      font: italic clamp(16px, 2vw, 22px) Georgia, serif;
+      line-height: 1.5;
+    }
+
+    .adorno {
+      margin-top: 16px;
+      color: var(--dorado);
+      letter-spacing: 7px;
+    }
+
+    .titulo-categorias {
+      position: relative;
+      z-index: 1;
+      margin: 40px 15px 30px;
+      text-align: center;
+      scroll-margin-top: 20px;
+    }
+
+    .titulo-categorias h2 {
+      margin: 12px 0;
+      color: var(--rosa-oscuro);
+      font: 400 clamp(28px, 4vw, 42px) Georgia, serif;
+    }
+
+    .titulo-categorias p { line-height: 1.7; }
+
+    .categorias {
+      position: relative;
+      z-index: 1;
+      width: 92%;
+      max-width: 1200px;
+      margin: 0 auto 45px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .categoria {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--borde);
+      border-radius: 23px;
+      background: white;
+      box-shadow: 0 7px 22px #d85b9112;
+      text-align: center;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .categoria:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px #d85b9125;
+    }
+
+    .categoria img {
+      display: block;
+      width: 100%;
+      height: 290px;
+      object-fit: cover;
+      background: #fff0f6;
+      cursor: zoom-in;
+    }
+
+    .categoria h3 {
+      margin: 18px 8px 8px;
+      color: var(--rosa-oscuro);
+      font: 400 21px Georgia, serif;
+    }
+
+    .precio {
+      margin: 5px 8px 16px;
+      color: var(--rosa-oscuro);
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .acciones-producto {
+      display: flex;
+      gap: 8px;
+      margin: auto 12px 18px;
+    }
+
+    .acciones-producto button {
+      flex: 1;
+      min-width: 0;
+      padding: 12px 10px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .boton-agregar {
+      border: 1px solid var(--rosa);
+      background: var(--rosa);
+      color: white;
+    }
+
+    .boton-agregar:hover {
+      border-color: var(--rosa-intenso);
+      background: var(--rosa-intenso);
+    }
+
+    .boton-agregar:disabled {
+      opacity: .55;
+      cursor: not-allowed;
+    }
+
+    .boton-compartir {
+      border: 1px solid var(--borde);
+      background: white;
+      color: var(--rosa-oscuro);
+    }
+
+    .boton-compartir:hover {
+      border-color: var(--rosa);
+      background: #fff3f8;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: #2d1725e8;
+    }
+
+    .modal.abierto { display: flex; }
+
+    .modal img {
+      max-width: 95%;
+      max-height: 82vh;
+      object-fit: contain;
+      border-radius: 15px;
+    }
+
+    .cerrar-modal {
+      position: absolute;
+      top: 12px;
+      right: 22px;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+    }
+
+    .carrito-flotante {
+      position: fixed;
+      z-index: 1500;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #ffffffa8;
+      border-radius: 50%;
+      background: var(--rosa);
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 8px 24px #a52f6845;
+      font-size: 27px;
+    }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      padding: 15px 20px 25px;
+      color: #87556f;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 850px) {
+      .categorias {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .categoria img { height: 260px; }
+    }
+
+    @media (max-width: 520px) {
+      .menu {
+        width: 96%;
+        gap: 3px;
+      }
+
+      .menu a {
+        padding: 8px 9px;
+        font-size: 12px;
+      }
+
+      .portada {
+        width: 94%;
+        min-height: 250px;
+      }
+
+      .portada-texto {
+        flex: 1.1;
+        padding: 16px 12px;
+      }
+
+      .portada img {
+        flex: .9;
+        width: 42%;
+        min-height: 250px;
+        max-height: 320px;
+      }
+
+      .portada .mini {
+        font-size: 9px;
+        letter-spacing: 1px;
+      }
+
+      .portada h1 { font-size: clamp(27px, 7vw, 35px); }
+
+      .portada h1 span {
+        font-size: .33em;
+        letter-spacing: .12em;
+      }
+
+      .portada .frase { font-size: 14px; }
+
+      .portada .adorno {
+        font-size: 12px;
+        letter-spacing: 4px;
+      }
+
+      .categorias {
+        width: 92%;
+        gap: 12px;
+      }
+
+      .categoria img { height: 205px; }
+
+      .categoria h3 {
+        margin: 15px 5px 8px;
+        font-size: 17px;
+      }
+
+      .precio { font-size: 16px; }
+
+      .acciones-producto {
+        margin: auto 7px 15px;
+        gap: 5px;
+      }
+
+      .acciones-producto button {
+        padding: 10px 4px;
+        font-size: 11px;
+      }
+
+      .carrito-flotante {
+        right: 14px;
+        bottom: 14px;
+        width: 52px;
+        height: 52px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .portada-texto { padding: 12px 8px; }
+      .portada h1 { font-size: 25px; }
+      .portada .frase { font-size: 12px; }
+      .portada img { min-height: 230px; }
+      .categoria img { height: 175px; }
+      .acciones-producto button { font-size: 10px; }
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- =========================================
-         ESTRELLAS
-    ========================================= -->
-
-    <div class="estrella1">✦</div>
-    <div class="estrella2">✧</div>
-    <div class="estrella3">✦</div>
-    <div class="estrella4">✧</div>
-
-
-    <!-- =========================================
-         MENÚ
-    ========================================= -->
-
-    <nav class="menu">
-
-        <a href="index.html">Inicio</a>
-
-        <a href="moda.html">Moda</a>
-
-        <a href="belleza.html">Belleza</a>
-
-        <a href="skincare.html">Skin care</a>
-
-        <a href="accesorios.html">Accesorios</a>
-
-        <a href="sobre-nosotros.html">Sobre nosotros</a>
-
-        <a href="index.html#contactanos">Contáctanos</a>
-
-    </nav>
-
-
-    <!-- =========================================
-         PRESENTACIÓN
-    ========================================= -->
-
-    <header>
-
-        <div class="alas-con-estrella">
-
-            <span class="alas">🪽</span>
-
-            <span class="estrella-alas">✦</span>
-
-        </div>
-
-        <h1>Perfumes</h1>
-
-        <p>
-            Descubre tu esencia en Angel's Fashion World 💕
-        </p>
-
-        <a href="belleza.html" class="volver">
-            ← Volver a Belleza
-        </a>
-
-    </header>
-
-
-    <!--
-=========================================
-         PRODUCTOS
-    ========================================= -->
-
-    <main class="productos">
-
-
-        <!-- 1. DULCE PERFUME -->
-
-        <article class="producto">
-
-            <img
-                src="imagenes/perfumes/Screenshot_2026-09-01-10-58-16-132_com.pinterest-edit.jpg"
-                alt="Dulce perfume"
-                onclick="abrirFoto(this)"
-            >
-
-            <h2>
-                Dulce perfume
-            </h2>
-
-            <p>
-                Un aroma dulce y encantador para acompañarte
-                y dejar una esencia especial.
-            </p>
-
-            <div class="precio">
-                $500.000
-            </div>
-
-            <button
-                class="boton-carrito"
-                onclick="agregarProducto(this)"
-            >
-                🛒 Agregar al carrito
-            </button>
-
-        </article>
-
-
-        <!-- 2. HERMOSO PERFUME -->
-
-        <article class="producto">
-
-            <img
-                src="imagenes/perfumes/Screenshot_2026-09-01-11-02-24-092_com.pinterest~2.jpg"
-                alt="Hermoso perfume"
-                onclick="abrirFoto(this)"
-            >
-
-            <h2>
-                Hermoso perfume
-            </h2>
-
-            <p>
-                Una fragancia hermosa para complementar
-                tu estilo en cualquier ocasión.
-            </p>
-
-            <div class="precio">
-                $540.000
-            </div>
-
-            <button
-                class="boton-carrito"
-                onclick="agregarProducto(this)"
-            >
-                🛒 Agregar al carrito
-            </button>
-
-        </article>
-
-
-        <!-- 3. DIVINO PERFUME -->
-
-        <article class="producto">
-
-            <img
-                src="imagenes/perfumes/Screenshot_2026-09-01-11-02-58-967_com.pinterest~2.jpg"
-                alt="Divino perfume"
-                onclick="abrirFoto(this)"
-            >
-
-            <h2>
-                Divino perfume
-            </h2>
-
-            <p>
-                Una fragancia divina y especial para
-                darle un toque único a tu esencia.
-            </p>
-
-            <div class="precio">
-                $600.000
-            </div>
-
-            <button
-                class="boton-carrito"
-                onclick="agregarProducto(this)"
-            >
-                🛒 Agregar al carrito
-            </button>
-
-        </article>
-
-
-        <!-- 4. HERMOSO PERFUME -->
-
-        <article class="producto">
-
-            <img
-                src="imagenes/perfumes/Screenshot_2026-09-01-11-03-31-878_com.pinterest~2.jpg"
-                alt="Hermoso perfume"
-                onclick="abrirFoto(this)"
-            >
-
-            <h2>
-                Hermoso perfume
-            </h2>
-
-            <p>
-                Un perfume elegante y encantador para
-                acompañar tus momentos especiales.
-            </p>
-
-            <div class="precio">
-                $600.000
-            </div>
-
-            <button
-                class="boton-carrito"
-                onclick="agregarProducto(this)"
-            >
-                🛒 Agregar al carrito
-            </button>
-
-        </article>
-
-
-        <!-- 5. INCREÍBLE PERFUME -->
-
-        <article class="producto">
-
-            <img
-                src="imagenes/perfumes/Screenshot_2026-09-01-11-03-31-878_com.pinterest~3.jpg"
-                alt="Increíble perfume"
-                onclick="abrirFoto(this)"
-            >
-
-            <h2>
-                Increíble perfume.
-            </h2>
-
-            <p>
-                Una fragancia increíble para destacar
-                tu esencia y completar tu estilo.
-            </p>
-
-            <div class="precio">
-                $500.000
-            </div>
-
-            <button
-                class="boton-carrito"
-                onclick="agregarProducto(this)"
-            >
-                🛒 Agregar al carrito
-            </button>
-
-        </article>
-
-    </main>
-
-
-    <!-- =========================================
-         CARRITO FLOTANTE
-    ========================================= -->
-
-    <a href="carrito.html" class="carrito-flotante">
-
-        🛒 Ver carrito
-
-        <span
-            class="contador-carrito"
-            id="contador-carrito"
-        >
-            0
-        </span>
-
-    </a>
-
-
-    <!-- =========================================
-         MODAL
-    ========================================= -->
-
-    <div
-        class="modal"
-        id="modal"
-        onclick="cerrarFoto(event)"
-    >
-
-        <div
-            class="modal-contenido"
-            onclick="event.stopPropagation()"
-        >
-
-            <button
-                class="cerrar"
-                onclick="cerrarFoto()"
-            >
-                ×
-            </button>
-
-            <img
-                id="imagenModal"
-                src=""
-                alt=""
-            >
-
-            <h2 id="nombreModal"></h2>
-
-            <p id="descripcionModal"></p>
-
-            <div
-                class="precio"
-                id="precioModal"
-            ></div>
-
-            <button
-                class="boton-carrito"
-                id="botonModal"
-            >
-                🛒 Agregar al carrito
-            </button>
-
-        </div>
-
+  <div class="estrellas" aria-hidden="true">
+    <span class="estrella estrella1">✦</span>
+    <span class="estrella estrella2">✧</span>
+    <span class="estrella estrella3">✦</span>
+    <span class="estrella estrella4">✧</span>
+  </div>
+
+  <nav class="menu" aria-label="Menú principal">
+    <a href="index.html">Inicio</a>
+    <a href="moda.html">Moda</a>
+    <a class="activo" href="belleza.html">Belleza</a>
+    <a href="skincare.html">Skin care</a>
+    <a href="accesorios.html">Accesorios</a>
+  </nav>
+
+  <header class="portada">
+    <div class="portada-texto">
+      <div class="volver-contenedor">
+        <a class="boton-volver" href="belleza.html">← Volver</a>
+      </div>
+
+      <div class="mini">✧ TU ESTILO, TU ESENCIA ✧</div>
+
+      <div class="alas-con-estrella">
+        <span class="alas">🪽</span>
+        <span>✦</span>
+      </div>
+
+      <h1>
+        Angel's
+        <span>FASHION WORLD</span>
+      </h1>
+
+      <p class="frase">Perfumes para acompañar cada momento.</p>
+      <div class="adorno">✧ ✦ ✧</div>
     </div>
 
+    <img
+      src="imagenes/belleza/Screenshot_2026-10-23-11-52-45-965_com.pinterest-edit.jpg"
+      alt="Perfumes de Angel's Fashion World"
+    >
+  </header>
 
-    <!-- =========================================
-         FOOTER
-    ========================================= -->
+  <section class="titulo-categorias" id="categorias">
+    <div class="mini">✧ DESCUBRE TUS FAVORITOS ✧</div>
+    <h2>Nuestra colección de perfumes</h2>
+    <p>Elige tu favorito y compártelo o agrégalo al carrito cuando su precio esté confirmado.</p>
+    <div class="adorno">✧ ✦ ✧</div>
+  </section>
 
-    <footer>
+  <main class="categorias" id="listaPerfumes"></main>
 
-        <p>
-            🪽 Angel's Fashion World 🪽
-        </p>
+  <div class="modal" id="modalFoto" onclick="cerrarFoto(event)">
+    <button class="cerrar-modal" type="button"
+      aria-label="Cerrar imagen" onclick="cerrarFoto(event)">×</button>
+    <img id="fotoAmpliada" src="" alt="Perfume ampliado">
+  </div>
 
-        <p>
-            Moda • Belleza • Skin Care • Accesorios
-        </p>
+  <footer>
+    <strong>Angel's Fashion World 🪽</strong><br>
+    Belleza · Perfumes · Maquillaje · Uñas<br>
+    <span style="color: var(--dorado);">✧ Hecho con cariño ✦</span>
+  </footer>
 
-    </footer>
+  <a class="carrito-flotante" href="carrito.html" aria-label="Ver carrito" title="Ver carrito">
+    <span aria-hidden="true">🛒</span>
+  </a>
 
+  <script>
+    const perfumes = [
+      {
+        imagen: "Screenshot_2026-10-23-11-52-45-965_com.pinterest-edit.jpg",
+        nombre: "Perfume destacado",
+        precio: null
+      }
+    ];
 
-    <!-- =========================================
-         JAVASCRIPT
-    ========================================= -->
+    const carpeta = "imagenes/belleza/";
+    const lista = document.getElementById("listaPerfumes");
 
-    <script>
+    function formatoPrecio(precio) {
+      if (precio === null || precio === undefined) {
+        return "Precio por confirmar";
+      }
 
-        let carrito = JSON.parse(
-            localStorage.getItem("carritoAngel")
-        ) || [];
+      return "$" + Number(precio).toLocaleString("es-CO") + " COP";
+    }
 
+    function mostrarPerfumes() {
+      perfumes.forEach(function(perfume, indice) {
+        const tarjeta = document.createElement("article");
+        tarjeta.className = "categoria";
 
-        function guardarCarrito() {
+        const imagen = document.createElement("img");
+        imagen.src = carpeta + perfume.imagen;
+        imagen.alt = perfume.nombre;
+        imagen.loading = indice < 6 ? "eager" : "lazy";
+        imagen.addEventListener("click", function() {
+          abrirFoto(imagen);
+        });
 
-            localStorage.setItem(
-                "carritoAngel",
-                JSON.stringify(carrito)
-            );
+        imagen.addEventListener("error", function() {
+          imagen.alt = "No se pudo cargar: " + perfume.imagen;
+          console.error("Revisa el nombre de esta imagen:", imagen.src);
+        });
 
-            actualizarContador();
+        const titulo = document.createElement("h3");
+        titulo.textContent = perfume.nombre;
+
+        const precio = document.createElement("p");
+        precio.className = "precio";
+        precio.textContent = formatoPrecio(perfume.precio);
+
+        const acciones = document.createElement("div");
+        acciones.className = "acciones-producto";
+
+        const botonAgregar = document.createElement("button");
+        botonAgregar.type = "button";
+        botonAgregar.className = "boton-agregar";
+        botonAgregar.textContent = "🛒 Agregar";
+        botonAgregar.disabled = perfume.precio === null;
+
+        botonAgregar.addEventListener("click", function() {
+          agregarAlCarrito(perfume);
+        });
+
+        const botonCompartir = document.createElement("button");
+        botonCompartir.type = "button";
+        botonCompartir.className = "boton-compartir";
+        botonCompartir.textContent = "↗ Compartir";
+        botonCompartir.addEventListener("click", function() {
+          compartirPerfume(perfume);
+        });
+
+        acciones.append(botonAgregar, botonCompartir);
+        tarjeta.append(imagen, titulo, precio, acciones);
+        lista.appendChild(tarjeta);
+      });
+    }
+
+    function agregarAlCarrito(perfume) {
+      if (perfume.precio === null || perfume.precio === undefined) {
+        alert("💕 El precio de este perfume aún está por confirmar.");
+        return;
+      }
+
+      let carrito = [];
+
+      try {
+        carrito = JSON.parse(localStorage.getItem("angelsCarrito")) || [];
+        if (!Array.isArray(carrito)) carrito = [];
+      } catch (error) {
+        carrito = [];
+      }
+
+      const existente = carrito.find(function(producto) {
+        return producto.nombre === perfume.nombre;
+      });
+
+      if (existente) {
+        existente.cantidad = (Number(existente.cantidad) || 1) + 1;
+      } else {
+        carrito.push({
+          nombre: perfume.nombre,
+          precio: perfume.precio,
+          imagen: carpeta + perfume.imagen,
+          cantidad: 1
+        });
+      }
+
+      try {
+        localStorage.setItem("angelsCarrito", JSON.stringify(carrito));
+        alert("💕 Agregaste " + perfume.nombre + " al carrito.");
+      } catch (error) {
+        alert("No pudimos guardar el producto. Revisa el almacenamiento del navegador.");
+      }
+    }
+
+    async function compartirPerfume(perfume) {
+      const datos = {
+        title: perfume.nombre + " | Angel's Fashion World",
+        text: perfume.nombre + " — " + formatoPrecio(perfume.precio),
+        url: window.location.href.split("#")[0] + "#categorias"
+      };
+
+      try {
+        if (navigator.share) {
+          await navigator.share(datos);
+        } else if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(datos.text + "\n" + datos.url);
+          alert("¡Enlace copiado! Ya puedes compartir " + perfume.nombre + " ✨");
+        } else {
+          window.prompt("Copia este enlace para compartir:", datos.url);
         }
-
-
-        function actualizarContador() {
-
-            const contador =
-                document.getElementById("contador-carrito");
-
-            if (contador) {
-
-                let cantidad = carrito.reduce(
-                    (total, producto) =>
-                        total + (producto.cantidad || 1),
-                    0
-                );
-
-                contador.textContent = cantidad;
-            }
+      } catch (error) {
+        if (error.name !== "AbortError") {
+          alert("No se pudo compartir el enlace.");
         }
-
-
-        /*
-========================================
-           AGREGAR PRODUCTO
-        ========================================= */
-
-        function agregarProducto(boton) {
-
-            const producto =
-                boton.closest(".producto");
-
-            const nombre =
-                producto
-                    .querySelector("h2")
-                    .textContent
-                    .trim();
-
-            const precioTexto =
-                producto
-                    .querySelector(".precio")
-                    .textContent
-                    .trim();
-
-            const precio =
-                parseInt(
-                    precioTexto
-                        .replace(/\./g, "")
-                        .replace("$", "")
-                        .trim()
-                );
-
-
-            agregarAlCarrito(
-                nombre,
-                precio
-            );
-        }
-
-
-        /* =========================================
-           CARRITO
-        ========================================= */
-
-        function agregarAlCarrito(nombre, precio) {
-
-            const productoExistente =
-                carrito.find(
-                    producto =>
-                        producto.nombre === nombre &&
-                        producto.precio === precio
-                );
-
-
-            if (productoExistente) {
-
-                productoExistente.cantidad =
-                    (productoExistente.cantidad || 1) + 1;
-
-            } else {
-
-                carrito.push({
-
-                    nombre: nombre,
-
-                    precio: precio,
-
-                    cantidad: 1
-
-                });
-            }
-
-
-            guardarCarrito();
-
-            alert(
-                "🛍️ ¡Producto agregado al carrito! 💕"
-            );
-        }
-
-
-        /* =========================================
-           ABRIR FOTO
-        ========================================= */
-
-        function abrirFoto(imagen) {
-
-            const modal =
-                document.getElementById("modal");
-
-            const imagenModal =
-                document.getElementById("imagenModal");
-
-            const nombreModal =
-                document.getElementById("nombreModal");
-
-            const descripcionModal =
-                document.getElementById("descripcionModal");
-
-            const precioModal =
-                document.getElementById("precioModal");
-
-            const botonModal =
-                document.getElementById("botonModal");
-
-
-            imagenModal.src = imagen.src;
-
-            imagenModal.alt = imagen.alt;
-
-
-            const producto =
-                imagen.closest(".producto");
-
-
-            const nombre =
-                producto
-                    .querySelector("h2")
-                    .textContent
-                    .trim();
-
-
-            const descripcion =
-                producto
-                    .querySelector("p")
-                    .textContent
-                    .trim();
-
-
-            const precioTexto =
-                producto
-                    .querySelector(".precio")
-                    .textContent
-                    .trim();
-
-
-            nombreModal.textContent = nombre;
-
-            descripcionModal.textContent =
-                descripcion;
-
-            precioModal.textContent =
-                precioTexto;
-
-
-            const precioNumerico =
-                parseInt(
-                    precioTexto
-                        .replace(/\./g, "")
-                        .replace("$", "")
-                        .trim()
-                );
-
-
-            botonModal.onclick = function () {
-
-                agregarAlCarrito(
-                    nombre,
-                    precioNumerico
-                );
-
-            };
-
-
-            modal.classList.add("activo");
-
-            document.body.style.overflow = "hidden";
-        }
-
-
-        /* =========================================
-           CERRAR MODAL
-        ========================================= */
-
-        function cerrarFoto(event) {
-
-            if (
-                event &&
-                event.target !==
-                document.getElementById("modal")
-            ) {
-                return;
-            }
-
-
-            const modal =
-                document.getElementById("modal");
-
-            modal.classList.remove("activo");
-
-            document.body.style.overflow = "";
-        }
-
-
-        /* =========================================
-           ESC PARA CERRAR
-        ========================================= */
-
-        document.addEventListener(
-            "keydown",
-            function(event) {
-
-                if (event.key === "Escape") {
-
-                    cerrarFoto({
-                        target:
-                            document.getElementById("modal")
-                    });
-
-                }
-
-            }
-        );
-
-
-        /* =========================================
-           CONTADOR
-        ========================================= */
-
-        actualizarContador();
-
-    </script>
+      }
+    }
+
+    function abrirFoto(imagen) {
+      document.getElementById("fotoAmpliada").src = imagen.src;
+      document.getElementById("modalFoto").classList.add("abierto");
+    }
+
+    function cerrarFoto(evento) {
+      if (
+        evento.target.id === "modalFoto" ||
+        evento.target.classList.contains("cerrar-modal")
+      ) {
+        document.getElementById("modalFoto").classList.remove("abierto");
+      }
+    }
+
+    document.addEventListener("keydown", function(evento) {
+      if (evento.key === "Escape") {
+        document.getElementById("modalFoto").classList.remove("abierto");
+      }
+    });
+
+    mostrarPerfumes();
+  </script>
 
 </body>
-
 </html>
