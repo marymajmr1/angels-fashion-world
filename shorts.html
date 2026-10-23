@@ -299,12 +299,6 @@
       font-weight: bold;
     }
 
-    .nota-precio {
-      margin: 0 10px 12px;
-      color: #947587;
-      font-size: 11px;
-    }
-
     .talla-contenedor {
       margin: 0 15px 15px;
       text-align: left;
@@ -749,10 +743,6 @@
         precio.className = "precio";
         precio.textContent = formatoPrecio(short.precio);
 
-        const nota = document.createElement("p");
-        nota.className = "nota-precio";
-        nota.textContent = "Precio de ejemplo: confirma el precio real";
-
         const contenedorTalla = document.createElement("div");
         contenedorTalla.className = "talla-contenedor";
 
@@ -787,34 +777,50 @@
 
         const cantidadContenedor = document.createElement("div");
         cantidadContenedor.className = "cantidad-contenedor";
+
         const etiquetaCantidad = document.createElement("span");
         etiquetaCantidad.className = "cantidad-titulo";
         etiquetaCantidad.textContent = "Cantidad:";
+
         const controlCantidad = document.createElement("div");
         controlCantidad.className = "control-cantidad";
+
         const botonMenos = document.createElement("button");
         botonMenos.type = "button";
         botonMenos.setAttribute("aria-label", "Quitar una unidad");
         botonMenos.textContent = "−";
+
         const campoCantidad = document.createElement("input");
         campoCantidad.type = "number";
         campoCantidad.min = "1";
         campoCantidad.step = "1";
         campoCantidad.value = "1";
         campoCantidad.setAttribute("aria-label", "Cantidad de shorts");
+
         const botonMas = document.createElement("button");
         botonMas.type = "button";
         botonMas.setAttribute("aria-label", "Agregar una unidad");
         botonMas.textContent = "+";
+
         botonMenos.addEventListener("click", function() {
-          campoCantidad.value = Math.max(1, (parseInt(campoCantidad.value, 10) || 1) - 1);
+          campoCantidad.value = Math.max(
+            1,
+            (parseInt(campoCantidad.value, 10) || 1) - 1
+          );
         });
+
         botonMas.addEventListener("click", function() {
-          campoCantidad.value = (parseInt(campoCantidad.value, 10) || 1) + 1;
+          campoCantidad.value =
+            (parseInt(campoCantidad.value, 10) || 1) + 1;
         });
+
         campoCantidad.addEventListener("change", function() {
-          campoCantidad.value = Math.max(1, parseInt(campoCantidad.value, 10) || 1);
+          campoCantidad.value = Math.max(
+            1,
+            parseInt(campoCantidad.value, 10) || 1
+          );
         });
+
         controlCantidad.append(botonMenos, campoCantidad, botonMas);
         cantidadContenedor.append(etiquetaCantidad, controlCantidad);
 
@@ -843,7 +849,6 @@
           imagen,
           titulo,
           precio,
-          nota,
           contenedorTalla,
           cantidadContenedor,
           acciones
