@@ -299,56 +299,6 @@
       font-weight: bold;
     }
 
-    .talla-contenedor {
-      margin: 0 15px 15px;
-      text-align: left;
-    }
-
-    .talla-contenedor label {
-      display: block;
-      margin-bottom: 7px;
-      font-size: 13px;
-      font-weight: bold;
-    }
-
-    .opciones-talla {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .opcion-talla input {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .opcion-talla span {
-      width: 39px;
-      height: 39px;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--borde);
-      border-radius: 50%;
-      background: white;
-      color: var(--texto);
-      font-size: 12px;
-      cursor: pointer;
-      transition: .2s;
-    }
-
-    .opcion-talla input:checked + span {
-      border-color: var(--rosa);
-      background: var(--rosa);
-      color: white;
-      box-shadow: 0 0 0 3px #df4f8e26;
-    }
-
-    .opcion-talla input:focus-visible + span {
-      outline: 2px solid var(--rosa-oscuro);
-      outline-offset: 3px;
-    }
-
     .cantidad-contenedor {
       margin: 0 15px 15px;
       text-align: left;
@@ -569,13 +519,6 @@
 
       .precio { font-size: 16px; }
 
-      .talla-contenedor { margin: 0 9px 12px; }
-
-      .opcion-talla span {
-        width: 35px;
-        height: 35px;
-      }
-
       .acciones-producto {
         margin: auto 7px 15px;
         gap: 5px;
@@ -736,39 +679,6 @@
         precio.className = "precio";
         precio.textContent = formatoPrecio(perfume.precio);
 
-        const contenedorTalla = document.createElement("div");
-        contenedorTalla.className = "talla-contenedor";
-
-        const etiqueta = document.createElement("label");
-        const idTalla = "talla-" + indice;
-        etiqueta.htmlFor = idTalla;
-        etiqueta.textContent = "Presentación:";
-
-        const selector = document.createElement("div");
-        selector.className = "opciones-talla";
-        selector.setAttribute("role", "radiogroup");
-        selector.setAttribute("aria-label", "Selecciona la presentación del perfume");
-
-        ["Único"].forEach(function(talla) {
-          const label = document.createElement("label");
-          label.className = "opcion-talla";
-
-          const radio = document.createElement("input");
-          radio.type = "radio";
-          radio.name = idTalla;
-          radio.value = talla;
-          if (talla === "Único") radio.checked = true;
-          radio.setAttribute("aria-label", "Presentación " + talla);
-
-          const circulo = document.createElement("span");
-          circulo.textContent = talla;
-
-          label.append(radio, circulo);
-          selector.appendChild(label);
-        });
-
-        contenedorTalla.append(etiqueta, selector);
-
         const cantidadContenedor = document.createElement("div");
         cantidadContenedor.className = "cantidad-contenedor";
 
@@ -826,7 +736,7 @@
         boton.className = "boton-categoria";
         boton.textContent = "🛒 Agregar";
         boton.addEventListener("click", function() {
-          agregarAlCarrito(perfume, selector, campoCantidad.value);
+          agregarAlCarrito(perfume, campoCantidad.value);
         });
 
         const botonCompartir = document.createElement("button");
@@ -843,7 +753,6 @@
           imagen,
           titulo,
           precio,
-          contenedorTalla,
           cantidadContenedor,
           acciones
         );
@@ -852,16 +761,11 @@
       });
     }
 
-    function agregarAlCarrito(perfume, selector, cantidadElegida) {
+    function agregarAlCarrito(perfume, cantidadElegida) {
       const cantidad = Math.max(
         1,
         parseInt(cantidadElegida, 10) || 1
       );
-
-      const seleccionada = selector.querySelector(
-        "input[type=radio]:checked"
-      );
-      const presentacion = seleccionada ? seleccionada.value : "Único";
 
       let carrito = [];
 
@@ -873,8 +777,7 @@
       }
 
       const existente = carrito.find(function(producto) {
-        return producto.nombre === perfume.nombre &&
-               producto.talla === presentacion;
+        return producto.nombre === perfume.nombre;
       });
 
       if (existente) {
@@ -885,7 +788,6 @@
           precio: perfume.precio,
           precioPendiente: perfume.precio === null,
           imagen: carpeta + perfume.imagen,
-          talla: presentacion,
           cantidad: cantidad
         });
       }
