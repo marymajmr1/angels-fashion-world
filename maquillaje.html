@@ -539,6 +539,11 @@
 
       .precio { font-size: 16px; }
 
+      .opcion-talla span {
+        width: 35px;
+        height: 35px;
+      }
+
       .acciones-producto {
         margin: auto 7px 15px;
         gap: 5px;
@@ -639,31 +644,33 @@
 
   <script>
     const maquillajes = [
-      { imagen: "Screenshot_2026-10-23-15-22-38-917_com.pinterest-edit.jpg", nombre: "Maquillaje dulce", precio: 25000 },
-      { imagen: "Screenshot_2026-10-23-13-54-48-509_com.pinterest-edit.jpg", nombre: "Combo de maquillaje Encanto", precio: 53000 },
-      { imagen: "Screenshot_2026-10-23-13-56-46-034_com.pinterest-edit.jpg", nombre: "Combo de maquillaje", precio: 53000 },
-      { imagen: "Screenshot_2026-10-23-14-11-21-662_com.pinterest-edit.jpg", nombre: "Elije tu base", precio: 24000 },
-      { imagen: "Screenshot_2026-10-23-14-12-34-944_com.pinterest-edit.jpg", nombre: "Elije tu base", precio: 24000 },
-      { imagen: "Screenshot_2026-10-23-14-17-10-960_com.pinterest-edit.jpg", nombre: "Combo de rubor", precio: 67000 },
-      { imagen: "Screenshot_2026-10-23-14-20-09-470_com.pinterest-edit.jpg", nombre: "3 Iluminadores bellos", precio: 51000 },
-      { imagen: "Screenshot_2026-10-23-14-21-59-259_com.pinterest-edit.jpg", nombre: "Iluminador bello", precio: 40000 },
-      { imagen: "Screenshot_2026-10-23-14-23-08-421_com.pinterest-edit.jpg", nombre: "Lindo labial", precio: 37000 },
-      { imagen: "Screenshot_2026-10-23-14-24-05-902_com.pinterest-edit.jpg", nombre: "hermoso labial", : 34000 },
-      { imagen: "Screenshot_2026-10-23-14-27-02-903_com.pinterest-edit.jpg", nombre: "Combo de maquillaje", precio: 85000 },
-      { imagen: "Screenshot_2026-10-23-14-27-43-325_com.pinterest-edit.jpg", nombre: "Combo de maquillaje", precio: 78000 },
-      { imagen: "Screenshot_2026-10-23-15-20-22-685_com.pinterest-edit.jpg", nombre: "Combo de maquillaje", precio: 83000 },
-      { imagen: "Screenshot_2026-10-23-15-21-43-842_com.pinterest-edit.jpg", nombre: "Divino combo", precio: 48000 },
-      { imagen: "Screenshot_2026-10-23-15-23-58-005_com.pinterest-edit.jpg", nombre: "Divino labial", precio: 44000 },
-      { imagen: "Screenshot_2026-10-23-15-25-55-393_com.pinterest-edit.jpg", nombre: "Diino labial", precio: 24000 },
-      { imagen: "Screenshot_2026-10-23-15-32-44-740_com.pinterest-edit.jpg", nombre: "Combo de rubor", precio: 60000 },
-      { imagen: "Screenshot_2026-10-23-16-57-56-117_com.pinterest-edit.jpg", nombre: "Combo de rubor", precio: 90000 }
+      { imagen: "Screenshot_2026-10-23-15-22-38-917_com.pinterest-edit.jpg", nombre: "Maquillaje Brillo", precio: null },
+      { imagen: "Screenshot_2026-10-23-13-54-48-509_com.pinterest-edit.jpg", nombre: "Maquillaje Encanto", precio: null },
+      { imagen: "Screenshot_2026-10-23-13-56-46-034_com.pinterest-edit.jpg", nombre: "Maquillaje Bella", precio: null },
+      { imagen: "Screenshot_2026-10-23-14-11-21-662_com.pinterest-edit.jpg", nombre: "Maquillaje Dulzura", precio: null },
+      { imagen: "Screenshot_2026-10-23-14-12-34-944_com.pinterest-edit.jpg", nombre: "Maquillaje Aurora", precio: null },
+      { imagen: "Screenshot_2026-10-23-14-17-10-960_com.pinterest-edit.jpg", nombre: "Maquillaje Radiante", precio: null },
+      { imagen: "Screenshot_2026-10-23-14-20-09-470_com.pinterest-edit.jpg", nombre: "Maquillaje Flor", precio: null },
+      { imagen: "Screenshot_2026-10-23-14-21-59-259_com.pinterest-edit.jpg", nombre: "Maquillaje Cielo", precio: null },
+      { imagen: "Screenshot_2026-10-23-14-23-08-421_com.pinterest-edit.jpg", nombre: "Maquillaje Soñado", precio: null },
+      { imagen: "Screenshot_2026-10-23-14-24-05-902_com.pinterest-edit.jpg", nombre: "Maquillaje Especial", precio: null },
+      { imagen: "Screenshot_2026-10-23-14-27-02-903_com.pinterest-edit.jpg", nombre: "Maquillaje Mariposa", precio: null },
+      { imagen: "Screenshot_2026-10-23-14-27-43-325_com.pinterest-edit.jpg", nombre: "Maquillaje Estrella", precio: null },
+      { imagen: "Screenshot_2026-10-23-15-20-22-685_com.pinterest-edit.jpg", nombre: "Maquillaje Mágico", precio: null },
+      { imagen: "Screenshot_2026-10-23-15-21-43-842_com.pinterest-edit.jpg", nombre: "Maquillaje Amor", precio: null },
+      { imagen: "Screenshot_2026-10-23-15-23-58-005_com.pinterest-edit.jpg", nombre: "Maquillaje Perla", precio: null },
+      { imagen: "Screenshot_2026-10-23-15-25-55-393_com.pinterest-edit.jpg", nombre: "Maquillaje Sueño", precio: null },
+      { imagen: "Screenshot_2026-10-23-15-32-44-740_com.pinterest-edit.jpg", nombre: "Maquillaje Rosa", precio: null },
+      { imagen: "Screenshot_2026-10-23-16-57-56-117_com.pinterest-edit.jpg", nombre: "Maquillaje Luz", precio: null }
     ];
 
     const carpeta = "imagenes/maquillaje/";
     const lista = document.getElementById("listaMaquillaje");
 
     function formatoPrecio(precio) {
-      if (precio === null || precio === undefined) return "Precio por confirmar";
+      if (precio === null || precio === undefined) {
+        return "Precio por confirmar";
+      }
       return "$" + Number(precio).toLocaleString("es-CO") + " COP";
     }
 
@@ -711,6 +718,7 @@
           );
 
           const maximo = indice === 3 ? 5 : 8;
+
           for (let numero = 1; numero <= maximo; numero++) {
             const opcion = document.createElement("option");
             opcion.value = String(numero);
@@ -728,7 +736,6 @@
         const cantidadContenedor = document.createElement("div");
         cantidadContenedor.className = "cantidad-contenedor";
 
-        // Solo baja un poquito “Cantidad” en la imagen número 6.
         if (indice === 5) {
           cantidadContenedor.style.marginTop = "8px";
         }
@@ -782,11 +789,11 @@
         const acciones = document.createElement("div");
         acciones.className = "acciones-producto";
 
-        const boton = document.createElement("button");
-        boton.type = "button";
-        boton.className = "boton-categoria";
-        boton.textContent = "🛒 Agregar";
-        boton.addEventListener("click", function() {
+        const botonAgregar = document.createElement("button");
+        botonAgregar.type = "button";
+        botonAgregar.className = "boton-categoria";
+        botonAgregar.textContent = "🛒 Agregar";
+        botonAgregar.addEventListener("click", function() {
           agregarAlCarrito(
             maquillaje,
             campoCantidad.value,
@@ -802,7 +809,7 @@
           compartirMaquillaje(maquillaje);
         });
 
-        acciones.append(boton, botonCompartir);
+        acciones.append(botonAgregar, botonCompartir);
         tarjeta.append(cantidadContenedor, acciones);
         lista.appendChild(tarjeta);
       });
@@ -867,7 +874,10 @@
           await navigator.clipboard.writeText(
             datos.text + "\n" + datos.url
           );
-          alert("¡Enlace copiado! Ya puedes compartir " + maquillaje.nombre + " ✨");
+          alert(
+            "¡Enlace copiado! Ya puedes compartir " +
+            maquillaje.nombre + " ✨"
+          );
         } else {
           window.prompt("Copia este enlace para compartir:", datos.url);
         }
