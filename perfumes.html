@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#fff1f7">
   <title>Perfumes | Angel's Fashion World</title>
-
   <style>
     :root {
       --rosa: #df4f8e;
@@ -16,458 +15,127 @@
       --borde: #f4cfe0;
       --fondo: #fff8fc;
     }
-
     * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 25px;
-    }
-
+    html { scroll-behavior: smooth; scroll-padding-top: 25px; }
     body {
       margin: 0;
       padding-bottom: 85px;
       font-family: Arial, sans-serif;
       color: var(--texto);
-      background:
-        radial-gradient(circle at top left, #ffe1ee, transparent 28%),
-        radial-gradient(circle at 90% 30%, #fff0f7, transparent 25%),
-        var(--fondo);
+      background: radial-gradient(circle at top left, #ffe1ee, transparent 28%),
+                  radial-gradient(circle at 90% 30%, #fff0f7, transparent 25%),
+                  var(--fondo);
     }
-
     a { color: inherit; }
-
-    .estrellas {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      color: var(--dorado);
-      opacity: .75;
-    }
-
-    .estrella {
-      position: absolute;
-      animation: flotar 5s ease-in-out infinite;
-    }
-
+    .estrellas { position: fixed; inset: 0; z-index: 0; pointer-events: none; color: var(--dorado); opacity: .75; }
+    .estrella { position: absolute; animation: flotar 5s ease-in-out infinite; }
     .estrella1 { top: 120px; left: 4%; }
-
-    .estrella2 {
-      top: 280px;
-      right: 5%;
-      animation-delay: .7s;
-    }
-
-    .estrella3 {
-      bottom: 180px;
-      left: 6%;
-      animation-delay: 1.3s;
-    }
-
-    .estrella4 {
-      bottom: 80px;
-      right: 7%;
-      animation-delay: 2s;
-    }
-
-    @keyframes flotar {
-      50% { transform: translateY(-9px) rotate(8deg); }
-    }
-
+    .estrella2 { top: 280px; right: 5%; animation-delay: .7s; }
+    .estrella3 { bottom: 180px; left: 6%; animation-delay: 1.3s; }
+    .estrella4 { bottom: 80px; right: 7%; animation-delay: 2s; }
+    @keyframes flotar { 50% { transform: translateY(-9px) rotate(8deg); } }
     .menu {
-      position: relative;
-      z-index: 2;
-      width: 94%;
-      max-width: 1200px;
-      margin: 16px auto;
-      padding: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 5px;
-      flex-wrap: wrap;
-      border: 1px solid var(--borde);
-      border-radius: 20px;
-      background: #ffffffed;
-      box-shadow: 0 5px 20px #d85b9112;
+      position: relative; z-index: 2; width: 94%; max-width: 1200px;
+      margin: 16px auto; padding: 10px; display: flex; justify-content: center;
+      align-items: center; gap: 5px; flex-wrap: wrap; border: 1px solid var(--borde);
+      border-radius: 20px; background: #ffffffed; box-shadow: 0 5px 20px #d85b9112;
     }
-
-    .menu a {
-      padding: 10px 13px;
-      border-radius: 25px;
-      font-size: 13px;
-      text-decoration: none;
-      transition: .2s;
-    }
-
-    .menu a:hover,
-    .menu a.activo {
-      background: var(--rosa);
-      color: white;
-    }
-
-    .volver-contenedor { margin-bottom: 10px; }
-
-    .boton-volver {
-      display: inline-block;
-      padding: 11px 24px;
-      border: 1px solid var(--rosa);
-      border-radius: 25px;
-      background: white;
-      color: var(--rosa-oscuro);
-      font-weight: bold;
-      text-decoration: none;
-      transition: .2s;
-    }
-
-    .boton-volver:hover {
-      background: var(--rosa);
-      color: white;
-    }
-
+    .menu a { padding: 10px 13px; border-radius: 25px; font-size: 13px; text-decoration: none; transition: .2s; }
+    .menu a:hover, .menu a.activo { background: var(--rosa); color: white; }
     .portada {
-      position: relative;
-      z-index: 1;
-      width: 92%;
-      max-width: 1200px;
-      min-height: 320px;
-      margin: 25px auto 30px;
-      display: flex;
-      align-items: stretch;
-      overflow: hidden;
-      border: 1px solid var(--borde);
-      border-radius: 28px;
+      position: relative; z-index: 1; width: 92%; max-width: 1200px; min-height: 320px;
+      margin: 25px auto 30px; display: flex; align-items: stretch; overflow: hidden;
+      border: 1px solid var(--borde); border-radius: 28px;
       background: linear-gradient(135deg, #ffc5df, #ffdaea, #ffb9d5);
       box-shadow: 0 10px 30px #9a39670c;
     }
-
     .portada-texto {
-      flex: 1;
-      min-width: 0;
-      padding: clamp(20px, 4vw, 48px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      text-align: left;
+      flex: 1; min-width: 0; padding: clamp(20px, 4vw, 48px); display: flex;
+      flex-direction: column; justify-content: center; align-items: flex-start; text-align: left;
     }
-
-    .portada img {
-      display: block;
-      flex: 1;
-      width: 50%;
-      min-width: 0;
-      min-height: 320px;
-      max-height: 420px;
-      object-fit: cover;
-      object-position: center;
+    .portada img { display: block; flex: 1; width: 50%; min-width: 0; min-height: 320px; max-height: 420px; object-fit: cover; object-position: center; }
+    .volver-contenedor { margin-bottom: 10px; }
+    .boton-volver {
+      display: inline-block; padding: 11px 24px; border: 1px solid var(--rosa);
+      border-radius: 25px; background: white; color: var(--rosa-oscuro);
+      font-weight: bold; text-decoration: none; transition: .2s;
     }
-
-    .mini {
-      color: var(--dorado);
-      font-size: 12px;
-      letter-spacing: 2px;
-    }
-
-    .alas-con-estrella {
-      margin-top: 15px;
-      color: var(--dorado);
-      font-size: 23px;
-    }
-
-    .alas {
-      display: inline-block;
-      animation: moverAlas 3s ease-in-out infinite;
-    }
-
-    @keyframes moverAlas {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-    }
-
-    .portada h1 {
-      margin: 12px 0;
-      color: var(--rosa-oscuro);
-      font: 400 clamp(34px, 5vw, 58px)/1.1 Georgia, serif;
-    }
-
-    .portada h1 span {
-      display: block;
-      margin-top: 10px;
-      font-size: .35em;
-      letter-spacing: .2em;
-    }
-
-    .frase {
-      margin: 5px 0;
-      color: #9c5276;
-      font: italic clamp(16px, 2vw, 22px) Georgia, serif;
-      line-height: 1.5;
-    }
-
-    .adorno {
-      margin-top: 16px;
-      color: var(--dorado);
-      letter-spacing: 7px;
-    }
-
-    .titulo-categorias {
-      position: relative;
-      z-index: 1;
-      margin: 40px 15px 30px;
-      text-align: center;
-      scroll-margin-top: 20px;
-    }
-
-    .titulo-categorias h2 {
-      margin: 12px 0;
-      color: var(--rosa-oscuro);
-      font: 400 clamp(28px, 4vw, 42px) Georgia, serif;
-    }
-
+    .boton-volver:hover { background: var(--rosa); color: white; }
+    .mini { color: var(--dorado); font-size: 12px; letter-spacing: 2px; }
+    .alas-con-estrella { margin-top: 15px; color: var(--dorado); font-size: 23px; }
+    .alas { display: inline-block; animation: moverAlas 3s ease-in-out infinite; }
+    @keyframes moverAlas { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+    .portada h1 { margin: 12px 0; color: var(--rosa-oscuro); font: 400 clamp(34px, 5vw, 58px)/1.1 Georgia, serif; }
+    .portada h1 span { display: block; margin-top: 10px; font-size: .35em; letter-spacing: .2em; }
+    .frase { margin: 5px 0; color: #9c5276; font: italic clamp(16px, 2vw, 22px) Georgia, serif; line-height: 1.5; }
+    .adorno { margin-top: 16px; color: var(--dorado); letter-spacing: 7px; }
+    .titulo-categorias { position: relative; z-index: 1; margin: 40px 15px 30px; text-align: center; scroll-margin-top: 20px; }
+    .titulo-categorias h2 { margin: 12px 0; color: var(--rosa-oscuro); font: 400 clamp(28px, 4vw, 42px) Georgia, serif; }
     .titulo-categorias p { line-height: 1.7; }
-
     .categorias {
-      position: relative;
-      z-index: 1;
-      width: 92%;
-      max-width: 1200px;
-      margin: 0 auto 45px;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 25px;
+      position: relative; z-index: 1; width: 92%; max-width: 1200px; margin: 0 auto 45px;
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 25px;
     }
-
     .categoria {
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      border: 1px solid var(--borde);
-      border-radius: 23px;
-      background: white;
-      box-shadow: 0 7px 22px #d85b9112;
-      text-align: center;
+      min-width: 0; display: flex; flex-direction: column; overflow: hidden;
+      border: 1px solid var(--borde); border-radius: 23px; background: white;
+      box-shadow: 0 7px 22px #d85b9112; text-align: center;
       transition: transform .25s, box-shadow .25s;
     }
-
-    .categoria:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px #d85b9125;
-    }
-
-    .categoria img {
-      display: block;
-      width: 100%;
-      height: 290px;
-      object-fit: cover;
-      background: #fff0f6;
-      cursor: zoom-in;
-    }
-
-    .categoria h3 {
-      margin: 18px 8px 8px;
-      color: var(--rosa-oscuro);
-      font: 400 21px Georgia, serif;
-    }
-
-    .precio {
-      margin: 5px 8px 16px;
-      color: var(--rosa-oscuro);
-      font-size: 19px;
-      font-weight: bold;
-    }
-
-    .acciones-producto {
-      display: flex;
-      gap: 8px;
-      margin: auto 12px 18px;
-    }
-
-    .acciones-producto button {
-      flex: 1;
-      min-width: 0;
-      padding: 12px 10px;
-      border-radius: 25px;
-      cursor: pointer;
-      font-size: 13px;
-    }
-
-    .boton-agregar {
-      border: 1px solid var(--rosa);
-      background: var(--rosa);
-      color: white;
-    }
-
-    .boton-agregar:hover {
-      border-color: var(--rosa-intenso);
-      background: var(--rosa-intenso);
-    }
-
-    .boton-agregar:disabled {
-      opacity: .55;
-      cursor: not-allowed;
-    }
-
-    .boton-compartir {
-      border: 1px solid var(--borde);
-      background: white;
-      color: var(--rosa-oscuro);
-    }
-
-    .boton-compartir:hover {
-      border-color: var(--rosa);
-      background: #fff3f8;
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 2000;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      background: #2d1725e8;
-    }
-
+    .categoria:hover { transform: translateY(-4px); box-shadow: 0 12px 28px #d85b9125; }
+    .categoria img { display: block; width: 100%; height: 290px; object-fit: cover; background: #fff0f6; cursor: zoom-in; }
+    .categoria h3 { margin: 18px 8px 8px; color: var(--rosa-oscuro); font: 400 21px Georgia, serif; }
+    .precio { margin: 5px 8px 14px; color: var(--rosa-oscuro); font-size: 18px; font-weight: bold; }
+    .cantidad-contenedor { margin: 0 15px 15px; text-align: left; }
+    .cantidad-titulo { display: block; margin-bottom: 7px; font-size: 13px; font-weight: bold; }
+    .control-cantidad { display: inline-flex; align-items: center; overflow: hidden; border: 1px solid var(--borde); border-radius: 25px; background: white; }
+    .control-cantidad button { width: 38px; height: 36px; border: 0; background: #fff3f8; color: var(--rosa-oscuro); cursor: pointer; font-size: 20px; }
+    .control-cantidad button:hover { background: #ffe1ee; }
+    .control-cantidad input { width: 42px; border: 0; outline: 0; background: white; color: var(--texto); text-align: center; font-size: 14px; -moz-appearance: textfield; }
+    .control-cantidad input::-webkit-inner-spin-button, .control-cantidad input::-webkit-outer-spin-button { margin: 0; -webkit-appearance: none; }
+    .acciones-producto { display: flex; gap: 8px; margin: auto 12px 18px; }
+    .acciones-producto button { flex: 1; min-width: 0; margin: 0; padding: 12px 8px; border-radius: 25px; cursor: pointer; font-size: 13px; }
+    .boton-agregar { border: 1px solid var(--rosa); background: var(--rosa); color: white; }
+    .boton-agregar:hover { border-color: var(--rosa-intenso); background: var(--rosa-intenso); }
+    .boton-agregar:disabled { opacity: .55; cursor: not-allowed; }
+    .boton-compartir { border: 1px solid var(--borde); background: white; color: var(--rosa-oscuro); }
+    .boton-compartir:hover { border-color: var(--rosa); background: #fff3f8; }
+    .modal { display: none; position: fixed; inset: 0; z-index: 2000; align-items: center; justify-content: center; padding: 20px; background: #2d1725e8; }
     .modal.abierto { display: flex; }
-
-    .modal img {
-      max-width: 95%;
-      max-height: 82vh;
-      object-fit: contain;
-      border-radius: 15px;
-    }
-
-    .cerrar-modal {
-      position: absolute;
-      top: 12px;
-      right: 22px;
-      border: 0;
-      background: transparent;
-      color: white;
-      font-size: 40px;
-      cursor: pointer;
-    }
-
+    .modal img { max-width: 95%; max-height: 82vh; object-fit: contain; border-radius: 15px; }
+    .cerrar-modal { position: absolute; top: 12px; right: 22px; border: 0; background: transparent; color: white; font-size: 40px; cursor: pointer; }
     .carrito-flotante {
-      position: fixed;
-      z-index: 1500;
-      right: 20px;
-      bottom: 20px;
-      width: 58px;
-      height: 58px;
-      display: grid;
-      place-items: center;
-      border: 1px solid #ffffffa8;
-      border-radius: 50%;
-      background: var(--rosa);
-      color: white;
-      text-decoration: none;
-      box-shadow: 0 8px 24px #a52f6845;
-      font-size: 27px;
+      position: fixed; z-index: 1500; right: 20px; bottom: 20px; width: 58px; height: 58px;
+      display: grid; place-items: center; border: 1px solid #ffffffa8; border-radius: 50%;
+      background: var(--rosa); color: white; text-decoration: none;
+      box-shadow: 0 8px 24px #a52f6845; font-size: 27px;
     }
-
-    footer {
-      position: relative;
-      z-index: 1;
-      padding: 15px 20px 25px;
-      color: #87556f;
-      text-align: center;
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
+    footer { position: relative; z-index: 1; padding: 15px 20px 25px; color: #87556f; text-align: center; font-size: 13px; line-height: 1.8; }
     @media (max-width: 850px) {
-      .categorias {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
-      }
-
+      .categorias { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
       .categoria img { height: 260px; }
     }
-
     @media (max-width: 520px) {
-      .menu {
-        width: 96%;
-        gap: 3px;
-      }
-
-      .menu a {
-        padding: 8px 9px;
-        font-size: 12px;
-      }
-
-      .portada {
-        width: 94%;
-        min-height: 250px;
-      }
-
-      .portada-texto {
-        flex: 1.1;
-        padding: 16px 12px;
-      }
-
-      .portada img {
-        flex: .9;
-        width: 42%;
-        min-height: 250px;
-        max-height: 320px;
-      }
-
-      .portada .mini {
-        font-size: 9px;
-        letter-spacing: 1px;
-      }
-
+      .menu { width: 96%; gap: 3px; }
+      .menu a { padding: 8px 9px; font-size: 12px; }
+      .portada { width: 94%; min-height: 250px; }
+      .portada-texto { flex: 1.1; padding: 16px 12px; }
+      .portada img { flex: .9; width: 42%; min-height: 250px; max-height: 320px; }
+      .portada .mini { font-size: 9px; letter-spacing: 1px; }
+      .portada .alas-con-estrella { font-size: 19px; margin-top: 10px; }
       .portada h1 { font-size: clamp(27px, 7vw, 35px); }
-
-      .portada h1 span {
-        font-size: .33em;
-        letter-spacing: .12em;
-      }
-
+      .portada h1 span { font-size: .33em; letter-spacing: .12em; }
       .portada .frase { font-size: 14px; }
-
-      .portada .adorno {
-        font-size: 12px;
-        letter-spacing: 4px;
-      }
-
-      .categorias {
-        width: 92%;
-        gap: 12px;
-      }
-
+      .portada .adorno { font-size: 12px; letter-spacing: 4px; }
+      .categorias { width: 92%; gap: 12px; }
       .categoria img { height: 205px; }
-
-      .categoria h3 {
-        margin: 15px 5px 8px;
-        font-size: 17px;
-      }
-
-      .precio { font-size: 16px; }
-
-      .acciones-producto {
-        margin: auto 7px 15px;
-        gap: 5px;
-      }
-
-      .acciones-producto button {
-        padding: 10px 4px;
-        font-size: 11px;
-      }
-
-      .carrito-flotante {
-        right: 14px;
-        bottom: 14px;
-        width: 52px;
-        height: 52px;
-      }
+      .categoria h3 { margin: 15px 5px 8px; font-size: 17px; }
+      .precio { font-size: 15px; }
+      .cantidad-contenedor { margin: 0 9px 12px; }
+      .acciones-producto { margin: auto 7px 15px; gap: 5px; }
+      .acciones-producto button { padding: 10px 4px; font-size: 11px; }
+      .carrito-flotante { right: 14px; bottom: 14px; width: 52px; height: 52px; }
     }
-
     @media (max-width: 360px) {
       .portada-texto { padding: 12px 8px; }
       .portada h1 { font-size: 25px; }
@@ -478,9 +146,7 @@
     }
   </style>
 </head>
-
 <body>
-
   <div class="estrellas" aria-hidden="true">
     <span class="estrella estrella1">✦</span>
     <span class="estrella estrella2">✧</span>
@@ -501,41 +167,26 @@
       <div class="volver-contenedor">
         <a class="boton-volver" href="belleza.html">← Volver</a>
       </div>
-
       <div class="mini">✧ TU ESTILO, TU ESENCIA ✧</div>
-
-      <div class="alas-con-estrella">
-        <span class="alas">🪽</span>
-        <span>✦</span>
-      </div>
-
-      <h1>
-        Angel's
-        <span>FASHION WORLD</span>
-      </h1>
-
+      <div class="alas-con-estrella"><span class="alas">🪽</span> <span>✦</span></div>
+      <h1>Angel's <span>FASHION WORLD</span></h1>
       <p class="frase">Perfumes para acompañar cada momento.</p>
       <div class="adorno">✧ ✦ ✧</div>
     </div>
-
-    <img
-      src="imagenes/belleza/Screenshot_2026-10-23-11-52-45-965_com.pinterest-edit.jpg"
-      alt="Perfumes de Angel's Fashion World"
-    >
+    <img src="imagenes/perfumes/Screenshot_2026-09-01-10-58-16-132_com.pinterest-edit.jpg" alt="Perfume de Angel's Fashion World">
   </header>
 
   <section class="titulo-categorias" id="categorias">
     <div class="mini">✧ DESCUBRE TUS FAVORITOS ✧</div>
     <h2>Nuestra colección de perfumes</h2>
-    <p>Elige tu favorito y compártelo o agrégalo al carrito cuando su precio esté confirmado.</p>
+    <p>Elige tu perfume, selecciona la cantidad y agrégalo al carrito.</p>
     <div class="adorno">✧ ✦ ✧</div>
   </section>
 
   <main class="categorias" id="listaPerfumes"></main>
 
   <div class="modal" id="modalFoto" onclick="cerrarFoto(event)">
-    <button class="cerrar-modal" type="button"
-      aria-label="Cerrar imagen" onclick="cerrarFoto(event)">×</button>
+    <button class="cerrar-modal" type="button" aria-label="Cerrar imagen" onclick="cerrarFoto(event)">×</button>
     <img id="fotoAmpliada" src="" alt="Perfume ampliado">
   </div>
 
@@ -551,21 +202,31 @@
 
   <script>
     const perfumes = [
-      {
-        imagen: "Screenshot_2026-10-23-11-52-45-965_com.pinterest-edit.jpg",
-        nombre: "Perfume destacado",
-        precio: null
-      }
+      { imagen: "Screenshot_2026-09-01-10-58-16-132_com.pinterest-edit.jpg", nombre: "Perfume Brisa", precio: null },
+      { imagen: "Screenshot_2026-09-01-11-02-24-092_com.pinterest~2.jpg", nombre: "Perfume Encanto", precio: null },
+      { imagen: "Screenshot_2026-09-01-11-02-58-967_com.pinterest~2.jpg", nombre: "Perfume Dulzura", precio: null },
+      { imagen: "Screenshot_2026-09-01-11-03-31-878_com.pinterest~2.jpg", nombre: "Perfume Aurora", precio: null },
+      { imagen: "Screenshot_2026-09-01-11-03-31-878_com.pinterest~3.jpg", nombre: "Perfume Estrella", precio: null },
+      { imagen: "Screenshot_2026-10-23-12-44-17-125_com.pinterest-edit.jpg", nombre: "Perfume Bella", precio: null },
+      { imagen: "Screenshot_2026-10-23-12-45-12-625_com.pinterest-edit.jpg", nombre: "Perfume Soñado", precio: null },
+      { imagen: "Screenshot_2026-10-23-12-47-19-237_com.pinterest-edit.jpg", nombre: "Perfume Flor", precio: null },
+      { imagen: "Screenshot_2026-10-23-12-48-24-531_com.pinterest-edit.jpg", nombre: "Perfume Cielo", precio: null },
+      { imagen: "Screenshot_2026-10-23-12-50-15-515_com.pinterest-edit.jpg", nombre: "Perfume Mariposa", precio: null },
+      { imagen: "Screenshot_2026-10-23-12-59-37-438_com.pinterest-edit.jpg", nombre: "Perfume Radiante", precio: null },
+      { imagen: "Screenshot_2026-10-23-13-01-13-887_com.pinterest-edit.jpg", nombre: "Perfume Luz", precio: null },
+      { imagen: "Screenshot_2026-10-23-13-02-02-546_com.pinterest-edit.jpg", nombre: "Perfume Amor", precio: null },
+      { imagen: "Screenshot_2026-10-23-13-09-29-238_com.pinterest-edit.jpg", nombre: "Perfume Sueño", precio: null },
+      { imagen: "Screenshot_2026-10-23-13-11-07-317_com.pinterest-edit.jpg", nombre: "Perfume Perla", precio: null },
+      { imagen: "Screenshot_2026-10-23-13-12-10-150_com.pinterest-edit.jpg", nombre: "Perfume Rosa", precio: null },
+      { imagen: "Screenshot_2026-10-23-13-13-23-064_com.pinterest-edit.jpg", nombre: "Perfume Mágico", precio: null },
+      { imagen: "Screenshot_2026-10-23-13-17-38-941_com.pinterest~2.jpg", nombre: "Perfume Especial", precio: null }
     ];
 
-    const carpeta = "imagenes/belleza/";
+    const carpeta = "imagenes/perfumes/";
     const lista = document.getElementById("listaPerfumes");
 
     function formatoPrecio(precio) {
-      if (precio === null || precio === undefined) {
-        return "Precio por confirmar";
-      }
-
+      if (precio === null || precio === undefined) return "Precio por confirmar";
       return "$" + Number(precio).toLocaleString("es-CO") + " COP";
     }
 
@@ -578,10 +239,7 @@
         imagen.src = carpeta + perfume.imagen;
         imagen.alt = perfume.nombre;
         imagen.loading = indice < 6 ? "eager" : "lazy";
-        imagen.addEventListener("click", function() {
-          abrirFoto(imagen);
-        });
-
+        imagen.addEventListener("click", function() { abrirFoto(imagen); });
         imagen.addEventListener("error", function() {
           imagen.alt = "No se pudo cargar: " + perfume.imagen;
           console.error("Revisa el nombre de esta imagen:", imagen.src);
@@ -594,66 +252,97 @@
         precio.className = "precio";
         precio.textContent = formatoPrecio(perfume.precio);
 
+        const cantidadContenedor = document.createElement("div");
+        cantidadContenedor.className = "cantidad-contenedor";
+        const etiquetaCantidad = document.createElement("span");
+        etiquetaCantidad.className = "cantidad-titulo";
+        etiquetaCantidad.textContent = "Cantidad:";
+
+        const controlCantidad = document.createElement("div");
+        controlCantidad.className = "control-cantidad";
+        const botonMenos = document.createElement("button");
+        botonMenos.type = "button";
+        botonMenos.setAttribute("aria-label", "Quitar una unidad");
+        botonMenos.textContent = "−";
+
+        const campoCantidad = document.createElement("input");
+        campoCantidad.type = "number";
+        campoCantidad.min = "1";
+        campoCantidad.step = "1";
+        campoCantidad.value = "1";
+        campoCantidad.setAttribute("aria-label", "Cantidad de perfumes");
+
+        const botonMas = document.createElement("button");
+        botonMas.type = "button";
+        botonMas.setAttribute("aria-label", "Agregar una unidad");
+        botonMas.textContent = "+";
+
+        botonMenos.addEventListener("click", function() {
+          campoCantidad.value = Math.max(1, (parseInt(campoCantidad.value, 10) || 1) - 1);
+        });
+        botonMas.addEventListener("click", function() {
+          campoCantidad.value = (parseInt(campoCantidad.value, 10) || 1) + 1;
+        });
+        campoCantidad.addEventListener("change", function() {
+          campoCantidad.value = Math.max(1, parseInt(campoCantidad.value, 10) || 1);
+        });
+
+        controlCantidad.append(botonMenos, campoCantidad, botonMas);
+        cantidadContenedor.append(etiquetaCantidad, controlCantidad);
+
         const acciones = document.createElement("div");
         acciones.className = "acciones-producto";
-
         const botonAgregar = document.createElement("button");
         botonAgregar.type = "button";
         botonAgregar.className = "boton-agregar";
         botonAgregar.textContent = "🛒 Agregar";
         botonAgregar.disabled = perfume.precio === null;
-
         botonAgregar.addEventListener("click", function() {
-          agregarAlCarrito(perfume);
+          agregarAlCarrito(perfume, campoCantidad.value);
         });
 
         const botonCompartir = document.createElement("button");
         botonCompartir.type = "button";
         botonCompartir.className = "boton-compartir";
         botonCompartir.textContent = "↗ Compartir";
-        botonCompartir.addEventListener("click", function() {
-          compartirPerfume(perfume);
-        });
+        botonCompartir.addEventListener("click", function() { compartirPerfume(perfume); });
 
         acciones.append(botonAgregar, botonCompartir);
-        tarjeta.append(imagen, titulo, precio, acciones);
+        tarjeta.append(imagen, titulo, precio, cantidadContenedor, acciones);
         lista.appendChild(tarjeta);
       });
     }
 
-    function agregarAlCarrito(perfume) {
+    function agregarAlCarrito(perfume, cantidadElegida) {
       if (perfume.precio === null || perfume.precio === undefined) {
         alert("💕 El precio de este perfume aún está por confirmar.");
         return;
       }
 
+      const cantidad = Math.max(1, parseInt(cantidadElegida, 10) || 1);
       let carrito = [];
-
       try {
         carrito = JSON.parse(localStorage.getItem("angelsCarrito")) || [];
         if (!Array.isArray(carrito)) carrito = [];
-      } catch (error) {
-        carrito = [];
-      }
+      } catch (error) { carrito = []; }
 
       const existente = carrito.find(function(producto) {
         return producto.nombre === perfume.nombre;
       });
-
       if (existente) {
-        existente.cantidad = (Number(existente.cantidad) || 1) + 1;
+        existente.cantidad = (Number(existente.cantidad) || 1) + cantidad;
       } else {
         carrito.push({
           nombre: perfume.nombre,
           precio: perfume.precio,
           imagen: carpeta + perfume.imagen,
-          cantidad: 1
+          cantidad: cantidad
         });
       }
 
       try {
         localStorage.setItem("angelsCarrito", JSON.stringify(carrito));
-        alert("💕 Agregaste " + perfume.nombre + " al carrito.");
+        alert("💕 Agregaste " + cantidad + " unidad(es) de " + perfume.nombre + " al carrito.");
       } catch (error) {
         alert("No pudimos guardar el producto. Revisa el almacenamiento del navegador.");
       }
@@ -665,7 +354,6 @@
         text: perfume.nombre + " — " + formatoPrecio(perfume.precio),
         url: window.location.href.split("#")[0] + "#categorias"
       };
-
       try {
         if (navigator.share) {
           await navigator.share(datos);
@@ -676,9 +364,7 @@
           window.prompt("Copia este enlace para compartir:", datos.url);
         }
       } catch (error) {
-        if (error.name !== "AbortError") {
-          alert("No se pudo compartir el enlace.");
-        }
+        if (error.name !== "AbortError") alert("No se pudo compartir el enlace.");
       }
     }
 
@@ -688,22 +374,16 @@
     }
 
     function cerrarFoto(evento) {
-      if (
-        evento.target.id === "modalFoto" ||
-        evento.target.classList.contains("cerrar-modal")
-      ) {
+      if (evento.target.id === "modalFoto" || evento.target.classList.contains("cerrar-modal")) {
         document.getElementById("modalFoto").classList.remove("abierto");
       }
     }
 
     document.addEventListener("keydown", function(evento) {
-      if (evento.key === "Escape") {
-        document.getElementById("modalFoto").classList.remove("abierto");
-      }
+      if (evento.key === "Escape") document.getElementById("modalFoto").classList.remove("abierto");
     });
 
     mostrarPerfumes();
   </script>
-
 </body>
 </html>
