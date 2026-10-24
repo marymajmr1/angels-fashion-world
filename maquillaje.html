@@ -311,6 +311,28 @@
       font-weight: bold;
     }
 
+    .opcion-numero {
+      margin: 0 15px 15px;
+      text-align: left;
+    }
+
+    .opcion-numero label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .opcion-numero select {
+      min-width: 90px;
+      padding: 9px 12px;
+      border: 1px solid var(--borde);
+      border-radius: 20px;
+      background: white;
+      color: var(--texto);
+      font-size: 14px;
+    }
+
     .control-cantidad {
       display: inline-flex;
       align-items: center;
@@ -549,7 +571,6 @@
 </head>
 
 <body>
-
   <div class="estrellas" aria-hidden="true">
     <span class="estrella estrella1">✦</span>
     <span class="estrella estrella2">✧</span>
@@ -676,6 +697,33 @@
         precio.className = "precio";
         precio.textContent = formatoPrecio(maquillaje.precio);
 
+        let selectorNumero = null;
+        if (indice === 3 || indice === 4) {
+          const opciones = document.createElement("div");
+          opciones.className = "opcion-numero";
+
+          const etiquetaNumero = document.createElement("label");
+          etiquetaNumero.textContent = "Número:";
+
+          selectorNumero = document.createElement("select");
+          selectorNumero.setAttribute(
+            "aria-label",
+            "Elige el número del producto"
+          );
+
+          const maximo = indice === 3 ? 5 : 8;
+          for (let numero = 1; numero <= maximo; numero++) {
+            const opcion = document.createElement("option");
+            opcion.value = String(numero);
+            opcion.textContent = String(numero);
+            selectorNumero.appendChild(opcion);
+          }
+
+          etiquetaNumero.appendChild(selectorNumero);
+          opciones.appendChild(etiquetaNumero);
+          tarjeta.append(imagen, titulo, precio, opciones);
+        }
+
         const cantidadContenedor = document.createElement("div");
         cantidadContenedor.className = "cantidad-contenedor";
 
@@ -733,7 +781,11 @@
         boton.className = "boton-categoria";
         boton.textContent = "🛒 Agregar";
         boton.addEventListener("click", function() {
-          agregarAlCarrito(maquillaje, campoCantidad.value);
+          agregarAlCarrito(
+            maquillaje,
+            campoCantidad.value,
+            selectorNumero ? selectorNumero.value : null
+          );
         });
 
         const botonCompartir = document.createElement("button");
@@ -746,19 +798,17 @@
 
         acciones.append(boton, botonCompartir);
 
-        tarjeta.append(
-          imagen,
-          titulo,
-          precio,
-          cantidadContenedor,
-          acciones
-        );
+        if (selectorNumero) {
+          tarjeta.append(cantidadContenedor, acciones);
+        } else {
+          tarjeta.append(imagen, titulo, precio, cantidadContenedor, acciones);
+        }
 
         lista.appendChild(tarjeta);
       });
     }
 
-    function agregarAlCarrito(maquillaje, cantidadElegida) {
+    function agregarAlCarrito(maquillaje, cantidadElegida, numeroElegido) {
       const cantidad = Math.max(1, parseInt(cantidadElegida, 10) || 1);
       let carrito = [];
 
@@ -770,7 +820,8 @@
       }
 
       const existente = carrito.find(function(producto) {
-        return producto.nombre === maquillaje.nombre;
+        return producto.nombre === maquillaje.nombre &&
+          (producto.numero || null) === (numeroElegido || null);
       });
 
       if (existente) {
@@ -781,13 +832,17 @@
           precio: maquillaje.precio,
           precioPendiente: maquillaje.precio === null,
           imagen: carpeta + maquillaje.imagen,
-          cantidad: cantidad
+          cantidad: cantidad,
+          ...(numeroElegido ? { numero: Number(numeroElegido) } : {})
         });
       }
 
       try {
         localStorage.setItem("angelsCarrito", JSON.stringify(carrito));
-        alert("💕 Agregaste " + cantidad + " unidad(es) de " + maquillaje.nombre + " al carrito.");
+        alert(
+          "💕 Agregaste " + cantidad + " unidad(es) de " +
+          maquillaje.nombre + " al carrito."
+        );
       } catch (error) {
         alert("No pudimos guardar el producto. Revisa el almacenamiento del navegador.");
       }
@@ -840,6 +895,5 @@
 
     mostrarMaquillaje();
   </script>
-
 </body>
 </html>
