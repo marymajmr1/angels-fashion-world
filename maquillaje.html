@@ -310,7 +310,6 @@
     }
 
     .opcion-numero {
-      min-height: 73px;
       margin: 0 15px 15px;
       text-align: left;
     }
@@ -664,9 +663,7 @@
     const lista = document.getElementById("listaMaquillaje");
 
     function formatoPrecio(precio) {
-      if (precio === null || precio === undefined) {
-        return "Precio por confirmar";
-      }
+      if (precio === null || precio === undefined) return "Precio por confirmar";
       return "$" + Number(precio).toLocaleString("es-CO") + " COP";
     }
 
@@ -698,13 +695,12 @@
         precio.className = "precio";
         precio.textContent = formatoPrecio(maquillaje.precio);
 
-        // Todas las tarjetas reservan el mismo espacio para esta opción.
-        const opciones = document.createElement("div");
-        opciones.className = "opcion-numero";
         let selectorNumero = null;
 
-        // Imagen 4: números del 1 al 5. Imagen 5: números del 1 al 8.
         if (indice === 3 || indice === 4) {
+          const opciones = document.createElement("div");
+          opciones.className = "opcion-numero";
+
           const etiquetaNumero = document.createElement("label");
           etiquetaNumero.textContent = "Número:";
 
@@ -715,7 +711,6 @@
           );
 
           const maximo = indice === 3 ? 5 : 8;
-
           for (let numero = 1; numero <= maximo; numero++) {
             const opcion = document.createElement("option");
             opcion.value = String(numero);
@@ -725,12 +720,18 @@
 
           etiquetaNumero.appendChild(selectorNumero);
           opciones.appendChild(etiquetaNumero);
+          tarjeta.append(imagen, titulo, precio, opciones);
+        } else {
+          tarjeta.append(imagen, titulo, precio);
         }
-
-        tarjeta.append(imagen, titulo, precio, opciones);
 
         const cantidadContenedor = document.createElement("div");
         cantidadContenedor.className = "cantidad-contenedor";
+
+        // Solo baja un poquito “Cantidad” en la imagen número 6.
+        if (indice === 5) {
+          cantidadContenedor.style.marginTop = "8px";
+        }
 
         const etiquetaCantidad = document.createElement("span");
         etiquetaCantidad.className = "cantidad-titulo";
