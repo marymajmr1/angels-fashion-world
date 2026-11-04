@@ -9,7 +9,8 @@
   <style>
     :root {
       --rosa: #df4f8e;
-      --rosa-oscuro: #a52f68;
+      --oscuro: #a52f68;
+      --rosa-intenso: #c92f75;
       --texto: #68495a;
       --dorado: #c8a96b;
       --borde: #f4cfe0;
@@ -177,7 +178,7 @@
 
     h1 {
       margin: 12px 0;
-      color: var(--rosa-oscuro);
+      color: var(--oscuro);
       font: 400 clamp(34px, 5vw, 58px) / 1.1 Georgia, serif;
     }
 
@@ -195,7 +196,7 @@
       line-height: 1.5;
     }
 
-    .boton {
+    .boton-explorar {
       display: inline-block;
       margin-top: 20px;
       padding: 12px 27px;
@@ -206,13 +207,15 @@
       box-shadow: 0 5px 15px #d85b9118;
       font-size: 15px;
       text-decoration: none;
-      transition: 0.25s;
+      transition: 0.3s;
     }
 
-    .boton:hover,
-    .boton:focus {
+    .boton-explorar:hover,
+    .boton-explorar:focus,
+    .boton-explorar:active {
+      border-color: var(--rosa-intenso);
       color: white;
-      background: #c92f75;
+      background: var(--rosa-intenso);
       box-shadow: 0 7px 18px #c92f7540;
       transform: translateY(-2px);
     }
@@ -235,7 +238,7 @@
 
     .buscador h2,
     .titulo h2 {
-      color: var(--rosa-oscuro);
+      color: var(--oscuro);
       font: 400 clamp(25px, 4vw, 34px) Georgia, serif;
       text-align: center;
     }
@@ -278,7 +281,7 @@
     }
 
     .buscador button:hover {
-      background: var(--rosa-oscuro);
+      background: var(--oscuro);
     }
 
     .mensaje {
@@ -288,7 +291,7 @@
       text-align: center;
     }
 
-    /* Título y tarjetas de categorías */
+    /* Categorías */
     .titulo {
       position: relative;
       z-index: 1;
@@ -345,7 +348,7 @@
 
     .categoria h3 {
       margin: 18px 8px 12px;
-      color: var(--rosa-oscuro);
+      color: var(--oscuro);
       font: 400 23px Georgia, serif;
     }
 
@@ -360,11 +363,16 @@
       background: var(--rosa);
       font-size: 14px;
       text-decoration: none;
-      transition: 0.25s;
+      transition: 0.3s;
     }
 
-    .boton-categoria:hover {
-      background: #c92f75;
+    .boton-categoria:hover,
+    .boton-categoria:focus,
+    .boton-categoria:active {
+      border-color: var(--rosa-intenso);
+      color: white;
+      background: var(--rosa-intenso);
+      box-shadow: 0 7px 18px #c92f7540;
       transform: translateY(-2px);
     }
 
@@ -374,7 +382,7 @@
       grid-column: 1 / -1;
       border: 1px solid var(--borde);
       border-radius: 20px;
-      color: var(--rosa-oscuro);
+      color: var(--oscuro);
       background: white;
       text-align: center;
     }
@@ -412,7 +420,7 @@
       flex-direction: column;
       align-items: center;
       gap: 4px;
-      color: var(--rosa-oscuro);
+      color: var(--oscuro);
       font-size: 12px;
       text-decoration: none;
     }
@@ -489,7 +497,7 @@
         font-size: 14px;
       }
 
-      .portada .boton {
+      .portada .boton-explorar {
         margin-top: 13px;
         padding: 10px 16px;
         font-size: 13px;
@@ -593,7 +601,7 @@
       <div class="alas">🪽 ✦</div>
       <h1>Angel's<span>FASHION WORLD</span></h1>
       <p class="frase">Un espacio para cuidar y consentir tu piel.</p>
-      <a href="#categorias" class="boton">Explorar</a>
+      <a href="#categorias" class="boton-explorar">Explorar ✦</a>
       <div class="adorno">✧ ✦ ✧</div>
     </div>
 
@@ -639,7 +647,7 @@
       >
       <h3>Skincare</h3>
       <a href="productos-skincare.html" class="boton-categoria">
-        Ver skincare ✦
+        Explorar skincare ✦
       </a>
     </article>
 
@@ -654,7 +662,7 @@
       >
       <h3>Cuidado del pelo</h3>
       <a href="cuidado-pelo.html" class="boton-categoria">
-        Ver cuidado del pelo ✦
+        Explorar pelo ✦
       </a>
     </article>
 
@@ -669,7 +677,7 @@
       >
       <h3>Cuidado de la piel</h3>
       <a href="cuidado-piel.html" class="boton-categoria">
-        Ver cuidado de la piel ✦
+        Explorar cuidado de la piel ✦
       </a>
     </article>
 
@@ -708,14 +716,12 @@
   </nav>
 
   <script>
-    // Elementos del buscador
     const formulario = document.getElementById("formularioBusqueda");
     const campo = document.getElementById("campoBusqueda");
     const mensaje = document.getElementById("mensajeBusqueda");
     const tarjetas = document.querySelectorAll(".categoria");
     const sinResultados = document.getElementById("sinResultados");
 
-    // Filtra las categorías cuando se envía la búsqueda
     formulario.addEventListener("submit", function(evento) {
       evento.preventDefault();
 
@@ -759,11 +765,10 @@
         });
       } else {
         mensaje.textContent =
-          "No encontramos esa categoría. Intenta con otro nombre. 💕";
+          "No encontramos esa categoría. Intenta con otro nombre. ";
       }
     });
 
-    // Muestra de nuevo todas las categorías al borrar la búsqueda
     campo.addEventListener("input", function() {
       if (!campo.value.trim()) {
         tarjetas.forEach(function(tarjeta) {
@@ -775,7 +780,6 @@
       }
     });
 
-    // Enfoca el buscador desde el menú inferior
     document.getElementById("enlaceBuscar").addEventListener("click", function() {
       setTimeout(function() {
         campo.focus({ preventScroll: true });
