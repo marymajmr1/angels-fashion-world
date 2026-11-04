@@ -593,7 +593,7 @@
       <div class="alas">🪽 ✦</div>
       <h1>Angel's<span>FASHION WORLD</span></h1>
       <p class="frase">Un espacio para cuidar y consentir tu piel.</p>
-      <a href="index.html" class="boton">← Volver a tienda</a>
+      <a href="#categorias" class="boton">Explorar</a>
       <div class="adorno">✧ ✦ ✧</div>
     </div>
 
@@ -759,11 +759,11 @@
         });
       } else {
         mensaje.textContent =
-          "No encontramos esa categoría. Intenta con otro nombre.";
+          "No encontramos esa categoría. Intenta con otro nombre. 💕";
       }
     });
 
-    // Vuelve a mostrar todas las categorías si se borra la búsqueda
+    // Muestra de nuevo todas las categorías al borrar la búsqueda
     campo.addEventListener("input", function() {
       if (!campo.value.trim()) {
         tarjetas.forEach(function(tarjeta) {
@@ -775,7 +775,7 @@
       }
     });
 
-    // Lleva el foco al buscador desde el menú inferior
+    // Enfoca el buscador desde el menú inferior
     document.getElementById("enlaceBuscar").addEventListener("click", function() {
       setTimeout(function() {
         campo.focus({ preventScroll: true });
