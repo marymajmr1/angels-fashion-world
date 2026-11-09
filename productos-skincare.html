@@ -1,1 +1,928 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff1f7">
+  <title>Skincare | Angel's Fashion World</title>
 
+  <style>
+    :root {
+      --rosa: #df4f8e;
+      --rosa-oscuro: #a52f68;
+      --rosa-intenso: #c92f75;
+      --texto: #68495a;
+      --dorado: #c8a96b;
+      --borde: #f4cfe0;
+      --fondo: #fff8fc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 25px;
+    }
+
+    body {
+      margin: 0;
+      padding-bottom: 90px;
+      color: var(--texto);
+      font-family: Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, #ffe1ee, transparent 28%),
+        radial-gradient(circle at 90% 30%, #fff0f7, transparent 25%),
+        var(--fondo);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* Estrellas decorativas */
+    .estrellas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      color: var(--dorado);
+      opacity: 0.75;
+      pointer-events: none;
+    }
+
+    .estrella {
+      position: absolute;
+      animation: flotar 5s ease-in-out infinite;
+    }
+
+    .estrella1 {
+      top: 120px;
+      left: 4%;
+    }
+
+    .estrella2 {
+      top: 280px;
+      right: 5%;
+      animation-delay: 0.7s;
+    }
+
+    .estrella3 {
+      bottom: 180px;
+      left: 6%;
+      animation-delay: 1.3s;
+    }
+
+    .estrella4 {
+      right: 7%;
+      bottom: 80px;
+      animation-delay: 2s;
+    }
+
+    @keyframes flotar {
+      50% {
+        transform: translateY(-9px) rotate(8deg);
+      }
+    }
+
+    /* Menú */
+    .menu {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      width: 94%;
+      max-width: 1200px;
+      margin: 16px auto;
+      padding: 10px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      border: 1px solid var(--borde);
+      border-radius: 20px;
+      background: #ffffffed;
+      box-shadow: 0 5px 20px #d85b9112;
+    }
+
+    .menu a {
+      padding: 10px 13px;
+      border-radius: 25px;
+      font-size: 13px;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .menu a:hover,
+    .menu a.activo {
+      color: white;
+      background: var(--rosa);
+    }
+
+    /* Portada */
+    .portada {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      width: 92%;
+      max-width: 1200px;
+      min-height: 300px;
+      margin: 25px auto 30px;
+      align-items: stretch;
+      overflow: hidden;
+      border: 1px solid var(--borde);
+      border-radius: 28px;
+      background: linear-gradient(135deg, #ffc5df, #ffdaea, #ffb9d5);
+      box-shadow: 0 10px 30px #9a39670c;
+    }
+
+    .portada-texto {
+      display: flex;
+      min-width: 0;
+      padding: clamp(20px, 4vw, 48px);
+      flex: 1;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .portada img {
+      display: block;
+      width: 50%;
+      min-width: 0;
+      min-height: 300px;
+      max-height: 400px;
+      flex: 1;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .mini {
+      color: var(--dorado);
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .alas {
+      margin-top: 15px;
+      color: var(--dorado);
+      font-size: 23px;
+      animation: moverAlas 3s ease-in-out infinite;
+    }
+
+    @keyframes moverAlas {
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    h1 {
+      margin: 12px 0;
+      color: var(--rosa-oscuro);
+      font: 400 clamp(34px, 5vw, 58px) / 1.1 Georgia, serif;
+    }
+
+    h1 span {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.35em;
+      letter-spacing: 0.2em;
+    }
+
+    .frase {
+      margin: 5px 0;
+      color: #9c5276;
+      font: italic clamp(16px, 2vw, 22px) Georgia, serif;
+      line-height: 1.5;
+    }
+
+    .boton-volver,
+    .boton-producto,
+    .boton-compartir {
+      display: inline-block;
+      padding: 11px 18px;
+      border: 1px solid var(--rosa);
+      border-radius: 25px;
+      color: white;
+      background: var(--rosa);
+      font-size: 14px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    .boton-volver {
+      margin-top: 18px;
+      padding: 12px 24px;
+    }
+
+    .boton-volver:hover,
+    .boton-producto:hover,
+    .boton-compartir:hover {
+      border-color: var(--rosa-intenso);
+      color: white;
+      background: var(--rosa-intenso);
+      transform: translateY(-2px);
+      box-shadow: 0 7px 18px #c92f7540;
+    }
+
+    .adorno {
+      margin-top: 16px;
+      color: var(--dorado);
+      letter-spacing: 7px;
+    }
+
+    /* Título de productos */
+    .titulo {
+      position: relative;
+      z-index: 1;
+      margin: 40px 15px 30px;
+      text-align: center;
+    }
+
+    .titulo h2 {
+      margin: 12px 0;
+      color: var(--rosa-oscuro);
+      font: 400 clamp(28px, 4vw, 42px) Georgia, serif;
+    }
+
+    .titulo p {
+      line-height: 1.7;
+    }
+
+    /* Tarjetas de productos */
+    .productos {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      width: 92%;
+      max-width: 1200px;
+      margin: 0 auto 45px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .producto {
+      display: flex;
+      min-width: 0;
+      padding-bottom: 18px;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      border: 1px solid var(--borde);
+      border-radius: 23px;
+      background: white;
+      box-shadow: 0 7px 22px #d85b9112;
+      text-align: center;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .producto:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px #d85b9125;
+    }
+
+    .producto img {
+      display: block;
+      width: 100%;
+      height: 290px;
+      background: #fff0f6;
+      object-fit: cover;
+      cursor: zoom-in;
+    }
+
+    .producto h3 {
+      margin: 17px 8px 8px;
+      color: var(--rosa-oscuro);
+      font: 400 22px Georgia, serif;
+    }
+
+    .precio {
+      margin: 0 8px 12px;
+      color: var(--rosa-oscuro);
+      font-weight: bold;
+    }
+
+    /* Selector de cantidad */
+    .cantidad-contenedor {
+      display: flex;
+      margin: 2px 0 15px;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .cantidad-titulo {
+      color: var(--texto);
+      font-size: 14px;
+    }
+
+    .control-cantidad {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .control-cantidad button {
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--borde);
+      border-radius: 50%;
+      color: var(--rosa-oscuro);
+      background: #fff8fc;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .control-cantidad button:hover {
+      background: #ffe1ee;
+    }
+
+    .control-cantidad input {
+      width: 52px;
+      height: 34px;
+      border: 1px solid var(--borde);
+      border-radius: 10px;
+      color: var(--texto);
+      text-align: center;
+      font-size: 15px;
+    }
+
+    .control-cantidad input::-webkit-inner-spin-button,
+    .control-cantidad input::-webkit-outer-spin-button {
+      margin: 0;
+      appearance: none;
+    }
+
+    .acciones {
+      display: flex;
+      width: 100%;
+      margin-top: auto;
+      padding: 0 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .boton-producto,
+    .boton-compartir {
+      padding: 10px 14px;
+    }
+
+    /* Pie de página y carrito */
+    footer {
+      position: relative;
+      z-index: 1;
+      padding: 15px 20px 25px;
+      color: #87556f;
+      font-size: 13px;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    .carrito-flotante {
+      position: fixed;
+      z-index: 1000;
+      right: 18px;
+      bottom: 20px;
+      display: grid;
+      width: 58px;
+      height: 58px;
+      place-items: center;
+      border: 2px solid white;
+      border-radius: 50%;
+      color: white;
+      background: var(--rosa);
+      box-shadow: 0 5px 18px #a52f6850;
+      font-size: 25px;
+      text-decoration: none;
+    }
+
+    .carrito-flotante:hover {
+      background: var(--rosa-intenso);
+      transform: scale(1.05);
+    }
+
+    /* Visor de imagen ampliada */
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: none;
+      padding: 20px;
+      align-items: center;
+      justify-content: center;
+      background: #000b;
+    }
+
+    .modal.abierto {
+      display: flex;
+    }
+
+    .modal img {
+      max-width: min(92vw, 850px);
+      max-height: 88vh;
+      border: 3px solid white;
+      border-radius: 12px;
+      object-fit: contain;
+    }
+
+    .cerrar-modal {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      border: 0;
+      color: white;
+      background: transparent;
+      cursor: pointer;
+      font-size: 40px;
+    }
+
+    /* Ajustes para tabletas */
+    @media (max-width: 850px) {
+      .productos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .producto img {
+        height: 260px;
+      }
+    }
+
+    /* Ajustes para celulares */
+    @media (max-width: 520px) {
+      .menu {
+        width: 96%;
+        gap: 3px;
+      }
+
+      .menu a {
+        padding: 8px 9px;
+        font-size: 12px;
+      }
+
+      .portada {
+        width: 94%;
+        min-height: 240px;
+      }
+
+      .portada-texto {
+        padding: 16px 12px;
+      }
+
+      .portada img {
+        width: 42%;
+        min-height: 240px;
+        max-height: 310px;
+      }
+
+      .portada .mini {
+        font-size: 9px;
+        letter-spacing: 1px;
+      }
+
+      h1 {
+        font-size: clamp(27px, 7vw, 35px);
+      }
+
+      h1 span {
+        font-size: 0.33em;
+        letter-spacing: 0.12em;
+      }
+
+      .frase {
+        font-size: 14px;
+      }
+
+      .boton-volver {
+        margin-top: 13px;
+        padding: 10px 16px;
+        font-size: 13px;
+      }
+
+      .productos {
+        width: 92%;
+        gap: 12px;
+      }
+
+      .producto img {
+        height: 205px;
+      }
+
+      .producto h3 {
+        margin: 14px 5px 8px;
+        font-size: 18px;
+      }
+
+      .precio {
+        font-size: 14px;
+      }
+
+      .boton-producto,
+      .boton-compartir {
+        padding: 9px 10px;
+        font-size: 12px;
+      }
+
+      .carrito-flotante {
+        right: 12px;
+        bottom: 12px;
+        width: 52px;
+        height: 52px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .portada-texto {
+        padding: 12px 8px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+
+      .frase {
+        font-size: 12px;
+      }
+
+      .portada img {
+        min-height: 220px;
+      }
+
+      .producto img {
+        height: 175px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="estrellas" aria-hidden="true">
+    <span class="estrella estrella1">✦</span>
+    <span class="estrella estrella2">✧</span>
+    <span class="estrella estrella3">✦</span>
+    <span class="estrella estrella4">✧</span>
+  </div>
+
+  <nav class="menu" aria-label="Menú principal">
+    <a href="index.html">Inicio</a>
+    <a href="moda.html">Moda</a>
+    <a href="belleza.html">Belleza</a>
+    <a class="activo" href="skincare.html">Skin care</a>
+    <a href="accesorios.html">Accesorios</a>
+  </nav>
+
+  <header class="portada">
+    <div class="portada-texto">
+      <div class="mini">✧ CUIDADO Y BIENESTAR ✧</div>
+      <div class="alas">🪽 ✦</div>
+      <h1>Angel's<span>FASHION WORLD</span></h1>
+      <p class="frase">Encuentra tus favoritos para cuidar tu piel.</p>
+      <a href="skincare.html" class="boton-volver">← Volver a Skin care</a>
+      <div class="adorno">✧ ✦ ✧</div>
+    </div>
+
+    <img
+      src="imagenes/skincare/Screenshot_2026-10-24-08-54-22-244_com.pinterest-edit.jpg"
+      alt="Skincare de Angel's Fashion World"
+    >
+  </header>
+
+  <section class="titulo" id="productos">
+    <div class="mini">✧ DESCUBRE TUS FAVORITOS ✧</div>
+    <h2>Nuestra colección de skincare</h2>
+    <p>Elige tus favoritos y la cantidad que deseas agregar al carrito.</p>
+    <div class="adorno">✧ ✦ ✧</div>
+  </section>
+
+  <main class="productos" id="listaProductos"></main>
+
+  <div class="modal" id="modalFoto" onclick="cerrarFoto(event)">
+    <button
+      type="button"
+      class="cerrar-modal"
+      aria-label="Cerrar imagen"
+      onclick="cerrarFoto(event)"
+    >×</button>
+    <img id="fotoAmpliada" src="" alt="Producto de skincare ampliado">
+  </div>
+
+  <footer>
+    <strong>Angel's Fashion World 🪽</strong><br>
+    Skin care · Cuidado del pelo · Cuidado de la piel<br>
+    <span style="color: var(--dorado);">✧ Hecho con cariño ✦</span>
+  </footer>
+
+  <a
+    class="carrito-flotante"
+    href="carrito.html"
+    aria-label="Ver carrito"
+    title="Ver carrito"
+  >🛒</a>
+
+  <script>
+    // Fotos y nombres de los productos.
+    // Los precios quedan pendientes porque no se proporcionaron.
+    const productos = [
+      {
+        imagen: "Screenshot_2026-10-23-23-49-56-478_com.pinterest-edit.jpg",
+        nombre: "Esencia Radiante",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-50-48-745_com.pinterest-edit.jpg",
+        nombre: "Piel de Seda",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-52-52-432_com.pinterest-edit.jpg",
+        nombre: "Toque de Rosa",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-56-13-495_com.pinterest-edit.jpg",
+        nombre: "Luz Natural",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-51-54-327_com.pinterest-edit.jpg",
+        nombre: "Dulce Cuidado",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-53-49-286_com.pinterest-edit.jpg",
+        nombre: "Ritual Suave",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-55-39-874_com.pinterest-edit.jpg",
+        nombre: "Pétalo Fresco",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-57-40-504_com.pinterest-edit.jpg",
+        nombre: "Brillo de Luna",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-57-04-351_com.pinterest-edit.jpg",
+        nombre: "Rosa Serena",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-58-11-888_com.pinterest-edit.jpg",
+        nombre: "Encanto Natural",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-58-47-093_com.pinterest-edit.jpg",
+        nombre: "Sueño de Seda",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-52-20-795_com.pinterest-edit.jpg",
+        nombre: "Cuidado Delicado",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-24-00-01-22-525_com.pinterest-edit.jpg",
+        nombre: "Flor de Abril",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-24-00-03-56-333_com.pinterest-edit.jpg",
+        nombre: "Piel Bonita",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-24-00-09-27-906_com.pinterest-edit.jpg",
+        nombre: "Nube Suave",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-51-20-312_com.pinterest-edit.jpg",
+        nombre: "Caricia Rosa",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-24-00-08-30-504_com.pinterest-edit.jpg",
+        nombre: "Calma y Luz",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-54-45-831_com.pinterest-edit.jpg",
+        nombre: "Bella Esencia",
+        precio: null
+      }
+    ];
+
+    const carpetaImagenes = "imagenes/productos-skincare/";
+    const listaProductos = document.getElementById("listaProductos");
+
+    function formatoPrecio(precio) {
+      if (precio === null || precio === undefined) {
+        return "Precio por confirmar";
+      }
+
+      return "$" + Number(precio).toLocaleString("es-CO") + " COP";
+    }
+
+    function mostrarProductos() {
+      productos.forEach(function(producto, indice) {
+        const tarjeta = document.createElement("article");
+        tarjeta.className = "producto";
+
+        const imagen = document.createElement("img");
+        imagen.src = carpetaImagenes + producto.imagen;
+        imagen.alt = producto.nombre;
+        imagen.loading = indice < 6 ? "eager" : "lazy";
+        imagen.addEventListener("click", function() {
+          abrirFoto(imagen);
+        });
+
+        imagen.addEventListener("error", function() {
+          imagen.alt = "No se pudo cargar: " + producto.imagen;
+          console.error("Revisa la ruta de esta imagen:", imagen.src);
+        });
+
+        const titulo = document.createElement("h3");
+        titulo.textContent = producto.nombre;
+
+        const precio = document.createElement("p");
+        precio.className = "precio";
+        precio.textContent = formatoPrecio(producto.precio);
+
+        const cantidadContenedor = document.createElement("div");
+        cantidadContenedor.className = "cantidad-contenedor";
+
+        const etiquetaCantidad = document.createElement("span");
+        etiquetaCantidad.className = "cantidad-titulo";
+        etiquetaCantidad.textContent = "Cantidad:";
+
+        const controlCantidad = document.createElement("div");
+        controlCantidad.className = "control-cantidad";
+
+        const botonMenos = document.createElement("button");
+        botonMenos.type = "button";
+        botonMenos.setAttribute("aria-label", "Quitar una unidad");
+        botonMenos.textContent = "−";
+
+        const campoCantidad = document.createElement("input");
+        campoCantidad.type = "number";
+        campoCantidad.min = "1";
+        campoCantidad.step = "1";
+        campoCantidad.value = "1";
+        campoCantidad.setAttribute("aria-label", "Cantidad de productos");
+
+        const botonMas = document.createElement("button");
+        botonMas.type = "button";
+        botonMas.setAttribute("aria-label", "Agregar una unidad");
+        botonMas.textContent = "+";
+
+        botonMenos.addEventListener("click", function() {
+          campoCantidad.value = Math.max(
+            1,
+            (parseInt(campoCantidad.value, 10) || 1) - 1
+          );
+        });
+
+        botonMas.addEventListener("click", function() {
+          campoCantidad.value =
+            (parseInt(campoCantidad.value, 10) || 1) + 1;
+        });
+
+        campoCantidad.addEventListener("change", function() {
+          campoCantidad.value = Math.max(
+            1,
+            parseInt(campoCantidad.value, 10) || 1
+          );
+        });
+
+        controlCantidad.append(botonMenos, campoCantidad, botonMas);
+        cantidadContenedor.append(etiquetaCantidad, controlCantidad);
+
+        const acciones = document.createElement("div");
+        acciones.className = "acciones";
+
+        const botonAgregar = document.createElement("button");
+        botonAgregar.type = "button";
+        botonAgregar.className = "boton-producto";
+        botonAgregar.textContent = "🛒 Agregar";
+        botonAgregar.addEventListener("click", function() {
+          agregarAlCarrito(producto, campoCantidad.value);
+        });
+
+        const botonCompartir = document.createElement("button");
+        botonCompartir.type = "button";
+        botonCompartir.className = "boton-compartir";
+        botonCompartir.textContent = "↗ Compartir";
+        botonCompartir.addEventListener("click", function() {
+          compartirProducto(producto);
+        });
+
+        acciones.append(botonAgregar, botonCompartir);
+        tarjeta.append(
+          imagen,
+          titulo,
+          precio,
+          cantidadContenedor,
+          acciones
+        );
+
+        listaProductos.appendChild(tarjeta);
+      });
+    }
+
+    function agregarAlCarrito(producto, cantidadElegida) {
+      const cantidad = Math.max(1, parseInt(cantidadElegida, 10) || 1);
+      let carrito = [];
+
+      try {
+        carrito = JSON.parse(localStorage.getItem("angelsCarrito")) || [];
+
+        if (!Array.isArray(carrito)) {
+          carrito = [];
+        }
+      } catch (error) {
+        carrito = [];
+      }
+
+      const existente = carrito.find(function(item) {
+        return item.nombre === producto.nombre;
+      });
+
+      if (existente) {
+        existente.cantidad = (Number(existente.cantidad) || 1) + cantidad;
+      } else {
+        carrito.push({
+          nombre: producto.nombre,
+          precio: producto.precio,
+          precioPendiente: producto.precio === null,
+          imagen: carpetaImagenes + producto.imagen,
+          cantidad: cantidad
+        });
+      }
+
+      try {
+        localStorage.setItem("angelsCarrito", JSON.stringify(carrito));
+        alert(
+          "💕 Agregaste " + cantidad + " unidad(es) de " +
+          producto.nombre + " al carrito."
+        );
+      } catch (error) {
+        alert(
+          "No pudimos guardar el producto. Revisa el almacenamiento del navegador."
+        );
+      }
+    }
+
+    async function compartirProducto(producto) {
+      const datos = {
+        title: producto.nombre + " | Angel's Fashion World",
+        text: producto.nombre + " — " + formatoPrecio(producto.precio),
+        url: window.location.href
+      };
+
+      try {
+        if (navigator.share) {
+          await navigator.share(datos);
+        } else if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(datos.text + "\n" + datos.url);
+          alert(
+            "¡Enlace copiado! Ya puedes compartir " +
+            producto.nombre + " ✨"
+          );
+        } else {
+          window.prompt("Copia este enlace para compartir:", datos.url);
+        }
+      } catch (error) {
+        if (error.name !== "AbortError") {
+          alert("No se pudo compartir el enlace.");
+        }
+      }
+    }
+
+    function abrirFoto(imagen) {
+      document.getElementById("fotoAmpliada").src = imagen.src;
+      document.getElementById("modalFoto").classList.add("abierto");
+    }
+
+    function cerrarFoto(evento) {
+      if (
+        evento.target.id === "modalFoto" ||
+        evento.target.classList.contains("cerrar-modal")
+      ) {
+        document.getElementById("modalFoto").classList.remove("abierto");
+      }
+    }
+
+    document.addEventListener("keydown", function(evento) {
+      if (evento.key === "Escape") {
+        document.getElementById("modalFoto").classList.remove("abierto");
+      }
+    });
+
+    mostrarProductos();
+  </script>
+</body>
+</html>
