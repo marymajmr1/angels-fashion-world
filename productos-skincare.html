@@ -17,9 +17,7 @@
       --fondo: #fff8fc;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
@@ -37,17 +35,14 @@
         var(--fondo);
     }
 
-    a {
-      color: inherit;
-    }
+    a { color: inherit; }
 
-    /* Estrellas decorativas */
     .estrellas {
       position: fixed;
       inset: 0;
       z-index: 0;
       color: var(--dorado);
-      opacity: 0.75;
+      opacity: .75;
       pointer-events: none;
     }
 
@@ -56,36 +51,15 @@
       animation: flotar 5s ease-in-out infinite;
     }
 
-    .estrella1 {
-      top: 120px;
-      left: 4%;
-    }
-
-    .estrella2 {
-      top: 280px;
-      right: 5%;
-      animation-delay: 0.7s;
-    }
-
-    .estrella3 {
-      bottom: 180px;
-      left: 6%;
-      animation-delay: 1.3s;
-    }
-
-    .estrella4 {
-      right: 7%;
-      bottom: 80px;
-      animation-delay: 2s;
-    }
+    .estrella1 { top: 120px; left: 4%; }
+    .estrella2 { top: 280px; right: 5%; animation-delay: .7s; }
+    .estrella3 { bottom: 180px; left: 6%; animation-delay: 1.3s; }
+    .estrella4 { right: 7%; bottom: 80px; animation-delay: 2s; }
 
     @keyframes flotar {
-      50% {
-        transform: translateY(-9px) rotate(8deg);
-      }
+      50% { transform: translateY(-9px) rotate(8deg); }
     }
 
-    /* Menú */
     .menu {
       position: relative;
       z-index: 2;
@@ -109,7 +83,7 @@
       border-radius: 25px;
       font-size: 13px;
       text-decoration: none;
-      transition: 0.2s;
+      transition: .2s;
     }
 
     .menu a:hover,
@@ -118,7 +92,6 @@
       background: var(--rosa);
     }
 
-    /* Portada */
     .portada {
       position: relative;
       z-index: 1;
@@ -170,22 +143,20 @@
     }
 
     @keyframes moverAlas {
-      50% {
-        transform: translateY(-5px);
-      }
+      50% { transform: translateY(-5px); }
     }
 
     h1 {
       margin: 12px 0;
       color: var(--rosa-oscuro);
-      font: 400 clamp(34px, 5vw, 58px) / 1.1 Georgia, serif;
+      font: 400 clamp(34px, 5vw, 58px)/1.1 Georgia, serif;
     }
 
     h1 span {
       display: block;
       margin-top: 10px;
-      font-size: 0.35em;
-      letter-spacing: 0.2em;
+      font-size: .35em;
+      letter-spacing: .2em;
     }
 
     .frase {
@@ -207,7 +178,7 @@
       font-size: 14px;
       text-decoration: none;
       cursor: pointer;
-      transition: 0.25s;
+      transition: .25s;
     }
 
     .boton-volver {
@@ -231,7 +202,6 @@
       letter-spacing: 7px;
     }
 
-    /* Título de productos */
     .titulo {
       position: relative;
       z-index: 1;
@@ -245,11 +215,8 @@
       font: 400 clamp(28px, 4vw, 42px) Georgia, serif;
     }
 
-    .titulo p {
-      line-height: 1.7;
-    }
+    .titulo p { line-height: 1.7; }
 
-    /* Tarjetas de productos */
     .productos {
       position: relative;
       z-index: 1;
@@ -273,7 +240,7 @@
       background: white;
       box-shadow: 0 7px 22px #d85b9112;
       text-align: center;
-      transition: transform 0.25s, box-shadow 0.25s;
+      transition: transform .25s, box-shadow .25s;
     }
 
     .producto:hover {
@@ -302,7 +269,6 @@
       font-weight: bold;
     }
 
-    /* Selector de cantidad */
     .cantidad-contenedor {
       display: flex;
       margin: 2px 0 15px;
@@ -356,11 +322,11 @@
     .acciones {
       display: flex;
       width: 100%;
-      margin-top: auto;
       padding: 0 10px;
       justify-content: center;
       flex-wrap: wrap;
       gap: 8px;
+      margin-top: auto;
     }
 
     .boton-producto,
@@ -368,7 +334,6 @@
       padding: 10px 14px;
     }
 
-    /* Pie de página y carrito */
     footer {
       position: relative;
       z-index: 1;
@@ -379,6 +344,7 @@
       text-align: center;
     }
 
+    /* Carrito flotante sin borde blanco */
     .carrito-flotante {
       position: fixed;
       z-index: 1000;
@@ -388,7 +354,7 @@
       width: 58px;
       height: 58px;
       place-items: center;
-      border: 2px solid white;
+      border: 0;
       border-radius: 50%;
       color: white;
       background: var(--rosa);
@@ -402,7 +368,7 @@
       transform: scale(1.05);
     }
 
-    /* Visor de imagen ampliada */
+    /* Imagen ampliada */
     .modal {
       position: fixed;
       inset: 0;
@@ -414,9 +380,7 @@
       background: #000b;
     }
 
-    .modal.abierto {
-      display: flex;
-    }
+    .modal.abierto { display: flex; }
 
     .modal img {
       max-width: min(92vw, 850px);
@@ -437,19 +401,15 @@
       font-size: 40px;
     }
 
-    /* Ajustes para tabletas */
     @media (max-width: 850px) {
       .productos {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 18px;
       }
 
-      .producto img {
-        height: 260px;
-      }
+      .producto img { height: 260px; }
     }
 
-    /* Ajustes para celulares */
     @media (max-width: 520px) {
       .menu {
         width: 96%;
@@ -466,9 +426,7 @@
         min-height: 240px;
       }
 
-      .portada-texto {
-        padding: 16px 12px;
-      }
+      .portada-texto { padding: 16px 12px; }
 
       .portada img {
         width: 42%;
@@ -481,18 +439,14 @@
         letter-spacing: 1px;
       }
 
-      h1 {
-        font-size: clamp(27px, 7vw, 35px);
-      }
+      h1 { font-size: clamp(27px, 7vw, 35px); }
 
       h1 span {
-        font-size: 0.33em;
-        letter-spacing: 0.12em;
+        font-size: .33em;
+        letter-spacing: .12em;
       }
 
-      .frase {
-        font-size: 14px;
-      }
+      .frase { font-size: 14px; }
 
       .boton-volver {
         margin-top: 13px;
@@ -505,18 +459,14 @@
         gap: 12px;
       }
 
-      .producto img {
-        height: 205px;
-      }
+      .producto img { height: 205px; }
 
       .producto h3 {
         margin: 14px 5px 8px;
         font-size: 18px;
       }
 
-      .precio {
-        font-size: 14px;
-      }
+      .precio { font-size: 14px; }
 
       .boton-producto,
       .boton-compartir {
@@ -533,25 +483,11 @@
     }
 
     @media (max-width: 360px) {
-      .portada-texto {
-        padding: 12px 8px;
-      }
-
-      h1 {
-        font-size: 25px;
-      }
-
-      .frase {
-        font-size: 12px;
-      }
-
-      .portada img {
-        min-height: 220px;
-      }
-
-      .producto img {
-        height: 175px;
-      }
+      .portada-texto { padding: 12px 8px; }
+      h1 { font-size: 25px; }
+      .frase { font-size: 12px; }
+      .portada img { min-height: 220px; }
+      .producto img { height: 175px; }
     }
   </style>
 </head>
@@ -624,96 +560,24 @@
     // Fotos y nombres de los productos.
     // Los precios quedan pendientes porque no se proporcionaron.
     const productos = [
-      {
-        imagen: "Screenshot_2026-10-23-23-49-56-478_com.pinterest-edit.jpg",
-        nombre: "Esencia Radiante",
-        precio: null
-      },
-      {
-        imagen: "Screenshot_2026-10-23-23-50-48-745_com.pinterest-edit.jpg",
-        nombre: "Piel de Seda",
-        precio: null
-      },
-      {
-        imagen: "Screenshot_2026-10-23-23-52-52-432_com.pinterest-edit.jpg",
-        nombre: "Toque de Rosa",
-        precio: null
-      },
-      {
-        imagen: "Screenshot_2026-10-23-23-56-13-495_com.pinterest-edit.jpg",
-        nombre: "Luz Natural",
-        precio: null
-      },
-      {
-        imagen: "Screenshot_2026-10-23-23-51-54-327_com.pinterest-edit.jpg",
-        nombre: "Dulce Cuidado",
-        precio: null
-      },
-      {
-        imagen: "Screenshot_2026-10-23-23-53-49-286_com.pinterest-edit.jpg",
-        nombre: "Ritual Suave",
-        precio: null
-      },
-      {
-        imagen: "Screenshot_2026-10-23-23-55-39-874_com.pinterest-edit.jpg",
-        nombre: "Pétalo Fresco",
-        precio: null
-      },
-      {
-        imagen: "Screenshot_2026-10-23-23-57-40-504_com.pinterest-edit.jpg",
-        nombre: "Brillo de Luna",
-        precio: null
-      },
-      {
-        imagen: "Screenshot_2026-10-23-23-57-04-351_com.pinterest-edit.jpg",
-        nombre: "Rosa Serena",
-        precio: null
-      },
-      {
-        imagen: "Screenshot_2026-10-23-23-58-11-888_com.pinterest-edit.jpg",
-        nombre: "Encanto Natural",
-        precio: null
-      },
-      {
-        imagen: "Screenshot_2026-10-23-23-58-47-093_com.pinterest-edit.jpg",
-        nombre: "Sueño de Seda",
-        precio: null
-      },
-      {
-        imagen: "Screenshot_2026-10-23-23-52-20-795_com.pinterest-edit.jpg",
-        nombre: "Cuidado Delicado",
-        precio: null
-      },
-      {
-        imagen: "Screenshot_2026-10-24-00-01-22-525_com.pinterest-edit.jpg",
-        nombre: "Flor de Abril",
-        precio: null
-      },
-      {
-        imagen: "Screenshot_2026-10-24-00-03-56-333_com.pinterest-edit.jpg",
-        nombre: "Piel Bonita",
-        precio: null
-      },
-      {
-        imagen: "Screenshot_2026-10-24-00-09-27-906_com.pinterest-edit.jpg",
-        nombre: "Nube Suave",
-        precio: null
-      },
-      {
-        imagen: "Screenshot_2026-10-23-23-51-20-312_com.pinterest-edit.jpg",
-        nombre: "Caricia Rosa",
-        precio: null
-      },
-      {
-        imagen: "Screenshot_2026-10-24-00-08-30-504_com.pinterest-edit.jpg",
-        nombre: "Calma y Luz",
-        precio: null
-      },
-      {
-        imagen: "Screenshot_2026-10-23-23-54-45-831_com.pinterest-edit.jpg",
-        nombre: "Bella Esencia",
-        precio: null
-      }
+      { imagen: "Screenshot_2026-10-23-23-49-56-478_com.pinterest-edit.jpg", nombre: "Esencia Radiante", precio: null },
+      { imagen: "Screenshot_2026-10-23-23-50-48-745_com.pinterest-edit.jpg", nombre: "Piel de Seda", precio: null },
+      { imagen: "Screenshot_2026-10-23-23-52-52-432_com.pinterest-edit.jpg", nombre: "Toque de Rosa", precio: null },
+      { imagen: "Screenshot_2026-10-23-23-56-13-495_com.pinterest-edit.jpg", nombre: "Luz Natural", precio: null },
+      { imagen: "Screenshot_2026-10-23-23-51-54-327_com.pinterest-edit.jpg", nombre: "Dulce Cuidado", precio: null },
+      { imagen: "Screenshot_2026-10-23-23-53-49-286_com.pinterest-edit.jpg", nombre: "Ritual Suave", precio: null },
+      { imagen: "Screenshot_2026-10-23-23-55-39-874_com.pinterest-edit.jpg", nombre: "Pétalo Fresco", precio: null },
+      { imagen: "Screenshot_2026-10-23-23-57-40-504_com.pinterest-edit.jpg", nombre: "Brillo de Luna", precio: null },
+      { imagen: "Screenshot_2026-10-23-23-57-04-351_com.pinterest-edit.jpg", nombre: "Rosa Serena", precio: null },
+      { imagen: "Screenshot_2026-10-23-23-58-11-888_com.pinterest-edit.jpg", nombre: "Encanto Natural", precio: null },
+      { imagen: "Screenshot_2026-10-23-23-58-47-093_com.pinterest-edit.jpg", nombre: "Sueño de Seda", precio: null },
+      { imagen: "Screenshot_2026-10-23-23-52-20-795_com.pinterest-edit.jpg", nombre: "Cuidado Delicado", precio: null },
+      { imagen: "Screenshot_2026-10-24-00-01-22-525_com.pinterest-edit.jpg", nombre: "Flor de Abril", precio: null },
+      { imagen: "Screenshot_2026-10-24-00-03-56-333_com.pinterest-edit.jpg", nombre: "Piel Bonita", precio: null },
+      { imagen: "Screenshot_2026-10-24-00-09-27-906_com.pinterest-edit.jpg", nombre: "Nube Suave", precio: null },
+      { imagen: "Screenshot_2026-10-23-23-51-20-312_com.pinterest-edit.jpg", nombre: "Caricia Rosa", precio: null },
+      { imagen: "Screenshot_2026-10-24-00-08-30-504_com.pinterest-edit.jpg", nombre: "Calma y Luz", precio: null },
+      { imagen: "Screenshot_2026-10-23-23-54-45-831_com.pinterest-edit.jpg", nombre: "Bella Esencia", precio: null }
     ];
 
     const carpetaImagenes = "imagenes/productos-skincare/";
@@ -736,6 +600,7 @@
         imagen.src = carpetaImagenes + producto.imagen;
         imagen.alt = producto.nombre;
         imagen.loading = indice < 6 ? "eager" : "lazy";
+
         imagen.addEventListener("click", function() {
           abrirFoto(imagen);
         });
@@ -808,6 +673,7 @@
         botonAgregar.type = "button";
         botonAgregar.className = "boton-producto";
         botonAgregar.textContent = "🛒 Agregar";
+
         botonAgregar.addEventListener("click", function() {
           agregarAlCarrito(producto, campoCantidad.value);
         });
@@ -816,6 +682,7 @@
         botonCompartir.type = "button";
         botonCompartir.className = "boton-compartir";
         botonCompartir.textContent = "↗ Compartir";
+
         botonCompartir.addEventListener("click", function() {
           compartirProducto(producto);
         });
