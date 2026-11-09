@@ -17,7 +17,9 @@
       --fondo: #fff8fc;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     html {
       scroll-behavior: smooth;
@@ -26,24 +28,27 @@
 
     body {
       margin: 0;
-      padding-bottom: 90px;
-      color: var(--texto);
+      padding-bottom: 85px;
       font-family: Arial, sans-serif;
+      color: var(--texto);
       background:
         radial-gradient(circle at top left, #ffe1ee, transparent 28%),
         radial-gradient(circle at 90% 30%, #fff0f7, transparent 25%),
         var(--fondo);
     }
 
-    a { color: inherit; }
+    a {
+      color: inherit;
+    }
 
+    /* Estrellas decorativas */
     .estrellas {
       position: fixed;
       inset: 0;
       z-index: 0;
-      color: var(--dorado);
-      opacity: .75;
       pointer-events: none;
+      color: var(--dorado);
+      opacity: 0.75;
     }
 
     .estrella {
@@ -51,15 +56,36 @@
       animation: flotar 5s ease-in-out infinite;
     }
 
-    .estrella1 { top: 120px; left: 4%; }
-    .estrella2 { top: 280px; right: 5%; animation-delay: .7s; }
-    .estrella3 { bottom: 180px; left: 6%; animation-delay: 1.3s; }
-    .estrella4 { right: 7%; bottom: 80px; animation-delay: 2s; }
-
-    @keyframes flotar {
-      50% { transform: translateY(-9px) rotate(8deg); }
+    .estrella1 {
+      top: 120px;
+      left: 4%;
     }
 
+    .estrella2 {
+      top: 280px;
+      right: 5%;
+      animation-delay: 0.7s;
+    }
+
+    .estrella3 {
+      bottom: 180px;
+      left: 6%;
+      animation-delay: 1.3s;
+    }
+
+    .estrella4 {
+      right: 7%;
+      bottom: 80px;
+      animation-delay: 2s;
+    }
+
+    @keyframes flotar {
+      50% {
+        transform: translateY(-9px) rotate(8deg);
+      }
+    }
+
+    /* Menú */
     .menu {
       position: relative;
       z-index: 2;
@@ -68,8 +94,8 @@
       max-width: 1200px;
       margin: 16px auto;
       padding: 10px;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
       gap: 5px;
       border: 1px solid var(--borde);
@@ -83,7 +109,7 @@
       border-radius: 25px;
       font-size: 13px;
       text-decoration: none;
-      transition: .2s;
+      transition: 0.2s;
     }
 
     .menu a:hover,
@@ -92,13 +118,36 @@
       background: var(--rosa);
     }
 
+    /* Botón para volver */
+    .volver-contenedor {
+      margin: 0 0 10px;
+    }
+
+    .boton-volver {
+      display: inline-block;
+      padding: 11px 24px;
+      border: 1px solid var(--rosa);
+      border-radius: 25px;
+      color: var(--rosa-oscuro);
+      background: white;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .boton-volver:hover {
+      color: white;
+      background: var(--rosa);
+    }
+
+    /* Portada */
     .portada {
       position: relative;
       z-index: 1;
       display: flex;
       width: 92%;
       max-width: 1200px;
-      min-height: 300px;
+      min-height: 320px;
       margin: 25px auto 30px;
       align-items: stretch;
       overflow: hidden;
@@ -114,16 +163,17 @@
       padding: clamp(20px, 4vw, 48px);
       flex: 1;
       flex-direction: column;
-      align-items: flex-start;
       justify-content: center;
+      align-items: flex-start;
+      text-align: left;
     }
 
     .portada img {
       display: block;
       width: 50%;
       min-width: 0;
-      min-height: 300px;
-      max-height: 400px;
+      min-height: 320px;
+      max-height: 420px;
       flex: 1;
       object-fit: cover;
       object-position: center;
@@ -135,28 +185,39 @@
       letter-spacing: 2px;
     }
 
-    .alas {
+    .alas-con-estrella {
       margin-top: 15px;
       color: var(--dorado);
       font-size: 23px;
+    }
+
+    .alas {
+      display: inline-block;
       animation: moverAlas 3s ease-in-out infinite;
     }
 
     @keyframes moverAlas {
-      50% { transform: translateY(-5px); }
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
     }
 
-    h1 {
+    .portada h1 {
       margin: 12px 0;
       color: var(--rosa-oscuro);
-      font: 400 clamp(34px, 5vw, 58px)/1.1 Georgia, serif;
+      font: 400 clamp(34px, 5vw, 58px) / 1.1 Georgia, serif;
     }
 
-    h1 span {
+    .portada h1 span {
       display: block;
       margin-top: 10px;
-      font-size: .35em;
-      letter-spacing: .2em;
+      font-size: 0.35em;
+      letter-spacing: 0.2em;
     }
 
     .frase {
@@ -166,58 +227,32 @@
       line-height: 1.5;
     }
 
-    .boton-volver,
-    .boton-producto,
-    .boton-compartir {
-      display: inline-block;
-      padding: 11px 18px;
-      border: 1px solid var(--rosa);
-      border-radius: 25px;
-      color: white;
-      background: var(--rosa);
-      font-size: 14px;
-      text-decoration: none;
-      cursor: pointer;
-      transition: .25s;
-    }
-
-    .boton-volver {
-      margin-top: 18px;
-      padding: 12px 24px;
-    }
-
-    .boton-volver:hover,
-    .boton-producto:hover,
-    .boton-compartir:hover {
-      border-color: var(--rosa-intenso);
-      color: white;
-      background: var(--rosa-intenso);
-      transform: translateY(-2px);
-      box-shadow: 0 7px 18px #c92f7540;
-    }
-
     .adorno {
       margin-top: 16px;
       color: var(--dorado);
       letter-spacing: 7px;
     }
 
-    .titulo {
+    /* Tarjetas de productos */
+    .titulo-categorias {
       position: relative;
       z-index: 1;
       margin: 40px 15px 30px;
       text-align: center;
+      scroll-margin-top: 20px;
     }
 
-    .titulo h2 {
+    .titulo-categorias h2 {
       margin: 12px 0;
       color: var(--rosa-oscuro);
       font: 400 clamp(28px, 4vw, 42px) Georgia, serif;
     }
 
-    .titulo p { line-height: 1.7; }
+    .titulo-categorias p {
+      line-height: 1.7;
+    }
 
-    .productos {
+    .categorias {
       position: relative;
       z-index: 1;
       display: grid;
@@ -228,27 +263,25 @@
       gap: 25px;
     }
 
-    .producto {
+    .categoria {
       display: flex;
       min-width: 0;
-      padding-bottom: 18px;
       flex-direction: column;
-      align-items: center;
       overflow: hidden;
       border: 1px solid var(--borde);
       border-radius: 23px;
       background: white;
       box-shadow: 0 7px 22px #d85b9112;
       text-align: center;
-      transition: transform .25s, box-shadow .25s;
+      transition: transform 0.25s, box-shadow 0.25s;
     }
 
-    .producto:hover {
+    .categoria:hover {
       transform: translateY(-4px);
       box-shadow: 0 12px 28px #d85b9125;
     }
 
-    .producto img {
+    .categoria img {
       display: block;
       width: 100%;
       height: 290px;
@@ -257,44 +290,47 @@
       cursor: zoom-in;
     }
 
-    .producto h3 {
-      margin: 17px 8px 8px;
+    .categoria h3 {
+      margin: 18px 8px 8px;
       color: var(--rosa-oscuro);
-      font: 400 22px Georgia, serif;
+      font: 400 21px Georgia, serif;
     }
 
     .precio {
-      margin: 0 8px 12px;
+      margin: 5px 8px 12px;
       color: var(--rosa-oscuro);
+      font-size: 19px;
       font-weight: bold;
     }
 
+    /* Cantidad */
     .cantidad-contenedor {
-      display: flex;
-      margin: 2px 0 15px;
-      flex-direction: column;
-      align-items: center;
-      gap: 7px;
+      margin: 0 15px 15px;
+      text-align: left;
     }
 
     .cantidad-titulo {
-      color: var(--texto);
-      font-size: 14px;
+      display: block;
+      margin-bottom: 7px;
+      font-size: 13px;
+      font-weight: bold;
     }
 
     .control-cantidad {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 8px;
+      overflow: hidden;
+      border: 1px solid var(--borde);
+      border-radius: 25px;
+      background: white;
     }
 
     .control-cantidad button {
-      width: 34px;
-      height: 34px;
-      border: 1px solid var(--borde);
-      border-radius: 50%;
+      width: 38px;
+      height: 36px;
+      border: 0;
       color: var(--rosa-oscuro);
-      background: #fff8fc;
+      background: #fff3f8;
       cursor: pointer;
       font-size: 20px;
     }
@@ -304,34 +340,117 @@
     }
 
     .control-cantidad input {
-      width: 52px;
-      height: 34px;
-      border: 1px solid var(--borde);
-      border-radius: 10px;
+      width: 42px;
+      border: 0;
+      outline: 0;
       color: var(--texto);
+      background: white;
       text-align: center;
-      font-size: 15px;
+      font-size: 14px;
+      -moz-appearance: textfield;
     }
 
     .control-cantidad input::-webkit-inner-spin-button,
     .control-cantidad input::-webkit-outer-spin-button {
       margin: 0;
-      appearance: none;
+      -webkit-appearance: none;
     }
 
-    .acciones {
+    /* Botones de producto */
+    .boton-categoria {
+      border: 1px solid var(--rosa) !important;
+      border-radius: 30px;
+      color: white !important;
+      background: var(--rosa) !important;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .boton-categoria:hover {
+      border-color: var(--rosa-intenso) !important;
+      background: var(--rosa-intenso) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 7px 18px #c92f7540;
+    }
+
+    .acciones-producto {
       display: flex;
-      width: 100%;
-      padding: 0 10px;
-      justify-content: center;
-      flex-wrap: wrap;
       gap: 8px;
-      margin-top: auto;
+      margin: auto 12px 18px;
     }
 
-    .boton-producto,
+    .acciones-producto button {
+      min-width: 0;
+      margin: 0;
+      flex: 1;
+    }
+
     .boton-compartir {
-      padding: 10px 14px;
+      border: 1px solid var(--borde);
+      border-radius: 25px;
+      color: var(--rosa-oscuro);
+      background: white;
+      cursor: pointer;
+      font-size: 13px;
+      transition: 0.2s;
+    }
+
+    .boton-compartir:hover {
+      border-color: var(--rosa);
+      background: #fff3f8;
+    }
+
+    /* Visor de imagen: sin marco blanco */
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: none;
+      padding: 20px;
+      align-items: center;
+      justify-content: center;
+      background: #2d1725e8;
+    }
+
+    .modal.abierto {
+      display: flex;
+    }
+
+    .modal img {
+      max-width: 95%;
+      max-height: 82vh;
+      border-radius: 15px;
+      object-fit: contain;
+    }
+
+    .cerrar-modal {
+      position: absolute;
+      top: 12px;
+      right: 22px;
+      border: 0;
+      color: white;
+      background: transparent;
+      cursor: pointer;
+      font-size: 40px;
+    }
+
+    /* Carrito flotante: sin borde blanco */
+    .carrito-flotante {
+      position: fixed;
+      z-index: 1500;
+      right: 20px;
+      bottom: 20px;
+      display: grid;
+      width: 58px;
+      height: 58px;
+      place-items: center;
+      border: 0;
+      border-radius: 50%;
+      color: white;
+      background: var(--rosa);
+      box-shadow: 0 8px 24px #a52f6845;
+      font-size: 27px;
+      text-decoration: none;
     }
 
     footer {
@@ -344,72 +463,19 @@
       text-align: center;
     }
 
-    /* Carrito flotante sin borde blanco */
-    .carrito-flotante {
-      position: fixed;
-      z-index: 1000;
-      right: 18px;
-      bottom: 20px;
-      display: grid;
-      width: 58px;
-      height: 58px;
-      place-items: center;
-      border: 0;
-      border-radius: 50%;
-      color: white;
-      background: var(--rosa);
-      box-shadow: 0 5px 18px #a52f6850;
-      font-size: 25px;
-      text-decoration: none;
-    }
-
-    .carrito-flotante:hover {
-      background: var(--rosa-intenso);
-      transform: scale(1.05);
-    }
-
-    /* Imagen ampliada */
-    .modal {
-      position: fixed;
-      inset: 0;
-      z-index: 2000;
-      display: none;
-      padding: 20px;
-      align-items: center;
-      justify-content: center;
-      background: #000b;
-    }
-
-    .modal.abierto { display: flex; }
-
-    .modal img {
-      max-width: min(92vw, 850px);
-      max-height: 88vh;
-      border: 3px solid white;
-      border-radius: 12px;
-      object-fit: contain;
-    }
-
-    .cerrar-modal {
-      position: absolute;
-      top: 18px;
-      right: 22px;
-      border: 0;
-      color: white;
-      background: transparent;
-      cursor: pointer;
-      font-size: 40px;
-    }
-
+    /* Tabletas */
     @media (max-width: 850px) {
-      .productos {
+      .categorias {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 18px;
       }
 
-      .producto img { height: 260px; }
+      .categoria img {
+        height: 260px;
+      }
     }
 
+    /* Celulares */
     @media (max-width: 520px) {
       .menu {
         width: 96%;
@@ -423,15 +489,19 @@
 
       .portada {
         width: 94%;
-        min-height: 240px;
+        min-height: 250px;
       }
 
-      .portada-texto { padding: 16px 12px; }
+      .portada-texto {
+        padding: 16px 12px;
+        flex: 1.1;
+      }
 
       .portada img {
         width: 42%;
-        min-height: 240px;
-        max-height: 310px;
+        min-height: 250px;
+        max-height: 320px;
+        flex: 0.9;
       }
 
       .portada .mini {
@@ -439,55 +509,89 @@
         letter-spacing: 1px;
       }
 
-      h1 { font-size: clamp(27px, 7vw, 35px); }
-
-      h1 span {
-        font-size: .33em;
-        letter-spacing: .12em;
+      .portada .alas-con-estrella {
+        margin-top: 10px;
+        font-size: 19px;
       }
 
-      .frase { font-size: 14px; }
-
-      .boton-volver {
-        margin-top: 13px;
-        padding: 10px 16px;
-        font-size: 13px;
+      .portada h1 {
+        font-size: clamp(27px, 7vw, 35px);
       }
 
-      .productos {
+      .portada h1 span {
+        font-size: 0.33em;
+        letter-spacing: 0.12em;
+      }
+
+      .portada .frase {
+        font-size: 14px;
+      }
+
+      .portada .adorno {
+        font-size: 12px;
+        letter-spacing: 4px;
+      }
+
+      .categorias {
         width: 92%;
         gap: 12px;
       }
 
-      .producto img { height: 205px; }
-
-      .producto h3 {
-        margin: 14px 5px 8px;
-        font-size: 18px;
+      .categoria img {
+        height: 205px;
       }
 
-      .precio { font-size: 14px; }
+      .categoria h3 {
+        margin: 15px 5px 8px;
+        font-size: 17px;
+      }
 
-      .boton-producto,
-      .boton-compartir {
-        padding: 9px 10px;
-        font-size: 12px;
+      .precio {
+        font-size: 16px;
+      }
+
+      .acciones-producto {
+        margin: auto 7px 15px;
+        gap: 5px;
+      }
+
+      .acciones-producto button {
+        padding: 10px 4px;
+        font-size: 11px;
       }
 
       .carrito-flotante {
-        right: 12px;
-        bottom: 12px;
+        right: 14px;
+        bottom: 14px;
         width: 52px;
         height: 52px;
       }
     }
 
     @media (max-width: 360px) {
-      .portada-texto { padding: 12px 8px; }
-      h1 { font-size: 25px; }
-      .frase { font-size: 12px; }
-      .portada img { min-height: 220px; }
-      .producto img { height: 175px; }
+      .portada-texto {
+        padding: 12px 8px;
+      }
+
+      .portada h1 {
+        font-size: 25px;
+      }
+
+      .portada .frase {
+        font-size: 12px;
+      }
+
+      .portada img {
+        min-height: 230px;
+      }
+
+      .categoria img {
+        height: 175px;
+      }
+
+      .acciones-producto button {
+        font-size: 10px;
+      }
     }
   </style>
 </head>
@@ -504,43 +608,55 @@
     <a href="index.html">Inicio</a>
     <a href="moda.html">Moda</a>
     <a href="belleza.html">Belleza</a>
-    <a class="activo" href="skincare.html">Skin care</a>
+    <a class="activo" href="skincare.html" aria-current="page">Skin care</a>
     <a href="accesorios.html">Accesorios</a>
   </nav>
 
   <header class="portada">
     <div class="portada-texto">
-      <div class="mini">✧ CUIDADO Y BIENESTAR ✧</div>
-      <div class="alas">🪽 ✦</div>
-      <h1>Angel's<span>FASHION WORLD</span></h1>
-      <p class="frase">Encuentra tus favoritos para cuidar tu piel.</p>
-      <a href="skincare.html" class="boton-volver">← Volver a Skin care</a>
+      <div class="volver-contenedor">
+        <a class="boton-volver" href="skincare.html">← Volver</a>
+      </div>
+
+      <div class="mini">✧ TU ESTILO, TU ESENCIA ✧</div>
+
+      <div class="alas-con-estrella">
+        <span class="alas">🪽</span>
+        <span>✦</span>
+      </div>
+
+      <h1>
+        Angel's
+        <span>FASHION WORLD</span>
+      </h1>
+
+      <p class="frase">Skincare para resaltar tu estilo.</p>
       <div class="adorno">✧ ✦ ✧</div>
     </div>
 
     <img
       src="imagenes/skincare/Screenshot_2026-10-24-08-54-22-244_com.pinterest-edit.jpg"
-      alt="Skincare de Angel's Fashion World"
+      alt="Portada de skincare de Angel's Fashion World"
     >
   </header>
 
-  <section class="titulo" id="productos">
-    <div class="mini">✧ DESCUBRE TUS FAVORITOS ✧</div>
+  <section class="titulo-categorias" id="categorias">
+    <div class="mini">✧ DESCUBRE TUS FAVORITAS ✧</div>
     <h2>Nuestra colección de skincare</h2>
     <p>Elige tus favoritos y la cantidad que deseas agregar al carrito.</p>
     <div class="adorno">✧ ✦ ✧</div>
   </section>
 
-  <main class="productos" id="listaProductos"></main>
+  <main class="categorias" id="listaSkincare"></main>
 
   <div class="modal" id="modalFoto" onclick="cerrarFoto(event)">
     <button
-      type="button"
       class="cerrar-modal"
+      type="button"
       aria-label="Cerrar imagen"
       onclick="cerrarFoto(event)"
     >×</button>
-    <img id="fotoAmpliada" src="" alt="Producto de skincare ampliado">
+    <img id="fotoAmpliada" src="" alt="Skincare ampliado">
   </div>
 
   <footer>
@@ -554,34 +670,106 @@
     href="carrito.html"
     aria-label="Ver carrito"
     title="Ver carrito"
-  >🛒</a>
+  >
+    <span aria-hidden="true">🛒</span>
+  </a>
 
   <script>
-    // Fotos y nombres de los productos.
-    // Los precios quedan pendientes porque no se proporcionaron.
-    const productos = [
-      { imagen: "Screenshot_2026-10-23-23-49-56-478_com.pinterest-edit.jpg", nombre: "Esencia Radiante", precio: null },
-      { imagen: "Screenshot_2026-10-23-23-50-48-745_com.pinterest-edit.jpg", nombre: "Piel de Seda", precio: null },
-      { imagen: "Screenshot_2026-10-23-23-52-52-432_com.pinterest-edit.jpg", nombre: "Toque de Rosa", precio: null },
-      { imagen: "Screenshot_2026-10-23-23-56-13-495_com.pinterest-edit.jpg", nombre: "Luz Natural", precio: null },
-      { imagen: "Screenshot_2026-10-23-23-51-54-327_com.pinterest-edit.jpg", nombre: "Dulce Cuidado", precio: null },
-      { imagen: "Screenshot_2026-10-23-23-53-49-286_com.pinterest-edit.jpg", nombre: "Ritual Suave", precio: null },
-      { imagen: "Screenshot_2026-10-23-23-55-39-874_com.pinterest-edit.jpg", nombre: "Pétalo Fresco", precio: null },
-      { imagen: "Screenshot_2026-10-23-23-57-40-504_com.pinterest-edit.jpg", nombre: "Brillo de Luna", precio: null },
-      { imagen: "Screenshot_2026-10-23-23-57-04-351_com.pinterest-edit.jpg", nombre: "Rosa Serena", precio: null },
-      { imagen: "Screenshot_2026-10-23-23-58-11-888_com.pinterest-edit.jpg", nombre: "Encanto Natural", precio: null },
-      { imagen: "Screenshot_2026-10-23-23-58-47-093_com.pinterest-edit.jpg", nombre: "Sueño de Seda", precio: null },
-      { imagen: "Screenshot_2026-10-23-23-52-20-795_com.pinterest-edit.jpg", nombre: "Cuidado Delicado", precio: null },
-      { imagen: "Screenshot_2026-10-24-00-01-22-525_com.pinterest-edit.jpg", nombre: "Flor de Abril", precio: null },
-      { imagen: "Screenshot_2026-10-24-00-03-56-333_com.pinterest-edit.jpg", nombre: "Piel Bonita", precio: null },
-      { imagen: "Screenshot_2026-10-24-00-09-27-906_com.pinterest-edit.jpg", nombre: "Nube Suave", precio: null },
-      { imagen: "Screenshot_2026-10-23-23-51-20-312_com.pinterest-edit.jpg", nombre: "Caricia Rosa", precio: null },
-      { imagen: "Screenshot_2026-10-24-00-08-30-504_com.pinterest-edit.jpg", nombre: "Calma y Luz", precio: null },
-      { imagen: "Screenshot_2026-10-23-23-54-45-831_com.pinterest-edit.jpg", nombre: "Bella Esencia", precio: null }
+    const skincares = [
+      {
+        imagen: "Screenshot_2026-10-23-23-49-56-478_com.pinterest-edit.jpg",
+        nombre: "Esencia Radiante",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-50-48-745_com.pinterest-edit.jpg",
+        nombre: "Piel de Seda",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-52-52-432_com.pinterest-edit.jpg",
+        nombre: "Toque de Rosa",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-56-13-495_com.pinterest-edit.jpg",
+        nombre: "Luz Natural",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-51-54-327_com.pinterest-edit.jpg",
+        nombre: "Dulce Cuidado",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-53-49-286_com.pinterest-edit.jpg",
+        nombre: "Ritual Suave",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-55-39-874_com.pinterest-edit.jpg",
+        nombre: "Pétalo Fresco",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-57-40-504_com.pinterest-edit.jpg",
+        nombre: "Brillo de Luna",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-57-04-351_com.pinterest-edit.jpg",
+        nombre: "Rosa Serena",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-58-11-888_com.pinterest-edit.jpg",
+        nombre: "Encanto Natural",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-58-47-093_com.pinterest-edit.jpg",
+        nombre: "Sueño de Seda",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-52-20-795_com.pinterest-edit.jpg",
+        nombre: "Cuidado Delicado",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-24-00-01-22-525_com.pinterest-edit.jpg",
+        nombre: "Flor de Abril",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-24-00-03-56-333_com.pinterest-edit.jpg",
+        nombre: "Piel Bonita",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-24-00-09-27-906_com.pinterest-edit.jpg",
+        nombre: "Nube Suave",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-51-20-312_com.pinterest-edit.jpg",
+        nombre: "Caricia Rosa",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-24-00-08-30-504_com.pinterest-edit.jpg",
+        nombre: "Calma y Luz",
+        precio: null
+      },
+      {
+        imagen: "Screenshot_2026-10-23-23-54-45-831_com.pinterest-edit.jpg",
+        nombre: "Bella Esencia",
+        precio: null
+      }
     ];
 
-    const carpetaImagenes = "imagenes/productos-skincare/";
-    const listaProductos = document.getElementById("listaProductos");
+    const carpeta = "imagenes/productos-skincare/";
+    const lista = document.getElementById("listaSkincare");
 
     function formatoPrecio(precio) {
       if (precio === null || precio === undefined) {
@@ -591,14 +779,16 @@
       return "$" + Number(precio).toLocaleString("es-CO") + " COP";
     }
 
-    function mostrarProductos() {
-      productos.forEach(function(producto, indice) {
+    function mostrarSkincare() {
+      skincares.forEach(function(skincare, indice) {
         const tarjeta = document.createElement("article");
-        tarjeta.className = "producto";
+        tarjeta.className = "categoria";
+        tarjeta.dataset.busqueda =
+          (skincare.nombre + " skincare").toLocaleLowerCase("es");
 
         const imagen = document.createElement("img");
-        imagen.src = carpetaImagenes + producto.imagen;
-        imagen.alt = producto.nombre;
+        imagen.src = carpeta + skincare.imagen;
+        imagen.alt = skincare.nombre;
         imagen.loading = indice < 6 ? "eager" : "lazy";
 
         imagen.addEventListener("click", function() {
@@ -606,16 +796,19 @@
         });
 
         imagen.addEventListener("error", function() {
-          imagen.alt = "No se pudo cargar: " + producto.imagen;
-          console.error("Revisa la ruta de esta imagen:", imagen.src);
+          imagen.alt = "No se pudo cargar: " + skincare.imagen;
+          tarjeta.style.borderColor = "#df4f8e";
+          console.error("Revisa el nombre de esta imagen:", imagen.src);
         });
 
         const titulo = document.createElement("h3");
-        titulo.textContent = producto.nombre;
+        titulo.textContent = skincare.nombre;
 
         const precio = document.createElement("p");
         precio.className = "precio";
-        precio.textContent = formatoPrecio(producto.precio);
+        precio.textContent = formatoPrecio(skincare.precio);
+
+        tarjeta.append(imagen, titulo, precio);
 
         const cantidadContenedor = document.createElement("div");
         cantidadContenedor.className = "cantidad-contenedor";
@@ -667,15 +860,15 @@
         cantidadContenedor.append(etiquetaCantidad, controlCantidad);
 
         const acciones = document.createElement("div");
-        acciones.className = "acciones";
+        acciones.className = "acciones-producto";
 
         const botonAgregar = document.createElement("button");
         botonAgregar.type = "button";
-        botonAgregar.className = "boton-producto";
+        botonAgregar.className = "boton-categoria";
         botonAgregar.textContent = "🛒 Agregar";
 
         botonAgregar.addEventListener("click", function() {
-          agregarAlCarrito(producto, campoCantidad.value);
+          agregarAlCarrito(skincare, campoCantidad.value);
         });
 
         const botonCompartir = document.createElement("button");
@@ -684,23 +877,16 @@
         botonCompartir.textContent = "↗ Compartir";
 
         botonCompartir.addEventListener("click", function() {
-          compartirProducto(producto);
+          compartirSkincare(skincare);
         });
 
         acciones.append(botonAgregar, botonCompartir);
-        tarjeta.append(
-          imagen,
-          titulo,
-          precio,
-          cantidadContenedor,
-          acciones
-        );
-
-        listaProductos.appendChild(tarjeta);
+        tarjeta.append(cantidadContenedor, acciones);
+        lista.appendChild(tarjeta);
       });
     }
 
-    function agregarAlCarrito(producto, cantidadElegida) {
+    function agregarAlCarrito(skincare, cantidadElegida) {
       const cantidad = Math.max(1, parseInt(cantidadElegida, 10) || 1);
       let carrito = [];
 
@@ -714,18 +900,18 @@
         carrito = [];
       }
 
-      const existente = carrito.find(function(item) {
-        return item.nombre === producto.nombre;
+      const existente = carrito.find(function(producto) {
+        return producto.nombre === skincare.nombre;
       });
 
       if (existente) {
         existente.cantidad = (Number(existente.cantidad) || 1) + cantidad;
       } else {
         carrito.push({
-          nombre: producto.nombre,
-          precio: producto.precio,
-          precioPendiente: producto.precio === null,
-          imagen: carpetaImagenes + producto.imagen,
+          nombre: skincare.nombre,
+          precio: skincare.precio,
+          precioPendiente: skincare.precio === null,
+          imagen: carpeta + skincare.imagen,
           cantidad: cantidad
         });
       }
@@ -734,7 +920,7 @@
         localStorage.setItem("angelsCarrito", JSON.stringify(carrito));
         alert(
           "💕 Agregaste " + cantidad + " unidad(es) de " +
-          producto.nombre + " al carrito."
+          skincare.nombre + " al carrito."
         );
       } catch (error) {
         alert(
@@ -743,21 +929,23 @@
       }
     }
 
-    async function compartirProducto(producto) {
+    async function compartirSkincare(skincare) {
       const datos = {
-        title: producto.nombre + " | Angel's Fashion World",
-        text: producto.nombre + " — " + formatoPrecio(producto.precio),
-        url: window.location.href
+        title: skincare.nombre + " | Angel's Fashion World",
+        text: skincare.nombre + " — " + formatoPrecio(skincare.precio),
+        url: window.location.href.split("#")[0] + "#categorias"
       };
 
       try {
         if (navigator.share) {
           await navigator.share(datos);
         } else if (navigator.clipboard && navigator.clipboard.writeText) {
-          await navigator.clipboard.writeText(datos.text + "\n" + datos.url);
+          await navigator.clipboard.writeText(
+            datos.text + "\n" + datos.url
+          );
           alert(
             "¡Enlace copiado! Ya puedes compartir " +
-            producto.nombre + " ✨"
+            skincare.nombre + " ✨"
           );
         } else {
           window.prompt("Copia este enlace para compartir:", datos.url);
@@ -789,7 +977,7 @@
       }
     });
 
-    mostrarProductos();
+    mostrarSkincare();
   </script>
 </body>
 </html>
