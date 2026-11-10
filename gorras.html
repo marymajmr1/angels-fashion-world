@@ -9,44 +9,84 @@
   <style>
     :root {
       --rosa: #df4f8e;
-      --oscuro: #a52f68;
+      --rosa-oscuro: #a52f68;
+      --rosa-intenso: #c92f75;
       --texto: #68495a;
       --dorado: #c8a96b;
       --borde: #f4cfe0;
       --fondo: #fff8fc;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 25px;
     }
 
     body {
       margin: 0;
-      padding-bottom: 80px;
+      padding-bottom: 85px;
       font-family: Arial, sans-serif;
       color: var(--texto);
       background:
         radial-gradient(circle at top left, #ffe1ee, transparent 28%),
+        radial-gradient(circle at 90% 30%, #fff0f7, transparent 25%),
         var(--fondo);
     }
 
-    a {
-      color: inherit;
+    a { color: inherit; }
+
+    .estrellas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      color: var(--dorado);
+      opacity: .75;
+    }
+
+    .estrella {
+      position: absolute;
+      animation: flotar 5s ease-in-out infinite;
+    }
+
+    .estrella1 { top: 120px; left: 4%; }
+
+    .estrella2 {
+      top: 280px;
+      right: 5%;
+      animation-delay: .7s;
+    }
+
+    .estrella3 {
+      bottom: 180px;
+      left: 6%;
+      animation-delay: 1.3s;
+    }
+
+    .estrella4 {
+      bottom: 80px;
+      right: 7%;
+      animation-delay: 2s;
+    }
+
+    @keyframes flotar {
+      50% { transform: translateY(-9px) rotate(8deg); }
     }
 
     .menu {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 5px;
+      position: relative;
+      z-index: 2;
       width: 94%;
       max-width: 1200px;
       margin: 16px auto;
       padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      flex-wrap: wrap;
       border: 1px solid var(--borde);
       border-radius: 20px;
       background: #ffffffed;
@@ -58,20 +98,46 @@
       border-radius: 25px;
       font-size: 13px;
       text-decoration: none;
+      transition: .2s;
     }
 
     .menu a:hover,
-    .menu .activo {
-      color: #fff;
+    .menu a.activo {
       background: var(--rosa);
+      color: white;
+    }
+
+    .volver-contenedor {
+      margin: 0 0 10px;
+    }
+
+    .boton-volver {
+      display: inline-block;
+      padding: 11px 24px;
+      border: 1px solid var(--rosa);
+      border-radius: 25px;
+      background: white;
+      color: var(--rosa-oscuro);
+      font-weight: bold;
+      text-decoration: none;
+      transition: .2s;
+    }
+
+    .boton-volver:hover {
+      background: var(--rosa);
+      color: white;
     }
 
     .portada {
-      display: flex;
+      position: relative;
+      z-index: 1;
       width: 92%;
       max-width: 1200px;
       min-height: 320px;
       margin: 25px auto 30px;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
       overflow: hidden;
       border: 1px solid var(--borde);
       border-radius: 28px;
@@ -80,41 +146,26 @@
     }
 
     .portada-texto {
-      display: flex;
+      flex: 1;
       min-width: 0;
       padding: clamp(20px, 4vw, 48px);
-      flex: 1;
+      display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
+      text-align: left;
     }
 
     .portada img {
       display: block;
+      flex: 1;
       width: 50%;
       min-width: 0;
+      height: auto;
       min-height: 320px;
       max-height: 420px;
-      flex: 1;
       object-fit: cover;
       object-position: center;
-    }
-
-    .volver {
-      display: inline-block;
-      margin-bottom: 14px;
-      padding: 11px 24px;
-      border: 1px solid var(--rosa);
-      border-radius: 25px;
-      color: var(--oscuro);
-      background: #fff;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .volver:hover {
-      color: #fff;
-      background: var(--rosa);
     }
 
     .mini {
@@ -123,23 +174,33 @@
       letter-spacing: 2px;
     }
 
-    .alas {
+    .alas-con-estrella {
       margin-top: 15px;
       color: var(--dorado);
       font-size: 23px;
     }
 
+    .alas {
+      display: inline-block;
+      animation: moverAlas 3s ease-in-out infinite;
+    }
+
+    @keyframes moverAlas {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
     .portada h1 {
       margin: 12px 0;
-      color: var(--oscuro);
-      font: 400 clamp(34px, 5vw, 58px) / 1.1 Georgia, serif;
+      color: var(--rosa-oscuro);
+      font: 400 clamp(34px, 5vw, 58px)/1.1 Georgia, serif;
     }
 
     .portada h1 span {
       display: block;
       margin-top: 10px;
-      font-size: 0.35em;
-      letter-spacing: 0.2em;
+      font-size: .35em;
+      letter-spacing: .2em;
     }
 
     .frase {
@@ -149,206 +210,247 @@
       line-height: 1.5;
     }
 
+    .boton-categoria {
+      border: 1px solid var(--rosa) !important;
+      border-radius: 30px;
+      background: var(--rosa) !important;
+      color: white !important;
+      text-decoration: none;
+      transition: .3s;
+    }
+
+    .boton-categoria:hover {
+      background: var(--rosa-intenso) !important;
+      border-color: var(--rosa-intenso) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 7px 18px #c92f7540;
+    }
+
     .adorno {
       margin-top: 16px;
       color: var(--dorado);
       letter-spacing: 7px;
     }
 
-    .titulo {
+    .titulo-categorias {
+      position: relative;
+      z-index: 1;
       margin: 40px 15px 30px;
       text-align: center;
       scroll-margin-top: 20px;
     }
 
-    .titulo h2 {
+    .titulo-categorias h2 {
       margin: 12px 0;
-      color: var(--oscuro);
+      color: var(--rosa-oscuro);
       font: 400 clamp(28px, 4vw, 42px) Georgia, serif;
     }
 
-    .titulo p {
-      line-height: 1.7;
-    }
+    .titulo-categorias p { line-height: 1.7; }
 
-    .productos {
-      display: grid;
+    .categorias {
+      position: relative;
+      z-index: 1;
       width: 92%;
       max-width: 1200px;
       margin: 0 auto 45px;
+      display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 25px;
     }
 
-    .producto {
-      display: flex;
+    .categoria {
       min-width: 0;
+      display: flex;
       flex-direction: column;
       overflow: hidden;
       border: 1px solid var(--borde);
       border-radius: 23px;
-      background: #fff;
+      background: white;
       box-shadow: 0 7px 22px #d85b9112;
       text-align: center;
+      transition: transform .25s, box-shadow .25s;
     }
 
-    .producto img {
+    .categoria:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px #d85b9125;
+    }
+
+    .categoria img {
       display: block;
       width: 100%;
       height: 290px;
-      background: #fff0f6;
       object-fit: cover;
+      background: #fff0f6;
       cursor: zoom-in;
     }
 
-    .producto h3 {
+    .categoria h3 {
       margin: 18px 8px 8px;
-      color: var(--oscuro);
+      color: var(--rosa-oscuro);
       font: 400 21px Georgia, serif;
     }
 
     .precio {
       margin: 5px 8px 12px;
-      color: var(--oscuro);
+      color: var(--rosa-oscuro);
       font-size: 19px;
       font-weight: bold;
     }
 
-    .cantidad {
+    .cantidad-contenedor {
       margin: 0 15px 15px;
       text-align: left;
     }
 
-    .cantidad label {
+    .cantidad-titulo {
       display: block;
       margin-bottom: 7px;
       font-size: 13px;
       font-weight: bold;
     }
 
-    .control {
+    .control-cantidad {
       display: inline-flex;
       align-items: center;
       overflow: hidden;
       border: 1px solid var(--borde);
       border-radius: 25px;
+      background: white;
     }
 
-    .control button {
+    .control-cantidad button {
       width: 38px;
       height: 36px;
       border: 0;
-      color: var(--oscuro);
       background: #fff3f8;
+      color: var(--rosa-oscuro);
       cursor: pointer;
       font-size: 20px;
     }
 
-    .control input {
+    .control-cantidad button:hover { background: #ffe1ee; }
+
+    .control-cantidad input {
       width: 42px;
       border: 0;
       outline: 0;
+      background: white;
+      color: var(--texto);
       text-align: center;
       font-size: 14px;
+      -moz-appearance: textfield;
     }
 
-    .acciones {
+    .control-cantidad input::-webkit-inner-spin-button,
+    .control-cantidad input::-webkit-outer-spin-button {
+      margin: 0;
+      -webkit-appearance: none;
+    }
+
+    .acciones-producto {
       display: flex;
       gap: 8px;
       margin: auto 12px 18px;
     }
 
-    .acciones button {
+    .acciones-producto button {
+      flex: 1;
       min-width: 0;
       margin: 0;
-      padding: 12px 10px;
-      flex: 1;
-      border: 1px solid var(--rosa);
-      border-radius: 30px;
-      color: #fff;
-      background: var(--rosa);
+    }
+
+    .boton-compartir {
+      border: 1px solid var(--borde);
+      border-radius: 25px;
+      background: white;
+      color: var(--rosa-oscuro);
       cursor: pointer;
-      font-size: 15px;
+      font-size: 13px;
+      transition: .2s;
     }
 
-    .acciones .compartir {
-      border-color: var(--borde);
-      color: var(--oscuro);
-      background: #fff;
+    .boton-compartir:hover {
+      border-color: var(--rosa);
+      background: #fff3f8;
     }
 
-    .acciones button:hover {
-      filter: brightness(0.95);
+    .boton-categoria {
+      display: block;
+      margin: auto 15px 20px;
+      padding: 12px 10px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
     }
 
     .modal {
+      display: none;
       position: fixed;
       inset: 0;
-      z-index: 20;
-      display: none;
-      padding: 20px;
+      z-index: 2000;
       align-items: center;
       justify-content: center;
+      padding: 20px;
       background: #2d1725e8;
     }
 
-    .modal.abierto {
-      display: flex;
-    }
+    .modal.abierto { display: flex; }
 
     .modal img {
       max-width: 95%;
       max-height: 82vh;
-      border-radius: 15px;
       object-fit: contain;
+      border-radius: 15px;
     }
 
-    .cerrar {
+    .cerrar-modal {
       position: absolute;
       top: 12px;
       right: 22px;
       border: 0;
-      color: #fff;
       background: transparent;
-      cursor: pointer;
+      color: white;
       font-size: 40px;
+      cursor: pointer;
     }
 
-    .carrito {
+    .carrito-flotante {
       position: fixed;
-      z-index: 15;
+      z-index: 1500;
       right: 20px;
       bottom: 20px;
-      display: grid;
       width: 58px;
       height: 58px;
+      display: grid;
       place-items: center;
-      border: 0;
+      border: 1px solid #ffffffa8;
       border-radius: 50%;
-      color: #fff;
       background: var(--rosa);
+      color: white;
+      text-decoration: none;
       box-shadow: 0 8px 24px #a52f6845;
       font-size: 27px;
-      text-decoration: none;
     }
 
     footer {
+      position: relative;
+      z-index: 1;
       padding: 15px 20px 25px;
       color: #87556f;
+      text-align: center;
       font-size: 13px;
       line-height: 1.8;
-      text-align: center;
     }
 
     @media (max-width: 850px) {
-      .productos {
+      .categorias {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 18px;
       }
 
-      .producto img {
-        height: 260px;
-      }
+      .categoria img { height: 260px; }
     }
 
     @media (max-width: 520px) {
@@ -368,15 +470,15 @@
       }
 
       .portada-texto {
-        padding: 16px 12px;
         flex: 1.1;
+        padding: 16px 12px;
       }
 
       .portada img {
+        flex: .9;
         width: 42%;
         min-height: 250px;
         max-height: 320px;
-        flex: 0.9;
       }
 
       .portada .mini {
@@ -384,53 +486,50 @@
         letter-spacing: 1px;
       }
 
-      .portada h1 {
-        font-size: clamp(27px, 7vw, 35px);
+      .portada .alas-con-estrella {
+        font-size: 19px;
+        margin-top: 10px;
       }
+
+      .portada h1 { font-size: clamp(27px, 7vw, 35px); }
 
       .portada h1 span {
-        font-size: 0.33em;
-        letter-spacing: 0.12em;
+        font-size: .33em;
+        letter-spacing: .12em;
       }
 
-      .portada .frase {
-        font-size: 14px;
-      }
+      .portada .frase { font-size: 14px; }
 
       .portada .adorno {
         font-size: 12px;
         letter-spacing: 4px;
       }
 
-      .productos {
+      .categorias {
         width: 92%;
         gap: 12px;
       }
 
-      .producto img {
-        height: 205px;
-      }
+      .categoria img { height: 205px; }
 
-      .producto h3 {
+      .categoria h3 {
         margin: 15px 5px 8px;
         font-size: 17px;
       }
 
-      .precio {
-        font-size: 16px;
-      }
+      .precio { font-size: 16px; }
 
-      .acciones {
+      .acciones-producto {
         margin: auto 7px 15px;
         gap: 5px;
       }
 
-      .acciones button {
-        padding: 11px 7px;
-        font-size: 13px;
+      .acciones-producto button {
+        padding: 10px 4px;
+        font-size: 11px;
       }
 
-      .carrito {
+      .carrito-flotante {
         right: 14px;
         bottom: 14px;
         width: 52px;
@@ -439,48 +538,50 @@
     }
 
     @media (max-width: 360px) {
-      .portada-texto {
-        padding: 12px 8px;
-      }
-
-      .portada h1 {
-        font-size: 25px;
-      }
-
-      .portada .frase {
-        font-size: 12px;
-      }
-
-      .portada img {
-        min-height: 230px;
-      }
-
-      .producto img {
-        height: 175px;
-      }
-
-      .acciones button {
-        font-size: 12px;
-      }
+      .portada-texto { padding: 12px 8px; }
+      .portada h1 { font-size: 25px; }
+      .portada .frase { font-size: 12px; }
+      .portada img { min-height: 230px; }
+      .categoria img { height: 175px; }
+      .acciones-producto button { font-size: 10px; }
     }
   </style>
 </head>
 
 <body>
+
+  <div class="estrellas" aria-hidden="true">
+    <span class="estrella estrella1">✦</span>
+    <span class="estrella estrella2">✧</span>
+    <span class="estrella estrella3">✦</span>
+    <span class="estrella estrella4">✧</span>
+  </div>
+
   <nav class="menu" aria-label="Menú principal">
     <a href="index.html">Inicio</a>
     <a href="moda.html">Moda</a>
     <a href="belleza.html">Belleza</a>
-    <a class="activo" href="#categorias" aria-current="page">Gorras</a>
-    <a href="accesorios.html">Accesorios</a>
+    <a class="activo" href="accesorios.html" aria-current="page">Accesorios</a>
   </nav>
 
   <header class="portada">
     <div class="portada-texto">
-      <a class="volver" href="accesorios.html">← Volver</a>
+      <div class="volver-contenedor">
+        <a class="boton-volver" href="accesorios.html">← Volver</a>
+      </div>
+
       <div class="mini">✧ TU ESTILO, TU ESENCIA ✧</div>
-      <div class="alas">🪽 ✦</div>
-      <h1>Angel's<span>FASHION WORLD</span></h1>
+
+      <div class="alas-con-estrella">
+        <span class="alas">🪽</span>
+        <span>✦</span>
+      </div>
+
+      <h1>
+        Angel's
+        <span>FASHION WORLD</span>
+      </h1>
+
       <p class="frase">Gorras para completar tu estilo.</p>
       <div class="adorno">✧ ✦ ✧</div>
     </div>
@@ -491,22 +592,18 @@
     >
   </header>
 
-  <section class="titulo" id="categorias">
+  <section class="titulo-categorias" id="categorias">
     <div class="mini">✧ DESCUBRE TUS FAVORITAS ✧</div>
     <h2>Nuestra colección de gorras</h2>
-    <p>Elige tus favoritos y la cantidad que deseas agregar al carrito.</p>
+    <p>Elige tu gorra y la cantidad que deseas agregar al carrito.</p>
     <div class="adorno">✧ ✦ ✧</div>
   </section>
 
-  <main class="productos" id="listaGorras"></main>
+  <main class="categorias" id="listaGorras"></main>
 
   <div class="modal" id="modalFoto" onclick="cerrarFoto(event)">
-    <button
-      class="cerrar"
-      type="button"
-      aria-label="Cerrar imagen"
-      onclick="cerrarFoto(event)"
-    >×</button>
+    <button class="cerrar-modal" type="button"
+      aria-label="Cerrar imagen" onclick="cerrarFoto(event)">×</button>
     <img id="fotoAmpliada" src="" alt="Gorra ampliada">
   </div>
 
@@ -516,33 +613,30 @@
     <span style="color: var(--dorado);">✧ Hecho con cariño ✦</span>
   </footer>
 
-  <a class="carrito" href="carrito.html" aria-label="Ver carrito" title="Ver carrito">
-    🛒
+  <a class="carrito-flotante" href="carrito.html" aria-label="Ver carrito" title="Ver carrito">
+    <span aria-hidden="true">🛒</span>
   </a>
 
   <script>
     const gorras = [
-      { imagen: "descargar (1).jpg", nombre: "Dulce Encanto" },
-      { imagen: "descargar (2).jpg", nombre: "Brisa Bonita" },
-      { imagen: "descargar (3).jpg", nombre: "Luna Chic" },
-      { imagen: "𝓑𝓮𝓵𝓵_𝔃𝓮𝓾𝓼𝓬𝓱.jpg", nombre: "Sueño Rosa" },
-      { imagen: "Mantyhose Çorap.jpg", nombre: "Estilo Soñado" },
-      { imagen: "descargar (4).jpg", nombre: "Bella Luz" },
-      {
-        imagen: "Sombrero de paja con diseño de lazo _ SHEIN USA.jpg",
-        nombre: "Toque Especial"
-      },
-      { imagen: "descargar (5).jpg", nombre: "Encanto Sutil" },
-      { imagen: "eco.jpg", nombre: "Día Bonito" },
-      { imagen: "descargar (6).jpg", nombre: "Estrella" },
-      { imagen: "descargar (8).jpg", nombre: "Aventura Chic" },
-      { imagen: "descargar (9).jpg", nombre: "Rosa Serena" },
-      { imagen: "descargar (10).jpg", nombre: "Flor de Abril" },
-      { imagen: "descargar (11).jpg", nombre: "Nube Suave" },
-      { imagen: "descargar (12).jpg", nombre: "Lazo Bello" },
-      { imagen: "Cute Pink Girls Cap.jpg", nombre: "Cielo Rosa" },
-      { imagen: "Bow Baseball Cap.jpg", nombre: "Brillo Natural" },
-      { imagen: "descargar (13).jpg", nombre: "Sol de Verano" }
+      { imagen: "descargar (1).jpg", nombre: "Dulce Encanto", precio: null },
+      { imagen: "descargar (2).jpg", nombre: "Brisa Bonita", precio: null },
+      { imagen: "descargar (3).jpg", nombre: "Luna Chic", precio: null },
+      { imagen: "𝓑𝓮𝓵𝓵_𝔃𝓮𝓾𝓼𝓬𝓱.jpg", nombre: "Sueño Rosa", precio: null },
+      { imagen: "Mantyhose Çorap.jpg", nombre: "Estilo Soñado", precio: null },
+      { imagen: "descargar (4).jpg", nombre: "Bella Luz", precio: null },
+      { imagen: "Sombrero de paja con diseño de lazo _ SHEIN USA.jpg", nombre: "Toque Especial", precio: null },
+      { imagen: "descargar (5).jpg", nombre: "Encanto Sutil", precio: null },
+      { imagen: "eco.jpg", nombre: "Día Bonito", precio: null },
+      { imagen: "descargar (6).jpg", nombre: "Estrella", precio: null },
+      { imagen: "descargar (8).jpg", nombre: "Aventura Chic", precio: null },
+      { imagen: "descargar (9).jpg", nombre: "Rosa Serena", precio: null },
+      { imagen: "descargar (10).jpg", nombre: "Flor de Abril", precio: null },
+      { imagen: "descargar (11).jpg", nombre: "Nube Suave", precio: null },
+      { imagen: "descargar (12).jpg", nombre: "Lazo Bello", precio: null },
+      { imagen: "Cute Pink Girls Cap.jpg", nombre: "Cielo Rosa", precio: null },
+      { imagen: "Bow Baseball Cap.jpg", nombre: "Brillo Natural", precio: null },
+      { imagen: "descargar (13).jpg", nombre: "Sol de Verano", precio: null }
     ];
 
     const carpeta = "imagenes/gorras/";
@@ -559,7 +653,9 @@
     function mostrarGorras() {
       gorras.forEach(function(gorra, indice) {
         const tarjeta = document.createElement("article");
-        tarjeta.className = "producto";
+        tarjeta.className = "categoria";
+        tarjeta.dataset.busqueda =
+          (gorra.nombre + " gorra").toLocaleLowerCase("es");
 
         const imagen = document.createElement("img");
         imagen.src = carpeta + gorra.imagen;
@@ -568,8 +664,10 @@
         imagen.addEventListener("click", function() {
           abrirFoto(imagen);
         });
+
         imagen.addEventListener("error", function() {
           imagen.alt = "No se pudo cargar: " + gorra.imagen;
+          tarjeta.style.borderColor = "#df4f8e";
           console.error("Revisa el nombre de esta imagen:", imagen.src);
         });
 
@@ -580,100 +678,115 @@
         precio.className = "precio";
         precio.textContent = formatoPrecio(gorra.precio);
 
-        const cantidad = document.createElement("div");
-        cantidad.className = "cantidad";
+        const cantidadContenedor = document.createElement("div");
+        cantidadContenedor.className = "cantidad-contenedor";
 
-        const etiqueta = document.createElement("label");
-        etiqueta.textContent = "Cantidad:";
+        const etiquetaCantidad = document.createElement("span");
+        etiquetaCantidad.className = "cantidad-titulo";
+        etiquetaCantidad.textContent = "Cantidad:";
 
-        const control = document.createElement("div");
-        control.className = "control";
+        const controlCantidad = document.createElement("div");
+        controlCantidad.className = "control-cantidad";
 
-        const menos = document.createElement("button");
-        menos.type = "button";
-        menos.textContent = "−";
-        menos.setAttribute("aria-label", "Quitar una unidad");
+        const botonMenos = document.createElement("button");
+        botonMenos.type = "button";
+        botonMenos.setAttribute("aria-label", "Quitar una unidad");
+        botonMenos.textContent = "−";
 
-        const campo = document.createElement("input");
-        campo.type = "number";
-        campo.min = "1";
-        campo.step = "1";
-        campo.value = "1";
-        campo.setAttribute("aria-label", "Cantidad de gorras");
+        const campoCantidad = document.createElement("input");
+        campoCantidad.type = "number";
+        campoCantidad.min = "1";
+        campoCantidad.step = "1";
+        campoCantidad.value = "1";
+        campoCantidad.setAttribute("aria-label", "Cantidad de gorras");
 
-        const mas = document.createElement("button");
-        mas.type = "button";
-        mas.textContent = "+";
-        mas.setAttribute("aria-label", "Agregar una unidad");
+        const botonMas = document.createElement("button");
+        botonMas.type = "button";
+        botonMas.setAttribute("aria-label", "Agregar una unidad");
+        botonMas.textContent = "+";
 
-        menos.addEventListener("click", function() {
-          campo.value = Math.max(1, (parseInt(campo.value, 10) || 1) - 1);
+        botonMenos.addEventListener("click", function() {
+          campoCantidad.value = Math.max(
+            1,
+            (parseInt(campoCantidad.value, 10) || 1) - 1
+          );
         });
 
-        mas.addEventListener("click", function() {
-          campo.value = (parseInt(campo.value, 10) || 1) + 1;
+        botonMas.addEventListener("click", function() {
+          campoCantidad.value =
+            (parseInt(campoCantidad.value, 10) || 1) + 1;
         });
 
-        campo.addEventListener("change", function() {
-          campo.value = Math.max(1, parseInt(campo.value, 10) || 1);
+        campoCantidad.addEventListener("change", function() {
+          campoCantidad.value = Math.max(
+            1,
+            parseInt(campoCantidad.value, 10) || 1
+          );
         });
 
-        control.append(menos, campo, mas);
-        cantidad.append(etiqueta, control);
+        controlCantidad.append(botonMenos, campoCantidad, botonMas);
+        cantidadContenedor.append(etiquetaCantidad, controlCantidad);
 
         const acciones = document.createElement("div");
-        acciones.className = "acciones";
+        acciones.className = "acciones-producto";
 
-        const agregar = document.createElement("button");
-        agregar.type = "button";
-        agregar.textContent = "🛒 Agregar";
-        agregar.addEventListener("click", function() {
-          agregarAlCarrito(gorra, campo.value);
+        const boton = document.createElement("button");
+        boton.type = "button";
+        boton.className = "boton-categoria";
+        boton.textContent = "🛒 Agregar";
+        boton.addEventListener("click", function() {
+          agregarAlCarrito(gorra, campoCantidad.value);
         });
 
-        const compartir = document.createElement("button");
-        compartir.type = "button";
-        compartir.className = "compartir";
-        compartir.textContent = "↗ Compartir";
-        compartir.addEventListener("click", function() {
+        const botonCompartir = document.createElement("button");
+        botonCompartir.type = "button";
+        botonCompartir.className = "boton-compartir";
+        botonCompartir.textContent = "↗ Compartir";
+        botonCompartir.addEventListener("click", function() {
           compartirGorra(gorra);
         });
 
-        acciones.append(agregar, compartir);
-        tarjeta.append(imagen, titulo, precio, cantidad, acciones);
+        acciones.append(boton, botonCompartir);
+
+        tarjeta.append(
+          imagen,
+          titulo,
+          precio,
+          cantidadContenedor,
+          acciones
+        );
+
         lista.appendChild(tarjeta);
       });
     }
 
     function agregarAlCarrito(gorra, cantidadElegida) {
-      const cantidad = Math.max(1, parseInt(cantidadElegida, 10) || 1);
+      const cantidad = Math.max(
+        1,
+        parseInt(cantidadElegida, 10) || 1
+      );
+
       let carrito = [];
 
       try {
         carrito = JSON.parse(localStorage.getItem("angelsCarrito")) || [];
-        if (!Array.isArray(carrito)) {
-          carrito = [];
-        }
+        if (!Array.isArray(carrito)) carrito = [];
       } catch (error) {
         carrito = [];
       }
 
-      const rutaImagen = carpeta + gorra.imagen;
       const existente = carrito.find(function(producto) {
-        return producto.imagen === rutaImagen ||
-          producto.nombre === gorra.nombre;
+        return producto.nombre === gorra.nombre;
       });
 
       if (existente) {
-        existente.nombre = gorra.nombre;
-        existente.imagen = rutaImagen;
         existente.cantidad = (Number(existente.cantidad) || 1) + cantidad;
       } else {
         carrito.push({
           nombre: gorra.nombre,
-          precio: gorra.precio ?? null,
-          precioPendiente: true,
-          imagen: rutaImagen,
+          precio: gorra.precio,
+          precioPendiente: gorra.precio === null,
+          imagen: carpeta + gorra.imagen,
           cantidad: cantidad
         });
       }
@@ -700,7 +813,9 @@
         if (navigator.share) {
           await navigator.share(datos);
         } else if (navigator.clipboard && navigator.clipboard.writeText) {
-          await navigator.clipboard.writeText(datos.text + "\n" + datos.url);
+          await navigator.clipboard.writeText(
+            datos.text + "\n" + datos.url
+          );
           alert("¡Enlace copiado! Ya puedes compartir " + gorra.nombre + " ✨");
         } else {
           window.prompt("Copia este enlace para compartir:", datos.url);
@@ -720,7 +835,7 @@
     function cerrarFoto(evento) {
       if (
         evento.target.id === "modalFoto" ||
-        evento.target.classList.contains("cerrar")
+        evento.target.classList.contains("cerrar-modal")
       ) {
         document.getElementById("modalFoto").classList.remove("abierto");
       }
@@ -734,5 +849,6 @@
 
     mostrarGorras();
   </script>
+
 </body>
 </html>
