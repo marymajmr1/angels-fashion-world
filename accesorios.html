@@ -122,36 +122,18 @@
       display: flex;
       width: 92%;
       max-width: 1200px;
-      min-height: 300px;
+      min-height: 250px;
       margin: 25px auto 30px;
-      justify-content: space-between;
-      align-items: stretch;
+      padding: 35px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       overflow: hidden;
       border: 1px solid var(--borde);
       border-radius: 28px;
       background: linear-gradient(135deg, #ffc5df, #ffdaea, #ffb9d5);
       box-shadow: 0 10px 30px #9a39670c;
-      text-align: left;
-    }
-
-    .portada-texto {
-      display: flex;
-      min-width: 0;
-      padding: clamp(20px, 4vw, 48px);
-      flex: 1;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-    }
-
-    .portada img {
-      display: block;
-      width: 46%;
-      min-width: 0;
-      min-height: 300px;
-      max-height: 430px;
-      object-fit: cover;
-      object-position: center;
+      text-align: center;
     }
 
     .mini {
@@ -388,53 +370,8 @@
 
       .portada {
         width: 94%;
-        min-height: 230px;
-      }
-
-      .portada-texto {
-        padding: 16px 12px;
-        flex: 1.1;
-      }
-
-      .portada img {
-        width: 42%;
-        min-height: 230px;
-        max-height: 320px;
-        flex: 0.9;
-      }
-
-      .portada .mini {
-        font-size: 9px;
-        letter-spacing: 1px;
-      }
-
-      .portada .alas {
-        margin-top: 10px;
-        font-size: 19px;
-      }
-
-      .portada h1 {
-        font-size: clamp(27px, 7vw, 35px);
-      }
-
-      .portada h1 span {
-        font-size: 0.33em;
-        letter-spacing: 0.12em;
-      }
-
-      .portada .frase {
-        font-size: 14px;
-      }
-
-      .portada .boton {
-        margin-top: 13px;
-        padding: 10px 16px;
-        font-size: 13px;
-      }
-
-      .portada .adorno {
-        font-size: 12px;
-        letter-spacing: 4px;
+        min-height: 220px;
+        padding: 22px 12px;
       }
 
       .buscador {
@@ -472,20 +409,8 @@
     }
 
     @media (max-width: 360px) {
-      .portada-texto {
-        padding: 12px 8px;
-      }
-
-      .portada h1 {
-        font-size: 25px;
-      }
-
-      .portada .frase {
-        font-size: 12px;
-      }
-
-      .portada img {
-        min-height: 220px;
+      .portada {
+        padding: 18px 8px;
       }
 
       .categoria img {
@@ -516,19 +441,12 @@
   </nav>
 
   <header class="portada">
-    <div class="portada-texto">
-      <div class="mini">✧ DETALLES QUE COMPLETAN TU ESTILO ✧</div>
-      <div class="alas">🪽 ✦</div>
-      <h1>Angel's<span>FASHION WORLD</span></h1>
-      <p class="frase">Encuentra tus accesorios favoritos.</p>
-      <a class="boton" href="#categorias">Explorar ✦</a>
-      <div class="adorno">✧ ✦ ✧</div>
-    </div>
-
-    <img
-      src="imagenes/accesorios/descargar (1).jpg"
-      alt="Portada de accesorios"
-    >
+    <div class="mini">✧ DETALLES QUE COMPLETAN TU ESTILO ✧</div>
+    <div class="alas">🪽 ✦</div>
+    <h1>Angel's<span>FASHION WORLD</span></h1>
+    <p class="frase">Encuentra tus accesorios favoritos.</p>
+    <a class="boton" href="#categorias">Explorar ✦</a>
+    <div class="adorno">✧ ✦ ✧</div>
   </header>
 
   <section class="buscador" id="buscar">
