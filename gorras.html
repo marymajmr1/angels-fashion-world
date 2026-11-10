@@ -1,1011 +1,738 @@
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Gorras | Angel's Fashion World</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background:
-                radial-gradient(circle at top left, #ffffff 0%, transparent 35%),
-                radial-gradient(circle at bottom right, #ffe1ef 0%, transparent 40%),
-                #fff0f6;
-            color: #6b4055;
-            min-height: 100vh;
-        }
-
-        /* ESTRELLAS */
-
-        .estrella1,
-        .estrella2,
-        .estrella3,
-        .estrella4 {
-            position: fixed;
-            font-size: 28px;
-            color: #d85b91;
-            z-index: 0;
-            pointer-events: none;
-            animation: flotar 3s ease-in-out infinite;
-        }
-
-        .estrella1 {
-            top: 120px;
-            left: 4%;
-        }
-
-        .estrella2 {
-            top: 280px;
-            right: 5%;
-            animation-delay: .7s;
-        }
-
-        .estrella3 {
-            bottom: 180px;
-            left: 6%;
-            animation-delay: 1.3s;
-        }
-
-        .estrella4 {
-            bottom: 80px;
-            right: 7%;
-            animation-delay: 2s;
-        }
-
-        @keyframes flotar {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(-12px) rotate(12deg);
-            }
-        }
-
-        /* MENÚ */
-
-        .menu {
-            width: 92%;
-            max-width: 1200px;
-            margin: 25px auto 0;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-
-            background: rgba(255, 255, 255, 0.92);
-            padding: 14px 18px;
-
-            border-radius: 25px;
-
-            box-shadow:
-                0 8px 25px rgba(216, 91, 145, 0.15);
-
-            border: 1px solid #f5d3e2;
-
-            position: relative;
-            z-index: 10;
-        }
-
-        .menu a {
-            text-decoration: none;
-            color: #6b4055;
-            font-weight: bold;
-
-            padding: 10px 16px;
-            border-radius: 20px;
-
-            transition: .3s ease;
-        }
-
-        .menu a:hover {
-            background: #ffe0ed;
-            color: #d85b91;
-            transform: translateY(-2px);
-        }
-
-        /* PRESENTACIÓN */
-
-        header {
-            width: 92%;
-            max-width: 1000px;
-
-            margin: 35px auto 45px;
-
-            text-align: center;
-
-            background: rgba(255, 255, 255, 0.94);
-
-            padding: 35px 25px;
-
-            border-radius: 30px;
-
-            box-shadow:
-                0 12px 35px rgba(216, 91, 145, 0.18);
-
-            border: 1px solid #f5d3e2;
-
-            position: relative;
-            z-index: 2;
-        }
-
-        .alas-con-estrella {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-
-            margin-bottom: 5px;
-        }
-
-        .alas {
-            font-size: 48px;
-            display: inline-block;
-            animation: alasMovimiento 3s ease-in-out infinite;
-        }
-
-        .estrella-alas {
-            font-size: 25px;
-            color: #d85b91;
-            animation: estrellaMovimiento 2s ease-in-out infinite;
-        }
-
-        @keyframes alasMovimiento {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(-7px) rotate(-4deg);
-            }
-        }
-
-        @keyframes estrellaMovimiento {
-            0%, 100% {
-                transform: scale(1) rotate(0deg);
-            }
-
-            50% {
-                transform: scale(1.25) rotate(15deg);
-            }
-        }
-
-        header h1 {
-            color: #d85b91;
-            font-size: 42px;
-            margin: 5px 0 10px;
-        }
-
-        header p {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        .volver {
-            display: inline-block;
-            text-decoration: none;
-            background: #d85b91;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: .3s ease;
-        }
-
-        .volver:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 7px 18px rgba(216, 91, 145, .25);
-        }
-
-        /* PRODUCTOS */
-
-        .productos {
-            width: 92%;
-            max-width: 1200px;
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 28px;
-
-            position: relative;
-            z-index: 2;
-        }
-
-        .producto {
-            background: white;
-            border-radius: 25px;
-            padding: 18px;
-            text-align: center;
-
-            box-shadow:
-                0 10px 25px rgba(107, 64, 85, 0.12);
-
-            border: 1px solid #f5d3e2;
-
-            transition: .3s ease;
-        }
-
-        .producto:hover {
-            transform: translateY(-7px);
-
-            box-shadow:
-                0 15px 30px rgba(216, 91, 145, 0.18);
-        }
-
-        .producto img {
-            width: 100%;
-            height: 330px;
-
-            object-fit: cover;
-
-            border-radius: 20px;
-
-            cursor: pointer;
-
-            display: block;
-
-            transition: .3s ease;
-        }
-
-        .producto img:hover {
-            transform: scale(1.02);
-        }
-
-        .producto h2 {
-            color: #d85b91;
-            font-size: 21px;
-            margin: 18px 5px 8px;
-        }
-
-        .producto p {
-            font-size: 15px;
-            line-height: 1.5;
-            margin: 0 5px 12px;
-        }
-
-        .precio {
-            color: #6b4055;
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .boton-carrito {
-            display: inline-block;
-            border: none;
-
-            background: #d85b91;
-            color: white;
-
-            padding: 11px 18px;
-
-            border-radius: 22px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-            transition: .3s ease;
-        }
-
-        .boton-carrito:hover {
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 6px 15px rgba(216, 91, 145, .25);
-        }
-/* CARRITO */
-
-        .carrito-flotante {
-            position: fixed;
-
-            right: 20px;
-            bottom: 20px;
-
-            z-index: 100;
-
-            text-decoration: none;
-
-            background: white;
-            color: #d85b91;
-
-            padding: 14px 20px;
-
-            border-radius: 30px;
-
-            font-weight: bold;
-
-            box-shadow:
-                0 8px 25px rgba(107, 64, 85, 0.2);
-
-            border: 1px solid #f5d3e2;
-
-            transition: .3s ease;
-        }
-
-        .carrito-flotante:hover {
-            transform: translateY(-4px);
-        }
-
-        .contador-carrito {
-            display: inline-flex;
-
-            justify-content: center;
-            align-items: center;
-
-            min-width: 24px;
-            height: 24px;
-
-            margin-left: 5px;
-
-            padding: 0 6px;
-
-            border-radius: 50%;
-
-            background: #d85b91;
-            color: white;
-
-            font-size: 13px;
-        }
-
-        /* MODAL */
-
-        .modal {
-            display: none;
-
-            position: fixed;
-
-            inset: 0;
-
-            z-index: 200;
-
-            background: rgba(60, 30, 45, .75);
-
-            justify-content: center;
-            align-items: center;
-
-            padding: 10px;
-        }
-
-        .modal.activo {
-            display: flex;
-        }
-
-        .modal-contenido {
-            width: min(900px, 95%);
-
-            max-height: 95vh;
-
-            overflow-y: auto;
-
-            background: white;
-
-            border-radius: 25px;
-
-            padding: 20px;
-
-            text-align: center;
-
-            position: relative;
-        }
-
-        .modal-contenido img {
-            display: block;
-
-            width: auto;
-            height: auto;
-
-            max-width: 100%;
-            max-height: 75vh;
-
-            object-fit: contain;
-
-            border-radius: 18px;
-
-            margin: 0 auto;
-        }
-
-        .cerrar {
-            position: absolute;
-
-            top: 10px;
-            right: 15px;
-
-            width: 40px;
-            height: 40px;
-
-            border: none;
-
-            border-radius: 50%;
-
-            background: #d85b91;
-            color: white;
-
-            font-size: 24px;
-
-            cursor: pointer;
-
-            z-index: 5;
-        }
-
-        .modal h2 {
-            color: #d85b91;
-            margin: 15px 0 8px;
-        }
-
-        .modal p {
-            margin-bottom: 10px;
-        }
-
-        /* FOOTER */
-
-        footer {
-            text-align: center;
-
-            margin-top: 70px;
-
-            padding: 30px 20px;
-
-            background: white;
-
-            border-top: 1px solid #f5d3e2;
-
-            color: #6b4055;
-
-            line-height: 1.8;
-        }
-
-        /* RESPONSIVE */
-
-        @media (max-width: 850px) {
-
-            .productos {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .producto img {
-                height: 300px;
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            .menu {
-                width: 94%;
-                gap: 5px;
-                padding: 12px 8px;
-            }
-
-            .menu a {
-                padding: 8px 10px;
-                font-size: 14px;
-            }
-
-            header {
-                margin-top: 25px;
-                padding: 28px 18px;
-            }
-
-            header h1 {
-                font-size: 35px;
-            }
-
-            .productos {
-                grid-template-columns: 1fr;
-            }
-
-            .producto img {
-                height: auto;
-                max-height: 500px;
-            }
-
-            .modal {
-                padding: 5px;
-            }
-
-            .modal-contenido {
-                width: 98%;
-                max-height: 96vh;
-                padding: 15px;
-            }
-
-            .modal-contenido img {
-                max-width: 100%;
-                max-height: 65vh;
-                width: auto;
-                height: auto;
-                object-fit: contain;
-            }
-
-            .carrito-flotante {
-                right: 12px;
-                bottom: 12px;
-                padding: 12px 15px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff1f7">
+  <title>Gorras | Angel's Fashion World</title>
+
+  <style>
+    :root {
+      --rosa: #df4f8e;
+      --oscuro: #a52f68;
+      --texto: #68495a;
+      --dorado: #c8a96b;
+      --borde: #f4cfe0;
+      --fondo: #fff8fc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding-bottom: 80px;
+      font-family: Arial, sans-serif;
+      color: var(--texto);
+      background:
+        radial-gradient(circle at top left, #ffe1ee, transparent 28%),
+        var(--fondo);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      width: 94%;
+      max-width: 1200px;
+      margin: 16px auto;
+      padding: 10px;
+      border: 1px solid var(--borde);
+      border-radius: 20px;
+      background: #ffffffed;
+      box-shadow: 0 5px 20px #d85b9112;
+    }
+
+    .menu a {
+      padding: 10px 13px;
+      border-radius: 25px;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .menu a:hover,
+    .menu .activo {
+      color: #fff;
+      background: var(--rosa);
+    }
+
+    .portada {
+      display: flex;
+      width: 92%;
+      max-width: 1200px;
+      min-height: 320px;
+      margin: 25px auto 30px;
+      overflow: hidden;
+      border: 1px solid var(--borde);
+      border-radius: 28px;
+      background: linear-gradient(135deg, #ffc5df, #ffdaea, #ffb9d5);
+      box-shadow: 0 10px 30px #9a39670c;
+    }
+
+    .portada-texto {
+      display: flex;
+      min-width: 0;
+      padding: clamp(20px, 4vw, 48px);
+      flex: 1;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .portada img {
+      display: block;
+      width: 50%;
+      min-width: 0;
+      min-height: 320px;
+      max-height: 420px;
+      flex: 1;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .volver {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 11px 24px;
+      border: 1px solid var(--rosa);
+      border-radius: 25px;
+      color: var(--oscuro);
+      background: #fff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .volver:hover {
+      color: #fff;
+      background: var(--rosa);
+    }
+
+    .mini {
+      color: var(--dorado);
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .alas {
+      margin-top: 15px;
+      color: var(--dorado);
+      font-size: 23px;
+    }
+
+    .portada h1 {
+      margin: 12px 0;
+      color: var(--oscuro);
+      font: 400 clamp(34px, 5vw, 58px) / 1.1 Georgia, serif;
+    }
+
+    .portada h1 span {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.35em;
+      letter-spacing: 0.2em;
+    }
+
+    .frase {
+      margin: 5px 0;
+      color: #9c5276;
+      font: italic clamp(16px, 2vw, 22px) Georgia, serif;
+      line-height: 1.5;
+    }
+
+    .adorno {
+      margin-top: 16px;
+      color: var(--dorado);
+      letter-spacing: 7px;
+    }
+
+    .titulo {
+      margin: 40px 15px 30px;
+      text-align: center;
+      scroll-margin-top: 20px;
+    }
+
+    .titulo h2 {
+      margin: 12px 0;
+      color: var(--oscuro);
+      font: 400 clamp(28px, 4vw, 42px) Georgia, serif;
+    }
+
+    .titulo p {
+      line-height: 1.7;
+    }
+
+    .productos {
+      display: grid;
+      width: 92%;
+      max-width: 1200px;
+      margin: 0 auto 45px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .producto {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--borde);
+      border-radius: 23px;
+      background: #fff;
+      box-shadow: 0 7px 22px #d85b9112;
+      text-align: center;
+    }
+
+    .producto img {
+      display: block;
+      width: 100%;
+      height: 290px;
+      background: #fff0f6;
+      object-fit: cover;
+      cursor: zoom-in;
+    }
+
+    .producto h3 {
+      margin: 18px 8px 8px;
+      color: var(--oscuro);
+      font: 400 21px Georgia, serif;
+    }
+
+    .precio {
+      margin: 5px 8px 12px;
+      color: var(--oscuro);
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .cantidad {
+      margin: 0 15px 15px;
+      text-align: left;
+    }
+
+    .cantidad label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .control {
+      display: inline-flex;
+      align-items: center;
+      overflow: hidden;
+      border: 1px solid var(--borde);
+      border-radius: 25px;
+    }
+
+    .control button {
+      width: 38px;
+      height: 36px;
+      border: 0;
+      color: var(--oscuro);
+      background: #fff3f8;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .control input {
+      width: 42px;
+      border: 0;
+      outline: 0;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .acciones {
+      display: flex;
+      gap: 8px;
+      margin: auto 12px 18px;
+    }
+
+    .acciones button {
+      min-width: 0;
+      margin: 0;
+      padding: 12px 10px;
+      flex: 1;
+      border: 1px solid var(--rosa);
+      border-radius: 30px;
+      color: #fff;
+      background: var(--rosa);
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .acciones .compartir {
+      border-color: var(--borde);
+      color: var(--oscuro);
+      background: #fff;
+    }
+
+    .acciones button:hover {
+      filter: brightness(0.95);
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      display: none;
+      padding: 20px;
+      align-items: center;
+      justify-content: center;
+      background: #2d1725e8;
+    }
+
+    .modal.abierto {
+      display: flex;
+    }
+
+    .modal img {
+      max-width: 95%;
+      max-height: 82vh;
+      border-radius: 15px;
+      object-fit: contain;
+    }
+
+    .cerrar {
+      position: absolute;
+      top: 12px;
+      right: 22px;
+      border: 0;
+      color: #fff;
+      background: transparent;
+      cursor: pointer;
+      font-size: 40px;
+    }
+
+    .carrito {
+      position: fixed;
+      z-index: 15;
+      right: 20px;
+      bottom: 20px;
+      display: grid;
+      width: 58px;
+      height: 58px;
+      place-items: center;
+      border: 0;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--rosa);
+      box-shadow: 0 8px 24px #a52f6845;
+      font-size: 27px;
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 15px 20px 25px;
+      color: #87556f;
+      font-size: 13px;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    @media (max-width: 850px) {
+      .productos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .producto img {
+        height: 260px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .menu {
+        width: 96%;
+        gap: 3px;
+      }
+
+      .menu a {
+        padding: 8px 9px;
+        font-size: 12px;
+      }
+
+      .portada {
+        width: 94%;
+        min-height: 250px;
+      }
+
+      .portada-texto {
+        padding: 16px 12px;
+        flex: 1.1;
+      }
+
+      .portada img {
+        width: 42%;
+        min-height: 250px;
+        max-height: 320px;
+        flex: 0.9;
+      }
+
+      .portada .mini {
+        font-size: 9px;
+        letter-spacing: 1px;
+      }
+
+      .portada h1 {
+        font-size: clamp(27px, 7vw, 35px);
+      }
+
+      .portada h1 span {
+        font-size: 0.33em;
+        letter-spacing: 0.12em;
+      }
+
+      .portada .frase {
+        font-size: 14px;
+      }
+
+      .portada .adorno {
+        font-size: 12px;
+        letter-spacing: 4px;
+      }
+
+      .productos {
+        width: 92%;
+        gap: 12px;
+      }
+
+      .producto img {
+        height: 205px;
+      }
+
+      .producto h3 {
+        margin: 15px 5px 8px;
+        font-size: 17px;
+      }
+
+      .precio {
+        font-size: 16px;
+      }
+
+      .acciones {
+        margin: auto 7px 15px;
+        gap: 5px;
+      }
+
+      .acciones button {
+        padding: 11px 7px;
+        font-size: 13px;
+      }
+
+      .carrito {
+        right: 14px;
+        bottom: 14px;
+        width: 52px;
+        height: 52px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .portada-texto {
+        padding: 12px 8px;
+      }
+
+      .portada h1 {
+        font-size: 25px;
+      }
+
+      .portada .frase {
+        font-size: 12px;
+      }
+
+      .portada img {
+        min-height: 230px;
+      }
+
+      .producto img {
+        height: 175px;
+      }
+
+      .acciones button {
+        font-size: 12px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-
-    <!-- ESTRELLAS -->
-
-    <div class="estrella1">✦</div>
-    <div class="estrella2">✧</div>
-    <div class="estrella3">✦</div>
-    <div class="estrella4">✧</div>
-
-
-    <!-- MENÚ -->
-
-    <nav class="menu">
-
-        <a href="index.html">Inicio</a>
-        <a href="moda.html">Moda</a>
-        <a href="belleza.html">Belleza</a>
-        <a href="skincare.html">Skin care</a>
-        <a href="accesorios.html">Accesorios</a>
-        <a href="sobre-nosotros.html">Sobre nosotros</a>
-        <a href="index.html#contactanos">Contáctanos</a>
-
-    </nav>
-
-
-    <!-- PRESENTACIÓN -->
-
-    <header>
-
-        <div class="alas-con-estrella">
-
-            <span class="alas">🪽</span>
-
-            <span class="estrella-alas">✦</span>
-
-        </div>
-
-        <h1>Gorras</h1>
-
-        <p>
-            Descubre accesorios hermosos para completar tu estilo. 💕
-        </p>
-
-        <a href="accesorios.html" class="volver">
-            ← Volver a Accesorios
-        </a>
-
-    </header>
-
-
-    <!-- PRODUCTOS -->
-
-    <main class="productos">
-
-
-        <!-- 1 -->
-
-        <article class="producto">
-
-            <img
-                src="imagenes/gorras/Screenshot_2026-09-01-11-49-43-972_com.pinterest~2.jpg"
-                alt="Linda gorra"
-                onclick="abrirFoto(this)"
-            >
-
-            <h2>
-                Linda gorra
-            </h2>
-
-            <div class="precio">
-                $89.000
-            </div>
-
-            <p>
-                Una linda gorra para complementar
-                tus looks favoritos.
-            </p>
-
-            <button
-                class="boton-carrito"
-                onclick="agregarProducto(this)"
-            >
-                🛒 Agregar al carrito
-            </button>
-
-        </article>
-
-
-        <!-- 2 -->
-
-        <article class="producto">
-
-            <img
-                src="imagenes/gorras/Screenshot_2026-09-01-11-49-34-742_com.pinterest~2.jpg"
-                alt="Gorrita elegante"
-                onclick="abrirFoto(this)"
-            >
-
-            <h2>
-                Gorrita elegante
-            </h2>
-
-            <div class="precio">
-                $99.000
-            </div>
-
-            <p>
-                Una gorrita elegante para darle
-                un toque especial a tu estilo.
-            </p>
-
-            <button
-                class="boton-carrito"
-                onclick="agregarProducto(this)"
-            >
-                🛒 Agregar al carrito
-            </button>
-
-        </article>
-
-
-        <!-- 3 -->
-
-        <article class="producto">
-
-            <img
-                src="imagenes/gorras/Screenshot_2026-09-01-11-49-54-945_com.pinterest~2.jpg"
-                alt="Preciosa gorra elegante"
-                onclick="abrirFoto(this)"
-            >
-
-            <h2>
-                Preciosa gorra elegante
-            </h2>
-
-            <div class="precio">
-                $87.000
-            </div>
-
-            <p>
-                Una preciosa gorra elegante para
-                completar tus outfits.
-            </p>
-
-            <button
-                class="boton-carrito"
-                onclick="agregarProducto(this)"
-            >
-                🛒 Agregar al carrito
-            </button>
-
-        </article>
-
-
-        <!-- 4 -->
-
-        <article class="producto">
-
-            <img
-                src="imagenes/gorras/Screenshot_2026-09-01-11-50-14-352_com.pinterest~2.jpg"
-                alt="Gorra linda"
-                onclick="abrirFoto(this)"
-            >
-
-            <h2>
-                Gorra linda
-            </h2>
-
-            <div class="precio">
-                $79.000
-            </div>
-
-            <p>
-                Belleza de gorra para darle un toque
-                bonito y especial a tu estilo.
-            </p>
-
-            <button
-                class="boton-carrito"
-                onclick="agregarProducto(this)"
-            >
-                🛒 Agregar al carrito
-            </button>
-
-        </article>
-
-
-    </main>
-
-
-    <!-- CARRITO FLOTANTE -->
-
-    <a href="carrito.html" class="carrito-flotante">
-
-        🛒 Ver carrito
-
-        <span
-            class="contador-carrito"
-            id="contador-carrito"
-        >
-            0
-        </span>
-
-    </a>
-
-
-    <!-- MODAL -->
-
-    <div
-        class="modal"
-        id="modal"
-        onclick="cerrarFoto(event)"
-    >
-
-        <div
-            class="modal-contenido"
-            onclick="event.stopPropagation()"
-        >
-
-            <button
-                class="cerrar"
-                onclick="cerrarFoto()"
-            >
-                ×
-            </button>
-
-            <img
-                id="imagenModal"
-                src=""
-                alt=""
-            >
-
-            <h2 id="nombreModal"></h2>
-
-            <p id="descripcionModal"></p>
-
-            <div
-                class="precio"
-                id="precioModal"
-            ></div>
-
-            <button
-                class="boton-carrito"
-                id="botonModal"
-            >
-                🛒 Agregar al carrito
-            </button>
-
-        </div>
-
+  <nav class="menu" aria-label="Menú principal">
+    <a href="index.html">Inicio</a>
+    <a href="moda.html">Moda</a>
+    <a href="belleza.html">Belleza</a>
+    <a class="activo" href="#categorias" aria-current="page">Gorras</a>
+    <a href="accesorios.html">Accesorios</a>
+  </nav>
+
+  <header class="portada">
+    <div class="portada-texto">
+      <a class="volver" href="accesorios.html">← Volver</a>
+      <div class="mini">✧ TU ESTILO, TU ESENCIA ✧</div>
+      <div class="alas">🪽 ✦</div>
+      <h1>Angel's<span>FASHION WORLD</span></h1>
+      <p class="frase">Gorras para completar tu estilo.</p>
+      <div class="adorno">✧ ✦ ✧</div>
     </div>
 
+    <img
+      src="imagenes/gorras/descargar (1).jpg"
+      alt="Portada de gorras de Angel's Fashion World"
+    >
+  </header>
 
-    <!-- FOOTER -->
+  <section class="titulo" id="categorias">
+    <div class="mini">✧ DESCUBRE TUS FAVORITAS ✧</div>
+    <h2>Nuestra colección de gorras</h2>
+    <p>Elige tus favoritos y la cantidad que deseas agregar al carrito.</p>
+    <div class="adorno">✧ ✦ ✧</div>
+  </section>
 
-    <footer>
+  <main class="productos" id="listaGorras"></main>
 
-        <p>
-            🪽 Angel's Fashion World 🪽
-        </p>
+  <div class="modal" id="modalFoto" onclick="cerrarFoto(event)">
+    <button
+      class="cerrar"
+      type="button"
+      aria-label="Cerrar imagen"
+      onclick="cerrarFoto(event)"
+    >×</button>
+    <img id="fotoAmpliada" src="" alt="Gorra ampliada">
+  </div>
 
-        <p>
-            Moda • Belleza • Skin Care • Accesorios
-        </p>
+  <footer>
+    <strong>Angel's Fashion World 🪽</strong><br>
+    Accesorios · Gorras<br>
+    <span style="color: var(--dorado);">✧ Hecho con cariño ✦</span>
+  </footer>
 
-    </footer>
+  <a class="carrito" href="carrito.html" aria-label="Ver carrito" title="Ver carrito">
+    🛒
+  </a>
 
+  <script>
+    const gorras = [
+      { imagen: "descargar (1).jpg", nombre: "Dulce Encanto" },
+      { imagen: "descargar (2).jpg", nombre: "Brisa Bonita" },
+      { imagen: "descargar (3).jpg", nombre: "Luna Chic" },
+      { imagen: "𝓑𝓮𝓵𝓵_𝔃𝓮𝓾𝓼𝓬𝓱.jpg", nombre: "Sueño Rosa" },
+      { imagen: "Mantyhose Çorap.jpg", nombre: "Estilo Soñado" },
+      { imagen: "descargar (4).jpg", nombre: "Bella Luz" },
+      {
+        imagen: "Sombrero de paja con diseño de lazo _ SHEIN USA.jpg",
+        nombre: "Toque Especial"
+      },
+      { imagen: "descargar (5).jpg", nombre: "Encanto Sutil" },
+      { imagen: "eco.jpg", nombre: "Día Bonito" },
+      { imagen: "descargar (6).jpg", nombre: "Estrella" },
+      { imagen: "descargar (8).jpg", nombre: "Aventura Chic" },
+      { imagen: "descargar (9).jpg", nombre: "Rosa Serena" },
+      { imagen: "descargar (10).jpg", nombre: "Flor de Abril" },
+      { imagen: "descargar (11).jpg", nombre: "Nube Suave" },
+      { imagen: "descargar (12).jpg", nombre: "Lazo Bello" },
+      { imagen: "Cute Pink Girls Cap.jpg", nombre: "Cielo Rosa" },
+      { imagen: "Bow Baseball Cap.jpg", nombre: "Brillo Natural" },
+      { imagen: "descargar (13).jpg", nombre: "Sol de Verano" }
+    ];
 
-    <!-- JAVASCRIPT -->
+    const carpeta = "imagenes/gorras/";
+    const lista = document.getElementById("listaGorras");
 
-    <script>
+    function formatoPrecio(precio) {
+      if (precio === null || precio === undefined) {
+        return "Precio por confirmar";
+      }
 
-        function abrirFoto(imagen) {
+      return "$" + Number(precio).toLocaleString("es-CO") + " COP";
+    }
 
-            const modal =
-                document.getElementById("modal");
+    function mostrarGorras() {
+      gorras.forEach(function(gorra, indice) {
+        const tarjeta = document.createElement("article");
+        tarjeta.className = "producto";
 
-            const imagenModal =
-                document.getElementById("imagenModal");
+        const imagen = document.createElement("img");
+        imagen.src = carpeta + gorra.imagen;
+        imagen.alt = gorra.nombre;
+        imagen.loading = indice < 6 ? "eager" : "lazy";
+        imagen.addEventListener("click", function() {
+          abrirFoto(imagen);
+        });
+        imagen.addEventListener("error", function() {
+          imagen.alt = "No se pudo cargar: " + gorra.imagen;
+          console.error("Revisa el nombre de esta imagen:", imagen.src);
+        });
 
-            const nombreModal =
-                document.getElementById("nombreModal");
+        const titulo = document.createElement("h3");
+        titulo.textContent = gorra.nombre;
 
-            const descripcionModal =
-                document.getElementById("descripcionModal");
+        const precio = document.createElement("p");
+        precio.className = "precio";
+        precio.textContent = formatoPrecio(gorra.precio);
 
-            const precioModal =
-                document.getElementById("precioModal");
+        const cantidad = document.createElement("div");
+        cantidad.className = "cantidad";
 
-            const botonModal =
-                document.getElementById("botonModal");
+        const etiqueta = document.createElement("label");
+        etiqueta.textContent = "Cantidad:";
 
-            const producto =
-                imagen.closest(".producto");
+        const control = document.createElement("div");
+        control.className = "control";
 
-            const nombre =
-                producto
-                    .querySelector("h2")
-                    .textContent
-                    .trim();
+        const menos = document.createElement("button");
+        menos.type = "button";
+        menos.textContent = "−";
+        menos.setAttribute("aria-label", "Quitar una unidad");
 
-            const descripcion =
-                producto
-                    .querySelector("p")
-                    .textContent
-                    .trim();
+        const campo = document.createElement("input");
+        campo.type = "number";
+        campo.min = "1";
+        campo.step = "1";
+        campo.value = "1";
+        campo.setAttribute("aria-label", "Cantidad de gorras");
 
-            const precioTexto =
-                producto
-                    .querySelector(".precio")
-                    .textContent
-                    .trim();
+        const mas = document.createElement("button");
+        mas.type = "button";
+        mas.textContent = "+";
+        mas.setAttribute("aria-label", "Agregar una unidad");
 
-            imagenModal.src =
-                imagen.src;
+        menos.addEventListener("click", function() {
+          campo.value = Math.max(1, (parseInt(campo.value, 10) || 1) - 1);
+        });
 
-            imagenModal.alt =
-                imagen.alt;
+        mas.addEventListener("click", function() {
+          campo.value = (parseInt(campo.value, 10) || 1) + 1;
+        });
 
-            nombreModal.textContent =
-                nombre;
+        campo.addEventListener("change", function() {
+          campo.value = Math.max(1, parseInt(campo.value, 10) || 1);
+        });
 
-            descripcionModal.textContent =
-                descripcion;
+        control.append(menos, campo, mas);
+        cantidad.append(etiqueta, control);
 
-            precioModal.textContent =
-                precioTexto;
+        const acciones = document.createElement("div");
+        acciones.className = "acciones";
 
-            const precioNumero =
-                parseInt(
-                    precioTexto.replace(/\D/g, ""),
-                    10
-                );
+        const agregar = document.createElement("button");
+        agregar.type = "button";
+        agregar.textContent = "🛒 Agregar";
+        agregar.addEventListener("click", function() {
+          agregarAlCarrito(gorra, campo.value);
+        });
 
-            botonModal.onclick = function () {
+        const compartir = document.createElement("button");
+        compartir.type = "button";
+        compartir.className = "compartir";
+        compartir.textContent = "↗ Compartir";
+        compartir.addEventListener("click", function() {
+          compartirGorra(gorra);
+        });
 
-                agregarAlCarrito(
-                    nombre,
-                    precioNumero
-                );
+        acciones.append(agregar, compartir);
+        tarjeta.append(imagen, titulo, precio, cantidad, acciones);
+        lista.appendChild(tarjeta);
+      });
+    }
 
-                cerrarFoto();
-            };
+    function agregarAlCarrito(gorra, cantidadElegida) {
+      const cantidad = Math.max(1, parseInt(cantidadElegida, 10) || 1);
+      let carrito = [];
 
-            modal.classList.add("activo");
+      try {
+        carrito = JSON.parse(localStorage.getItem("angelsCarrito")) || [];
+        if (!Array.isArray(carrito)) {
+          carrito = [];
         }
+      } catch (error) {
+        carrito = [];
+      }
 
+      const rutaImagen = carpeta + gorra.imagen;
+      const existente = carrito.find(function(producto) {
+        return producto.imagen === rutaImagen ||
+          producto.nombre === gorra.nombre;
+      });
 
-        function cerrarFoto(event) {
+      if (existente) {
+        existente.nombre = gorra.nombre;
+        existente.imagen = rutaImagen;
+        existente.cantidad = (Number(existente.cantidad) || 1) + cantidad;
+      } else {
+        carrito.push({
+          nombre: gorra.nombre,
+          precio: gorra.precio ?? null,
+          precioPendiente: true,
+          imagen: rutaImagen,
+          cantidad: cantidad
+        });
+      }
 
-            if (
-                !event ||
-                event.target ===
-                document.getElementById("modal") ||
-                event.target.classList.contains("cerrar")
-            ) {
+      try {
+        localStorage.setItem("angelsCarrito", JSON.stringify(carrito));
+        alert(
+          "💕 Agregaste " + cantidad + " unidad(es) de " +
+          gorra.nombre + " al carrito."
+        );
+      } catch (error) {
+        alert("No pudimos guardar el producto. Revisa el almacenamiento del navegador.");
+      }
+    }
 
-                document
-                    .getElementById("modal")
-                    .classList.remove("activo");
-            }
+    async function compartirGorra(gorra) {
+      const datos = {
+        title: gorra.nombre + " | Angel's Fashion World",
+        text: gorra.nombre + " — " + formatoPrecio(gorra.precio),
+        url: window.location.href.split("#")[0] + "#categorias"
+      };
+
+      try {
+        if (navigator.share) {
+          await navigator.share(datos);
+        } else if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(datos.text + "\n" + datos.url);
+          alert("¡Enlace copiado! Ya puedes compartir " + gorra.nombre + " ✨");
+        } else {
+          window.prompt("Copia este enlace para compartir:", datos.url);
         }
-
-
-        function agregarProducto(boton) {
-
-            const producto =
-                boton.closest(".producto");
-
-            const nombre =
-                producto
-                    .querySelector("h2")
-                    .textContent
-                    .trim();
-
-            const precioTexto =
-                producto
-                    .querySelector(".precio")
-                    .textContent
-                    .trim();
-
-            const precio =
-                parseInt(
-                    precioTexto.replace(/\D/g, ""),
-                    10
-                );
-
-            agregarAlCarrito(
-                nombre,
-                precio
-            );
+      } catch (error) {
+        if (error.name !== "AbortError") {
+          alert("No se pudo compartir el enlace.");
         }
+      }
+    }
 
+    function abrirFoto(imagen) {
+      document.getElementById("fotoAmpliada").src = imagen.src;
+      document.getElementById("modalFoto").classList.add("abierto");
+    }
 
-        function agregarAlCarrito(
-            nombre,
-            precio
-        ) {
+    function cerrarFoto(evento) {
+      if (
+        evento.target.id === "modalFoto" ||
+        evento.target.classList.contains("cerrar")
+      ) {
+        document.getElementById("modalFoto").classList.remove("abierto");
+      }
+    }
 
-            let carrito =
-                JSON.parse(
-                    localStorage.getItem("carrito")
-                ) || [];
+    document.addEventListener("keydown", function(evento) {
+      if (evento.key === "Escape") {
+        document.getElementById("modalFoto").classList.remove("abierto");
+      }
+    });
 
-            const productoExistente =
-                carrito.find(
-                    producto =>
-                        producto.nombre === nombre &&
-                        producto.precio === precio
-                );
-
-            if (productoExistente) {
-
-                productoExistente.cantidad++;
-
-            } else {
-
-                carrito.push({
-
-                    nombre: nombre,
-
-                    precio: precio,
-
-                    cantidad: 1
-
-                });
-            }
-
-            localStorage.setItem(
-                "carrito",
-                JSON.stringify(carrito)
-            );
-
-            actualizarContador();
-        }
-
-
-        function actualizarContador() {
-
-            const carrito =
-                JSON.parse(
-                    localStorage.getItem("carrito")
-                ) || [];
-
-            const cantidad =
-                carrito.reduce(
-                    (total, producto) =>
-                        total +
-                        (producto.cantidad || 1),
-                    0
-                );
-
-            document
-                .getElementById("contador-carrito")
-                .textContent = cantidad;
-        }
-
-
-        actualizarContador();
-
-    </script>
-
+    mostrarGorras();
+  </script>
 </body>
-
 </html>
