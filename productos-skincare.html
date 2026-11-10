@@ -403,7 +403,7 @@
       background: #fff3f8;
     }
 
-    /* Visor de imagen: sin marco blanco */
+    /* Visor de imagen */
     .modal {
       position: fixed;
       inset: 0;
@@ -437,7 +437,7 @@
       font-size: 40px;
     }
 
-    /* Carrito flotante: sin borde blanco */
+    /* Carrito flotante */
     .carrito-flotante {
       position: fixed;
       z-index: 1500;
@@ -903,18 +903,24 @@
         carrito = [];
       }
 
+      const rutaImagen = carpeta + skincare.imagen;
       const existente = carrito.find(function(producto) {
-        return producto.nombre === skincare.nombre;
+        return producto.imagen === rutaImagen ||
+          producto.nombre === skincare.nombre;
       });
 
       if (existente) {
+        existente.nombre = skincare.nombre;
+        existente.precio = skincare.precio;
+        existente.precioPendiente = skincare.precio === null;
+        existente.imagen = rutaImagen;
         existente.cantidad = (Number(existente.cantidad) || 1) + cantidad;
       } else {
         carrito.push({
           nombre: skincare.nombre,
           precio: skincare.precio,
           precioPendiente: skincare.precio === null,
-          imagen: carpeta + skincare.imagen,
+          imagen: rutaImagen,
           cantidad: cantidad
         });
       }
