@@ -1,1103 +1,687 @@
+
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Guantes | Angel's Fashion World</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background:
-                radial-gradient(circle at top left, #ffffff 0%, transparent 35%),
-                radial-gradient(circle at bottom right, #ffe1ef 0%, transparent 40%),
-                #fff0f6;
-            color: #6b4055;
-            min-height: 100vh;
-        }
-
-        /* =========================================
-           ESTRELLAS DECORATIVAS
-        ========================================= */
-
-        .estrella1,
-        .estrella2,
-        .estrella3,
-        .estrella4 {
-            position: fixed;
-            font-size: 28px;
-            color: #d85b91;
-            z-index: 0;
-            pointer-events: none;
-            animation: flotar 3s ease-in-out infinite;
-        }
-
-        .estrella1 {
-            top: 120px;
-            left: 4%;
-        }
-
-        .estrella2 {
-            top: 280px;
-            right: 5%;
-            animation-delay: .7s;
-        }
-
-        .estrella3 {
-            bottom: 180px;
-            left: 6%;
-            animation-delay: 1.3s;
-        }
-
-        .estrella4 {
-            bottom: 80px;
-            right: 7%;
-            animation-delay: 2s;
-        }
-
-        @keyframes flotar {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(-12px) rotate(12deg);
-            }
-        }
-
-        /* =========================================
-           MENÚ
-        ========================================= */
-
-        .menu {
-            width: 92%;
-            max-width: 1200px;
-            margin: 25px auto 0;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-
-            background: rgba(255, 255, 255, 0.92);
-            padding: 14px 18px;
-
-            border-radius: 25px;
-
-            box-shadow:
-                0 8px 25px rgba(216, 91, 145, 0.15);
-
-            border: 1px solid #f5d3e2;
-
-            position: relative;
-            z-index: 10;
-        }
-
-        .menu a {
-            text-decoration: none;
-            color: #6b4055;
-            font-weight: bold;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guantes | Angel's Fashion World</title>
+
+<style>
+:root {
+    --rosa: #df4f8e;
+    --rosa-oscuro: #a52f68;
+    --rosa-intenso: #c92f75;
+    --texto: #68495a;
+    --dorado: #c8a96b;
+    --borde: #f4cfe0;
+    --fondo: #fff8fc;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #fff8fc, #fff1f7);
+    color: var(--texto);
+    min-height: 100vh;
+}
+
+.estrella {
+    position: fixed;
+    color: var(--dorado);
+    font-size: 27px;
+    pointer-events: none;
+    z-index: 0;
+    animation: flotar 4s ease-in-out infinite;
+}
+
+.estrella1 {
+    top: 120px;
+    left: 4%;
+}
+
+.estrella2 {
+    top: 280px;
+    right: 5%;
+    animation-delay: .7s;
+}
+
+.estrella3 {
+    bottom: 180px;
+    left: 6%;
+    animation-delay: 1.3s;
+}
+
+.estrella4 {
+    bottom: 80px;
+    right: 7%;
+    animation-delay: 2s;
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-12px) rotate(12deg); }
+}
+
+header {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 22px 15px 10px;
+}
+
+.volver {
+    display: inline-block;
+    position: absolute;
+    left: 5%;
+    top: 25px;
+    color: var(--rosa-oscuro);
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid var(--borde);
+    background: white;
+    padding: 10px 17px;
+    border-radius: 25px;
+    transition: .3s;
+}
+
+.volver:hover {
+    background: var(--rosa);
+    color: white;
+}
+
+.logo {
+    font-size: 27px;
+    color: var(--rosa-oscuro);
+    font-family: Georgia, serif;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--dorado);
+}
+
+.sublogo {
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-top: 5px;
+    color: #b77a98;
+}
+
+.menu {
+    width: 92%;
+    max-width: 1200px;
+    margin: 20px auto 25px;
+    background: white;
+    border: 1px solid var(--borde);
+    border-radius: 30px;
+    padding: 14px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    box-shadow: 0 5px 18px #e8a8c51c;
+    position: relative;
+    z-index: 2;
+}
+
+.menu a {
+    color: var(--texto);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.menu a:hover {
+    color: var(--rosa);
+}
+
+.portada {
+    width: 92%;
+    max-width: 1200px;
+    min-height: 300px;
+    margin: 0 auto 45px;
+    border-radius: 25px;
+    background: linear-gradient(120deg, #f9d9e8, #fff0f7, #f5d3e4);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 30px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.portada-texto {
+    max-width: 480px;
+}
+
+.portada-texto h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(32px, 5vw, 52px);
+    color: var(--rosa-oscuro);
+    margin-bottom: 15px;
+}
+
+.portada-texto p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #80576b;
+}
+
+.portada img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 7px solid white;
+    box-shadow: 0 8px 25px #a52f6820;
+}
+
+.seccion-titulo {
+    text-align: center;
+    margin: 35px 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.seccion-titulo h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    color: var(--rosa-oscuro);
+    margin-bottom: 8px;
+}
+
+.seccion-titulo p {
+    color: #987184;
+    font-size: 14px;
+}
+
+.productos {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto 90px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    position: relative;
+    z-index: 1;
+}
+
+.producto {
+    background: white;
+    border: 1px solid var(--borde);
+    border-radius: 22px;
+    padding: 13px;
+    text-align: center;
+    box-shadow: 0 6px 20px #d88bad12;
+    transition: transform .3s, box-shadow .3s;
+    overflow: hidden;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px #d88bad30;
+}
+
+.producto img {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+    border-radius: 16px;
+    cursor: pointer;
+    background: #fff5fa;
+}
+
+.producto h3 {
+    font-family: Georgia, serif;
+    font-size: 19px;
+    color: var(--rosa-oscuro);
+    margin: 15px 5px 8px;
+    min-height: 44px;
+}
+
+.precio {
+    color: var(--texto);
+    font-weight: bold;
+    font-size: 15px;
+    margin: 10px 0 14px;
+}
+
+.cantidad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 12px 0;
+}
+
+.cantidad button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--borde);
+    border-radius: 50%;
+    background: #fff1f7;
+    color: var(--rosa-oscuro);
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.cantidad span {
+    font-weight: bold;
+    min-width: 20px;
+}
+
+.botones {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.agregar, .compartir {
+    border: none;
+    border-radius: 22px;
+    padding: 11px 13px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.agregar {
+    background: linear-gradient(135deg, #e66b9f, #c92f75);
+    color: white;
+    flex: 1;
+}
+
+.agregar:hover {
+    background: var(--rosa-oscuro);
+}
+
+.compartir {
+    background: #fff0f7;
+    color: var(--rosa-oscuro);
+    border: 1px solid var(--borde);
+}
+
+.compartir:hover {
+    background: #f9d9e8;
+}
 
-            padding: 10px 16px;
-            border-radius: 20px;
-
-            transition: .3s ease;
-        }
-
-        .menu a:hover {
-            background: #ffe0ed;
-            color: #d85b91;
-            transform: translateY(-2px);
-        }
-
-        /* =========================================
-           PRESENTACIÓN
-        ========================================= */
-
-        header {
-            width: 92%;
-            max-width: 1000px;
-
-            margin: 35px auto 45px;
-
-            text-align: center;
-
-            background: rgba(255, 255, 255, 0.94);
-
-            padding: 35px 25px;
-
-            border-radius: 30px;
-
-            box-shadow:
-                0 12px 35px rgba(216, 91, 145, 0.18);
-
-            border: 1px solid #f5d3e2;
-
-            position: relative;
-            z-index: 2;
-        }
-
-        .alas-con-estrella {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-            margin-bottom: 5px;
-        }
-
-        .alas {
-            font-size: 48px;
-            display: inline-block;
-            animation: alasMovimiento 3s ease-in-out infinite;
-        }
-
-        .estrella-alas {
-            font-size: 25px;
-            color: #d85b91;
-            animation: estrellaMovimiento 2s ease-in-out infinite;
-        }
-
-        @keyframes alasMovimiento {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(-7px) rotate(-4deg);
-            }
-        }
-
-        @keyframes estrellaMovimiento {
-            0%, 100% {
-                transform: scale(1) rotate(0deg);
-            }
-
-            50% {
-                transform: scale(1.25) rotate(15deg);
-            }
-        }
-
-        header h1 {
-            color: #d85b91;
-            font-size: 42px;
-            margin: 5px 0 10px;
-        }
-
-        header p {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        .volver {
-            display: inline-block;
-
-            text-decoration: none;
-
-            background: #d85b91;
-            color: white;
-
-            padding: 12px 24px;
-
-            border-radius: 25px;
-
-            font-weight: bold;
-
-            transition: .3s ease;
-        }
-
-        .volver:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 7px 18px rgba(216, 91, 145, .25);
-        }
-
-        /* =========================================
-           PRODUCTOS
-        ========================================= */
-
-        .productos {
-            width: 92%;
-            max-width: 1200px;
-
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 28px;
-
-            position: relative;
-            z-index: 2;
-        }
-
-        .producto {
-            background: white;
-
-            border-radius: 25px;
-
-            padding: 18px;
-
-            text-align: center;
-
-            box-shadow:
-                0 10px 25px rgba(107, 64, 85, 0.12);
-
-            border: 1px solid #f5d3e2;
-
-            transition: .3s ease;
-        }
-
-        .producto:hover {
-            transform: translateY(-7px);
-
-            box-shadow:
-                0 15px 30px rgba(216, 91, 145, 0.18);
-        }
-
-        .producto img {
-            width: 100%;
-            height: 330px;
-
-            object-fit: cover;
-
-            border-radius: 20px;
-
-            cursor: pointer;
-
-            display: block;
-
-            transition: .3s ease;
-        }
-
-        .producto img:hover {
-            transform: scale(1.02);
-        }
-
-        .producto h2 {
-            color: #d85b91;
-
-            font-size: 21px;
-
-            margin: 18px 5px 8px;
-        }
-
-        .producto p {
-            font-size: 15px;
-
-            line-height: 1.5;
-
-            margin: 0 5px 12px;
-        }
-
-        .precio {
-            color: #6b4055;
-
-            font-size: 20px;
-
-            font-weight: bold;
-
-            margin-bottom: 15px;
-        }
-
-        /* =========================================
-           BOTÓN CARRITO
-        ========================================= */
-
-        .boton-carrito {
-            display: inline-block;
-
-            border: none;
-
-            background: #d85b91;
-            color: white;
-
-            padding: 11px 18px;
-
-            border-radius: 22px;
-
-            font-weight: bold;
-
-            cursor: pointer;
-
-            transition: .3s ease;
-        }
-
-        .boton-carrito:hover {
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 6px 15px rgba(216, 91, 145, .25);
-        }
-
-        /* =========================================
-           CARRITO FLOTANTE
-        ========================================= */
 .carrito-flotante {
-            position: fixed;
-
-            right: 20px;
-            bottom: 20px;
-
-            z-index: 100;
-
-            text-decoration: none;
-
-            background: white;
-            color: #d85b91;
-
-            padding: 14px 20px;
-
-            border-radius: 30px;
-
-            font-weight: bold;
-
-            box-shadow:
-                0 8px 25px rgba(107, 64, 85, 0.2);
-
-            border: 1px solid #f5d3e2;
-
-            transition: .3s ease;
-        }
-
-        .carrito-flotante:hover {
-            transform: translateY(-4px);
-        }
-
-        .contador-carrito {
-            display: inline-flex;
-
-            justify-content: center;
-            align-items: center;
-
-            min-width: 24px;
-            height: 24px;
-
-            margin-left: 5px;
-
-            padding: 0 6px;
-
-            border-radius: 50%;
-
-            background: #d85b91;
-            color: white;
-
-            font-size: 13px;
-        }
-
-        /* =========================================
-           MODAL
-        ========================================= */
-
-        .modal {
-            display: none;
-
-            position: fixed;
-
-            inset: 0;
-
-            z-index: 200;
-
-            background: rgba(60, 30, 45, .75);
-
-            justify-content: center;
-            align-items: center;
-
-            padding: 20px;
-        }
-
-        .modal.activo {
-            display: flex;
-        }
-
-        .modal-contenido {
-            width: min(900px, 95%);
-
-            max-height: 95vh;
-
-            overflow-y: auto;
-
-            background: white;
-
-            border-radius: 25px;
-
-            padding: 20px;
-
-            text-align: center;
-
-            position: relative;
-        }
-
-        .modal-contenido img {
-            max-width: 100%;
-            max-height: 65vh;
-
-            object-fit: contain;
-
-            border-radius: 18px;
-        }
-
-        .cerrar {
-            position: absolute;
-
-            top: 10px;
-            right: 15px;
-
-            width: 40px;
-            height: 40px;
-
-            border: none;
-
-            border-radius: 50%;
-
-            background: #d85b91;
-            color: white;
-
-            font-size: 24px;
-
-            cursor: pointer;
-
-            z-index: 5;
-        }
-
-        .modal h2 {
-            color: #d85b91;
-            margin: 15px 0 8px;
-        }
-
-        .modal p {
-            margin-bottom: 10px;
-        }
-
-        /* =========================================
-           FOOTER
-        ========================================= */
-
-        footer {
-            text-align: center;
-
-            margin-top: 70px;
-
-            padding: 30px 20px;
-
-            background: white;
-
-            border-top: 1px solid #f5d3e2;
-
-            color: #6b4055;
-
-            line-height: 1.8;
-        }
-
-        /* =========================================
-           RESPONSIVE
-        ========================================= */
-
-        @media (max-width: 850px) {
-
-            .productos {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .producto img {
-                height: 300px;
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            .menu {
-                width: 94%;
-                gap: 5px;
-                padding: 12px 8px;
-            }
-
-            .menu a {
-                padding: 8px 10px;
-                font-size: 14px;
-            }
-
-            header {
-                margin-top: 25px;
-                padding: 28px 18px;
-            }
-
-            header h1 {
-                font-size: 35px;
-            }
-
-            .productos {
-                grid-template-columns: 1fr;
-            }
-
-            .producto img {
-                height: auto;
-                max-height: 500px;
-            }
-
-            .carrito-flotante {
-                right: 12px;
-                bottom: 12px;
-                padding: 12px 15px;
-            }
-        }
-    </style>
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 10;
+    background: linear-gradient(135deg, #e66b9f, #c92f75);
+    color: white;
+    text-decoration: none;
+    padding: 14px 21px;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 5px 18px #a52f6840;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    background: #f9e1ec;
+    color: var(--rosa-oscuro);
+    position: relative;
+    z-index: 1;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #2c1725dd;
+    z-index: 20;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 15px;
+    background: white;
+}
+
+.cerrar {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    .productos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .producto img {
+        height: 260px;
+    }
+
+    .menu {
+        gap: 15px;
+    }
+
+    .portada img {
+        width: 190px;
+        height: 190px;
+    }
+}
+
+@media (max-width: 520px) {
+    .volver {
+        position: static;
+        margin-bottom: 15px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .portada {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 18px;
+    }
+
+    .portada img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .productos {
+        width: 94%;
+        gap: 12px;
+    }
+
+    .producto {
+        padding: 8px;
+        border-radius: 16px;
+    }
+
+    .producto img {
+        height: 205px;
+    }
+
+    .producto h3 {
+        font-size: 16px;
+    }
+
+    .agregar, .compartir {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+
+    .seccion-titulo h2 {
+        font-size: 27px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- =========================================
-         ESTRELLAS
-    ========================================= -->
+<div class="estrella estrella1">✦</div>
+<div class="estrella estrella2">✧</div>
+<div class="estrella estrella3">✦</div>
+<div class="estrella estrella4">✧</div>
 
-    <div class="estrella1">✦</div>
-    <div class="estrella2">✧</div>
-    <div class="estrella3">✦</div>
-    <div class="estrella4">✧</div>
+<header>
+    <a href="accesorios.html" class="volver">← Volver</a>
+    <div class="logo">🪽 Angel's <span>Fashion</span> World ✦</div>
+    <div class="sublogo">MODA Y ELEGANCIA</div>
+</header>
 
+<nav class="menu">
+    <a href="index.html">Inicio</a>
+    <a href="moda.html">Moda</a>
+    <a href="belleza.html">Belleza</a>
+    <a href="accesorios.html">Accesorios</a>
+</nav>
 
-    <!-- =========================================
-         MENÚ
-    ========================================= -->
-
-    <nav class="menu">
-
-        <a href="index.html">Inicio</a>
-
-        <a href="moda.html">Moda</a>
-
-        <a href="belleza.html">Belleza</a>
-
-        <a href="skincare.html">Skin care</a>
-
-        <a href="accesorios.html">Accesorios</a>
-
-        <a href="sobre-nosotros.html">Sobre nosotros</a>
-
-        <a href="index.html#contactanos">Contáctanos</a>
-
-    </nav>
-
-
-    <!-- =========================================
-         PRESENTACIÓN
-    ========================================= -->
-
-    <header>
-
-        <div class="alas-con-estrella">
-
-            <span class="alas">🪽</span>
-
-            <span class="estrella-alas">✦</span>
-
-        </div>
-
+<section class="portada">
+    <div class="portada-texto">
         <h1>Guantes</h1>
-
         <p>
-            Descubre guantes hermosos para completar tu estilo 💕
+            Pequeños detalles que hacen la diferencia.
+            Descubre nuestra colección de guantes y dale
+            un toque especial y elegante a cada uno de tus looks.
         </p>
-
-        <a href="accesorios.html" class="volver">
-            ← Volver a Accesorios
-        </a>
-
-    </header>
-
-
-    <!-- =========================================
-         PRODUCTOS
-    ========================================= -->
-
-    <main class="productos">
-
-
-        <!-- 1. GUANTES BONITOS -->
-
-        <article class="producto">
-
-            <img
-                src="imagenes/guantes/Screenshot_2026-09-02-12-06-46-199_com.pinterest-edit.jpg"
-                alt="Guantes bonitos"
-                onclick="abrirFoto(this)"
-            >
-
-            <h2>
-                Guantes bonitos:
-            </h2>
-
-            <p>
-                Unos guantes bonitos para complementar tu estilo con un toque especial. ✨
-            </p>
-
-            <div class="precio">
-                $2.000.000
-            </div>
-
-            <button
-                class="boton-carrito"
-                onclick="agregarProducto(this)"
-            >
-                🛒 Agregar al carrito
-            </button>
-
-        </article>
-
-
-        <!-- 2. GUANTES ELEGANTES -->
-
-        <article class="producto">
-
-            <img
-                src="imagenes/guantes/Screenshot_2026-09-02-12-10-15-759_com.pinterest-edit.jpg"
-                alt="Guantes elegantes"
-                onclick="abrirFoto(this)"
-            >
-
-            <h2>
-                Guantes elegantes
-            </h2>
-
-            <p>
-                Elegantes guantes para darle un toque bonito y especial a tu look. 💕
-            </p>
-
-            <div class="precio">
-                $500.000
-            </div>
-
-            <button
-                class="boton-carrito"
-                onclick="agregarProducto(this)"
-            >
-                🛒 Agregar al carrito
-            </button>
-
-        </article>
-
-
-        <!-- 3. DIVINOS GUANTES ELEGANTES -->
-
-        <article class="producto">
-
-            <img
-                src="imagenes/guantes/Screenshot_2026-09-02-12-17-23-653_com.pinterest-edit.jpg"
-                alt="Divinos guantes elegantes"
-                onclick="abrirFoto(this)"
-            >
-
-            <h2>
-                Divinos guantes elegantes
-            </h2>
-
-            <p>
-                Divinos guantes elegantes para completar tu estilo con delicadeza. ✦
-            </p>
-
-            <div class="precio">
-                $4.000.000
-            </div>
-
-            <button
-                class="boton-carrito"
-                onclick="agregarProducto(this)"
-            >
-                🛒 Agregar al carrito
-            </button>
-
-        </article>
-
-
-        <!-- 4. GUANTES ELEGANTES -->
-
-        <article class="producto">
-
-            <img
-                src="imagenes/guantes/Screenshot_2026-09-01-11-47-05-707_com.pinterest~2.jpg"
-                alt="Guantes elegantes"
-                onclick="abrirFoto(this)"
-            >
-
-            <h2>
-                Guantes elegantes
-            </h2>
-
-            <p>
-                Unos hermosos guantes elegantes para acompañar tus momentos especiales. 💗
-            </p>
-
-            <div class="precio">
-                $27.000
-            </div>
-
-            <button
-                class="boton-carrito"
-                onclick="agregarProducto(this)"
-            >
-                🛒 Agregar al carrito
-            </button>
-
-        </article>
-
-    </main>
-
-
-    <!-- =========================================
-         CARRITO FLOTANTE
-    ========================================= -->
-
-    <a href="carrito.html" class="carrito-flotante">
-
-        🛒 Ver carrito
-
-        <span
-            class="contador-carrito"
-            id="contador-carrito"
-        >
-            0
-        </span>
-
-    </a>
-
-
-    <!-- =========================================
-         MODAL
-    ========================================= -->
-
-    <div
-        class="modal"
-        id="modal"
-        onclick="cerrarFoto(event)"
-    >
-
-        <div
-            class="modal-contenido"
-            onclick="event.stopPropagation()"
-        >
-
-            <button
-                class="cerrar"
-                onclick="cerrarFoto()"
-            >
-                ×
-            </button>
-
-            <img
-                id="imagenModal"
-                src=""
-                alt=""
-            >
-
-            <h2 id="nombreModal"></h2>
-
-            <p id="descripcionModal"></p>
-
-            <div
-                class="precio"
-                id="precioModal"
-            ></div>
-
-            <button
-                class="boton-carrito"
-                id="botonModal"
-            >
-                🛒 Agregar al carrito
-            </button>
-
-        </div>
-
     </div>
 
+    <img src="imagenes/guantes/Vintage gloves.jpg"
+         alt="Colección de guantes">
+</section>
 
-    <!-- =========================================
-         FOOTER
-    ========================================= -->
+<section class="seccion-titulo">
+    <h2>♡ Nuestra colección de guantes ♡</h2>
+    <p>Encuentra tu estilo favorito en Angel's Fashion World</p>
+</section>
 
-    <footer>
+<main class="productos" id="productos"></main>
 
-        <p>
-            🪽 Angel's Fashion World 🪽
-        </p>
+<a href="carrito.html" class="carrito-flotante">🛒 Ver carrito</a>
 
-        <p>
-            Moda • Belleza • Skin Care • Accesorios
-        </p>
+<div class="modal" id="modal">
+    <span class="cerrar" onclick="cerrarModal()">×</span>
+    <img id="imagenGrande" src="" alt="Imagen ampliada">
+</div>
 
-    </footer>
+<footer>
+    <h3>🪽 Angel's Fashion World ✦</h3>
+    <p>La elegancia está en los pequeños detalles.</p>
+    <p>© 2026 Angel's Fashion World</p>
+</footer>
 
+<script>
+const carpeta = "imagenes/guantes/";
 
-    <!-- =========================================
-         JAVASCRIPT
-    ========================================= -->
+const guantes = [
+    {
+        archivo: "Vintage gloves.jpg",
+        nombre: "Guantes Vintage Elegantes"
+    },
+    {
+        archivo: "descargar (6).jpg",
+        nombre: "Guantes de Temporada"
+    },
+    {
+        archivo: "descargar (5).jpg",
+        nombre: "Guantes Chic"
+    },
+    {
+        archivo: "descargar (4).jpg",
+        nombre: "Guantes con Estilo"
+    },
+    {
+        archivo: "Brand New Cute, Cozy & Touch Screen Gloves _ Color_ Red _ Size_ Os.jpg",
+        nombre: "Guantes Rojos Touchscreen"
+    },
+    {
+        archivo: "💖.jpg",
+        nombre: "Guantes Corazón"
+    },
+    {
+        archivo: "ketmart Women's Winter Knit Gloves Touchscreen Cold Weather.jpg",
+        nombre: "Guantes Tejidos de Invierno"
+    },
+    {
+        archivo: "Guanti da donna in beige con touchscreen, impermeabili e con fodera termica morbida e calda, guanti invernali da esterno, adatti per Ognissanti.jpg",
+        nombre: "Guantes Beige Térmicos"
+    },
+    {
+        archivo: "1 Pair Women Coffee Color Fall_Winter New Polyester Fiber Elegant Casual Full Finger Gloves With Furry Edges, Suitable For Outdoor, Casual, Parties, Mature Autumn_Winter Valentines.jpg",
+        nombre: "Guantes Coffee Elegantes"
+    },
+    {
+        archivo: "descargar (3).jpg",
+        nombre: "Guantes Delicados"
+    },
+    {
+        archivo: "descargar (2).jpg",
+        nombre: "Guantes Clásicos"
+    },
+    {
+        archivo: "descargar (1).jpg",
+        nombre: "Guantes de Moda"
+    },
+    {
+        archivo: "descargar.jpg",
+        nombre: "Guantes Encantadores"
+    },
+    {
+        archivo: "Women's Black-2 Short Satin Pearl Bow Wrist Gloves Bridal Wedding Party Prom _ Color_ Black _ Size_ Os.jpg",
+        nombre: "Guantes Negros con Perlas"
+    },
+    {
+        archivo: "#VelvetFashion.jpg",
+        nombre: "Guantes Velvet Fashion"
+    },
+    {
+        archivo: "gloves.jpg",
+        nombre: "Guantes Sofisticados"
+    },
+    {
+        archivo: "Princess Diaries bachelorette party.jpg",
+        nombre: "Guantes Princess"
+    }
+];
 
-    <script>
+const contenedor = document.getElementById("productos");
 
-        let carrito = JSON.parse(
-            localStorage.getItem("carritoAngel")
-        ) || [];
+guantes.forEach((producto, indice) => {
+    const imagen = carpeta + producto.archivo;
 
+    const tarjeta = document.createElement("article");
+    tarjeta.className = "producto";
 
-        function guardarCarrito() {
+    tarjeta.innerHTML = `
+        <img src="${imagen}"
+             alt="${producto.nombre}"
+             onclick="abrirModal('${imagen.replace(/'/g, "\\'")}')"
+             onerror="this.style.opacity='.25'; this.alt='Revisa el nombre del archivo';">
 
-            localStorage.setItem(
-                "carritoAngel",
-                JSON.stringify(carrito)
+        <h3>${producto.nombre}</h3>
+
+        <p class="precio">Precio por confirmar</p>
+
+        <div class="cantidad">
+            <button type="button" onclick="cambiarCantidad(${indice}, -1)">−</button>
+            <span id="cantidad-${indice}">1</span>
+            <button type="button" onclick="cambiarCantidad(${indice}, 1)">+</button>
+        </div>
+
+        <div class="botones">
+            <button class="agregar" type="button"
+                onclick="agregarCarrito(${indice})">
+                🛒 Agregar
+            </button>
+
+            <button class="compartir" type="button"
+                onclick="compartirProducto(${indice})">
+                ↗ Compartir
+            </button>
+        </div>
+    `;
+
+    contenedor.appendChild(tarjeta);
+});
+
+function cambiarCantidad(indice, cambio) {
+    const elemento = document.getElementById("cantidad-" + indice);
+    let cantidad = parseInt(elemento.textContent);
+    cantidad = Math.max(1, cantidad + cambio);
+    elemento.textContent = cantidad;
+}
+
+function agregarCarrito(indice) {
+    const producto = guantes[indice];
+    const cantidad = parseInt(
+        document.getElementById("cantidad-" + indice).textContent
+    );
+
+    let carrito = JSON.parse(localStorage.getItem("angelsCarrito")) || [];
+
+    const existente = carrito.find(item =>
+        item.nombre === producto.nombre &&
+        item.imagen === carpeta + producto.archivo
+    );
+
+    if (existente) {
+        existente.cantidad += cantidad;
+    } else {
+        carrito.push({
+            nombre: producto.nombre,
+            precio: null,
+            precioPendiente: true,
+            imagen: carpeta + producto.archivo,
+            cantidad: cantidad
+        });
+    }
+
+    localStorage.setItem("angelsCarrito", JSON.stringify(carrito));
+
+    alert("¡Producto agregado a tu carrito! 💗");
+}
+
+async function compartirProducto(indice) {
+    const producto = guantes[indice];
+    const texto = "Mira este producto de Angel's Fashion World: " +
+                  producto.nombre;
+
+    if (navigator.share) {
+        try {
+            await navigator.share({
+                title: "Angel's Fashion World",
+                text: texto,
+                url: window.location.href
+            });
+        } catch (error) {
+            // El usuario puede cancelar la opción de compartir.
+        }
+    } else {
+        try {
+            await navigator.clipboard.writeText(
+                texto + " - " + window.location.href
             );
-
-            actualizarContador();
+            alert("¡Enlace copiado para compartir! 💗");
+        } catch (error) {
+            alert("No se pudo copiar el enlace.");
         }
-
-
-        function actualizarContador() {
-
-            const contador =
-                document.getElementById("contador-carrito");
-
-            if (contador) {
-
-                let cantidad = carrito.reduce(
-                    (total, producto) =>
-                        total + (producto.cantidad || 1),
-                    0
-                );
-
-                contador.textContent = cantidad;
-            }
-        }
-
-
-        /* =========================================
-           AGREGAR PRODUCTO
-        ========================================= */
-
-        function agregarProducto(boton) {
-
-            const producto =
-                boton.closest(".producto");
-
-            const nombre =
-                producto
-                    .querySelector("h2")
-                    .textContent
-                    .trim();
-
-            const precioTexto =
-                producto
-                    .querySelector(".precio")
-                    .textContent
-                    .trim();
-
-            const precio =
-                parseInt(
-                    precioTexto
-                        .replace(/\./g, "")
-                        .replace("$", "")
-                        .trim()
-                );
-
-
-            agregarAlCarrito(
-                nombre,
-                precio
-            );
-        }
-
-
-        /* =========================================
-           CARRITO
-        ========================================= */
-
-        function agregarAlCarrito(nombre, precio) {
-
-            const productoExistente =
-                carrito.find(
-                    producto =>
-                        producto.nombre === nombre &&
-                        producto.precio === precio
-                );
-
-
-            if (productoExistente) {
-
-                productoExistente.cantidad =
-                    (productoExistente.cantidad || 1) + 1;
-
-            } else {
-
-                carrito.push({
-
-                    nombre: nombre,
-
-                    precio: precio,
-
-                    cantidad: 1
-
-                });
-            }
-
-
-            guardarCarrito();
-
-            alert(
-                "🛍️ ¡Producto agregado al carrito! 💕"
-            );
-        }
-
-
-        /* =========================================
-           ABRIR FOTO
-        ========================================= */
-
-        function abrirFoto(imagen) {
-
-            const modal =
-                document.getElementById("modal");
-
-            const imagenModal =
-                document.getElementById("imagenModal");
-
-            const nombreModal =
-                document.getElementById("nombreModal");
-
-            const descripcionModal =
-                document.getElementById("descripcionModal");
-
-            const precioModal =
-                document.getElementById("precioModal");
-
-            const botonModal =
-                document.getElementById("botonModal");
-
-
-            imagenModal.src = imagen.src;
-
-            imagenModal.alt = imagen.alt;
-
-
-            const producto =
-                imagen.closest(".producto");
-
-
-            const nombre =
-                producto
-                    .querySelector("h2")
-                    .textContent
-                    .trim();
-
-
-            const descripcion =
-                producto
-                    .querySelector("p")
-                    .textContent
-                    .trim();
-
-
-            const precioTexto =
-                producto
-                    .querySelector(".precio")
-                    .textContent
-                    .trim();
-
-
-            nombreModal.textContent = nombre;
-
-            descripcionModal.textContent =
-                descripcion;
-
-            precioModal.textContent =
-                precioTexto;
-
-
-            const precioNumerico =
-                parseInt(
-                    precioTexto
-                        .replace(/\./g, "")
-                        .replace("$", "")
-                        .trim()
-                );
-
-
-            botonModal.onclick = function () {
-
-                agregarAlCarrito(
-                    nombre,
-                    precioNumerico
-                );
-
-            };
-
-
-            modal.classList.add("activo");
-
-            document.body.style.overflow = "hidden";
-        }
-
-
-        /* =========================================
-           CERRAR MODAL
-        ========================================= */
-
-        function cerrarFoto(event) {
-
-            if (
-                event &&
-                event.target !==
-                document.getElementById("modal")
-            ) {
-                return;
-            }
-
-
-            const modal =
-                document.getElementById("modal");
-
-            modal.classList.remove("activo");
-
-            document.body.style.overflow = "";
-        }
-
-
-        /* =========================================
-           ESC PARA CERRAR
-        ========================================= */
-
-        document.addEventListener(
-            "keydown",
-            function(event) {
-
-                if (event.key === "Escape") {
-
-                    cerrarFoto({
-                        target:
-                            document.getElementById("modal")
-                    });
-
-                }
-
-            }
-        );
-
-
-        /* =========================================
-           CONTADOR
-        ========================================= */
-
-        actualizarContador();
-
-    </script>
+    }
+}
+
+function abrirModal(imagen) {
+    document.getElementById("imagenGrande").src = imagen;
+    document.getElementById("modal").style.display = "flex";
+}
+
+function cerrarModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+document.getElementById("modal").addEventListener("click", function(event) {
+    if (event.target === this) {
+        cerrarModal();
+    }
+});
+</script>
 
 </body>
-
 </html>
