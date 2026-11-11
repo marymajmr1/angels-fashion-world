@@ -1,1 +1,677 @@
 
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Correas | Angel's Fashion World</title>
+
+<style>
+:root {
+  --rosa: #df4f8e;
+  --rosa-oscuro: #a52f68;
+  --rosa-intenso: #c92f75;
+  --texto: #68495a;
+  --dorado: #c8a96b;
+  --borde: #f4cfe0;
+  --fondo: #fff8fc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding-bottom: 85px;
+  font-family: Arial, sans-serif;
+  color: var(--texto);
+  background:
+    radial-gradient(circle at 10% 15%, #ffe0ef 0, transparent 25%),
+    radial-gradient(circle at 90% 80%, #ffe6f1 0, transparent 25%),
+    var(--fondo);
+}
+
+.estrellas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  color: var(--dorado);
+}
+
+.estrella {
+  position: absolute;
+  font-size: 25px;
+  animation: flotar 4s ease-in-out infinite;
+}
+
+.estrella1 { top: 120px; left: 4%; }
+.estrella2 { top: 280px; right: 5%; animation-delay: .7s; }
+.estrella3 { bottom: 180px; left: 6%; animation-delay: 1.3s; }
+.estrella4 { bottom: 80px; right: 7%; animation-delay: 2s; }
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-12px) rotate(12deg); }
+}
+
+.menu {
+  width: 94%;
+  max-width: 1200px;
+  margin: 25px auto;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: rgba(255,255,255,.9);
+  border: 1px solid var(--borde);
+  border-radius: 20px;
+  box-shadow: 0 5px 20px #e9a8c522;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--texto);
+  padding: 11px 17px;
+  border-radius: 20px;
+  font-size: 14px;
+  transition: .3s;
+}
+
+.menu a:hover,
+.menu a.activo {
+  background: var(--rosa);
+  color: white;
+}
+
+.portada {
+  width: 94%;
+  max-width: 1200px;
+  margin: 25px auto;
+  padding: 35px;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  background: linear-gradient(135deg, #f9c5dc, #fff0f7, #f6d2e3);
+  border: 1px solid var(--borde);
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.portada-texto {
+  flex: 1;
+}
+
+.portada-texto .frase {
+  color: var(--rosa-oscuro);
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+.portada h1 {
+  font-family: Georgia, serif;
+  color: var(--rosa-oscuro);
+  font-size: clamp(30px, 5vw, 48px);
+  margin: 12px 0;
+}
+
+.portada h2 {
+  font-family: Georgia, serif;
+  font-size: 23px;
+  color: var(--texto);
+}
+
+.portada p {
+  line-height: 1.7;
+}
+
+.adorno {
+  color: var(--dorado);
+  letter-spacing: 5px;
+  font-size: 20px;
+}
+
+.portada img {
+  width: 42%;
+  max-width: 390px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 22px;
+  border: 5px solid white;
+  box-shadow: 0 8px 25px #a52f6822;
+  cursor: pointer;
+}
+
+.volver {
+  display: block;
+  width: fit-content;
+  margin: 20px 4%;
+  padding: 11px 20px;
+  color: white;
+  background: var(--rosa);
+  text-decoration: none;
+  border-radius: 20px;
+}
+
+.encabezado {
+  text-align: center;
+  padding: 20px;
+}
+
+.encabezado h2 {
+  color: var(--rosa-oscuro);
+  font-family: Georgia, serif;
+  font-size: 30px;
+}
+
+.encabezado p {
+  color: var(--texto);
+}
+
+.categorias {
+  width: 94%;
+  max-width: 1200px;
+  margin: 25px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.categoria {
+  background: white;
+  border: 1px solid var(--borde);
+  border-radius: 23px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 7px 22px #d88bb51c;
+  transition: .3s;
+}
+
+.categoria:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px #d88bb533;
+}
+
+.categoria img {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  border-radius: 17px;
+  cursor: pointer;
+  background: #fff1f7;
+}
+
+.categoria h3 {
+  font-family: Georgia, serif;
+  color: var(--rosa-oscuro);
+  font-size: 19px;
+  min-height: 45px;
+}
+
+.precio {
+  color: var(--rosa-intenso);
+  font-weight: bold;
+  margin: 12px 0;
+}
+
+.cantidad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 13px 0;
+}
+
+.cantidad button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: #fce1ed;
+  color: var(--rosa-oscuro);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.cantidad input {
+  width: 45px;
+  text-align: center;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 6px;
+  color: var(--texto);
+}
+
+.botones {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-carrito,
+.btn-compartir {
+  border: none;
+  border-radius: 20px;
+  padding: 11px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: .3s;
+}
+
+.btn-carrito {
+  background: var(--rosa);
+  color: white;
+}
+
+.btn-carrito:hover {
+  background: var(--rosa-oscuro);
+}
+
+.btn-compartir {
+  background: #fff0f7;
+  color: var(--rosa-oscuro);
+  border: 1px solid var(--borde);
+}
+
+.carrito-flotante {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  background: var(--rosa);
+  color: white;
+  text-decoration: none;
+  padding: 15px 21px;
+  border-radius: 30px;
+  box-shadow: 0 5px 18px #a52f6844;
+  font-weight: bold;
+}
+
+footer {
+  margin-top: 45px;
+  padding: 25px;
+  text-align: center;
+  background: #fce4ef;
+  color: var(--rosa-oscuro);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: #000c;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 85vh;
+  object-fit: contain;
+  border: 5px solid white;
+  border-radius: 15px;
+}
+
+.cerrar {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+@media (max-width: 850px) {
+  .categorias {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .categoria img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 520px) {
+  .portada {
+    flex-direction: column;
+    padding: 22px;
+    text-align: center;
+  }
+
+  .portada img {
+    width: 100%;
+    height: 230px;
+  }
+
+  .menu {
+    gap: 4px;
+  }
+
+  .menu a {
+    padding: 9px 10px;
+    font-size: 12px;
+  }
+
+  .categorias {
+    width: 94%;
+    gap: 10px;
+  }
+
+  .categoria {
+    padding: 9px;
+  }
+
+  .categoria img {
+    height: 190px;
+  }
+
+  .categoria h3 {
+    font-size: 16px;
+  }
+
+  .btn-carrito,
+  .btn-compartir {
+    padding: 9px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .categorias {
+    grid-template-columns: 1fr;
+  }
+
+  .categoria img {
+    height: 270px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="estrellas">
+  <span class="estrella estrella1">✦</span>
+  <span class="estrella estrella2">✧</span>
+  <span class="estrella estrella3">✦</span>
+  <span class="estrella estrella4">✧</span>
+</div>
+
+<nav class="menu" aria-label="Menú principal">
+  <a href="index.html">Inicio</a>
+  <a href="moda.html">Moda</a>
+  <a href="belleza.html">Belleza</a>
+  <a href="skincare.html">Skin care</a>
+  <a class="activo" href="accesorios.html">Accesorios</a>
+</nav>
+
+<section class="portada">
+  <div class="portada-texto">
+    <div class="frase">✧ UN TOQUE DE DULZURA ✧</div>
+    <h1>🪽 Angel's ✦</h1>
+    <h2>FASHION WORLD</h2>
+    <p>Correas y cadenas que hacen brillar cada uno de tus looks. Encuentra ese detalle especial que te representa.</p>
+    <div class="adorno">✧ ───── ✧</div>
+  </div>
+
+  <img
+    src="imagenes/correas/%E2%9C%A8The%20belt%20that%20turns%20every%20look%20into%20a%20statement%F0%9F%92%AB__%23SiwarEgypt%20%23LuxuryFashionEgypt%20%23BohoStyle%20%23VintageVibes%20%23EgyptianLeather%20%23LeatherAccessoriesEgypt%20%23BeltsAndBagsEgypt%20%23StainlessSteelJewelryEgypt%20%23TrendsetterEg.jpg"
+    alt="Colección de correas"
+    onclick="abrirFoto(this.src)"
+  >
+</section>
+
+<a class="volver" href="accesorios.html">← Volver</a>
+
+<section class="encabezado">
+  <h2>Nuestra colección de correas</h2>
+  <p>Pequeños detalles que transforman cualquier outfit. ✨</p>
+</section>
+
+<div class="categorias" id="listaCorreas"></div>
+
+<a class="carrito-flotante" href="carrito.html">🛒 Ver carrito</a>
+
+<div class="modal" id="modalFoto" onclick="cerrarFoto()">
+  <span class="cerrar">&times;</span>
+  <img id="fotoGrande" alt="Imagen ampliada">
+</div>
+
+<footer>
+  <p>Angel's Fashion World ✨</p>
+  <p>Accesorios · Correas</p>
+  <p>Gracias por elegirnos 💗</p>
+</footer>
+
+<script>
+const carpeta = "imagenes/correas/";
+
+const correas = [
+  {
+    nombre: "Correa Statement",
+    imagen: "✨The belt that turns every look into a statement💫__#SiwarEgypt #LuxuryFashionEgypt #BohoStyle #VintageVibes #EgyptianLeather #LeatherAccessoriesEgypt #BeltsAndBagsEgypt #StainlessSteelJewelryEgypt #TrendsetterEg.jpg",
+    precio: null
+  },
+  {
+    nombre: "Mariposa Dorada",
+    imagen: "Butterfly Chain Waist Belt.jpg",
+    precio: null
+  },
+  {
+    nombre: "Encanto Dorado",
+    imagen: "descargar (5).jpg",
+    precio: null
+  },
+  {
+    nombre: "Cadena Doble Elegante",
+    imagen: "Elegant Double Layer Gold Coin Waist Chain for Women _ Minimalist Body Jewelry.jpg",
+    precio: null
+  },
+  {
+    nombre: "Doble Encanto",
+    imagen: "Double chain for beautiful waist 😆🫠.jpg",
+    precio: null
+  },
+  {
+    nombre: "Estilo Chic",
+    imagen: "descargar (4).jpg",
+    precio: null
+  },
+  {
+    nombre: "Cadena para tu Look",
+    imagen: "waist chain.jpg",
+    precio: null
+  },
+  {
+    nombre: "Perlas de Ensueño",
+    imagen: "1pc French Faux Pearl Tassel Pendant Waist Chain For Women, Luxurious Elegant Style.jpg",
+    precio: null
+  },
+  {
+    nombre: "Belt Elegance",
+    imagen: "BELTS.jpg",
+    precio: null
+  },
+  {
+    nombre: "Dulce Estilo",
+    imagen: "descargar (3).jpg",
+    precio: null
+  },
+  {
+    nombre: "Versace Inspired",
+    imagen: "Versace Greca Goddess chain belt.jpg",
+    precio: null
+  },
+  {
+    nombre: "Brillo Especial",
+    imagen: "descargar (2).jpg",
+    precio: null
+  },
+  {
+    nombre: "Toque de Glamour",
+    imagen: "descargar (1).jpg",
+    precio: null
+  },
+  {
+    nombre: "Perla Artificial",
+    imagen: "Cinturón de cadena con diseño de perla artificial.jpg",
+    precio: null
+  },
+  {
+    nombre: "Boho Vintage",
+    imagen: "Gold Boho Waist Chain, Vintage-inspired Body Jewelry, Adjustable Belt Accessories - Etsy.jpg",
+    precio: null
+  },
+  {
+    nombre: "Elegancia Premium",
+    imagen: "Você estilosa com Cinto Corrente Elegante Premium.jpg",
+    precio: null
+  },
+  {
+    nombre: "Cadena Dorada en Capas",
+    imagen: "Layered Gold Waist Chain – Boho Beach Body Jewelry.jpg",
+    precio: null
+  },
+  {
+    nombre: "Encanto Final",
+    imagen: "descargar.jpg",
+    precio: null
+  }
+];
+
+function mostrarCorreas() {
+  const lista = document.getElementById("listaCorreas");
+
+  lista.innerHTML = correas.map((correa, i) => `
+    <article class="categoria">
+      <img
+        src="${carpeta + encodeURIComponent(correa.imagen)}"
+        alt="${correa.nombre}"
+        loading="lazy"
+        onclick="abrirFoto(this.src)"
+      >
+
+      <h3>${correa.nombre}</h3>
+
+      <p class="precio">
+        ${correa.precio === null
+          ? "Precio por confirmar"
+          : "$" + correa.precio.toLocaleString("es-CO")}
+      </p>
+
+      <div class="cantidad">
+        <button onclick="cambiarCantidad(${i}, -1)">−</button>
+        <input type="number" id="cantidad${i}" value="1" min="1" max="99">
+        <button onclick="cambiarCantidad(${i}, 1)">+</button>
+      </div>
+
+      <div class="botones">
+        <button class="btn-carrito" onclick="agregarAlCarrito(${i})">
+          🛒 Agregar
+        </button>
+
+        <button class="btn-compartir" onclick="compartirCorrea(${i})">
+          ↗ Compartir
+        </button>
+      </div>
+    </article>
+  `).join("");
+}
+
+function cambiarCantidad(indice, cambio) {
+  const input = document.getElementById("cantidad" + indice);
+  let cantidad = parseInt(input.value) || 1;
+
+  cantidad += cambio;
+
+  if (cantidad < 1) cantidad = 1;
+  if (cantidad > 99) cantidad = 99;
+
+  input.value = cantidad;
+}
+
+function agregarAlCarrito(indice) {
+  const correa = correas[indice];
+  const cantidad = Math.max(
+    1,
+    parseInt(document.getElementById("cantidad" + indice).value) || 1
+  );
+
+  let carrito = JSON.parse(localStorage.getItem("angelsCarrito")) || [];
+
+  const existente = carrito.find(
+    item => item.nombre === correa.nombre
+  );
+
+  if (existente) {
+    existente.cantidad += cantidad;
+  } else {
+    carrito.push({
+      nombre: correa.nombre,
+      precio: correa.precio,
+      precioPendiente: correa.precio === null,
+      imagen: carpeta + correa.imagen,
+      cantidad: cantidad
+    });
+  }
+
+  localStorage.setItem("angelsCarrito", JSON.stringify(carrito));
+
+  alert("¡" + correa.nombre + " se agregó a tu carrito! 💗");
+}
+
+async function compartirCorrea(indice) {
+  const correa = correas[indice];
+
+  const texto = "Mira esta hermosa correa de Angel's Fashion World: " +
+    correa.nombre;
+
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: "Angel's Fashion World",
+        text: texto,
+        url: window.location.href
+      });
+    } catch (error) {
+      // El usuario puede cancelar el menú de compartir.
+    }
+  } else {
+    try {
+      await navigator.clipboard.writeText(
+        texto + " - " + window.location.href
+      );
+      alert("¡Enlace copiado para compartir! 💗");
+    } catch (error) {
+      alert(texto + " " + window.location.href);
+    }
+  }
+}
+
+function abrirFoto(src) {
+  document.getElementById("fotoGrande").src = src;
+  document.getElementById("modalFoto").style.display = "flex";
+}
+
+function cerrarFoto() {
+  document.getElementById("modalFoto").style.display = "none";
+}
+
+mostrarCorreas();
+</script>
+
+</body>
+</html>
