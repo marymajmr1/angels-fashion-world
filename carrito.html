@@ -1,911 +1,398 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#fff1f7">
+  <meta name="theme-color" content="#fff8fc">
   <title>Mi carrito | Angel's Fashion World</title>
-
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
   <style>
     :root {
-      --rosa: #d85b91;
+      --rosa: #df4f8e;
       --rosa-oscuro: #a52f68;
       --texto: #68495a;
       --dorado: #c8a96b;
       --borde: #f4cfe0;
-      --fondo: #fffafd;
+      --fondo: #fff8fc;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
-      margin: 0;
-      padding-bottom: 35px;
       font-family: Arial, sans-serif;
+      background: var(--fondo);
       color: var(--texto);
-      background:
-        radial-gradient(circle at top left, #ffe1ee, transparent 28%),
-        radial-gradient(circle at 90% 30%, #fff0f7, transparent 25%),
-        var(--fondo);
+      min-height: 100vh;
     }
 
-    /* ESTRELLAS */
-
-    .estrellas {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      color: var(--dorado);
-      opacity: .8;
-    }
-
-    .estrella {
-      position: absolute;
-      text-shadow: 0 0 12px #c8a96b70;
-    }
-
-    .estrella1 {
-      top: 120px;
-      left: 4%;
-      animation: brillar 3s ease-in-out infinite;
-    }
-
-    .estrella2 {
-      top: 280px;
-      right: 5%;
-      animation: flotar 5s ease-in-out infinite .7s;
-    }
-
-    .estrella3 {
-      bottom: 180px;
-      left: 6%;
-      animation: brillar 4s ease-in-out infinite 1.3s;
-    }
-
-    .estrella4 {
-      bottom: 80px;
-      right: 7%;
-      animation: flotar 5s ease-in-out infinite 2s;
-    }
-
-    @keyframes flotar {
-      0%, 100% { transform: translateY(0) rotate(0); }
-      50% { transform: translateY(-14px) rotate(15deg); }
-    }
-
-    @keyframes brillar {
-      0%, 100% {
-        transform: scale(1);
-        opacity: .55;
-      }
-      50% {
-        transform: scale(1.35) rotate(18deg);
-        opacity: 1;
-      }
-    }
-
-    /* MENÚ SUPERIOR */
-
-    .menu {
-      position: relative;
-      z-index: 2;
-      width: 94%;
-      max-width: 1200px;
-      margin: 16px auto;
-      padding: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 5px;
-      flex-wrap: wrap;
-      border: 1px solid var(--borde);
-      border-radius: 20px;
-      background: #ffffffed;
-      box-shadow: 0 5px 20px #d85b9112;
-    }
-
-    .menu a {
-      padding: 10px 13px;
-      border-radius: 25px;
-      background: white;
-      color: var(--texto);
-      font-size: 13px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: .3s;
-    }
-
-    .menu a:hover {
-      background: #fff0f7;
-      color: var(--rosa-oscuro);
-    }
-
-    .menu a.activo {
-      background: var(--rosa);
-      color: white;
-      box-shadow: 0 5px 14px #d85b9140;
-    }
-
-    /* ENCABEZADO */
-
-    .encabezado {
-      position: relative;
-      z-index: 1;
-      width: 92%;
-      max-width: 1100px;
-      margin: 35px auto 25px;
+    header {
       text-align: center;
-    }
-
-    .encabezado .mini {
-      color: var(--dorado);
-      letter-spacing: 3px;
-      font-size: 12px;
-    }
-
-    .encabezado h1 {
-      margin: 12px 0;
-      color: var(--rosa-oscuro);
-      font: 400 clamp(34px, 6vw, 55px) Georgia, serif;
-    }
-
-    .encabezado p {
-      line-height: 1.7;
-      color: #9c5276;
-    }
-
-    /* CONTENEDOR */
-
-    .contenedor {
-      position: relative;
-      z-index: 1;
-      width: 92%;
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1.3fr .7fr;
-      gap: 25px;
-      align-items: start;
-    }
-
-    .panel {
-      padding: 24px;
-      border: 1px solid var(--borde);
-      border-radius: 25px;
-      background: #ffffffed;
-      box-shadow: 0 8px 25px #d85b9112;
-    }
-
-    .panel h2 {
-      margin-top: 0;
-      color: var(--rosa-oscuro);
-      font: 400 27px Georgia, serif;
-    }
-
-    /* PRODUCTOS */
-
-    .producto {
-      display: grid;
-      grid-template-columns: 95px 1fr auto;
-      gap: 15px;
-      align-items: center;
-      padding: 15px 0;
+      padding: 28px 15px;
+      background: white;
       border-bottom: 1px solid var(--borde);
     }
 
-    .producto:last-child {
-      border-bottom: 0;
+    header h1 {
+      color: var(--rosa-oscuro);
+      font-size: 27px;
+      margin-bottom: 8px;
     }
 
-    .producto img {
-      width: 95px;
-      height: 105px;
-      object-fit: cover;
-      border-radius: 15px;
+    header p {
+      color: var(--texto);
+      font-size: 14px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 16px;
+      background: white;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--rosa-oscuro);
+      padding: 10px 17px;
       border: 1px solid var(--borde);
-      background: #fff1f7;
+      border-radius: 25px;
+      font-size: 14px;
     }
 
-    .producto h3 {
-      margin: 0 0 7px;
+    nav a.activo {
+      background: var(--rosa);
+      color: white;
+    }
+
+    .contenedor {
+      width: 92%;
+      max-width: 1100px;
+      margin: 35px auto;
+    }
+
+    .titulo {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .titulo h2 {
       color: var(--rosa-oscuro);
-      font-size: 16px;
+      font-size: 27px;
+      margin-bottom: 8px;
     }
 
-    .producto p {
-      margin: 5px 0;
-      font-size: 13px;
+    .panel {
+      background: white;
+      border: 1px solid var(--borde);
+      border-radius: 22px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 5px 18px rgba(216, 91, 145, .07);
     }
 
-    .precio {
-      color: var(--rosa-oscuro);
-      font-weight: bold;
+    #listaProductos {
+      display: grid;
+      gap: 18px;
     }
 
-    .cantidad {
+    .producto-carrito {
       display: flex;
       align-items: center;
-      gap: 9px;
-      margin-top: 10px;
-    }
-
-    .cantidad button {
-      width: 28px;
-      height: 28px;
-      border: 0;
-      border-radius: 50%;
-      background: var(--rosa);
-      color: white;
-      font-size: 17px;
-      cursor: pointer;
-    }
-
-    .cantidad span {
-      min-width: 18px;
-      text-align: center;
-      font-weight: bold;
-    }
-
-    .eliminar {
-      margin-top: 8px;
-      padding: 6px 10px;
+      gap: 18px;
+      padding: 15px;
       border: 1px solid var(--borde);
-      border-radius: 15px;
-      background: #fff1f7;
+      border-radius: 17px;
+      flex-wrap: wrap;
+    }
+
+    .producto-carrito img {
+      width: 105px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 13px;
+      background: var(--fondo);
+    }
+
+    .producto-carrito h3 {
       color: var(--rosa-oscuro);
+      margin-bottom: 8px;
+    }
+
+    .producto-carrito p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    button {
       cursor: pointer;
-      font-size: 12px;
+      border: none;
+      font-size: 14px;
     }
 
-    .eliminar:hover {
-      background: #ffe0ec;
+    .producto-carrito button {
+      background: #fff0f6;
+      color: var(--rosa-oscuro);
+      border: 1px solid var(--borde);
+      border-radius: 20px;
+      padding: 7px 12px;
+      margin: 8px 4px 0 0;
     }
 
-    .sin-productos {
-      padding: 35px 10px;
-      text-align: center;
-      line-height: 1.8;
-    }
-
-    .sin-productos .icono {
-      display: block;
-      font-size: 50px;
-    }
-
-    .sin-productos a {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 12px 22px;
-      border-radius: 25px;
+    .producto-carrito button[data-eliminar] {
       background: var(--rosa);
       color: white;
-      text-decoration: none;
+      border: none;
     }
-
-    /* RESUMEN */
 
     .resumen {
-      position: sticky;
-      top: 15px;
+      text-align: right;
+      line-height: 2;
+      font-size: 17px;
     }
 
-    .linea {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      margin: 15px 0;
-      font-size: 14px;
-    }
-
-    .total {
-      padding-top: 15px;
-      border-top: 1px solid var(--borde);
+    .resumen strong {
       color: var(--rosa-oscuro);
-      font-size: 20px;
-      font-weight: bold;
+      font-size: 21px;
     }
 
-    /* FORMULARIO */
-
-    .formulario {
-      margin-top: 22px;
-    }
-
-    .formulario h3 {
+    .formulario h2 {
       color: var(--rosa-oscuro);
-      font: 400 22px Georgia, serif;
+      margin-bottom: 20px;
     }
 
-    .campo {
-      margin-bottom: 14px;
-    }
-
-    .campo label {
+    .formulario label {
       display: block;
-      margin-bottom: 7px;
-      font-size: 13px;
+      margin: 15px 0 7px;
       font-weight: bold;
-    }
-
-    .campo input,
-    .campo textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid var(--borde);
-      border-radius: 13px;
-      outline: none;
-      background: white;
-      color: var(--texto);
-      font-family: Arial, sans-serif;
       font-size: 14px;
     }
 
-    .campo input:focus,
-    .campo textarea:focus {
-      border-color: var(--rosa);
-      box-shadow: 0 0 0 3px #d85b9118;
+    .formulario input,
+    .formulario textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid var(--borde);
+      border-radius: 12px;
+      outline: none;
+      font-size: 15px;
+      color: var(--texto);
+      background: #fffafd;
     }
 
-    .campo textarea {
-      min-height: 75px;
+    .formulario input:focus,
+    .formulario textarea:focus {
+      border-color: var(--rosa);
+    }
+
+    .formulario textarea {
+      min-height: 85px;
       resize: vertical;
     }
 
-    .nequi {
-      margin: 18px 0;
-      padding: 16px;
+    .informacion-pago {
+      background: #fff4f8;
       border: 1px solid var(--borde);
-      border-radius: 17px;
-      background: #fff4f9;
+      padding: 18px;
+      border-radius: 15px;
+      margin: 20px 0;
       line-height: 1.7;
-      font-size: 13px;
     }
 
-    .nequi strong {
+    .informacion-pago h3 {
       color: var(--rosa-oscuro);
+      margin-bottom: 8px;
     }
 
-    /* NÚMERO NEQUI PEQUEÑO */
-
-    #numeroNequi {
-      display: block;
-      margin-top: 5px;
-      color: #a52f68;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-
-    .boton {
+    .boton-enviar {
       width: 100%;
-      padding: 14px;
-      border: 0;
-      border-radius: 25px;
       background: var(--rosa);
       color: white;
-      font-size: 15px;
+      padding: 15px;
+      border-radius: 30px;
+      font-size: 16px;
       font-weight: bold;
-      cursor: pointer;
-      transition: .3s;
+      margin-top: 20px;
     }
 
-    .boton:hover {
+    .boton-enviar:hover {
       background: var(--rosa-oscuro);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 15px #d85b9130;
-    }
-
-    .boton:disabled {
-      opacity: .6;
-      cursor: not-allowed;
-      transform: none;
-    }
-
-    .aviso {
-      margin-top: 12px;
-      font-size: 12px;
-      line-height: 1.6;
-      color: #87556f;
-      text-align: center;
     }
 
     #mensajePedido {
-      min-height: 20px;
-      margin-top: 14px;
-      font-size: 13px;
       text-align: center;
+      color: var(--rosa-oscuro);
+      font-weight: bold;
+      margin-top: 18px;
       line-height: 1.6;
     }
 
-    .logo-final {
-      position: relative;
-      z-index: 1;
-      display: block;
-      width: 85px;
-      height: 85px;
-      margin: 35px auto 8px;
-      object-fit: contain;
-      opacity: .8;
+    .volver {
+      display: inline-block;
+      color: var(--rosa-oscuro);
+      text-decoration: none;
+      margin-bottom: 20px;
     }
 
     footer {
-      position: relative;
-      z-index: 1;
-      padding: 10px 20px 25px;
-      color: #87556f;
       text-align: center;
+      padding: 25px;
+      background: white;
+      border-top: 1px solid var(--borde);
+      margin-top: 45px;
       font-size: 13px;
-      line-height: 1.8;
     }
 
-    @media (max-width: 750px) {
-      .menu { gap: 3px; }
-
-      .menu a {
-        padding: 8px 9px;
-        font-size: 12px;
-      }
-
-      .contenedor {
-        grid-template-columns: 1fr;
-      }
-
-      .resumen { position: static; }
-
-      .panel { padding: 18px; }
+    .estrella {
+      position: fixed;
+      color: var(--dorado);
+      pointer-events: none;
+      z-index: -1;
+      animation: flotar 4s ease-in-out infinite;
     }
 
-    @media (max-width: 420px) {
-      .menu { width: 96%; }
+    .estrella1 { top: 120px; left: 4%; }
+    .estrella2 { top: 280px; right: 5%; animation-delay: .7s; }
+    .estrella3 { bottom: 180px; left: 6%; animation-delay: 1.3s; }
+    .estrella4 { bottom: 80px; right: 7%; animation-delay: 2s; }
 
-      .contenedor { width: 94%; }
-
-      .producto {
-        grid-template-columns: 75px 1fr;
-        gap: 10px;
-      }
-
-      .producto img {
-        width: 75px;
-        height: 90px;
-      }
-
-      .producto-acciones {
-        grid-column: 2;
-      }
+    @keyframes flotar {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
+    @media (max-width: 600px) {
+      .panel { padding: 17px; }
+      .producto-carrito img {
+        width: 85px;
+        height: 105px;
       }
+      .resumen { text-align: left; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ESTRELLAS -->
-  <div class="estrellas" aria-hidden="true">
-    <span class="estrella estrella1">✦</span>
-    <span class="estrella estrella2">✧</span>
-    <span class="estrella estrella3">✦</span>
-    <span class="estrella estrella4">✧</span>
-  </div>
+  <span class="estrella estrella1">✦</span>
+  <span class="estrella estrella2">✧</span>
+  <span class="estrella estrella3">✦</span>
+  <span class="estrella estrella4">✧</span>
 
-  <!-- MENÚ SUPERIOR -->
-  <nav class="menu" aria-label="Menú principal">
+  <header>
+    <h1>🪽 Angel's Fashion World ✦</h1>
+    <p>Tu estilo, tu belleza, tu esencia.</p>
+  </header>
+
+  <nav>
     <a href="index.html">Inicio</a>
     <a href="moda.html">Moda</a>
     <a href="belleza.html">Belleza</a>
     <a href="skincare.html">Skin care</a>
     <a href="accesorios.html">Accesorios</a>
-    <a class="activo" href="carrito.html">Carrito 🛍️</a>
+    <a href="pedido.html">Mis pedidos</a>
   </nav>
 
-  <!-- ENCABEZADO -->
-  <header class="encabezado">
-    <div class="mini">✧ TU ESTILO, TU ESENCIA ✧</div>
-    <h1>Mi carrito 🛍️</h1>
-    <p>¡Tus favoritos están cada vez más cerca de ti! ♡</p>
-  </header>
-
-  <!-- CONTENIDO -->
   <main class="contenedor">
 
+    <a href="javascript:history.back()" class="volver">← Volver</a>
+
+    <div class="titulo">
+      <h2>🛍️ Mi carrito</h2>
+      <p>Revisa tus productos antes de realizar tu pedido.</p>
+    </div>
+
     <section class="panel">
-      <h2>Mis productos ♡</h2>
-      <div id="listaProductos"></div>
+      <div id="listaProductos">
+        <p>Tu carrito está vacío. ♡</p>
+      </div>
     </section>
 
-    <aside class="panel resumen">
-      <h2>Resumen de compra</h2>
+    <section class="panel resumen">
+      <p>Subtotal: <span id="subtotal">$0</span></p>
+      <p>Total: <strong id="total">$0</strong></p>
+      <p>Productos: <span id="cantidadTotal">0</span></p>
+    </section>
 
-      <div class="linea">
-        <span>Productos</span>
-        <strong id="cantidadTotal">0</strong>
-      </div>
+    <section class="panel formulario">
+      <h2>♡ Datos de tu pedido</h2>
 
-      <div class="linea">
-        <span>Subtotal</span>
-        <strong id="subtotal">$0</strong>
-      </div>
+      <form id="formularioPedido">
 
-      <div class="linea total">
-        <span>Total</span>
-        <strong id="total">$0</strong>
-      </div>
+        <label for="nombre">Nombre completo</label>
+        <input
+          type="text"
+          id="nombre"
+          placeholder="Escribe tu nombre"
+          required
+        >
 
-      <form class="formulario" id="formularioPedido">
-        <h3>Datos para tu pedido ♡</h3>
+        <label for="correo">Correo electrónico</label>
+        <input
+          type="email"
+          id="correo"
+          placeholder="tucorreo@gmail.com"
+          required
+        >
 
-        <div class="campo">
-          <label for="nombre">Nombre completo</label>
-          <input type="text" id="nombre" name="nombre" required>
-        </div>
+        <label for="telefono">Número de teléfono</label>
+        <input
+          type="tel"
+          id="telefono"
+          placeholder="Tu número de contacto"
+          required
+        >
 
-        <div class="campo">
-          <label for="correo">Correo electrónico</label>
-          <input type="email" id="correo" name="correo" required>
-        </div>
+        <label for="direccion">Dirección de entrega</label>
+        <textarea
+          id="direccion"
+          placeholder="Ciudad, barrio, dirección y detalles"
+          required
+        ></textarea>
 
-        <div class="campo">
-          <label for="telefono">Número de teléfono</label>
-          <input type="tel" id="telefono" name="telefono" required>
-        </div>
-
-        <div class="campo">
-          <label for="direccion">Dirección de entrega</label>
-          <textarea id="direccion" name="direccion" required></textarea>
-        </div>
-
-        <div class="nequi">
-          <strong>♡ Pago por Nequi</strong>
+        <div class="informacion-pago">
+          <h3>♡ Información de pago</h3>
+          <p>Medio de pago: Nequi</p>
+          <p><strong>Número: 3170948192</strong></p>
           <p>
-            Realiza tu pago al número de Nequi indicado por la tienda.
-            Después, escribe la referencia de la operación para que
-            podamos revisar tu pedido.
+            Realiza el pago y escribe en el siguiente campo
+            la referencia de tu comprobante.
           </p>
-          <strong>Número Nequi:</strong>
-          <span id="numeroNequi">3170948192</span>
+          <p>
+            Tu pedido quedará pendiente de verificación.
+          </p>
         </div>
 
-        <div class="campo">
-          <label for="referencia">Referencia del pago</label>
-          <input
-            type="text"
-            id="referencia"
-            name="referencia"
-            placeholder="Escribe la referencia de tu pago"
-            required
-          >
-        </div>
+        <label for="referencia">Referencia del pago</label>
+        <input
+          type="text"
+          id="referencia"
+          placeholder="Escribe la referencia del pago"
+          required
+        >
 
-        <button class="boton" type="submit" id="botonPedido">
+        <button type="submit" class="boton-enviar">
           Enviar mi pedido ♡
         </button>
 
-        <p class="aviso">
-          Tu pedido quedará pendiente de verificación hasta comprobar
-          el pago. Enviar este formulario no confirma que el dinero
-          haya sido recibido.
-        </p>
+        <p id="mensajePedido" aria-live="polite"></p>
 
-        <div id="mensajePedido" aria-live="polite"></div>
       </form>
-    </aside>
+    </section>
 
   </main>
 
-  <img
-    class="logo-final"
-    src="./imagenes/indexhtml/Screenshot_2026-10-13-17-18-15-611_com.miui.gallery~2.jpg"
-    alt="Angel's Fashion World"
-    onerror="this.style.display='none'"
-  >
-
   <footer>
-    <strong>Angel's Fashion World</strong><br>
-    Moda · Belleza · Skin care · Accesorios<br>
-    <span style="color:var(--dorado)">✦ Hecho con cariño ✦</span>
+    <p>© 2026 Angel's Fashion World ✦</p>
+    <p>Gracias por elegirnos ♡</p>
   </footer>
 
-  <script>
-    /* CONFIGURACIÓN */
-
-    const EMAILJS_PUBLIC_KEY = "HfD44gnT1ug1X-9K9";
-    const EMAILJS_SERVICE_ID = "service_angel_gmail";
-    const EMAILJS_TEMPLATE_ID = "template_5a3fwpf";
-
-    const NUMERO_NEQUI = "3170948192";
-    const CLAVE_CARRITO = "angelsCarrito";
-
-    emailjs.init({
-      publicKey: EMAILJS_PUBLIC_KEY
-    });
-
-    /* ELEMENTOS */
-
-    const listaProductos = document.getElementById("listaProductos");
-    const cantidadTotal = document.getElementById("cantidadTotal");
-    const subtotalElemento = document.getElementById("subtotal");
-    const totalElemento = document.getElementById("total");
-    const formularioPedido = document.getElementById("formularioPedido");
-    const botonPedido = document.getElementById("botonPedido");
-    const mensajePedido = document.getElementById("mensajePedido");
-
-    document.getElementById("numeroNequi").textContent = NUMERO_NEQUI;
-
-    /* FUNCIONES DEL CARRITO */
-
-    function obtenerCarrito() {
-      try {
-        const datos = JSON.parse(localStorage.getItem(CLAVE_CARRITO));
-        return Array.isArray(datos) ? datos : [];
-      } catch (error) {
-        return [];
-      }
-    }
-
-    function guardarCarrito(carrito) {
-      localStorage.setItem(CLAVE_CARRITO, JSON.stringify(carrito));
-    }
-
-    function precioNumerico(precio) {
-      if (typeof precio === "number") {
-        return Number.isFinite(precio) ? precio : 0;
-      }
-
-      if (typeof precio === "string") {
-        const numero = Number(precio.replace(/[^\d]/g, ""));
-        return Number.isFinite(numero) ? numero : 0;
-      }
-
-      return 0;
-    }
-
-    function precioPendiente(producto) {
-      if (producto.precioPendiente === true) return true;
-
-      const precio = String(producto.precio ?? "").toLowerCase();
-
-      return precio.includes("confirmar") ||
-             precio.includes("pendiente");
-    }
-
-    function formatoPrecio(valor) {
-      return new Intl.NumberFormat("es-CO", {
-        style: "currency",
-        currency: "COP",
-        maximumFractionDigits: 0
-      }).format(valor);
-    }
-
-    function escaparHTML(texto) {
-      return String(texto ?? "").replace(/[&<>"']/g, function(letra) {
-        return {
-          "&": "&amp;",
-          "<": "&lt;",
-          ">": "&gt;",
-          '"': "&quot;",
-          "'": "&#039;"
-        }[letra];
-      });
-    }
-
-    function renderizarCarrito() {
-      const carrito = obtenerCarrito();
-
-      listaProductos.innerHTML = "";
-
-      if (carrito.length === 0) {
-        listaProductos.innerHTML = `
-          <div class="sin-productos">
-            <span class="icono">🛍️</span>
-            <h3>Tu carrito está vacío</h3>
-            <p>Explora nuestra tienda y encuentra tus favoritos.</p>
-            <a href="moda.html">Ir a la tienda ♡</a>
-          </div>
-        `;
-
-        cantidadTotal.textContent = "0";
-        subtotalElemento.textContent = formatoPrecio(0);
-        totalElemento.textContent = formatoPrecio(0);
-        botonPedido.disabled = true;
-        return;
-      }
-
-      botonPedido.disabled = false;
-
-      let cantidad = 0;
-      let subtotal = 0;
-
-      carrito.forEach((producto, indice) => {
-        const unidades = Math.max(1, Number(producto.cantidad) || 1);
-        const pendiente = precioPendiente(producto);
-        const precio = precioNumerico(producto.precio);
-
-        cantidad += unidades;
-
-        if (!pendiente) {
-          subtotal += precio * unidades;
-        }
-
-        const imagen = producto.imagen || "";
-
-        const elemento = document.createElement("article");
-        elemento.className = "producto";
-
-        elemento.innerHTML = `
-          <img
-            src="${escaparHTML(imagen)}"
-            alt="${escaparHTML(producto.nombre || "Producto")}"
-            onerror="this.style.visibility='hidden'"
-          >
-
-          <div>
-            <h3>${escaparHTML(producto.nombre || "Producto")}</h3>
-
-            <p class="precio">
-              ${pendiente ? "Precio por confirmar" : formatoPrecio(precio)}
-            </p>
-
-            ${producto.talla ? `<p>Talla: ${escaparHTML(producto.talla)}</p>` : ""}
-            ${producto.tamaño ? `<p>Tamaño: ${escaparHTML(producto.tamaño)}</p>` : ""}
-
-            <div class="cantidad">
-              <button type="button" data-accion="restar" data-indice="${indice}" aria-label="Restar">−</button>
-              <span>${unidades}</span>
-              <button type="button" data-accion="sumar" data-indice="${indice}" aria-label="Sumar">+</button>
-            </div>
-
-            <button
-              class="eliminar"
-              type="button"
-              data-accion="eliminar"
-              data-indice="${indice}"
-            >
-              Eliminar
-            </button>
-          </div>
-        `;
-
-        listaProductos.appendChild(elemento);
-      });
-
-      cantidadTotal.textContent = cantidad;
-      subtotalElemento.textContent = formatoPrecio(subtotal);
-      totalElemento.textContent = formatoPrecio(subtotal);
-    }
-
-    listaProductos.addEventListener("click", function(evento) {
-      const boton = evento.target.closest("button[data-accion]");
-      if (!boton) return;
-
-      const carrito = obtenerCarrito();
-      const indice = Number(boton.dataset.indice);
-      const accion = boton.dataset.accion;
-
-      if (!Number.isInteger(indice) || !carrito[indice]) return;
-
-      if (accion === "sumar") {
-        carrito[indice].cantidad =
-          (Number(carrito[indice].cantidad) || 1) + 1;
-      }
-
-      if (accion === "restar") {
-        carrito[indice].cantidad =
-          (Number(carrito[indice].cantidad) || 1) - 1;
-
-        if (carrito[indice].cantidad <= 0) {
-          carrito.splice(indice, 1);
-        }
-      }
-
-      if (accion === "eliminar") {
-        carrito.splice(indice, 1);
-      }
-
-      guardarCarrito(carrito);
-      renderizarCarrito();
-    });
-
-    /* ENVIAR PEDIDO A EMAILJS */
-
-    formularioPedido.addEventListener("submit", async function(evento) {
-      evento.preventDefault();
-
-      const carrito = obtenerCarrito();
-
-      if (carrito.length === 0) {
-        mensajePedido.textContent = "Tu carrito está vacío.";
-        return;
-      }
-
-      if (carrito.some(precioPendiente)) {
-        mensajePedido.textContent =
-          "Hay productos con precio por confirmar. Consulta su precio antes de enviar el pedido.";
-        return;
-      }
-
-      const nombre = document.getElementById("nombre").value.trim();
-      const correo = document.getElementById("correo").value.trim();
-      const telefono = document.getElementById("telefono").value.trim();
-      const direccion = document.getElementById("direccion").value.trim();
-      const referencia = document.getElementById("referencia").value.trim();
-
-      if (!nombre || !correo || !telefono || !direccion || !referencia) {
-        mensajePedido.textContent = "Completa todos los campos.";
-        return;
-      }
-
-      let total = 0;
-
-      const productosTexto = carrito.map(producto => {
-        const unidades = Math.max(1, Number(producto.cantidad) || 1);
-        const precio = precioNumerico(producto.precio);
-
-        total += precio * unidades;
-
-        const detalles = [
-          producto.nombre || "Producto",
-          producto.talla ? "Talla: " + producto.talla : "",
-          producto.tamaño ? "Tamaño: " + producto.tamaño : ""
-        ].filter(Boolean).join(" | ");
-
-        return `${detalles} | Cantidad: ${unidades} | Precio: ${formatoPrecio(precio * unidades)}`;
-      }).join("\n");
-
-      const datos = {
-        nombre: nombre,
-        correo: correo,
-        telefono: telefono,
-        direccion: direccion,
-        productos: productosTexto,
-        total: formatoPrecio(total),
-        referencia: referencia,
-        estado_pago: "Pendiente de verificación"
-      };
-
-      botonPedido.disabled = true;
-      botonPedido.textContent = "Enviando pedido...";
-      mensajePedido.textContent = "Estamos enviando tu pedido. ♡";
-
-      try {
-        await emailjs.send(
-          EMAILJS_SERVICE_ID,
-          EMAILJS_TEMPLATE_ID,
-          datos
-        );
-
-        localStorage.removeItem(CLAVE_CARRITO);
-        renderizarCarrito();
-        formularioPedido.reset();
-
-        mensajePedido.textContent =
-          "¡Tu pedido fue enviado correctamente! Recuerda que el pago debe verificarse antes de confirmarlo. ♡";
-
-      } catch (error) {
-        console.error("Error al enviar pedido:", error);
-
-        mensajePedido.textContent =
-          "No se pudo enviar el pedido. Revisa tu conexión y la configuración de EmailJS.";
-
-      } finally {
-        botonPedido.disabled = obtenerCarrito().length === 0;
-        botonPedido.textContent = "Enviar mi pedido ♡";
-      }
-    });
-
-    /* INICIAR */
-
-    renderizarCarrito();
-  </script>
+  <script src="script.js"></script>
 
 </body>
 </html>
