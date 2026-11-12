@@ -1,885 +1,739 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Mi carrito | Angel's Fashion World</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background:
-                radial-gradient(circle at top left, #ffffff 0%, transparent 35%),
-                radial-gradient(circle at bottom right, #ffe1ef 0%, transparent 40%),
-                #fff0f6;
-            color: #6b4055;
-            min-height: 100vh;
-        }
-
-        /* ESTRELLAS */
-
-        .estrella {
-            position: fixed;
-            color: #d85b91;
-            font-size: 22px;
-            z-index: 0;
-            animation: flotar 4s ease-in-out infinite;
-        }
-
-        .estrella1 {
-            top: 12%;
-            left: 5%;
-        }
-
-        .estrella2 {
-            top: 25%;
-            right: 7%;
-            animation-delay: 1s;
-        }
-
-        .estrella3 {
-            bottom: 20%;
-            left: 8%;
-            animation-delay: 2s;
-        }
-
-        .estrella4 {
-            bottom: 10%;
-            right: 10%;
-            animation-delay: 3s;
-        }
-
-        @keyframes flotar {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        /* MENÚ */
-
-        .menu {
-            width: 92%;
-            max-width: 1200px;
-            margin: 25px auto;
-            padding: 15px 20px;
-
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid #f2c8da;
-            border-radius: 25px;
-
-            box-shadow: 0 5px 20px rgba(216, 91, 145, 0.12);
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-
-            position: relative;
-            z-index: 2;
-        }
-
-        .menu a {
-            text-decoration: none;
-            color: #6b4055;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .menu a:hover {
-            color: #d85b91;
-        }
-
-        /* PRESENTACIÓN */
-
-        .presentacion {
-            width: 92%;
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 35px 20px;
-            text-align: center;
-
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid #f2c8da;
-            border-radius: 25px;
-
-            box-shadow: 0 5px 20px rgba(216, 91, 145, 0.12);
-
-            position: relative;
-            z-index: 1;
-        }
-
-        .alas {
-            font-size: 35px;
-            margin-bottom: 5px;
-        }
-
-        .presentacion h1 {
-            color: #d85b91;
-            font-size: 34px;
-            margin-bottom: 10px;
-        }
-
-        .presentacion p {
-            font-size: 17px;
-            margin-bottom: 20px;
-        }
-
-        .volver {
-            display: inline-block;
-            background: #d85b91;
-            color: white;
-            padding: 12px 22px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .volver:hover {
-            transform: scale(1.04);
-        }
-
-        /* CARRITO */
-
-        .carrito-contenedor {
-            width: 92%;
-            max-width: 1000px;
-            margin: 30px auto 60px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .titulo-carrito {
-            text-align: center;
-            color: #d85b91;
-            font-size: 30px;
-            margin-bottom: 25px;
-        }
-
-        .producto-carrito {
-            background: white;
-            border: 1px solid #f2c8da;
-            border-radius: 20px;
-            padding: 20px;
-            margin-bottom: 15px;
-
-            box-shadow: 0 5px 18px rgba(216, 91, 145, 0.10);
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .producto-info {
-            flex: 1;
-            min-width: 220px;
-        }
-
-        .producto-info h3 {
-            color: #d85b91;
-            margin-bottom: 8px;
-            font-size: 19px;
-        }
-
-        .producto-info p {
-            margin: 4px 0;
-        }
-
-        .cantidad {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .cantidad button {
-            width: 32px;
-            height: 32px;
-            border: none;
-            border-radius: 50%;
-            background: #d85b91;
-            color: white;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
-        .cantidad span {
-            font-weight: bold;
-            min-width: 25px;
-            text-align: center;
-        }
-
-        .eliminar {
-            border: none;
-            background: #ffe1ef;
-            color: #d85b91;
-            padding: 9px 14px;
-            border-radius: 15px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        /* RESUMEN */
-
-        .resumen {
-            background: white;
-            border: 1px solid #f2c8da;
-            border-radius: 25px;
-            padding: 25px;
-            margin-top: 25px;
-
-            box-shadow: 0 5px 20px rgba(216, 91, 145, 0.12);
-        }
-
-        .resumen h2 {
-            color: #d85b91;
-            margin-bottom: 18px;
-            font-size: 25px;
-        }
-
-        .total {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            font-size: 21px;
-            font-weight: bold;
-
-            padding: 15px 0;
-
-            border-top: 1px solid #f2c8da;
-        }
-
-        .total span:last-child {
-            color: #d85b91;
-        }
-
-        /* BOTONES */
-
-        .acciones {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            gap: 15px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .vaciar {
-            background: white;
-            color: #d85b91;
-
-            border: 2px solid #d85b91;
-
-            padding: 12px 20px;
-
-            border-radius: 20px;
-
-            cursor: pointer;
-
-            font-weight: bold;
-        }
-
-        .comprar {
-            background: #d85b91;
-            color: white;
-
-            border: none;
-
-            padding: 13px 30px;
-
-            border-radius: 20px;
-
-            cursor: pointer;
-
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        /* CARRITO VACÍO */
-
-        .vacio {
-            background: white;
-
-            border: 1px solid #f2c8da;
-
-            border-radius: 25px;
-
-            padding: 40px 20px;
-
-            text-align: center;
-
-            box-shadow: 0 5px 20px rgba(216, 91, 145, 0.12);
-        }
-
-        .vacio h2 {
-            color: #d85b91;
-            margin-bottom: 12px;
-        }
-
-        .vacio p {
-            margin-bottom: 20px;
-        }
-
-        /* FOOTER */
-
-        footer {
-            text-align: center;
-            padding: 30px 15px;
-            color: #6b4055;
-
-            position: relative;
-            z-index: 1;
-        }
-
-        footer strong {
-            color: #d85b91;
-        }
-
-        /* CELULAR */
-
-        @media (max-width: 600px) {
-
-            .menu {
-                gap: 12px;
-                padding: 14px;
-            }
-
-            .menu a {
-                font-size: 14px;
-            }
-
-            .presentacion h1 {
-                font-size: 28px;
-            }
-
-            .producto-carrito {
-                align-items: flex-start;
-            }
-
-            .acciones {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .vaciar,
-            .comprar {
-                width: 100%;
-            }
-
-            .total {
-                font-size: 18px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi carrito | Angel's Fashion World</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <style>
+    :root {
+      --rosa: #df4f8e;
+      --rosa-oscuro: #a52f68;
+      --rosa-claro: #fff1f7;
+      --texto: #68495a;
+      --dorado: #c8a96b;
+      --borde: #f4cfe0;
+      --fondo: #fff8fc;
+      --blanco: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: var(--texto);
+      background: var(--fondo);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .estrella {
+      position: fixed;
+      color: var(--rosa);
+      opacity: .35;
+      pointer-events: none;
+      z-index: 0;
+      animation: flotar 4s ease-in-out infinite;
+    }
+
+    .estrella1 { top: 120px; left: 4%; font-size: 25px; }
+    .estrella2 { top: 280px; right: 5%; font-size: 22px; animation-delay: .7s; }
+    .estrella3 { bottom: 180px; left: 6%; font-size: 24px; animation-delay: 1.3s; }
+    .estrella4 { bottom: 80px; right: 7%; font-size: 20px; animation-delay: 2s; }
+
+    @keyframes flotar {
+      0%, 100% { transform: translateY(0) rotate(0); }
+      50% { transform: translateY(-12px) rotate(12deg); }
+    }
+
+    header {
+      text-align: center;
+      padding: 35px 15px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: clamp(27px, 5vw, 43px);
+      color: var(--rosa-oscuro);
+      font-weight: bold;
+    }
+
+    .subtitulo {
+      margin-top: 9px;
+      color: var(--texto);
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      width: 94%;
+      max-width: 1100px;
+      margin: 10px auto 28px;
+      padding: 12px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      background: rgba(255,255,255,.92);
+      border: 1px solid var(--borde);
+      border-radius: 22px;
+      box-shadow: 0 5px 18px rgba(150,93,120,.08);
+      position: relative;
+      z-index: 2;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--texto);
+      padding: 10px 16px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    nav a:hover, nav a.activo {
+      background: var(--rosa);
+      color: white;
+    }
+
+    main {
+      width: 92%;
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .titulo {
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    .titulo h1 {
+      font-family: Georgia, serif;
+      color: var(--rosa-oscuro);
+      font-size: clamp(28px, 5vw, 38px);
+    }
+
+    .titulo p {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .contenedor {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 25px;
+      align-items: start;
+    }
+
+    .panel {
+      background: white;
+      border: 1px solid var(--borde);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 7px 25px rgba(150,93,120,.08);
+    }
+
+    .panel h2 {
+      font-family: Georgia, serif;
+      color: var(--rosa-oscuro);
+      margin-bottom: 20px;
+      font-size: 23px;
+    }
+
+    .producto {
+      display: grid;
+      grid-template-columns: 105px 1fr;
+      gap: 17px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--borde);
+    }
+
+    .producto img {
+      width: 105px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 16px;
+      background: var(--rosa-claro);
+    }
+
+    .producto h3 {
+      color: var(--rosa-oscuro);
+      font-size: 16px;
+      margin: 5px 0 8px;
+    }
+
+    .precio {
+      font-weight: bold;
+      color: var(--rosa);
+      margin-bottom: 8px;
+    }
+
+    .talla {
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .acciones {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      flex-wrap: wrap;
+    }
+
+    .cantidad {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--borde);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .cantidad button {
+      width: 30px;
+      height: 30px;
+      border: none;
+      background: var(--rosa-claro);
+      color: var(--rosa-oscuro);
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .cantidad span {
+      min-width: 30px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .quitar {
+      border: none;
+      background: transparent;
+      color: #b94b70;
+      cursor: pointer;
+      font-size: 13px;
+      text-decoration: underline;
+    }
+
+    .vacio {
+      text-align: center;
+      padding: 35px 10px;
+    }
+
+    .vacio .icono {
+      font-size: 55px;
+      margin-bottom: 15px;
+    }
+
+    .vacio p {
+      margin: 10px 0 20px;
+    }
+
+    .boton {
+      display: inline-block;
+      border: none;
+      border-radius: 25px;
+      background: var(--rosa);
+      color: white;
+      padding: 13px 22px;
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .boton:hover {
+      background: var(--rosa-oscuro);
+      transform: translateY(-2px);
+    }
+
+    .resumen-linea {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 15px 0;
+      font-size: 14px;
+    }
+
+    .total {
+      border-top: 1px solid var(--borde);
+      padding-top: 17px;
+      margin-top: 18px;
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--rosa-oscuro);
+    }
+
+    .nequi {
+      background: var(--rosa-claro);
+      border: 1px dashed var(--rosa);
+      border-radius: 18px;
+      padding: 17px;
+      margin: 20px 0;
+    }
+
+    .nequi h3 {
+      color: var(--rosa-oscuro);
+      margin-bottom: 9px;
+    }
+
+    .nequi p {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .formulario {
+      margin-top: 25px;
+    }
+
+    .formulario label {
+      display: block;
+      font-size: 13px;
+      font-weight: bold;
+      margin: 14px 0 7px;
+    }
+
+    .formulario input,
+    .formulario textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid var(--borde);
+      border-radius: 13px;
+      background: #fffafd;
+      color: var(--texto);
+      font-family: Arial, sans-serif;
+      outline: none;
+    }
+
+    .formulario input:focus,
+    .formulario textarea:focus {
+      border-color: var(--rosa);
+      box-shadow: 0 0 0 3px rgba(223,79,142,.10);
+    }
+
+    .formulario textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .aviso {
+      font-size: 12px;
+      line-height: 1.5;
+      color: #846b79;
+      margin-top: 13px;
+    }
+
+    #mensaje {
+      display: none;
+      padding: 13px;
+      border-radius: 13px;
+      margin-top: 15px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    #mensaje.error {
+      display: block;
+      background: #fff0f0;
+      color: #a52f45;
+    }
+
+    #mensaje.exito {
+      display: block;
+      background: #effaf1;
+      color: #286b3a;
+    }
+
+    footer {
+      background: white;
+      border-top: 1px solid var(--borde);
+      text-align: center;
+      padding: 28px 15px;
+      color: var(--texto);
+      font-size: 13px;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer strong {
+      color: var(--rosa-oscuro);
+      font-family: Georgia, serif;
+    }
+
+    @media(max-width: 780px) {
+      .contenedor {
+        grid-template-columns: 1fr;
+      }
+
+      .panel {
+        padding: 19px;
+      }
+    }
+
+    @media(max-width: 420px) {
+      .producto {
+        grid-template-columns: 85px 1fr;
+        gap: 12px;
+      }
+
+      .producto img {
+        width: 85px;
+        height: 105px;
+      }
+
+      nav a {
+        padding: 9px 11px;
+        font-size: 12px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- ESTRELLAS -->
+  <span class="estrella estrella1">✦</span>
+  <span class="estrella estrella2">✧</span>
+  <span class="estrella estrella3">✦</span>
+  <span class="estrella estrella4">✧</span>
 
-    <div class="estrella estrella1">✦</div>
-    <div class="estrella estrella2">✧</div>
-    <div class="estrella estrella3">✦</div>
-    <div class="estrella estrella4">✧</div>
+  <header>
+    <div class="logo">🪽 Angel's Fashion World ✦</div>
+    <p class="subtitulo">TU ESTILO, TU ESENCIA, TU ENCANTO</p>
+  </header>
 
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="moda.html">Moda</a>
+    <a href="belleza.html">Belleza</a>
+    <a href="skincare.html">Skin care</a>
+    <a href="accesorios.html">Accesorios</a>
+    <a href="index.html#contactanos">Contáctanos</a>
+  </nav>
 
-    <!-- MENÚ -->
+  <main>
+    <div class="titulo">
+      <h1>Mi carrito 🛍️</h1>
+      <p>¡Tus favoritos están cada vez más cerca de ti!</p>
+    </div>
 
-    <nav class="menu">
+    <div class="contenedor">
 
-        <a href="index.html">
-            Inicio
-        </a>
+      <section class="panel">
+        <h2>Mis productos ♡</h2>
+        <div id="listaProductos"></div>
+      </section>
 
-        <a href="moda.html">
-            Moda
-        </a>
+      <aside class="panel">
+        <h2>Resumen de tu pedido</h2>
 
-        <a href="belleza.html">
-            Belleza
-        </a>
-
-        <a href="skincare.html">
-            Skin care
-        </a>
-
-        <a href="accesorios.html">
-            Accesorios
-        </a>
-
-        <a href="sobre-nosotros.html">
-            Sobre nosotros
-        </a>
-
-        <a href="index.html#contactanos">
-            Contáctanos
-        </a>
-
-    </nav>
-
-
-    <!-- PRESENTACIÓN -->
-
-    <header class="presentacion">
-
-        <div class="alas">
-            🪽 ✦
+        <div class="resumen-linea">
+          <span>Productos</span>
+          <strong id="cantidadProductos">0</strong>
         </div>
 
-        <h1>
-            Mi carrito 🛒
-        </h1>
-
-        <p>
-            Revisa tus productos antes de comprar. 💕
-        </p>
-
-        <a
-            href="index.html"
-            class="volver">
-
-            ← Seguir comprando
-
-        </a>
-
-    </header>
-
-
-    <!-- CARRITO -->
-
-    <main class="carrito-contenedor">
-
-        <h2 class="titulo-carrito">
-            Resumen de carrito
-        </h2>
-
-
-        <div id="listaCarrito"></div>
-
-
-        <!-- RESUMEN -->
-
-        <section
-            class="resumen"
-            id="resumenCarrito">
-
-            <h2>
-                Resumen de carrito 🛍️
-            </h2>
-
-
-            <div class="total">
-
-                <span>
-                    Total:
-                </span>
-
-                <span id="totalCarrito">
-                    $0
-                </span>
-
-            </div>
-
-
-            <div class="acciones">
-
-                <!-- IZQUIERDA -->
-
-                <button
-                    class="vaciar"
-                    onclick="vaciarCarrito()">
-
-                    Vaciar carrito
-
-                </button>
-
-
-                <!-- DERECHA -->
-
-                <button
-                    class="comprar"
-                    onclick="irAPagar()">
-
-                    Comprar
-
-                </button>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        🪽
-        <strong>
-            Angel's Fashion World
-        </strong>
-        🪽
-
-        <br>
-
-        Moda • Belleza • Skin Care • Accesorios
-
-    </footer>
-
-
-    <script>
-
-        /*
-        ========================================
-        CARRITO
-        ========================================
-        */
-let carrito =
-            JSON.parse(
-                localStorage.getItem("carritoAngel")
-            ) || [];
-
-
-        /*
-        ========================================
-        FORMATO DE PRECIO
-        ========================================
-        */
-
-        function formatoPrecio(numero) {
-
-            numero = Number(numero) || 0;
-
-            return "$" + numero.toLocaleString("es-CO");
-
-        }
-
-
-        /*
-        ========================================
-        GUARDAR CARRITO
-        ========================================
-        */
-
-        function guardarCarrito() {
-
-            localStorage.setItem(
-                "carritoAngel",
-                JSON.stringify(carrito)
-            );
-
-            mostrarCarrito();
-
-        }
-
-
-        /*
-        ========================================
-        MOSTRAR CARRITO
-        ========================================
-        */
-
-        function mostrarCarrito() {
-
-            const lista =
-                document.getElementById("listaCarrito");
-
-            const resumen =
-                document.getElementById("resumenCarrito");
-
-
-            lista.innerHTML = "";
-
-
-            /*
-            CARRITO VACÍO
-            */
-
-            if (
-                !Array.isArray(carrito) ||
-                carrito.length === 0
-            ) {
-
-                lista.innerHTML = `
-
-                    <div class="vacio">
-
-                        <h2>
-                            Tu carrito está vacío 🛒
-                        </h2>
-
-                        <p>
-                            Todavía no has agregado ningún producto. 💕
-                        </p>
-
-                        <a
-                            href="index.html"
-                            class="volver">
-
-                            Explorar Angel's 🪽
-
-                        </a>
-
-                    </div>
-
-                `;
-
-                resumen.style.display = "none";
-
-                return;
-            }
-
-
-            resumen.style.display = "block";
-
-
-            let total = 0;
-
-
-            /*
-            PRODUCTOS
-            */
-
-            carrito.forEach(
-                (producto, index) => {
-
-                    const precio =
-                        Number(producto.precio) || 0;
-
-                    const cantidad =
-                        Number(producto.cantidad) || 1;
-
-
-                    total +=
-                        precio * cantidad;
-
-
-                    lista.innerHTML += `
-
-                        <div class="producto-carrito">
-
-                            <div class="producto-info">
-
-                                <h3>
-                                    ${producto.nombre || "Producto"}
-                                </h3>
-
-                                <p>
-                                    Precio:
-                                    ${formatoPrecio(precio)}
-                                </p>
-
-                                ${
-                                    producto.talla
-                                    ?
-                                    `<p>
-                                        Talla:
-                                        ${producto.talla}
-                                    </p>`
-                                    :
-                                    ""
-                                }
-
-                            </div>
-
-
-                            <div class="cantidad">
-
-                                <button
-                                    onclick="disminuirCantidad(${index})">
-
-                                    −
-
-                                </button>
-
-
-                                <span>
-                                    ${cantidad}
-                                </span>
-
-
-                                <button
-                                    onclick="aumentarCantidad(${index})">
-
-                                    +
-
-                                </button>
-
-                            </div>
-
-
-                            <button
-                                class="eliminar"
-                                onclick="eliminarProducto(${index})">
-
-                                Eliminar
-
-                            </button>
-
-                        </div>
-
-                    `;
-                }
-            );
-
-
-            document.getElementById(
-                "totalCarrito"
-            ).textContent =
-                formatoPrecio(total);
-
-        }
-
-
-        /*
-        ========================================
-        AUMENTAR CANTIDAD
-        ========================================
-        */
-
-        function aumentarCantidad(index) {
-
-            carrito[index].cantidad =
-                (Number(
-                    carrito[index].cantidad
-                ) || 0) + 1;
-
-
-            guardarCarrito();
-
-        }
-
-
-        /*
-        ========================================
-        DISMINUIR CANTIDAD
-        ========================================
-        */
-
-        function disminuirCantidad(index) {
-
-            const cantidad =
-                Number(
-                    carrito[index].cantidad
-                ) || 1;
-
-
-            if (cantidad > 1) {
-
-                carrito[index].cantidad =
-                    cantidad - 1;
-
-            } else {
-
-                carrito.splice(index, 1);
-
-            }
-
-
-            guardarCarrito();
-
-        }
-
-
-        /*
-        ========================================
-        ELIMINAR
-        ========================================
-        */
-
-        function eliminarProducto(index) {
-
-            carrito.splice(index, 1);
-
-            guardarCarrito();
-
-        }
-
-
-        /*
-        ========================================
-        VACIAR CARRITO
-        ========================================
-        */
-
-        function vaciarCarrito() {
-
-            if (carrito.length === 0) {
-                return;
-            }
-
-
-            const confirmar =
-                confirm(
-                    "¿Quieres vaciar todo el carrito?"
-                );
-
-
-            if (confirmar) {
-
-                carrito = [];
-
-
-                localStorage.setItem(
-                    "carritoAngel",
-                    JSON.stringify(carrito)
-                );
-
-
-                mostrarCarrito();
-
-            }
-
-        }
-
-
-        /*
-        ========================================
-        IR A PAGAR
-        ========================================
-        */
-
-        function irAPagar() {
-
-            window.location.href =
-                "nequi.html";
-
-        }
-
-
-        /*
-        ========================================
-        INICIAR
-        ========================================
-        */
-
+        <div class="resumen-linea">
+          <span>Subtotal</span>
+          <strong id="subtotal">$0</strong>
+        </div>
+
+        <div class="resumen-linea total">
+          <span>Total</span>
+          <strong id="total">$0</strong>
+        </div>
+
+        <div class="nequi">
+          <h3>💗 Pago por Nequi</h3>
+          <p>Realiza tu pago al número:</p>
+          <p><strong id="numeroNequi"></strong></p>
+          <p>Después de realizarlo, escribe la referencia de la transacción en el formulario. Tu pago será verificado antes de confirmar el pedido.</p>
+        </div>
+
+        <form class="formulario" id="formularioPedido">
+          <h2>Datos de la clienta</h2>
+
+          <label for="nombre">Nombre completo *</label>
+          <input id="nombre" name="nombre" type="text" required maxlength="100" autocomplete="name">
+
+          <label for="correo">Correo electrónico *</label>
+          <input id="correo" name="correo" type="email" required maxlength="150" autocomplete="email">
+
+          <label for="telefono">Teléfono *</label>
+          <input id="telefono" name="telefono" type="tel" required maxlength="25" autocomplete="tel">
+
+          <label for="direccion">Dirección de entrega *</label>
+          <textarea id="direccion" name="direccion" required maxlength="300" autocomplete="street-address"></textarea>
+
+          <label for="referencia">Referencia de pago Nequi *</label>
+          <input id="referencia" name="referencia" type="text" required maxlength="100" placeholder="Escribe la referencia de tu pago">
+
+          <p class="aviso">
+            Al enviar el pedido, recibirás una confirmación de que tus datos fueron enviados. Esto no significa que el pago ya esté aprobado.
+          </p>
+
+          <button class="boton" id="botonEnviar" type="submit" style="width:100%; margin-top:18px;">
+            Enviar mi pedido 💗
+          </button>
+
+          <div id="mensaje" role="status" aria-live="polite"></div>
+        </form>
+      </aside>
+
+    </div>
+  </main>
+
+  <footer>
+    <strong>Angel's Fashion World</strong>
+    <p style="margin-top:8px;">Gracias por elegirnos ♡</p>
+    <p style="margin-top:8px;">✦ Hecho con amor ✦</p>
+  </footer>
+
+  <script>
+    // CONFIGURACIÓN DE EMAILJS
+    const EMAILJS_PUBLIC_KEY = "HfD44gnT1ug1X-9K9";
+    const EMAILJS_SERVICE_ID = "service_angel_gmail";
+    const EMAILJS_TEMPLATE_ID = "template_5a3fwpf";
+
+    // CAMBIA ESTO POR TU NÚMERO REAL DE NEQUI
+    const NUMERO_NEQUI = "ESCRIBE_AQUI_TU_NUMERO_NEQUI";
+
+    const CLAVE_CARRITO = "angelsCarrito";
+
+    emailjs.init({
+      publicKey: EMAILJS_PUBLIC_KEY
+    });
+
+    const listaProductos = document.getElementById("listaProductos");
+    const formulario = document.getElementById("formularioPedido");
+    const mensaje = document.getElementById("mensaje");
+    const botonEnviar = document.getElementById("botonEnviar");
+
+    document.getElementById("numeroNequi").textContent =
+      NUMERO_NEQUI === "ESCRIBE_AQUI_TU_NUMERO_NEQUI"
+        ? "Número pendiente de configurar"
+        : NUMERO_NEQUI;
+
+    function obtenerCarrito() {
+      try {
+        return JSON.parse(localStorage.getItem(CLAVE_CARRITO)) || [];
+      } catch (error) {
+        return [];
+      }
+    }
+
+    function guardarCarrito(carrito) {
+      localStorage.setItem(CLAVE_CARRITO, JSON.stringify(carrito));
+    }
+
+    function precioNumero(precio) {
+      if (typeof precio === "number") return precio;
+
+      if (typeof precio === "string") {
+        const limpio = precio.replace(/[^\d,.-]/g, "").replace(/\./g, "").replace(",", ".");
+        return Number(limpio) || 0;
+      }
+
+      return 0;
+    }
+
+    function dinero(valor) {
+      return "$" + Number(valor).toLocaleString("es-CO");
+    }
+
+    function escapar(texto) {
+      return String(texto ?? "").replace(/[&<>"']/g, caracter => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      })[caracter]);
+    }
+
+    function mostrarCarrito() {
+      const carrito = obtenerCarrito();
+
+      if (!carrito.length) {
+        listaProductos.innerHTML = `
+          <div class="vacio">
+            <div class="icono">🛍️</div>
+            <h3>Tu carrito está vacío</h3>
+            <p>¡Descubre nuestros productos y agrega tus favoritos!</p>
+            <a class="boton" href="moda.html">Explorar tienda</a>
+          </div>
+        `;
+      } else {
+        listaProductos.innerHTML = carrito.map((producto, indice) => {
+          const nombre = escapar(producto.nombre || "Producto");
+          const imagen = escapar(producto.imagen || "");
+          const talla = escapar(producto.talla || producto.tamaño || "No especificada");
+          const cantidad = Math.max(1, Number(producto.cantidad) || 1);
+          const precio = precioNumero(producto.precio);
+          const pendiente = producto.precioPendiente === true || precio <= 0;
+
+          return `
+            <article class="producto">
+              <img src="${imagen}" alt="${nombre}"
+                   onerror="this.style.visibility='hidden'">
+              <div>
+                <h3>${nombre}</h3>
+                <p class="precio">
+                  ${pendiente ? "Precio por confirmar" : dinero(precio)}
+                </p>
+                <p class="talla">Talla: ${talla}</p>
+                <div class="acciones">
+                  <div class="cantidad">
+                    <button type="button" onclick="cambiarCantidad(${indice}, -1)" aria-label="Disminuir">−</button>
+                    <span>${cantidad}</span>
+                    <button type="button" onclick="cambiarCantidad(${indice}, 1)" aria-label="Aumentar">+</button>
+                  </div>
+                  <button class="quitar" type="button" onclick="eliminarProducto(${indice})">Quitar</button>
+                </div>
+              </div>
+            </article>
+          `;
+        }).join("");
+      }
+
+      actualizarResumen(carrito);
+    }
+
+    function actualizarResumen(carrito) {
+      const cantidad = carrito.reduce((suma, producto) =>
+        suma + Math.max(1, Number(producto.cantidad) || 1), 0);
+
+      const total = carrito.reduce((suma, producto) =>
+        suma + precioNumero(producto.precio) *
+        Math.max(1, Number(producto.cantidad) || 1), 0);
+
+      const hayPendientes = carrito.some(producto =>
+        producto.precioPendiente === true || precioNumero(producto.precio) <= 0
+      );
+
+      document.getElementById("cantidadProductos").textContent = cantidad;
+      document.getElementById("subtotal").textContent = dinero(total);
+      document.getElementById("total").textContent =
+        hayPendientes ? dinero(total) + " + precios por confirmar" : dinero(total);
+    }
+
+    function cambiarCantidad(indice, cambio) {
+      const carrito = obtenerCarrito();
+
+      if (!carrito[indice]) return;
+
+      const cantidadActual = Math.max(1, Number(carrito[indice].cantidad) || 1);
+      carrito[indice].cantidad = Math.max(1, cantidadActual + cambio);
+
+      guardarCarrito(carrito);
+      mostrarCarrito();
+    }
+
+    function eliminarProducto(indice) {
+      const carrito = obtenerCarrito();
+      carrito.splice(indice, 1);
+      guardarCarrito(carrito);
+      mostrarCarrito();
+    }
+
+    function mostrarMensaje(texto, tipo) {
+      mensaje.textContent = texto;
+      mensaje.className = tipo;
+    }
+
+    formulario.addEventListener("submit", async function(evento) {
+      evento.preventDefault();
+
+      const carrito = obtenerCarrito();
+
+      if (!carrito.length) {
+        mostrarMensaje("Agrega productos antes de enviar tu pedido.", "error");
+        return;
+      }
+
+      const hayPendientes = carrito.some(producto =>
+        producto.precioPendiente === true || precioNumero(producto.precio) <= 0
+      );
+
+      if (hayPendientes) {
+        mostrarMensaje("Hay productos con precio por confirmar. Contáctanos para confirmar el total antes de pagar.", "error");
+        return;
+      }
+
+      if (NUMERO_NEQUI === "ESCRIBE_AQUI_TU_NUMERO_NEQUI") {
+        mostrarMensaje("La tienda todavía no tiene configurado el número de Nequi. Configúralo antes de recibir pedidos.", "error");
+        return;
+      }
+
+      const total = carrito.reduce((suma, producto) =>
+        suma + precioNumero(producto.precio) *
+        Math.max(1, Number(producto.cantidad) || 1), 0);
+
+      const productosTexto = carrito.map(producto => {
+        const cantidad = Math.max(1, Number(producto.cantidad) || 1);
+        const talla = producto.talla || producto.tamaño || "No especificada";
+
+        return `${producto.nombre} | Talla: ${talla} | Cantidad: ${cantidad} | Precio unitario: ${dinero(precioNumero(producto.precio))}`;
+      }).join("\n");
+
+      const datos = {
+        nombre: document.getElementById("nombre").value.trim(),
+        correo: document.getElementById("correo").value.trim(),
+        telefono: document.getElementById("telefono").value.trim(),
+        direccion: document.getElementById("direccion").value.trim(),
+        referencia: document.getElementById("referencia").value.trim(),
+        productos: productosTexto,
+        total: dinero(total),
+        estado_pago: "Pendiente de verificación",
+        estado: "Pedido recibido"
+      };
+
+      if (Object.values(datos).some(valor => !String(valor).trim())) {
+        mostrarMensaje("Completa todos los campos antes de continuar.", "error");
+        return;
+      }
+
+      botonEnviar.disabled = true;
+      botonEnviar.textContent = "Enviando pedido...";
+
+      try {
+        await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          datos
+        );
+
+        mostrarMensaje(
+          "¡Tu pedido fue enviado correctamente! Recibiremos tus datos y verificaremos el pago antes de confirmarlo. 💗",
+          "exito"
+        );
+
+        guardarCarrito([]);
         mostrarCarrito();
+        formulario.reset();
 
-    </script>
+      } catch (error) {
+        console.error("Error de EmailJS:", error);
+        mostrarMensaje(
+          "No pudimos enviar el pedido. Revisa tu conexión e inténtalo nuevamente. Si continúa el problema, verifica la configuración de EmailJS.",
+          "error"
+        );
+      } finally {
+        botonEnviar.disabled = false;
+        botonEnviar.textContent = "Enviar mi pedido 💗";
+      }
+    });
+
+    mostrarCarrito();
+  </script>
 
 </body>
-
 </html>
