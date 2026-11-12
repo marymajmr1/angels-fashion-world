@@ -1,134 +1,384 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi pedido | Angel's Fashion World</title>
-    <link rel="stylesheet" href="./style.css?v=18">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff8fc">
+  <title>Mis pedidos | Angel's Fashion World</title>
 
-    <style>
-        .pedido-contenedor {
-            width: 92%;
-            max-width: 650px;
-            margin: 35px auto;
-            padding: 25px;
-            background: white;
-            border: 1px solid #f1d5e2;
-            border-radius: 24px;
-        }
+  <style>
+    :root {
+      --rosa: #df4f8e;
+      --rosa-oscuro: #a52f68;
+      --texto: #68495a;
+      --dorado: #c8a96b;
+      --borde: #f4cfe0;
+      --fondo: #fff8fc;
+    }
 
-        .pedido-contenedor h1 {
-            color: #d85b91;
-            text-align: center;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        .pedido-paso {
-            margin: 18px 0;
-            padding: 16px;
-            border: 1px solid #f1d5e2;
-            border-radius: 15px;
-            color: #68495a;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--fondo);
+      color: var(--texto);
+      min-height: 100vh;
+    }
 
-        .pedido-paso.activo {
-            border-color: #d85b91;
-            background: #fff1f7;
-        }
+    header {
+      background: white;
+      text-align: center;
+      padding: 28px 15px;
+      border-bottom: 1px solid var(--borde);
+    }
 
-        .pedido-paso small {
-            display: block;
-            margin-top: 5px;
-        }
+    header h1 {
+      color: var(--rosa-oscuro);
+      font-size: 27px;
+      margin-bottom: 8px;
+    }
 
-        .pedido-aviso {
-            margin-top: 18px;
-            color: #68495a;
-            text-align: center;
-        }
-    </style>
+    header p {
+      font-size: 14px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 16px;
+      background: white;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--rosa-oscuro);
+      padding: 10px 17px;
+      border: 1px solid var(--borde);
+      border-radius: 25px;
+      font-size: 14px;
+    }
+
+    nav a.activo {
+      background: var(--rosa);
+      color: white;
+    }
+
+    .contenedor {
+      width: 92%;
+      max-width: 1050px;
+      margin: 35px auto;
+    }
+
+    .titulo {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .titulo h2 {
+      color: var(--rosa-oscuro);
+      font-size: 28px;
+      margin-bottom: 9px;
+    }
+
+    .titulo p {
+      line-height: 1.6;
+    }
+
+    .pedido {
+      background: white;
+      border: 1px solid var(--borde);
+      border-radius: 22px;
+      padding: 22px;
+      margin-bottom: 22px;
+      box-shadow: 0 5px 18px rgba(216, 91, 145, .07);
+    }
+
+    .pedido-cabecera {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      border-bottom: 1px solid var(--borde);
+      padding-bottom: 15px;
+      margin-bottom: 17px;
+    }
+
+    .pedido-cabecera h3 {
+      color: var(--rosa-oscuro);
+      margin-bottom: 6px;
+    }
+
+    .estado {
+      display: inline-block;
+      padding: 8px 13px;
+      border-radius: 20px;
+      background: #fff1d9;
+      color: #8a652b;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .datos {
+      line-height: 1.9;
+      font-size: 14px;
+      margin-bottom: 18px;
+      overflow-wrap: anywhere;
+    }
+
+    .productos {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .producto {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px;
+      border: 1px solid var(--borde);
+      border-radius: 15px;
+      flex-wrap: wrap;
+    }
+
+    .producto img {
+      width: 80px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 11px;
+      background: var(--fondo);
+    }
+
+    .producto h4 {
+      color: var(--rosa-oscuro);
+      margin-bottom: 6px;
+    }
+
+    .producto p {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .total {
+      text-align: right;
+      color: var(--rosa-oscuro);
+      font-size: 20px;
+      font-weight: bold;
+      padding-top: 15px;
+      border-top: 1px solid var(--borde);
+    }
+
+    .vacio {
+      background: white;
+      border: 1px dashed var(--borde);
+      border-radius: 22px;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .vacio .icono {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .vacio h3 {
+      color: var(--rosa-oscuro);
+      margin-bottom: 10px;
+    }
+
+    .vacio p {
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .boton {
+      display: inline-block;
+      background: var(--rosa);
+      color: white;
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 25px;
+    }
+
+    .volver {
+      display: inline-block;
+      color: var(--rosa-oscuro);
+      text-decoration: none;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: white;
+      border-top: 1px solid var(--borde);
+      margin-top: 45px;
+      font-size: 13px;
+    }
+
+    .estrella {
+      position: fixed;
+      color: var(--dorado);
+      pointer-events: none;
+      z-index: -1;
+      animation: flotar 4s ease-in-out infinite;
+    }
+
+    .estrella1 { top: 120px; left: 4%; }
+    .estrella2 { top: 280px; right: 5%; animation-delay: .7s; }
+    .estrella3 { bottom: 180px; left: 6%; animation-delay: 1.3s; }
+    .estrella4 { bottom: 80px; right: 7%; animation-delay: 2s; }
+
+    @keyframes flotar {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    @media (max-width: 600px) {
+      .pedido { padding: 16px; }
+      .total { text-align: left; }
+    }
+  </style>
 </head>
 
 <body>
-    <nav class="menu">
-        <a href="index.html">Inicio</a>
-        <a href="moda.html">Moda</a>
-        <a href="belleza.html">Belleza</a>
-        <a href="skincare.html">Skin care</a>
-        <a href="accesorios.html">Accesorios</a>
-        <a href="perfil.html">Mi perfil</a>
-        <a href="carrito.html">Mi carrito</a>
-    </nav>
 
-    <header class="presentacion">
-        <div class="alas-con-estrella">
-            <span class="alas">🪽</span>
-            <span class="estrella-alas">✦</span>
-        </div>
-        <h1>Seguimiento de mi pedido</h1>
-        <p class="frase">Tu compra, paso a paso. ✨</p>
-        <span class="decoracion">✧</span>
-    </header>
+  <span class="estrella estrella1">✦</span>
+  <span class="estrella estrella2">✧</span>
+  <span class="estrella estrella3">✦</span>
+  <span class="estrella estrella4">✧</span>
 
-    <main class="pedido-contenedor">
-        <h1>Estado de tu pedido 💗</h1>
+  <header>
+    <h1>🪽 Angel's Fashion World ✦</h1>
+    <p>Tu estilo, tu belleza, tu esencia.</p>
+  </header>
 
-        <p id="numeroPedido">Número de pedido: Pendiente</p>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="moda.html">Moda</a>
+    <a href="belleza.html">Belleza</a>
+    <a href="skincare.html">Skin care</a>
+    <a href="accesorios.html">Accesorios</a>
+    <a href="carrito.html">Mi carrito</a>
+    <a href="pedido.html" class="activo">Mis pedidos</a>
+  </nav>
 
-        <div class="pedido-paso" data-estado="0">
-            <strong>1. Pedido recibido</strong>
-            <small>Hemos recibido tu solicitud.</small>
-        </div>
+  <main class="contenedor">
 
-        <div class="pedido-paso" data-estado="1">
-            <strong>2. Preparando pedido</strong>
-            <small>Estamos preparando tus productos.</small>
-        </div>
+    <a href="index.html" class="volver">← Volver al inicio</a>
 
-        <div class="pedido-paso" data-estado="2">
-            <strong>3. Saliendo del almacén</strong>
-            <small>Tu pedido está listo para salir.</small>
-        </div>
+    <div class="titulo">
+      <h2>♡ Mis pedidos</h2>
+      <p>Aquí puedes consultar los pedidos realizados en Angel's Fashion World.</p>
+    </div>
 
-        <div class="pedido-paso" data-estado="3">
-            <strong>4. En camino</strong>
-            <small>Tu pedido está en proceso de entrega.</small>
-        </div>
+    <div id="listaPedidos"></div>
 
-        <div class="pedido-paso" data-estado="4">
-            <strong>5. Entregado</strong>
-            <small>El pedido ha sido entregado.</small>
-        </div>
+  </main>
 
-        <p class="pedido-aviso" id="avisoPedido" role="status">
-            El seguimiento se activará cuando conectemos el servidor
-            y registremos tu pedido.
-        </p>
-    </main>
+  <footer>
+    <p>© 2026 Angel's Fashion World ✦</p>
+    <p>Gracias por confiar en nosotros ♡</p>
+  </footer>
 
-    <footer>
-        <p>🪽 Angel's Fashion World 🪽</p>
-        <p>Moda • Belleza • Skin Care • Accesorios</p>
-    </footer>
+  <script>
+    const CLAVE_PEDIDOS = "angelsPedidos";
 
-    <script>
-        // Esta página todavía no consulta estados reales.
-        // No se debe presentar un pedido como entregado sin confirmación.
-        const pedidoGuardado = sessionStorage.getItem(
-            "angelsPedidoTemporal"
-        );
+    function formatoPrecio(precio) {
+      return Number(precio || 0).toLocaleString("es-CO");
+    }
 
-        if (pedidoGuardado) {
-            try {
-                const pedido = JSON.parse(pedidoGuardado);
+    function mostrarPedidos() {
+      const contenedor = document.getElementById("listaPedidos");
 
-                if (pedido.numero) {
-                    document.getElementById("numeroPedido")
-                        .textContent = "Número de pedido: " + pedido.numero;
-                }
-            } catch (error) {
-                console.warn("No se pudo leer el pedido temporal.");
-            }
-        }
-    </script>
+      const pedidos = JSON.parse(
+        localStorage.getItem(CLAVE_PEDIDOS)
+      ) || [];
+
+      contenedor.innerHTML = "";
+
+      if (pedidos.length === 0) {
+        contenedor.innerHTML = `
+          <section class="vacio">
+            <div class="icono">🛍️</div>
+            <h3>Aún no tienes pedidos</h3>
+            <p>
+              Cuando realices una compra, tus productos
+              aparecerán aquí.
+            </p>
+            <a href="moda.html" class="boton">Explorar productos ♡</a>
+          </section>
+        `;
+        return;
+      }
+
+      pedidos.slice().reverse().forEach(pedido => {
+        const tarjeta = document.createElement("article");
+        tarjeta.className = "pedido";
+
+        const productos = Array.isArray(pedido.productos)
+          ? pedido.productos
+          : [];
+
+        const estado = pedido.estado || "Pendiente de verificación";
+
+        tarjeta.innerHTML = `
+          <div class="pedido-cabecera">
+            <div>
+              <h3>Pedido ${pedido.id || ""}</h3>
+              <small>${pedido.fecha || ""}</small>
+            </div>
+            <span class="estado">${estado}</span>
+          </div>
+
+          <div class="datos">
+            <p><strong>Nombre:</strong> ${pedido.nombre || ""}</p>
+            <p><strong>Correo:</strong> ${pedido.correo || ""}</p>
+            <p><strong>Teléfono:</strong> ${pedido.telefono || ""}</p>
+            <p><strong>Dirección:</strong> ${pedido.direccion || ""}</p>
+            <p><strong>Referencia de pago:</strong> ${pedido.referencia || ""}</p>
+          </div>
+
+          <h3 style="color:#a52f68; margin-bottom:12px;">
+            Productos solicitados
+          </h3>
+
+          <div class="productos">
+            ${productos.map(producto => `
+              <div class="producto">
+                <img
+                  src="${producto.imagen || ""}"
+                  alt="${producto.nombre || "Producto"}"
+                >
+                <div>
+                  <h4>${producto.nombre || "Producto"}</h4>
+                  <p>Cantidad: ${Number(producto.cantidad) || 1}</p>
+                  ${producto.talla ? `<p>Talla: ${producto.talla}</p>` : ""}
+                  ${producto.tamaño ? `<p>Tamaño: ${producto.tamaño}</p>` : ""}
+                  <p>Precio: $${formatoPrecio(producto.precio)}</p>
+                </div>
+              </div>
+            `).join("")}
+          </div>
+
+          <div class="total">
+            Total: $${formatoPrecio(pedido.total)}
+          </div>
+        `;
+
+        contenedor.appendChild(tarjeta);
+      });
+    }
+
+    mostrarPedidos();
+  </script>
+
 </body>
 </html>
