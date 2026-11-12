@@ -3,324 +3,569 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#fff8fc">
+  <meta name="theme-color" content="#fff1f7">
   <title>Mi carrito | Angel's Fashion World</title>
 
   <style>
     :root {
-      --rosa: #df4f8e;
+      --rosa: #d85b91;
       --rosa-oscuro: #a52f68;
       --texto: #68495a;
       --dorado: #c8a96b;
       --borde: #f4cfe0;
-      --fondo: #fff8fc;
+      --fondo: #fffafd;
     }
 
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 20px;
     }
 
     body {
+      margin: 0;
+      padding-bottom: 100px;
       font-family: Arial, sans-serif;
-      background: var(--fondo);
       color: var(--texto);
-      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, #ffe1ee, transparent 28%),
+        radial-gradient(circle at 90% 30%, #fff0f7, transparent 25%),
+        var(--fondo);
     }
 
-    header {
-      text-align: center;
-      padding: 28px 15px;
-      background: white;
-      border-bottom: 1px solid var(--borde);
+    a { color: inherit; }
+
+    /* ESTRELLAS ANIMADAS */
+
+    .estrellas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      color: var(--dorado);
+      opacity: .8;
     }
 
-    header h1 {
-      color: var(--rosa-oscuro);
-      font-size: 27px;
-      margin-bottom: 8px;
+    .estrella {
+      position: absolute;
+      text-shadow: 0 0 12px #c8a96b70;
     }
 
-    header p {
-      color: var(--texto);
-      font-size: 14px;
+    .estrella1 {
+      top: 120px;
+      left: 4%;
+      animation: brillar 3s ease-in-out infinite;
     }
 
-    nav {
+    .estrella2 {
+      top: 280px;
+      right: 5%;
+      animation: flotar 5s ease-in-out infinite;
+      animation-delay: .7s;
+    }
+
+    .estrella3 {
+      bottom: 180px;
+      left: 6%;
+      animation: brillar 4s ease-in-out infinite;
+      animation-delay: 1.3s;
+    }
+
+    .estrella4 {
+      bottom: 80px;
+      right: 7%;
+      animation: flotar 5s ease-in-out infinite;
+      animation-delay: 2s;
+    }
+
+    @keyframes flotar {
+      0%, 100% { transform: translateY(0) rotate(0); }
+      50% { transform: translateY(-14px) rotate(15deg); }
+    }
+
+    @keyframes brillar {
+      0%, 100% {
+        transform: scale(1) rotate(0);
+        opacity: .55;
+      }
+      50% {
+        transform: scale(1.35) rotate(18deg);
+        opacity: 1;
+      }
+    }
+
+    /* MENÚ SUPERIOR */
+
+    .menu {
+      position: relative;
+      z-index: 2;
+      width: 94%;
+      max-width: 1200px;
+      margin: 16px auto;
+      padding: 10px;
       display: flex;
       justify-content: center;
+      align-items: center;
+      gap: 5px;
       flex-wrap: wrap;
-      gap: 10px;
-      padding: 16px;
-      background: white;
+      border: 1px solid var(--borde);
+      border-radius: 20px;
+      background: #ffffffed;
+      box-shadow: 0 5px 20px #d85b9112;
     }
 
-    nav a {
-      text-decoration: none;
-      color: var(--rosa-oscuro);
-      padding: 10px 17px;
-      border: 1px solid var(--borde);
+    .menu a {
+      padding: 10px 13px;
       border-radius: 25px;
+      font-size: 13px;
+      text-decoration: none;
+      transition: .3s;
+    }
+
+    .menu a:hover,
+    .menu a.activo {
+      background: var(--rosa);
+      color: white;
+      box-shadow: 0 5px 14px #d85b9140;
+    }
+
+    /* ENCABEZADO */
+
+    .encabezado {
+      position: relative;
+      z-index: 1;
+      width: 92%;
+      max-width: 1200px;
+      margin: 35px auto 25px;
+      padding: 35px 20px;
+      text-align: center;
+      border: 1px solid var(--borde);
+      border-radius: 28px;
+      background: linear-gradient(120deg, #fff5fa, #ffe5f0, white);
+      box-shadow: 0 12px 30px #d85b9115;
+    }
+
+    .mini {
+      color: var(--dorado);
+      font-size: 12px;
+      letter-spacing: 3px;
+      font-weight: bold;
+    }
+
+    .encabezado h1 {
+      margin: 15px 0;
+      color: var(--rosa-oscuro);
+      font: 400 clamp(32px, 5vw, 48px) Georgia, serif;
+    }
+
+    .encabezado p {
+      line-height: 1.8;
+    }
+
+    .volver {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--rosa-oscuro);
+      text-decoration: none;
       font-size: 14px;
     }
 
-    nav a.activo {
-      background: var(--rosa);
-      color: white;
-    }
+    /* CONTENIDO */
 
     .contenedor {
+      position: relative;
+      z-index: 1;
       width: 92%;
       max-width: 1100px;
-      margin: 35px auto;
-    }
-
-    .titulo {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-
-    .titulo h2 {
-      color: var(--rosa-oscuro);
-      font-size: 27px;
-      margin-bottom: 8px;
+      margin: 30px auto;
     }
 
     .panel {
-      background: white;
-      border: 1px solid var(--borde);
-      border-radius: 22px;
-      padding: 25px;
+      padding: clamp(18px, 3vw, 30px);
       margin-bottom: 25px;
-      box-shadow: 0 5px 18px rgba(216, 91, 145, .07);
+      border: 1px solid var(--borde);
+      border-radius: 25px;
+      background: #ffffffed;
+      box-shadow: 0 10px 28px #d85b9112;
     }
+
+    .titulo-panel {
+      margin: 0 0 20px;
+      color: var(--rosa-oscuro);
+      font: 400 26px Georgia, serif;
+    }
+
+    /* PRODUCTOS DEL CARRITO */
 
     #listaProductos {
       display: grid;
-      gap: 18px;
+      gap: 16px;
     }
 
     .producto-carrito {
       display: flex;
       align-items: center;
       gap: 18px;
-      padding: 15px;
-      border: 1px solid var(--borde);
-      border-radius: 17px;
       flex-wrap: wrap;
+      padding: 16px;
+      border: 1px solid var(--borde);
+      border-radius: 19px;
+      background: linear-gradient(120deg, #fffafd, #fff2f8);
+      transition: .3s;
+    }
+
+    .producto-carrito:hover {
+      box-shadow: 0 7px 20px #d85b9115;
+      transform: translateY(-2px);
     }
 
     .producto-carrito img {
-      width: 105px;
-      height: 120px;
+      width: 110px;
+      height: 125px;
       object-fit: cover;
-      border-radius: 13px;
-      background: var(--fondo);
+      border-radius: 15px;
+      background: #fff0f7;
     }
 
     .producto-carrito h3 {
       color: var(--rosa-oscuro);
-      margin-bottom: 8px;
+      margin: 0 0 10px;
+      font-family: Georgia, serif;
     }
 
     .producto-carrito p {
-      margin: 5px 0;
-      font-size: 14px;
-    }
-
-    button {
-      cursor: pointer;
-      border: none;
+      margin: 6px 0;
       font-size: 14px;
     }
 
     .producto-carrito button {
-      background: #fff0f6;
-      color: var(--rosa-oscuro);
+      margin: 9px 5px 0 0;
+      padding: 8px 13px;
       border: 1px solid var(--borde);
-      border-radius: 20px;
-      padding: 7px 12px;
-      margin: 8px 4px 0 0;
+      border-radius: 25px;
+      background: #fff0f7;
+      color: var(--rosa-oscuro);
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .producto-carrito button:hover {
+      background: var(--rosa);
+      color: white;
     }
 
     .producto-carrito button[data-eliminar] {
       background: var(--rosa);
       color: white;
-      border: none;
+      border-color: var(--rosa);
     }
 
+    /* RESUMEN */
+
     .resumen {
-      text-align: right;
-      line-height: 2;
-      font-size: 17px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 13px;
+      align-items: center;
+      line-height: 1.6;
+    }
+
+    .resumen p {
+      margin: 0;
     }
 
     .resumen strong {
       color: var(--rosa-oscuro);
-      font-size: 21px;
+      font-size: 24px;
     }
 
+    .resumen .total-etiqueta {
+      padding-top: 13px;
+      border-top: 1px solid var(--borde);
+      font-weight: bold;
+    }
+
+    .resumen .total-valor {
+      padding-top: 13px;
+      border-top: 1px solid var(--borde);
+    }
+
+    /* FORMULARIO */
+
     .formulario h2 {
+      margin: 0 0 10px;
       color: var(--rosa-oscuro);
-      margin-bottom: 20px;
+      font: 400 27px Georgia, serif;
+    }
+
+    .subtitulo {
+      margin-bottom: 22px;
+      line-height: 1.7;
+      font-size: 14px;
     }
 
     .formulario label {
       display: block;
-      margin: 15px 0 7px;
-      font-weight: bold;
+      margin: 17px 0 8px;
       font-size: 14px;
+      font-weight: bold;
+      color: var(--texto);
     }
 
     .formulario input,
     .formulario textarea {
       width: 100%;
-      padding: 13px;
+      padding: 14px;
       border: 1px solid var(--borde);
-      border-radius: 12px;
+      border-radius: 14px;
       outline: none;
-      font-size: 15px;
       color: var(--texto);
       background: #fffafd;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
     }
 
     .formulario input:focus,
     .formulario textarea:focus {
       border-color: var(--rosa);
+      box-shadow: 0 0 0 3px #d85b9115;
     }
 
     .formulario textarea {
-      min-height: 85px;
+      min-height: 90px;
       resize: vertical;
     }
 
+    /* INFORMACIÓN DE PAGO */
+
     .informacion-pago {
-      background: #fff4f8;
+      margin-top: 23px;
+      padding: 20px;
       border: 1px solid var(--borde);
-      padding: 18px;
-      border-radius: 15px;
-      margin: 20px 0;
-      line-height: 1.7;
+      border-radius: 20px;
+      background: linear-gradient(120deg, #fff0f7, #fffafd);
+      line-height: 1.8;
     }
 
     .informacion-pago h3 {
+      margin: 0 0 12px;
       color: var(--rosa-oscuro);
-      margin-bottom: 8px;
+      font: 400 22px Georgia, serif;
+    }
+
+    .numero-pago {
+      display: inline-block;
+      margin: 8px 0;
+      padding: 10px 17px;
+      border-radius: 25px;
+      background: white;
+      border: 1px solid var(--borde);
+      color: var(--rosa-oscuro);
+      font-weight: bold;
     }
 
     .boton-enviar {
       width: 100%;
+      margin-top: 25px;
+      padding: 16px;
+      border: none;
+      border-radius: 30px;
       background: var(--rosa);
       color: white;
-      padding: 15px;
-      border-radius: 30px;
       font-size: 16px;
       font-weight: bold;
-      margin-top: 20px;
+      cursor: pointer;
+      box-shadow: 0 7px 20px #d85b9130;
+      transition: .3s;
     }
 
     .boton-enviar:hover {
       background: var(--rosa-oscuro);
+      transform: translateY(-3px);
     }
 
     #mensajePedido {
+      min-height: 20px;
+      margin-top: 18px;
       text-align: center;
       color: var(--rosa-oscuro);
       font-weight: bold;
-      margin-top: 18px;
       line-height: 1.6;
     }
 
-    .volver {
-      display: inline-block;
-      color: var(--rosa-oscuro);
-      text-decoration: none;
-      margin-bottom: 20px;
+    /* MENÚ INFERIOR */
+
+    .menu-inferior {
+      position: fixed;
+      z-index: 1000;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 5px;
+      padding: 10px 5px calc(10px + env(safe-area-inset-bottom));
+      border-top: 1px solid var(--borde);
+      background: #fffafc;
+      box-shadow: 0 -5px 20px #d85b9118;
     }
+
+    .menu-inferior a {
+      min-width: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      color: var(--rosa-oscuro);
+      font-size: 12px;
+      text-decoration: none;
+      transition: .2s;
+    }
+
+    .menu-inferior a:hover {
+      color: var(--rosa);
+      transform: translateY(-3px);
+    }
+
+    .icono {
+      font-size: 23px;
+    }
+
+    /* PIE DE PÁGINA */
 
     footer {
+      position: relative;
+      z-index: 1;
+      padding: 25px 20px 30px;
+      color: #87556f;
       text-align: center;
-      padding: 25px;
-      background: white;
-      border-top: 1px solid var(--borde);
-      margin-top: 45px;
       font-size: 13px;
+      line-height: 1.8;
     }
 
-    .estrella {
-      position: fixed;
-      color: var(--dorado);
-      pointer-events: none;
-      z-index: -1;
-      animation: flotar 4s ease-in-out infinite;
-    }
+    /* CELULARES */
 
-    .estrella1 { top: 120px; left: 4%; }
-    .estrella2 { top: 280px; right: 5%; animation-delay: .7s; }
-    .estrella3 { bottom: 180px; left: 6%; animation-delay: 1.3s; }
-    .estrella4 { bottom: 80px; right: 7%; animation-delay: 2s; }
+    @media (max-width: 750px) {
+      .menu {
+        gap: 3px;
+      }
 
-    @keyframes flotar {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
-    }
+      .menu a {
+        padding: 8px 9px;
+        font-size: 12px;
+      }
 
-    @media (max-width: 600px) {
-      .panel { padding: 17px; }
       .producto-carrito img {
-        width: 85px;
+        width: 90px;
         height: 105px;
       }
-      .resumen { text-align: left; }
+    }
+
+    @media (max-width: 420px) {
+      .menu {
+        width: 96%;
+      }
+
+      .contenedor,
+      .encabezado {
+        width: 94%;
+      }
+
+      .producto-carrito {
+        gap: 12px;
+      }
+
+      .producto-carrito img {
+        width: 80px;
+        height: 95px;
+      }
+
+      .menu-inferior a {
+        min-width: 0;
+        font-size: 11px;
+      }
+
+      .icono {
+        font-size: 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <span class="estrella estrella1">✦</span>
-  <span class="estrella estrella2">✧</span>
-  <span class="estrella estrella3">✦</span>
-  <span class="estrella estrella4">✧</span>
+  <!-- ESTRELLAS -->
+  <div class="estrellas" aria-hidden="true">
+    <span class="estrella estrella1">✦</span>
+    <span class="estrella estrella2">✧</span>
+    <span class="estrella estrella3">✦</span>
+    <span class="estrella estrella4">✧</span>
+  </div>
 
-  <header>
-    <h1>🪽 Angel's Fashion World ✦</h1>
-    <p>Tu estilo, tu belleza, tu esencia.</p>
-  </header>
-
-  <nav>
+  <!-- MENÚ SUPERIOR -->
+  <nav class="menu" aria-label="Menú principal">
     <a href="index.html">Inicio</a>
-    <a href="moda.html">Moda</a>
-    <a href="belleza.html">Belleza</a>
-    <a href="skincare.html">Skin care</a>
-    <a href="accesorios.html">Accesorios</a>
-    <a href="pedido.html">Mis pedidos</a>
+    <a href="categorias.html">Tienda</a>
+    <a href="sobre-nosotros.html">Sobre nosotros</a>
+    <a href="index.html#contactanos">Contáctanos</a>
   </nav>
+
+  <!-- ENCABEZADO -->
+  <section class="encabezado">
+    <div class="mini">✧ ANGEL'S FASHION WORLD ✧</div>
+    <h1>Mi carrito 🛍️</h1>
+    <p>Todo lo que te encanta, en un solo lugar.</p>
+    <div style="color:var(--dorado); margin-top:15px; letter-spacing:7px;">
+      ✧ ✦ ✧
+    </div>
+    <a class="volver" href="categorias.html">← Seguir explorando</a>
+  </section>
 
   <main class="contenedor">
 
-    <a href="javascript:history.back()" class="volver">← Volver</a>
-
-    <div class="titulo">
-      <h2>🛍️ Mi carrito</h2>
-      <p>Revisa tus productos antes de realizar tu pedido.</p>
-    </div>
-
+    <!-- PRODUCTOS -->
     <section class="panel">
+      <h2 class="titulo-panel">♡ Tus productos</h2>
+
       <div id="listaProductos">
         <p>Tu carrito está vacío. ♡</p>
       </div>
     </section>
 
-    <section class="panel resumen">
-      <p>Subtotal: <span id="subtotal">$0</span></p>
-      <p>Total: <strong id="total">$0</strong></p>
-      <p>Productos: <span id="cantidadTotal">0</span></p>
+    <!-- RESUMEN -->
+    <section class="panel">
+      <h2 class="titulo-panel">✧ Resumen de compra</h2>
+
+      <div class="resumen">
+        <p>Productos:</p>
+        <p id="cantidadTotal">0</p>
+
+        <p class="total-etiqueta">Subtotal:</p>
+        <p class="total-valor" id="subtotal">$0</p>
+
+        <p class="total-etiqueta">Total:</p>
+        <strong class="total-valor" id="total">$0</strong>
+      </div>
     </section>
 
-    <section class="panel formulario">
+    <!-- FORMULARIO -->
+    <section class="panel formulario" id="datosPedido">
       <h2>♡ Datos de tu pedido</h2>
+      <p class="subtitulo">
+        Completa tus datos para que podamos preparar tu pedido.
+      </p>
 
       <form id="formularioPedido">
 
@@ -328,7 +573,8 @@
         <input
           type="text"
           id="nombre"
-          placeholder="Escribe tu nombre"
+          placeholder="Escribe tu nombre completo"
+          autocomplete="name"
           required
         >
 
@@ -337,6 +583,7 @@
           type="email"
           id="correo"
           placeholder="tucorreo@gmail.com"
+          autocomplete="email"
           required
         >
 
@@ -345,26 +592,34 @@
           type="tel"
           id="telefono"
           placeholder="Tu número de contacto"
+          autocomplete="tel"
           required
         >
 
         <label for="direccion">Dirección de entrega</label>
         <textarea
           id="direccion"
-          placeholder="Ciudad, barrio, dirección y detalles"
+          placeholder="Ciudad, barrio, dirección y detalles de entrega"
+          autocomplete="street-address"
           required
         ></textarea>
 
+        <!-- INFORMACIÓN DE PAGO -->
         <div class="informacion-pago">
-          <h3>♡ Información de pago</h3>
-          <p>Medio de pago: Nequi</p>
-          <p><strong>Número: 3170948192</strong></p>
+          <h3>✧ Información de pago</h3>
+
+          <p><strong>Medio de pago:</strong> Nequi</p>
+
+          <p class="numero-pago">3170948192</p>
+
           <p>
-            Realiza el pago y escribe en el siguiente campo
-            la referencia de tu comprobante.
+            Realiza tu pago al número indicado y escribe la
+            referencia de la transacción en el siguiente campo.
           </p>
+
           <p>
-            Tu pedido quedará pendiente de verificación.
+            <strong>Importante:</strong> el pedido quedará pendiente
+            de verificación hasta confirmar el pago.
           </p>
         </div>
 
@@ -372,7 +627,7 @@
         <input
           type="text"
           id="referencia"
-          placeholder="Escribe la referencia del pago"
+          placeholder="Escribe la referencia de tu pago"
           required
         >
 
@@ -387,11 +642,39 @@
 
   </main>
 
+  <!-- PIE DE PÁGINA -->
   <footer>
-    <p>© 2026 Angel's Fashion World ✦</p>
-    <p>Gracias por elegirnos ♡</p>
+    <strong>Angel's Fashion World</strong><br>
+    Moda · Belleza · Skin care · Accesorios<br>
+    <span style="color:var(--dorado)">✦ Hecho con cariño ✦</span>
   </footer>
 
+  <!-- MENÚ INFERIOR -->
+  <nav class="menu-inferior" aria-label="Accesos rápidos">
+
+    <a href="index.html#buscarProducto">
+      <span class="icono">⌕</span>
+      Buscar
+    </a>
+
+    <a href="pedido.html">
+      <span class="icono">♧</span>
+      Pedidos
+    </a>
+
+    <a href="carrito.html">
+      <span class="icono">🛒</span>
+      Carrito
+    </a>
+
+    <a href="perfil.html">
+      <span class="icono">♙</span>
+      Mi perfil
+    </a>
+
+  </nav>
+
+  <!-- JAVASCRIPT -->
   <script src="script.js"></script>
 
 </body>
