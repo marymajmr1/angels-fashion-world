@@ -85,6 +85,41 @@
             }
         }
 
+        /* Menú de navegación */
+        .menu {
+            width: min(92%, 1000px);
+            margin: 20px auto 0;
+            padding: 13px 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px 30px;
+            background: rgba(255, 255, 255, .88);
+            border: 1px solid #f4cfe0;
+            border-radius: 30px;
+            box-shadow: 0 5px 18px rgba(150, 93, 120, .09);
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu a {
+            color: #68495a;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color .25s, transform .25s;
+        }
+
+        .menu a:hover {
+            color: #d85b91;
+            transform: translateY(-2px);
+        }
+
+        .menu a.activo {
+            color: #c92f75;
+            font-weight: bold;
+        }
+
         /* Encabezado */
         header {
             text-align: center;
@@ -305,12 +340,30 @@
             .estrella {
                 font-size: 21px;
             }
+
+            .menu {
+                gap: 12px 17px;
+                padding: 13px 10px;
+            }
+
+            .menu a {
+                font-size: 13px;
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- Menú principal -->
+    <nav class="menu" aria-label="Menú principal">
+        <a href="index.html">Inicio</a>
+        <a href="moda.html">Tienda</a>
+        <a href="sobre-nosotros.html" class="activo">Sobre nosotros</a>
+        <a href="index.html#contactanos">Contáctanos</a>
+    </nav>
+
+    <!-- Estrellas animadas -->
     <span class="estrella estrella1">✦</span>
     <span class="estrella estrella2">✧</span>
     <span class="estrella estrella3">✦</span>
