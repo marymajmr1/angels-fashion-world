@@ -377,6 +377,52 @@
             color: var(--rosa-oscuro);
         }
 
+        /* TODOS LOS PRODUCTOS */
+
+        .seccion-todos-productos {
+            position: relative;
+            z-index: 1;
+            width: 94%;
+            max-width: 1200px;
+            margin: 45px auto;
+            scroll-margin-top: 20px;
+        }
+
+        .seccion-todos-productos h2 {
+            color: var(--rosa-oscuro);
+            text-align: center;
+            font: 400 clamp(27px, 4vw, 38px) Georgia, serif;
+        }
+
+        .seccion-todos-productos > p {
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .bloque-productos {
+            margin: 30px 0;
+            padding: 15px;
+            border: 1px solid var(--borde);
+            border-radius: 22px;
+            background: white;
+            box-shadow: 0 7px 22px #d85b9112;
+        }
+
+        .bloque-productos h3 {
+            color: var(--rosa-oscuro);
+            text-align: center;
+            font: 400 24px Georgia, serif;
+        }
+
+        .marco-productos {
+            width: 100%;
+            min-height: 850px;
+            display: block;
+            border: 0;
+            border-radius: 15px;
+            background: var(--fondo);
+        }
+
         footer {
             position: relative;
             z-index: 1;
@@ -520,6 +566,18 @@
             }
 
             .icono { font-size: 22px; }
+
+            .seccion-todos-productos {
+                width: 96%;
+            }
+
+            .bloque-productos {
+                padding: 8px;
+            }
+
+            .marco-productos {
+                min-height: 750px;
+            }
         }
 
         @media (max-width: 360px) {
@@ -669,7 +727,7 @@
 
         <article class="categoria" data-busqueda="shorts short">
             <img
-                src="imagenes/moda/Screenshot_2026-10-16-20-03-13-874_com.pinterest-edit.jpg"
+src="imagenes/moda/Screenshot_2026-10-16-20-03-13-874_com.pinterest-edit.jpg"
                 alt="Shorts"
                 loading="lazy"
             >
@@ -719,6 +777,83 @@
         </div>
 
     </main>
+
+    <!-- TODOS LOS PRODUCTOS DE MODA -->
+
+    <section class="seccion-todos-productos" id="todosLosProductos">
+
+        <div class="mini" style="text-align:center;">
+            ✧ NUESTRA COLECCIÓN COMPLETA ✧
+        </div>
+
+        <h2>Todos nuestros productos</h2>
+
+        <p>
+            Descubre nuestras prendas y agrega tus favoritas
+            directamente al carrito. 💗
+        </p>
+
+        <div class="bloque-productos">
+            <h3>Camisas ✦</h3>
+            <iframe class="marco-productos" src="blusas.html"
+                title="Productos de camisas" loading="lazy"></iframe>
+        </div>
+
+        <div class="bloque-productos">
+            <h3>Pantalones ✦</h3>
+            <iframe class="marco-productos" src="pantalones.html"
+                title="Productos de pantalones" loading="lazy"></iframe>
+        </div>
+
+        <div class="bloque-productos">
+            <h3>Vestidos cortos ✦</h3>
+            <iframe class="marco-productos" src="vestidos-cortos.html"
+                title="Productos de vestidos cortos" loading="lazy"></iframe>
+        </div>
+
+        <div class="bloque-productos">
+            <h3>Vestidos largos ✦</h3>
+            <iframe class="marco-productos" src="vestidos-largos.html"
+                title="Productos de vestidos largos" loading="lazy"></iframe>
+        </div>
+
+        <div class="bloque-productos">
+            <h3>Conjuntos ✦</h3>
+            <iframe class="marco-productos" src="cojuntos.html"
+                title="Productos de conjuntos" loading="lazy"></iframe>
+        </div>
+
+        <div class="bloque-productos">
+            <h3>Faldas cortas ✦</h3>
+            <iframe class="marco-productos" src="faldas-cortas.html"
+                title="Productos de faldas cortas" loading="lazy"></iframe>
+        </div>
+
+        <div class="bloque-productos">
+            <h3>Shorts ✦</h3>
+            <iframe class="marco-productos" src="shorts.html"
+                title="Productos de shorts" loading="lazy"></iframe>
+        </div>
+
+        <div class="bloque-productos">
+            <h3>Abrigos ✦</h3>
+            <iframe class="marco-productos" src="abrigo.html"
+                title="Productos de abrigos" loading="lazy"></iframe>
+        </div>
+
+        <div class="bloque-productos">
+            <h3>Faldas largas ✦</h3>
+            <iframe class="marco-productos" src="faldas-largas.html"
+                title="Productos de faldas largas" loading="lazy"></iframe>
+        </div>
+
+        <div class="bloque-productos">
+            <h3>Calzados ✦</h3>
+            <iframe class="marco-productos" src="calzados.html"
+                title="Productos de calzados" loading="lazy"></iframe>
+        </div>
+
+    </section>
 
     <footer>
         <strong>Angel's Fashion World 🪽</strong><br>
@@ -816,6 +951,31 @@
             setTimeout(function() {
                 campo.focus({ preventScroll: true });
             }, 100);
+        });
+
+        // Ajustar la altura de las páginas de productos
+        document.querySelectorAll(".marco-productos").forEach(function(marco) {
+
+            marco.addEventListener("load", function() {
+                try {
+                    const documento = marco.contentDocument;
+
+                    if (documento && documento.body) {
+                        const ajustarAltura = function() {
+                            marco.style.height =
+                                (documento.documentElement.scrollHeight + 30) + "px";
+                        };
+
+                        ajustarAltura();
+
+                        setTimeout(ajustarAltura, 500);
+                        setTimeout(ajustarAltura, 1500);
+                    }
+                } catch(error) {
+                    console.log("No se pudo ajustar la altura del producto.");
+                }
+            });
+
         });
     </script>
 
