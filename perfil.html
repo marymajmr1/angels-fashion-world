@@ -1,156 +1,677 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi perfil | Angel's Fashion World</title>
-    <link rel="stylesheet" href="./style.css?v=18">
-    <style>
-        .perfil-contenedor {
-            width: 92%;
-            max-width: 480px;
-            margin: 40px auto;
-            padding: 28px;
-            background: white;
-            border: 1px solid #f1d5e2;
-            border-radius: 25px;
-            box-shadow: 0 8px 25px #d85b9118;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fffafd">
+<title>Mi perfil | Angel's Fashion World</title>
 
-        .perfil-contenedor h1 {
-            text-align: center;
-            color: #d85b91;
-            margin-bottom: 10px;
-        }
+<style>
+:root {
+  --rosa: #d85b91;
+  --rosa-oscuro: #a52f68;
+  --texto: #68495a;
+  --dorado: #c8a96b;
+  --borde: #f4cfe0;
+  --fondo: #fffafd;
+}
 
-        .perfil-contenedor p {
-            text-align: center;
-            color: #68495a;
-            margin-bottom: 22px;
-        }
+* {
+  box-sizing: border-box;
+}
 
-        .perfil-contenedor label {
-            display: block;
-            margin: 14px 0 7px;
-            color: #68495a;
-            font-weight: bold;
-        }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--texto);
+  background:
+    radial-gradient(circle at top left, #ffe1ee, transparent 28%),
+    radial-gradient(circle at 90% 30%, #fff0f7, transparent 25%),
+    var(--fondo);
+  padding-bottom: 95px;
+}
 
-        .perfil-contenedor input {
-            width: 100%;
-            padding: 13px;
-            border: 1px solid #e8b4cc;
-            border-radius: 12px;
-            font-size: 15px;
-        }
+.estrellas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  color: var(--dorado);
+  opacity: .8;
+}
 
-        .perfil-contenedor button {
-            width: 100%;
-            padding: 13px;
-            margin-top: 20px;
-            border: none;
-            border-radius: 14px;
-            background: #d85b91;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-        }
+.estrella {
+  position: absolute;
+  animation: brillar 3s infinite alternate;
+}
 
-        .aviso-perfil {
-            margin-top: 15px;
-            color: #68495a;
-            font-size: 14px;
-        }
-    </style>
+.estrella1 {
+  top: 120px;
+  left: 4%;
+}
+
+.estrella2 {
+  top: 280px;
+  right: 5%;
+  animation: flotar 5s infinite;
+  animation-delay: .7s;
+}
+
+.estrella3 {
+  bottom: 180px;
+  left: 6%;
+  animation-delay: 1.3s;
+}
+
+.estrella4 {
+  bottom: 80px;
+  right: 7%;
+  animation: flotar 5s infinite;
+  animation-delay: 2s;
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes brillar {
+  from { opacity: .4; transform: scale(.9); }
+  to { opacity: 1; transform: scale(1.2); }
+}
+
+.menu {
+  position: relative;
+  z-index: 2;
+  width: 94%;
+  max-width: 1200px;
+  margin: 16px auto;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  border: 1px solid var(--borde);
+  border-radius: 20px;
+  background: #ffffffed;
+  box-shadow: 0 5px 18px #d85b9112;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--texto);
+  padding: 10px 13px;
+  border-radius: 25px;
+  font-size: 13px;
+  transition: .3s;
+}
+
+.menu a:hover,
+.menu a.activo {
+  background: var(--rosa);
+  color: white;
+}
+
+.contenedor {
+  position: relative;
+  z-index: 1;
+  width: 92%;
+  max-width: 850px;
+  margin: 35px auto;
+}
+
+.titulo {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.titulo h1 {
+  color: var(--rosa-oscuro);
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.titulo p {
+  color: var(--texto);
+  font-size: 14px;
+}
+
+.tarjeta {
+  background: #ffffffed;
+  border: 1px solid var(--borde);
+  border-radius: 25px;
+  padding: 25px;
+  margin-bottom: 22px;
+  box-shadow: 0 8px 25px #d85b9110;
+}
+
+.foto-contenedor {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.foto {
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #f4cfe0;
+  background: #fff0f7;
+}
+
+.foto-contenedor h2 {
+  color: var(--rosa-oscuro);
+  font-size: 21px;
+  margin: 12px 0 5px;
+}
+
+.foto-contenedor p {
+  font-size: 13px;
+  margin: 0;
+}
+
+.cambiar-foto {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 9px 15px;
+  background: #fff0f7;
+  color: var(--rosa-oscuro);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  border: 1px solid var(--borde);
+}
+
+.cambiar-foto input {
+  display: none;
+}
+
+.subtitulo {
+  color: var(--rosa-oscuro);
+  font-size: 19px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.campo {
+  margin-bottom: 17px;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.campo input,
+.campo textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid var(--borde);
+  border-radius: 13px;
+  outline: none;
+  background: #fffafd;
+  color: var(--texto);
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  border-color: var(--rosa);
+  box-shadow: 0 0 0 3px #d85b9115;
+}
+
+.campo textarea {
+  resize: vertical;
+  min-height: 75px;
+}
+
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.boton {
+  display: inline-block;
+  flex: 1;
+  min-width: 130px;
+  padding: 13px 17px;
+  border: none;
+  border-radius: 25px;
+  background: var(--rosa);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.boton:hover {
+  background: var(--rosa-oscuro);
+  transform: translateY(-2px);
+}
+
+.boton-secundario {
+  background: #fff0f7;
+  color: var(--rosa-oscuro);
+  border: 1px solid var(--borde);
+}
+
+.boton-secundario:hover {
+  background: #ffe1ee;
+  color: var(--rosa-oscuro);
+}
+
+.opcion {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 16px;
+  border: 1px solid var(--borde);
+  border-radius: 17px;
+  margin-bottom: 12px;
+  text-decoration: none;
+  color: var(--texto);
+  background: #fffafd;
+  transition: .3s;
+}
+
+.opcion:hover {
+  background: #fff0f7;
+  transform: translateX(3px);
+}
+
+.opcion .icono {
+  font-size: 25px;
+}
+
+.opcion strong {
+  display: block;
+  color: var(--rosa-oscuro);
+  margin-bottom: 4px;
+}
+
+.opcion small {
+  font-size: 12px;
+  color: var(--texto);
+}
+
+.mensaje {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: var(--rosa-oscuro);
+  font-weight: bold;
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 20px;
+  font-size: 13px;
+  color: var(--texto);
+}
+
+.menu-inferior {
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 5px;
+  background: #fffafc;
+  border-top: 1px solid var(--borde);
+  box-shadow: 0 -4px 15px #d85b9115;
+}
+
+.menu-inferior a {
+  text-decoration: none;
+  color: var(--texto);
+  font-size: 11px;
+  text-align: center;
+  flex: 1;
+}
+
+.menu-inferior span {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 3px;
+}
+
+.menu-inferior a.activo {
+  color: var(--rosa-oscuro);
+  font-weight: bold;
+}
+
+@media(max-width: 500px) {
+  .menu {
+    gap: 2px;
+  }
+
+  .menu a {
+    font-size: 12px;
+    padding: 9px;
+  }
+
+  .tarjeta {
+    padding: 19px;
+  }
+
+  .titulo h1 {
+    font-size: 26px;
+  }
+}
+</style>
 </head>
 
 <body>
-    <nav class="menu">
-        <a href="index.html">Inicio</a>
-        <a href="moda.html">Moda</a>
-        <a href="belleza.html">Belleza</a>
-        <a href="skincare.html">Skin care</a>
-        <a href="accesorios.html">Accesorios</a>
-        <a href="sobre-nosotros.html">Sobre nosotros</a>
-        <a href="index.html#contactanos">Contáctanos</a>
-    </nav>
 
-    <header class="presentacion">
-        <div class="alas-con-estrella">
-            <span class="alas">🪽</span>
-            <span class="estrella-alas">✦</span>
-        </div>
+<div class="estrellas">
+  <span class="estrella estrella1">✦</span>
+  <span class="estrella estrella2">✧</span>
+  <span class="estrella estrella3">✦</span>
+  <span class="estrella estrella4">✧</span>
+</div>
 
-        <h1>Mi perfil</h1>
-        <p class="frase">¡Bienvenida a Angel's! ✨</p>
-        <p>Prepara tu cuenta para realizar tus pedidos. 🤍</p>
-        <span class="decoracion">✧</span>
-    </header>
+<nav class="menu">
+  <a href="index.html">Inicio</a>
+  <a href="categorias.html">Tienda</a>
+  <a href="sobre-nosotros.html">Sobre nosotros</a>
+  <a href="index.html#contactanos">Contáctanos</a>
+</nav>
 
-    <main class="perfil-contenedor">
-        <h1>Crear mi cuenta 💗</h1>
-        <p>Completa tus datos para continuar.</p>
+<main class="contenedor">
 
-        <form id="formularioPerfil">
-            <label for="nombre">Nombre completo</label>
-            <input id="nombre" name="nombre"
-                   type="text" autocomplete="name"
-                   required maxlength="100">
+  <header class="titulo">
+    <h1>♡ Mi perfil ♡</h1>
+    <p>Tu espacio personal en Angel's Fashion World</p>
+  </header>
 
-            <label for="correo">Correo electrónico</label>
-            <input id="correo" name="correo"
-                   type="email" autocomplete="email"
-                   required maxlength="254">
+  <section class="tarjeta">
 
-            <label for="telefono">Teléfono (opcional)</label>
-            <input id="telefono" name="telefono"
-                   type="tel" autocomplete="tel"
-                   maxlength="25">
+    <div class="foto-contenedor">
+      <img
+        id="fotoPerfil"
+        class="foto"
+        src="https://placehold.co/200x200/fff0f7/a52f68?text=Mi+perfil"
+        alt="Foto de perfil"
+      >
 
-            <button type="submit">Continuar 💕</button>
-        </form>
+      <h2 id="nombreBienvenida">¡Bienvenida! ♡</h2>
+      <p>Nos encanta tenerte en nuestra tienda.</p>
 
-        <div id="avisoPerfil" class="aviso-perfil"
-             role="status" aria-live="polite"></div>
-    </main>
+      <label class="cambiar-foto">
+        📷 Cambiar foto
+        <input type="file" id="archivoFoto" accept="image/*">
+      </label>
+    </div>
 
-    <footer>
-        <p>🪽 Angel's Fashion World 🪽</p>
-        <p>Moda • Belleza • Skin Care • Accesorios</p>
-    </footer>
+    <h3 class="subtitulo">Mis datos personales</h3>
 
-    <script>
-        document.getElementById("formularioPerfil")
-            .addEventListener("submit", function(event) {
-                event.preventDefault();
+    <form id="formularioPerfil">
 
-                const cliente = {
-                    nombre: document.getElementById("nombre")
-                        .value.trim(),
-                    correo: document.getElementById("correo")
-                        .value.trim(),
-                    telefono: document.getElementById("telefono")
-                        .value.trim()
-                };
+      <div class="campo">
+        <label for="nombre">Nombre completo</label>
+        <input
+          type="text"
+          id="nombre"
+          placeholder="Escribe tu nombre completo"
+          required
+        >
+      </div>
 
-                if (!cliente.nombre || !cliente.correo) {
-                    return;
-                }
+      <div class="campo">
+        <label for="correo">Correo electrónico</label>
+        <input
+          type="email"
+          id="correo"
+          placeholder="tucorreo@gmail.com"
+          required
+        >
+      </div>
 
-                // Solo guarda datos básicos en este navegador.
-                // La cuenta real se conectará al servidor después.
-                sessionStorage.setItem(
-                    "angelsClienteTemporal",
-                    JSON.stringify(cliente)
-                );
+      <div class="campo">
+        <label for="telefono">Número de teléfono</label>
+        <input
+          type="tel"
+          id="telefono"
+          placeholder="Tu número de contacto"
+          required
+        >
+      </div>
 
-                document.getElementById("avisoPerfil").textContent =
-                    "¡Datos completados! Ya puedes continuar con tu pedido. 💗";
+      <div class="campo">
+        <label for="direccion">Dirección de entrega</label>
+        <textarea
+          id="direccion"
+          placeholder="Escribe tu dirección completa"
+        ></textarea>
+      </div>
 
-                setTimeout(function() {
-                    window.location.href = "carrito.html";
-                }, 1000);
-            });
-    </script>
+      <div class="botones">
+        <button class="boton" type="submit">
+          💗 Guardar mis datos
+        </button>
+
+        <button
+          class="boton boton-secundario"
+          type="button"
+          id="limpiarFormulario"
+        >
+          Limpiar
+        </button>
+      </div>
+
+      <p class="mensaje" id="mensajePerfil"></p>
+
+    </form>
+  </section>
+
+  <section class="tarjeta">
+    <h3 class="subtitulo">Mis compras ♡</h3>
+
+    <a class="opcion" href="pedido.html">
+      <span class="icono">📦</span>
+      <span>
+        <strong>Mis pedidos</strong>
+        <small>Consulta tus compras y su información.</small>
+      </span>
+    </a>
+
+    <a class="opcion" href="pedido.html">
+      <span class="icono">🚚</span>
+      <span>
+        <strong>Seguimiento de entregas</strong>
+        <small>Consulta el estado de tus pedidos.</small>
+      </span>
+    </a>
+
+    <a class="opcion" href="pedido.html">
+      <span class="icono">🛍️</span>
+      <span>
+        <strong>Historial de compras</strong>
+        <small>Accede a la sección de tus pedidos.</small>
+      </span>
+    </a>
+  </section>
+
+  <section class="tarjeta">
+    <h3 class="subtitulo">Ayuda y atención ♡</h3>
+
+    <a
+      class="opcion"
+      href="https://wa.me/573170948192"
+      target="_blank"
+      rel="noopener"
+    >
+      <span class="icono">💬</span>
+      <span>
+        <strong>Contactar por WhatsApp</strong>
+        <small>Estamos disponibles para ayudarte.</small>
+      </span>
+    </a>
+
+    <a class="opcion" href="index.html">
+      <span class="icono">🏠</span>
+      <span>
+        <strong>Volver a la tienda</strong>
+        <small>Continúa descubriendo nuestros productos.</small>
+      </span>
+    </a>
+  </section>
+
+</main>
+
+<footer>
+  <p>♡ Angel's Fashion World ♡</p>
+  <p>Gracias por elegirnos.</p>
+</footer>
+
+<nav class="menu-inferior">
+  <a href="index.html#buscarProducto">
+    <span>⌕</span>
+    Buscar
+  </a>
+
+  <a href="pedido.html">
+    <span>♧</span>
+    Pedidos
+  </a>
+
+  <a href="carrito.html">
+    <span>🛒</span>
+    Carrito
+  </a>
+
+  <a href="perfil.html" class="activo">
+    <span>♙</span>
+    Mi perfil
+  </a>
+</nav>
+
+<script>
+const CLAVE_PERFIL = "angelsPerfil";
+
+const formulario = document.getElementById("formularioPerfil");
+const nombre = document.getElementById("nombre");
+const correo = document.getElementById("correo");
+const telefono = document.getElementById("telefono");
+const direccion = document.getElementById("direccion");
+const fotoPerfil = document.getElementById("fotoPerfil");
+const nombreBienvenida = document.getElementById("nombreBienvenida");
+const mensaje = document.getElementById("mensajePerfil");
+
+let perfil = {};
+
+function cargarPerfil() {
+  try {
+    perfil = JSON.parse(localStorage.getItem(CLAVE_PERFIL) || "{}");
+  } catch (error) {
+    perfil = {};
+  }
+
+  nombre.value = perfil.nombre || "";
+  correo.value = perfil.correo || sessionStorage.getItem("angelsCorreoEntrada") || "";
+  telefono.value = perfil.telefono || "";
+  direccion.value = perfil.direccion || "";
+
+  if (perfil.foto) {
+    fotoPerfil.src = perfil.foto;
+  }
+
+  actualizarBienvenida();
+}
+
+function actualizarBienvenida() {
+  nombreBienvenida.textContent = nombre.value.trim()
+    ? "¡Hola, " + nombre.value.trim() + "! ♡"
+    : "¡Bienvenida! ♡";
+}
+
+nombre.addEventListener("input", actualizarBienvenida);
+
+formulario.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  perfil = {
+    nombre: nombre.value.trim(),
+    correo: correo.value.trim(),
+    telefono: telefono.value.trim(),
+    direccion: direccion.value.trim(),
+    foto: perfil.foto || ""
+  };
+
+  try {
+    localStorage.setItem(CLAVE_PERFIL, JSON.stringify(perfil));
+    mensaje.textContent = "¡Tus datos se guardaron correctamente! ♡";
+    actualizarBienvenida();
+  } catch (error) {
+    mensaje.textContent = "No se pudieron guardar los datos. Intenta con una foto más pequeña.";
+  }
+});
+
+document.getElementById("archivoFoto").addEventListener("change", function(event) {
+  const archivo = event.target.files[0];
+
+  if (!archivo) return;
+
+  if (!archivo.type.startsWith("image/")) {
+    mensaje.textContent = "Selecciona un archivo de imagen válido.";
+    return;
+  }
+
+  if (archivo.size > 1500000) {
+    mensaje.textContent = "La foto debe pesar menos de 1.5 MB.";
+    this.value = "";
+    return;
+  }
+
+  const lector = new FileReader();
+
+  lector.onload = function() {
+    fotoPerfil.src = lector.result;
+    perfil.foto = lector.result;
+    guardarFoto();
+  };
+
+  lector.readAsDataURL(archivo);
+});
+
+function guardarFoto() {
+  try {
+    localStorage.setItem(CLAVE_PERFIL, JSON.stringify({
+      nombre: nombre.value.trim(),
+      correo: correo.value.trim(),
+      telefono: telefono.value.trim(),
+      direccion: direccion.value.trim(),
+      foto: perfil.foto || ""
+    }));
+
+    mensaje.textContent = "¡Foto de perfil actualizada! ♡";
+  } catch (error) {
+    mensaje.textContent = "No se pudo guardar la foto. Prueba con otra imagen.";
+  }
+}
+
+document.getElementById("limpiarFormulario").addEventListener("click", function() {
+  formulario.reset();
+  mensaje.textContent = "";
+  actualizarBienvenida();
+});
+
+cargarPerfil();
+</script>
+
 </body>
 </html>
