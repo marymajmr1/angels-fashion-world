@@ -27,7 +27,7 @@
             overflow-x: hidden;
         }
 
-        /* Fondo de Angel's */
+        /* Fondo original de Angel's */
         body::before {
             content: "";
             position: fixed;
@@ -42,7 +42,7 @@
             z-index: -2;
         }
 
-        /* Estrellitas decorativas */
+        /* Estrellas animadas */
         .estrella {
             position: fixed;
             color: #c8a96b;
@@ -55,6 +55,7 @@
         .estrella1 {
             top: 120px;
             left: 4%;
+            animation: brillar 3s ease-in-out infinite;
         }
 
         .estrella2 {
@@ -66,6 +67,7 @@
         .estrella3 {
             bottom: 180px;
             left: 6%;
+            animation: brillar 4s ease-in-out infinite;
             animation-delay: 1.3s;
         }
 
@@ -81,50 +83,63 @@
             }
 
             50% {
-                transform: translateY(-10px) rotate(8deg);
+                transform: translateY(-14px) rotate(15deg);
             }
         }
 
-        /* Menú de navegación */
+        @keyframes brillar {
+            0%, 100% {
+                transform: scale(1) rotate(0);
+                opacity: .55;
+            }
+
+            50% {
+                transform: scale(1.35) rotate(18deg);
+                opacity: 1;
+            }
+        }
+
+        /* Menú igual al de index.html */
         .menu {
-            width: min(92%, 1000px);
-            margin: 20px auto 0;
-            padding: 13px 18px;
+            width: 94%;
+            max-width: 1200px;
+            margin: 25px auto;
+            padding: 10px;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            gap: 12px 30px;
-            background: rgba(255, 255, 255, .88);
+            gap: 5px;
+            background: rgba(255, 255, 255, .90);
             border: 1px solid #f4cfe0;
-            border-radius: 30px;
+            border-radius: 20px;
             box-shadow: 0 5px 18px rgba(150, 93, 120, .09);
             position: relative;
             z-index: 2;
         }
 
         .menu a {
-            font-family: Arial, sans-serif;
-            color: #68495a;
             text-decoration: none;
+            color: #6b4055;
+            padding: 10px 13px;
+            border-radius: 25px;
+            font-family: Arial, sans-serif;
             font-size: 14px;
             font-weight: bold;
-            transition: color .25s, transform .25s;
+            transition: .3s ease;
         }
 
-        .menu a:hover {
-            color: #d85b91;
-            transform: translateY(-2px);
-        }
-
+        .menu a:hover,
         .menu a.activo {
-            color: #c92f75;
+            background: #d85b91;
+            color: white;
+            box-shadow: 0 4px 12px rgba(216, 91, 145, .25);
         }
 
         /* Encabezado */
         header {
             text-align: center;
-            padding: 45px 20px 20px;
+            padding: 35px 20px 20px;
         }
 
         .marca {
@@ -154,8 +169,8 @@
         }
 
         .subtitulo {
-            font-family: Arial, sans-serif;
             margin-top: 9px;
+            font-family: Arial, sans-serif;
             font-size: 15px;
             letter-spacing: 2px;
             color: #947083;
@@ -201,6 +216,8 @@
         main {
             width: min(900px, 90%);
             margin: 10px auto 55px;
+            position: relative;
+            z-index: 1;
         }
 
         .presentacion {
@@ -230,9 +247,10 @@
             font-family: Arial, sans-serif;
             font-size: 15px;
             line-height: 1.9;
+            margin-bottom: 10px;
         }
 
-        /* Cuadros */
+        /* Tarjetas */
         .tarjetas {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -313,7 +331,7 @@
         /* Adaptación a celulares */
         @media (max-width: 650px) {
             header {
-                padding-top: 35px;
+                padding-top: 30px;
             }
 
             main {
@@ -347,12 +365,22 @@
             }
 
             .menu {
-                gap: 12px 17px;
-                padding: 13px 10px;
+                gap: 5px;
+                padding: 8px;
             }
 
             .menu a {
                 font-size: 13px;
+                padding: 9px 11px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
             }
         }
     </style>
@@ -363,7 +391,7 @@
     <!-- Menú principal -->
     <nav class="menu" aria-label="Menú principal">
         <a href="index.html">Inicio</a>
-        <a href="moda.html">Tienda</a>
+        <a href="categorias.html">Tienda</a>
         <a href="sobre-nosotros.html" class="activo">Sobre nosotros</a>
         <a href="index.html#contactanos">Contáctanos</a>
     </nav>
