@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -110,20 +111,23 @@
     .menu a {
       padding: 10px 13px;
       border-radius: 25px;
-      background: var(--rosa);
-      color: white;
+      background: white;
+      color: var(--texto);
       font-size: 13px;
       font-weight: bold;
       text-decoration: none;
       transition: .3s;
     }
 
-    .menu a:hover,
+    .menu a:hover {
+      background: #fff0f7;
+      color: var(--rosa-oscuro);
+    }
+
     .menu a.activo {
-      background: var(--rosa-oscuro);
+      background: var(--rosa);
       color: white;
       box-shadow: 0 5px 14px #d85b9140;
-      transform: translateY(-2px);
     }
 
     /* ENCABEZADO */
@@ -365,6 +369,17 @@
       color: var(--rosa-oscuro);
     }
 
+    /* NÚMERO NEQUI PEQUEÑO */
+
+    #numeroNequi {
+      display: block;
+      margin-top: 5px;
+      color: #a52f68;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
     .boton {
       width: 100%;
       padding: 14px;
@@ -503,13 +518,11 @@
   <!-- CONTENIDO -->
   <main class="contenedor">
 
-    <!-- LISTA DE PRODUCTOS -->
     <section class="panel">
       <h2>Mis productos ♡</h2>
       <div id="listaProductos"></div>
     </section>
 
-    <!-- RESUMEN Y FORMULARIO -->
     <aside class="panel resumen">
       <h2>Resumen de compra</h2>
 
@@ -559,7 +572,7 @@
             podamos revisar tu pedido.
           </p>
           <strong>Número Nequi:</strong>
-          <span id="numeroNequi">Pendiente de configurar</span>
+          <span id="numeroNequi">3170948192</span>
         </div>
 
         <div class="campo">
@@ -609,9 +622,7 @@
     const EMAILJS_SERVICE_ID = "service_angel_gmail";
     const EMAILJS_TEMPLATE_ID = "template_5a3fwpf";
 
-    // REEMPLAZA ESTE TEXTO POR EL NÚMERO DE NEQUI DE LA TIENDA.
-    const NUMERO_NEQUI = "ESCRIBE_AQUI_TU_NUMERO_NEQUI";
-
+    const NUMERO_NEQUI = "3170948192";
     const CLAVE_CARRITO = "angelsCarrito";
 
     emailjs.init({
@@ -628,10 +639,7 @@
     const botonPedido = document.getElementById("botonPedido");
     const mensajePedido = document.getElementById("mensajePedido");
 
-    document.getElementById("numeroNequi").textContent =
-      NUMERO_NEQUI === "ESCRIBE_AQUI_TU_NUMERO_NEQUI"
-        ? "Pendiente de configurar"
-        : NUMERO_NEQUI;
+    document.getElementById("numeroNequi").textContent = NUMERO_NEQUI;
 
     /* FUNCIONES DEL CARRITO */
 
@@ -786,11 +794,13 @@
       if (!Number.isInteger(indice) || !carrito[indice]) return;
 
       if (accion === "sumar") {
-        carrito[indice].cantidad = (Number(carrito[indice].cantidad) || 1) + 1;
+        carrito[indice].cantidad =
+          (Number(carrito[indice].cantidad) || 1) + 1;
       }
 
       if (accion === "restar") {
-        carrito[indice].cantidad = (Number(carrito[indice].cantidad) || 1) - 1;
+        carrito[indice].cantidad =
+          (Number(carrito[indice].cantidad) || 1) - 1;
 
         if (carrito[indice].cantidad <= 0) {
           carrito.splice(indice, 1);
@@ -823,12 +833,6 @@
         return;
       }
 
-      if (NUMERO_NEQUI === "3170948192") {
-        mensajePedido.textContent =
-          "Primero debes configurar el número de Nequi en el código.";
-        return;
-      }
-
       const nombre = document.getElementById("nombre").value.trim();
       const correo = document.getElementById("correo").value.trim();
       const telefono = document.getElementById("telefono").value.trim();
@@ -836,7 +840,7 @@
       const referencia = document.getElementById("referencia").value.trim();
 
       if (!nombre || !correo || !telefono || !direccion || !referencia) {
-mensajePedido.textContent = "Completa todos los campos.";
+        mensajePedido.textContent = "Completa todos los campos.";
         return;
       }
 
@@ -845,6 +849,7 @@ mensajePedido.textContent = "Completa todos los campos.";
       const productosTexto = carrito.map(producto => {
         const unidades = Math.max(1, Number(producto.cantidad) || 1);
         const precio = precioNumerico(producto.precio);
+
         total += precio * unidades;
 
         const detalles = [
@@ -880,7 +885,6 @@ mensajePedido.textContent = "Completa todos los campos.";
 
         localStorage.removeItem(CLAVE_CARRITO);
         renderizarCarrito();
-
         formularioPedido.reset();
 
         mensajePedido.textContent =
