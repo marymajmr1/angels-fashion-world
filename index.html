@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -16,9 +17,7 @@
       --fondo: #fffafd;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
@@ -36,9 +35,9 @@
         var(--fondo);
     }
 
-    a {
-      color: inherit;
-    }
+    a { color: inherit; }
+
+    /* ESTRELLAS ANIMADAS */
 
     .estrellas {
       position: fixed;
@@ -46,22 +45,58 @@
       z-index: 0;
       pointer-events: none;
       color: var(--dorado);
-      opacity: .75;
+      opacity: .8;
     }
 
     .estrella {
       position: absolute;
-      animation: flotar 5s ease-in-out infinite;
+      text-shadow: 0 0 12px #c8a96b70;
     }
 
-    .estrella1 { top: 120px; left: 4%; }
-    .estrella2 { top: 280px; right: 5%; animation-delay: .7s; }
-    .estrella3 { bottom: 180px; left: 6%; animation-delay: 1.3s; }
-    .estrella4 { bottom: 80px; right: 7%; animation-delay: 2s; }
+    .estrella1 {
+      top: 120px;
+      left: 4%;
+      animation: brillar 3s ease-in-out infinite;
+    }
+
+    .estrella2 {
+      top: 280px;
+      right: 5%;
+      animation: flotar 5s ease-in-out infinite;
+      animation-delay: .7s;
+    }
+
+    .estrella3 {
+      bottom: 180px;
+      left: 6%;
+      animation: brillar 4s ease-in-out infinite;
+      animation-delay: 1.3s;
+    }
+
+    .estrella4 {
+      bottom: 80px;
+      right: 7%;
+      animation: flotar 5s ease-in-out infinite;
+      animation-delay: 2s;
+    }
 
     @keyframes flotar {
-      50% { transform: translateY(-9px) rotate(8deg); }
+      0%, 100% { transform: translateY(0) rotate(0); }
+      50% { transform: translateY(-14px) rotate(15deg); }
     }
+
+    @keyframes brillar {
+      0%, 100% {
+        transform: scale(1) rotate(0);
+        opacity: .55;
+      }
+      50% {
+        transform: scale(1.35) rotate(18deg);
+        opacity: 1;
+      }
+    }
+
+    /* MENÚ */
 
     .menu {
       position: relative;
@@ -86,13 +121,17 @@
       border-radius: 25px;
       font-size: 13px;
       text-decoration: none;
+      transition: .3s;
     }
 
     .menu a:hover,
     .menu a.activo {
       background: var(--rosa);
       color: white;
+      box-shadow: 0 5px 14px #d85b9140;
     }
+
+    /* BUSCADOR */
 
     .buscador {
       position: relative;
@@ -111,6 +150,12 @@
       border-radius: 30px;
       background: white;
       box-shadow: 0 5px 18px #d85b9112;
+      transition: .3s;
+    }
+
+    .buscador form:focus-within {
+      border-color: var(--rosa);
+      box-shadow: 0 7px 22px #d85b9125;
     }
 
     .lupa {
@@ -136,6 +181,12 @@
       background: var(--rosa);
       color: white;
       cursor: pointer;
+      transition: .3s;
+    }
+
+    .buscador button:hover {
+      background: var(--rosa-oscuro);
+      transform: scale(1.04);
     }
 
     .mensaje-busqueda {
@@ -145,46 +196,64 @@
       font-size: 13px;
     }
 
+    /* LOGO PRINCIPAL */
+
     .marca {
       position: relative;
       z-index: 1;
       width: 92%;
       max-width: 1200px;
-      margin: 24px auto 35px;
+      margin: 35px auto 45px;
       display: grid;
-      grid-template-columns: .9fr 1.1fr;
+      grid-template-columns: 1fr 1.1fr;
       align-items: center;
-      gap: 28px;
+      gap: 35px;
     }
 
     .logo {
       position: relative;
-      min-height: 240px;
+      width: min(100%, 380px);
+      aspect-ratio: 1 / 1;
+      justify-self: center;
       overflow: hidden;
       display: grid;
       place-items: center;
-      border: 1px solid var(--borde);
-      border-radius: 25px;
+      padding: 15px;
+      border: 3px solid var(--borde);
+      border-radius: 50%;
       background: linear-gradient(135deg, #ffe6f0, white, #fbe6ef);
+      box-shadow:
+        0 0 0 9px #fff0f7,
+        0 15px 35px #d85b9130;
+      transition: .3s;
+    }
+
+    .logo:hover {
+      transform: scale(1.03);
+      box-shadow:
+        0 0 0 11px #fff0f7,
+        0 18px 40px #d85b9145;
     }
 
     .logo::before {
       content: "";
       position: absolute;
       inset: 0;
+      border-radius: 50%;
       background:
         url("./imagenes/indexhtml/Screenshot_2026-10-16-13-00-40-119_com.whatsapp-edit.jpg")
         center / contain no-repeat;
       filter: blur(5px);
       opacity: .2;
-      transform: scale(1.1);
     }
 
     .logo img {
       position: relative;
-      width: 92%;
-      max-height: 215px;
+      width: 100%;
+      height: 100%;
+      max-height: none;
       object-fit: contain;
+      border-radius: 50%;
     }
 
     .marca-texto {
@@ -222,6 +291,8 @@
       letter-spacing: 7px;
     }
 
+    /* PORTADA */
+
     .hero {
       position: relative;
       z-index: 1;
@@ -234,7 +305,12 @@
       border: 1px solid var(--borde);
       border-radius: 28px;
       background: linear-gradient(120deg, #fff5fa, #ffe5f0, white);
-      box-shadow: 0 10px 30px #9a39670c;
+      box-shadow: 0 12px 30px #d85b9115;
+      transition: .3s;
+    }
+
+    .hero:hover {
+      box-shadow: 0 16px 35px #d85b9125;
     }
 
     .hero-texto {
@@ -256,9 +332,7 @@
       font: 400 clamp(30px, 4vw, 48px)/1.15 Georgia, serif;
     }
 
-    .hero p {
-      line-height: 1.8;
-    }
+    .hero p { line-height: 1.8; }
 
     .boton {
       display: inline-block;
@@ -269,12 +343,14 @@
       color: white;
       font-weight: bold;
       text-decoration: none;
-      transition: background .2s, transform .2s;
+      box-shadow: 0 7px 20px #d85b9130;
+      transition: .3s;
     }
 
     .boton:hover {
       background: var(--rosa-oscuro);
-      transform: translateY(-2px);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 10px 25px #d85b9150;
     }
 
     .hero-imagen {
@@ -314,6 +390,8 @@
       font: italic 20px Georgia, serif;
     }
 
+    /* CONÓCENOS */
+
     .conocenos {
       position: relative;
       z-index: 1;
@@ -327,6 +405,12 @@
       border: 1px solid var(--borde);
       border-radius: 27px;
       background: linear-gradient(135deg, #fce5ef, #fffafd);
+      box-shadow: 0 12px 30px #d85b9115;
+      transition: .3s;
+    }
+
+    .conocenos:hover {
+      box-shadow: 0 16px 35px #d85b9125;
     }
 
     .conocenos-imagen {
@@ -384,9 +468,9 @@
       font: 400 clamp(28px, 3.5vw, 42px)/1.2 Georgia, serif;
     }
 
-    .conocenos p {
-      line-height: 1.8;
-    }
+    .conocenos p { line-height: 1.8; }
+
+    /* CONTACTO */
 
     .contacto {
       position: relative;
@@ -405,6 +489,12 @@
       background:
         radial-gradient(circle at 90% 20%, #fff 0, transparent 30%),
         linear-gradient(120deg, #f7d9e7, #fff3f8);
+      box-shadow: 0 12px 30px #d85b9115;
+      transition: .3s;
+    }
+
+    .contacto:hover {
+      box-shadow: 0 16px 35px #d85b9125;
     }
 
     .contacto h2 {
@@ -413,9 +503,7 @@
       font: 400 clamp(28px, 4vw, 43px) Georgia, serif;
     }
 
-    .contacto p {
-      line-height: 1.8;
-    }
+    .contacto p { line-height: 1.8; }
 
     .contacto-decoracion {
       text-align: center;
@@ -439,6 +527,8 @@
       font-family: Georgia, serif;
       font-style: italic;
     }
+
+    /* MENÚ INFERIOR */
 
     .menu-inferior {
       position: fixed;
@@ -465,15 +555,15 @@
       color: var(--rosa-oscuro);
       font-size: 12px;
       text-decoration: none;
+      transition: .2s;
     }
 
     .menu-inferior a:hover {
       color: var(--rosa);
+      transform: translateY(-3px);
     }
 
-    .icono {
-      font-size: 23px;
-    }
+    .icono { font-size: 23px; }
 
     .logo-final {
       position: relative;
@@ -496,10 +586,10 @@
       line-height: 1.8;
     }
 
+    /* ADAPTACIÓN A CELULARES */
+
     @media (max-width: 750px) {
-      .menu {
-        gap: 3px;
-      }
+      .menu { gap: 3px; }
 
       .menu a {
         padding: 8px 9px;
@@ -508,20 +598,17 @@
 
       .marca {
         grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 25px;
       }
 
       .logo {
-        min-height: 170px;
+        width: min(85%, 280px);
+        min-height: 0;
       }
 
-      .logo img {
-        max-height: 155px;
-      }
+      .logo img { max-height: none; }
 
-      .hero {
-        grid-template-columns: 1fr;
-      }
+      .hero { grid-template-columns: 1fr; }
 
       .hero-imagen {
         grid-row: 1;
@@ -533,21 +620,13 @@
         max-height: 440px;
       }
 
-      .hero-texto {
-        padding: 28px;
-      }
+      .hero-texto { padding: 28px; }
 
-      .conocenos {
-        grid-template-columns: 1fr;
-      }
+      .conocenos { grid-template-columns: 1fr; }
 
-      .conocenos-imagen {
-        min-height: 220px;
-      }
+      .conocenos-imagen { min-height: 220px; }
 
-      .conocenos-imagen img {
-        max-height: 220px;
-      }
+      .conocenos-imagen img { max-height: 220px; }
 
       .contacto {
         grid-template-columns: 1fr;
@@ -562,17 +641,11 @@
     }
 
     @media (max-width: 420px) {
-      .menu {
-        width: 96%;
-      }
+      .menu { width: 96%; }
 
-      .buscador {
-        width: 94%;
-      }
+      .buscador { width: 94%; }
 
-      .buscador button {
-        padding: 10px 12px;
-      }
+      .buscador button { padding: 10px 12px; }
 
       .hero,
       .marca,
@@ -591,8 +664,14 @@
         font-size: 11px;
       }
 
-      .icono {
-        font-size: 22px;
+      .icono { font-size: 22px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
       }
     }
   </style>
@@ -704,7 +783,7 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        Hablemos por WhatsApp ♡
+        ♡ WhatsApp: 3170948192
       </a>
     </div>
 
