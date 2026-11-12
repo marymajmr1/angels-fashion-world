@@ -3,251 +3,377 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff1f7">
   <title>Mi carrito | Angel's Fashion World</title>
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
   <style>
     :root {
-      --rosa: #df4f8e;
+      --rosa: #d85b91;
       --rosa-oscuro: #a52f68;
-      --rosa-claro: #fff1f7;
       --texto: #68495a;
       --dorado: #c8a96b;
       --borde: #f4cfe0;
-      --fondo: #fff8fc;
-      --blanco: #ffffff;
+      --fondo: #fffafd;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; }
 
     body {
+      margin: 0;
+      padding-bottom: 35px;
       font-family: Arial, sans-serif;
       color: var(--texto);
-      background: var(--fondo);
-      min-height: 100vh;
-      overflow-x: hidden;
+      background:
+        radial-gradient(circle at top left, #ffe1ee, transparent 28%),
+        radial-gradient(circle at 90% 30%, #fff0f7, transparent 25%),
+        var(--fondo);
+    }
+
+    /* ESTRELLAS */
+
+    .estrellas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      color: var(--dorado);
+      opacity: .8;
     }
 
     .estrella {
-      position: fixed;
-      color: var(--rosa);
-      opacity: .35;
-      pointer-events: none;
-      z-index: 0;
-      animation: flotar 4s ease-in-out infinite;
+      position: absolute;
+      text-shadow: 0 0 12px #c8a96b70;
     }
 
-    .estrella1 { top: 120px; left: 4%; font-size: 25px; }
-    .estrella2 { top: 280px; right: 5%; font-size: 22px; animation-delay: .7s; }
-    .estrella3 { bottom: 180px; left: 6%; font-size: 24px; animation-delay: 1.3s; }
-    .estrella4 { bottom: 80px; right: 7%; font-size: 20px; animation-delay: 2s; }
+    .estrella1 {
+      top: 120px;
+      left: 4%;
+      animation: brillar 3s ease-in-out infinite;
+    }
+
+    .estrella2 {
+      top: 280px;
+      right: 5%;
+      animation: flotar 5s ease-in-out infinite .7s;
+    }
+
+    .estrella3 {
+      bottom: 180px;
+      left: 6%;
+      animation: brillar 4s ease-in-out infinite 1.3s;
+    }
+
+    .estrella4 {
+      bottom: 80px;
+      right: 7%;
+      animation: flotar 5s ease-in-out infinite 2s;
+    }
 
     @keyframes flotar {
       0%, 100% { transform: translateY(0) rotate(0); }
-      50% { transform: translateY(-12px) rotate(12deg); }
+      50% { transform: translateY(-14px) rotate(15deg); }
     }
 
-    header {
-      text-align: center;
-      padding: 35px 15px 20px;
-      position: relative;
-      z-index: 1;
+    @keyframes brillar {
+      0%, 100% {
+        transform: scale(1);
+        opacity: .55;
+      }
+      50% {
+        transform: scale(1.35) rotate(18deg);
+        opacity: 1;
+      }
     }
 
-    .logo {
-      font-family: Georgia, serif;
-      font-size: clamp(27px, 5vw, 43px);
-      color: var(--rosa-oscuro);
-      font-weight: bold;
-    }
+    /* MENÚ SUPERIOR */
 
-    .subtitulo {
-      margin-top: 9px;
-      color: var(--texto);
-      font-size: 14px;
-      letter-spacing: 2px;
-    }
-
-    nav {
-      width: 94%;
-      max-width: 1100px;
-      margin: 10px auto 28px;
-      padding: 12px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      background: rgba(255,255,255,.92);
-      border: 1px solid var(--borde);
-      border-radius: 22px;
-      box-shadow: 0 5px 18px rgba(150,93,120,.08);
+    .menu {
       position: relative;
       z-index: 2;
+      width: 94%;
+      max-width: 1200px;
+      margin: 16px auto;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      flex-wrap: wrap;
+      border: 1px solid var(--borde);
+      border-radius: 20px;
+      background: #ffffffed;
+      box-shadow: 0 5px 20px #d85b9112;
     }
 
-    nav a {
-      text-decoration: none;
-      color: var(--texto);
-      padding: 10px 16px;
+    .menu a {
+      padding: 10px 13px;
       border-radius: 25px;
-      font-size: 14px;
+      background: var(--rosa);
+      color: white;
+      font-size: 13px;
       font-weight: bold;
+      text-decoration: none;
       transition: .3s;
     }
 
-    nav a:hover, nav a.activo {
-      background: var(--rosa);
+    .menu a:hover,
+    .menu a.activo {
+      background: var(--rosa-oscuro);
       color: white;
+      box-shadow: 0 5px 14px #d85b9140;
+      transform: translateY(-2px);
     }
 
-    main {
-      width: 92%;
-      max-width: 1100px;
-      margin: 0 auto 60px;
+    /* ENCABEZADO */
+
+    .encabezado {
       position: relative;
       z-index: 1;
-    }
-
-    .titulo {
+      width: 92%;
+      max-width: 1100px;
+      margin: 35px auto 25px;
       text-align: center;
-      margin: 25px 0;
     }
 
-    .titulo h1 {
-      font-family: Georgia, serif;
+    .encabezado .mini {
+      color: var(--dorado);
+      letter-spacing: 3px;
+      font-size: 12px;
+    }
+
+    .encabezado h1 {
+      margin: 12px 0;
       color: var(--rosa-oscuro);
-      font-size: clamp(28px, 5vw, 38px);
+      font: 400 clamp(34px, 6vw, 55px) Georgia, serif;
     }
 
-    .titulo p {
-      margin-top: 10px;
-      font-size: 14px;
+    .encabezado p {
+      line-height: 1.7;
+      color: #9c5276;
     }
+
+    /* CONTENEDOR */
 
     .contenedor {
+      position: relative;
+      z-index: 1;
+      width: 92%;
+      max-width: 1100px;
+      margin: auto;
       display: grid;
-      grid-template-columns: 1.5fr 1fr;
+      grid-template-columns: 1.3fr .7fr;
       gap: 25px;
       align-items: start;
     }
 
     .panel {
-      background: white;
-      border: 1px solid var(--borde);
-      border-radius: 24px;
       padding: 24px;
-      box-shadow: 0 7px 25px rgba(150,93,120,.08);
+      border: 1px solid var(--borde);
+      border-radius: 25px;
+      background: #ffffffed;
+      box-shadow: 0 8px 25px #d85b9112;
     }
 
     .panel h2 {
-      font-family: Georgia, serif;
+      margin-top: 0;
       color: var(--rosa-oscuro);
-      margin-bottom: 20px;
-      font-size: 23px;
+      font: 400 27px Georgia, serif;
     }
+
+    /* PRODUCTOS */
 
     .producto {
       display: grid;
-      grid-template-columns: 105px 1fr;
-      gap: 17px;
-      padding: 16px 0;
+      grid-template-columns: 95px 1fr auto;
+      gap: 15px;
+      align-items: center;
+      padding: 15px 0;
       border-bottom: 1px solid var(--borde);
     }
 
+    .producto:last-child {
+      border-bottom: 0;
+    }
+
     .producto img {
-      width: 105px;
-      height: 120px;
+      width: 95px;
+      height: 105px;
       object-fit: cover;
-      border-radius: 16px;
-      background: var(--rosa-claro);
+      border-radius: 15px;
+      border: 1px solid var(--borde);
+      background: #fff1f7;
     }
 
     .producto h3 {
+      margin: 0 0 7px;
       color: var(--rosa-oscuro);
       font-size: 16px;
-      margin: 5px 0 8px;
+    }
+
+    .producto p {
+      margin: 5px 0;
+      font-size: 13px;
     }
 
     .precio {
+      color: var(--rosa-oscuro);
       font-weight: bold;
-      color: var(--rosa);
-      margin-bottom: 8px;
-    }
-
-    .talla {
-      font-size: 13px;
-      margin-bottom: 10px;
-    }
-
-    .acciones {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      flex-wrap: wrap;
     }
 
     .cantidad {
       display: flex;
       align-items: center;
-      border: 1px solid var(--borde);
-      border-radius: 20px;
-      overflow: hidden;
+      gap: 9px;
+      margin-top: 10px;
     }
 
     .cantidad button {
-      width: 30px;
-      height: 30px;
-      border: none;
-      background: var(--rosa-claro);
-      color: var(--rosa-oscuro);
-      font-size: 18px;
+      width: 28px;
+      height: 28px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--rosa);
+      color: white;
+      font-size: 17px;
       cursor: pointer;
     }
 
     .cantidad span {
-      min-width: 30px;
+      min-width: 18px;
       text-align: center;
-      font-size: 14px;
+      font-weight: bold;
     }
 
-    .quitar {
-      border: none;
-      background: transparent;
-      color: #b94b70;
+    .eliminar {
+      margin-top: 8px;
+      padding: 6px 10px;
+      border: 1px solid var(--borde);
+      border-radius: 15px;
+      background: #fff1f7;
+      color: var(--rosa-oscuro);
       cursor: pointer;
-      font-size: 13px;
-      text-decoration: underline;
+      font-size: 12px;
     }
 
-    .vacio {
-      text-align: center;
+    .eliminar:hover {
+      background: #ffe0ec;
+    }
+
+    .sin-productos {
       padding: 35px 10px;
+      text-align: center;
+      line-height: 1.8;
     }
 
-    .vacio .icono {
-      font-size: 55px;
-      margin-bottom: 15px;
+    .sin-productos .icono {
+      display: block;
+      font-size: 50px;
     }
 
-    .vacio p {
-      margin: 10px 0 20px;
-    }
-
-    .boton {
+    .sin-productos a {
       display: inline-block;
-      border: none;
+      margin-top: 10px;
+      padding: 12px 22px;
       border-radius: 25px;
       background: var(--rosa);
       color: white;
-      padding: 13px 22px;
-      font-size: 14px;
-      font-weight: bold;
       text-decoration: none;
+    }
+
+    /* RESUMEN */
+
+    .resumen {
+      position: sticky;
+      top: 15px;
+    }
+
+    .linea {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 15px 0;
+      font-size: 14px;
+    }
+
+    .total {
+      padding-top: 15px;
+      border-top: 1px solid var(--borde);
+      color: var(--rosa-oscuro);
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    /* FORMULARIO */
+
+    .formulario {
+      margin-top: 22px;
+    }
+
+    .formulario h3 {
+      color: var(--rosa-oscuro);
+      font: 400 22px Georgia, serif;
+    }
+
+    .campo {
+      margin-bottom: 14px;
+    }
+
+    .campo label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .campo input,
+    .campo textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--borde);
+      border-radius: 13px;
+      outline: none;
+      background: white;
+      color: var(--texto);
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    .campo input:focus,
+    .campo textarea:focus {
+      border-color: var(--rosa);
+      box-shadow: 0 0 0 3px #d85b9118;
+    }
+
+    .campo textarea {
+      min-height: 75px;
+      resize: vertical;
+    }
+
+    .nequi {
+      margin: 18px 0;
+      padding: 16px;
+      border: 1px solid var(--borde);
+      border-radius: 17px;
+      background: #fff4f9;
+      line-height: 1.7;
+      font-size: 13px;
+    }
+
+    .nequi strong {
+      color: var(--rosa-oscuro);
+    }
+
+    .boton {
+      width: 100%;
+      padding: 14px;
+      border: 0;
+      border-radius: 25px;
+      background: var(--rosa);
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
       cursor: pointer;
       transition: .3s;
     }
@@ -255,145 +381,93 @@
     .boton:hover {
       background: var(--rosa-oscuro);
       transform: translateY(-2px);
+      box-shadow: 0 6px 15px #d85b9130;
     }
 
-    .resumen-linea {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      margin: 15px 0;
-      font-size: 14px;
-    }
-
-    .total {
-      border-top: 1px solid var(--borde);
-      padding-top: 17px;
-      margin-top: 18px;
-      font-size: 20px;
-      font-weight: bold;
-      color: var(--rosa-oscuro);
-    }
-
-    .nequi {
-      background: var(--rosa-claro);
-      border: 1px dashed var(--rosa);
-      border-radius: 18px;
-      padding: 17px;
-      margin: 20px 0;
-    }
-
-    .nequi h3 {
-      color: var(--rosa-oscuro);
-      margin-bottom: 9px;
-    }
-
-    .nequi p {
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    .formulario {
-      margin-top: 25px;
-    }
-
-    .formulario label {
-      display: block;
-      font-size: 13px;
-      font-weight: bold;
-      margin: 14px 0 7px;
-    }
-
-    .formulario input,
-    .formulario textarea {
-      width: 100%;
-      padding: 13px;
-      border: 1px solid var(--borde);
-      border-radius: 13px;
-      background: #fffafd;
-      color: var(--texto);
-      font-family: Arial, sans-serif;
-      outline: none;
-    }
-
-    .formulario input:focus,
-    .formulario textarea:focus {
-      border-color: var(--rosa);
-      box-shadow: 0 0 0 3px rgba(223,79,142,.10);
-    }
-
-    .formulario textarea {
-      min-height: 80px;
-      resize: vertical;
+    .boton:disabled {
+      opacity: .6;
+      cursor: not-allowed;
+      transform: none;
     }
 
     .aviso {
+      margin-top: 12px;
       font-size: 12px;
-      line-height: 1.5;
-      color: #846b79;
-      margin-top: 13px;
+      line-height: 1.6;
+      color: #87556f;
+      text-align: center;
     }
 
-    #mensaje {
-      display: none;
-      padding: 13px;
-      border-radius: 13px;
-      margin-top: 15px;
+    #mensajePedido {
+      min-height: 20px;
+      margin-top: 14px;
       font-size: 13px;
-      line-height: 1.5;
+      text-align: center;
+      line-height: 1.6;
     }
 
-    #mensaje.error {
+    .logo-final {
+      position: relative;
+      z-index: 1;
       display: block;
-      background: #fff0f0;
-      color: #a52f45;
-    }
-
-    #mensaje.exito {
-      display: block;
-      background: #effaf1;
-      color: #286b3a;
+      width: 85px;
+      height: 85px;
+      margin: 35px auto 8px;
+      object-fit: contain;
+      opacity: .8;
     }
 
     footer {
-      background: white;
-      border-top: 1px solid var(--borde);
-      text-align: center;
-      padding: 28px 15px;
-      color: var(--texto);
-      font-size: 13px;
       position: relative;
       z-index: 1;
+      padding: 10px 20px 25px;
+      color: #87556f;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.8;
     }
 
-    footer strong {
-      color: var(--rosa-oscuro);
-      font-family: Georgia, serif;
-    }
+    @media (max-width: 750px) {
+      .menu { gap: 3px; }
 
-    @media(max-width: 780px) {
+      .menu a {
+        padding: 8px 9px;
+        font-size: 12px;
+      }
+
       .contenedor {
         grid-template-columns: 1fr;
       }
 
-      .panel {
-        padding: 19px;
-      }
+      .resumen { position: static; }
+
+      .panel { padding: 18px; }
     }
 
-    @media(max-width: 420px) {
+    @media (max-width: 420px) {
+      .menu { width: 96%; }
+
+      .contenedor { width: 94%; }
+
       .producto {
-        grid-template-columns: 85px 1fr;
-        gap: 12px;
+        grid-template-columns: 75px 1fr;
+        gap: 10px;
       }
 
       .producto img {
-        width: 85px;
-        height: 105px;
+        width: 75px;
+        height: 90px;
       }
 
-      nav a {
-        padding: 9px 11px;
-        font-size: 12px;
+      .producto-acciones {
+        grid-column: 2;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
       }
     }
   </style>
@@ -401,109 +475,141 @@
 
 <body>
 
-  <span class="estrella estrella1">✦</span>
-  <span class="estrella estrella2">✧</span>
-  <span class="estrella estrella3">✦</span>
-  <span class="estrella estrella4">✧</span>
+  <!-- ESTRELLAS -->
+  <div class="estrellas" aria-hidden="true">
+    <span class="estrella estrella1">✦</span>
+    <span class="estrella estrella2">✧</span>
+    <span class="estrella estrella3">✦</span>
+    <span class="estrella estrella4">✧</span>
+  </div>
 
-  <header>
-    <div class="logo">🪽 Angel's Fashion World ✦</div>
-    <p class="subtitulo">TU ESTILO, TU ESENCIA, TU ENCANTO</p>
-  </header>
-
-  <nav>
+  <!-- MENÚ SUPERIOR -->
+  <nav class="menu" aria-label="Menú principal">
     <a href="index.html">Inicio</a>
     <a href="moda.html">Moda</a>
     <a href="belleza.html">Belleza</a>
     <a href="skincare.html">Skin care</a>
     <a href="accesorios.html">Accesorios</a>
-    <a href="index.html#contactanos">Contáctanos</a>
+    <a class="activo" href="carrito.html">Carrito 🛍️</a>
   </nav>
 
-  <main>
-    <div class="titulo">
-      <h1>Mi carrito 🛍️</h1>
-      <p>¡Tus favoritos están cada vez más cerca de ti!</p>
-    </div>
+  <!-- ENCABEZADO -->
+  <header class="encabezado">
+    <div class="mini">✧ TU ESTILO, TU ESENCIA ✧</div>
+    <h1>Mi carrito 🛍️</h1>
+    <p>¡Tus favoritos están cada vez más cerca de ti! ♡</p>
+  </header>
 
-    <div class="contenedor">
+  <!-- CONTENIDO -->
+  <main class="contenedor">
 
-      <section class="panel">
-        <h2>Mis productos ♡</h2>
-        <div id="listaProductos"></div>
-      </section>
+    <!-- LISTA DE PRODUCTOS -->
+    <section class="panel">
+      <h2>Mis productos ♡</h2>
+      <div id="listaProductos"></div>
+    </section>
 
-      <aside class="panel">
-        <h2>Resumen de tu pedido</h2>
+    <!-- RESUMEN Y FORMULARIO -->
+    <aside class="panel resumen">
+      <h2>Resumen de compra</h2>
 
-        <div class="resumen-linea">
-          <span>Productos</span>
-          <strong id="cantidadProductos">0</strong>
+      <div class="linea">
+        <span>Productos</span>
+        <strong id="cantidadTotal">0</strong>
+      </div>
+
+      <div class="linea">
+        <span>Subtotal</span>
+        <strong id="subtotal">$0</strong>
+      </div>
+
+      <div class="linea total">
+        <span>Total</span>
+        <strong id="total">$0</strong>
+      </div>
+
+      <form class="formulario" id="formularioPedido">
+        <h3>Datos para tu pedido ♡</h3>
+
+        <div class="campo">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" required>
         </div>
 
-        <div class="resumen-linea">
-          <span>Subtotal</span>
-          <strong id="subtotal">$0</strong>
+        <div class="campo">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" required>
         </div>
 
-        <div class="resumen-linea total">
-          <span>Total</span>
-          <strong id="total">$0</strong>
+        <div class="campo">
+          <label for="telefono">Número de teléfono</label>
+          <input type="tel" id="telefono" name="telefono" required>
+        </div>
+
+        <div class="campo">
+          <label for="direccion">Dirección de entrega</label>
+          <textarea id="direccion" name="direccion" required></textarea>
         </div>
 
         <div class="nequi">
-          <h3>💗 Pago por Nequi</h3>
-          <p>Realiza tu pago al número:</p>
-          <p><strong id="numeroNequi"></strong></p>
-          <p>Después de realizarlo, escribe la referencia de la transacción en el formulario. Tu pago será verificado antes de confirmar el pedido.</p>
+          <strong>♡ Pago por Nequi</strong>
+          <p>
+            Realiza tu pago al número de Nequi indicado por la tienda.
+            Después, escribe la referencia de la operación para que
+            podamos revisar tu pedido.
+          </p>
+          <strong>Número Nequi:</strong>
+          <span id="numeroNequi">Pendiente de configurar</span>
         </div>
 
-        <form class="formulario" id="formularioPedido">
-          <h2>Datos de la clienta</h2>
+        <div class="campo">
+          <label for="referencia">Referencia del pago</label>
+          <input
+            type="text"
+            id="referencia"
+            name="referencia"
+            placeholder="Escribe la referencia de tu pago"
+            required
+          >
+        </div>
 
-          <label for="nombre">Nombre completo *</label>
-          <input id="nombre" name="nombre" type="text" required maxlength="100" autocomplete="name">
+        <button class="boton" type="submit" id="botonPedido">
+          Enviar mi pedido ♡
+        </button>
 
-          <label for="correo">Correo electrónico *</label>
-          <input id="correo" name="correo" type="email" required maxlength="150" autocomplete="email">
+        <p class="aviso">
+          Tu pedido quedará pendiente de verificación hasta comprobar
+          el pago. Enviar este formulario no confirma que el dinero
+          haya sido recibido.
+        </p>
 
-          <label for="telefono">Teléfono *</label>
-          <input id="telefono" name="telefono" type="tel" required maxlength="25" autocomplete="tel">
+        <div id="mensajePedido" aria-live="polite"></div>
+      </form>
+    </aside>
 
-          <label for="direccion">Dirección de entrega *</label>
-          <textarea id="direccion" name="direccion" required maxlength="300" autocomplete="street-address"></textarea>
-
-          <label for="referencia">Referencia de pago Nequi *</label>
-          <input id="referencia" name="referencia" type="text" required maxlength="100" placeholder="Escribe la referencia de tu pago">
-
-          <p class="aviso">
-            Al enviar el pedido, recibirás una confirmación de que tus datos fueron enviados. Esto no significa que el pago ya esté aprobado.
-          </p>
-
-          <button class="boton" id="botonEnviar" type="submit" style="width:100%; margin-top:18px;">
-            Enviar mi pedido 💗
-          </button>
-
-          <div id="mensaje" role="status" aria-live="polite"></div>
-        </form>
-      </aside>
-
-    </div>
   </main>
 
+  <img
+    class="logo-final"
+    src="./imagenes/indexhtml/Screenshot_2026-10-13-17-18-15-611_com.miui.gallery~2.jpg"
+    alt="Angel's Fashion World"
+    onerror="this.style.display='none'"
+  >
+
   <footer>
-    <strong>Angel's Fashion World</strong>
-    <p style="margin-top:8px;">Gracias por elegirnos ♡</p>
-    <p style="margin-top:8px;">✦ Hecho con amor ✦</p>
+    <strong>Angel's Fashion World</strong><br>
+    Moda · Belleza · Skin care · Accesorios<br>
+    <span style="color:var(--dorado)">✦ Hecho con cariño ✦</span>
   </footer>
 
   <script>
-    // CONFIGURACIÓN DE EMAILJS
+    /* CONFIGURACIÓN */
+
     const EMAILJS_PUBLIC_KEY = "HfD44gnT1ug1X-9K9";
     const EMAILJS_SERVICE_ID = "service_angel_gmail";
     const EMAILJS_TEMPLATE_ID = "template_5a3fwpf";
 
-    // CAMBIA ESTO POR TU NÚMERO REAL DE NEQUI
+    // REEMPLAZA ESTE TEXTO POR EL NÚMERO DE NEQUI DE LA TIENDA.
     const NUMERO_NEQUI = "ESCRIBE_AQUI_TU_NUMERO_NEQUI";
 
     const CLAVE_CARRITO = "angelsCarrito";
@@ -512,19 +618,27 @@
       publicKey: EMAILJS_PUBLIC_KEY
     });
 
+    /* ELEMENTOS */
+
     const listaProductos = document.getElementById("listaProductos");
-    const formulario = document.getElementById("formularioPedido");
-    const mensaje = document.getElementById("mensaje");
-    const botonEnviar = document.getElementById("botonEnviar");
+    const cantidadTotal = document.getElementById("cantidadTotal");
+    const subtotalElemento = document.getElementById("subtotal");
+    const totalElemento = document.getElementById("total");
+    const formularioPedido = document.getElementById("formularioPedido");
+    const botonPedido = document.getElementById("botonPedido");
+    const mensajePedido = document.getElementById("mensajePedido");
 
     document.getElementById("numeroNequi").textContent =
       NUMERO_NEQUI === "ESCRIBE_AQUI_TU_NUMERO_NEQUI"
-        ? "Número pendiente de configurar"
+        ? "Pendiente de configurar"
         : NUMERO_NEQUI;
+
+    /* FUNCIONES DEL CARRITO */
 
     function obtenerCarrito() {
       try {
-        return JSON.parse(localStorage.getItem(CLAVE_CARRITO)) || [];
+        const datos = JSON.parse(localStorage.getItem(CLAVE_CARRITO));
+        return Array.isArray(datos) ? datos : [];
       } catch (error) {
         return [];
       }
@@ -534,175 +648,228 @@
       localStorage.setItem(CLAVE_CARRITO, JSON.stringify(carrito));
     }
 
-    function precioNumero(precio) {
-      if (typeof precio === "number") return precio;
+    function precioNumerico(precio) {
+      if (typeof precio === "number") {
+        return Number.isFinite(precio) ? precio : 0;
+      }
 
       if (typeof precio === "string") {
-        const limpio = precio.replace(/[^\d,.-]/g, "").replace(/\./g, "").replace(",", ".");
-        return Number(limpio) || 0;
+        const numero = Number(precio.replace(/[^\d]/g, ""));
+        return Number.isFinite(numero) ? numero : 0;
       }
 
       return 0;
     }
 
-    function dinero(valor) {
-      return "$" + Number(valor).toLocaleString("es-CO");
+    function precioPendiente(producto) {
+      if (producto.precioPendiente === true) return true;
+
+      const precio = String(producto.precio ?? "").toLowerCase();
+
+      return precio.includes("confirmar") ||
+             precio.includes("pendiente");
     }
 
-    function escapar(texto) {
-      return String(texto ?? "").replace(/[&<>"']/g, caracter => ({
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        '"': "&quot;",
-        "'": "&#039;"
-      })[caracter]);
+    function formatoPrecio(valor) {
+      return new Intl.NumberFormat("es-CO", {
+        style: "currency",
+        currency: "COP",
+        maximumFractionDigits: 0
+      }).format(valor);
     }
 
-    function mostrarCarrito() {
+    function escaparHTML(texto) {
+      return String(texto ?? "").replace(/[&<>"']/g, function(letra) {
+        return {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#039;"
+        }[letra];
+      });
+    }
+
+    function renderizarCarrito() {
       const carrito = obtenerCarrito();
 
-      if (!carrito.length) {
+      listaProductos.innerHTML = "";
+
+      if (carrito.length === 0) {
         listaProductos.innerHTML = `
-          <div class="vacio">
-            <div class="icono">🛍️</div>
+          <div class="sin-productos">
+            <span class="icono">🛍️</span>
             <h3>Tu carrito está vacío</h3>
-            <p>¡Descubre nuestros productos y agrega tus favoritos!</p>
-            <a class="boton" href="moda.html">Explorar tienda</a>
+            <p>Explora nuestra tienda y encuentra tus favoritos.</p>
+            <a href="moda.html">Ir a la tienda ♡</a>
           </div>
         `;
-      } else {
-        listaProductos.innerHTML = carrito.map((producto, indice) => {
-          const nombre = escapar(producto.nombre || "Producto");
-          const imagen = escapar(producto.imagen || "");
-          const talla = escapar(producto.talla || producto.tamaño || "No especificada");
-          const cantidad = Math.max(1, Number(producto.cantidad) || 1);
-          const precio = precioNumero(producto.precio);
-          const pendiente = producto.precioPendiente === true || precio <= 0;
 
-          return `
-            <article class="producto">
-              <img src="${imagen}" alt="${nombre}"
-                   onerror="this.style.visibility='hidden'">
-              <div>
-                <h3>${nombre}</h3>
-                <p class="precio">
-                  ${pendiente ? "Precio por confirmar" : dinero(precio)}
-                </p>
-                <p class="talla">Talla: ${talla}</p>
-                <div class="acciones">
-                  <div class="cantidad">
-                    <button type="button" onclick="cambiarCantidad(${indice}, -1)" aria-label="Disminuir">−</button>
-                    <span>${cantidad}</span>
-                    <button type="button" onclick="cambiarCantidad(${indice}, 1)" aria-label="Aumentar">+</button>
-                  </div>
-                  <button class="quitar" type="button" onclick="eliminarProducto(${indice})">Quitar</button>
-                </div>
-              </div>
-            </article>
-          `;
-        }).join("");
+        cantidadTotal.textContent = "0";
+        subtotalElemento.textContent = formatoPrecio(0);
+        totalElemento.textContent = formatoPrecio(0);
+        botonPedido.disabled = true;
+        return;
       }
 
-      actualizarResumen(carrito);
+      botonPedido.disabled = false;
+
+      let cantidad = 0;
+      let subtotal = 0;
+
+      carrito.forEach((producto, indice) => {
+        const unidades = Math.max(1, Number(producto.cantidad) || 1);
+        const pendiente = precioPendiente(producto);
+        const precio = precioNumerico(producto.precio);
+
+        cantidad += unidades;
+
+        if (!pendiente) {
+          subtotal += precio * unidades;
+        }
+
+        const imagen = producto.imagen || "";
+
+        const elemento = document.createElement("article");
+        elemento.className = "producto";
+
+        elemento.innerHTML = `
+          <img
+            src="${escaparHTML(imagen)}"
+            alt="${escaparHTML(producto.nombre || "Producto")}"
+            onerror="this.style.visibility='hidden'"
+          >
+
+          <div>
+            <h3>${escaparHTML(producto.nombre || "Producto")}</h3>
+
+            <p class="precio">
+              ${pendiente ? "Precio por confirmar" : formatoPrecio(precio)}
+            </p>
+
+            ${producto.talla ? `<p>Talla: ${escaparHTML(producto.talla)}</p>` : ""}
+            ${producto.tamaño ? `<p>Tamaño: ${escaparHTML(producto.tamaño)}</p>` : ""}
+
+            <div class="cantidad">
+              <button type="button" data-accion="restar" data-indice="${indice}" aria-label="Restar">−</button>
+              <span>${unidades}</span>
+              <button type="button" data-accion="sumar" data-indice="${indice}" aria-label="Sumar">+</button>
+            </div>
+
+            <button
+              class="eliminar"
+              type="button"
+              data-accion="eliminar"
+              data-indice="${indice}"
+            >
+              Eliminar
+            </button>
+          </div>
+        `;
+
+        listaProductos.appendChild(elemento);
+      });
+
+      cantidadTotal.textContent = cantidad;
+      subtotalElemento.textContent = formatoPrecio(subtotal);
+      totalElemento.textContent = formatoPrecio(subtotal);
     }
 
-    function actualizarResumen(carrito) {
-      const cantidad = carrito.reduce((suma, producto) =>
-        suma + Math.max(1, Number(producto.cantidad) || 1), 0);
+    listaProductos.addEventListener("click", function(evento) {
+      const boton = evento.target.closest("button[data-accion]");
+      if (!boton) return;
 
-      const total = carrito.reduce((suma, producto) =>
-        suma + precioNumero(producto.precio) *
-        Math.max(1, Number(producto.cantidad) || 1), 0);
-
-      const hayPendientes = carrito.some(producto =>
-        producto.precioPendiente === true || precioNumero(producto.precio) <= 0
-      );
-
-      document.getElementById("cantidadProductos").textContent = cantidad;
-      document.getElementById("subtotal").textContent = dinero(total);
-      document.getElementById("total").textContent =
-        hayPendientes ? dinero(total) + " + precios por confirmar" : dinero(total);
-    }
-
-    function cambiarCantidad(indice, cambio) {
       const carrito = obtenerCarrito();
+      const indice = Number(boton.dataset.indice);
+      const accion = boton.dataset.accion;
 
-      if (!carrito[indice]) return;
+      if (!Number.isInteger(indice) || !carrito[indice]) return;
 
-      const cantidadActual = Math.max(1, Number(carrito[indice].cantidad) || 1);
-      carrito[indice].cantidad = Math.max(1, cantidadActual + cambio);
+      if (accion === "sumar") {
+        carrito[indice].cantidad = (Number(carrito[indice].cantidad) || 1) + 1;
+      }
+
+      if (accion === "restar") {
+        carrito[indice].cantidad = (Number(carrito[indice].cantidad) || 1) - 1;
+
+        if (carrito[indice].cantidad <= 0) {
+          carrito.splice(indice, 1);
+        }
+      }
+
+      if (accion === "eliminar") {
+        carrito.splice(indice, 1);
+      }
 
       guardarCarrito(carrito);
-      mostrarCarrito();
-    }
+      renderizarCarrito();
+    });
 
-    function eliminarProducto(indice) {
-      const carrito = obtenerCarrito();
-      carrito.splice(indice, 1);
-      guardarCarrito(carrito);
-      mostrarCarrito();
-    }
+    /* ENVIAR PEDIDO A EMAILJS */
 
-    function mostrarMensaje(texto, tipo) {
-      mensaje.textContent = texto;
-      mensaje.className = tipo;
-    }
-
-    formulario.addEventListener("submit", async function(evento) {
+    formularioPedido.addEventListener("submit", async function(evento) {
       evento.preventDefault();
 
       const carrito = obtenerCarrito();
 
-      if (!carrito.length) {
-        mostrarMensaje("Agrega productos antes de enviar tu pedido.", "error");
+      if (carrito.length === 0) {
+        mensajePedido.textContent = "Tu carrito está vacío.";
         return;
       }
 
-      const hayPendientes = carrito.some(producto =>
-        producto.precioPendiente === true || precioNumero(producto.precio) <= 0
-      );
-
-      if (hayPendientes) {
-        mostrarMensaje("Hay productos con precio por confirmar. Contáctanos para confirmar el total antes de pagar.", "error");
+      if (carrito.some(precioPendiente)) {
+        mensajePedido.textContent =
+          "Hay productos con precio por confirmar. Consulta su precio antes de enviar el pedido.";
         return;
       }
 
-      if (NUMERO_NEQUI === "ESCRIBE_AQUI_TU_NUMERO_NEQUI") {
-        mostrarMensaje("La tienda todavía no tiene configurado el número de Nequi. Configúralo antes de recibir pedidos.", "error");
+      if (NUMERO_NEQUI === "3170948192") {
+        mensajePedido.textContent =
+          "Primero debes configurar el número de Nequi en el código.";
         return;
       }
 
-      const total = carrito.reduce((suma, producto) =>
-        suma + precioNumero(producto.precio) *
-        Math.max(1, Number(producto.cantidad) || 1), 0);
+      const nombre = document.getElementById("nombre").value.trim();
+      const correo = document.getElementById("correo").value.trim();
+      const telefono = document.getElementById("telefono").value.trim();
+      const direccion = document.getElementById("direccion").value.trim();
+      const referencia = document.getElementById("referencia").value.trim();
+
+      if (!nombre || !correo || !telefono || !direccion || !referencia) {
+mensajePedido.textContent = "Completa todos los campos.";
+        return;
+      }
+
+      let total = 0;
 
       const productosTexto = carrito.map(producto => {
-        const cantidad = Math.max(1, Number(producto.cantidad) || 1);
-        const talla = producto.talla || producto.tamaño || "No especificada";
+        const unidades = Math.max(1, Number(producto.cantidad) || 1);
+        const precio = precioNumerico(producto.precio);
+        total += precio * unidades;
 
-        return `${producto.nombre} | Talla: ${talla} | Cantidad: ${cantidad} | Precio unitario: ${dinero(precioNumero(producto.precio))}`;
+        const detalles = [
+          producto.nombre || "Producto",
+          producto.talla ? "Talla: " + producto.talla : "",
+          producto.tamaño ? "Tamaño: " + producto.tamaño : ""
+        ].filter(Boolean).join(" | ");
+
+        return `${detalles} | Cantidad: ${unidades} | Precio: ${formatoPrecio(precio * unidades)}`;
       }).join("\n");
 
       const datos = {
-        nombre: document.getElementById("nombre").value.trim(),
-        correo: document.getElementById("correo").value.trim(),
-        telefono: document.getElementById("telefono").value.trim(),
-        direccion: document.getElementById("direccion").value.trim(),
-        referencia: document.getElementById("referencia").value.trim(),
+        nombre: nombre,
+        correo: correo,
+        telefono: telefono,
+        direccion: direccion,
         productos: productosTexto,
-        total: dinero(total),
-        estado_pago: "Pendiente de verificación",
-        estado: "Pedido recibido"
+        total: formatoPrecio(total),
+        referencia: referencia,
+        estado_pago: "Pendiente de verificación"
       };
 
-      if (Object.values(datos).some(valor => !String(valor).trim())) {
-        mostrarMensaje("Completa todos los campos antes de continuar.", "error");
-        return;
-      }
-
-      botonEnviar.disabled = true;
-      botonEnviar.textContent = "Enviando pedido...";
+      botonPedido.disabled = true;
+      botonPedido.textContent = "Enviando pedido...";
+      mensajePedido.textContent = "Estamos enviando tu pedido. ♡";
 
       try {
         await emailjs.send(
@@ -711,28 +878,29 @@
           datos
         );
 
-        mostrarMensaje(
-          "¡Tu pedido fue enviado correctamente! Recibiremos tus datos y verificaremos el pago antes de confirmarlo. 💗",
-          "exito"
-        );
+        localStorage.removeItem(CLAVE_CARRITO);
+        renderizarCarrito();
 
-        guardarCarrito([]);
-        mostrarCarrito();
-        formulario.reset();
+        formularioPedido.reset();
+
+        mensajePedido.textContent =
+          "¡Tu pedido fue enviado correctamente! Recuerda que el pago debe verificarse antes de confirmarlo. ♡";
 
       } catch (error) {
-        console.error("Error de EmailJS:", error);
-        mostrarMensaje(
-          "No pudimos enviar el pedido. Revisa tu conexión e inténtalo nuevamente. Si continúa el problema, verifica la configuración de EmailJS.",
-          "error"
-        );
+        console.error("Error al enviar pedido:", error);
+
+        mensajePedido.textContent =
+          "No se pudo enviar el pedido. Revisa tu conexión y la configuración de EmailJS.";
+
       } finally {
-        botonEnviar.disabled = false;
-        botonEnviar.textContent = "Enviar mi pedido 💗";
+        botonPedido.disabled = obtenerCarrito().length === 0;
+        botonPedido.textContent = "Enviar mi pedido ♡";
       }
     });
 
-    mostrarCarrito();
+    /* INICIAR */
+
+    renderizarCarrito();
   </script>
 
 </body>
