@@ -1,191 +1,183 @@
+const CLAVE_CARRITO = "angelsCarrito";
+const CLAVE_PEDIDOS = "angelsPedidos";
 
-// ========================================
-// ANGEL'S FASHION WORLD
-// SCRIPT.JS
-// ========================================
+let carrito = JSON.parse(localStorage.getItem(CLAVE_CARRITO)) || [];
 
-
-// ========================================
-// DESPLAZAMIENTO SUAVE
-// ========================================
-
-document.querySelectorAll('a[href^="#"]').forEach(enlace => {
-
-    enlace.addEventListener("click", function (e) {
-
-        const href = this.getAttribute("href");
-
-        if (!href || href === "#") return;
-
-        const destino = document.querySelector(href);
-
-        if (destino) {
-
-            e.preventDefault();
-
-            destino.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-        }
-
-    });
-
-});
-
-
-// ========================================
-// ANIMACIÓN DE LAS ESTRELLAS
-// ========================================
-
-const estrellas = document.querySelectorAll(".estrella");
-
-estrellas.forEach((estrella, indice) => {
-
-    estrella.style.animationDelay =
-        `${indice * 0.35}s`;
-
-});
-
-
-// ========================================
-// ANIMACIÓN DE LAS ALAS
-// ========================================
-
-const alas = document.querySelectorAll(
-    ".alas-inicio, .alas-explorar, .contacto-alas, .footer-alas, .logo-alas, .alasMovimiento"
-);
-
-alas.forEach((ala, indice) => {
-
-    ala.style.animationDelay =
-        `${indice * 0.4}s`;
-
-});
-
-
-// ========================================
-// EFECTO DE APARICIÓN
-// ========================================
-
-const elementosAnimados = document.querySelectorAll(
-    ".categoria, .titulo-explorar, .frase-explorar"
-);
-
-if ("IntersectionObserver" in window) {
-
-    const observador = new IntersectionObserver(
-        (entradas) => {
-
-            entradas.forEach(entrada => {
-
-                if (entrada.isIntersecting) {
-
-                    entrada.target.classList.add("aparecer");
-
-                    observador.unobserve(entrada.target);
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.15
-        }
-    );
-
-    elementosAnimados.forEach(elemento => {
-        observador.observe(elemento);
-    });
-
+function guardarCarrito() {
+  localStorage.setItem(CLAVE_CARRITO, JSON.stringify(carrito));
 }
 
-
-// ========================================
-// BUSCADOR DE PRODUCTOS
-// ========================================
-
-const campoBusqueda = document.getElementById("buscarProducto");
-const botonLimpiar = document.getElementById("limpiarBusqueda");
-
-function buscarProductos() {
-
-    if (!campoBusqueda) return;
-
-    const consulta = campoBusqueda.value
-        .trim()
-        .toLocaleLowerCase("es");
-
-    // Productos y categorías que se pueden filtrar.
-    const elementos = document.querySelectorAll(
-        ".producto, .producto-card, .tarjeta-producto, .categoria"
-    );
-
-    elementos.forEach(elemento => {
-
-        const texto = elemento.textContent
-            .toLocaleLowerCase("es");
-
-        const coincide = texto.includes(consulta);
-
-        elemento.style.display = coincide ? "" : "none";
-
-    });
-
+function formatoPrecio(precio) {
+  return Number(precio || 0).toLocaleString("es-CO");
 }
 
-if (campoBusqueda) {
+function renderizarCarrito() {
+  const lista = document.getElementById("listaProductos");
+  const cantidadElemento =
+    document.getElementById("cantidadTotal") ||
+    document.getElementById("cantidadProductos");
 
-    campoBusqueda.addEventListener("input", buscarProductos);
+  const subtotalElemento = document.getElementById("subtotal");
+  const totalElemento = document.getElementById("total");
 
+  if (!lista) return;
+
+  lista.innerHTML = "";
+  let subtotal = 0;
+  let cantidadTotal = 0;
+
+  if (carrito.length === 0) {
+    lista.innerHTML = "<p>Tu carrito está vacío. ♡</p>";
+  }
+
+  carrito.forEach((producto, indice) => {
+    const cantidad = Number(producto.cantidad) || 1;
+    const precio = Number(producto.precio) || 0;
+
+    subtotal += precio * cantidad;
+    cantidadTotal += cantidad;
+
+    const elemento = document.createElement("div");
+    elemento.className = "producto-carrito";
+
+    elemento.innerHTML = `
+      <img
+        src="${producto.imagen || ""}"
+        alt="${producto.nombre || "Producto"}"
+        width="90"
+      >
+
+      <div>
+        <h3>${producto.nombre || "Producto"}</h3>
+        <p>Precio: $${formatoPrecio(precio)}</p>
+        ${producto.talla ? `<p>Talla: ${producto.talla}</p>` : ""}
+        ${producto.tamaño ? `<p>Tamaño: ${producto.tamaño}</p>` : ""}
+
+        <button type="button" data-restar="${indice}">−</button>
+        <span>${cantidad}</span>
+        <button type="button" data-sumar="${indice}">+</button>
+
+        <button type="button" data-eliminar="${indice}">
+          Eliminar
+        </button>
+      </div>
+    `;
+
+    lista.appendChild(elemento);
+  });
+
+  if (cantidadElemento) cantidadElemento.textContent = cantidadTotal;
+  if (subtotalElemento) {
+    subtotalElemento.textContent = "$" + formatoPrecio(subtotal);
+  }
+  if (totalElemento) {
+    totalElemento.textContent = "$" + formatoPrecio(subtotal);
+  }
 }
 
-if (botonLimpiar) {
-
-    botonLimpiar.addEventListener("click", () => {
-
-        if (campoBusqueda) {
-            campoBusqueda.value = "";
-            buscarProductos();
-            campoBusqueda.focus();
-        }
-
-    });
-
+function sumarProducto(indice) {
+  carrito[indice].cantidad = (Number(carrito[indice].cantidad) || 1) + 1;
+  guardarCarrito();
+  renderizarCarrito();
 }
 
+function restarProducto(indice) {
+  carrito[indice].cantidad = (Number(carrito[indice].cantidad) || 1) - 1;
 
-// ========================================
-// BOTÓN EXPLORAR
-// ========================================
+  if (carrito[indice].cantidad <= 0) {
+    carrito.splice(indice, 1);
+  }
 
-document.querySelectorAll(".boton-explorar").forEach(boton => {
+  guardarCarrito();
+  renderizarCarrito();
+}
 
-    boton.addEventListener("click", function () {
+function eliminarProducto(indice) {
+  carrito.splice(indice, 1);
+  guardarCarrito();
+  renderizarCarrito();
+}
 
-        const destino = document.getElementById("categorias");
+// Botones del carrito
+document.addEventListener("click", function(event) {
+  const boton = event.target.closest("button");
+  if (!boton) return;
 
-        if (destino) {
+  if (boton.dataset.sumar !== undefined) {
+    sumarProducto(Number(boton.dataset.sumar));
+  }
 
-            destino.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
+  if (boton.dataset.restar !== undefined) {
+    restarProducto(Number(boton.dataset.restar));
+  }
 
-        }
-
-    });
-
+  if (boton.dataset.eliminar !== undefined) {
+    eliminarProducto(Number(boton.dataset.eliminar));
+  }
 });
 
+// Enviar pedido
+const formulario = document.getElementById("formularioPedido");
 
-// ========================================
-// MENSAJE DE CONSOLA
-// ========================================
+if (formulario) {
+  formulario.addEventListener("submit", function(event) {
+    event.preventDefault();
 
-console.log(
-    "🪽 Angel's Fashion World está funcionando ✦"
-);
-```
+    const mensaje = document.getElementById("mensajePedido");
+
+    if (carrito.length === 0) {
+      if (mensaje) mensaje.textContent = "Tu carrito está vacío.";
+      return;
+    }
+
+    const nombre = document.getElementById("nombre")?.value.trim();
+    const correo = document.getElementById("correo")?.value.trim();
+    const telefono = document.getElementById("telefono")?.value.trim();
+    const direccion = document.getElementById("direccion")?.value.trim();
+    const referencia = document.getElementById("referencia")?.value.trim();
+
+    if (!nombre || !correo || !telefono || !direccion || !referencia) {
+      if (mensaje) mensaje.textContent = "Completa todos los campos.";
+      return;
+    }
+
+    const total = carrito.reduce((suma, producto) => {
+      return suma +
+        (Number(producto.precio) || 0) *
+        (Number(producto.cantidad) || 1);
+    }, 0);
+
+    const pedido = {
+      id: "AFW-" + Date.now(),
+      fecha: new Date().toLocaleString("es-CO"),
+      nombre,
+      correo,
+      telefono,
+      direccion,
+      referencia,
+      productos: [...carrito],
+      total,
+      estado: "Pendiente de verificación"
+    };
+
+    const pedidos = JSON.parse(
+      localStorage.getItem(CLAVE_PEDIDOS)
+    ) || [];
+
+    pedidos.push(pedido);
+    localStorage.setItem(CLAVE_PEDIDOS, JSON.stringify(pedidos));
+
+    carrito = [];
+    guardarCarrito();
+    renderizarCarrito();
+
+    if (mensaje) {
+      mensaje.textContent =
+        "¡Pedido registrado en este dispositivo! ♡";
+    }
+
+    formulario.reset();
+  });
+}
+
+renderizarCarrito();
